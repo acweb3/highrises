@@ -1,0 +1,34 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+/src/assets/images/slide-highrises/*
+/src/assets/images/map-highrises/*
+/src/assets/images/poster-highrises/*
+/src/assets/images/nft-highrises/*
+/src/assets/images/icon-highrises/*
+/src/assets/images/detail-highrises/*
+
+node_modules/
+.cache/
+public
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
