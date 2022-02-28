@@ -1,1 +1,7 @@
-data.csv
+data.*
+csv/dist
+image-processing/site/dist
+image-processing/site/raw
+image-processing/png/dist
+image-processing/png/raw
+metadata-processing/csv/dist

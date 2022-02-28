@@ -1,4 +1,5 @@
 .env
+.vscode
 
 arguments.js
 argumentsCollab.js
