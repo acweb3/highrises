@@ -6,6 +6,11 @@ export const highrises = [
         image: '',
         name: 'Philadelphia City Hall',
         height: 548,
+        decade: 1890,
+        ltlng: {
+            lat: 39.9525994,
+            lng: -75.16224989999999,
+        },
         attributes: [
             {
                 trait_type: 'Text',
@@ -76,6 +81,11 @@ export const highrises = [
         image: '',
         name: 'The 1616 Building',
         height: 308,
+        decade: 1920,
+        ltlng: {
+            lat: 39.9496503,
+            lng: -75.1684693,
+        },
         attributes: [
             {
                 trait_type: 'Text',
@@ -138,6 +148,11 @@ export const highrises = [
         image: '',
         name: 'The Architects Building',
         height: 313,
+        decade: 1930,
+        ltlng: {
+            lat: 39.9508293,
+            lng: -75.1686289,
+        },
         attributes: [
             {
                 trait_type: 'Text',
@@ -200,6 +215,11 @@ export const highrises = [
         image: '',
         name: 'One South Broad',
         height: 472,
+        decade: 1930,
+        ltlng: {
+            lat: 39.9511841,
+            lng: -75.16351759999999,
+        },
         attributes: [
             {
                 trait_type: 'Text',
@@ -266,6 +286,11 @@ export const highrises = [
         image: '',
         name: 'The Drake',
         height: 375,
+        decade: 1920,
+        ltlng: {
+            lat: 39.94686979999999,
+            lng: -75.1671697,
+        },
         attributes: [
             {
                 trait_type: 'Text',
@@ -336,6 +361,11 @@ export const highrises = [
         image: '',
         name: 'The Inquirer Building',
         height: 340,
+        decade: 1920,
+        ltlng: {
+            lat: 39.9601719,
+            lng: -75.1628384,
+        },
         attributes: [
             {
                 trait_type: 'Text',
@@ -414,6 +444,11 @@ export const highrises = [
         image: '',
         name: 'Ritz Carlton',
         height: 394,
+        decade: 1930,
+        ltlng: {
+            lat: 39.9512132,
+            lng: -75.1643429,
+        },
         attributes: [
             {
                 trait_type: 'Text',
@@ -480,6 +515,11 @@ export const highrises = [
         image: '',
         name: 'Market Street National Bank',
         height: 313,
+        decade: 1920,
+        ltlng: {
+            lat: 39.9489949,
+            lng: -75.1663033,
+        },
         attributes: [
             {
                 trait_type: 'Text',
@@ -542,6 +582,11 @@ export const highrises = [
         image: '',
         name: 'The Lewis Tower',
         height: 389,
+        decade: 1920,
+        ltlng: {
+            lat: 39.9459282,
+            lng: -75.1666946,
+        },
         attributes: [
             {
                 trait_type: 'Text',
@@ -604,6 +649,11 @@ export const highrises = [
         image: '',
         name: 'Equitable Trust Building',
         height: 258,
+        decade: 1920,
+        ltlng: {
+            lat: 39.9483926,
+            lng: -75.1653091,
+        },
         attributes: [
             {
                 trait_type: 'Text',
@@ -662,6 +712,11 @@ export const highrises = [
         image: '',
         name: 'PFSF',
         height: 491,
+        decade: 1930,
+        ltlng: {
+            lat: 39.9517476,
+            lng: -75.16022939999999,
+        },
         attributes: [
             {
                 trait_type: 'Text',
@@ -728,6 +783,11 @@ export const highrises = [
         image: '',
         name: 'American Baptist Publication Society building',
         height: 185,
+        decade: 1890,
+        ltlng: {
+            lat: 39.9506307,
+            lng: -75.1652749,
+        },
         attributes: [
             {
                 trait_type: 'Text',
@@ -798,6 +858,11 @@ export const highrises = [
         image: '',
         name: 'Liberty Title & Trust Building',
         height: 205,
+        decade: 1920,
+        ltlng: {
+            lat: 39.9546225,
+            lng: -75.16279209999999,
+        },
         attributes: [
             {
                 trait_type: 'Text',
@@ -864,6 +929,11 @@ export const highrises = [
         image: '',
         name: 'Beury Building',
         height: 163,
+        decade: 1920,
+        ltlng: {
+            lat: 40.0099495,
+            lng: -75.1505931,
+        },
         attributes: [
             {
                 trait_type: 'Text',
@@ -930,6 +1000,11 @@ export const highrises = [
         image: '',
         name: 'Edison Building',
         height: 325,
+        decade: 1920,
+        ltlng: {
+            lat: 39.9488621,
+            lng: -75.1559518,
+        },
         attributes: [
             {
                 trait_type: 'Text',
@@ -996,6 +1071,11 @@ export const highrises = [
         image: '',
         name: 'Camden City Hall',
         height: 371,
+        decade: 1930,
+        ltlng: {
+            lat: 39.94545979999999,
+            lng: -75.1208506,
+        },
         attributes: [
             {
                 trait_type: 'Text',
@@ -1066,6 +1146,11 @@ export const highrises = [
         image: '',
         name: 'Cathedral of Learning',
         height: 535,
+        decade: 1930,
+        ltlng: {
+            lat: 40.44439000000001,
+            lng: -79.9534133,
+        },
         attributes: [
             {
                 trait_type: 'Text',
@@ -1116,6 +1201,11 @@ export const highrises = [
         image: '',
         name: 'Central National Bank building',
         height: 263,
+        decade: 1920,
+        ltlng: {
+            lat: 37.5435679,
+            lng: -77.440167,
+        },
         attributes: [
             {
                 trait_type: 'Text',
@@ -1166,6 +1256,11 @@ export const highrises = [
         image: '',
         name: 'Bromo Seltzer Arts Tower',
         height: 289,
+        decade: 1910,
+        ltlng: {
+            lat: 39.2876661,
+            lng: -76.6206703,
+        },
         attributes: [
             {
                 trait_type: 'Text',
@@ -1216,6 +1311,11 @@ export const highrises = [
         image: '',
         name: 'Bank of America Building',
         height: 509,
+        decade: 1920,
+        ltlng: {
+            lat: 39.2893081,
+            lng: -76.6144194,
+        },
         attributes: [
             {
                 trait_type: 'Text',
@@ -1266,6 +1366,11 @@ export const highrises = [
         image: '',
         name: 'Time Square Building',
         height: 260,
+        decade: 1920,
+        ltlng: {
+            lat: 43.1546163,
+            lng: -77.61259,
+        },
         attributes: [
             {
                 trait_type: 'Text',
@@ -1320,6 +1425,11 @@ export const highrises = [
         image: '',
         name: 'Buffalo City Hall',
         height: 398,
+        decade: 1930,
+        ltlng: {
+            lat: 42.8866413,
+            lng: -78.8793539,
+        },
         attributes: [
             {
                 trait_type: 'Text',
@@ -1386,6 +1496,11 @@ export const highrises = [
         image: '',
         name: 'Rand Building',
         height: 405,
+        decade: 1920,
+        ltlng: {
+            lat: 42.8862773,
+            lng: -78.8733397,
+        },
         attributes: [
             {
                 trait_type: 'Text',
@@ -1448,6 +1563,11 @@ export const highrises = [
         image: '',
         name: 'Liberty Building',
         height: 345,
+        decade: 1920,
+        ltlng: {
+            lat: 42.8856854,
+            lng: -78.8751748,
+        },
         attributes: [
             {
                 trait_type: 'Text',
@@ -1510,6 +1630,11 @@ export const highrises = [
         image: '',
         name: 'Central Terminal',
         height: 271,
+        decade: 1920,
+        ltlng: {
+            lat: 42.8896751,
+            lng: -78.8310089,
+        },
         attributes: [
             {
                 trait_type: 'Text',

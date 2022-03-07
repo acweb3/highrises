@@ -1,5 +1,6 @@
 import { BuildingsExplorer } from 'components/Explorer/BuildingsExplorer';
-import { BuildingsMasthead } from 'components/Explorer/BuildingsExplorer/BuildingsMasthead';
+import { MapExplorer } from 'components/Explorer/MapExplorer';
+import { Masthead } from 'components/Explorer/Masthead';
 import { useState } from 'react';
 
 export const Explorer = () => {
@@ -7,12 +8,10 @@ export const Explorer = () => {
 
     return (
         <>
-            <BuildingsMasthead
-                activeSort={activeSort}
-                setActiveSort={setActiveSort}
-            />
+            <Masthead activeSort={activeSort} setActiveSort={setActiveSort} />
             <BuildingsExplorer activeSort={activeSort} />
             {/** Map explorer goes here */}
+            <MapExplorer />
         </>
     );
 };

@@ -1,7 +1,8 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const BuildingImage = styled.img`
     flex: 1;
+    max-width: 300px;
 `;
 
 export const BuildingCaption = styled.div`
@@ -12,6 +13,7 @@ export const BuildingCaption = styled.div`
     align-items: center;
     padding: 32px 16px;
     white-space: nowrap;
+    width: 100%;
 `;
 
 export const BuildingIndex = styled.div`
@@ -29,10 +31,23 @@ export const BuildingContainer = styled.div`
 
     display: flex;
     flex-direction: column;
-    flex: 0 0 300px;
-    max-width: 300px;
+    align-items: center;
+    width: 300px;
+    flex: 1;
 
     cursor: pointer;
 
     position: relative;
+
+    & ${BuildingIndex}, & > ${BuildingName}, & > ${BuildingImage} {
+        transition: opacity 400ms;
+    }
+
+    ${(props) =>
+        !props.isActive &&
+        css`
+            & ${BuildingIndex}, & ${BuildingName}, & > ${BuildingImage} {
+                opacity: 0.4;
+            }
+        `};
 `;

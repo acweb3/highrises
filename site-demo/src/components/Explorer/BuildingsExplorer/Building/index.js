@@ -2,10 +2,13 @@ import * as S from 'components/Explorer/BuildingsExplorer/Building/Building.styl
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
 
 export const Building = ({ building }) => {
-    const { setActiveHighrise } = useActiveHighriseContext();
+    const { activeHighrise, setActiveHighrise } = useActiveHighriseContext();
 
     return (
         <S.BuildingContainer
+            isActive={
+                !activeHighrise || building.index === activeHighrise.index
+            }
             onClick={() => {
                 setActiveHighrise((activeHighrise) => {
                     if (activeHighrise?.index === building.index) {
