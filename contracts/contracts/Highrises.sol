@@ -16,7 +16,10 @@ contract Highrises is ERC721, Ownable {
 
 	uint128 private constant maxSupply = 50; // Max supply
 	uint128 private saleLimitPerUser = 2;
-	uint256 public listPrice = 0; // null for now ;)
+	// # TODO => Change this
+	string private scavengerHuntUUID; // # TODO => Fix ty
+	uint256 public listPrice = 20000000000000000; // 0.02 eth initial list price
+
 
 	mapping(address => uint128) private saleLimitMap; // Tally if user has made a purchase
 
@@ -24,23 +27,44 @@ contract Highrises is ERC721, Ownable {
 	using Counters for Counters.Counter;
 	Counters.Counter private _tokenIdCounter; // For keeping track of sequence
 
-	/**
-	 * A bit wacky, but artist addresses and tokenIds are parallel arrays that
-	 * compose into matching key-value pairs within premints.
-	 *
-	 * @param _baseURI base uri for tokens
-	 */
 	constructor(string memory _baseURI) ERC721("Highrises", "Highrises") {
+		baseURI = _baseURI;
+	}
+
+	/**
+	 * Escape hatch to update URI.
+	 */
+	function setBaseURI(string memory _baseURI) public onlyOwner {
 		baseURI = _baseURI;
 	}
 
 	// Minting
 	/*------------------------------------*/
+	function setScavengerHuntUUID(string memory _scavengerHuntUUID) public onlyOwner {
+		scavengerHuntUUID = _scavengerHuntUUID;
+	}
+
+	function scavengerHunt(string memory uuid) public payable {
+		require(listPrice <= msg.value, "LOW_ETH");
+		require(
+			saleLimitMap[_msgSender()] < saleLimitPerUser,
+			"MAX_LIMIT_PER_BUYER"
+		);
+		// Allocate for premint when checking max supply
+		require(_tokenIdCounter.current() < maxSupply, "MAX_REACHED");
+		require(scavengerHuntUUID == uuid, "WRONG_UUID");
+
+		saleLimitMap[_msgSender()] = saleLimitMap[_msgSender()] + 1;
+
+		_safeMint(msg.sender, _tokenIdCounter.current());
+		_tokenIdCounter.increment();
+	}
 
 	/**
 	 * Mint, updating storage of sales.
 	 */
-	function mint() public {
+	function mint() public payable {
+		require(listPrice <= msg.value, "LOW_ETH");
 		require(
 			saleLimitMap[_msgSender()] < saleLimitPerUser,
 			"MAX_LIMIT_PER_BUYER"
@@ -56,6 +80,13 @@ contract Highrises is ERC721, Ownable {
 
 	// ERC721 Things
 	/*------------------------------------*/
+
+	/**
+	 * Get total token supply
+	 */
+	function totalSupply() public view returns (uint256) {
+		return _tokenIdCounter.current();
+	}
 
 	/**
 	 * Get token URI

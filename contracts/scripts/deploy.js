@@ -1,32 +1,18 @@
 const { config } = require("../config");
-const { soloSeed } = require("../seed");
-
-const [premintAddresses, premintTokenIds] = soloSeed;
 
 async function main() {
-	const Test = await hre.ethers.getContractFactory("Highrises");
-	const deploymentData = Test.interface.encodeDeploy([
-		config.ipfsURL,
-		premintAddresses,
-		premintTokenIds,
-	]);
+	const Highrises = await hre.ethers.getContractFactory("Highrises");
+	const deploymentData = Highrises.interface.encodeDeploy([config.ipfsURL]);
 	const estimatedGas = await ethers.provider.estimateGas({
 		data: deploymentData,
 	});
 
-	console.log({
-		estimatedGas,
-	});
+	const highrises = await Highrises.deploy(config.ipfsURL);
 
-	const test = await Test.deploy(
-		config.ipfsURL,
-		premintAddresses,
-		premintTokenIds
-	);
+	await highrises.deployed();
 
-	await test.deployed();
-
-	console.log("test deployed to:", test.address);
+	console.log("test deployed to:", highrises.address);
+	console.log("estimated gas:", estimatedGas);
 }
 
 main()

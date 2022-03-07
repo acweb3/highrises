@@ -5,11 +5,10 @@ const config = {
 	ipfsURL: process.env.IPFS_URL,
 	rinkebyAlchemyURL: process.env.RINKEBY_ALCHEMY_URL,
 	rinkebyPrivateKey: process.env.RINKEBY_PRIVATE_KEY,
-	ropstenAlchemyURL: process.env.ROPSTEN_ALCHEMY_URL,
-	ropstenPrivateKey: process.env.ROPSTEN_PRIVATE_KEY,
-	mainnetAlchemyURL: process.env.MAINNET_ALCHEMY_URL,
-	mainnetPrivateKey: process.env.MAINNET_PRIVATE_KEY,
 };
+
+console.log(config);
+
 
 module.exports = {
 	config,
