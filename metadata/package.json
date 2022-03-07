@@ -14,7 +14,9 @@
         "prettier": "^2.5.1"
     },
     "dependencies": {
+        "@googlemaps/google-maps-services-js": "^3.3.10",
         "change-case": "^4.1.2",
+        "dotenv": "^16.0.0",
         "sharp": "^0.30.0"
     }
 }

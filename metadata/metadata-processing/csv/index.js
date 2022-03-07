@@ -1,7 +1,7 @@
 const { read } = require('./read');
 const { write } = require('./write');
 
-(() => {
-    const traits = read();
+(async () => {
+    const traits = await read();
     write(traits);
 })();

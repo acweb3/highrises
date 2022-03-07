@@ -16,12 +16,15 @@ const png = async () => {
 
         await sharp(fileName)
             .resize({
-                width: 500,
+                width: 300,
             })
-            // .jpeg({
-            //     quality: 100,
-            // })
-            .toFile(join(outputDir, `${i}.png`));
+            .toFile(join(outputDir, 'big', `${i}.png`));
+
+        await sharp(fileName)
+            .resize({
+                width: 100,
+            })
+            .toFile(join(outputDir, 'small', `${i}.png`));
     });
 };
 

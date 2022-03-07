@@ -3,5 +3,5 @@ const { site } = require('./site');
 
 (() => {
     site();
-    // png();
+    png();
 })();
