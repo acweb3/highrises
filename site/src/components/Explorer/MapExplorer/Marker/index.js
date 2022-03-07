@@ -12,6 +12,10 @@ export const Marker = ({ onClick, imageSrc, ...options }) => {
             );
         }
 
+        if (marker) {
+            marker.setIcon(imageSrc);
+        }
+
         // remove marker from map on unmount
         return () => {
             if (marker) {

@@ -32,7 +32,7 @@ export const BuildingsExplorer = ({ activeSort }) => {
             setHighrises(highriseWithImage);
             initHighrises.current = highriseWithImage;
         })();
-    }, [setHighrises]);
+    }, [setHighrises, setActiveHighrise]);
 
     useEffect(() => {
         setActiveHighrise(undefined);
@@ -42,7 +42,13 @@ export const BuildingsExplorer = ({ activeSort }) => {
                 inline: 'center',
                 block: 'end',
             });
-            setHighrises(activeSort.sort([...initHighrises.current]));
+
+            const sortedHighrises = activeSort.sort([...initHighrises.current]);
+            setHighrises(sortedHighrises);
+
+            if (sortedHighrises.length === 1) {
+                setActiveHighrise(sortedHighrises[0]);
+            }
         } else if (initHighrises.current) {
             setHighrises(initHighrises.current);
         }

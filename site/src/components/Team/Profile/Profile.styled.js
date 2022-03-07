@@ -15,11 +15,14 @@ export const ProfileText = styled.div`
     line-height: 1.2;
 `;
 
-export const ProfileImage = styled.div`
+export const ProfileImage = styled.img``;
+
+export const ProfileImageWrapper = styled.div`
     width: 180px;
     height: 180px;
     background: #e0e0e0;
     border-radius: 50%;
+    overflow: hidden;
 `;
 
 export const Profile = styled.div`
@@ -27,6 +30,8 @@ export const Profile = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    width: 260px;
 
     margin: 0 45px;
 

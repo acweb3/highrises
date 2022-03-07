@@ -17,7 +17,7 @@ export const How = () => {
                     <S.Copy>
                         <S.Paragraph>
                             To document each building, several images are taken
-                            by drone from varying elevations. Next they are
+                            by drone from varying elevations. The Images are
                             manually stitched together in Photoshop to create a
                             high resolution elevation scan with flattened
                             perspective. Lighting is enhanced to accentuate the

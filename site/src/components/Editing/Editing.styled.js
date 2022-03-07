@@ -44,4 +44,6 @@ export const EditingDescription = styled.div`
 
 export const Editing = styled.div`
     display: flex;
+    max-width: 100vw;
+    overflow: hidden;
 `;

@@ -9,6 +9,7 @@ export const Sky = styled(UnstyledSky)`
 
 export const Title = styled(Header)`
     margin-left: auto;
+    white-space: nowrap;
 `;
 
 export const Points = styled.div`
@@ -21,7 +22,7 @@ export const Points = styled.div`
 
 export const RoadmapChart = styled.div`
     z-index: 2;
-    padding: 72px 48px 88px;
+    padding: 96px 48px 112px;
     display: flex;
     flex-direction: column;
     margin-left: auto;
@@ -35,7 +36,6 @@ export const RoadmapImage = styled.img`
 export const RoadmapImageWrapper = styled.div`
     /* width: 50%; */
     z-index: 2;
-    overflow: hidden;
 `;
 
 export const Roadmap = styled.div`
@@ -44,4 +44,5 @@ export const Roadmap = styled.div`
     min-height: 800px;
     display: flex;
     flex-direction: row;
+    overflow: hidden;
 `;

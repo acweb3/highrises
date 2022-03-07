@@ -1,3 +1,7 @@
+import andySrc from 'assets/images/profiles/andy.jpg';
+import chrisSrc from 'assets/images/profiles/chris.jpg';
+import cooperSrc from 'assets/images/profiles/cooper.png';
+import nickSrc from 'assets/images/profiles/nick.jpg';
 import { Profile } from 'components/Team/Profile';
 import * as S from 'components/Team/Team.styled';
 import { Header } from 'components/ui/Header';
@@ -7,33 +11,29 @@ const PROFILES = [
         header: 'Chris Hytha',
         points: [
             'Project Founder',
-            'Drexel Architecture Grad',
-            'Creative Director',
+            'Drexel University | BA, Architecture',
+            'Lead Visual Artist',
         ],
+        src: chrisSrc,
     },
     {
-        header: 'Chris Hytha',
+        header: 'Nick Merutka',
         points: [
-            'Project Founder',
-            'Drexel Architecture Grad',
+            'Iowa State Univeristy | BFA, Graphic Design',
+            'Graphic Poster Development',
             'Creative Director',
         ],
+        src: nickSrc,
     },
     {
-        header: 'Chris Hytha',
-        points: [
-            'Project Founder',
-            'Drexel Architecture Grad',
-            'Creative Director',
-        ],
+        header: 'Cooper Sherwin',
+        points: ['Community Development', 'Project Management'],
+        src: cooperSrc,
     },
     {
-        header: 'Chris Hytha',
-        points: [
-            'Project Founder',
-            'Drexel Architecture Grad',
-            'Creative Director',
-        ],
+        header: 'Andy Gallagher',
+        points: ['Web Development'],
+        src: andySrc,
     },
 ];
 
@@ -48,6 +48,7 @@ export const Team = () => {
                     );
                 })}
             </S.Profiles>
+            <S.BorderBottom />
         </S.Team>
     );
 };

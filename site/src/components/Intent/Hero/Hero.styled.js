@@ -19,4 +19,6 @@ export const HeroLogo = styled.div`
 export const Hero = styled.div`
     position: relative;
     min-height: 800px;
+    max-width: 100vw;
+    overflow: hidden;
 `;
