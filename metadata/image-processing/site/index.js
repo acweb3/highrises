@@ -12,7 +12,7 @@ const blueSky = async () => {
         // .resize({
         //     width: 500,
         // })
-        .jpeg({ quality: 50 })
+        .jpeg({ quality: 80 })
         .toFile(join(__dirname, 'dist', 'blue-sky-background.jpg'));
 };
 

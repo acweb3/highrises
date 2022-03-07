@@ -1,4 +1,3 @@
-import blueSkyBackgroundSrc from 'assets/images/blue-sky-background.jpg';
 import { Paragraph } from 'components/ui/Paragraph';
 import styled from 'styled-components';
 
@@ -36,7 +35,6 @@ export const FAQ = styled.div`
     position: relative;
 
     min-height: 800px;
-    background: url(${blueSkyBackgroundSrc});
-
     display: flex;
+    overflow: hidden;
 `;

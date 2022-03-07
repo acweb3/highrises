@@ -8,10 +8,13 @@ export const Clouds = styled.div`
     width: 100%;
 
     overflow: hidden;
+
+    background: rgba(0, 0, 0, 0.04);
 `;
 
 export const CloudImage = styled.img`
     width: 2200px;
+    opacity: 0.8;
 `;
 
 export const Cloud = styled.div.attrs((props) => ({

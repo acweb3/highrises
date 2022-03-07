@@ -21,12 +21,16 @@ export const HowContent = styled(ViewScroll)`
     margin-top: auto;
 `;
 
+export const HowContainer = styled.div`
+    padding: 48px 48px 72px;
+    display: flex;
+    z-index: 1;
+`;
+
 export const How = styled.div`
     position: relative;
-
+    overflow: hidden;
     margin-top: 600px;
-    min-height: 600px;
-    background: url(${blueSkyBackgroundSrc});
-    padding: 48px;
+    min-height: 700px;
     display: flex;
 `;

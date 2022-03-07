@@ -93,6 +93,7 @@ export const Roadmap = () => {
                     })}
                 </S.Points>
             </S.RoadmapChart>
+            <S.Sky />
         </S.Roadmap>
     );
 };

@@ -1,6 +1,11 @@
-import blueSkyBackgroundSrc from 'assets/images/blue-sky-background.jpg';
+import { Sky as UnstyledSky } from 'components/Sky';
 import { Header } from 'components/ui/Header';
 import styled from 'styled-components';
+
+export const Sky = styled(UnstyledSky)`
+    width: auto;
+    height: 100%;
+`;
 
 export const Title = styled(Header)`
     margin-left: auto;
@@ -37,8 +42,6 @@ export const Roadmap = styled.div`
     position: relative;
 
     min-height: 800px;
-    background: url(${blueSkyBackgroundSrc});
-
     display: flex;
     flex-direction: row;
 `;

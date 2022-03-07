@@ -1,6 +1,7 @@
 import edisonBuildingSrc from 'assets/images/edison-building.png';
 import { Cloud, Clouds, cloudProps } from 'components/Cloud';
 import * as S from 'components/FAQ/FAQ.styled';
+import { Sky } from 'components/Sky';
 import { Header } from 'components/ui/Header';
 import React, { useState } from 'react';
 
@@ -69,6 +70,7 @@ export const FAQ = () => {
             </S.FAQContent>
 
             <S.FAQImage src={edisonBuildingSrc} />
+            <Sky />
         </S.FAQ>
     );
 };

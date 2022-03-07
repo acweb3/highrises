@@ -28,6 +28,7 @@ export const BuildingsExplorer = ({ activeSort }) => {
                 })
             );
 
+            setActiveHighrise(highriseWithImage[0]);
             setHighrises(highriseWithImage);
             initHighrises.current = highriseWithImage;
         })();
