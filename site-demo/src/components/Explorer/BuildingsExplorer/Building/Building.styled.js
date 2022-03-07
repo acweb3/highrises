@@ -39,7 +39,7 @@ export const BuildingContainer = styled.div`
 
     position: relative;
 
-    & ${BuildingIndex}, & > ${BuildingName}, & > ${BuildingImage} {
+    & ${BuildingIndex}, & ${BuildingName}, & > ${BuildingImage} {
         transition: opacity 400ms;
     }
 
@@ -48,6 +48,12 @@ export const BuildingContainer = styled.div`
         css`
             & ${BuildingIndex}, & ${BuildingName}, & > ${BuildingImage} {
                 opacity: 0.4;
+            }
+
+            &:hover {
+                & ${BuildingIndex}, & ${BuildingName}, & > ${BuildingImage} {
+                    opacity: 0.7;
+                }
             }
         `};
 `;

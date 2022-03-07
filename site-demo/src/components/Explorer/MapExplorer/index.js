@@ -33,6 +33,7 @@ export const MapExplorer = () => {
                     {highrises.slice(0, 15).map((highrise, index) => (
                         <Marker
                             key={index}
+                            imageSrc={highrise.thumbnailSrc}
                             position={highrise.ltlng}
                             onClick={() => {
                                 setActiveHighrise(highrise);

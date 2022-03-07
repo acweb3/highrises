@@ -1,4 +1,5 @@
 import { highrises as highrisesData } from 'assets/data/highrises';
+import { Attributes } from 'components/Explorer/Masthead/Attributes';
 import { Dropdown } from 'components/Explorer/Masthead/Dropdown';
 import * as S from 'components/Explorer/Masthead/Masthead.styled';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
@@ -31,11 +32,25 @@ export const SORTS = {
             };
         }, {}),
     },
-    // style: {
-    //     isSelect: true,
-    //     name: 'Style',
-    //     sort: (buildingA, buildingB) => buildingA.height - buildingB.height,
-    // },
+    style: {
+        isSelect: true,
+        name: 'Style',
+        // # TODO => Remove this slice
+        options: highrisesData.slice(0, 15).reduce((acc, highrise) => {
+            if (acc[highrise?.style]) return acc;
+
+            return {
+                ...acc,
+                [highrise.style]: {
+                    value: highrise.style,
+                    sort: (highrises) =>
+                        highrises.filter(
+                            ({ style }) => highrise.style === style
+                        ),
+                },
+            };
+        }, {}),
+    },
     // Decade: (buildingA, buildingB) => buildingA.height - buildingB.height,
     // City: (buildingA, buildingB) => buildingA.height - buildingB.height,
     // Attributes: (buildingA, buildingB) => buildingA.height - buildingB.height,
@@ -86,15 +101,18 @@ export const Masthead = ({ activeSort, setActiveSort }) => {
                     )}
                 </S.SortBar>
             </S.TitleContainer>
-            {activeHighrise?.description ? (
-                <S.Description>{activeHighrise.description}</S.Description>
-            ) : (
-                <S.Description>
-                    Highrises are among the most iconic and defining elements of
-                    American Cities, and the technological advancement of the
-                    twentieth century fostered new heights.
-                </S.Description>
-            )}
+            <S.Description>
+                {activeHighrise ? (
+                    <Attributes activeHighrise={activeHighrise} />
+                ) : (
+                    <S.PlaceholderDescription>
+                        Highrises are among the most iconic and defining
+                        elements of American Cities, and the technological
+                        advancement of the twentieth century fostered new
+                        heights.
+                    </S.PlaceholderDescription>
+                )}
+            </S.Description>
         </S.Masthead>
     );
 };

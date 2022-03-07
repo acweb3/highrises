@@ -27,26 +27,26 @@ export const cloudProps = {
     how: [
         {
             top: 100,
-            right: -2000,
+            right: -700,
             scale: 1.2,
         },
     ],
     faq: [
         {
             top: 100,
-            right: -5700,
+            right: -1200,
             scale: 1,
         },
         {
             top: 100,
-            right: -5900,
+            right: -1400,
             scale: 0.7,
         },
     ],
     roadmap: [
         {
             top: 100,
-            right: -4500,
+            right: -2200,
             scale: 1.2,
         },
     ],
@@ -79,7 +79,7 @@ export const Cloud = ({ styles }) => {
                 cloudRef.current?.getBoundingClientRect().top ??
                 0 + window.scrollY;
             setHasScrolled(true);
-            setScroll(offset - window.scrollY);
+            setScroll(offset - window.scrollY * 0.1);
         },
         []
     );

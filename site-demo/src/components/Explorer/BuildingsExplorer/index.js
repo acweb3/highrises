@@ -5,8 +5,8 @@ import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
 import { useExplorerRefContext } from 'contexts/ExplorerRef';
 import { useEffect, useRef } from 'react';
 
-const pullImage = async (index) =>
-    (await import(`assets/images/slide-highrises/${index}.png`)).default;
+const pullImage = async (type, index) =>
+    (await import(`assets/images/${type}-highrises/${index}.png`)).default;
 
 export const BuildingsExplorer = ({ activeSort }) => {
     const { highrises, setActiveHighrise, setHighrises } =
@@ -21,7 +21,8 @@ export const BuildingsExplorer = ({ activeSort }) => {
                 highrisesData.slice(0, 15).map(async (highrise, index) => {
                     return {
                         ...highrise,
-                        imageSrc: await pullImage(index),
+                        imageSrc: await pullImage('slide', index),
+                        thumbnailSrc: await pullImage('map', index),
                         index,
                     };
                 })

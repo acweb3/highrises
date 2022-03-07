@@ -2,7 +2,7 @@ import { Header } from 'components/ui/Header';
 import styled from 'styled-components';
 
 export const Title = styled(Header)`
-    max-width: 900px;
+    line-height: 48px;
 `;
 
 export const SortBar = styled.div`
@@ -26,23 +26,28 @@ export const SortLink = styled.div`
     user-select: none;
 `;
 
-export const Description = styled.div`
-    margin-top: 8px;
+export const PlaceholderDescription = styled.div`
     max-width: 700px;
+`;
+
+export const Description = styled.div`
+    margin-top: 24px;
 `;
 
 export const TitleContainer = styled.div`
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: space-between;
 `;
 
 export const Masthead = styled.div`
     color: ${(props) => props.theme.colors.blue[0]};
 
-    height: 200px;
-    padding: 48px 48px 72px;
+    margin: 48px 48px 0;
     box-sizing: border-box;
+
+    overflow: hidden;
 
     min-height: 300px;
 `;

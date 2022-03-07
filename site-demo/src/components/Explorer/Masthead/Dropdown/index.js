@@ -17,29 +17,31 @@ export const Dropdown = ({
     }, [activeSort, sortKey, name]);
 
     return (
-        <S.Dropdown
-            isActive={sortKey === activeSort?.sortKey}
-            defaultValue={name}
-            key={name}
-            value={activeOption}
-            onChange={(e) => {
-                const option = options[e.target.value];
-                setActiveOption(e.target.value);
-                setActiveSort({
-                    sortKey,
-                    sort: option.sort,
-                });
-            }}
-        >
-            <option value={name} disabled>
-                {name}
-            </option>
-
-            {Object.entries(options).map(([optionKey, option]) => (
-                <option key={option.value} value={optionKey}>
-                    {option.value}
+        <S.Dropdown>
+            <S.Select
+                isActive={sortKey === activeSort?.sortKey}
+                defaultValue={name}
+                key={name}
+                value={activeOption}
+                onChange={(e) => {
+                    const option = options[e.target.value];
+                    setActiveOption(e.target.value);
+                    setActiveSort({
+                        sortKey,
+                        sort: option.sort,
+                    });
+                }}
+            >
+                <option value={name} disabled>
+                    {name}
                 </option>
-            ))}
+
+                {Object.entries(options).map(([optionKey, option]) => (
+                    <option key={option.value} value={optionKey}>
+                        {option.value}
+                    </option>
+                ))}
+            </S.Select>
         </S.Dropdown>
     );
 };

@@ -14,14 +14,17 @@ export const CloudImage = styled.img`
     width: 2200px;
 `;
 
-export const Cloud = styled.div`
+export const Cloud = styled.div.attrs((props) => ({
+    style: {
+        top: `${props.top ?? 0}px`,
+        right: `${props.right ?? 0}px`,
+        transform: `scale(${props.scale})
+            translateX(${props.offset}px)`,
+    },
+}))`
     position: absolute;
-    top: ${(props) => props.top ?? 0}px;
-    right: ${(props) => props.right ?? 0}px;
-    transform: scale(${(props) => props.scale})
-        translateX(${(props) => props.offset}px);
 
     opacity: ${(props) => (props.isLoaded ? 1 : 0)};
 
-    transition: opacity 0.4s, transform 0.4s;
+    transition: opacity 0.4s, transform 2s;
 `;
