@@ -1,5 +1,11 @@
 import styled from 'styled-components';
 
+export const Birds = styled.img`
+    position: absolute;
+    width: 100%;
+    opacity: 0.7;
+`;
+
 export const HeroLogoImage = styled.img`
     width: 1200px;
     max-width: 1200px;
