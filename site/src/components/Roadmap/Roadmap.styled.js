@@ -3,7 +3,7 @@ import { Header } from 'components/ui/Header';
 import styled from 'styled-components';
 
 export const Sky = styled(UnstyledSky)`
-    width: auto;
+    width: 100%;
     height: 100%;
 `;
 

@@ -25,8 +25,6 @@ export const MapExplorer = () => {
         }
     }, [activeHighrise]);
 
-    console.log({ highrises });
-
     return (
         <S.MapExplorer>
             <Wrapper apiKey={config.googleMapsAPIKey}>

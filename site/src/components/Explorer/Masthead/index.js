@@ -68,7 +68,20 @@ export const Masthead = ({ activeSort, setActiveSort }) => {
                 </S.Title>
 
                 <S.SortBar>
-                    <span>Sort — </span>
+                    {activeSort ? (
+                        <S.SortLink
+                            isReset
+                            isActive
+                            tabIndex={0}
+                            onClick={() => {
+                                setActiveSort(undefined);
+                            }}
+                        >
+                            Reset Sort —
+                        </S.SortLink>
+                    ) : (
+                        <span>Select Sort — </span>
+                    )}
                     {Object.entries(SORTS).map(
                         ([sortKey, { isSelect, name, sort, options = {} }]) =>
                             isSelect ? (

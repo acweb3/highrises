@@ -19,7 +19,10 @@ export const SortBar = styled.div`
 `;
 
 export const SortLink = styled.div`
-    color: ${(props) => props.theme.colors.grey[0]};
+    color: ${(props) =>
+        props.isReset
+            ? props.theme.colors.blue[0]
+            : props.theme.colors.grey[0]};
     cursor: pointer;
     margin: 0 8px;
     opacity: ${(props) => (props.isActive ? 1 : 0.6)};
