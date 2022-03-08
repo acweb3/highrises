@@ -1,4 +1,4 @@
-import { ViewScroll } from '../../../ui/ViewScroll';
+import { ViewScroll } from 'components/ui/ViewScroll';
 import styled from 'styled-components';
 
 export const ListItem = styled.li`

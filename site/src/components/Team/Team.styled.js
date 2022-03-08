@@ -47,7 +47,7 @@ export const BorderBottom = styled.div`
 `;
 
 export const Team = styled.div`
-    padding: 72px 0 96px;
+    padding: 72px 0 48px;
 
     display: flex;
     flex-direction: column;
