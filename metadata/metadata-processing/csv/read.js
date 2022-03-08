@@ -10,6 +10,15 @@ const DESCRIPTION_PLACEHOLDER =
 
 const client = new Client({});
 
+const getWords = (index) => {
+    try {
+        return fs.readFileSync(`words/dist/${index}.txt`, 'utf-8');
+    } catch (e) {
+        // console.log(e);
+        return DESCRIPTION_PLACEHOLDER;
+    }
+};
+
 const read = async () => {
     const rawCSV = fs.readFileSync('data.tsv', 'utf-8');
     const rawCSVLines = rawCSV.split('\r\n');
@@ -87,7 +96,10 @@ const read = async () => {
     });
     const standardizedMetadata = await Promise.all(
         accumulated.map(
-            async ({ buildingName, highriseNumber, image, ...processed }) => {
+            async (
+                { buildingName, highriseNumber, image, ...processed },
+                index
+            ) => {
                 const height = parseInt(
                     processed.height[0].value.replace(`'`, '')
                 );
@@ -100,6 +112,7 @@ const read = async () => {
                         address: processed.address.value,
                     },
                 });
+                const words = getWords(index);
 
                 if (isNaN(height)) {
                     console.error(`height is nan for ${buildingName}`);
@@ -109,7 +122,7 @@ const read = async () => {
                 }
 
                 return {
-                    description: DESCRIPTION_PLACEHOLDER, // # TODO => replace this
+                    description: words || DESCRIPTION_PLACEHOLDER,
                     highriseNumber: highriseNumber.value,
                     image: image.value,
                     name: buildingName.value,

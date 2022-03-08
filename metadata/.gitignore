@@ -5,3 +5,5 @@ image-processing/site/raw
 image-processing/png/dist
 image-processing/png/raw
 metadata-processing/csv/dist
+metadata-processing/csv/words/dist
+metadata-processing/csv/words/raw
