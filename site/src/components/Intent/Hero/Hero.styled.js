@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Birds = styled.img`
     position: absolute;
     width: 100%;
-    opacity: 0.7;
+    z-index: 2;
 `;
 
 export const HeroLogoImage = styled.img`
@@ -12,7 +12,7 @@ export const HeroLogoImage = styled.img`
 `;
 
 export const HeroLogo = styled.div`
-    z-index: 2;
+    z-index: 3;
     position: absolute;
 
     width: 100%;

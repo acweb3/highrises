@@ -21,7 +21,6 @@ const PROFILES = [
         points: [
             'Iowa State Univeristy | BFA, Graphic Design',
             'Graphic Poster Development',
-            'Creative Director',
         ],
         src: nickSrc,
     },

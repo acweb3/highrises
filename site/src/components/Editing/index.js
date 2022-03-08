@@ -30,7 +30,7 @@ export const Editing = () => {
                             </S.ListItem>
                             <S.ListItem>
                                 2 full editing process videos with live voice
-                                overs by Chris Hytha
+                                overs by Chris Hytha (Highrise #05 and #10)
                             </S.ListItem>
                             <S.ListItem>
                                 All raw data and final photoshop files are

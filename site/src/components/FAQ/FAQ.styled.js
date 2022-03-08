@@ -1,6 +1,12 @@
 import { Paragraph } from 'components/ui/Paragraph';
 import styled from 'styled-components';
 
+export const Birds = styled.img`
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+`;
+
 export const Question = styled(Paragraph)`
     user-select: none;
     cursor: pointer;
@@ -23,6 +29,7 @@ export const FAQImage = styled.img`
     height: 800px;
     margin-top: auto;
     margin-left: 10%;
+    z-index: 2;
 `;
 
 export const FAQContent = styled.div`

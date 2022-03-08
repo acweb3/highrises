@@ -1,3 +1,4 @@
+import birdsSrc from 'assets/images/birds.png';
 import edisonBuildingSrc from 'assets/images/edison-building.png';
 import { Cloud, Clouds, cloudProps } from 'components/Cloud';
 import * as S from 'components/FAQ/FAQ.styled';
@@ -37,6 +38,7 @@ export const FAQ = () => {
     const [activeQuestionIndex, setActiveQuestionIndex] = useState(undefined);
     return (
         <S.FAQ>
+            <S.Birds src={birdsSrc} />
             <Clouds>
                 {cloudProps.faq.map((styles, i) => (
                     <Cloud styles={styles} key={i} />

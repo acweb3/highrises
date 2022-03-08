@@ -80,12 +80,11 @@ export const EditingBuy = styled.div`
 `;
 
 export const EditingDescription = styled(ViewScroll)`
-    padding: 48px 48px 88px 40px;
+    padding: 0px 48px 0px 40px;
 `;
 
 export const EditingCard = styled(ViewScroll)`
     box-shadow: ${(props) => props.theme.shadows.high};
-    margin-bottom: 112px;
     margin-right: 32px;
     border-radius: 8px;
     overflow: hidden;
@@ -103,6 +102,7 @@ export const EditingCard = styled(ViewScroll)`
 export const EditingContent = styled.div`
     flex: 0 0 75%;
     display: flex;
+    padding: 48px 0px 120px 0px;
 `;
 
 export const Editing = styled.div`
