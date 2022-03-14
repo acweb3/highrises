@@ -1,6 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 /src/assets/images/slide-highrises/*
 /src/assets/images/map-highrises/*
+/src/assets/images/poster-highrises/*
 
 # dependencies
 /node_modules

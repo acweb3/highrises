@@ -8,7 +8,6 @@ export const Profiles = styled.div`
 
     margin-top: 40px;
     width: 100%;
-    overflow-x: scroll;
 `;
 
 export const BorderBottom = styled.div`

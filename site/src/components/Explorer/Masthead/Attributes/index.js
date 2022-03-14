@@ -1,6 +1,9 @@
 import * as S from 'components/Explorer/Masthead/Attributes/Attributes.styled';
+import { useEffect, useState } from 'react';
 
 export const Attributes = ({ activeHighrise }) => {
+    const [isExpanded, setIsExpanded] = useState(false);
+
     const traits = [
         ['Address', activeHighrise.address],
         ['Year Completed', activeHighrise.date],
@@ -10,19 +13,21 @@ export const Attributes = ({ activeHighrise }) => {
         ['Designer', activeHighrise.architect],
     ].filter(([, value]) => value);
 
+    useEffect(() => {
+        setIsExpanded(false);
+    }, [activeHighrise]);
+
     return (
         <S.Attributes>
             <S.Story>
-                <S.StoryCopy>{activeHighrise.description}</S.StoryCopy>
-                <S.StoryPurchase
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href={`https://www.hythacg.com/prints/highrise${`${
-                        activeHighrise.index + 1
-                    }`.padStart(2, '0')}`}
+                <S.StoryCopy isExpanded={isExpanded}>
+                    {activeHighrise.description}
+                </S.StoryCopy>
+                <S.StoryExpand
+                    onClick={() => setIsExpanded((isExpanded) => !isExpanded)}
                 >
-                    Buy print
-                </S.StoryPurchase>
+                    {isExpanded ? 'Show less' : 'Read more'}
+                </S.StoryExpand>
             </S.Story>
 
             <S.Traits>

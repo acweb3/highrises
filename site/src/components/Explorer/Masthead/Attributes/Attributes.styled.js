@@ -1,14 +1,14 @@
 import styled, { css } from 'styled-components';
 
-export const StoryPurchase = styled.a`
+export const StoryExpand = styled.div`
     font-family: Anton, sans-serif;
 
     text-transform: uppercase;
     width: fit-content;
-    font-size: 16px;
+    font-size: 12px;
 
     border-radius: 3px;
-    padding: 13px 26px;
+    padding: 8px 12px;
     letter-spacing: 0.3em;
 
     border: none;
@@ -17,7 +17,8 @@ export const StoryPurchase = styled.a`
     background-color: ${(props) => props.theme.colors.blue[2]};
 
     transition: opacity 0.1s linear;
-    text-decoration: none;
+
+    margin-bottom: 24px;
 
     &:focus,
     &:hover {
@@ -26,7 +27,35 @@ export const StoryPurchase = styled.a`
 `;
 
 export const StoryCopy = styled.div`
+    position: relative;
+
     margin-bottom: 24px;
+    overflow: hidden;
+
+    word-break: break-word;
+
+    ${(props) =>
+        !props.isExpanded &&
+        css`
+            max-height: 200px;
+
+            &::after {
+                content: ' ';
+                position: absolute;
+                height: 48px;
+                width: 100%;
+
+                left: 0;
+                bottom: 0;
+
+                background: linear-gradient(
+                    180deg,
+                    rgba(255, 255, 255, 0) 0%,
+                    rgba(255, 255, 255, 0.8) 40%,
+                    rgba(255, 255, 255, 1) 100%
+                );
+            }
+        `}
 `;
 
 export const Story = styled.div`
@@ -62,4 +91,5 @@ export const Traits = styled.div`
 
 export const Attributes = styled.div`
     display: flex;
+    flex-direction: column;
 `;

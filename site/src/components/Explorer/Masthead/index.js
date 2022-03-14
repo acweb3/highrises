@@ -2,6 +2,7 @@ import { highrises as highrisesData } from 'assets/data/highrises';
 import { Attributes } from 'components/Explorer/Masthead/Attributes';
 import { Dropdown } from 'components/Explorer/Masthead/Dropdown';
 import * as S from 'components/Explorer/Masthead/Masthead.styled';
+import { Purchase } from 'components/Explorer/Masthead/Purchase';
 import { Box } from 'components/ui/Box';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
 import { useExplorerRefContext } from 'contexts/ExplorerRef';
@@ -68,59 +69,6 @@ export const Masthead = ({ activeSort, setActiveSort }) => {
                     <S.Title isActive>
                         {activeHighrise?.name ?? 'THE BUILDINGS'}
                     </S.Title>
-
-                    <S.SortBar>
-                        {activeSort ? (
-                            <S.SortLink
-                                isReset
-                                isActive
-                                tabIndex={0}
-                                onClick={() => {
-                                    setActiveSort(undefined);
-                                }}
-                            >
-                                Reset Sort —
-                            </S.SortLink>
-                        ) : (
-                            <span>Select Sort — </span>
-                        )}
-                        {Object.entries(SORTS).map(
-                            ([
-                                sortKey,
-                                { isSelect, name, sort, options = {} },
-                            ]) =>
-                                isSelect ? (
-                                    <Dropdown
-                                        key={name}
-                                        activeSort={activeSort}
-                                        setActiveSort={setActiveSort}
-                                        name={name}
-                                        sortKey={sortKey}
-                                        options={options}
-                                    />
-                                ) : (
-                                    <S.SortLink
-                                        key={name}
-                                        tabIndex={0}
-                                        isActive={
-                                            sortKey === activeSort?.sortKey
-                                        }
-                                        onClick={() => {
-                                            setActiveSort(
-                                                sortKey === activeSort?.sortKey
-                                                    ? undefined
-                                                    : {
-                                                          sortKey,
-                                                          sort,
-                                                      }
-                                            );
-                                        }}
-                                    >
-                                        {name}
-                                    </S.SortLink>
-                                )
-                        )}
-                    </S.SortBar>
                 </S.TitleContainer>
                 <S.Description>
                     {activeHighrise ? (
@@ -134,6 +82,56 @@ export const Masthead = ({ activeSort, setActiveSort }) => {
                         </S.PlaceholderDescription>
                     )}
                 </S.Description>
+
+                {activeHighrise && <Purchase activeHighrise={activeHighrise} />}
+
+                <S.SortBar>
+                    {activeSort ? (
+                        <S.SortLink
+                            isReset
+                            isActive
+                            tabIndex={0}
+                            onClick={() => {
+                                setActiveSort(undefined);
+                            }}
+                        >
+                            Reset Sort —
+                        </S.SortLink>
+                    ) : (
+                        <span>Select Sort — </span>
+                    )}
+                    {Object.entries(SORTS).map(
+                        ([sortKey, { isSelect, name, sort, options = {} }]) =>
+                            isSelect ? (
+                                <Dropdown
+                                    key={name}
+                                    activeSort={activeSort}
+                                    setActiveSort={setActiveSort}
+                                    name={name}
+                                    sortKey={sortKey}
+                                    options={options}
+                                />
+                            ) : (
+                                <S.SortLink
+                                    key={name}
+                                    tabIndex={0}
+                                    isActive={sortKey === activeSort?.sortKey}
+                                    onClick={() => {
+                                        setActiveSort(
+                                            sortKey === activeSort?.sortKey
+                                                ? undefined
+                                                : {
+                                                      sortKey,
+                                                      sort,
+                                                  }
+                                        );
+                                    }}
+                                >
+                                    {name}
+                                </S.SortLink>
+                            )
+                    )}
+                </S.SortBar>
             </S.Masthead>
         </Box>
     );

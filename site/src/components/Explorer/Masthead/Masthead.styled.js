@@ -16,6 +16,8 @@ export const SortBar = styled.div`
 
     display: flex;
     align-items: center;
+
+    margin-top: 72px;
 `;
 
 export const SortLink = styled.div`
@@ -47,7 +49,7 @@ export const TitleContainer = styled.div`
 export const Masthead = styled.div`
     color: ${(props) => props.theme.colors.blue[0]};
 
-    margin: 72px 48px 0;
+    margin: 72px 96px 0;
     box-sizing: border-box;
 
     overflow: hidden;

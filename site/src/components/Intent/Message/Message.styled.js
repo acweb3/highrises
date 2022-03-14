@@ -8,12 +8,8 @@ export const Copy = styled.div`
     width: 50%;
 `;
 
-export const Message = styled.div`
-    background: ${(props) => props.theme.colors.white[0]};
-    padding: 72px 48px 80px;
-    position: absolute;
-    top: 800px;
-    z-index: 3;
+export const MessageContent = styled.div`
+    padding: 72px 96px 80px;
 
     min-height: 600px;
     display: flex;
@@ -22,4 +18,13 @@ export const Message = styled.div`
     & > ${Copy} {
         margin-top: 24px;
     }
+`;
+
+export const Message = styled.div`
+    background: ${(props) => props.theme.colors.white[0]};
+    width: 100vw;
+
+    position: absolute;
+    top: 800px;
+    z-index: 3;
 `;

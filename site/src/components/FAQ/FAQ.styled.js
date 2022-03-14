@@ -39,7 +39,7 @@ export const FAQImageWrapper = styled.div`
 `;
 
 export const FAQContent = styled.div`
-    padding: 144px 48px 80px;
+    padding: 144px 96px 80px;
     width: 40%;
     z-index: 3;
 `;

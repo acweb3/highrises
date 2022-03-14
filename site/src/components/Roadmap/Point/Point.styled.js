@@ -13,6 +13,8 @@ export const Point = styled.div`
 
     position: relative;
 
+    margin-right: -16px;
+
     &::after {
         content: ' ';
         display: block;

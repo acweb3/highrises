@@ -22,7 +22,7 @@ export const Points = styled.div`
 
 export const RoadmapChart = styled.div`
     z-index: 2;
-    padding: 96px 48px 112px;
+    padding: 96px 96px 112px;
     display: flex;
     flex-direction: column;
     margin-left: auto;

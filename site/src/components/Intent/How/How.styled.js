@@ -19,15 +19,14 @@ export const HowContent = styled(ViewScroll)`
     position: relative;
 
     margin-top: auto;
-    width: 40%;
-    border: 1px solid;
+    width: 55%;
     padding: 0 16px 16px;
     border: 1px dashed ${(props) => props.theme.colors.blue[0]};
     border-radius: 16px;
 `;
 
 export const HowContainer = styled.div`
-    padding: 48px 32px 72px;
+    padding: 48px 80px 72px;
     display: flex;
     z-index: 1;
 `;

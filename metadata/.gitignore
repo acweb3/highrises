@@ -4,6 +4,8 @@ image-processing/site/dist
 image-processing/site/raw
 image-processing/png/dist
 image-processing/png/raw
+image-processing/poster/dist
+image-processing/poster/raw
 metadata-processing/csv/dist
 metadata-processing/csv/words/dist
 metadata-processing/csv/words/raw
