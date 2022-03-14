@@ -10,44 +10,54 @@ export const cloudProps = {
     hero: [
         {
             top: 100,
-            right: -600,
+            right: -300,
             scale: 0.4,
         },
         {
             top: -200,
-            right: -600,
+            right: 200,
             scale: 0.8,
-        },
-        {
-            top: 400,
-            right: 800,
-            scale: 0.45,
         },
     ],
     how: [
         {
-            top: 100,
-            right: -700,
-            scale: 1.2,
-        },
-    ],
-    faq: [
-        {
-            top: 100,
-            right: -1200,
+            top: -200,
+            right: 500,
             scale: 1,
         },
         {
             top: 100,
-            right: -1400,
-            scale: 0.7,
+            right: -200,
+            scale: 0.4,
+        },
+        {
+            top: 350,
+            right: 1000,
+            scale: 0.6,
+        },
+    ],
+    faq: [
+        {
+            top: 0,
+            right: -800,
+            scale: 0.5,
+        },
+        {
+            top: -250,
+            right: 0,
+            scale: 0.4,
         },
     ],
     roadmap: [
         {
-            top: 100,
-            right: -2200,
-            scale: 1.2,
+            top: -100,
+            right: -1200,
+            scale: 0.6,
+        },
+        {
+            top: 700,
+            right: -1200,
+            scale: 0.4,
         },
     ],
 };

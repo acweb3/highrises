@@ -23,4 +23,5 @@ export const DroneContainer = styled(ViewScroll)`
     width: 250px;
     height: 100%;
     padding-top: 300px;
+    z-index: 2;
 `;
