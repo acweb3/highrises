@@ -1,6 +1,5 @@
-import { ViewScroll } from '../../ui/ViewScroll';
 import droneSrc from 'assets/images/drone.png';
-import * as S from 'components/Intent/Drone/Drone.styled';
+import * as S from 'components/Intent/How/Drone/Drone.styled';
 
 export const Drone = () => {
     return (

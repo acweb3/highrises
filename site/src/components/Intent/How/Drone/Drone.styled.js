@@ -13,15 +13,13 @@ export const DroneSticky = styled.div`
 export const DroneRelative = styled.div`
     position: relative;
     height: 100%;
-    transform: scale(0.8);
 `;
 
 export const DroneContainer = styled(ViewScroll)`
     position: absolute;
-    top: 0;
-    right: 500px;
+    top: -400px;
+    left: 150px;
     width: 250px;
-    height: 100%;
-    padding-top: 300px;
+    height: calc(50% + 450px);
     z-index: 2;
 `;
