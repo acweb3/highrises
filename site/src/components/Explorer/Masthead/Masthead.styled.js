@@ -47,7 +47,7 @@ export const TitleContainer = styled.div`
 export const Masthead = styled.div`
     color: ${(props) => props.theme.colors.blue[0]};
 
-    margin: 48px 48px 0;
+    margin: 72px 48px 0;
     box-sizing: border-box;
 
     overflow: hidden;

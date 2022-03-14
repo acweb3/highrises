@@ -27,7 +27,7 @@ export const Attributes = ({ activeHighrise }) => {
 
             <S.Traits>
                 {traits.map(([name, value]) => (
-                    <S.Trait>
+                    <S.Trait key={name}>
                         <S.TraitWord>{name}</S.TraitWord>
                         <S.TraitBottomEllipsis />
                         <S.TraitWord isValue>{value}</S.TraitWord>

@@ -3,6 +3,7 @@ import edisonBuildingSrc from 'assets/images/edison-building.png';
 import { Cloud, Clouds, cloudProps } from 'components/Cloud';
 import * as S from 'components/FAQ/FAQ.styled';
 import { Sky } from 'components/Sky';
+import { Box } from 'components/ui/Box';
 import { Header } from 'components/ui/Header';
 import React, { useState } from 'react';
 
@@ -44,38 +45,50 @@ export const FAQ = () => {
                     <Cloud styles={styles} key={i} />
                 ))}
             </Clouds>
+            <div
+                style={{
+                    width: '100vw',
+                }}
+            >
+                <Box isColumn>
+                    <S.FAQContent>
+                        <Header>F.A.Q.</Header>
+                        <S.Questions>
+                            {QUESTIONS.map(({ question, answer }, i) => {
+                                return (
+                                    <React.Fragment key={question}>
+                                        <S.Question
+                                            onClick={() => {
+                                                setActiveQuestionIndex(
+                                                    (activeQuestionIndex) => {
+                                                        if (
+                                                            activeQuestionIndex ===
+                                                            i
+                                                        ) {
+                                                            return undefined;
+                                                        }
 
-            <S.FAQContent>
-                <Header>F.A.Q.</Header>
-                <S.Questions>
-                    {QUESTIONS.map(({ question, answer }, i) => {
-                        return (
-                            <React.Fragment key={question}>
-                                <S.Question
-                                    onClick={() => {
-                                        setActiveQuestionIndex(
-                                            (activeQuestionIndex) => {
-                                                if (activeQuestionIndex === i) {
-                                                    return undefined;
-                                                }
+                                                        return i;
+                                                    }
+                                                );
+                                            }}
+                                        >
+                                            {question}
+                                        </S.Question>
+                                        {activeQuestionIndex === i && (
+                                            <S.Answer>{answer}</S.Answer>
+                                        )}
+                                    </React.Fragment>
+                                );
+                            })}
+                        </S.Questions>
+                    </S.FAQContent>
+                </Box>
+            </div>
 
-                                                return i;
-                                            }
-                                        );
-                                    }}
-                                >
-                                    {question}
-                                </S.Question>
-                                {activeQuestionIndex === i && (
-                                    <S.Answer>{answer}</S.Answer>
-                                )}
-                            </React.Fragment>
-                        );
-                    })}
-                </S.Questions>
-            </S.FAQContent>
-
-            <S.FAQImage src={edisonBuildingSrc} />
+            <S.FAQImageWrapper>
+                <S.FAQImage src={edisonBuildingSrc} />
+            </S.FAQImageWrapper>
             <Sky />
         </S.FAQ>
     );

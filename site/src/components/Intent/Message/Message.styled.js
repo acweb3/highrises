@@ -5,7 +5,7 @@ export const Title = styled(Header)``;
 
 export const Copy = styled.div`
     margin-top: 16px;
-    width: 40%;
+    width: 50%;
 `;
 
 export const Message = styled.div`

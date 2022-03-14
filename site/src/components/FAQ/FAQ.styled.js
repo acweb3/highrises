@@ -27,9 +27,15 @@ export const Questions = styled.div`
 
 export const FAQImage = styled.img`
     height: 800px;
-    margin-top: auto;
-    margin-left: 10%;
+`;
+
+export const FAQImageWrapper = styled.div`
+    /* width: 50%; */
     z-index: 2;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    right: 10%;
 `;
 
 export const FAQContent = styled.div`

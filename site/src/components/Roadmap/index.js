@@ -2,6 +2,7 @@ import inquirerSrc from 'assets/images/inquirer.png';
 import { Cloud, Clouds, cloudProps } from 'components/Cloud';
 import { Point } from 'components/Roadmap/Point';
 import * as S from 'components/Roadmap/Roadmap.styled';
+import { Box } from 'components/ui/Box';
 
 const POINTS = [
     {
@@ -85,15 +86,23 @@ export const Roadmap = () => {
             <S.RoadmapImageWrapper>
                 <S.RoadmapImage src={inquirerSrc} />
             </S.RoadmapImageWrapper>
-            <S.RoadmapChart>
-                <S.Title>Project Roadmap</S.Title>
-                <S.Points>
-                    {POINTS.map((point) => {
-                        return <Point key={point.header} {...point} />;
-                    })}
-                </S.Points>
-            </S.RoadmapChart>
-            <S.Sky />
+            <div
+                style={{
+                    width: '100vw',
+                }}
+            >
+                <Box>
+                    <S.RoadmapChart>
+                        <S.Title>Project Roadmap</S.Title>
+                        <S.Points>
+                            {POINTS.map((point) => {
+                                return <Point key={point.header} {...point} />;
+                            })}
+                        </S.Points>
+                    </S.RoadmapChart>
+                    <S.Sky />
+                </Box>
+            </div>
         </S.Roadmap>
     );
 };
