@@ -52,9 +52,5 @@ export const BuildingsExplorerArrow = styled.div`
 
 export const BuildingsExplorer = styled.div`
     position: relative;
-
-    display: flex;
-    align-items: end;
-
     user-select: none;
 `;

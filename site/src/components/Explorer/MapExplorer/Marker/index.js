@@ -33,5 +33,9 @@ export const Marker = ({ onClick, index, position, ...options }) => {
         }
     }, [marker, options, onClick]);
 
-    return <div ref={ref}></div>;
+    return (
+        <div>
+            <div ref={ref}></div>
+        </div>
+    );
 };

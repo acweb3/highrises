@@ -52,17 +52,9 @@ export const BuildingsExplorer = ({ activeSort }) => {
         setActiveHighrise(undefined);
 
         if (activeSort) {
-            buildingExplorerRef.current.children[0].scrollIntoView({
-                inline: 'center',
-                block: 'end',
-            });
-
             const sortedHighrises = activeSort.sort([...initHighrises.current]);
             setHighrises(sortedHighrises);
-
-            if (sortedHighrises.length === 1) {
-                setActiveHighrise(sortedHighrises[0]);
-            }
+            setActiveHighrise(sortedHighrises[0]);
         } else if (initHighrises.current) {
             setHighrises(initHighrises.current);
         }
