@@ -18,8 +18,12 @@ export const DroneRelative = styled.div`
 export const DroneContainer = styled(ViewScroll)`
     position: absolute;
     top: -400px;
-    left: 250px;
+    left: 20%;
     width: 250px;
     height: calc(50% + 450px);
     z-index: 2;
+
+    ${(props) => props.theme.breakpoints.large`
+        left: 25%;
+    `}
 `;

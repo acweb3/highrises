@@ -1,5 +1,3 @@
-import editingTutorialAnimationSrc from 'assets/images/editing-tutorial.gif';
-import editingTutorialBackgroundImageSrc from 'assets/images/editing-tutorial.jpg';
 import * as S from 'components/Editing/Editing.styled';
 import { Header } from 'components/ui/Header';
 
@@ -7,12 +5,7 @@ export const Editing = () => {
     return (
         <S.Editing>
             <S.EditingContent>
-                <S.EditingCard>
-                    <S.EditingVideo src={editingTutorialAnimationSrc} />
-                    <S.EditingBackgroundImage
-                        src={editingTutorialBackgroundImageSrc}
-                    />
-                </S.EditingCard>
+                <S.EditingCard.Desktop />
                 <S.EditingDescription>
                     <Header>Editing</Header>
                     <S.Copy>
@@ -22,6 +15,7 @@ export const Editing = () => {
                             complex layered architectural drawing to creating
                             atmospheric fine art photography edits.
                         </S.P>
+                        <S.EditingCard.Mobile />
                         <S.H2>What's Included?</S.H2>
                         <S.List>
                             <S.ListItem>

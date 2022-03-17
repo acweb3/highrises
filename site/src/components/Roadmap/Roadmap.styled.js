@@ -34,12 +34,19 @@ export const RoadmapImage = styled.img`
 `;
 
 export const RoadmapImageWrapper = styled.div`
-    /* width: 50%; */
     z-index: 2;
     position: absolute;
     height: 100%;
     top: 0;
-    left: 0;
+    left: -45%;
+
+    ${(props) => props.theme.breakpoints.medium`
+        left: -25%;
+    `}
+
+    ${(props) => props.theme.breakpoints.large`
+        left: 0;
+    `}
 `;
 
 export const Roadmap = styled.div`

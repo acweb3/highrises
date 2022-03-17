@@ -1,22 +1,31 @@
 import styled from 'styled-components';
 
 export const Profiles = styled.div`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 350px 350px;
+    justify-items: center;
 
     margin-top: 40px;
-    width: 100%;
+
+    ${(props) => props.theme.breakpoints.large`
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    `}
 `;
 
 export const BorderBottom = styled.div`
     border-bottom: 1px solid ${(props) => props.theme.colors.blue[0]};
-    max-width: 800px;
-    width: 100%;
     padding-top: 80px;
+    width: 80%;
 
     position: relative;
+
+    ${(props) => props.theme.breakpoints.large`
+        width: 100%;
+        max-width: 800px;
+    `}
 
     &::before {
         content: ' ';

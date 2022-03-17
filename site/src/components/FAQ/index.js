@@ -89,7 +89,7 @@ export const FAQ = () => {
             <S.FAQImageWrapper>
                 <S.FAQImage src={edisonBuildingSrc} />
             </S.FAQImageWrapper>
-            <Sky />
+            <S.Sky />
         </S.FAQ>
     );
 };

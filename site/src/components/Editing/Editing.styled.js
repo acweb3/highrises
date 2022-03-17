@@ -1,7 +1,25 @@
+import { EditingCard as UnstyledEditingCard } from 'components/Editing/EditingCard';
 import { Header } from 'components/ui/Header';
 import { Paragraph } from 'components/ui/Paragraph';
 import { ViewScroll } from 'components/ui/ViewScroll';
 import styled from 'styled-components';
+
+export const EditingCard = {
+    Mobile: styled(UnstyledEditingCard)`
+        margin: 48px auto;
+
+        ${(props) => props.theme.breakpoints.large`
+            display: none;
+        `}
+    `,
+    Desktop: styled(UnstyledEditingCard)`
+        display: none;
+
+        ${(props) => props.theme.breakpoints.large`
+            display: block;
+        `}
+    `,
+};
 
 export const P = styled(Paragraph)`
     text-indent: 0;
@@ -22,17 +40,6 @@ export const ListItem = styled.li`
 export const List = styled.ul`
     margin-bottom: 40px;
     padding-inline-start: 24px;
-`;
-
-export const EditingVideo = styled.img`
-    position: absolute;
-    top: 60px;
-    left: 145px;
-    width: 300px;
-`;
-
-export const EditingBackgroundImage = styled.img`
-    width: 100%;
 `;
 
 export const Copy = styled.div`
@@ -76,27 +83,10 @@ export const EditingBuy = styled.div`
     display: flex;
     color: ${(props) => props.theme.colors.blue[0]};
     align-items: center;
-    /* justify-content: center; */
 `;
 
 export const EditingDescription = styled(ViewScroll)`
     padding: 0px 48px 0px 40px;
-`;
-
-export const EditingCard = styled(ViewScroll)`
-    box-shadow: ${(props) => props.theme.shadows.high};
-    margin-right: 32px;
-    border-radius: 8px;
-    overflow: hidden;
-    position: relative;
-
-    width: 680px;
-    min-width: 680px;
-    max-width: 680px;
-
-    height: 525px;
-    margin-top: auto;
-    margin-bottom: auto;
 `;
 
 export const EditingContent = styled.div`

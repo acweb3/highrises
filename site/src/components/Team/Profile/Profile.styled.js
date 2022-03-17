@@ -33,13 +33,17 @@ export const Profile = styled.div`
 
     width: 260px;
 
-    margin: 0 45px;
+    margin: 0 0 32px;
 
-    &:first-of-type {
-        margin-left: 0;
-    }
+    ${(props) => props.theme.breakpoints.large`
+        margin: 0 45px;
+        
+        &:first-of-type {
+            margin-left: 0;
+        }
 
-    &:last-of-type {
-        margin-right: 0;
-    }
+        &:last-of-type {
+            margin-right: 0;
+        }
+    `}
 `;
