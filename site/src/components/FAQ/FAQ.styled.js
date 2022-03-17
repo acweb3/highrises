@@ -26,11 +26,13 @@ export const Questions = styled.div`
 `;
 
 export const FAQImage = styled.img`
+    margin-top: auto;
     height: 800px;
 `;
 
 export const FAQImageWrapper = styled.div`
-    /* width: 50%; */
+    display: flex;
+
     z-index: 2;
     position: absolute;
     height: 100%;
@@ -47,7 +49,7 @@ export const FAQContent = styled.div`
 export const FAQ = styled.div`
     position: relative;
 
-    min-height: 800px;
+    min-height: 1000px;
     display: flex;
     overflow: hidden;
 `;

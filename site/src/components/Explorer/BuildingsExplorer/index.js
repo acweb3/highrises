@@ -14,6 +14,19 @@ export const BuildingsExplorer = ({ activeSort }) => {
     const initHighrises = useRef();
     const { buildingExplorerRef } = useExplorerRefContext();
 
+    const scrollBuildings = (e, isRight) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        if (buildingExplorerRef.current) {
+            buildingExplorerRef.current.scrollTo(
+                buildingExplorerRef.current.scrollLeft +
+                    700 * (isRight ? 1 : -1),
+                0
+            );
+        }
+    };
+
     useEffect(() => {
         (async () => {
             const highriseWithImage = await Promise.all(
@@ -56,10 +69,24 @@ export const BuildingsExplorer = ({ activeSort }) => {
     }, [activeSort, setActiveHighrise, setHighrises, buildingExplorerRef]);
 
     return (
-        <S.FlexWrapper ref={buildingExplorerRef}>
-            {highrises.map((building, index) => (
-                <Building key={index} building={building} />
-            ))}
-        </S.FlexWrapper>
+        <S.BuildingsExplorer>
+            <S.BuildingsExplorerArrow
+                left
+                onClick={(e) => scrollBuildings(e, false)}
+            >
+                <S.BuildingsExplorerScrollLeft />
+            </S.BuildingsExplorerArrow>
+            <S.BuildingsScroll ref={buildingExplorerRef}>
+                {highrises.map((building, index) => (
+                    <Building key={index} building={building} />
+                ))}
+            </S.BuildingsScroll>
+            <S.BuildingsExplorerArrow
+                right
+                onClick={(e) => scrollBuildings(e, true)}
+            >
+                <S.BuildingsExplorerScrollRight />
+            </S.BuildingsExplorerArrow>
+        </S.BuildingsExplorer>
     );
 };

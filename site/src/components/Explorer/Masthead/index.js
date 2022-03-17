@@ -63,8 +63,8 @@ export const Masthead = ({ activeSort, setActiveSort }) => {
     const { mastheadRef } = useExplorerRefContext();
 
     return (
-        <Box isColumn>
-            <S.Masthead ref={mastheadRef}>
+        <Box ref={mastheadRef} isColumn>
+            <S.Masthead>
                 <S.TitleContainer>
                     <S.Title isActive>
                         {activeHighrise?.name ?? 'THE BUILDINGS'}

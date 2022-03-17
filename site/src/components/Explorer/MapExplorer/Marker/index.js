@@ -1,28 +1,30 @@
-import { useEffect, useState } from 'react';
+import './Popup.css';
+import { useEffect, useRef, useState } from 'react';
 
-export const Marker = ({ onClick, imageSrc, ...options }) => {
+export const Marker = ({ onClick, index, position, ...options }) => {
     const [marker, setMarker] = useState();
+    const ref = useRef();
 
     useEffect(() => {
-        if (!marker) {
-            setMarker(
-                new window.google.maps.Marker({
-                    icon: imageSrc,
-                })
-            );
-        }
+        const createPopup = async () => {
+            if (!marker) {
+                const { Popup } = await import(
+                    'components/Explorer/MapExplorer/Marker/Popup'
+                );
 
-        if (marker) {
-            marker.setIcon(imageSrc);
-        }
+                setMarker(new Popup(position, ref.current, index, onClick));
+            }
+        };
+
+        createPopup();
 
         // remove marker from map on unmount
         return () => {
             if (marker) {
-                marker.setMap(null);
+                marker.onRemove();
             }
         };
-    }, [marker, imageSrc]);
+    }, [marker, position, index, onClick]);
 
     useEffect(() => {
         if (marker) {
@@ -31,5 +33,5 @@ export const Marker = ({ onClick, imageSrc, ...options }) => {
         }
     }, [marker, options, onClick]);
 
-    return null;
+    return <div ref={ref}></div>;
 };

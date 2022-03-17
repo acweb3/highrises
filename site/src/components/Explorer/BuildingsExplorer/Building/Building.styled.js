@@ -14,6 +14,7 @@ export const BuildingCaption = styled.div`
     padding: 32px 16px;
     white-space: nowrap;
     width: 100%;
+    height: 120px;
 `;
 
 export const BuildingIndex = styled.div`
