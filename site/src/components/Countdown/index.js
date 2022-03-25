@@ -22,5 +22,11 @@ export const Countdown = () => {
         };
     }, []);
 
-    return <S.Countdown>Next NFT Release {countdown}</S.Countdown>;
+    return (
+        <S.Countdown>
+            <S.CountdownCounter isActive={!!countdown}>
+                Next NFT Release {countdown}
+            </S.CountdownCounter>
+        </S.Countdown>
+    );
 };

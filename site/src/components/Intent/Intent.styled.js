@@ -6,6 +6,7 @@ export const TheDrake = styled.img`
     right: 0;
     height: 100%;
     z-index: 3;
+    max-width: initial;
 `;
 
 export const Intent = styled.div`

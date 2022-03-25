@@ -1,8 +1,7 @@
 import styled, { createGlobalStyle } from 'styled-components';
 
 export const SiteWrapper = styled.div`
-    max-width: 100vw;
-    max-height: 100vh;
+    height: 100%;
 `;
 
 export const GlobalStyle = createGlobalStyle`

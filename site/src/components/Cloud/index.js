@@ -7,18 +7,32 @@ import { useThrottle } from 'react-use';
 export { Clouds } from 'components/Cloud/Cloud.styled';
 
 export const cloudProps = {
-    hero: [
-        {
-            top: 100,
-            right: -300,
-            scale: 0.4,
-        },
-        {
-            top: -200,
-            right: 200,
-            scale: 0.8,
-        },
-    ],
+    hero: {
+        desktop: [
+            {
+                top: 100,
+                right: -300,
+                scale: 0.4,
+            },
+            {
+                top: -200,
+                right: 200,
+                scale: 0.8,
+            },
+        ],
+        mobile: [
+            {
+                top: -100,
+                right: -900,
+                scale: 0.3,
+            },
+            {
+                top: -500,
+                right: -1200,
+                scale: 0.25,
+            },
+        ],
+    },
     how: [
         {
             top: -200,

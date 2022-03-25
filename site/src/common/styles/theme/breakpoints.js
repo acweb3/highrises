@@ -1,11 +1,13 @@
 import { css } from 'styled-components';
 
+export const breakpointMobile = '520px';
 export const breakpointExtraSmall = '634px';
 export const breakpointSmall = '768px';
 export const breakpointMedium = '1024px';
 export const breakpointLarge = '1280px';
 
 const breakpointsMap = {
+    mobile: breakpointMobile,
     extraSmall: breakpointExtraSmall,
     small: breakpointSmall,
     medium: breakpointMedium,

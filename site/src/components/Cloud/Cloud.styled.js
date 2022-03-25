@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const Clouds = styled.div`
+const cloudsCss = css`
     position: absolute;
     top: 0;
     left: 0;
@@ -12,8 +12,29 @@ export const Clouds = styled.div`
     background: rgba(0, 0, 0, 0.04);
 `;
 
+export const Clouds = styled.div`
+    ${cloudsCss}
+`;
+Clouds.Desktop = styled.div`
+    ${cloudsCss};
+
+    display: none;
+    ${(props) => props.theme.breakpoints.mobile`
+        display: block;
+    `}
+`;
+Clouds.Mobile = styled.div`
+    ${cloudsCss}
+
+    display: block;
+    ${(props) => props.theme.breakpoints.mobile`
+        display: none;
+    `}
+`;
+
 export const CloudImage = styled.img`
     width: 2200px;
+    max-width: initial;
     opacity: 0.8;
 `;
 

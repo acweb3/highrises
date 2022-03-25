@@ -2,7 +2,6 @@ import birdsSrc from 'assets/images/birds.png';
 import highrisesSrc from 'assets/images/logos/highrises.png';
 import { Cloud, Clouds, cloudProps } from 'components/Cloud';
 import * as S from 'components/Intent/Hero/Hero.styled';
-import { Sky } from 'components/Sky';
 
 export const Hero = () => {
     return (
@@ -13,12 +12,28 @@ export const Hero = () => {
                     <S.HeroLogoImage src={highrisesSrc} />
                 </div>
             </S.HeroLogo>
-            <Clouds>
-                {cloudProps.hero.map((styles, i) => (
+            <Clouds.Desktop>
+                {cloudProps.hero.desktop.map((styles, i) => (
                     <Cloud styles={styles} key={i} />
                 ))}
-            </Clouds>
-            <Sky />
+            </Clouds.Desktop>
+            <Clouds.Mobile>
+                {cloudProps.hero.mobile.map((styles, i) => (
+                    <Cloud styles={styles} key={i} />
+                ))}
+            </Clouds.Mobile>
+            <S.Sky />
+
+            <S.HeroDownNavigate
+                onClick={() => {
+                    window.scrollTo({
+                        top: window.innerHeight,
+                        behavior: 'smooth',
+                    });
+                }}
+            >
+                <S.ArrowDown />
+            </S.HeroDownNavigate>
         </S.Hero>
     );
 };
