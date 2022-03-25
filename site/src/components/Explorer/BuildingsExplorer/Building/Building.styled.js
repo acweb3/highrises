@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 export const BuildingImage = styled.img`
     flex: 1;
-    max-width: 300px;
+    max-width: 200px;
 `;
 
 export const BuildingCaption = styled.div`
@@ -27,13 +27,13 @@ export const BuildingName = styled.div`
     text-align: center;
 `;
 
-export const BuildingContainer = styled.div`
+export const Building = styled.div`
     color: #fff;
 
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 300px;
+    width: 200px;
     flex: 1;
 
     cursor: pointer;
@@ -57,4 +57,12 @@ export const BuildingContainer = styled.div`
                 }
             }
         `};
+
+    &:first-of-type {
+        margin-left: 64px;
+    }
+
+    &:last-of-type {
+        margin-right: 64px;
+    }
 `;

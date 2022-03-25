@@ -53,4 +53,5 @@ export const BuildingsExplorerArrow = styled.div`
 export const BuildingsExplorer = styled.div`
     position: relative;
     user-select: none;
+    margin-right: 32px;
 `;

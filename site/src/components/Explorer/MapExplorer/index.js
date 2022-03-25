@@ -11,7 +11,7 @@ export const MapExplorer = () => {
     const [zoom, setZoom] = useState(17);
     const [center, setCenter] = useState({ lat: 39.952583, lng: -75.165222 });
     const { setActiveHighrise } = useActiveHighriseContext();
-    const { buildingExplorerRef, mastheadRef } = useExplorerRefContext();
+    const { buildingExplorerRef } = useExplorerRefContext();
     const { activeHighrise, highrises } = useActiveHighriseContext();
 
     const onIdle = (m) => {
@@ -27,31 +27,29 @@ export const MapExplorer = () => {
 
     return (
         <S.MapExplorer>
-            <Wrapper apiKey={config.googleMapsAPIKey}>
-                <Map center={center} onIdle={onIdle} zoom={zoom}>
-                    {/** # TODO => Remove this slice */}
-                    {highrises.slice(0, 15).map((highrise, index) => (
-                        <Marker
-                            key={index}
-                            index={`${highrise.index + 1}`.padStart(2, '0')}
-                            imageSrc={highrise.thumbnailSrc}
-                            position={highrise.ltlng}
-                            onClick={() => {
-                                setActiveHighrise(highrise);
-                                buildingExplorerRef.current.children[
-                                    index
-                                ].scrollIntoView({
-                                    behavior: 'smooth',
-                                    inline: 'center',
-                                });
-                                mastheadRef.current.scrollIntoView({
-                                    block: 'start',
-                                });
-                            }}
-                        />
-                    ))}
-                </Map>
-            </Wrapper>
+            <S.MapExplorerSticky>
+                <Wrapper apiKey={config.googleMapsAPIKey}>
+                    <Map center={center} onIdle={onIdle} zoom={zoom}>
+                        {/** # TODO => Remove this slice */}
+                        {highrises.slice(0, 15).map((highrise, index) => (
+                            <Marker
+                                key={index}
+                                index={`${highrise.index + 1}`.padStart(2, '0')}
+                                imageSrc={highrise.thumbnailSrc}
+                                position={highrise.ltlng}
+                                onClick={() => {
+                                    setActiveHighrise(highrise);
+                                    buildingExplorerRef.current.children[
+                                        index
+                                    ].scrollIntoView({
+                                        inline: 'center',
+                                    });
+                                }}
+                            />
+                        ))}
+                    </Map>
+                </Wrapper>
+            </S.MapExplorerSticky>
         </S.MapExplorer>
     );
 };

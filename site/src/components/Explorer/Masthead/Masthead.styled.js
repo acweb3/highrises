@@ -5,32 +5,6 @@ export const Title = styled(Header)`
     line-height: 48px;
 `;
 
-export const SortBar = styled.div`
-    height: 40px;
-
-    line-height: 4rem;
-    font-size: 1.175rem;
-    font-weight: 500;
-
-    white-space: nowrap;
-
-    display: flex;
-    align-items: center;
-
-    margin-top: 72px;
-`;
-
-export const SortLink = styled.div`
-    color: ${(props) =>
-        props.isReset
-            ? props.theme.colors.blue[0]
-            : props.theme.colors.grey[0]};
-    cursor: pointer;
-    margin: 0 8px;
-    opacity: ${(props) => (props.isActive ? 1 : 0.6)};
-    user-select: none;
-`;
-
 export const PlaceholderDescription = styled.div`
     max-width: 700px;
 `;
@@ -49,7 +23,7 @@ export const TitleContainer = styled.div`
 export const Masthead = styled.div`
     color: ${(props) => props.theme.colors.blue[0]};
 
-    margin: 72px 96px 0;
+    margin: 32px 48px;
     box-sizing: border-box;
 
     overflow: hidden;

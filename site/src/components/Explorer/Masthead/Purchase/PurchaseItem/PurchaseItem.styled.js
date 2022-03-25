@@ -51,4 +51,8 @@ export const PurchaseItem = styled.div`
     display: flex;
     flex-direction: column;
     flex: 0 0 320px;
+
+    &:first-of-type {
+        margin-right: 32px;
+    }
 `;

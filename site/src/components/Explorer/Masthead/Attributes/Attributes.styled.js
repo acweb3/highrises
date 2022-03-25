@@ -91,5 +91,4 @@ export const Traits = styled.div`
 
 export const Attributes = styled.div`
     display: flex;
-    flex-direction: column;
 `;

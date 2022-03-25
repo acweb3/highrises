@@ -10,8 +10,6 @@ export const EthereumIcon = styled(UnstyledEthereumIcon)`
 
 export const Purchase = styled.div`
     display: flex;
-    justify-content: space-between;
-
     max-width: 880px;
-    margin: 64px auto 0;
+    margin: 16px auto 0;
 `;
