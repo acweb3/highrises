@@ -7,6 +7,7 @@ import { ThemeProvider } from 'styled-components';
 export const Contexts = ({ children }) => {
     const [activeHighrise, setActiveHighrise] = useState(undefined);
     const [highrises, setHighrises] = useState([]);
+    const [isExpandedView, setIsExpandedView] = useState(false);
     const mastheadRef = useRef(null);
     const buildingExplorerRef = useRef(null);
 
@@ -17,6 +18,8 @@ export const Contexts = ({ children }) => {
                 setActiveHighrise,
                 highrises,
                 setHighrises,
+                isExpandedView,
+                setIsExpandedView,
             }}
         >
             <ExplorerRefContext.Provider

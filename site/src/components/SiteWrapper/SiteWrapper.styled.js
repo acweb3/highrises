@@ -1,7 +1,13 @@
-import styled, { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle, css } from 'styled-components';
 
 export const SiteWrapper = styled.div`
     height: 100%;
+    ${(props) =>
+        props.lock !== undefined &&
+        css`
+            max-height: 100vh;
+            overflow: hidden;
+        `};
 `;
 
 export const GlobalStyle = createGlobalStyle`

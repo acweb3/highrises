@@ -1,8 +1,16 @@
 import * as S from 'components/Explorer/Masthead/Purchase/PurchaseItem/PurchaseItem.styled';
 
-export const PurchaseItem = ({ copy, disabled, header, href, price, src }) => {
+export const PurchaseItem = ({
+    copy,
+    disabled,
+    header,
+    href,
+    isCentered,
+    price,
+    src,
+}) => {
     return (
-        <S.PurchaseItem>
+        <S.PurchaseItem isCentered={isCentered}>
             <S.PurchaseHeader>{header}</S.PurchaseHeader>
             <S.PurchaseCopy>{copy}</S.PurchaseCopy>
             <S.PurchasePrice>{price}</S.PurchasePrice>

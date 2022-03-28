@@ -1,5 +1,5 @@
 import { Header } from 'components/ui/Header';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const PurchaseCopy = styled.div``;
 
@@ -55,4 +55,14 @@ export const PurchaseItem = styled.div`
     &:first-of-type {
         margin-right: 32px;
     }
+
+    ${(props) =>
+        props.isCentered &&
+        css`
+            & div {
+                text-align: center;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        `}
 `;
