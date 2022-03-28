@@ -1,3 +1,4 @@
+import { ContextFAB } from 'components/ContextFAB';
 import { Countdown } from 'components/Countdown';
 import { Editing } from 'components/Editing';
 import { EmailCollection } from 'components/EmailCollection';
@@ -15,6 +16,7 @@ export const App = () => {
         <Contexts>
             <SiteWrapper>
                 <Nav />
+                <ContextFAB />
                 <Countdown />
                 <Intent />
                 <Explorer />

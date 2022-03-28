@@ -1,5 +1,6 @@
 import { theme } from 'common/styles/theme';
 import { ActiveHighriseContext } from 'contexts/ActiveHighrise';
+import { DApp } from 'contexts/DApp';
 import { ExplorerRefContext } from 'contexts/ExplorerRef';
 import { useRef, useState } from 'react';
 import { ThemeProvider } from 'styled-components';
@@ -12,21 +13,23 @@ export const Contexts = ({ children }) => {
     const buildingExplorerRef = useRef(null);
 
     return (
-        <ActiveHighriseContext.Provider
-            value={{
-                activeHighrise,
-                setActiveHighrise,
-                highrises,
-                setHighrises,
-                isExpandedView,
-                setIsExpandedView,
-            }}
-        >
-            <ExplorerRefContext.Provider
-                value={{ mastheadRef, buildingExplorerRef }}
+        <DApp>
+            <ActiveHighriseContext.Provider
+                value={{
+                    activeHighrise,
+                    setActiveHighrise,
+                    highrises,
+                    setHighrises,
+                    isExpandedView,
+                    setIsExpandedView,
+                }}
             >
-                <ThemeProvider theme={theme}>{children}</ThemeProvider>
-            </ExplorerRefContext.Provider>
-        </ActiveHighriseContext.Provider>
+                <ExplorerRefContext.Provider
+                    value={{ mastheadRef, buildingExplorerRef }}
+                >
+                    <ThemeProvider theme={theme}>{children}</ThemeProvider>
+                </ExplorerRefContext.Provider>
+            </ActiveHighriseContext.Provider>
+        </DApp>
     );
 };
