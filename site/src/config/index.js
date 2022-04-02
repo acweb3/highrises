@@ -7,7 +7,7 @@ const requiredEnvVar = (name, envVar) => {
 };
 
 export const config = {
-    release: new Date('4/1/2022'),
+    release: new Date('4/20/2022'),
     googleMapsAPIKey: requiredEnvVar(
         'googleMapsAPIKey',
         process.env.REACT_APP_GOOGLE_MAPS_API_KEY
