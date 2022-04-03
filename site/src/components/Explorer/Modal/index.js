@@ -4,8 +4,6 @@ import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
 export const Modal = () => {
     const { activeHighrise, setIsExpandedView } = useActiveHighriseContext();
 
-    console.log({ activeHighrise });
-
     return (
         <S.Modal>
             <S.CloseButton

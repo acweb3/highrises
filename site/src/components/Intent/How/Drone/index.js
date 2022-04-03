@@ -1,9 +1,10 @@
 import droneSrc from 'assets/images/drone.png';
 import * as S from 'components/Intent/How/Drone/Drone.styled';
 
-export const Drone = () => {
+export const Drone = ({ className }) => {
     return (
         <S.DroneContainer
+            className={className}
             threshold={0.4}
             animation={{
                 before: `

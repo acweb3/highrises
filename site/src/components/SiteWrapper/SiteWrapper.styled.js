@@ -2,6 +2,7 @@ import styled, { createGlobalStyle, css } from 'styled-components';
 
 export const SiteWrapper = styled.div`
     height: 100%;
+
     ${(props) =>
         props.lock !== undefined &&
         css`

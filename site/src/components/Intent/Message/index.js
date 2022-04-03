@@ -3,9 +3,9 @@ import { Box } from 'components/ui/Box';
 import { Paragraph } from 'components/ui/Paragraph';
 import { ViewScroll } from 'components/ui/ViewScroll';
 
-export const Message = () => {
+export const Message = ({ className }) => {
     return (
-        <S.Message>
+        <S.Message className={className}>
             <Box>
                 <S.MessageContent>
                     <ViewScroll>

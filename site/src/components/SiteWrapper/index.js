@@ -1,8 +1,7 @@
 import { useDocumentListener } from '../../common/hooks/useDocumentListener';
 import * as S from 'components/SiteWrapper/SiteWrapper.styled';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
-import { useRef } from 'react';
-import { useEffect, useState } from 'react/cjs/react.development';
+import { useEffect, useState, useRef } from 'react';
 
 export const SiteWrapper = ({ children }) => {
     const { isExpandedView, setIsExpandedView } = useActiveHighriseContext();

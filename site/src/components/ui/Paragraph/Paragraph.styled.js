@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const Paragraph = styled.p`
-    text-indent: 1.5rem;
     color: ${(props) => props.theme.colors.blue[0]};
     font-family: poppins;
     margin-bottom: 16px;
@@ -14,4 +13,8 @@ export const Paragraph = styled.p`
     &:last-of-type {
         margin-bottom: 0;
     }
+
+    ${(props) => props.theme.breakpoints.small`
+        text-indent: 1.5rem;
+    `}
 `;

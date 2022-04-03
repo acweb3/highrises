@@ -1,9 +1,23 @@
+import { useWindowListener } from 'common/hooks/useWindowListener';
 import * as S from 'components/ContextFAB/ContextFAB.styled';
 import { Web3Connect } from 'components/ContextFAB/Web3Connect';
+import { useState } from 'react';
+import { useDebounce } from 'use-debounce';
 
 export const ContextFAB = () => {
+    const [isVisible, setIsVisible] = useState(false);
+    const [debouncedIsVisible] = useDebounce(isVisible);
+
+    useWindowListener(
+        'scroll',
+        () => {
+            setIsVisible(window.scrollY > 100);
+        },
+        []
+    );
+
     return (
-        <S.ContextFAB>
+        <S.ContextFAB isVisible={debouncedIsVisible}>
             <S.ContextFABLinks>
                 <S.ContextFABButton
                     rel="noopener noreferrer"

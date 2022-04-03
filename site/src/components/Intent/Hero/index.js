@@ -1,11 +1,20 @@
 import birdsSrc from 'assets/images/birds.png';
 import highrisesSrc from 'assets/images/logos/highrises.png';
+import { useWindowListener } from 'common/hooks/useWindowListener';
 import { Cloud, Clouds, cloudProps } from 'components/Cloud';
 import * as S from 'components/Intent/Hero/Hero.styled';
+import { useEffect, useRef, useState } from 'react';
 
 export const Hero = () => {
+    const heroRef = useRef();
+    const [resizeHeight, setResizeHeight] = useState(0);
+
+    useEffect(() => {
+        setResizeHeight(window.visualViewport.height);
+    }, []);
+
     return (
-        <S.Hero>
+        <S.Hero ref={heroRef} resizeHeight={resizeHeight}>
             <S.Birds src={birdsSrc} />
             <S.HeroLogo>
                 <div>
@@ -26,8 +35,13 @@ export const Hero = () => {
 
             <S.HeroDownNavigate
                 onClick={() => {
+                    const boundingClientRect =
+                        heroRef.current.getBoundingClientRect();
+                    const offset =
+                        boundingClientRect.y + boundingClientRect.height - 40;
+
                     window.scrollTo({
-                        top: window.innerHeight,
+                        top: offset - 40,
                         behavior: 'smooth',
                     });
                 }}

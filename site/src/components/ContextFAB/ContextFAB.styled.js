@@ -72,12 +72,19 @@ export const ContextFAB = styled.div`
     display: flex;
 
     position: fixed;
-    top: 32px;
+    top: 100px;
     left: 50%;
-    transform: translate(-50%, 0);
+    transform: translateX(-50%)
+        translateY(${(props) => (props.isVisible ? 0 : -100)}px);
+    opacity: ${(props) => (props.isVisible ? 1 : 0)};
+    transition: transform 100ms ease, opacity 800ms;
 
     border-radius: 300px;
     padding: 8px 16px;
 
     z-index: 999;
+
+    ${(props) => props.theme.breakpoints.mobile`
+        top: 32px;
+    `};
 `;

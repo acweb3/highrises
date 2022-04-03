@@ -4,9 +4,9 @@ import * as S from 'components/Intent/How/How.styled';
 import { Sky } from 'components/Sky';
 import { Box } from 'components/ui/Box';
 
-export const How = () => {
+export const How = ({ className }) => {
     return (
-        <S.How>
+        <S.How className={className}>
             <Box>
                 <S.HowContainer>
                     <Drone />
@@ -33,7 +33,7 @@ export const How = () => {
                     </S.HowContent>
                 </S.HowContainer>
             </Box>
-            <Sky />
+            <S.Sky />
         </S.How>
     );
 };
