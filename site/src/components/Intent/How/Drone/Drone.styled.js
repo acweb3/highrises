@@ -20,6 +20,8 @@ export const DroneSticky = styled.div`
 `;
 
 export const DroneRelative = styled.div`
+    animation: ${wobble} 1s ease infinite;
+
     position: relative;
     height: 100%;
 `;
@@ -29,7 +31,6 @@ export const DroneContainer = styled(ViewScroll)`
 
     z-index: 2;
 
-    animation: ${wobble} 1s ease infinite;
     top: -20px;
     right: -10px;
     width: 220px;
