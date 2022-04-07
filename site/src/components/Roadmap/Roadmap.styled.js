@@ -9,23 +9,35 @@ export const Sky = styled(UnstyledSky)`
 
 export const Title = styled(Header)`
     margin-left: auto;
-    white-space: nowrap;
+
+    ${(props) => props.theme.breakpoints.small`
+        text-align: initial;
+        white-space: nowrap;
+    `}
 `;
 
 export const Points = styled.div`
     display: flex;
     flex-direction: column;
-    margin-left: auto;
 
-    margin-top: 88px;
+    margin-top: 40px;
+
+    ${(props) => props.theme.breakpoints.mobile`
+        margin-left: auto;
+        margin-top: 88px;
+    `}
 `;
 
 export const RoadmapChart = styled.div`
     z-index: 2;
-    padding: 96px 96px 112px;
+    padding: 72px 32px 112px;
     display: flex;
     flex-direction: column;
     margin-left: auto;
+
+    ${(props) => props.theme.breakpoints.mobile`
+        padding: 96px 96px 112px;
+    `}
 `;
 
 export const RoadmapImage = styled.img`
@@ -39,6 +51,12 @@ export const RoadmapImageWrapper = styled.div`
     height: 100%;
     top: 0;
     left: -45%;
+
+    display: none;
+
+    ${(props) => props.theme.breakpoints.mobile`
+        display: block;
+    `}
 
     ${(props) => props.theme.breakpoints.medium`
         left: -25%;

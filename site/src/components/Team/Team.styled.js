@@ -2,10 +2,14 @@ import styled from 'styled-components';
 
 export const Profiles = styled.div`
     display: grid;
-    grid-template-columns: 350px 350px;
+    grid-template-columns: 1fr 1fr;
     justify-items: center;
 
     margin-top: 40px;
+
+    ${(props) => props.theme.breakpoints.mobile`
+        grid-template-columns: 350px 350px;
+    `}
 
     ${(props) => props.theme.breakpoints.large`
         display: flex;
@@ -18,8 +22,12 @@ export const Profiles = styled.div`
 export const BorderBottom = styled.div`
     ${(props) => props.theme.utility.bubbleBorder}
 
-    padding-top: 80px;
+    padding-top: 40px;
     width: 80%;
+
+    ${(props) => props.theme.breakpoints.mobile`
+        padding-top: 80px;
+    `}
 
     ${(props) => props.theme.breakpoints.large`
         width: 100%;

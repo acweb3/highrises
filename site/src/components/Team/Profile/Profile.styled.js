@@ -9,20 +9,29 @@ export const ProfileHeader = styled.div`
 
 export const ProfileText = styled.div`
     color: ${(props) => props.theme.colors.blue[0]};
-    white-space: nowrap;
     font-weight: 600;
     font-size: 1.1rem;
     line-height: 1.2;
+    text-align: center;
+
+    ${(props) => props.theme.breakpoints.mobile`
+        white-space: nowrap;
+    `}
 `;
 
 export const ProfileImage = styled.img``;
 
 export const ProfileImageWrapper = styled.div`
-    width: 180px;
-    height: 180px;
+    width: 90px;
+    height: 90px;
     background: #e0e0e0;
     border-radius: 50%;
     overflow: hidden;
+
+    ${(props) => props.theme.breakpoints.mobile`
+        width: 180px;
+        height: 180px;
+    `}
 `;
 
 export const Profile = styled.div`
@@ -31,9 +40,13 @@ export const Profile = styled.div`
     flex-direction: column;
     align-items: center;
 
-    width: 260px;
+    width: 160px;
 
     margin: 0 0 32px;
+
+    ${(props) => props.theme.breakpoints.mobile`
+        width: 260px;
+    `}
 
     ${(props) => props.theme.breakpoints.large`
         margin: 0 45px;
