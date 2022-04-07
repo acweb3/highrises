@@ -5,18 +5,24 @@ export const MapExplorerSticky = styled.div`
     flex-direction: row;
     overflow-x: scroll;
 
-    position: sticky;
+    height: 100vh;
+    width: 100vw;
 
-    height: calc(100vh - 64px);
-    top: 32px;
-    margin: 32px;
+    ${(props) => props.theme.breakpoints.small`
+        height: calc(100vh - 64px);
+        width: auto;
 
-    box-shadow: ${(props) => props.theme.shadows.medium};
-    border-radius: 8px;
+        position: sticky;
+        top: 32px;
+        margin: 32px;
 
-    &::-webkit-scrollbar {
-        display: none;
-    }
+        box-shadow: ${(props) => props.theme.shadows.medium};
+        border-radius: 8px;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    `}
 `;
 
 export const MapExplorer = styled.div`

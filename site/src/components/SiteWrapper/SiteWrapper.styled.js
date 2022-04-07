@@ -2,6 +2,11 @@ import styled, { createGlobalStyle, css } from 'styled-components';
 
 export const SiteWrapper = styled.div`
     height: 100%;
+    overflow: hidden;
+
+    ${(props) => props.theme.breakpoints.small`
+        overflow: initial;
+    `}
 
     ${(props) =>
         props.lock !== undefined &&

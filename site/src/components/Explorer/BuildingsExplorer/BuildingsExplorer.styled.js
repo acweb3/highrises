@@ -20,7 +20,7 @@ export const BuildingsScroll = styled.div`
 `;
 
 export const BuildingsExplorerArrow = styled.div`
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     background: ${(props) => props.theme.colors.grey[0]};
@@ -48,10 +48,17 @@ export const BuildingsExplorerArrow = styled.div`
         right: 0;
         border-left: 1px dotted #fff;
     `}
+
+    ${(props) => props.theme.breakpoints.small`
+        display: flex;
+    `}
 `;
 
 export const BuildingsExplorer = styled.div`
     position: relative;
     user-select: none;
-    margin-right: 32px;
+
+    ${(props) => props.theme.breakpoints.small`
+        margin-right: 32px;
+    `}
 `;

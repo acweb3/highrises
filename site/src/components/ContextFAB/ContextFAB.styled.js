@@ -80,7 +80,7 @@ export const ContextFAB = styled.div`
     transition: transform 100ms ease, opacity 800ms;
 
     border-radius: 300px;
-    padding: 8px 16px;
+    padding: 12px 16px;
 
     z-index: 999;
 

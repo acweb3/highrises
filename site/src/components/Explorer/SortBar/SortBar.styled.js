@@ -14,8 +14,7 @@ export const SortLink = styled.div`
 export const SortBar = styled.div`
     height: 40px;
 
-    line-height: 4rem;
-    font-size: 1.175rem;
+    font-size: 16px;
     font-weight: 500;
 
     white-space: nowrap;
@@ -23,5 +22,11 @@ export const SortBar = styled.div`
     display: flex;
     align-items: center;
 
-    margin: 16px 16px 0;
+    margin: 32px 32px 0;
+
+    ${(props) => props.theme.breakpoints.mobile`
+        line-height: 4rem;
+        font-size: 1.175rem;
+        margin: 16px 16px 0;
+    `}
 `;

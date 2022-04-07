@@ -8,7 +8,7 @@ export const StoryExpand = styled.div`
     font-size: 12px;
 
     border-radius: 3px;
-    padding: 8px 12px;
+    padding: 12px 12px;
     letter-spacing: 0.3em;
 
     border: none;
@@ -18,12 +18,20 @@ export const StoryExpand = styled.div`
 
     transition: opacity 0.1s linear;
 
-    margin-bottom: 24px;
+    width: 100%;
+    text-align: center;
 
     &:focus,
     &:hover {
         opacity: 0.8;
     }
+
+    ${(props) => props.theme.breakpoints.mobile`
+        margin-bottom: 24px;
+        width: auto;
+        text-align: initial;
+        padding: 8px 12px;
+    `}
 `;
 
 export const StoryCopy = styled.div`
@@ -42,7 +50,7 @@ export const StoryCopy = styled.div`
             &::after {
                 content: ' ';
                 position: absolute;
-                height: 48px;
+                height: 80px;
                 width: 100%;
 
                 left: 0;
@@ -51,7 +59,7 @@ export const StoryCopy = styled.div`
                 background: linear-gradient(
                     180deg,
                     rgba(255, 255, 255, 0) 0%,
-                    rgba(255, 255, 255, 0.8) 40%,
+                    rgba(255, 255, 255, 0.8) 70%,
                     rgba(255, 255, 255, 1) 100%
                 );
             }
@@ -60,8 +68,13 @@ export const StoryCopy = styled.div`
 
 export const Story = styled.div`
     flex: 1;
-    margin-right: 64px;
 
     display: flex;
     flex-direction: column;
+    margin-top: 48px;
+
+    ${(props) => props.theme.breakpoints.mobile`
+        margin-top: 0;
+        margin-right: 64px;
+    `}
 `;

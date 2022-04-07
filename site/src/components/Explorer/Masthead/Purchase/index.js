@@ -1,3 +1,4 @@
+import { EthPrice } from 'components/Explorer/Masthead/Purchase/EthPrice';
 import * as S from 'components/Explorer/Masthead/Purchase/Purchase.styled';
 import { PurchaseItem } from 'components/Explorer/Masthead/Purchase/PurchaseItem';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
@@ -21,11 +22,7 @@ export const Purchase = ({ className, isCentered }) => {
                 disabled
                 header="The NFT"
                 isCentered={isCentered}
-                price={
-                    <div style={{ display: 'flex' }}>
-                        0 <S.EthereumIcon />
-                    </div>
-                }
+                price={<EthPrice />}
                 copy="1/1 non-fungible token available on secondary."
                 href={`https://www.hythacg.com/prints/highrise${`${
                     activeHighrise.index + 1

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const ExplorerSection = styled.div`
+export const DesktopExplorerSection = styled.div`
     display: flex;
     flex: 1;
     flex-direction: column;
@@ -8,9 +8,13 @@ export const ExplorerSection = styled.div`
     min-width: ${(props) => (props.right ? '55vw' : '45vw')};
 `;
 
-export const Explorer = styled.div`
+export const DesktopExplorer = styled.div`
     width: 100vw;
     background: #fff;
 
-    display: flex;
+    display: none;
+
+    ${(props) => props.theme.breakpoints.small`
+        display: flex;
+    `}
 `;

@@ -15,12 +15,7 @@ export const PurchaseItem = ({
             <S.PurchaseCopy>{copy}</S.PurchaseCopy>
             <S.PurchasePrice>{price}</S.PurchasePrice>
             {!disabled ? (
-                <a
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href={href}
-                >
+                <a href={href} target="_blank" rel="noopener noreferrer">
                     <S.PurchaseImage src={src} />
                 </a>
             ) : (
