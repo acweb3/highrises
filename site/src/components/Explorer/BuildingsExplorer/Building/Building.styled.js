@@ -15,7 +15,6 @@ export const BuildingCaption = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    white-space: nowrap;
     width: 100%;
     height: 48px;
 
@@ -41,7 +40,7 @@ export const Building = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 200px;
+    width: 300px;
     flex: 1;
 
     cursor: pointer;

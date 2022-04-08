@@ -4,7 +4,7 @@ import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
 
 export const Building = ({ building }) => {
     const { activeHighrise, setActiveHighrise } = useActiveHighriseContext();
-    const { isMobile } = useWindowSize();
+    const { isSmallish } = useWindowSize();
 
     return (
         <S.Building
@@ -29,14 +29,16 @@ export const Building = ({ building }) => {
                 <S.BuildingIndex>
                     {(() => {
                         const buildingIndex = `${building.index + 1}`;
-                        if (isMobile) {
+                        if (isSmallish) {
                             return `#${buildingIndex.padStart(2, '0')}`;
                         }
 
                         return `Highrise #${buildingIndex.padStart(2, '0')}`;
                     })()}
                 </S.BuildingIndex>
-                {!isMobile && <S.BuildingName>{building.name}</S.BuildingName>}
+                {!isSmallish && (
+                    <S.BuildingName>{building.name}</S.BuildingName>
+                )}
             </S.BuildingCaption>
         </S.Building>
     );

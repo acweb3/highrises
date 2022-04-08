@@ -1,5 +1,10 @@
+import { Header as UnstyledHeader } from 'components/ui/Header';
 import { Paragraph as UnstyledParagraph } from 'components/ui/Paragraph';
 import styled from 'styled-components';
+
+export const EmailCollectionHeader = styled(UnstyledHeader)`
+    text-align: center;
+`;
 
 export const EmailCollectionInput = styled.input`
     margin-top: 24px;

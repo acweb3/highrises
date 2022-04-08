@@ -58,7 +58,7 @@ export const BuildingsExplorer = styled.div`
     position: relative;
     user-select: none;
 
-    ${(props) => props.theme.breakpoints.small`
+    ${(props) => props.theme.breakpoints.medium`
         margin-right: 32px;
     `}
 `;

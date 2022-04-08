@@ -1,5 +1,4 @@
 import * as S from 'components/EmailCollection/EmailCollection.styled';
-import { Header } from 'components/ui/Header';
 import { useState } from 'react';
 
 export const EmailCollection = () => {
@@ -8,7 +7,9 @@ export const EmailCollection = () => {
     return (
         <S.EmailCollection>
             <S.EmailCollectionContent>
-                <Header>Stay up to date</Header>
+                <S.EmailCollectionHeader>
+                    Stay up to date
+                </S.EmailCollectionHeader>
                 <S.Paragraph>
                     To recieve updates on future NFT releases, prints, and the
                     photo book, please add your email below.

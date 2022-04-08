@@ -2,8 +2,8 @@ import { Header } from 'components/ui/Header';
 import styled, { css } from 'styled-components';
 
 const imageCss = css`
-    width: 218px;
-    height: 318.37px;
+    width: 100%;
+    height: auto;
 
     ${(props) => props.theme.breakpoints.extraSmall`
         width: 304px;
@@ -36,7 +36,6 @@ export const PurchaseCopy = styled.div`
 
 export const PurchaseImage = styled.img`
     margin-top: 16px;
-    width: 100%;
 
     ${imageCss}
 `;
@@ -53,6 +52,7 @@ export const PurchaseDisabled = styled.div`
     border-radius: 16px;
 
     ${imageCss}
+    height: 100%;
 `;
 
 export const PurchasePrice = styled.div`
@@ -134,6 +134,10 @@ export const PurchaseItemAsset = styled.div`
 
     ${(props) => props.theme.breakpoints.mobile`
         margin-top: auto;
+    `}
+
+    ${(props) => props.theme.breakpoints.medium`
+        align-items: initial;
     `}
 `;
 

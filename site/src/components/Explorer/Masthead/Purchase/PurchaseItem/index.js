@@ -1,4 +1,21 @@
+import { useWindowSize } from 'common/hooks/useWindowSize';
 import * as S from 'components/Explorer/Masthead/Purchase/PurchaseItem/PurchaseItem.styled';
+
+const Asset = ({ children }) => {
+    const { isSmallish } = useWindowSize();
+
+    return (
+        <>
+            {isSmallish ? (
+                <>{children}</>
+            ) : (
+                <S.PurchaseItemAsset className="xxx">
+                    {children}
+                </S.PurchaseItemAsset>
+            )}
+        </>
+    );
+};
 
 export const PurchaseItem = ({
     copy,
@@ -13,7 +30,7 @@ export const PurchaseItem = ({
         <S.PurchaseItem isCentered={isCentered}>
             <S.PurchaseHeader>{header}</S.PurchaseHeader>
             <S.PurchaseCopy>{copy}</S.PurchaseCopy>
-            <S.PurchaseItemAsset>
+            <Asset>
                 <S.PurchasePrice>{price}</S.PurchasePrice>
                 {!disabled ? (
                     <a href={href} target="_blank" rel="noopener noreferrer">
@@ -24,7 +41,7 @@ export const PurchaseItem = ({
                         <S.PurchaseComingSoon>Coming soon</S.PurchaseComingSoon>
                     </S.PurchaseDisabled>
                 )}
-            </S.PurchaseItemAsset>
+            </Asset>
         </S.PurchaseItem>
     );
 };

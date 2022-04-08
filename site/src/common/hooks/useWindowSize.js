@@ -38,6 +38,10 @@ export const useWindowSize = () => {
 
     return {
         windowSize: debouncedWindowSize || windowSize,
+        isSmallish: debouncedWindowSize
+            ? debouncedWindowSize === breakpointsMap.mobile ||
+              debouncedWindowSize === breakpointsMap.extraSmall
+            : undefined,
         isMobile: debouncedWindowSize
             ? debouncedWindowSize === breakpointsMap.mobile ||
               debouncedWindowSize === breakpointsMap.extraSmall ||
