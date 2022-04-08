@@ -20,10 +20,17 @@ export const TitleContainer = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     width: 80%;
     margin: 0 auto 48px;
+
+    padding-bottom: 8px;
+
     ${(props) => props.theme.utility.bubbleBorder};
+
+    ${(props) => props.theme.breakpoints.small`
+        padding-bottom: 24px;
+    `}
 `;
 
 export const MobileMasthead = styled.div`

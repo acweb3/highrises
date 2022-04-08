@@ -31,7 +31,7 @@ export const StoryExpand = styled.div`
         width: min-content;
         white-space: nowrap;
         text-align: initial;
-        padding: 8px 12px;
+        padding: 8px 24px;
     `}
 `;
 

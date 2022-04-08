@@ -1,11 +1,36 @@
 import { Header } from 'components/ui/Header';
 import styled, { css } from 'styled-components';
 
+const imageCss = css`
+    width: 218px;
+    height: 318.37px;
+
+    ${(props) => props.theme.breakpoints.extraSmall`
+        width: 304px;
+        height: 444px;
+    `}
+
+    ${(props) => props.theme.breakpoints.medium`
+        width: 160px;
+        height: 233.66px;
+    `}
+
+    ${(props) => props.theme.breakpoints.large`
+        width: 304px;
+        height: 444px;
+    `}
+`;
+
 export const PurchaseCopy = styled.div`
     display: none;
+    text-align: center;
 
     ${(props) => props.theme.breakpoints.mobile`
         display: block;
+    `}
+
+    ${(props) => props.theme.breakpoints.medium`
+        text-align: initial;
     `}
 `;
 
@@ -13,17 +38,21 @@ export const PurchaseImage = styled.img`
     margin-top: 16px;
     width: 100%;
 
-    ${(props) => props.theme.breakpoints.mobile`
-        width: 240px;
-    `}
+    ${imageCss}
+`;
 
-    ${(props) => props.theme.breakpoints.medium`
-        width: 280px;
-    `}
+export const PurchaseDisabled = styled.div`
+    margin-top: 16px;
+    width: 100%;
 
-    ${(props) => props.theme.breakpoints.large`
-        width: 304px;
-    `}
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px dashed ${(props) => props.theme.colors.blue[0]};
+    border-radius: 16px;
+
+    ${imageCss}
 `;
 
 export const PurchasePrice = styled.div`
@@ -31,10 +60,18 @@ export const PurchasePrice = styled.div`
     font-weight: 700;
     text-align: center;
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     ${(props) => props.theme.breakpoints.mobile`
         margin-top: 16px;
         font-size: 32px;
+    `}
+
+    ${(props) => props.theme.breakpoints.medium`
         text-align: initial;
+        justify-content: initial;
     `}
 `;
 
@@ -46,9 +83,25 @@ export const PurchaseHeader = styled(Header)`
     text-align: center;
 
     ${(props) => props.theme.breakpoints.mobile`
+        line-height: 3rem;
+        white-space: initial;
+    `}
+
+    ${(props) => props.theme.breakpoints.small`
         font-size: 48px;
         line-height: 4rem;
+        margin-bottom: 16px;
+    `}
+
+    ${(props) => props.theme.breakpoints.medium`
         text-align: initial;
+    `}
+
+    ${(props) => props.theme.breakpoints.large`
+        font-size: 48px;
+        line-height: 4rem;
+
+        white-space: nowrap;
         margin-left: -8px;
     `}
 `;
@@ -74,29 +127,13 @@ export const PurchaseComingSoon = styled.div`
     `}
 `;
 
-export const PurchaseDisabled = styled.div`
-    margin-top: 16px;
-    width: 100%;
-    height: 100%;
-
+export const PurchaseItemAsset = styled.div`
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-
-    border: 1px dashed ${(props) => props.theme.colors.blue[0]};
-    border-radius: 16px;
 
     ${(props) => props.theme.breakpoints.mobile`
-        width: 240px;
-    `}
-
-    ${(props) => props.theme.breakpoints.medium`
-        width: 280px;
-    `}
-
-    ${(props) => props.theme.breakpoints.large`
-        width: 304px;
-        height: 444px;
+        margin-top: auto;
     `}
 `;
 
@@ -118,16 +155,4 @@ export const PurchaseItem = styled.div`
                 margin-right: auto;
             }
         `}
-
-    ${(props) => props.theme.breakpoints.mobile`
-        flex: 0 0 160px;
-
-        &:first-of-type {
-            margin-right: 32px;
-        }
-    `}
-
-    ${(props) => props.theme.breakpoints.large`
-        flex: 0 0 304px;
-    `}
 `;

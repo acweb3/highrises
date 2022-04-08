@@ -24,7 +24,11 @@ export const SortBar = styled.div`
 
     margin: 32px 32px 0;
 
-    ${(props) => props.theme.breakpoints.mobile`
+    ${(props) => props.theme.breakpoints.small`
+        margin: 0 32px 0;
+    `}
+
+    ${(props) => props.theme.breakpoints.medium`
         line-height: 4rem;
         font-size: 1.175rem;
         margin: 16px 16px 0;

@@ -6,14 +6,14 @@ export const Message = {
     Mobile: styled(UnstyledMessage)`
         display: block;
 
-        ${(props) => props.theme.breakpoints.small`
+        ${(props) => props.theme.breakpoints.mobile`
             display: none;
         `}
     `,
     Desktop: styled(UnstyledMessage)`
         display: none;
 
-        ${(props) => props.theme.breakpoints.small`
+        ${(props) => props.theme.breakpoints.mobile`
             display: block;
         `}
     `,

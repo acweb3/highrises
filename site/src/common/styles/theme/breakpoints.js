@@ -5,6 +5,7 @@ export const breakpointExtraSmall = 634;
 export const breakpointSmall = 768;
 export const breakpointMedium = 1024;
 export const breakpointLarge = 1280;
+export const breakpointExtraLarge = 1440;
 
 export const breakpointsMap = {
     mobile: breakpointMobile,
@@ -12,6 +13,7 @@ export const breakpointsMap = {
     small: breakpointSmall,
     medium: breakpointMedium,
     large: breakpointLarge,
+    extraLarge: breakpointExtraLarge,
 };
 
 export const breakpoints = Object.entries(breakpointsMap).reduce(

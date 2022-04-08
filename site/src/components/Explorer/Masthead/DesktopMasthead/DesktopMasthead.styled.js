@@ -26,7 +26,7 @@ export const DesktopMasthead = styled.div`
     margin: 32px 48px;
     box-sizing: border-box;
 
-    overflow: hidden;
+    overflow: visible;
 
     min-height: 300px;
 

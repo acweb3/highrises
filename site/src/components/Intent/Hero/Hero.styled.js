@@ -31,6 +31,11 @@ export const HeroLogoImage = styled.img`
     max-width: 500px;
 
     ${(props) => props.theme.breakpoints.mobile`
+        width: 700px;
+        max-width: 700px;
+    `}
+
+    ${(props) => props.theme.breakpoints.extraSmall`
         width: 1200px;
         max-width: 1200px;
     `}
