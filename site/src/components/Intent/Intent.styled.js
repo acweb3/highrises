@@ -6,14 +6,14 @@ export const Message = {
     Mobile: styled(UnstyledMessage)`
         display: block;
 
-        ${(props) => props.theme.breakpoints.mobile`
+        ${(props) => props.theme.breakpoints.small`
             display: none;
         `}
     `,
     Desktop: styled(UnstyledMessage)`
         display: none;
 
-        ${(props) => props.theme.breakpoints.mobile`
+        ${(props) => props.theme.breakpoints.small`
             display: block;
         `}
     `,
@@ -23,14 +23,14 @@ export const How = {
     Mobile: styled(UnstyledHow)`
         display: flex;
 
-        ${(props) => props.theme.breakpoints.mobile`
+        ${(props) => props.theme.breakpoints.small`
             display: none;
         `}
     `,
     Desktop: styled(UnstyledHow)`
         display: none;
 
-        ${(props) => props.theme.breakpoints.mobile`
+        ${(props) => props.theme.breakpoints.small`
             display: flex;
         `}
     `,
@@ -67,7 +67,7 @@ export const Intent = styled.div`
     position: relative;
     overflow: hidden;
 
-    ${(props) => props.theme.breakpoints.mobile`
+    ${(props) => props.theme.breakpoints.small`
         overflow: initial;
     `}
 `;
