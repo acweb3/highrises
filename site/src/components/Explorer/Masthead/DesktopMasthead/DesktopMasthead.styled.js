@@ -32,7 +32,7 @@ export const DesktopMasthead = styled.div`
 
     display: none;
 
-    ${(props) => props.theme.breakpoints.mobile`
+    ${(props) => props.theme.breakpoints.medium`
         display: block;
     `}
 `;

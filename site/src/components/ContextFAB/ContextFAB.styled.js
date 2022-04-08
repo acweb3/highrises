@@ -16,6 +16,12 @@ export const OpenseaLogo = styled(UnstyledOpenseaLogo)`
 `;
 export const TwitterLogo = styled(UnstyledTwitterLogo)`
     fill: ${(props) => props.theme.colors.white[0]};
+    width: 36px;
+    height: 36px;
+
+    & path {
+        fill: ${(props) => props.theme.colors.white[0]};
+    }
 `;
 
 export const ContextFABButton = styled.a`

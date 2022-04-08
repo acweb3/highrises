@@ -34,7 +34,7 @@ export const EditingCard = styled(ViewScroll)`
     max-width: 300px;
 
     ${(props) => props.theme.breakpoints.mobile`
-        margin-top: 0;
+        margin-top: auto;
         margin-right: 32px;
 
         height: 525px;

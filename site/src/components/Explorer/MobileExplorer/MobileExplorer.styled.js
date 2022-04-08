@@ -12,7 +12,7 @@ export const MobileExplorer = styled.div`
 
     flex-direction: column;
 
-    ${(props) => props.theme.breakpoints.small`
+    ${(props) => props.theme.breakpoints.medium`
         display: none;
     `}
 `;

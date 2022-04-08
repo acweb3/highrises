@@ -12,6 +12,18 @@ export const PurchaseCopy = styled.div`
 export const PurchaseImage = styled.img`
     margin-top: 16px;
     width: 100%;
+
+    ${(props) => props.theme.breakpoints.mobile`
+        width: 240px;
+    `}
+
+    ${(props) => props.theme.breakpoints.medium`
+        width: 280px;
+    `}
+
+    ${(props) => props.theme.breakpoints.large`
+        width: 304px;
+    `}
 `;
 
 export const PurchasePrice = styled.div`
@@ -74,9 +86,17 @@ export const PurchaseDisabled = styled.div`
     border: 1px dashed ${(props) => props.theme.colors.blue[0]};
     border-radius: 16px;
 
-    ${(props) => props.theme.breakpoints.small`
-        width: 320px;
-        height: 467.33px;
+    ${(props) => props.theme.breakpoints.mobile`
+        width: 240px;
+    `}
+
+    ${(props) => props.theme.breakpoints.medium`
+        width: 280px;
+    `}
+
+    ${(props) => props.theme.breakpoints.large`
+        width: 304px;
+        height: 444px;
     `}
 `;
 
@@ -100,10 +120,14 @@ export const PurchaseItem = styled.div`
         `}
 
     ${(props) => props.theme.breakpoints.mobile`
-        flex: 0 0 320px;
+        flex: 0 0 160px;
 
         &:first-of-type {
             margin-right: 32px;
         }
+    `}
+
+    ${(props) => props.theme.breakpoints.large`
+        flex: 0 0 304px;
     `}
 `;

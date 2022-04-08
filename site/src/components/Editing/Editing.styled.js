@@ -31,6 +31,7 @@ export const H2 = styled(Header)`
 
     ${(props) => props.theme.breakpoints.mobile`
         margin-top: 16px;
+        white-space: nowrap;
     `}
 `;
 
@@ -71,6 +72,8 @@ export const LearnMore = styled.a`
     text-decoration: none;
 
     transition: 0.1s background-color linear, 0.1s color linear;
+
+    white-space: nowrap;
 
     &:hover {
         background: ${(props) => props.theme.colors.grey[0]};

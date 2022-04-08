@@ -28,7 +28,8 @@ export const StoryExpand = styled.div`
 
     ${(props) => props.theme.breakpoints.mobile`
         margin-bottom: 24px;
-        width: auto;
+        width: min-content;
+        white-space: nowrap;
         text-align: initial;
         padding: 8px 12px;
     `}

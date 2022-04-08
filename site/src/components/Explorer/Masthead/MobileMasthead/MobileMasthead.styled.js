@@ -38,7 +38,7 @@ export const MobileMasthead = styled.div`
 
     min-height: 300px;
 
-    ${(props) => props.theme.breakpoints.mobile`
+    ${(props) => props.theme.breakpoints.medium`
         display: none;
     `}
 `;

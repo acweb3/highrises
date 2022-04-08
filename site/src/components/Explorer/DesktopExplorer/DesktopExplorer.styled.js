@@ -14,7 +14,7 @@ export const DesktopExplorer = styled.div`
 
     display: none;
 
-    ${(props) => props.theme.breakpoints.small`
+    ${(props) => props.theme.breakpoints.medium`
         display: flex;
     `}
 `;
