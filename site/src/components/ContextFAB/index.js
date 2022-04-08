@@ -1,10 +1,12 @@
 import { useWindowListener } from 'common/hooks/useWindowListener';
+import { useWindowSize } from 'common/hooks/useWindowSize';
 import * as S from 'components/ContextFAB/ContextFAB.styled';
 import { Web3Connect } from 'components/ContextFAB/Web3Connect';
 import { useState } from 'react';
 import { useDebounce } from 'use-debounce';
 
 export const ContextFAB = () => {
+    const { isLoaded } = useWindowSize();
     const [isVisible, setIsVisible] = useState(false);
     const [debouncedIsVisible] = useDebounce(isVisible);
 
@@ -17,7 +19,7 @@ export const ContextFAB = () => {
     );
 
     return (
-        <S.ContextFAB isVisible={debouncedIsVisible}>
+        <S.ContextFAB isVisible={isLoaded && debouncedIsVisible}>
             <S.ContextFABLinks>
                 <S.ContextFABButton
                     rel="noopener noreferrer"

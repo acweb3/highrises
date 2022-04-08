@@ -82,7 +82,7 @@ export const ContextFAB = styled.div`
     border-radius: 300px;
     padding: 12px 16px;
 
-    z-index: 999;
+    z-index: 1000;
 
     ${(props) => props.theme.breakpoints.mobile`
         top: 32px;

@@ -68,9 +68,14 @@ export const FAQImageWrapper = styled.div`
 `;
 
 export const FAQContent = styled.div`
-    padding: 144px 96px 80px;
     z-index: 3;
-    width: 90%;
+    padding: 80px 32px 80px;
+    width: 100%;
+
+    ${(props) => props.theme.breakpoints.mobile`
+        padding: 144px 96px 80px;
+        width: 90%;
+    `}
 
     ${(props) => props.theme.breakpoints.small`
         width: 80%;

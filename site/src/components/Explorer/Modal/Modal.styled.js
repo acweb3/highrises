@@ -7,19 +7,27 @@ import styled from 'styled-components';
 
 export const Traits = styled(UnstyledTraits)`
     margin-top: 16px;
-    margin-bottom: 48px;
-    min-width: 500px;
-    max-width: 720px;
+    margin-bottom: 32px;
 
-    padding: 0 32px 32px;
+    padding: 0 0 32px;
     ${(props) => props.theme.utility.bubbleBorder};
+
+    ${(props) => props.theme.breakpoints.mobile`
+        padding: 0 32px 32px;
+        min-width: 500px;
+        max-width: 720px;
+        margin-bottom: 48px;
+    `}
 `;
 
 export const Story = styled(UnstyledStory)`
     margin: 16px auto 48px;
-    min-width: 500px;
-    max-width: 720px;
     text-align: justify;
+
+    ${(props) => props.theme.breakpoints.mobile`
+        min-width: 500px;
+        max-width: 720px;
+    `}
 `;
 
 export const Header = styled(UnstyledHeader)`
@@ -44,13 +52,24 @@ export const Close = styled(UnstyledClose)`
 
 export const CloseButton = styled.div`
     position: fixed;
-    top: 16px;
-    right: 32px;
+    z-index: 2;
+
+    top: 96px;
+    right: 8px;
 
     height: 48px;
     width: 48px;
 
+    border-radius: 50%;
+    background-color: ${(props) => props.theme.colors.grey[1]};
+    box-shadow: ${(props) => props.theme.shadows.medium};
+
     cursor: pointer;
+
+    ${(props) => props.theme.breakpoints.mobile`
+        top: 16px;
+        right: 32px;
+    `}
 `;
 
 export const Purchase = styled(UnstyledPurchase)`
@@ -82,9 +101,13 @@ export const Modal = styled.div`
     overflow-y: scroll;
     overflow-x: scroll;
 
-    padding: 48px 15%;
+    padding: 48px 32px;
 
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    ${(props) => props.theme.breakpoints.mobile`
+        padding: 48px 15%;
+    `}
 `;

@@ -24,7 +24,7 @@ export const Modal = () => {
             <S.Traits activeHighrise={activeHighrise} />
             <S.Purchase isCentered />
             <S.SubHeader>Story</S.SubHeader>
-            <S.Story activeHighrise={activeHighrise} />
+            <S.Story isModal activeHighrise={activeHighrise} />
         </S.Modal>
     );
 };

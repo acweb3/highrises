@@ -38,6 +38,9 @@ export const useWindowSize = () => {
 
     return {
         windowSize: debouncedWindowSize || windowSize,
-        isMobile: debouncedWindowSize === breakpointsMap.mobile,
+        isMobile: debouncedWindowSize
+            ? debouncedWindowSize === breakpointsMap.mobile
+            : undefined,
+        isLoaded: debouncedWindowSize !== undefined,
     };
 };

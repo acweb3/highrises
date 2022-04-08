@@ -12,12 +12,17 @@ export const EmailCollectionInput = styled.input`
 `;
 
 export const EmailCollectionContent = styled.div`
-    width: 60%;
-    margin: 0 auto;
-
+    padding: 0 32px;
     display: flex;
     align-items: center;
     flex-direction: column;
+
+    ${(props) => props.theme.breakpoints.mobile`
+        padding: 0;
+
+        width: 60%;
+        margin: 0 auto;
+    `}
 `;
 
 export const Paragraph = styled(UnstyledParagraph)`

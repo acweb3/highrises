@@ -27,7 +27,11 @@ export const P = styled(Paragraph)`
 
 export const H2 = styled(Header)`
     font-size: 24px;
-    margin-top: 16px;
+    margin-top: 24px;
+
+    ${(props) => props.theme.breakpoints.mobile`
+        margin-top: 16px;
+    `}
 `;
 
 export const ListItem = styled.li`
@@ -85,14 +89,27 @@ export const EditingBuy = styled.div`
     align-items: center;
 `;
 
-export const EditingDescription = styled(ViewScroll)`
+// export const EditingDescription = styled(ViewScroll)`
+export const EditingDescription = styled.div`
     padding: 0px 48px 0px 40px;
+
+    width: 100%;
+
+    ${(props) => props.theme.breakpoints.mobile`
+        width: auto;
+    `}
 `;
 
 export const EditingContent = styled.div`
-    flex: 0 0 75%;
+    width: 100%;
     display: flex;
-    padding: 48px 0px 120px 0px;
+    padding: 16px 0px 80px 0px;
+
+    ${(props) => props.theme.breakpoints.mobile`
+        width: auto;
+        flex: 0 0 75%;
+        padding: 48px 0px 120px 0px;
+    `}
 `;
 
 export const Editing = styled.div`
