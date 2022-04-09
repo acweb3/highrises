@@ -4,16 +4,18 @@ export const SiteWrapper = styled.div`
     height: 100%;
     overflow: hidden;
 
-    ${(props) => props.theme.breakpoints.small`
-        overflow: initial;
-    `}
-
     ${(props) =>
         props.lock !== undefined &&
         css`
             max-height: 100vh;
             overflow: hidden;
         `};
+
+    ${(props) =>
+        props.lock === undefined &&
+        props.theme.breakpoints.small`
+        overflow: initial;
+    `}
 `;
 
 export const GlobalStyle = createGlobalStyle`

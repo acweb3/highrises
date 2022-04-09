@@ -3,7 +3,7 @@ import { Story as UnstyledStory } from 'components/Explorer/Masthead/Attributes/
 import { Traits as UnstyledTraits } from 'components/Explorer/Masthead/Attributes/Traits';
 import { Purchase as UnstyledPurchase } from 'components/Explorer/Masthead/Purchase';
 import { Header as UnstyledHeader } from 'components/ui/Header';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Traits = styled(UnstyledTraits)`
     margin-top: 16px;
@@ -41,7 +41,7 @@ export const SubHeader = styled(UnstyledHeader)`
     text-align: center;
 `;
 
-export const ModalHeader = styled.div`
+export const BuildingDetailHeader = styled.div`
     ${(props) => props.theme.utility.bubbleBorder};
     padding: 0 32px 24px;
 `;
@@ -77,16 +77,16 @@ export const Purchase = styled(UnstyledPurchase)`
     margin-bottom: 48px;
 `;
 
-export const ModalImage = styled.img`
+export const BuildingDetailImage = styled.img`
     height: 100%;
 `;
 
-export const ModalImageContainer = styled.div`
+export const BuildingDetailImageContainer = styled.div`
     height: 600px;
     margin: 48px 0 32px;
 `;
 
-export const Modal = styled.div`
+export const BuildingDetail = styled.div`
     position: fixed;
     top: 0;
     left: 0;
@@ -110,4 +110,14 @@ export const Modal = styled.div`
     ${(props) => props.theme.breakpoints.mobile`
         padding: 48px 15%;
     `}
+
+    ${(props) =>
+        props.isFullPage &&
+        css`
+            position: relative;
+            z-index: 1;
+
+            height: auto;
+            width: 100vw;
+        `}
 `;

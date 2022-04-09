@@ -1,15 +1,15 @@
+import { BuildingDetail } from 'components/BuildingDetail';
 import { BuildingsExplorer } from 'components/Explorer/BuildingsExplorer';
 import * as S from 'components/Explorer/DesktopExplorer/DesktopExplorer.styled';
 import { MapExplorer } from 'components/Explorer/MapExplorer';
 import { Masthead } from 'components/Explorer/Masthead';
-import { Modal } from 'components/Explorer/Modal';
 import { SortBar } from 'components/Explorer/SortBar';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
 import { useEffect, useState } from 'react';
 
 export const DesktopExplorer = () => {
     const [activeSort, setActiveSort] = useState(undefined);
-    const { isExpandedView } = useActiveHighriseContext();
+    const { activeHighrise, isExpandedView } = useActiveHighriseContext();
     const [isDelayedExpandedView, setIsDelayedExpandedView] = useState(false);
 
     /**
@@ -45,7 +45,9 @@ export const DesktopExplorer = () => {
                 <Masthead />
             </S.DesktopExplorerSection>
 
-            {isDelayedExpandedView && <Modal />}
+            {isDelayedExpandedView && (
+                <BuildingDetail activeHighrise={activeHighrise} />
+            )}
         </S.DesktopExplorer>
     );
 };
