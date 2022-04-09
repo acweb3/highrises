@@ -1,4 +1,3 @@
-import { ReactComponent as UnstyledClose } from 'assets/icons/close.svg';
 import { Story as UnstyledStory } from 'components/Explorer/Masthead/Attributes/Story';
 import { Traits as UnstyledTraits } from 'components/Explorer/Masthead/Attributes/Traits';
 import { Purchase as UnstyledPurchase } from 'components/Explorer/Masthead/Purchase';
@@ -44,32 +43,6 @@ export const SubHeader = styled(UnstyledHeader)`
 export const BuildingDetailHeader = styled.div`
     ${(props) => props.theme.utility.bubbleBorder};
     padding: 0 32px 24px;
-`;
-
-export const Close = styled(UnstyledClose)`
-    color: ${(props) => props.theme.colors.blue[0]};
-`;
-
-export const CloseButton = styled.div`
-    position: fixed;
-    z-index: 2;
-
-    top: 96px;
-    right: 8px;
-
-    height: 48px;
-    width: 48px;
-
-    border-radius: 50%;
-    background-color: ${(props) => props.theme.colors.grey[1]};
-    box-shadow: ${(props) => props.theme.shadows.medium};
-
-    cursor: pointer;
-
-    ${(props) => props.theme.breakpoints.mobile`
-        top: 16px;
-        right: 32px;
-    `}
 `;
 
 export const Purchase = styled(UnstyledPurchase)`

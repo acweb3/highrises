@@ -11,6 +11,7 @@ export const MobileExplorer = () => {
     const [activeSort, setActiveSort] = useState(undefined);
     const { activeHighrise, isExpandedView } = useActiveHighriseContext();
     const [isDelayedExpandedView, setIsDelayedExpandedView] = useState(false);
+    const [isMapView, setIsMapView] = useState(false);
 
     /**
      * Add delay to modal dismount to prevent FOUC
@@ -33,11 +34,18 @@ export const MobileExplorer = () => {
 
     return (
         <S.MobileExplorer>
-            <S.MobileExplorerSection isVisible={false}>
+            <S.MobileMapSection isVisible={isMapView}>
                 <MapExplorer />
-            </S.MobileExplorerSection>
-            <S.MobileExplorerSection isVisible={true}>
+                <S.CloseButton onClick={() => setIsMapView(false)} />
+            </S.MobileMapSection>
+            <S.MobileExplorerSection isVisible={!isMapView}>
                 <Masthead />
+                {activeHighrise && (
+                    <S.MapButton onClick={() => setIsMapView(true)}>
+                        View On Map
+                        <S.Map />
+                    </S.MapButton>
+                )}
                 <SortBar
                     activeSort={activeSort}
                     setActiveSort={setActiveSort}

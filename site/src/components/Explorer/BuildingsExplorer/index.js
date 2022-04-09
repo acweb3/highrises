@@ -2,7 +2,7 @@ import { Building } from 'components/Explorer/BuildingsExplorer/Building';
 import * as S from 'components/Explorer/BuildingsExplorer/BuildingsExplorer.styled';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
 import { useExplorerRefContext } from 'contexts/ExplorerRef';
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 
 export const BuildingsExplorer = ({ activeSort }) => {
     const { highrises, initHighrises, setActiveHighrise, setHighrises } =

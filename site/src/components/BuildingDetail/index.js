@@ -1,4 +1,5 @@
 import * as S from 'components/BuildingDetail/BuildingDetail.styled';
+import { CloseButton } from 'components/CloseButton';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
 import Helmet from 'react-helmet';
 
@@ -14,13 +15,11 @@ export const BuildingDetail = ({ activeHighrise, isFullPage }) => {
             {/** UI */}
             <S.BuildingDetail isFullPage={isFullPage}>
                 {!isFullPage && (
-                    <S.CloseButton
+                    <CloseButton
                         onClick={() => {
                             setIsExpandedView(false);
                         }}
-                    >
-                        <S.Close />
-                    </S.CloseButton>
+                    />
                 )}
                 <S.BuildingDetailHeader>
                     <S.Header>{activeHighrise.name}</S.Header>
