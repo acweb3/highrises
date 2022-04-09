@@ -5,12 +5,14 @@ import { MapExplorer } from 'components/Explorer/MapExplorer';
 import { Masthead } from 'components/Explorer/Masthead';
 import { SortBar } from 'components/Explorer/SortBar';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
+import { useExplorerRefContext } from 'contexts/ExplorerRef';
 import { useEffect, useState } from 'react';
 
 export const DesktopExplorer = () => {
     const [activeSort, setActiveSort] = useState(undefined);
     const { activeHighrise, isExpandedView } = useActiveHighriseContext();
     const [isDelayedExpandedView, setIsDelayedExpandedView] = useState(false);
+    const { buildingExplorerRef } = useExplorerRefContext();
 
     /**
      * Add delay to modal dismount to prevent FOUC
@@ -41,7 +43,10 @@ export const DesktopExplorer = () => {
                     activeSort={activeSort}
                     setActiveSort={setActiveSort}
                 />
-                <BuildingsExplorer activeSort={activeSort} />
+                <BuildingsExplorer
+                    activeSort={activeSort}
+                    buildingExplorerRef={buildingExplorerRef}
+                />
                 <Masthead />
             </S.DesktopExplorerSection>
 

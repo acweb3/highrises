@@ -1,13 +1,12 @@
 import { Building } from 'components/Explorer/BuildingsExplorer/Building';
 import * as S from 'components/Explorer/BuildingsExplorer/BuildingsExplorer.styled';
+import { DragScroll } from 'components/Explorer/BuildingsExplorer/DragScroll';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
-import { useExplorerRefContext } from 'contexts/ExplorerRef';
 import { useEffect } from 'react';
 
-export const BuildingsExplorer = ({ activeSort }) => {
+export const BuildingsExplorer = ({ activeSort, buildingExplorerRef }) => {
     const { highrises, initHighrises, setActiveHighrise, setHighrises } =
         useActiveHighriseContext();
-    const { buildingExplorerRef } = useExplorerRefContext();
 
     const scrollBuildings = (e, isRight) => {
         e.preventDefault();
@@ -48,11 +47,21 @@ export const BuildingsExplorer = ({ activeSort }) => {
             >
                 <S.BuildingsExplorerScrollLeft />
             </S.BuildingsExplorerArrow>
-            <S.BuildingsScroll ref={buildingExplorerRef}>
-                {highrises.map((building, index) => (
-                    <Building key={index} building={building} />
-                ))}
-            </S.BuildingsScroll>
+
+            {buildingExplorerRef ? (
+                <DragScroll buildingExplorerRef={buildingExplorerRef}>
+                    {highrises.map((building, index) => (
+                        <Building key={index} building={building} />
+                    ))}
+                </DragScroll>
+            ) : (
+                <S.BuildingsScroll ref={buildingExplorerRef}>
+                    {highrises.map((building, index) => (
+                        <Building key={index} building={building} />
+                    ))}
+                </S.BuildingsScroll>
+            )}
+
             <S.BuildingsExplorerArrow
                 right
                 onClick={(e) => scrollBuildings(e, true)}

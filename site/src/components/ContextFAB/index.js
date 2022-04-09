@@ -24,7 +24,7 @@ export const ContextFAB = () => {
                 <S.ContextFABButton
                     rel="noopener noreferrer"
                     target="_blank"
-                    href="https://discord.gg/EEpXhmEy"
+                    href="https://discord.gg/meX2WS6Jjk"
                 >
                     <S.DiscordLogo />
                 </S.ContextFABButton>
