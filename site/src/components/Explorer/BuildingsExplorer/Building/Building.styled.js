@@ -3,9 +3,13 @@ import styled, { css } from 'styled-components';
 export const BuildingImage = styled.img`
     flex: 1;
     max-width: 100px;
+    width: 100px;
+    height: 150px;
 
     ${(props) => props.theme.breakpoints.small`
         max-width: 200px;
+        width: 200px;
+        height: 300px;
     `}
 `;
 
