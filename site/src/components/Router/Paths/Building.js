@@ -6,8 +6,7 @@ import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
 import { Navigate, useParams } from 'react-router-dom';
 
 export const Building = () => {
-    // const { tokenID } = useParams();
-    const tokenID = 0;
+    const { tokenID } = useParams();
 
     const { highrises } = useActiveHighriseContext();
 
