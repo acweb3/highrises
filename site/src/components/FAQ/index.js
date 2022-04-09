@@ -2,7 +2,6 @@ import birdsSrc from 'assets/images/birds.png';
 import edisonBuildingSrc from 'assets/images/edison-building.png';
 import { Cloud, Clouds, cloudProps } from 'components/Cloud';
 import * as S from 'components/FAQ/FAQ.styled';
-import { Sky } from 'components/Sky';
 import { Box } from 'components/ui/Box';
 import { Header } from 'components/ui/Header';
 import React, { useState } from 'react';

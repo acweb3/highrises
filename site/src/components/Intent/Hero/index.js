@@ -1,6 +1,5 @@
 import birdsSrc from 'assets/images/birds.png';
 import highrisesSrc from 'assets/images/logos/highrises.png';
-import { useWindowListener } from 'common/hooks/useWindowListener';
 import { Cloud, Clouds, cloudProps } from 'components/Cloud';
 import * as S from 'components/Intent/Hero/Hero.styled';
 import { useEffect, useRef, useState } from 'react';

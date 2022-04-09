@@ -1,7 +1,6 @@
 import { EditingCard as UnstyledEditingCard } from 'components/Editing/EditingCard';
 import { Header } from 'components/ui/Header';
 import { Paragraph } from 'components/ui/Paragraph';
-import { ViewScroll } from 'components/ui/ViewScroll';
 import styled from 'styled-components';
 
 export const EditingCard = {

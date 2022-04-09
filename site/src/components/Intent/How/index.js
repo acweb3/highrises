@@ -1,7 +1,6 @@
 import { Cloud, Clouds, cloudProps } from 'components/Cloud';
 import { Drone } from 'components/Intent/How/Drone';
 import * as S from 'components/Intent/How/How.styled';
-import { Sky } from 'components/Sky';
 import { Box } from 'components/ui/Box';
 
 export const How = ({ className }) => {

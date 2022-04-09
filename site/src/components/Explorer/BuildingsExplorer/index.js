@@ -32,7 +32,13 @@ export const BuildingsExplorer = ({ activeSort }) => {
         } else if (initHighrises.current) {
             setHighrises(initHighrises.current);
         }
-    }, [activeSort, setActiveHighrise, setHighrises, buildingExplorerRef]);
+    }, [
+        activeSort,
+        setActiveHighrise,
+        setHighrises,
+        buildingExplorerRef,
+        initHighrises,
+    ]);
 
     return (
         <S.BuildingsExplorer>
