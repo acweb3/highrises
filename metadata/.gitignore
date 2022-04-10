@@ -1,5 +1,7 @@
 data.*
 csv/dist
+image-processing/nft/dist
+image-processing/nft/raw
 image-processing/site/dist
 image-processing/site/raw
 image-processing/png/dist
