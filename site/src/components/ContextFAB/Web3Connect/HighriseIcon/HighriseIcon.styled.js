@@ -17,7 +17,12 @@ export const HighriseIcon = styled.div`
     height: 40px;
     border-radius: 50%;
     border: 1px solid ${(props) => props.theme.colors.white[0]};
-    margin-left: 16px;
 
     overflow: hidden;
+
+    margin-left: -8px;
+
+    &:first-of-type {
+        margin-left: 0;
+    }
 `;

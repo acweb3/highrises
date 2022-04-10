@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 
-export const Web3 = styled.div`
+export const Web3ConnectIcons = styled.div`
+    margin-left: 16px;
+    display: flex;
+`;
+
+export const Web3Connect = styled.div`
     border-radius: 300px;
     color: ${(props) => props.theme.colors.white[0]};
     border: 1px solid ${(props) => props.theme.colors.white[0]};

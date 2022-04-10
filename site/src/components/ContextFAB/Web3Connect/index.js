@@ -9,11 +9,15 @@ export const Web3Connect = ({ tokenIds }) => {
     return (
         <>
             {tokenIds.length ? (
-                <HighriseIcon tokenId={tokenIds[0]} />
+                <S.Web3ConnectIcons>
+                    {tokenIds.map((tokenId) => (
+                        <HighriseIcon tokenId={tokenIds[tokenId]} />
+                    ))}
+                </S.Web3ConnectIcons>
             ) : (
-                <S.Web3 onClick={activateBrowserWallet}>
+                <S.Web3Connect onClick={activateBrowserWallet}>
                     <RegularContent />
-                </S.Web3>
+                </S.Web3Connect>
             )}
         </>
     );
