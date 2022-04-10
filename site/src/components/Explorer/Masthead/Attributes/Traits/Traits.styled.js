@@ -8,6 +8,10 @@ export const TraitBottomEllipsis = styled.div`
 `;
 
 export const TraitWord = styled.div`
+    & > a {
+        color: ${(props) => props.theme.colors.blue[0]};
+    }
+
     ${(props) =>
         props.isValue &&
         css`
@@ -21,4 +25,9 @@ export const Trait = styled.div`
 
 export const Traits = styled.div`
     flex: 1;
+    min-width: 100%;
+
+    ${(props) => props.theme.breakpoints.mobile`
+        min-width: auto;
+    `}
 `;

@@ -1,9 +1,24 @@
 import { Story as UnstyledStory } from 'components/Explorer/Masthead/Attributes/Story';
 import { Traits as UnstyledTraits } from 'components/Explorer/Masthead/Attributes/Traits';
 import { Purchase as UnstyledPurchase } from 'components/Explorer/Masthead/Purchase';
+import { ExternalNavigation as UnstyledExternalNavigtion } from 'components/ExternalNavigation';
 import { Header as UnstyledHeader } from 'components/ui/Header';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+
+export const ExternalNavigation = styled(UnstyledExternalNavigtion)`
+    width: 100%;
+    margin: -16px 0 32px;
+
+    & a,
+    div {
+        width: 100%;
+    }
+
+    ${(props) => props.theme.breakpoints.small`
+        display: none;
+    `}
+`;
 
 export const Traits = styled(UnstyledTraits)`
     margin-top: 16px;
@@ -24,7 +39,7 @@ export const Story = styled(UnstyledStory)`
     margin: 16px auto 48px;
     text-align: justify;
 
-    ${(props) => props.theme.breakpoints.mobile`
+    ${(props) => props.theme.breakpoints.small`
         min-width: 500px;
         max-width: 720px;
     `}
@@ -57,6 +72,7 @@ export const BuildingDetailHeader = styled.div`
 export const Purchase = styled(UnstyledPurchase)`
     justify-content: center;
     margin-bottom: 48px;
+    width: 100%;
 `;
 
 export const BuildingDetailImage = styled.img`

@@ -22,6 +22,8 @@ export const HighriseIcon = styled.div`
 
     margin-left: -8px;
 
+    cursor: pointer;
+
     &:first-of-type {
         margin-left: 0;
     }

@@ -1,4 +1,5 @@
 import * as S from 'components/BuildingDetail/BuildingDetail.styled';
+import { MobileMap } from 'components/Explorer/MobileExplorer/MobileMap';
 import { useEffect } from 'react';
 import Helmet from 'react-helmet';
 
@@ -27,7 +28,9 @@ export const BuildingDetail = ({ activeHighrise }) => {
                 </S.BuildingDetailImageContainer>
                 <S.SubHeader>Traits</S.SubHeader>
                 <S.Traits activeHighrise={activeHighrise} />
-                <S.Purchase isCentered />
+                <S.Purchase isCentered isFullPage />
+                <S.ExternalNavigation activeHighrise={activeHighrise} showMap />
+                <MobileMap />
                 <S.SubHeader>Story</S.SubHeader>
                 <S.Story isModal activeHighrise={activeHighrise} />
                 <S.BuildingDetailBack to="/">

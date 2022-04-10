@@ -5,17 +5,8 @@ import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
 import { useEffect } from 'react';
 
 export const BuildingsExplorer = ({ activeSort, buildingExplorerRef }) => {
-    const {
-        highrises,
-        initHighrises,
-        setActiveHighrise,
-        setHighrises,
-        activeHighrise,
-    } = useActiveHighriseContext();
-
-    console.log({
-        activeHighrise,
-    });
+    const { highrises, initHighrises, setActiveHighrise, setHighrises } =
+        useActiveHighriseContext();
 
     const scrollBuildings = (e, isRight) => {
         e.preventDefault();

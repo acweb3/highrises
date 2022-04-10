@@ -41,6 +41,10 @@ export const ContextFABButton = styled.a`
         opacity: 1;
     }
 
+    & rect {
+        fill: none;
+    }
+
     ${(props) =>
         props.isInactive &&
         css`

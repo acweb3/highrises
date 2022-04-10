@@ -32,7 +32,9 @@ export class Popup extends window.google.maps.OverlayView {
     /** Called when the popup is removed from the map. */
     onRemove() {
         if (this.containerDiv.parentElement) {
-            this.containerDiv.parentElement.removeChild(this.containerDiv);
+            [...this.containerDiv.parentElement.children].forEach((child) =>
+                this.containerDiv.parentElement?.removeChild(child)
+            );
         }
     }
     /** Called each frame when the popup needs to draw itself. */

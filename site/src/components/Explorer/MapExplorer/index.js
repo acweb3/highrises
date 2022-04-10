@@ -5,6 +5,7 @@ import { Marker } from 'components/Explorer/MapExplorer/Marker';
 import { config } from 'config';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
 import { useExplorerRefContext } from 'contexts/ExplorerRef';
+import { useMapViewContext } from 'contexts/MapView';
 import { useEffect, useState } from 'react';
 
 export const MapExplorer = () => {
@@ -13,6 +14,7 @@ export const MapExplorer = () => {
     const { setActiveHighrise } = useActiveHighriseContext();
     const { buildingExplorerRef } = useExplorerRefContext();
     const { activeHighrise, highrises } = useActiveHighriseContext();
+    const { setIsMapView } = useMapViewContext();
 
     const onIdle = (m) => {
         setZoom(m.getZoom());
@@ -26,7 +28,7 @@ export const MapExplorer = () => {
     }, [activeHighrise]);
 
     return (
-        <S.MapExplorer>
+        <S.MapExplorer className="xxx">
             <S.MapExplorerSticky>
                 <Wrapper apiKey={config.googleMapsAPIKey}>
                     <Map center={center} onIdle={onIdle} zoom={zoom}>
@@ -39,6 +41,7 @@ export const MapExplorer = () => {
                                 position={highrise.ltlng}
                                 onClick={() => {
                                     setActiveHighrise(highrise);
+                                    setIsMapView(false);
                                     buildingExplorerRef.current.children[
                                         index
                                     ].scrollIntoView({

@@ -1,10 +1,8 @@
-import simpleContractAbi from './abi.json';
 import { useCalls, useEthers } from '@usedapp/core';
-import { config } from 'config';
-import { Contract } from 'ethers';
+import { useChainConfig } from 'common/hooks/useChainConfig';
 
 export const useTokenHolder = () => {
-    const contract = new Contract(config.contractAddress, simpleContractAbi);
+    const { contract } = useChainConfig();
     const { account } = useEthers();
 
     // # TODO => expand this

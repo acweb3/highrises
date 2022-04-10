@@ -1,3 +1,4 @@
+import { ExternalButtonLink as UnstyledExternalButtonLink } from 'components/ui/BaseButton/ExternalButtonLink';
 import { Header } from 'components/ui/Header';
 import styled, { css } from 'styled-components';
 
@@ -5,19 +6,31 @@ const imageCss = css`
     width: 100%;
     height: auto;
 
-    ${(props) => props.theme.breakpoints.extraSmall`
-        width: 304px;
-        height: 444px;
-    `}
+    ${(props) =>
+        !props.isFullPage &&
+        css`
+            ${(props) => props.theme.breakpoints.extraSmall`
+                width: 304px;
+                height: 444px;
+            `}
 
-    ${(props) => props.theme.breakpoints.medium`
-        width: 160px;
-        height: 233.66px;
-    `}
+            ${(props) => props.theme.breakpoints.medium`
+                width: 160px;
+                height: 233.66px;
+            `}
 
-    ${(props) => props.theme.breakpoints.large`
-        width: 304px;
-        height: 444px;
+            ${(props) => props.theme.breakpoints.large`
+                width: 304px;
+                height: 444px;
+            `}
+        `}
+`;
+
+export const PurchaseExternalLink = styled(UnstyledExternalButtonLink)`
+    display: none;
+
+    ${(props) => props.theme.breakpoints.mobile`
+        display: block;
     `}
 `;
 
@@ -49,7 +62,6 @@ export const PurchaseDisabled = styled.div`
     justify-content: center;
 
     border: 1px dashed ${(props) => props.theme.colors.blue[0]};
-    border-radius: 16px;
 
     ${imageCss}
     height: 100%;
