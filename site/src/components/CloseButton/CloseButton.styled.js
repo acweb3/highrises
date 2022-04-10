@@ -13,8 +13,8 @@ export const CloseButton = styled.div`
     position: fixed;
     z-index: 2;
 
-    top: 96px;
-    right: 8px;
+    bottom: 48px;
+    right: 32px;
 
     height: 48px;
     width: 48px;
@@ -25,9 +25,4 @@ export const CloseButton = styled.div`
     box-shadow: ${(props) => props.theme.shadows.medium};
 
     cursor: pointer;
-
-    ${(props) => props.theme.breakpoints.mobile`
-    top: 16px;
-    right: 32px;
-`}
 `;

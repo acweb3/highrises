@@ -8,7 +8,7 @@ export const MapExplorerSticky = styled.div`
     height: 100vh;
     width: 100vw;
 
-    ${(props) => props.theme.breakpoints.small`
+    ${(props) => props.theme.breakpoints.medium`
         height: calc(100vh - 64px);
         width: auto;
 

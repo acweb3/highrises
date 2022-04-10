@@ -27,11 +27,14 @@ export const StoryExpand = styled.div`
     }
 
     ${(props) => props.theme.breakpoints.mobile`
-        margin-bottom: 24px;
-        width: min-content;
+        width: 200px;
+        padding: 8px 36px;
         white-space: nowrap;
-        text-align: initial;
-        padding: 8px 24px;
+        text-align: center;
+    `}
+
+    ${(props) => props.theme.breakpoints.medium`
+        margin-bottom: 24px;
     `}
 `;
 

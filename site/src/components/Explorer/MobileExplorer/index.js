@@ -38,7 +38,7 @@ export const MobileExplorer = () => {
                 <MapExplorer />
                 <S.CloseButton onClick={() => setIsMapView(false)} />
             </S.MobileMapSection>
-            <S.MobileExplorerSection isVisible={!isMapView}>
+            <S.MobileExplorerSection isVisible>
                 <Masthead />
                 {activeHighrise && (
                     <S.MapButton onClick={() => setIsMapView(true)}>

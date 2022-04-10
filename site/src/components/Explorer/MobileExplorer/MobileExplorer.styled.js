@@ -3,9 +3,6 @@ import { CloseButton as UnstyledCloseButton } from 'components/CloseButton';
 import styled from 'styled-components';
 
 export const CloseButton = styled(UnstyledCloseButton)`
-    top: auto;
-    bottom: 48px;
-    right: 32px;
     z-index: 101;
 `;
 
@@ -53,12 +50,11 @@ export const MapButton = styled.div`
     text-transform: uppercase;
     width: fit-content;
     font-size: 12px;
+    height: 42px;
 
     display: flex;
     align-items: center;
     justify-content: center;
-
-    height: 42px;
 
     border-radius: 3px;
     letter-spacing: 0.3em;
@@ -79,5 +75,8 @@ export const MapButton = styled.div`
     ${(props) => props.theme.breakpoints.mobile`
         top: 16px;
         right: 32px;
+        height: auto;
+        width: 200px;
+        padding: 8px 36px;
     `}
 `;
