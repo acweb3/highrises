@@ -1,12 +1,10 @@
 import { ChainId, DAppProvider } from '@usedapp/core';
 
 const config = {
-    readOnlyChainId: ChainId.Mainnet,
+    readOnlyChainId: ChainId.Rinkeby,
     readOnlyUrls: {
-        readOnlyUrls: {
-            [ChainId.Mainnet]:
-                'https://mainnet.infura.io/v3/3165a249c65f4198bf57200109b8fadf',
-        },
+        [ChainId.Rinkeby]:
+            'https://eth-rinkeby.alchemyapi.io/v2/tJW3Lzn-Y5PDEacAZLZZQrc-EnzlQ7iM',
     },
 };
 

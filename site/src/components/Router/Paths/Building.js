@@ -18,12 +18,7 @@ export const Building = () => {
                     return <Navigate to="/" />;
                 }
 
-                return (
-                    <BuildingDetail
-                        isFullPage
-                        activeHighrise={highrises[tokenID]}
-                    />
-                );
+                return <BuildingDetail activeHighrise={highrises[tokenID]} />;
             })()}
         </>
     );

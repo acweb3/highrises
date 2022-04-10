@@ -2,6 +2,7 @@ import { useWindowListener } from 'common/hooks/useWindowListener';
 import { useWindowSize } from 'common/hooks/useWindowSize';
 import * as S from 'components/ContextFAB/ContextFAB.styled';
 import { Web3Connect } from 'components/ContextFAB/Web3Connect';
+import { useTokenHolder } from 'components/ContextFAB/hooks/useTokenHolder';
 import { useState } from 'react';
 import { useDebounce } from 'use-debounce';
 
@@ -9,6 +10,7 @@ export const ContextFAB = () => {
     const { isLoaded } = useWindowSize();
     const [isVisible, setIsVisible] = useState(false);
     const [debouncedIsVisible] = useDebounce(isVisible);
+    const tokenIds = useTokenHolder();
 
     useWindowListener(
         'scroll',
@@ -19,7 +21,10 @@ export const ContextFAB = () => {
     );
 
     return (
-        <S.ContextFAB isVisible={isLoaded && debouncedIsVisible}>
+        <S.ContextFAB
+            isActive={tokenIds.length}
+            isVisible={isLoaded && debouncedIsVisible}
+        >
             <S.ContextFABLinks>
                 <S.ContextFABButton
                     rel="noopener noreferrer"
@@ -46,7 +51,7 @@ export const ContextFAB = () => {
                     <S.TwitterLogo />
                 </S.ContextFABButton>
             </S.ContextFABLinks>
-            <Web3Connect />
+            <Web3Connect tokenIds={tokenIds} />
         </S.ContextFAB>
     );
 };

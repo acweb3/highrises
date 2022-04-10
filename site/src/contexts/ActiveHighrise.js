@@ -1,8 +1,6 @@
 import { highrises as highrisesData } from 'assets/data/highrises';
+import { pullImage } from 'common/images';
 import { createContext, useContext, useEffect, useRef, useState } from 'react';
-
-const pullImage = async (type, index, ext = 'png') =>
-    (await import(`assets/images/${type}-highrises/${index}.${ext}`)).default;
 
 export const ActiveHighriseContext = createContext({});
 export const useActiveHighriseContext = () => useContext(ActiveHighriseContext);
@@ -10,7 +8,6 @@ export const useActiveHighriseContext = () => useContext(ActiveHighriseContext);
 export const ActiveHighrise = ({ children }) => {
     const [activeHighrise, setActiveHighrise] = useState(undefined);
     const [highrises, setHighrises] = useState([]);
-    const [isExpandedView, setIsExpandedView] = useState(false);
     const initHighrises = useRef();
 
     useEffect(() => {
@@ -41,8 +38,6 @@ export const ActiveHighrise = ({ children }) => {
                 setActiveHighrise,
                 highrises,
                 setHighrises,
-                isExpandedView,
-                setIsExpandedView,
                 initHighrises,
             }}
         >

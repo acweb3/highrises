@@ -1,17 +1,20 @@
-import { useEthers, shortenAddress, useLookupAddress } from '@usedapp/core';
-import { useWindowSize } from 'common/hooks/useWindowSize';
+import { useEthers } from '@usedapp/core';
+import { HighriseIcon } from 'components/ContextFAB/Web3Connect/HighriseIcon';
+import { RegularContent } from 'components/ContextFAB/Web3Connect/RegularContent';
 import * as S from 'components/ContextFAB/Web3Connect/Web3Connect.styled';
 
-export const Web3Connect = () => {
-    const { account, activateBrowserWallet } = useEthers();
-    const ens = useLookupAddress();
-    const { isMobile } = useWindowSize();
-
-    const connectText = isMobile ? 'Connect' : 'Connect wallet';
+export const Web3Connect = ({ tokenIds }) => {
+    const { activateBrowserWallet } = useEthers();
 
     return (
-        <S.Web3 onClick={activateBrowserWallet}>
-            {account ? ens ?? shortenAddress(account) : connectText}
-        </S.Web3>
+        <>
+            {tokenIds.length ? (
+                <HighriseIcon tokenId={tokenIds[0]} />
+            ) : (
+                <S.Web3 onClick={activateBrowserWallet}>
+                    <RegularContent />
+                </S.Web3>
+            )}
+        </>
     );
 };

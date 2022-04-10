@@ -83,7 +83,7 @@ export const ContextFAB = styled.div`
     transform: translateX(-50%)
         translateY(${(props) => (props.isVisible ? 0 : -100)}px);
     opacity: ${(props) => (props.isVisible ? 1 : 0)};
-    transition: transform 100ms ease, opacity 800ms;
+    transition: transform 100ms ease, opacity 800ms, background-color 400ms;
 
     border-radius: 300px;
     padding: 12px 16px;
@@ -93,4 +93,16 @@ export const ContextFAB = styled.div`
     ${(props) => props.theme.breakpoints.mobile`
         top: 32px;
     `};
+
+    ${(props) =>
+        props.isActive &&
+        css`
+            background: rgb(255, 0, 232);
+            background: linear-gradient(
+                124deg,
+                rgba(255, 0, 232, 1) 0%,
+                rgba(98, 45, 178, 1) 23%,
+                rgba(59, 93, 120, 1) 100%
+            );
+        `}
 `;

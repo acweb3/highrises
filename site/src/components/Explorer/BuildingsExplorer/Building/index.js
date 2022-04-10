@@ -11,15 +11,7 @@ export const Building = ({ building }) => {
             isActive={
                 !activeHighrise || building.index === activeHighrise.index
             }
-            onClick={() => {
-                setActiveHighrise((activeHighrise) => {
-                    if (activeHighrise?.index === building.index) {
-                        return undefined;
-                    }
-
-                    return building;
-                });
-            }}
+            onClick={() => setActiveHighrise(building)}
         >
             <S.BuildingImage
                 alt={`building ${building.index}`}

@@ -5,8 +5,17 @@ import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
 import { useEffect } from 'react';
 
 export const BuildingsExplorer = ({ activeSort, buildingExplorerRef }) => {
-    const { highrises, initHighrises, setActiveHighrise, setHighrises } =
-        useActiveHighriseContext();
+    const {
+        highrises,
+        initHighrises,
+        setActiveHighrise,
+        setHighrises,
+        activeHighrise,
+    } = useActiveHighriseContext();
+
+    console.log({
+        activeHighrise,
+    });
 
     const scrollBuildings = (e, isRight) => {
         e.preventDefault();
@@ -22,8 +31,6 @@ export const BuildingsExplorer = ({ activeSort, buildingExplorerRef }) => {
     };
 
     useEffect(() => {
-        setActiveHighrise(undefined);
-
         if (activeSort) {
             const sortedHighrises = activeSort.sort([...initHighrises.current]);
             setHighrises(sortedHighrises);

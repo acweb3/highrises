@@ -5,19 +5,19 @@ import { useMapViewContext } from 'contexts/MapView';
 import { useEffect, useState, useRef } from 'react';
 
 export const SiteWrapper = ({ children }) => {
-    const { isExpandedView, setIsExpandedView } = useActiveHighriseContext();
+    const { setIsExpandedView } = useActiveHighriseContext();
     const { isMapView, setIsMapView } = useMapViewContext();
     const [lock, setLock] = useState(undefined);
     const lockRef = useRef(undefined);
 
     useEffect(() => {
-        if (isExpandedView || isMapView) {
+        if (isMapView) {
             setLock(window.scrollY);
             lockRef.current = window.scrollY;
         } else {
             setLock(undefined);
         }
-    }, [isExpandedView, isMapView]);
+    }, [isMapView]);
 
     useEffect(() => {
         if (!lock && lockRef.current) {
