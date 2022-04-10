@@ -1,8 +1,8 @@
 import * as S from 'components/Explorer/Masthead/Attributes/Story/Story.styled';
-import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
+import { useNavigate } from 'react-router-dom';
 
 export const Story = ({ isModal, activeHighrise, className }) => {
-    const { setIsExpandedView } = useActiveHighriseContext(false);
+    const navigate = useNavigate();
 
     return (
         <S.Story className={className}>
@@ -10,7 +10,15 @@ export const Story = ({ isModal, activeHighrise, className }) => {
                 {activeHighrise.description}
             </S.StoryCopy>
             {!isModal && (
-                <S.StoryExpand onClick={() => setIsExpandedView(true)}>
+                <S.StoryExpand
+                    onClick={() => {
+                        navigate(`/building/${activeHighrise.index}`, {
+                            state: {
+                                isLocalNavigation: true,
+                            },
+                        });
+                    }}
+                >
                     Read more
                 </S.StoryExpand>
             )}

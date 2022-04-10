@@ -1,10 +1,11 @@
 import * as S from 'components/BuildingDetail/BuildingDetail.styled';
-import { CloseButton } from 'components/CloseButton';
-import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
+import { useEffect } from 'react';
 import Helmet from 'react-helmet';
 
-export const BuildingDetail = ({ activeHighrise, isFullPage }) => {
-    const { setIsExpandedView } = useActiveHighriseContext();
+export const BuildingDetail = ({ activeHighrise }) => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     return (
         <>
@@ -13,14 +14,10 @@ export const BuildingDetail = ({ activeHighrise, isFullPage }) => {
                 <title>{activeHighrise.name} — HYTHA.CG</title>
             </Helmet>
             {/** UI */}
-            <S.BuildingDetail isFullPage={isFullPage}>
-                {!isFullPage && (
-                    <CloseButton
-                        onClick={() => {
-                            setIsExpandedView(false);
-                        }}
-                    />
-                )}
+            <S.BuildingDetail>
+                <S.BuildingDetailBack to="/">
+                    ← Back to explorer
+                </S.BuildingDetailBack>
                 <S.BuildingDetailHeader>
                     <S.Header>{activeHighrise.name}</S.Header>
                     <S.SubHeader>{activeHighrise.highriseNumber}</S.SubHeader>
@@ -33,6 +30,9 @@ export const BuildingDetail = ({ activeHighrise, isFullPage }) => {
                 <S.Purchase isCentered />
                 <S.SubHeader>Story</S.SubHeader>
                 <S.Story isModal activeHighrise={activeHighrise} />
+                <S.BuildingDetailBack to="/">
+                    ← Back to explorer
+                </S.BuildingDetailBack>
             </S.BuildingDetail>
         </>
     );
