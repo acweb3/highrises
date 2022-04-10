@@ -5,13 +5,14 @@ import { Masthead } from 'components/Explorer/Masthead';
 import * as S from 'components/Explorer/MobileExplorer/MobileExplorer.styled';
 import { SortBar } from 'components/Explorer/SortBar';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
+import { useMapViewContext } from 'contexts/MapView';
 import { useEffect, useState } from 'react';
 
 export const MobileExplorer = () => {
     const [activeSort, setActiveSort] = useState(undefined);
     const { activeHighrise, isExpandedView } = useActiveHighriseContext();
+    const { isMapView, setIsMapView } = useMapViewContext();
     const [isDelayedExpandedView, setIsDelayedExpandedView] = useState(false);
-    const [isMapView, setIsMapView] = useState(false);
 
     /**
      * Add delay to modal dismount to prevent FOUC
@@ -38,6 +39,9 @@ export const MobileExplorer = () => {
                 <MapExplorer />
                 <S.CloseButton onClick={() => setIsMapView(false)} />
             </S.MobileMapSection>
+            <SortBar activeSort={activeSort} setActiveSort={setActiveSort} />
+            <BuildingsExplorer activeSort={activeSort} />
+
             <S.MobileExplorerSection isVisible>
                 <Masthead />
                 {activeHighrise && (
@@ -46,11 +50,6 @@ export const MobileExplorer = () => {
                         <S.Map />
                     </S.MapButton>
                 )}
-                <SortBar
-                    activeSort={activeSort}
-                    setActiveSort={setActiveSort}
-                />
-                <BuildingsExplorer activeSort={activeSort} />
             </S.MobileExplorerSection>
 
             {isDelayedExpandedView && (

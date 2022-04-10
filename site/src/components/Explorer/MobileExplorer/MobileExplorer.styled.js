@@ -10,6 +10,7 @@ export const MobileExplorerSection = styled.div`
     flex: 1;
     display: ${(props) => (props.isVisible ? 'flex' : 'none')};
     flex-direction: column;
+    padding-bottom: 48px;
 `;
 
 export const MobileMapSection = styled.div`

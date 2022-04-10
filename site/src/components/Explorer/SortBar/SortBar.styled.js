@@ -22,15 +22,15 @@ export const SortBar = styled.div`
     display: flex;
     align-items: center;
 
-    margin: 32px 32px 0;
+    padding: 32px 32px 16px;
 
     ${(props) => props.theme.breakpoints.small`
-        margin: 24px 32px 0;
+        padding: 24px 32px 0;
     `}
 
     ${(props) => props.theme.breakpoints.medium`
         line-height: 4rem;
         font-size: 1.175rem;
-        margin: 32px 16px 0;
+        padding: 32px 16px 0;
     `}
 `;
