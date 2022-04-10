@@ -5,11 +5,16 @@ export const useExplorerRefContext = () => useContext(ExplorerRefContext);
 
 export const ExplorerRef = ({ children }) => {
     const mastheadRef = useRef(null);
-    const buildingExplorerRef = useRef(null);
+    const buildingExplorerDesktopRef = useRef(null);
+    const buildingExplorerMobileRef = useRef(null);
 
     return (
         <ExplorerRefContext.Provider
-            value={{ mastheadRef, buildingExplorerRef }}
+            value={{
+                mastheadRef,
+                buildingExplorerDesktopRef,
+                buildingExplorerMobileRef,
+            }}
         >
             {children}
         </ExplorerRefContext.Provider>

@@ -3,14 +3,12 @@ import * as S from 'components/Explorer/Masthead/MobileMasthead/MobileMasthead.s
 import { Purchase } from 'components/Explorer/Masthead/Purchase';
 import { Box } from 'components/ui/Box';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
-import { useExplorerRefContext } from 'contexts/ExplorerRef';
 
 export const MobileMasthead = () => {
     const { activeHighrise } = useActiveHighriseContext();
-    const { mastheadRef } = useExplorerRefContext();
 
     return (
-        <Box ref={mastheadRef} isColumn>
+        <Box isColumn>
             <S.MobileMasthead>
                 <S.TitleContainer>
                     <S.Title isActive>

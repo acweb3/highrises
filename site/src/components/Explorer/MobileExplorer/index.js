@@ -4,17 +4,22 @@ import * as S from 'components/Explorer/MobileExplorer/MobileExplorer.styled';
 import { MobileMap } from 'components/Explorer/MobileExplorer/MobileMap';
 import { SortBar } from 'components/Explorer/SortBar';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
+import { useExplorerRefContext } from 'contexts/ExplorerRef';
 import { useState } from 'react';
 
 export const MobileExplorer = () => {
     const [activeSort, setActiveSort] = useState(undefined);
     const { activeHighrise } = useActiveHighriseContext();
+    const { buildingExplorerMobileRef } = useExplorerRefContext();
 
     return (
         <S.MobileExplorer>
             <MobileMap />
             <SortBar activeSort={activeSort} setActiveSort={setActiveSort} />
-            <BuildingsExplorer activeSort={activeSort} />
+            <BuildingsExplorer
+                activeSort={activeSort}
+                buildingExplorerRef={buildingExplorerMobileRef}
+            />
 
             <S.MobileExplorerSection isVisible>
                 <Masthead />

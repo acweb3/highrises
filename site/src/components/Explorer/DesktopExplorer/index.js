@@ -8,7 +8,7 @@ import { useState } from 'react';
 
 export const DesktopExplorer = () => {
     const [activeSort, setActiveSort] = useState(undefined);
-    const { buildingExplorerRef } = useExplorerRefContext();
+    const { buildingExplorerDesktopRef } = useExplorerRefContext();
 
     return (
         <S.DesktopExplorer>
@@ -22,7 +22,7 @@ export const DesktopExplorer = () => {
                 />
                 <BuildingsExplorer
                     activeSort={activeSort}
-                    buildingExplorerRef={buildingExplorerRef}
+                    buildingExplorerRef={buildingExplorerDesktopRef}
                 />
                 <Masthead />
             </S.DesktopExplorerSection>
