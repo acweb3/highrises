@@ -1,23 +1,25 @@
 import styled from 'styled-components';
 
 export const ViewScrollContainer = styled.div`
-    opacity: 0;
-    transform: translateY(20%);
-    transition: opacity 700ms, transform 200ms;
+    ${(props) => props.theme.breakpoints.mobile`
+        opacity: 0;
+        transform: translateY(20%);
+        transition: opacity 700ms, transform 200ms;
 
-    ${(props) => {
-        return props.before;
-    }}
+        ${(props) => {
+            return props.before;
+        }}
 
-    ${(props) => {
-        if (props.isInView) {
-            return (
-                props.after ??
+        ${(props) => {
+            if (props.isInView) {
+                return (
+                    props.after ??
+                    `
+                    transform: translateY(0);
+                    opacity: 1;
                 `
-                transform: translateY(0);
-                opacity: 1;
-            `
-            );
-        }
-    }}
+                );
+            }
+        }}
+    `}
 `;

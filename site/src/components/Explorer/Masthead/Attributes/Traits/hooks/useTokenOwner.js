@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 
 export const useTokenOwner = ({ tokenId }) => {
     const { contract, openseaURL } = useChainConfig();
-    const [ens, setEns] = useState();
+    const [ens /*setEns*/] = useState();
     const ownerOf = useCall({
         contract,
         method: 'ownerOf',
@@ -16,9 +16,9 @@ export const useTokenOwner = ({ tokenId }) => {
 
     useEffect(() => {
         (async () => {
-            const lookupEns = await (ownerOf &&
-                ethers.library.lookupAddress(ownerOf));
-            setEns(lookupEns);
+            // const lookupEns = await (ownerOf &&
+            //     ethers.library.lookupAddress(ownerOf));
+            // setEns(lookupEns);
         })();
     }, [ethers.library, ownerOf]);
 

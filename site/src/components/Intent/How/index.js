@@ -1,4 +1,4 @@
-import { Cloud, Clouds, cloudProps } from 'components/Cloud';
+import { Clouds } from 'components/Clouds';
 import { Drone } from 'components/Intent/How/Drone';
 import * as S from 'components/Intent/How/How.styled';
 import { Box } from 'components/ui/Box';
@@ -9,11 +9,7 @@ export const How = ({ className }) => {
             <Box>
                 <S.HowContainer>
                     <Drone />
-                    <Clouds>
-                        {cloudProps.how.map((styles, i) => (
-                            <Cloud styles={styles} key={i} />
-                        ))}
-                    </Clouds>
+                    <Clouds cloudKey="how" />
 
                     <S.HowContent>
                         <S.Title>How?</S.Title>

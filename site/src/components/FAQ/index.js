@@ -1,6 +1,6 @@
 import birdsSrc from 'assets/images/birds.png';
 import edisonBuildingSrc from 'assets/images/edison-building.png';
-import { Cloud, Clouds, cloudProps } from 'components/Cloud';
+import { Clouds } from 'components/Clouds';
 import * as S from 'components/FAQ/FAQ.styled';
 import { Box } from 'components/ui/Box';
 import { Header } from 'components/ui/Header';
@@ -39,11 +39,7 @@ export const FAQ = () => {
     return (
         <S.FAQ>
             <S.Birds src={birdsSrc} />
-            <Clouds>
-                {cloudProps.faq.map((styles, i) => (
-                    <Cloud styles={styles} key={i} />
-                ))}
-            </Clouds>
+            <Clouds cloudKey="faq" />
             <div
                 style={{
                     width: '100vw',
