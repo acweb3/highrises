@@ -5,6 +5,7 @@ export const Traits = ({ activeHighrise, className }) => {
     const { tokenOwnerAddress } = useTokenOwner({
         tokenId: activeHighrise.index,
     });
+
     const traits = [
         ['Address', activeHighrise.address],
         ['Opened', activeHighrise.opened],

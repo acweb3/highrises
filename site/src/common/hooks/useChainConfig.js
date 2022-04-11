@@ -8,8 +8,8 @@ export const useChainConfig = () => {
 
     const contractAddress =
         ethers.library?.network?.chainId === 4
-            ? config.contractAddress
-            : config.contractAddress;
+            ? config.rinkebyContractAddress
+            : config.rinkebyContractAddress;
 
     return {
         openseaURL:

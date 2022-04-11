@@ -24,7 +24,11 @@ export const useTokenOwner = ({ tokenId }) => {
 
     return {
         tokenOwnerAddress: !!(ens || ethAddress) ? (
-            <a href={`https://${openseaURL}.io/${ethAddress}`}>
+            <a
+                href={`https://${openseaURL}.io/${ethAddress}`}
+                target="_blank"
+                rel="noopener noreferrer"
+            >
                 {ens || shortenAddress(ethAddress)}
             </a>
         ) : undefined,

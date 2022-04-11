@@ -8,9 +8,9 @@ const requiredEnvVar = (name, envVar) => {
 
 export const config = {
     release: new Date('4/20/2022'),
-    contractAddress: requiredEnvVar(
+    rinkebyContractAddress: requiredEnvVar(
         'contractAddress',
-        process.env.REACT_APP_CONTRACT_ADDRESS
+        process.env.REACT_APP_RINKEBY_CONTRACT_ADDRESS
     ),
     googleMapsAPIKey: requiredEnvVar(
         'googleMapsAPIKey',

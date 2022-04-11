@@ -20,7 +20,6 @@ export const MobileExplorer = () => {
                 activeSort={activeSort}
                 buildingExplorerRef={buildingExplorerMobileRef}
             />
-
             <S.MobileExplorerSection isVisible>
                 <Masthead />
                 <S.MobileExplorerNavigation
