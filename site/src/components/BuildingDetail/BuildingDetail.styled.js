@@ -76,7 +76,12 @@ export const Purchase = styled(UnstyledPurchase)`
 `;
 
 export const BuildingDetailImage = styled.img`
-    height: 100%;
+    width: 100%;
+
+    ${(props) => props.theme.breakpoints.mobile`
+        height: 100%;
+        width: auto;
+    `}
 `;
 
 export const BuildingDetailImageContainer = styled.div`

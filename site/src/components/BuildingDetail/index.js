@@ -1,4 +1,5 @@
 import * as S from 'components/BuildingDetail/BuildingDetail.styled';
+import { MembersArea } from 'components/BuildingDetail/MembersArea';
 import { MobileMap } from 'components/Explorer/MobileExplorer/MobileMap';
 import { useEffect } from 'react';
 import Helmet from 'react-helmet';
@@ -19,6 +20,9 @@ export const BuildingDetail = ({ activeHighrise }) => {
                 <S.BuildingDetailBack to="/">
                     ← Back to explorer
                 </S.BuildingDetailBack>
+                {activeHighrise && (
+                    <MembersArea activeHighrise={activeHighrise} />
+                )}
                 <S.BuildingDetailHeader>
                     <S.Header>{activeHighrise.name}</S.Header>
                     <S.SubHeader>{activeHighrise.highriseNumber}</S.SubHeader>
@@ -28,8 +32,19 @@ export const BuildingDetail = ({ activeHighrise }) => {
                 </S.BuildingDetailImageContainer>
                 <S.SubHeader>Traits</S.SubHeader>
                 <S.Traits activeHighrise={activeHighrise} />
-                <S.Purchase isCentered isFullPage />
-                <S.ExternalNavigation activeHighrise={activeHighrise} showMap />
+                {activeHighrise && (
+                    <S.Purchase
+                        activeHighrise={activeHighrise}
+                        isCentered
+                        isFullPage
+                    />
+                )}
+                {activeHighrise && (
+                    <S.ExternalNavigation
+                        activeHighrise={activeHighrise}
+                        showMap
+                    />
+                )}
                 <MobileMap />
                 <S.SubHeader>Story</S.SubHeader>
                 <S.Story isModal activeHighrise={activeHighrise} />

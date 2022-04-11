@@ -20,7 +20,7 @@ const Asset = ({ children }) => {
 export const PurchaseItem = ({
     buttonText,
     copy,
-    disabled,
+    hasMinted,
     header,
     href,
     isCentered,
@@ -34,16 +34,14 @@ export const PurchaseItem = ({
             <S.PurchaseCopy>{copy}</S.PurchaseCopy>
             <Asset>
                 <S.PurchasePrice>{price}</S.PurchasePrice>
-                {!disabled ? (
+                {!hasMinted ? (
                     <a href={href} target="_blank" rel="noopener noreferrer">
                         <S.PurchaseImage src={src} isFullPage={isFullPage} />
                     </a>
                 ) : (
-                    <S.PurchaseDisabled isFullPage={isFullPage}>
-                        <S.PurchaseComingSoon>Coming soon</S.PurchaseComingSoon>
-                    </S.PurchaseDisabled>
+                    <S.PurchaseImage src={src} isFullPage={isFullPage} />
                 )}
-                {!isFullPage && (
+                {!isFullPage && hasMinted && (
                     <S.PurchaseExternalLink
                         buttonText={buttonText}
                         href={href}

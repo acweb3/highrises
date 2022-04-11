@@ -1,12 +1,19 @@
 import { useChainConfig } from 'common/hooks/useChainConfig';
+import { useTokenOwner } from 'components/Explorer/Masthead/Attributes/Traits/hooks/useTokenOwner';
 import { EthPrice } from 'components/Explorer/Masthead/Purchase/EthPrice';
 import * as S from 'components/Explorer/Masthead/Purchase/Purchase.styled';
 import { PurchaseItem } from 'components/Explorer/Masthead/Purchase/PurchaseItem';
-import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
 
-export const Purchase = ({ className, isCentered, isFullPage }) => {
-    const { activeHighrise } = useActiveHighriseContext();
+export const Purchase = ({
+    activeHighrise,
+    className,
+    isCentered,
+    isFullPage,
+}) => {
     const { openseaURL, contractAddress } = useChainConfig();
+    const { hasOwner } = useTokenOwner({
+        tokenId: activeHighrise.index,
+    });
 
     return (
         <S.Purchase className={className}>
@@ -23,7 +30,7 @@ export const Purchase = ({ className, isCentered, isFullPage }) => {
                 src={activeHighrise.posterSrc}
             />
             <PurchaseItem
-                disabled={!activeHighrise.nftSrc}
+                hasMinted={hasOwner}
                 href={`https://${openseaURL}.io/assets/${contractAddress}/${`${activeHighrise.index}`}`}
                 header="The NFT"
                 buttonText="View Secondary"

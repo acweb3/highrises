@@ -98,15 +98,5 @@ export const ContextFAB = styled.div`
         top: 32px;
     `};
 
-    ${(props) =>
-        props.isActive &&
-        css`
-            background: rgb(255, 0, 232);
-            background: linear-gradient(
-                124deg,
-                rgba(255, 0, 232, 1) 0%,
-                rgba(98, 45, 178, 1) 23%,
-                rgba(59, 93, 120, 1) 100%
-            );
-        `}
+    ${(props) => props.isActive && props.theme.utility.membersGradient}
 `;

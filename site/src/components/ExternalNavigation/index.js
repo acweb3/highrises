@@ -1,10 +1,14 @@
 import { useChainConfig } from 'common/hooks/useChainConfig';
+import { useTokenOwner } from 'components/Explorer/Masthead/Attributes/Traits/hooks/useTokenOwner';
 import * as S from 'components/ExternalNavigation/ExternalNavigation.styled';
 import { useMapViewContext } from 'contexts/MapView';
 
 export const ExternalNavigation = ({ activeHighrise, className, showMap }) => {
     const { setIsMapView } = useMapViewContext();
     const { openseaURL, contractAddress } = useChainConfig();
+    const { hasOwner } = useTokenOwner({
+        tokenId: activeHighrise.index,
+    });
 
     return (
         <S.ExternalNavigation className={className}>
@@ -16,10 +20,12 @@ export const ExternalNavigation = ({ activeHighrise, className, showMap }) => {
                             activeHighrise.index + 1
                         }`.padStart(2, '0')}`}
                     />
-                    <S.ExternalNavigationLink
-                        buttonText="View Secondary"
-                        href={`https://${openseaURL}.io/assets/${contractAddress}/${`${activeHighrise.index}`}`}
-                    />
+                    {hasOwner && (
+                        <S.ExternalNavigationLink
+                            buttonText="View Secondary"
+                            href={`https://${openseaURL}.io/assets/${contractAddress}/${`${activeHighrise.index}`}`}
+                        />
+                    )}
                 </>
             )}
             {activeHighrise && showMap && (

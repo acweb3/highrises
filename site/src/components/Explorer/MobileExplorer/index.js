@@ -22,10 +22,12 @@ export const MobileExplorer = () => {
             />
             <S.MobileExplorerSection isVisible>
                 <Masthead />
-                <S.MobileExplorerNavigation
-                    showMap
-                    activeHighrise={activeHighrise}
-                />
+                {activeHighrise && (
+                    <S.MobileExplorerNavigation
+                        showMap
+                        activeHighrise={activeHighrise}
+                    />
+                )}
             </S.MobileExplorerSection>
         </S.MobileExplorer>
     );

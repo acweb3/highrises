@@ -23,6 +23,8 @@ export const useTokenOwner = ({ tokenId }) => {
     }, [ethers.library, ownerOf]);
 
     return {
+        isCurrentOwner: ethers.account && ethAddress === ethers.account,
+        hasOwner: !!ethAddress,
         tokenOwnerAddress: !!(ens || ethAddress) ? (
             <a
                 href={`https://${openseaURL}.io/${ethAddress}`}
