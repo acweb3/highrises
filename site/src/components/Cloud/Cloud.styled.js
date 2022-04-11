@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
 const cloudsCss = css`
     position: absolute;
@@ -51,4 +51,21 @@ export const Cloud = styled.div.attrs((props) => ({
     opacity: ${(props) => (props.isLoaded ? 1 : 0)};
 
     transition: opacity 0.4s, transform 2s;
+`;
+
+export const MobileCloud = styled.div.attrs((props) => ({
+    style: {
+        top: `${props.top ?? 0}px`,
+        right: `${props.right ?? 0}px`,
+        transform: `scale(${props.scale})`,
+    },
+}))``;
+
+const animation = keyframes`
+  from { transform: translateX(-200%); }
+  to { transform: translateX(100%); }
+`;
+
+export const MobileCloudWrapper = styled.div`
+    animation: ${animation} 10s infinite;
 `;
