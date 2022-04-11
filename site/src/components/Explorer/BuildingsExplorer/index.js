@@ -25,9 +25,11 @@ export const BuildingsExplorer = ({ activeSort, buildingExplorerRef }) => {
         if (activeSort) {
             const sortedHighrises = activeSort.sort([...initHighrises.current]);
             setHighrises(sortedHighrises);
+
             setActiveHighrise(sortedHighrises[0]);
         } else if (initHighrises.current) {
             setHighrises(initHighrises.current);
+            setActiveHighrise(initHighrises.current[0]);
         }
     }, [
         activeSort,
