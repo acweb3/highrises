@@ -1,13 +1,21 @@
 import * as S from 'components/BuildingDetail/BuildingDetail.styled';
 import { MembersArea } from 'components/BuildingDetail/MembersArea';
 import { MobileMap } from 'components/Explorer/MobileExplorer/MobileMap';
-import { useEffect } from 'react';
+import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
+import { useEffect, useState } from 'react';
 import Helmet from 'react-helmet';
 
 export const BuildingDetail = ({ activeHighrise }) => {
+    const [imageSrc, setImageSrc] = useState(activeHighrise.posterSrc);
+    const { highrises } = useActiveHighriseContext();
+
     useEffect(() => {
         window.scrollTo(0, 0);
-    }, []);
+    }, [activeHighrise]);
+
+    useEffect(() => {
+        setImageSrc(activeHighrise.posterSrc);
+    }, [activeHighrise]);
 
     return (
         <>
@@ -28,7 +36,23 @@ export const BuildingDetail = ({ activeHighrise }) => {
                     <S.SubHeader>{activeHighrise.highriseNumber}</S.SubHeader>
                 </S.BuildingDetailHeader>
                 <S.BuildingDetailImageContainer>
-                    <S.BuildingDetailImage src={activeHighrise.posterSrc} />
+                    {imageSrc && <S.BuildingDetailImage src={imageSrc} />}
+                    <S.BuildingDetailTabs>
+                        <S.BuildingDetailTab
+                            isActive={imageSrc === activeHighrise.posterSrc}
+                            onClick={() =>
+                                setImageSrc(activeHighrise.posterSrc)
+                            }
+                        >
+                            Poster
+                        </S.BuildingDetailTab>
+                        <S.BuildingDetailTab
+                            isActive={imageSrc === activeHighrise.nftSrc}
+                            onClick={() => setImageSrc(activeHighrise.nftSrc)}
+                        >
+                            NFT
+                        </S.BuildingDetailTab>
+                    </S.BuildingDetailTabs>
                 </S.BuildingDetailImageContainer>
                 <S.SubHeader>Traits</S.SubHeader>
                 <S.Traits activeHighrise={activeHighrise} />
@@ -51,6 +75,25 @@ export const BuildingDetail = ({ activeHighrise }) => {
                 <S.BuildingDetailBack to="/">
                     ← Back to explorer
                 </S.BuildingDetailBack>
+
+                {highrises.length && (
+                    <>
+                        {activeHighrise.index < highrises.length - 1 && (
+                            <S.BuildingDetailNextHighrise
+                                to={`/building/${activeHighrise.index + 1}`}
+                            >
+                                Next Highrise ↴
+                            </S.BuildingDetailNextHighrise>
+                        )}
+                        {activeHighrise.index > 0 && (
+                            <S.BuildingDetailLastHighrise
+                                to={`/building/${activeHighrise.index - 1}`}
+                            >
+                                Last Highrise ↴
+                            </S.BuildingDetailLastHighrise>
+                        )}
+                    </>
+                )}
             </S.BuildingDetail>
         </>
     );

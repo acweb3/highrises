@@ -75,6 +75,30 @@ export const Purchase = styled(UnstyledPurchase)`
     width: 100%;
 `;
 
+export const BuildingDetailTab = styled.div`
+    padding: 0 8px;
+    border-left: 1px dashed ${(props) => props.theme.colors.blue[0]};
+    border-right: 1px dashed ${(props) => props.theme.colors.blue[0]};
+
+    font-weight: ${(props) => (props.isActive ? 700 : 400)};
+
+    &:first-of-type {
+        border-left: none;
+    }
+
+    &:last-of-type {
+        border-right: none;
+    }
+`;
+
+export const BuildingDetailTabs = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-top: 8px;
+`;
+
 export const BuildingDetailImage = styled.img`
     width: 100%;
 
@@ -92,6 +116,38 @@ export const BuildingDetailBack = styled(Link)`
     color: ${(props) => props.theme.colors.blue[0]};
     margin-bottom: 32px;
     width: 100%;
+`;
+
+export const BuildingDetailNextHighrise = styled(Link)`
+    color: ${(props) => props.theme.colors.blue[0]};
+    background-color: ${(props) => props.theme.colors.grey[1]};
+    position: fixed;
+    bottom: 100px;
+    right: -48px;
+    transform: rotate(-90deg);
+    padding: 16px;
+    border-radius: 8px 8px 0 0;
+    font-weight: 700;
+    text-decoration: none;
+`;
+
+export const BuildingDetailLastHighrise = styled(Link)`
+    display: none;
+
+    color: ${(props) => props.theme.colors.blue[0]};
+    background-color: ${(props) => props.theme.colors.grey[1]};
+    position: fixed;
+    bottom: 100px;
+    left: -48px;
+    transform: rotate(-270deg);
+    padding: 16px;
+    border-radius: 8px 8px 0 0;
+    font-weight: 700;
+    text-decoration: none;
+
+    ${(props) => props.theme.breakpoints.mobile`
+        display: block;
+    `}
 `;
 
 export const BuildingDetail = styled.div`

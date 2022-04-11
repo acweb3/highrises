@@ -19,6 +19,7 @@ export const Purchase = ({
         <S.Purchase className={className}>
             <PurchaseItem
                 copy="Signed and numbered, limited to 100 editions."
+                hasMinted
                 header="The Print"
                 buttonText="View Print"
                 href={`https://www.hythacg.com/prints/highrise${`${

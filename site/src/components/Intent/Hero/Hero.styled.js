@@ -6,7 +6,7 @@ export const Sky = styled(UnstyledSky)`
     height: 100%;
     width: auto;
 
-    ${(props) => props.theme.breakpoints.small`
+    ${(props) => props.theme.breakpoints.medium`
         height: auto;
         width: 100%;
     `}
