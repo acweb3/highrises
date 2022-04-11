@@ -16,7 +16,7 @@ export const useTokenHolder = () => {
 
     return tokenOwners
         .map((tokenOwner, index) => {
-            if (tokenOwner?.value?.[0] === account) {
+            if (account && tokenOwner?.value?.[0] === account) {
                 return index;
             }
 

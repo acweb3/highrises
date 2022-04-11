@@ -14,12 +14,11 @@ export const ActiveHighrise = ({ children }) => {
         (async () => {
             const highriseWithImage = await Promise.all(
                 // # TODO => Remove this slice
-                highrisesData.slice(0, 15).map(async (highrise, index) => {
+                highrisesData.slice(0, 20).map(async (highrise, index) => {
                     return {
                         ...highrise,
                         imageSrc: await pullImage('slide', index),
                         posterSrc: await pullImage('poster', index, 'jpg'),
-                        thumbnailSrc: await pullImage('map', index),
                         nftSrc: await pullImage('nft', index, 'jpg'),
                         index,
                     };
