@@ -14,6 +14,7 @@ export const StoryCopy = styled.div`
     ${(props) =>
         !props.isExpanded &&
         css`
+            cursor: pointer;
             max-height: 200px;
 
             &::after {

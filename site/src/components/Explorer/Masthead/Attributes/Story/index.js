@@ -4,23 +4,21 @@ import { useNavigate } from 'react-router-dom';
 export const Story = ({ isModal, activeHighrise, className }) => {
     const navigate = useNavigate();
 
+    const handleClick = () => {
+        navigate(`/building/${activeHighrise.index}`, {
+            state: {
+                isLocalNavigation: true,
+            },
+        });
+    };
+
     return (
         <S.Story className={className}>
-            <S.StoryCopy isExpanded={isModal}>
+            <S.StoryCopy isExpanded={isModal} onClick={handleClick}>
                 {activeHighrise.description}
             </S.StoryCopy>
             {!isModal && (
-                <S.StoryExpand
-                    onClick={() => {
-                        navigate(`/building/${activeHighrise.index}`, {
-                            state: {
-                                isLocalNavigation: true,
-                            },
-                        });
-                    }}
-                >
-                    Read more
-                </S.StoryExpand>
+                <S.StoryExpand onClick={handleClick}>Read more</S.StoryExpand>
             )}
         </S.Story>
     );
