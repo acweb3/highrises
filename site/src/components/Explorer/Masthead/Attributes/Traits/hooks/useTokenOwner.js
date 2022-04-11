@@ -16,6 +16,7 @@ export const useTokenOwner = ({ tokenId }) => {
 
     useEffect(() => {
         (async () => {
+            // # TODO => Fix this, reverse lookup not working.
             // const lookupEns = await (ownerOf &&
             //     ethers.library.lookupAddress(ownerOf));
             // setEns(lookupEns);
@@ -24,8 +25,8 @@ export const useTokenOwner = ({ tokenId }) => {
 
     return {
         isCurrentOwner: ethers.account && ethAddress === ethers.account,
-        hasOwner: !!ethAddress,
-        tokenOwnerAddress: !!(ens || ethAddress) ? (
+        hasOwner: Boolean(ethAddress),
+        tokenOwnerAddress: Boolean(ens || ethAddress) ? (
             <a
                 href={`https://${openseaURL}.io/${ethAddress}`}
                 target="_blank"

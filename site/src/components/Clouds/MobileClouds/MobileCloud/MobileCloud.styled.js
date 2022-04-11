@@ -2,7 +2,7 @@ import styled, { keyframes } from 'styled-components';
 
 export const marquee = keyframes`
   from { transform: translateX(-10%); }
-  to { transform: translateX(100%); }
+  to { transform: translateX(50%); }
 `;
 
 export const MobileCloudImage = styled.img`
@@ -15,8 +15,6 @@ export const MobileCloudImage = styled.img`
 export const MobileCloud = styled.div`
     top: ${(props) => props.top ?? 0}px;
     right: ${(props) => props.right ?? 0}px;
-    /* transform: scale(${(props) => props.scale}); */
     position: absolute;
-
-    animation: ${marquee} 60s infinite linear;
+    animation: ${marquee} 60s linear infinite;
 `;

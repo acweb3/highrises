@@ -1,3 +1,4 @@
+import { ExternalButton } from 'components/ui/BaseButton';
 import { ExternalButtonLink as UnstyledExternalButtonLink } from 'components/ui/BaseButton/ExternalButtonLink';
 import { Header } from 'components/ui/Header';
 import styled, { css } from 'styled-components';
@@ -24,6 +25,18 @@ const imageCss = css`
                 height: 444px;
             `}
         `}
+`;
+
+export const PurchaseExternalLinkDisabled = styled(ExternalButton)`
+    opacity: 0.6;
+    cursor: disabled;
+    text-decoration: line-through;
+
+    display: none;
+
+    ${(props) => props.theme.breakpoints.mobile`
+        display: block;
+    `}
 `;
 
 export const PurchaseExternalLink = styled(UnstyledExternalButtonLink)`

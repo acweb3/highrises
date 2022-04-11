@@ -14,18 +14,22 @@ export const ExternalNavigation = ({ activeHighrise, className, showMap }) => {
         <S.ExternalNavigation className={className}>
             {activeHighrise && (
                 <>
+                    {hasOwner ? (
+                        <S.ExternalNavigationLink
+                            buttonText="View Secondary"
+                            href={`https://${openseaURL}.io/assets/${contractAddress}/${`${activeHighrise.index}`}`}
+                        />
+                    ) : (
+                        <S.ExternalNavigationMint
+                            tokenId={activeHighrise.index}
+                        />
+                    )}
                     <S.ExternalNavigationLink
                         buttonText="View Print"
                         href={`https://www.hythacg.com/prints/highrise${`${
                             activeHighrise.index + 1
                         }`.padStart(2, '0')}`}
                     />
-                    {hasOwner && (
-                        <S.ExternalNavigationLink
-                            buttonText="View Secondary"
-                            href={`https://${openseaURL}.io/assets/${contractAddress}/${`${activeHighrise.index}`}`}
-                        />
-                    )}
                 </>
             )}
             {activeHighrise && showMap && (

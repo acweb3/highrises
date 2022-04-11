@@ -24,7 +24,7 @@ export const Countdown = () => {
 
     return (
         <S.Countdown>
-            <S.CountdownCounter isActive={!!countdown}>
+            <S.CountdownCounter isActive={Boolean(countdown)}>
                 Next NFT Release {countdown}
             </S.CountdownCounter>
         </S.Countdown>

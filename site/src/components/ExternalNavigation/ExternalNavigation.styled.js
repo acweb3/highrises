@@ -1,7 +1,8 @@
 import { ReactComponent as UnstyledMap } from 'assets/icons/map.svg';
+import { Mint } from 'components/Mint';
 import { baseButtonCss } from 'components/ui/BaseButton';
 import { ExternalButtonLink as UnstyledExternalButtonLink } from 'components/ui/BaseButton/ExternalButtonLink';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Map = styled(UnstyledMap)`
     fill: ${(props) => props.theme.colors.blue[0]};
@@ -36,7 +37,7 @@ export const MapButton = styled.div`
     `}
 `;
 
-export const ExternalNavigationLink = styled(UnstyledExternalButtonLink)`
+export const buttonCss = css`
     display: block;
 
     margin-top: -8px;
@@ -45,6 +46,15 @@ export const ExternalNavigationLink = styled(UnstyledExternalButtonLink)`
     ${(props) => props.theme.breakpoints.mobile`
         display: none;
     `}
+`;
+
+export const ExternalNavigationLink = styled(UnstyledExternalButtonLink)`
+    ${buttonCss}
+`;
+
+export const ExternalNavigationMint = styled(Mint)`
+    ${buttonCss}
+    margin-top: 8px;
 `;
 
 export const ExternalNavigation = styled.div``;
