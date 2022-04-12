@@ -132,8 +132,6 @@ export const BuildingDetailNextHighrise = styled(Link)`
 `;
 
 export const BuildingDetailLastHighrise = styled(Link)`
-    display: none;
-
     color: ${(props) => props.theme.colors.blue[0]};
     background-color: ${(props) => props.theme.colors.grey[1]};
     position: fixed;
@@ -144,10 +142,6 @@ export const BuildingDetailLastHighrise = styled(Link)`
     border-radius: 8px 8px 0 0;
     font-weight: 700;
     text-decoration: none;
-
-    ${(props) => props.theme.breakpoints.mobile`
-        display: block;
-    `}
 `;
 
 export const BuildingDetail = styled.div`

@@ -16,13 +16,14 @@ export const How = ({ className }) => {
 
                         <S.Copy>
                             <S.Paragraph>
-                                To document each building, several images are
-                                taken by drone from varying elevations. The
-                                Images are manually stitched together in
-                                Photoshop to create a high resolution elevation
-                                scan with flattened perspective. Lighting is
-                                enhanced to accentuate the depth and form of
-                                each building.
+                                A drone-mounted camera photographs the top of
+                                each Highrise from varying positions. Images are
+                                stitched together manually in Photoshop to
+                                create a high-res elevation scan with flattened
+                                perspective and enhanced lighting effects to
+                                accentuate depth and form. Creative and artistic
+                                liberties celebrate the unique character of each
+                                structure.
                             </S.Paragraph>
                         </S.Copy>
                     </S.HowContent>

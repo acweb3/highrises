@@ -1,7 +1,15 @@
 import { EditingCard as UnstyledEditingCard } from 'components/Editing/EditingCard';
 import { Header } from 'components/ui/Header';
 import { Paragraph } from 'components/ui/Paragraph';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+const isMobileTitleCss = css`
+    text-align: ${(props) => (props.isMobileTitle ? 'center' : 'left')};
+
+    ${(props) => props.theme.breakpoints.extraSmall`
+        text-align: left;
+    `}
+`;
 
 export const EditingCard = {
     Mobile: styled(UnstyledEditingCard)`
@@ -22,6 +30,12 @@ export const EditingCard = {
 
 export const P = styled(Paragraph)`
     text-indent: 0;
+
+    ${isMobileTitleCss}
+`;
+
+export const H1 = styled(Header)`
+    ${isMobileTitleCss}
 `;
 
 export const H2 = styled(Header)`

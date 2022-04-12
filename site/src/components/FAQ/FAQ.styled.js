@@ -30,6 +30,18 @@ export const Question = styled(Paragraph)`
 
 export const Answer = styled(Paragraph)`
     text-indent: 0;
+
+    border: 1px dashed ${(props) => props.theme.colors.blue[0]};
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.6);
+    padding: 8px;
+
+    ${(props) => props.theme.breakpoints.mobile`
+        border: none;
+        border-radius: 0;
+        background: transparent;
+        padding: 0;
+    `}
 `;
 
 export const Questions = styled.div`

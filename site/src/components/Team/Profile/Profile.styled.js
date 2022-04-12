@@ -1,36 +1,63 @@
 import styled from 'styled-components';
 
+export const ProfileSocials = styled.div`
+    display: flex;
+    margin-top: 16px;
+
+    margin-right: auto;
+
+    ${(props) => props.theme.breakpoints.mobile`
+        margin-right: initial;
+    `}
+`;
+
 export const ProfileHeader = styled.div`
     color: ${(props) => props.theme.colors.blue[0]};
-    font-size: 1.25rem;
     font-weight: 800;
-    margin: 16px 0 8px;
+    margin: 16px 0 16px;
+
+    width: 100%;
+
+    ${(props) => props.theme.breakpoints.mobile`
+        width: auto;
+        font-size: 1.25rem;
+    `}
+`;
+
+export const ProfileTitle = styled.div`
+    color: ${(props) => props.theme.colors.blue[0]};
+    font-weight: 600;
+    margin-bottom: 16px;
+
+    width: 100%;
+
+    ${(props) => props.theme.breakpoints.mobile`
+        width: auto;
+        white-space: nowrap;
+    `};
 `;
 
 export const ProfileText = styled.div`
     color: ${(props) => props.theme.colors.blue[0]};
-    font-weight: 600;
-    font-size: 1.1rem;
     line-height: 1.2;
-    text-align: center;
 
     ${(props) => props.theme.breakpoints.mobile`
-        white-space: nowrap;
-    `}
+        text-align: center;
+    `};
 `;
 
 export const ProfileImage = styled.img``;
 
 export const ProfileImageWrapper = styled.div`
-    width: 90px;
-    height: 90px;
     background: #e0e0e0;
-    border-radius: 50%;
     overflow: hidden;
+    margin-right: auto;
 
     ${(props) => props.theme.breakpoints.mobile`
         width: 180px;
         height: 180px;
+        border-radius: 50%;
+        margin-right: initial;
     `}
 `;
 
@@ -45,7 +72,15 @@ export const Profile = styled.div`
     margin: 0 0 32px;
 
     ${(props) => props.theme.breakpoints.mobile`
+        width: 200px;
+    `}
+
+    ${(props) => props.theme.breakpoints.extraSmall`
         width: 260px;
+    `}
+
+    ${(props) => props.theme.breakpoints.medium`
+        width: 400px;
     `}
 
     ${(props) => props.theme.breakpoints.large`

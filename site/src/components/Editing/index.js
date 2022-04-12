@@ -1,5 +1,4 @@
 import * as S from 'components/Editing/Editing.styled';
-import { Header } from 'components/ui/Header';
 
 export const Editing = () => {
     return (
@@ -7,12 +6,12 @@ export const Editing = () => {
             <S.EditingContent>
                 <S.EditingCard.Desktop />
                 <S.EditingDescription>
-                    <Header>Editing</Header>
+                    <S.H1 isMobileTitle>Editing</S.H1>
                     <S.Copy>
-                        <S.P>
-                            Chris Hytha has been working in Photoshop for nearly
-                            10 years. His experience ranges from creating
-                            complex layered architectural drawing to creating
+                        <S.P isMobileTitle>
+                            Learn the Photoshop techniques Chris Hytha has
+                            developed over 10 years of experience creating
+                            complex layered architectural drawings and
                             atmospheric fine art photography edits.
                         </S.P>
                         <S.EditingCard.Mobile />
@@ -23,16 +22,15 @@ export const Editing = () => {
                                 basic tools of Photoshop
                             </S.ListItem>
                             <S.ListItem>
-                                2 full editing process videos with live voice
-                                overs by Chris Hytha (Highrise #05 and #10)
+                                2 full editing process videos with voiceovers by
+                                Chris Hytha (Highrises #05 and #10)
                             </S.ListItem>
                             <S.ListItem>
-                                All raw data and final photoshop files are
-                                available for download
+                                Access to a private Discord channel to ask
+                                questions and share creations
                             </S.ListItem>
                             <S.ListItem>
-                                Access to a private discord channel to ask
-                                questions and share creation
+                                All raw data and final Photoshop files
                             </S.ListItem>
                         </S.List>
                     </S.Copy>
