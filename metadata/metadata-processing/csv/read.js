@@ -7,6 +7,7 @@ const { camelCase } = require('change-case');
 const DELIMITER = '\t';
 const DESCRIPTION_PLACEHOLDER =
     'Highrises are among the most iconic and defining elements of American Cities, and the technological advancement of the twentieth century fostered new heights.';
+const IPFS_DIR = 'ipfs://QmYZLQhmp2Kbs9HDafd7fQQnDSrPn5wKA4WqHrEgP1CdKC';
 
 const client = new Client({});
 
@@ -23,7 +24,7 @@ const read = async () => {
     const rawCSV = fs.readFileSync('data.tsv', 'utf-8');
     const rawCSVLines = rawCSV.split('\r\n');
     const csvLines = rawCSVLines.map((line) => line.split(DELIMITER));
-    csvLines.forEach((line) => line.shift());
+    // csvLines.forEach((line) => line.shift());
     const attrs = csvLines.shift();
     const headers = csvLines.shift();
     const attributesIndex = headers.indexOf('Attributes ');
@@ -46,11 +47,14 @@ const read = async () => {
         const basicProperties = line
             .slice(0, attributesIndex)
             .map((property, i) => {
-                return {
-                    trait_type: headers[i].trim(),
-                    value: property,
-                };
-            });
+                if (property) {
+                    return {
+                        trait_type: headers[i].trim(),
+                        value: property,
+                    };
+                }
+            })
+            .filter(Boolean);
         const individualProperties = attributesChunks.flatMap(
             ({ key, start, end }) => {
                 const props = headers.slice(start, end);
@@ -96,12 +100,10 @@ const read = async () => {
     });
     const standardizedMetadata = await Promise.all(
         accumulated.map(
-            async (
-                { buildingName, highriseNumber, image, ...processed },
-                index
-            ) => {
+            async ({ building, highriseNo, ...processed }, index) => {
+                console.log(processed);
                 const height = parseInt(
-                    processed.height[0].value.replace(`'`, '')
+                    processed.height.value.replace(`'`, '')
                 );
                 const decade = parseInt(
                     processed.decade.value.replace(`'`, '')
@@ -109,23 +111,24 @@ const read = async () => {
                 const { data } = await client.geocode({
                     params: {
                         key: process.env.GOOGLE_MAPS_API_KEY,
-                        address: processed.address.value,
+                        address: processed.mapAddress.value,
                     },
                 });
+
                 const words = getWords(index);
 
                 if (isNaN(height)) {
-                    console.error(`height is nan for ${buildingName}`);
+                    console.error(`height is nan for ${building}`);
                 }
                 if (isNaN(decade)) {
-                    console.error(`decade is nan for ${buildingName}`);
+                    console.error(`decade is nan for ${building}`);
                 }
 
                 return {
                     description: words || DESCRIPTION_PLACEHOLDER,
-                    highriseNumber: highriseNumber.value,
-                    image: image.value,
-                    name: buildingName.value,
+                    highriseNumber: highriseNo.value,
+                    image: `${IPFS_DIR}/${index}.jpg`,
+                    name: building.value,
                     height,
                     decade,
 
@@ -133,10 +136,14 @@ const read = async () => {
                     architect: processed.architect.value,
                     stories: processed.stories.value,
                     style: processed.style.value,
-                    date: processed.date.value,
+                    city: processed.city.value,
+                    secondaryStyle: processed.secondaryStyle?.value,
+                    opened: processed.opened.value,
 
                     ltlng: data.results[0].geometry.location,
-                    attributes: Object.values(processed).flat(),
+                    attributes: Object.values(processed)
+                        .flat()
+                        .filter((attr) => attr.value !== 'x'),
                 };
             }
         )
