@@ -1,19 +1,34 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const Select = styled.select`
-    color: ${(props) => props.theme.colors.grey[0]};
-    outline: none;
-    padding-left: 8px;
-    margin-right: 16px;
-    border: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    text-indent: 1px;
-    text-overflow: '';
-
+export const DropdownName = styled.div`
+    margin-right: 8px;
+    padding: 0 8px;
     opacity: ${(props) => (props.isActive ? 1 : 0.6)};
+    color: ${(props) => props.theme.colors.grey[0]};
+    border: 1px solid ${(props) => props.theme.colors.grey[0]};
+    display: flex;
+    justify-content: center;
+    border-radius: 16px;
+
+    cursor: pointer;
+
+    ${(props) =>
+        props.isActive &&
+        css`
+            color: ${(props) => props.theme.colors.blue[2]};
+            border: 1px solid ${(props) => props.theme.colors.blue[2]};
+        `};
+
+    ${(props) => props.theme.breakpoints.medium`
+        padding: 0 32px;
+    `}
 `;
 
 export const Dropdown = styled.div`
     max-width: 80px;
+    border-radius: 16px;
+
+    ${(props) => props.theme.breakpoints.medium`
+        max-width: initial;
+    `}
 `;

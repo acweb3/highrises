@@ -1,5 +1,6 @@
 const fs = require('fs');
 const { join } = require('path');
+const sharp = require('sharp');
 const { promisify } = require('util');
 
 const asyncReaddir = promisify(fs.readdir);
@@ -13,14 +14,25 @@ const nft = async () => {
     files.forEach(async (file, i) => {
         const [tokenIDRaw] = file.split(' ');
         const tokenID = parseInt(tokenIDRaw) - 1;
+
         fs.copyFileSync(
             join(rawImagesDir, file),
-            join(outputDir, `${tokenID}.jpg`)
+            join(outputDir, 'chain', `${tokenID}.jpg`)
         );
+
+        await sharp(join(rawImagesDir, file))
+            .resize({
+                width: 480,
+            })
+            .toFile(join(outputDir, 'site', `${tokenID}.jpg`));
+
+        await sharp(join(rawImagesDir, file))
+            .resize({
+                width: 80,
+            })
+            .toFile(join(outputDir, 'icon', `${tokenID}.jpg`));
     });
 };
-
-nft();
 
 module.exports = {
     nft,

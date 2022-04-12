@@ -11,19 +11,16 @@ export const highrises = [
         architect: 'John McArthur Jr.',
         stories: '22',
         style: 'Second Empire',
+        city: 'Philadelphia',
         opened: '1894',
         ltlng: {
-            lat: 39.9525994,
-            lng: -75.16224989999999,
+            lat: 39.9512023,
+            lng: -75.163471,
         },
         attributes: [
             {
                 trait_type: 'Address',
                 value: '1 S. Penn Square',
-            },
-            {
-                trait_type: 'Long address',
-                value: '1 Penn Square Philadelphia, PA 19107, USA',
             },
             {
                 trait_type: 'Opened',
@@ -32,10 +29,6 @@ export const highrises = [
             {
                 trait_type: 'Height',
                 value: "548'",
-            },
-            {
-                trait_type: 'Height',
-                value: "500' - 599'",
             },
             {
                 trait_type: 'Stories',
@@ -70,6 +63,10 @@ export const highrises = [
                 value: '1890s',
             },
             {
+                trait_type: 'Height Bracket',
+                value: "500' - 599'",
+            },
+            {
                 trait_type: 'Attributes',
                 value: 'Sloped Roof',
             },
@@ -80,22 +77,6 @@ export const highrises = [
             {
                 trait_type: 'Attributes',
                 value: 'Statue',
-            },
-            {
-                trait_type: 'Attributes',
-                value: 'Moderate',
-            },
-            {
-                trait_type: 'Attributes',
-                value: 'Soft Lighting',
-            },
-            {
-                trait_type: 'Attributes',
-                value: 'Overcast',
-            },
-            {
-                trait_type: 'Attributes',
-                value: 'Clear',
             },
         ],
     },
@@ -111,6 +92,7 @@ export const highrises = [
         architect: 'Tilden, Register & Pepper',
         stories: '25',
         style: 'Art Deco',
+        city: 'Philadelphia',
         opened: '1930',
         ltlng: {
             lat: 39.9496503,
@@ -122,20 +104,12 @@ export const highrises = [
                 value: '1616 Walnut St.',
             },
             {
-                trait_type: 'Long address',
-                value: '1616 Walnut Philadelphia',
-            },
-            {
                 trait_type: 'Opened',
                 value: '1930',
             },
             {
                 trait_type: 'Height',
                 value: "309'",
-            },
-            {
-                trait_type: 'Height',
-                value: "300' - 399'",
             },
             {
                 trait_type: 'Stories',
@@ -170,20 +144,8 @@ export const highrises = [
                 value: '1930s',
             },
             {
-                trait_type: 'Attributes',
-                value: 'Moderate',
-            },
-            {
-                trait_type: 'Attributes',
-                value: 'Soft Lighting',
-            },
-            {
-                trait_type: 'Attributes',
-                value: 'Overcast',
-            },
-            {
-                trait_type: 'Attributes',
-                value: 'Clear',
+                trait_type: 'Height Bracket',
+                value: "300' - 399'",
             },
         ],
     },
@@ -199,6 +161,7 @@ export const highrises = [
         architect: 'Rankin, Johnson, Abel et al.',
         stories: '24',
         style: 'Art Deco',
+        city: 'Philadelphia',
         opened: '1930',
         ltlng: {
             lat: 39.9508293,
@@ -210,20 +173,12 @@ export const highrises = [
                 value: '117 S. 17th St.',
             },
             {
-                trait_type: 'Long address',
-                value: '117 S 17th St, Philadelphia, PA 19103',
-            },
-            {
                 trait_type: 'Opened',
                 value: '1930',
             },
             {
                 trait_type: 'Height',
                 value: "313'",
-            },
-            {
-                trait_type: 'Height',
-                value: "300' - 399'",
             },
             {
                 trait_type: 'Stories',
@@ -258,16 +213,8 @@ export const highrises = [
                 value: '1930s',
             },
             {
-                trait_type: 'Attributes',
-                value: 'Soft Lighting',
-            },
-            {
-                trait_type: 'Attributes',
-                value: 'Sunset / Sunrise',
-            },
-            {
-                trait_type: 'Attributes',
-                value: 'Clear',
+                trait_type: 'Height Bracket',
+                value: "300' - 399'",
             },
         ],
     },
@@ -283,6 +230,7 @@ export const highrises = [
         architect: 'John T. Windrim',
         stories: '28',
         style: 'Art Deco',
+        city: 'Philadelphia',
         opened: '1932',
         ltlng: {
             lat: 39.9511841,
@@ -294,20 +242,12 @@ export const highrises = [
                 value: '1 S. Broad St.',
             },
             {
-                trait_type: 'Long address',
-                value: '1 South Broad Street Philadelphia, PA 19107 United States',
-            },
-            {
                 trait_type: 'Opened',
                 value: '1932',
             },
             {
                 trait_type: 'Height',
                 value: "472'",
-            },
-            {
-                trait_type: 'Height',
-                value: "400' - 499'",
             },
             {
                 trait_type: 'Stories',
@@ -342,24 +282,12 @@ export const highrises = [
                 value: '1930s',
             },
             {
+                trait_type: 'Height Bracket',
+                value: "400' - 499'",
+            },
+            {
                 trait_type: 'Attributes',
                 value: 'Bell',
-            },
-            {
-                trait_type: 'Attributes',
-                value: 'Moderate',
-            },
-            {
-                trait_type: 'Attributes',
-                value: 'Soft Lighting',
-            },
-            {
-                trait_type: 'Attributes',
-                value: 'Overcast',
-            },
-            {
-                trait_type: 'Attributes',
-                value: 'Clear',
             },
         ],
     },
@@ -375,6 +303,8 @@ export const highrises = [
         architect: 'Ritter & Shay',
         stories: '32',
         style: 'Spanish Baroque',
+        city: 'Philadelphia',
+        secondaryStyle: 'Art Deco',
         opened: '1929',
         ltlng: {
             lat: 39.94686979999999,
@@ -386,20 +316,12 @@ export const highrises = [
                 value: '1512 Spruce St.',
             },
             {
-                trait_type: 'Long address',
-                value: '1512 Spruce St, Philadelphia, PA 19102',
-            },
-            {
                 trait_type: 'Opened',
                 value: '1929',
             },
             {
                 trait_type: 'Height',
                 value: "375'",
-            },
-            {
-                trait_type: 'Height',
-                value: "300' - 399'",
             },
             {
                 trait_type: 'Stories',
@@ -438,28 +360,16 @@ export const highrises = [
                 value: '1920s',
             },
             {
+                trait_type: 'Height Bracket',
+                value: "300' - 399'",
+            },
+            {
                 trait_type: 'Attributes',
                 value: 'Dome',
             },
             {
                 trait_type: 'Attributes',
                 value: 'Sloped Roof',
-            },
-            {
-                trait_type: 'Attributes',
-                value: 'Moderate',
-            },
-            {
-                trait_type: 'Attributes',
-                value: 'Soft Lighting',
-            },
-            {
-                trait_type: 'Attributes',
-                value: 'Sunset / Sunrise',
-            },
-            {
-                trait_type: 'Attributes',
-                value: 'Clear',
             },
         ],
     },
@@ -475,6 +385,7 @@ export const highrises = [
         architect: 'Rankin & Kellogg',
         stories: '18',
         style: 'Neoclassical',
+        city: 'Philadelphia',
         opened: '1925',
         ltlng: {
             lat: 39.9601719,
@@ -486,20 +397,12 @@ export const highrises = [
                 value: '400 N. Broad St.',
             },
             {
-                trait_type: 'Long address',
-                value: '400 N. Broad Street, Philadelphia, Pennsylvania',
-            },
-            {
                 trait_type: 'Opened',
                 value: '1925',
             },
             {
                 trait_type: 'Height',
                 value: "340'",
-            },
-            {
-                trait_type: 'Height',
-                value: "300' - 399'",
             },
             {
                 trait_type: 'Stories',
@@ -534,6 +437,10 @@ export const highrises = [
                 value: '1920s',
             },
             {
+                trait_type: 'Height Bracket',
+                value: "300' - 399'",
+            },
+            {
                 trait_type: 'Attributes',
                 value: 'Dome',
             },
@@ -549,18 +456,6 @@ export const highrises = [
                 trait_type: 'Attributes',
                 value: 'Bell',
             },
-            {
-                trait_type: 'Attributes',
-                value: 'Direct Sun',
-            },
-            {
-                trait_type: 'Attributes',
-                value: 'Blue sky with Clouds',
-            },
-            {
-                trait_type: 'Attributes',
-                value: 'Clear',
-            },
         ],
     },
     {
@@ -575,6 +470,7 @@ export const highrises = [
         architect: 'McKim, Mead & White',
         stories: '30',
         style: 'Neoclassical',
+        city: 'Philadelphia',
         opened: '1931',
         ltlng: {
             lat: 39.9512132,
@@ -586,20 +482,12 @@ export const highrises = [
                 value: '10 Avenue of the Arts',
             },
             {
-                trait_type: 'Long address',
-                value: '10 Ave Of The Arts, Philadelphia, PA 19102',
-            },
-            {
                 trait_type: 'Opened',
                 value: '1931',
             },
             {
                 trait_type: 'Height',
                 value: "394'",
-            },
-            {
-                trait_type: 'Height',
-                value: "300' - 399'",
             },
             {
                 trait_type: 'Stories',
@@ -634,28 +522,16 @@ export const highrises = [
                 value: '1930s',
             },
             {
+                trait_type: 'Height Bracket',
+                value: "300' - 399'",
+            },
+            {
                 trait_type: 'Attributes',
                 value: 'Sloped Roof',
             },
             {
                 trait_type: 'Attributes',
-                value: 'Moderate',
-            },
-            {
-                trait_type: 'Attributes',
                 value: 'Lights on',
-            },
-            {
-                trait_type: 'Attributes',
-                value: 'Reflected Sunlight',
-            },
-            {
-                trait_type: 'Attributes',
-                value: 'Sunset / Sunrise',
-            },
-            {
-                trait_type: 'Attributes',
-                value: 'Clear',
             },
         ],
     },
@@ -671,6 +547,8 @@ export const highrises = [
         architect: 'Ritter & Shay',
         stories: '22',
         style: 'Renaissance',
+        city: 'Philadelphia',
+        secondaryStyle: 'Art Deco',
         opened: '1928',
         ltlng: {
             lat: 39.9489949,
@@ -682,20 +560,12 @@ export const highrises = [
                 value: '1500 Walnut St.',
             },
             {
-                trait_type: 'Long address',
-                value: '1500 Walnut St Philadelphia PA',
-            },
-            {
                 trait_type: 'Opened',
                 value: '1928',
             },
             {
                 trait_type: 'Height',
                 value: "313'",
-            },
-            {
-                trait_type: 'Height',
-                value: "300' - 399'",
             },
             {
                 trait_type: 'Stories',
@@ -734,20 +604,12 @@ export const highrises = [
                 value: '1920s',
             },
             {
+                trait_type: 'Height Bracket',
+                value: "300' - 399'",
+            },
+            {
                 trait_type: 'Attributes',
                 value: 'Sloped Roof',
-            },
-            {
-                trait_type: 'Attributes',
-                value: 'Moderate',
-            },
-            {
-                trait_type: 'Attributes',
-                value: 'Soft Lighting',
-            },
-            {
-                trait_type: 'Attributes',
-                value: 'Clear',
             },
         ],
     },
@@ -763,19 +625,17 @@ export const highrises = [
         architect: 'Arthur Hall',
         stories: '33',
         style: 'Art Deco',
+        city: 'Philadelphia',
+        secondaryStyle: 'Neoclassical',
         opened: '1929',
         ltlng: {
-            lat: 39.9459282,
-            lng: -75.1666946,
+            lat: 39.948588,
+            lng: -75.1658929,
         },
         attributes: [
             {
                 trait_type: 'Address',
                 value: '1425 Locust St.',
-            },
-            {
-                trait_type: 'Long address',
-                value: '225 South 15th Street, Philadelphia, Pennsylvania, United States',
             },
             {
                 trait_type: 'Opened',
@@ -784,10 +644,6 @@ export const highrises = [
             {
                 trait_type: 'Height',
                 value: "389'",
-            },
-            {
-                trait_type: 'Height',
-                value: "300' - 399'",
             },
             {
                 trait_type: 'Stories',
@@ -826,24 +682,12 @@ export const highrises = [
                 value: '1920s',
             },
             {
-                trait_type: 'Attributes',
-                value: 'Moderate',
+                trait_type: 'Height Bracket',
+                value: "300' - 399'",
             },
             {
                 trait_type: 'Attributes',
                 value: 'Lights on',
-            },
-            {
-                trait_type: 'Attributes',
-                value: 'Soft Lighting',
-            },
-            {
-                trait_type: 'Attributes',
-                value: 'Blue sky with Clouds',
-            },
-            {
-                trait_type: 'Attributes',
-                value: 'Clear',
             },
         ],
     },
@@ -859,19 +703,16 @@ export const highrises = [
         architect: 'Horace Trumbauer',
         stories: '21',
         style: 'Gothic',
+        city: 'Philadelphia',
         opened: '1926',
         ltlng: {
-            lat: 39.9483926,
-            lng: -75.1653091,
+            lat: 39.9484263,
+            lng: -75.1652545,
         },
         attributes: [
             {
                 trait_type: 'Address',
                 value: '230 S. Broad St.',
-            },
-            {
-                trait_type: 'Long address',
-                value: '1405 Locust Street Philadelphia PA',
             },
             {
                 trait_type: 'Opened',
@@ -880,10 +721,6 @@ export const highrises = [
             {
                 trait_type: 'Height',
                 value: "250'",
-            },
-            {
-                trait_type: 'Height',
-                value: "200' - 299'",
             },
             {
                 trait_type: 'Stories',
@@ -918,16 +755,8 @@ export const highrises = [
                 value: '1920s',
             },
             {
-                trait_type: 'Attributes',
-                value: 'Soft Lighting',
-            },
-            {
-                trait_type: 'Attributes',
-                value: 'Gradient',
-            },
-            {
-                trait_type: 'Attributes',
-                value: 'Clear',
+                trait_type: 'Height Bracket',
+                value: "200' - 299'",
             },
         ],
     },
@@ -943,6 +772,7 @@ export const highrises = [
         architect: 'Howe & Lescaze',
         stories: '36',
         style: 'International',
+        city: 'Philadelphia',
         opened: '1932',
         ltlng: {
             lat: 39.9517476,
@@ -954,20 +784,12 @@ export const highrises = [
                 value: '1200 Market St.',
             },
             {
-                trait_type: 'Long address',
-                value: '1200 Market Street, Philadelphia, PA',
-            },
-            {
                 trait_type: 'Opened',
                 value: '1932',
             },
             {
                 trait_type: 'Height',
                 value: "492'",
-            },
-            {
-                trait_type: 'Height',
-                value: "400' - 499'",
             },
             {
                 trait_type: 'Stories',
@@ -1002,6 +824,10 @@ export const highrises = [
                 value: '1930s',
             },
             {
+                trait_type: 'Height Bracket',
+                value: "400' - 499'",
+            },
+            {
                 trait_type: 'Attributes',
                 value: 'Signage',
             },
@@ -1012,18 +838,6 @@ export const highrises = [
             {
                 trait_type: 'Attributes',
                 value: 'Lights on',
-            },
-            {
-                trait_type: 'Attributes',
-                value: 'Soft Lighting',
-            },
-            {
-                trait_type: 'Attributes',
-                value: 'Gradient',
-            },
-            {
-                trait_type: 'Attributes',
-                value: 'Clear',
             },
         ],
     },
@@ -1039,10 +853,11 @@ export const highrises = [
         architect: 'Frank M. Day',
         stories: '13',
         style: 'Second Empire',
-        opened: '1898',
+        city: 'Philadelphia',
+        opened: '1897',
         ltlng: {
-            lat: 39.9506307,
-            lng: -75.1652749,
+            lat: 39.9507033,
+            lng: -75.1650521,
         },
         attributes: [
             {
@@ -1050,20 +865,12 @@ export const highrises = [
                 value: '1420–22 Chestnut St.',
             },
             {
-                trait_type: 'Long address',
-                value: '1420–1422 Chestnut St., Philadelphia, Pennsylvania',
-            },
-            {
                 trait_type: 'Opened',
-                value: '1898',
+                value: '1897',
             },
             {
                 trait_type: 'Height',
                 value: "182'",
-            },
-            {
-                trait_type: 'Height',
-                value: "Under 200'",
             },
             {
                 trait_type: 'Stories',
@@ -1098,24 +905,16 @@ export const highrises = [
                 value: '1890s',
             },
             {
+                trait_type: 'Height Bracket',
+                value: "Under 200'",
+            },
+            {
                 trait_type: 'Attributes',
                 value: 'Sloped Roof',
             },
             {
                 trait_type: 'Attributes',
                 value: 'Statue',
-            },
-            {
-                trait_type: 'Attributes',
-                value: 'Soft Lighting',
-            },
-            {
-                trait_type: 'Attributes',
-                value: 'Overcast',
-            },
-            {
-                trait_type: 'Attributes',
-                value: 'Clear',
             },
         ],
     },
@@ -1131,6 +930,7 @@ export const highrises = [
         architect: 'Dennison & Hirons',
         stories: '21',
         style: 'Renaissance',
+        city: 'Philadelphia',
         opened: '1925',
         ltlng: {
             lat: 39.9546225,
@@ -1142,20 +942,12 @@ export const highrises = [
                 value: '101 N. Broad St.',
             },
             {
-                trait_type: 'Long address',
-                value: '101 North Broad Street Philadelphia PA',
-            },
-            {
                 trait_type: 'Opened',
                 value: '1925',
             },
             {
                 trait_type: 'Height',
                 value: "205'",
-            },
-            {
-                trait_type: 'Height',
-                value: "200' - 299'",
             },
             {
                 trait_type: 'Stories',
@@ -1190,20 +982,12 @@ export const highrises = [
                 value: '1920s',
             },
             {
+                trait_type: 'Height Bracket',
+                value: "200' - 299'",
+            },
+            {
                 trait_type: 'Attributes',
                 value: 'Sloped Roof',
-            },
-            {
-                trait_type: 'Attributes',
-                value: 'Soft Lighting',
-            },
-            {
-                trait_type: 'Attributes',
-                value: 'Gradient',
-            },
-            {
-                trait_type: 'Attributes',
-                value: 'Clear',
             },
         ],
     },
@@ -1219,6 +1003,7 @@ export const highrises = [
         architect: 'William Lee',
         stories: '14',
         style: 'Art Deco',
+        city: 'Philadelphia',
         opened: '1926',
         ltlng: {
             lat: 40.0099495,
@@ -1230,20 +1015,12 @@ export const highrises = [
                 value: '3701 N. Broad St.',
             },
             {
-                trait_type: 'Long address',
-                value: '3701 N Broad St Philadelphia, PA 19140',
-            },
-            {
                 trait_type: 'Opened',
                 value: '1926',
             },
             {
                 trait_type: 'Height',
                 value: "178'",
-            },
-            {
-                trait_type: 'Height',
-                value: "Under 200'",
             },
             {
                 trait_type: 'Stories',
@@ -1278,6 +1055,10 @@ export const highrises = [
                 value: '1920s',
             },
             {
+                trait_type: 'Height Bracket',
+                value: "Under 200'",
+            },
+            {
                 trait_type: 'Attributes',
                 value: 'Sloped Roof',
             },
@@ -1287,19 +1068,7 @@ export const highrises = [
             },
             {
                 trait_type: 'Attributes',
-                value: 'Vacant',
-            },
-            {
-                trait_type: 'Attributes',
-                value: 'Soft Lighting',
-            },
-            {
-                trait_type: 'Attributes',
-                value: 'Blue sky with Clouds',
-            },
-            {
-                trait_type: 'Attributes',
-                value: 'Clear',
+                value: 'Graffiti',
             },
         ],
     },
@@ -1315,6 +1084,7 @@ export const highrises = [
         architect: 'John T. Windrim',
         stories: '22',
         style: 'Art Deco',
+        city: 'Philadelphia',
         opened: '1927',
         ltlng: {
             lat: 39.9488621,
@@ -1326,20 +1096,12 @@ export const highrises = [
                 value: '130 S. 9th St.',
             },
             {
-                trait_type: 'Long address',
-                value: '130 S 9th St, Philadelphia, PA 19107',
-            },
-            {
                 trait_type: 'Opened',
                 value: '1927',
             },
             {
                 trait_type: 'Height',
                 value: "325'",
-            },
-            {
-                trait_type: 'Height',
-                value: "300' - 399'",
             },
             {
                 trait_type: 'Stories',
@@ -1374,24 +1136,16 @@ export const highrises = [
                 value: '1920s',
             },
             {
+                trait_type: 'Height Bracket',
+                value: "300' - 399'",
+            },
+            {
                 trait_type: 'Attributes',
                 value: 'Signage',
             },
             {
                 trait_type: 'Attributes',
                 value: 'Smokestack',
-            },
-            {
-                trait_type: 'Attributes',
-                value: 'Direct Sun',
-            },
-            {
-                trait_type: 'Attributes',
-                value: 'Sunset / Sunrise',
-            },
-            {
-                trait_type: 'Attributes',
-                value: 'Clear',
             },
         ],
     },
@@ -1407,6 +1161,7 @@ export const highrises = [
         architect: 'Charles Klauder',
         stories: '40',
         style: 'Gothic',
+        city: 'Pittsburgh',
         opened: '1937',
         ltlng: {
             lat: 40.44439000000001,
@@ -1418,20 +1173,12 @@ export const highrises = [
                 value: '4200 Fifth Ave.',
             },
             {
-                trait_type: 'Long address',
-                value: '4200 Fifth Ave, Pittsburgh, PA 15260',
-            },
-            {
                 trait_type: 'Opened',
                 value: '1937',
             },
             {
                 trait_type: 'Height',
                 value: "535'",
-            },
-            {
-                trait_type: 'Height',
-                value: "500' - 599'",
             },
             {
                 trait_type: 'Stories',
@@ -1466,20 +1213,8 @@ export const highrises = [
                 value: '1930s',
             },
             {
-                trait_type: 'Attributes',
-                value: 'Moderate',
-            },
-            {
-                trait_type: 'Attributes',
-                value: 'Soft Lighting',
-            },
-            {
-                trait_type: 'Attributes',
-                value: 'Overcast',
-            },
-            {
-                trait_type: 'Attributes',
-                value: 'Clear',
+                trait_type: 'Height Bracket',
+                value: "500' - 599'",
             },
         ],
     },
@@ -1495,6 +1230,7 @@ export const highrises = [
         architect: 'Graham, Anderson, Probst & White',
         stories: '32',
         style: 'Art Deco',
+        city: 'Pittsburgh',
         opened: '1929',
         ltlng: {
             lat: 40.4420849,
@@ -1506,20 +1242,12 @@ export const highrises = [
                 value: '436 Seventh Ave.',
             },
             {
-                trait_type: 'Long address',
-                value: '436 Seventh Avenue, Pittsburgh, PA',
-            },
-            {
                 trait_type: 'Opened',
                 value: '1929',
             },
             {
                 trait_type: 'Height',
                 value: "475'",
-            },
-            {
-                trait_type: 'Height',
-                value: "400' - 499'",
             },
             {
                 trait_type: 'Stories',
@@ -1554,28 +1282,16 @@ export const highrises = [
                 value: '1920s',
             },
             {
+                trait_type: 'Height Bracket',
+                value: "400' - 499'",
+            },
+            {
                 trait_type: 'Attributes',
                 value: 'Sloped Roof',
             },
             {
                 trait_type: 'Attributes',
                 value: 'Signage',
-            },
-            {
-                trait_type: 'Attributes',
-                value: 'Moderate',
-            },
-            {
-                trait_type: 'Attributes',
-                value: 'Night',
-            },
-            {
-                trait_type: 'Attributes',
-                value: 'Overcast',
-            },
-            {
-                trait_type: 'Attributes',
-                value: 'Clear',
             },
         ],
     },
@@ -1591,6 +1307,7 @@ export const highrises = [
         architect: 'Thomas Hannah',
         stories: '18',
         style: 'Beaux-Arts',
+        city: 'Pittsburgh',
         opened: '1907',
         ltlng: {
             lat: 40.4426381,
@@ -1602,20 +1319,12 @@ export const highrises = [
                 value: '643 Liberty Ave.',
             },
             {
-                trait_type: 'Long address',
-                value: '643 Liberty Ave, Pittsburgh, PA 15222',
-            },
-            {
                 trait_type: 'Opened',
                 value: '1907',
             },
             {
                 trait_type: 'Height',
                 value: "239'",
-            },
-            {
-                trait_type: 'Height',
-                value: "200' - 299'",
             },
             {
                 trait_type: 'Stories',
@@ -1650,6 +1359,10 @@ export const highrises = [
                 value: '1900s',
             },
             {
+                trait_type: 'Height Bracket',
+                value: "200' - 299'",
+            },
+            {
                 trait_type: 'Attributes',
                 value: 'Dome',
             },
@@ -1660,10 +1373,6 @@ export const highrises = [
             {
                 trait_type: 'Attributes',
                 value: 'Lights on',
-            },
-            {
-                trait_type: 'Attributes',
-                value: 'Clear',
             },
         ],
     },
@@ -1679,6 +1388,7 @@ export const highrises = [
         architect: 'Joseph Sperry',
         stories: '15',
         style: 'Gothic',
+        city: 'Baltimore',
         opened: '1911',
         ltlng: {
             lat: 39.2876661,
@@ -1690,20 +1400,12 @@ export const highrises = [
                 value: '21 South Eutaw St.',
             },
             {
-                trait_type: 'Long address',
-                value: '21 South Eutaw Street at West Lombard Street, Baltimore, Maryland',
-            },
-            {
                 trait_type: 'Opened',
                 value: '1911',
             },
             {
                 trait_type: 'Height',
                 value: "289'",
-            },
-            {
-                trait_type: 'Height',
-                value: "200' - 299'",
             },
             {
                 trait_type: 'Stories',
@@ -1738,12 +1440,12 @@ export const highrises = [
                 value: '1910s',
             },
             {
-                trait_type: 'Attributes',
-                value: 'Clock',
+                trait_type: 'Height Bracket',
+                value: "200' - 299'",
             },
             {
                 trait_type: 'Attributes',
-                value: 'Clear',
+                value: 'Clock',
             },
         ],
     },
@@ -1759,6 +1461,8 @@ export const highrises = [
         architect: 'Taylor & Fisher, Smith & May',
         stories: '34',
         style: 'Art Deco',
+        city: 'Baltimore',
+        secondaryStyle: 'Gothic',
         opened: '1929',
         ltlng: {
             lat: 39.2892227,
@@ -1770,20 +1474,12 @@ export const highrises = [
                 value: '10 Light St.',
             },
             {
-                trait_type: 'Long address',
-                value: '10 Light Street Baltimore, Maryland',
-            },
-            {
                 trait_type: 'Opened',
                 value: '1929',
             },
             {
                 trait_type: 'Height',
                 value: "509'",
-            },
-            {
-                trait_type: 'Height',
-                value: "500' - 599'",
             },
             {
                 trait_type: 'Stories',
@@ -1822,16 +1518,16 @@ export const highrises = [
                 value: '1920s',
             },
             {
+                trait_type: 'Height Bracket',
+                value: "500' - 599'",
+            },
+            {
                 trait_type: 'Attributes',
                 value: 'Spire',
             },
             {
                 trait_type: 'Attributes',
                 value: 'Sloped Roof',
-            },
-            {
-                trait_type: 'Attributes',
-                value: 'Clear',
             },
         ],
     },

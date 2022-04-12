@@ -1,6 +1,7 @@
 import { highrises as highrisesData } from 'assets/data/highrises';
 import { Dropdown } from 'components/Explorer/Masthead/Dropdown';
 import * as S from 'components/Explorer/SortBar/SortBar.styled';
+import { useEffect, useState } from 'react';
 
 export const SORTS = {
     height: {
@@ -10,11 +11,28 @@ export const SORTS = {
                 return buildingA.height - buildingB.height;
             }),
     },
+    city: {
+        isSelect: true,
+        name: 'City',
+        // # TODO => Remove this slice
+        options: highrisesData.slice(0, 20).reduce((acc, highrise) => {
+            if (acc[highrise?.city]) return acc;
+
+            return {
+                ...acc,
+                [highrise.city]: {
+                    value: highrise.city,
+                    sort: (highrises) =>
+                        highrises.filter(({ city }) => highrise.city === city),
+                },
+            };
+        }, {}),
+    },
     decade: {
         isSelect: true,
         name: 'Decade',
         // # TODO => Remove this slice
-        options: highrisesData.slice(0, 15).reduce((acc, highrise) => {
+        options: highrisesData.slice(0, 20).reduce((acc, highrise) => {
             if (acc[highrise?.decade]) return acc;
 
             return {
@@ -33,7 +51,7 @@ export const SORTS = {
         isSelect: true,
         name: 'Style',
         // # TODO => Remove this slice
-        options: highrisesData.slice(0, 15).reduce((acc, highrise) => {
+        options: highrisesData.slice(0, 20).reduce((acc, highrise) => {
             if (acc[highrise?.style]) return acc;
 
             return {
@@ -42,65 +60,105 @@ export const SORTS = {
                     value: highrise.style,
                     sort: (highrises) =>
                         highrises.filter(
-                            ({ style }) => highrise.style === style
+                            ({ style }) =>
+                                highrise.style === style ||
+                                highrise.secondaryStyle === style
                         ),
                 },
             };
         }, {}),
     },
-    // Decade: (buildingA, buildingB) => buildingA.height - buildingB.height,
     // City: (buildingA, buildingB) => buildingA.height - buildingB.height,
     // Attributes: (buildingA, buildingB) => buildingA.height - buildingB.height,
 };
 
 export const SortBar = ({ activeSort, setActiveSort }) => {
+    const [activeDropdown, setActiveDropdown] = useState();
+    const [activeOption, setActiveOption] = useState();
+
+    useEffect(() => {
+        setActiveOption(undefined);
+    }, [activeDropdown]);
+
     return (
-        <S.SortBar>
-            {activeSort ? (
-                <S.SortLink
-                    isReset
-                    isActive
-                    tabIndex={0}
-                    onClick={() => {
-                        setActiveSort(undefined);
-                    }}
-                >
-                    Reset Sort —
-                </S.SortLink>
-            ) : (
-                <span>Select Sort — </span>
+        <>
+            <S.SortBar>
+                {activeSort ? (
+                    <S.SortLink
+                        isReset
+                        isActive
+                        tabIndex={0}
+                        onClick={() => {
+                            setActiveDropdown(undefined);
+                            setActiveSort(undefined);
+                        }}
+                    >
+                        Reset Sort —
+                    </S.SortLink>
+                ) : (
+                    <S.SortLink isReset isActive>
+                        Select Sort —{' '}
+                    </S.SortLink>
+                )}
+                {Object.entries(SORTS).map(
+                    ([sortKey, { isSelect, name, sort }]) =>
+                        isSelect ? (
+                            <Dropdown
+                                key={name}
+                                name={name}
+                                isActive={activeDropdown?.sortKey === sortKey}
+                                onClick={() => {
+                                    setActiveDropdown({
+                                        sortKey,
+                                        dropdown: SORTS[sortKey],
+                                    });
+                                    setActiveSort(undefined);
+                                }}
+                            />
+                        ) : (
+                            <S.SortLink
+                                key={name}
+                                tabIndex={0}
+                                isActive={sortKey === activeSort?.sortKey}
+                                onClick={() => {
+                                    setActiveDropdown(undefined);
+                                    setActiveSort(
+                                        sortKey === activeSort?.sortKey
+                                            ? undefined
+                                            : {
+                                                  sortKey,
+                                                  sort,
+                                              }
+                                    );
+                                }}
+                            >
+                                {name}
+                            </S.SortLink>
+                        )
+                )}
+            </S.SortBar>
+            {activeDropdown && (
+                <S.DropdownFilters>
+                    {Object.values(activeDropdown.dropdown.options).map(
+                        ({ value, sort }) => {
+                            return (
+                                <S.DropdownFilter
+                                    isActive={activeOption === value}
+                                    onClick={() => {
+                                        setActiveOption(value);
+                                        setActiveSort({
+                                            sortKey: activeDropdown.sortKey,
+                                            sort,
+                                        });
+                                    }}
+                                >
+                                    {value}
+                                </S.DropdownFilter>
+                            );
+                        }
+                    )}
+                </S.DropdownFilters>
             )}
-            {Object.entries(SORTS).map(
-                ([sortKey, { isSelect, name, sort, options = {} }]) =>
-                    isSelect ? (
-                        <Dropdown
-                            key={name}
-                            activeSort={activeSort}
-                            setActiveSort={setActiveSort}
-                            name={name}
-                            sortKey={sortKey}
-                            options={options}
-                        />
-                    ) : (
-                        <S.SortLink
-                            key={name}
-                            tabIndex={0}
-                            isActive={sortKey === activeSort?.sortKey}
-                            onClick={() => {
-                                setActiveSort(
-                                    sortKey === activeSort?.sortKey
-                                        ? undefined
-                                        : {
-                                              sortKey,
-                                              sort,
-                                          }
-                                );
-                            }}
-                        >
-                            {name}
-                        </S.SortLink>
-                    )
-            )}
-        </S.SortBar>
+        </>
     );
 };
