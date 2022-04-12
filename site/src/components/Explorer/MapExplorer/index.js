@@ -39,36 +39,41 @@ export const MapExplorer = () => {
                 <Wrapper apiKey={config.googleMapsAPIKey}>
                     <Map center={center} onIdle={onIdle} zoom={zoom}>
                         {/** # TODO => Remove this slice */}
-                        {highrises.slice(0, 20).map((highrise, index) => (
-                            <Marker
-                                key={index}
-                                index={`${highrise.index + 1}`.padStart(2, '0')}
-                                position={highrise.ltlng}
-                                onClick={() => {
-                                    navigate('/');
-                                    setActiveHighrise(highrise);
-                                    setIsMapView(false);
+                        {highrises.map((highrise, index) => {
+                            return (
+                                <Marker
+                                    key={index}
+                                    index={`${highrise.index + 1}`.padStart(
+                                        2,
+                                        '0'
+                                    )}
+                                    position={highrise.ltlng}
+                                    onClick={() => {
+                                        navigate('/');
+                                        setActiveHighrise(highrise);
+                                        setIsMapView(false);
 
-                                    setTimeout(() => {
-                                        mastheadRef.current.scrollIntoView({
-                                            block: 'start',
-                                        });
+                                        setTimeout(() => {
+                                            mastheadRef.current.scrollIntoView({
+                                                block: 'start',
+                                            });
 
-                                        buildingExplorerMobileRef.current.children[
-                                            index
-                                        ].scrollIntoView({
-                                            inline: 'center',
-                                        });
+                                            buildingExplorerMobileRef.current.children[
+                                                index
+                                            ].scrollIntoView({
+                                                inline: 'center',
+                                            });
 
-                                        buildingExplorerDesktopRef.current.children[
-                                            index
-                                        ].scrollIntoView({
-                                            inline: 'center',
-                                        });
-                                    }, 0);
-                                }}
-                            />
-                        ))}
+                                            buildingExplorerDesktopRef.current.children[
+                                                index
+                                            ].scrollIntoView({
+                                                inline: 'center',
+                                            });
+                                        }, 0);
+                                    }}
+                                />
+                            );
+                        })}
                     </Map>
                 </Wrapper>
             </S.MapExplorerSticky>

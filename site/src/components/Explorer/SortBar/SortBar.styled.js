@@ -12,6 +12,7 @@ export const DropdownFilter = styled.div`
             : props.theme.colors.grey[0]};
     border-radius: 16px;
     cursor: pointer;
+    user-select: none;
 `;
 
 export const DropdownFilters = styled.div`
@@ -79,6 +80,7 @@ export const SortBar = styled.div`
     ${(props) => props.theme.breakpoints.small`
         height: auto;
         padding: 24px 32px 0;
+        margin-bottom: 24px;
     `}
 
     ${(props) => props.theme.breakpoints.medium`

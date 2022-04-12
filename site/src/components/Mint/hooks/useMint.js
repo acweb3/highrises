@@ -14,12 +14,8 @@ export const useMint = ({ tokenId }) => {
             contract.interface,
             signer
         );
-        const res = await mintContract.mint(tokenId, {
+        await mintContract.mint(tokenId, {
             value: utils.parseEther('0.02'),
-        });
-
-        console.log({
-            res,
         });
     };
 

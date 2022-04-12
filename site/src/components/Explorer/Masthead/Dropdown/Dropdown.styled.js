@@ -10,6 +10,7 @@ export const DropdownName = styled.div`
     justify-content: center;
     border-radius: 16px;
 
+    user-select: none;
     cursor: pointer;
 
     ${(props) =>

@@ -4,12 +4,32 @@ import * as S from 'components/Explorer/SortBar/SortBar.styled';
 import { useEffect, useState } from 'react';
 
 export const SORTS = {
+    // height: {
+    //     name: 'Height',
+    //     sort: (highrises) =>
+    //         highrises.sort((buildingA, buildingB) => {
+    //             return buildingA.height - buildingB.height;
+    //         }),
+    // }
     height: {
+        isSelect: true,
         name: 'Height',
-        sort: (highrises) =>
-            highrises.sort((buildingA, buildingB) => {
-                return buildingA.height - buildingB.height;
-            }),
+        // # TODO => Remove this slice
+        options: highrisesData.slice(0, 20).reduce((acc, highrise) => {
+            if (acc[highrise?.heightBracket]) return acc;
+
+            return {
+                ...acc,
+                [highrise.heightBracket]: {
+                    value: highrise.heightBracket,
+                    sort: (highrises) =>
+                        highrises.filter(
+                            ({ heightBracket }) =>
+                                highrise.heightBracket === heightBracket
+                        ),
+                },
+            };
+        }, {}),
     },
     city: {
         isSelect: true,
@@ -38,7 +58,7 @@ export const SORTS = {
             return {
                 ...acc,
                 [highrise.decade]: {
-                    value: highrise.decade,
+                    value: `${highrise.decade}`,
                     sort: (highrises) =>
                         highrises.filter(
                             ({ decade }) => highrise.decade === decade
@@ -108,10 +128,14 @@ export const SortBar = ({ activeSort, setActiveSort }) => {
                                 name={name}
                                 isActive={activeDropdown?.sortKey === sortKey}
                                 onClick={() => {
-                                    setActiveDropdown({
-                                        sortKey,
-                                        dropdown: SORTS[sortKey],
-                                    });
+                                    setActiveDropdown(
+                                        activeDropdown?.sortKey !== sortKey
+                                            ? {
+                                                  sortKey,
+                                                  dropdown: SORTS[sortKey],
+                                              }
+                                            : undefined
+                                    );
                                     setActiveSort(undefined);
                                 }}
                             />
@@ -139,10 +163,12 @@ export const SortBar = ({ activeSort, setActiveSort }) => {
             </S.SortBar>
             {activeDropdown && (
                 <S.DropdownFilters>
-                    {Object.values(activeDropdown.dropdown.options).map(
-                        ({ value, sort }) => {
+                    {Object.values(activeDropdown.dropdown.options)
+                        .sort((a, b) => a.value.localeCompare(b.value))
+                        .map(({ value, sort }) => {
                             return (
                                 <S.DropdownFilter
+                                    key={value}
                                     isActive={activeOption === value}
                                     onClick={() => {
                                         setActiveOption(value);
@@ -155,8 +181,7 @@ export const SortBar = ({ activeSort, setActiveSort }) => {
                                     {value}
                                 </S.DropdownFilter>
                             );
-                        }
-                    )}
+                        })}
                 </S.DropdownFilters>
             )}
         </>

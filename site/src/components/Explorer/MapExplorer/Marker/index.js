@@ -4,10 +4,13 @@ import { useEffect, useRef, useState } from 'react';
 export const Marker = ({ onClick, index, position, ...options }) => {
     const [marker, setMarker] = useState();
     const ref = useRef();
+    const markerIndexRef = useRef();
 
     useEffect(() => {
         const createPopup = async () => {
-            if (!marker) {
+            if (!marker || markerIndexRef.current !== index) {
+                marker?.onRemove();
+                markerIndexRef.current = index;
                 const { Popup } = await import(
                     'components/Explorer/MapExplorer/Marker/Popup'
                 );
