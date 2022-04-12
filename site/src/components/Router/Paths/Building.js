@@ -4,21 +4,27 @@ import { Navigate, useParams } from 'react-router-dom';
 
 export const Building = () => {
     const { tokenID } = useParams();
-
-    const { highrises } = useActiveHighriseContext();
+    const { initHighrisesState } = useActiveHighriseContext();
 
     return (
         <>
             {(() => {
-                if (!highrises.length) {
+                if (!initHighrisesState.length) {
                     return null;
                 }
 
-                if (Number.isNaN(parseInt(tokenID)) || !highrises[tokenID]) {
+                if (
+                    Number.isNaN(parseInt(tokenID)) ||
+                    !initHighrisesState[tokenID]
+                ) {
                     return <Navigate to="/" />;
                 }
 
-                return <BuildingDetail activeHighrise={highrises[tokenID]} />;
+                return (
+                    <BuildingDetail
+                        activeHighrise={initHighrisesState[tokenID]}
+                    />
+                );
             })()}
         </>
     );

@@ -7,7 +7,7 @@ import Helmet from 'react-helmet';
 
 export const BuildingDetail = ({ activeHighrise }) => {
     const [imageSrc, setImageSrc] = useState(activeHighrise.posterSrc);
-    const { highrises } = useActiveHighriseContext();
+    const { initHighrisesState } = useActiveHighriseContext();
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -76,9 +76,10 @@ export const BuildingDetail = ({ activeHighrise }) => {
                     ← Back to explorer
                 </S.BuildingDetailBack>
 
-                {highrises.length && (
+                {initHighrisesState.length && (
                     <>
-                        {activeHighrise.index < highrises.length - 1 && (
+                        {activeHighrise.index <
+                            initHighrisesState.length - 1 && (
                             <S.BuildingDetailNextHighrise
                                 to={`/building/${activeHighrise.index + 1}`}
                             >

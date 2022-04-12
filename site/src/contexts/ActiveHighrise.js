@@ -8,6 +8,7 @@ export const useActiveHighriseContext = () => useContext(ActiveHighriseContext);
 export const ActiveHighrise = ({ children }) => {
     const [activeHighrise, setActiveHighrise] = useState(undefined);
     const [highrises, setHighrises] = useState([]);
+    const [initHighrisesState, setInitHighrisesState] = useState([]);
     const initHighrises = useRef();
 
     useEffect(() => {
@@ -27,6 +28,7 @@ export const ActiveHighrise = ({ children }) => {
 
             setActiveHighrise(highriseWithImage[0]);
             setHighrises(highriseWithImage);
+            setInitHighrisesState(highriseWithImage);
             initHighrises.current = highriseWithImage;
         })();
     }, [setHighrises, setActiveHighrise]);
@@ -39,6 +41,7 @@ export const ActiveHighrise = ({ children }) => {
                 highrises,
                 setHighrises,
                 initHighrises,
+                initHighrisesState,
             }}
         >
             {children}
