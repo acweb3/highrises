@@ -33,10 +33,15 @@ export const PurchaseExternalLinkDisabled = styled(ExternalButton)`
     text-decoration: line-through;
 
     display: none;
+    cursor: default;
 
     ${(props) => props.theme.breakpoints.mobile`
         display: block;
     `}
+
+    &:hover {
+        opacity: 0.6;
+    }
 `;
 
 export const PurchaseExternalLink = styled(UnstyledExternalButtonLink)`

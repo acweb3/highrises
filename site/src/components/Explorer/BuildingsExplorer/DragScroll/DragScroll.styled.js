@@ -7,7 +7,13 @@ export const DragScroll = styled.div`
 
     cursor: pointer !important;
 
+    min-height: 198px;
+
     &::-webkit-scrollbar {
         display: none;
     }
+
+    ${(props) => props.theme.breakpoints.small`
+        min-height: 420px;
+    `}
 `;

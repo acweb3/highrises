@@ -28,14 +28,38 @@ export const BuildingCaption = styled.div`
     `}
 `;
 
-export const BuildingIndex = styled.div`
-    font-size: 1.175rem;
-    font-weight: 800;
-`;
+export const BuildingIndex = {
+    Mobile: styled.div`
+        font-size: 1.175rem;
+        font-weight: 800;
+
+        display: block;
+
+        ${(props) => props.theme.breakpoints.small`
+            display: none;
+        `}
+    `,
+    Desktop: styled.div`
+        font-size: 1.175rem;
+        font-weight: 800;
+
+        display: none;
+
+        ${(props) => props.theme.breakpoints.small`
+            display: block;
+        `}
+    `,
+};
 
 export const BuildingName = styled.div`
     font-size: 1rem;
     text-align: center;
+
+    display: none;
+
+    ${(props) => props.theme.breakpoints.small`
+        display: block;
+    `}
 `;
 
 export const Building = styled.div`
@@ -58,12 +82,26 @@ export const Building = styled.div`
     ${(props) =>
         !props.isActive &&
         css`
-            & ${BuildingIndex}, & ${BuildingName}, & > ${BuildingImage} {
+            &
+                ${BuildingIndex.Mobile},
+                &
+                ${BuildingIndex.Desktop},
+                &
+                ${BuildingName},
+                &
+                > ${BuildingImage} {
                 opacity: 0.4;
             }
 
             &:hover {
-                & ${BuildingIndex}, & ${BuildingName}, & > ${BuildingImage} {
+                &
+                    ${BuildingIndex.Mobile},
+                    &
+                    ${BuildingIndex.Desktop},
+                    &
+                    ${BuildingName},
+                    &
+                    > ${BuildingImage} {
                     opacity: 0.7;
                 }
             }

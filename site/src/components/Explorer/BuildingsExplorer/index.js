@@ -51,7 +51,7 @@ export const BuildingsExplorer = ({ activeSort, buildingExplorerRef }) => {
             {buildingExplorerRef ? (
                 <DragScroll buildingExplorerRef={buildingExplorerRef}>
                     {highrises.map((building, index) => (
-                        <Building key={index} building={building} />
+                        <Building key={building.name} building={building} />
                     ))}
                 </DragScroll>
             ) : (

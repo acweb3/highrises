@@ -1,8 +1,15 @@
 import styled, { keyframes } from 'styled-components';
 
-export const marquee = keyframes`
-  from { transform: translateX(-10%); }
-  to { transform: translateX(50%); }
+export const marqueeMobile = keyframes`
+  0% { transform: translateX(-30%); }
+  100% { transform: translateX(30%);  }
+`;
+
+export const marqueeTablet = keyframes`
+  0% { transform: translateX(-30%); opacity 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateX(30%); opacity: 0; }
 `;
 
 export const MobileCloudImage = styled.img`
@@ -16,5 +23,10 @@ export const MobileCloud = styled.div`
     top: ${(props) => props.top ?? 0}px;
     right: ${(props) => props.right ?? 0}px;
     position: absolute;
-    animation: ${marquee} 60s linear infinite;
+    animation: ${marqueeMobile} 60s linear infinite;
+    animation-delay: -20s;
+
+    ${(props) => props.theme.breakpoints.small`
+      animation: ${marqueeTablet} 30s linear infinite;
+    `}
 `;
