@@ -1,7 +1,7 @@
 import { useWindowSize } from 'common/hooks/useWindowSize';
 import * as S from 'components/Explorer/Masthead/Purchase/PurchaseItem/PurchaseItem.styled';
 
-const Asset = ({ children }) => {
+const Asset = ({ children, isFullPage }) => {
     const { isSmallish } = useWindowSize();
 
     return (
@@ -9,7 +9,7 @@ const Asset = ({ children }) => {
             {isSmallish ? (
                 <>{children}</>
             ) : (
-                <S.PurchaseItemAsset className="xxx">
+                <S.PurchaseItemAsset isFullPage={isFullPage}>
                     {children}
                 </S.PurchaseItemAsset>
             )}
@@ -32,9 +32,9 @@ export const PurchaseItem = ({
         <S.PurchaseItem isCentered={isCentered}>
             <S.PurchaseHeader>{header}</S.PurchaseHeader>
             <S.PurchaseCopy>{copy}</S.PurchaseCopy>
-            <Asset>
+            <Asset isFullPage={isFullPage}>
                 <S.PurchasePrice>{price}</S.PurchasePrice>
-                {!isFullPage && hasMinted ? (
+                {hasMinted ? (
                     <a href={href} target="_blank" rel="noopener noreferrer">
                         <S.PurchaseImage src={src} isFullPage={isFullPage} />
                     </a>

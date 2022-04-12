@@ -162,7 +162,9 @@ export const PurchaseItemAsset = styled.div`
     flex-direction: column;
     align-items: center;
 
-    ${(props) => props.theme.breakpoints.mobile`
+    ${(props) =>
+        !props.isFullPage &&
+        props.theme.breakpoints.mobile`
         margin-top: auto;
     `}
 

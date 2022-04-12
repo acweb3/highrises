@@ -4,7 +4,7 @@ export const EthPrice = () => {
     return (
         <S.EthPrice style={{ display: 'flex' }}>
             <S.EthPriceContent>
-                0 <S.EthereumIcon />
+                1 <S.EthereumIcon />
             </S.EthPriceContent>
         </S.EthPrice>
     );
