@@ -130,6 +130,7 @@ const read = async () => {
                     image: `${IPFS_DIR}/${index}.jpg`,
                     name: building.value,
                     height,
+                    heightBracket: processed.heightBracket.value,
                     decade,
 
                     address: processed.address.value,
