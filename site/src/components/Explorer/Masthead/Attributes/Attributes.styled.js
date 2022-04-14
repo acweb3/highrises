@@ -6,5 +6,11 @@ export const Attributes = styled.div`
 
     ${(props) => props.theme.breakpoints.mobile`
         flex-direction: row;
+        
+        & > div {
+            &:first-of-type {
+                margin-right: 32px;
+            }
+        }
     `}
 `;

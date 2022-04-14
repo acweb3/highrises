@@ -173,12 +173,6 @@ export const PurchaseItemAsset = styled.div`
     flex-direction: column;
     align-items: center;
 
-    ${(props) =>
-        !props.isFullPage &&
-        props.theme.breakpoints.mobile`
-        margin-top: auto;
-    `}
-
     ${(props) => props.theme.breakpoints.medium`
         align-items: initial;
     `}
