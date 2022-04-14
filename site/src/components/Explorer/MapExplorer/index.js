@@ -47,6 +47,11 @@ export const MapExplorer = () => {
                                         2,
                                         '0'
                                     )}
+                                    iconSrc={
+                                        activeHighrise.index === highrise.index
+                                            ? highrise.imageSrc
+                                            : undefined
+                                    }
                                     position={highrise.ltlng}
                                     onClick={() => {
                                         navigate('/');

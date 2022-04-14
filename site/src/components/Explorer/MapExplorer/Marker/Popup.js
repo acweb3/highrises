@@ -6,24 +6,45 @@ export class Popup extends window.google.maps.OverlayView {
     containerDiv;
     onClick;
 
-    constructor(position, content, index, onClick) {
+    constructor(position, content, index, onClick, iconSrc) {
         super();
         this.position = position;
         this.onClick = onClick;
 
-        content.classList.add('popup-bubble');
-        content.innerHTML = index;
+        content.innerHTML = '';
         content.addEventListener('click', onClick);
 
-        // This zero-height div is positioned at the bottom of the bubble.
-        const bubbleAnchor = document.createElement('div');
+        if (iconSrc) {
+            content.classList = 'popup-bubble-image';
+            const image = document.createElement('img');
+            image.src = iconSrc;
+            content.appendChild(image);
 
-        bubbleAnchor.classList.add('popup-bubble-anchor');
-        bubbleAnchor.appendChild(content);
-        // This zero-height div is positioned at the bottom of the tip.
-        this.containerDiv = document.createElement('div');
-        this.containerDiv.classList.add('popup-container');
-        this.containerDiv.appendChild(bubbleAnchor);
+            // This zero-height div is positioned at the bottom of the bubble.
+            const bubbleAnchor = document.createElement('div');
+
+            bubbleAnchor.classList.add('popup-bubble-anchor-image');
+            bubbleAnchor.appendChild(content);
+            // This zero-height div is positioned at the bottom of the tip.
+            this.containerDiv = document.createElement('div');
+            this.containerDiv.classList = 'popup-container';
+            this.containerDiv.appendChild(bubbleAnchor);
+        } else {
+            const text = document.createElement('span');
+            text.innerHTML = index;
+            content.classList = 'popup-bubble';
+            content.appendChild(text);
+
+            // This zero-height div is positioned at the bottom of the bubble.
+            const bubbleAnchor = document.createElement('div');
+
+            bubbleAnchor.classList.add('popup-bubble-anchor');
+            bubbleAnchor.appendChild(content);
+            // This zero-height div is positioned at the bottom of the tip.
+            this.containerDiv = document.createElement('div');
+            this.containerDiv.classList = 'popup-container';
+            this.containerDiv.appendChild(bubbleAnchor);
+        }
     }
     /** Called when the popup is added to the map. */
     onAdd() {
@@ -32,9 +53,9 @@ export class Popup extends window.google.maps.OverlayView {
     /** Called when the popup is removed from the map. */
     onRemove() {
         if (this.containerDiv.parentElement) {
-            [...this.containerDiv.parentElement.children].forEach((child) =>
-                this.containerDiv.parentElement?.removeChild(child)
-            );
+            [...this.containerDiv.parentElement.children].forEach((child) => {
+                this.containerDiv.parentElement?.removeChild(child);
+            });
         }
     }
     /** Called each frame when the popup needs to draw itself. */

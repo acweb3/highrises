@@ -1,21 +1,29 @@
 import './Popup.css';
 import { useEffect, useRef, useState } from 'react';
 
-export const Marker = ({ onClick, index, position, ...options }) => {
+export const Marker = ({ onClick, iconSrc, index, position, ...options }) => {
     const [marker, setMarker] = useState();
     const ref = useRef();
     const markerIndexRef = useRef();
+    const iconSrcRef = useRef();
 
     useEffect(() => {
         const createPopup = async () => {
-            if (!marker || markerIndexRef.current !== index) {
+            if (
+                !marker ||
+                markerIndexRef.current !== index ||
+                iconSrcRef.current !== iconSrc
+            ) {
                 marker?.onRemove();
                 markerIndexRef.current = index;
+                iconSrcRef.current = iconSrc;
                 const { Popup } = await import(
                     'components/Explorer/MapExplorer/Marker/Popup'
                 );
 
-                setMarker(new Popup(position, ref.current, index, onClick));
+                setMarker(
+                    new Popup(position, ref.current, index, onClick, iconSrc)
+                );
             }
         };
 
@@ -27,7 +35,7 @@ export const Marker = ({ onClick, index, position, ...options }) => {
                 marker.onRemove();
             }
         };
-    }, [marker, position, index, onClick]);
+    }, [marker, position, index, onClick, iconSrc]);
 
     useEffect(() => {
         if (marker) {
