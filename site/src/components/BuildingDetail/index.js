@@ -35,7 +35,7 @@ export const BuildingDetail = ({ activeHighrise }) => {
                     <S.Header>{activeHighrise.name}</S.Header>
                     <S.SubHeader>{activeHighrise.highriseNumber}</S.SubHeader>
                 </S.BuildingDetailHeader>
-                <S.BuildingDetailImageContainer>
+                {/* <S.BuildingDetailImageContainer>
                     {imageSrc && <S.BuildingDetailImage src={imageSrc} />}
                     <S.BuildingDetailTabs>
                         <S.BuildingDetailTab
@@ -55,7 +55,7 @@ export const BuildingDetail = ({ activeHighrise }) => {
                     </S.BuildingDetailTabs>
                 </S.BuildingDetailImageContainer>
                 <S.SubHeader>Traits</S.SubHeader>
-                <S.Traits activeHighrise={activeHighrise} />
+                <S.Traits activeHighrise={activeHighrise} /> */}
                 {activeHighrise && (
                     <S.Purchase
                         activeHighrise={activeHighrise}

@@ -1,5 +1,12 @@
+import { ExternalNavigation as UnstyledExternalNavigation } from 'components/ExternalNavigation';
 import { Header } from 'components/ui/Header';
 import styled from 'styled-components';
+
+export const ExternalNavigation = styled(UnstyledExternalNavigation)`
+    /* ${(props) => props.theme.breakpoints.medium`
+        display: none;
+    `} */
+`;
 
 export const Title = styled(Header)`
     line-height: 40px;

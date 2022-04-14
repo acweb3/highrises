@@ -32,10 +32,6 @@ export const baseButtonCss = css`
         white-space: nowrap;
         text-align: center;
     `}
-
-    ${(props) => props.theme.breakpoints.medium`
-        margin-bottom: 24px;
-    `}
 `;
 
 export const BaseButton = styled.div`

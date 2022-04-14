@@ -26,7 +26,6 @@ export const MapButton = styled.div`
     background-color: ${(props) => props.theme.colors.grey[1]};
 
     margin-top: 8px;
-    width: calc(100% - 64px);
 
     ${(props) => props.theme.breakpoints.mobile`
         top: 16px;
@@ -41,7 +40,6 @@ export const buttonCss = css`
     display: block;
 
     margin-top: -8px;
-    width: calc(100% - 64px);
 
     ${(props) => props.theme.breakpoints.mobile`
         display: none;

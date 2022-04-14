@@ -26,7 +26,7 @@ export const BuildingsExplorerArrow = styled.div`
     background: ${(props) => props.theme.colors.grey[0]};
     color: #fff;
     width: 64px;
-    height: 120px;
+    height: 48px;
 
     cursor: pointer;
 

@@ -34,13 +34,22 @@ export const PurchaseItem = ({
             <S.PurchaseCopy>{copy}</S.PurchaseCopy>
             <Asset isFullPage={isFullPage}>
                 <S.PurchasePrice>{price}</S.PurchasePrice>
-                {hasMinted ? (
-                    <a href={href} target="_blank" rel="noopener noreferrer">
+                <div>
+                    {hasMinted ? (
+                        <a
+                            href={href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <S.PurchaseImage
+                                src={src}
+                                isFullPage={isFullPage}
+                            />
+                        </a>
+                    ) : (
                         <S.PurchaseImage src={src} isFullPage={isFullPage} />
-                    </a>
-                ) : (
-                    <S.PurchaseImage src={src} isFullPage={isFullPage} />
-                )}
+                    )}
+                </div>
                 {!isFullPage && (
                     <>
                         {hasMinted ? (

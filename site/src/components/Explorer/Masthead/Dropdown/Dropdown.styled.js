@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 
 export const DropdownName = styled.div`
     margin-right: 8px;
+    margin-bottom: 8px;
     padding: 0 8px;
     opacity: ${(props) => (props.isActive ? 1 : 0.6)};
     color: ${(props) => props.theme.colors.grey[0]};
@@ -26,7 +27,6 @@ export const DropdownName = styled.div`
 `;
 
 export const Dropdown = styled.div`
-    max-width: 80px;
     border-radius: 16px;
 
     ${(props) => props.theme.breakpoints.medium`

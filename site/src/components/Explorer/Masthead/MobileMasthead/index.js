@@ -28,6 +28,12 @@ export const MobileMasthead = () => {
                         </S.PlaceholderDescription>
                     )}
                 </S.Description>
+                {activeHighrise && (
+                    <S.ExternalNavigation
+                        showMap
+                        activeHighrise={activeHighrise}
+                    />
+                )}
             </S.MobileMasthead>
         </Box>
     );

@@ -3,31 +3,37 @@ import { ExternalButtonLink as UnstyledExternalButtonLink } from 'components/ui/
 import { Header } from 'components/ui/Header';
 import styled, { css } from 'styled-components';
 
-const imageCss = css`
+export const externalLinkCss = css`
     width: 100%;
-    height: auto;
+    margin-bottom: 40px;
 
-    ${(props) =>
-        !props.isFullPage &&
-        css`
-            ${(props) => props.theme.breakpoints.extraSmall`
-                width: 304px;
-                height: 444px;
-            `}
+    ${(props) => props.theme.breakpoints.extraSmall`width: 100%;`}
+    ${(props) => props.theme.breakpoints.small`
+        max-width: 200px;
+    `}
+    ${(props) => props.theme.breakpoints.medium`width: 100%;`}
+    ${(props) => props.theme.breakpoints.large`width: 100%;`}
 
-            ${(props) => props.theme.breakpoints.medium`
-                width: 160px;
-                height: 233.66px;
-            `}
+    & > div {
+        width: 100%;
+        margin-bottom: 0;
 
-            ${(props) => props.theme.breakpoints.large`
-                width: 304px;
-                height: 444px;
-            `}
+        ${(props) => props.theme.breakpoints.small`
+            max-width: 200px;
+            margin-left: auto;
+            margin-right: auto;
         `}
+
+        ${(props) => props.theme.breakpoints.medium`
+            margin-left: initial;
+            margin-right: auto;
+        `}
+    }
 `;
 
 export const PurchaseExternalLinkDisabled = styled(ExternalButton)`
+    ${externalLinkCss}
+
     opacity: 0.6;
     cursor: disabled;
     text-decoration: line-through;
@@ -45,6 +51,8 @@ export const PurchaseExternalLinkDisabled = styled(ExternalButton)`
 `;
 
 export const PurchaseExternalLink = styled(UnstyledExternalButtonLink)`
+    ${externalLinkCss}
+
     display: none;
 
     ${(props) => props.theme.breakpoints.mobile`
@@ -68,21 +76,23 @@ export const PurchaseCopy = styled.div`
 export const PurchaseImage = styled.img`
     margin-top: 16px;
 
-    ${imageCss}
-`;
-
-export const PurchaseDisabled = styled.div`
-    margin-top: 16px;
     width: 100%;
+    height: auto;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    /* ${(props) => props.theme.breakpoints.extraSmall`
+        width: 304px;
+        height: 444px;
+    `}
 
-    border: 1px dashed ${(props) => props.theme.colors.blue[0]};
+    ${(props) => props.theme.breakpoints.medium`
+        width: 160px;
+        height: 233.66px;
+    `}
 
-    ${imageCss}
-    height: 100%;
+    ${(props) => props.theme.breakpoints.large`
+        width: 304px;
+        height: 444px;
+    `} */
 `;
 
 export const PurchasePrice = styled.div`
@@ -114,7 +124,6 @@ export const PurchaseHeader = styled(Header)`
 
     ${(props) => props.theme.breakpoints.mobile`
         line-height: 3rem;
-        white-space: initial;
     `}
 
     ${(props) => props.theme.breakpoints.small`
@@ -124,6 +133,8 @@ export const PurchaseHeader = styled(Header)`
     `}
 
     ${(props) => props.theme.breakpoints.medium`
+        font-size: 36px;
+        line-height: 3rem;
         text-align: initial;
     `}
 
@@ -177,10 +188,6 @@ export const PurchaseItem = styled.div`
     display: flex;
     flex-direction: column;
     flex: 0 0 50%;
-
-    &:first-of-type {
-        margin-right: 16px;
-    }
 
     ${(props) =>
         props.isCentered &&

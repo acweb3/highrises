@@ -27,7 +27,10 @@ export const Traits = styled.div`
     flex: 1;
     min-width: 100%;
 
+    margin-bottom: 32px;
+
     ${(props) => props.theme.breakpoints.mobile`
         min-width: auto;
+        margin-bottom: 0;
     `}
 `;

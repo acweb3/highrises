@@ -4,13 +4,31 @@ import * as S from 'components/Explorer/SortBar/SortBar.styled';
 import { useEffect, useState } from 'react';
 
 export const SORTS = {
-    // height: {
-    //     name: 'Height',
-    //     sort: (highrises) =>
-    //         highrises.sort((buildingA, buildingB) => {
-    //             return buildingA.height - buildingB.height;
-    //         }),
-    // }
+    attributes: {
+        isSelect: true,
+        name: 'Attributes',
+        options: [
+            ...new Set(
+                highrisesData.flatMap((highrise) =>
+                    highrise.attributes
+                        .filter(
+                            (attribute) => attribute.trait_type === 'Attributes'
+                        )
+                        .map((attribute) => attribute.value)
+                )
+            ),
+        ].map((value) => ({
+            value,
+            sort: (highrises) => {
+                return highrises.filter((highrise) => {
+                    const attributes = highrise.attributes.map(
+                        (attribute) => attribute.value
+                    );
+                    return attributes.includes(value);
+                });
+            },
+        })),
+    },
     height: {
         isSelect: true,
         name: 'Height',
@@ -88,8 +106,6 @@ export const SORTS = {
             };
         }, {}),
     },
-    // City: (buildingA, buildingB) => buildingA.height - buildingB.height,
-    // Attributes: (buildingA, buildingB) => buildingA.height - buildingB.height,
 };
 
 export const SortBar = ({ activeSort, setActiveSort }) => {

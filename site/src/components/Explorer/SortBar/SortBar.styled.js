@@ -20,7 +20,6 @@ export const DropdownFilters = styled.div`
     width: 100vw;
     overflow-x: scroll;
     padding: 16px;
-    margin: 8px 0 0;
     color: ${(props) => props.theme.colors.blue[0]};
     background-color: ${(props) => props.theme.colors.grey[1]};
 
@@ -62,8 +61,6 @@ export const SortLink = styled.div`
 `;
 
 export const SortBar = styled.div`
-    height: 40px;
-
     font-size: 16px;
     font-weight: 500;
 
@@ -71,22 +68,25 @@ export const SortBar = styled.div`
 
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
 
     padding: 32px 32px 16px;
 
     overflow-x: auto;
-    overflow-y: hidden;
+
+    justify-content: center;
 
     ${(props) => props.theme.breakpoints.small`
-        height: auto;
+        justify-content: initial;
         padding: 24px 32px 0;
-        margin-bottom: 24px;
+        margin-bottom: 16px;
     `}
 
     ${(props) => props.theme.breakpoints.medium`
         line-height: 4rem;
         font-size: 1.175rem;
         padding: 32px 16px 0;
+        width: calc(100% - 32px);
     `}
 
     &::-webkit-scrollbar {

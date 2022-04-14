@@ -20,10 +20,10 @@ export const Building = ({ building }) => {
                 <S.BuildingIndex.Mobile>
                     #{buildingIndex.padStart(2, '0')}
                 </S.BuildingIndex.Mobile>
-                <S.BuildingIndex.Desktop>
+                {/* <S.BuildingIndex.Desktop>
                     Highrise #{buildingIndex.padStart(2, '0')}
                 </S.BuildingIndex.Desktop>
-                <S.BuildingName>{building.name}</S.BuildingName>
+                <S.BuildingName>{building.name}</S.BuildingName> */}
             </S.BuildingCaption>
         </S.Building>
     );

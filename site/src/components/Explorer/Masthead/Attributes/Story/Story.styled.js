@@ -1,7 +1,13 @@
 import { BaseButton } from 'components/ui/BaseButton';
 import styled, { css } from 'styled-components';
 
-export const StoryExpand = styled(BaseButton)``;
+export const StoryExpand = styled(BaseButton)`
+    width: 100%;
+
+    ${(props) => props.theme.breakpoints.mobile`
+        max-width: 200px;
+    `}
+`;
 
 export const StoryCopy = styled.div`
     position: relative;
@@ -41,10 +47,4 @@ export const Story = styled.div`
 
     display: flex;
     flex-direction: column;
-    margin-top: 48px;
-
-    ${(props) => props.theme.breakpoints.mobile`
-        margin-top: 0;
-        margin-right: 64px;
-    `}
 `;

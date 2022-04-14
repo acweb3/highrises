@@ -33,10 +33,10 @@ export const RoadmapChart = styled.div`
     padding: 72px 32px 112px;
     display: flex;
     flex-direction: column;
-    margin-left: auto;
 
     ${(props) => props.theme.breakpoints.mobile`
         padding: 96px 96px 112px;
+        margin-left: auto;
     `}
 `;
 

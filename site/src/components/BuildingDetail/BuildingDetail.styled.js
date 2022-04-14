@@ -71,6 +71,7 @@ export const BuildingDetailHeader = styled.div`
 
 export const Purchase = styled(UnstyledPurchase)`
     justify-content: center;
+    margin-top: 32px;
     margin-bottom: 48px;
     width: 100%;
 `;

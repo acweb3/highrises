@@ -13,7 +13,7 @@ export const DragScroll = styled.div`
         display: none;
     }
 
-    ${(props) => props.theme.breakpoints.small`
+    /* ${(props) => props.theme.breakpoints.small`
         min-height: 420px;
-    `}
+    `} */
 `;

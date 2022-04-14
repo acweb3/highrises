@@ -1,4 +1,3 @@
-import { ExternalNavigation as UnstyledExternalNavigation } from 'components/ExternalNavigation';
 import styled from 'styled-components';
 
 export const MobileExplorerSection = styled.div`
@@ -6,14 +5,6 @@ export const MobileExplorerSection = styled.div`
     display: ${(props) => (props.isVisible ? 'flex' : 'none')};
     flex-direction: column;
     padding-bottom: 48px;
-`;
-
-export const MobileExplorerNavigation = styled(UnstyledExternalNavigation)`
-    margin-top: -16px;
-
-    & div {
-        margin-left: 32px;
-    }
 `;
 
 export const MobileExplorer = styled.div`

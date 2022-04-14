@@ -15,14 +15,14 @@ export const EditingCard = {
     Mobile: styled(UnstyledEditingCard)`
         margin: 48px auto;
 
-        ${(props) => props.theme.breakpoints.large`
+        ${(props) => props.theme.breakpoints.extraLarge`
             display: none;
         `}
     `,
     Desktop: styled(UnstyledEditingCard)`
         display: none;
 
-        ${(props) => props.theme.breakpoints.large`
+        ${(props) => props.theme.breakpoints.extraLarge`
             display: block;
         `}
     `,
