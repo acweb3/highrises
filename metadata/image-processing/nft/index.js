@@ -32,6 +32,12 @@ const nft = async () => {
                 width: 80,
             })
             .toFile(join(outputDir, 'icon', `${tokenID}.jpg`));
+
+        await sharp(join(rawImagesDir, file))
+            .resize({
+                width: 120,
+            })
+            .toFile(join(outputDir, 'map', `${tokenID}.jpg`));
     });
 };
 
