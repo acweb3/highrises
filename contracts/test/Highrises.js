@@ -38,24 +38,39 @@ describe("Highrises contract", () => {
 		});
 	});
 
-	describe("Transactions", async () => {
-		it("should not blind mint more than limit", async () => {
+	describe("Metadata", async () => {
+		it("list correct token owners", async () => {
+			const totalSupplyBefore = await hardhatToken.totalSupply();
+			expect(totalSupplyBefore).to.be.equal(0);
+
+			console.log(ethers.utils.parseEther("0.02"));
+
 			await Promise.all(
-				[...Array(2)].map(async () => {
-					return await hardhatToken.mint({
+				signers.slice(0, 4).map(async (signer, i) => {
+					await hardhatToken.connect(signer).mint(i, {
 						value: ethers.utils.parseEther("0.02"),
 					});
 				})
 			);
 
-			await expect(
-				hardhatToken.mint({
-					value: ethers.utils.parseEther("0.02"),
-				})
-			).to.be.revertedWith("MAX_LIMIT_PER_BUYER");
+			expect(
+				await hardhatToken.getOwnedTokenIdsByAddress(signers[0].address)
+			).to.deep.equal([true, ...[...Array(49)].map((x) => false)]);
 
-			const totalSupplyAfter = await hardhatToken.totalSupply();
-			expect(totalSupplyAfter).to.be.equal(2);
+			await hardhatToken.connect(signers[0]).mint(4, {
+				value: ethers.utils.parseEther("0.02"),
+			});
+
+			expect(
+				await hardhatToken.getOwnedTokenIdsByAddress(signers[0].address)
+			).to.deep.equal([
+				true,
+				false,
+				false,
+				false,
+				true,
+				...[...Array(45)].map((x) => false),
+			]);
 		});
 	});
 });

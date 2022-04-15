@@ -7,9 +7,6 @@ const config = {
 	rinkebyPrivateKey: process.env.RINKEBY_PRIVATE_KEY,
 };
 
-console.log(config);
-
-
 module.exports = {
 	config,
 };

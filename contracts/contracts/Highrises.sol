@@ -14,12 +14,10 @@ high rises demo
 contract Highrises is ERC721, Ownable {
 	string public baseURI;
 
-	uint128 private constant maxSupply = 50; // Max supply
-	uint128 private saleLimitPerUser = 2;
-	// # TODO => Change this
-	string private scavengerHuntUUID; // # TODO => Fix ty
+	uint128 private constant MAX_SUPPLY = 50; // Max supply
+	uint128 private saleLimitPerUser = 777;
+	string private scavengerHuntUUID; // # TODO => fix this
 	uint256 public listPrice = 20000000000000000; // 0.02 eth initial list price
-
 
 	mapping(address => uint128) private saleLimitMap; // Tally if user has made a purchase
 
@@ -40,41 +38,69 @@ contract Highrises is ERC721, Ownable {
 
 	// Minting
 	/*------------------------------------*/
-	function setScavengerHuntUUID(string memory _scavengerHuntUUID) public onlyOwner {
+	function setScavengerHuntUUID(string memory _scavengerHuntUUID)
+		public
+		onlyOwner
+	{
 		scavengerHuntUUID = _scavengerHuntUUID;
 	}
 
-	function scavengerHunt(string memory uuid) public payable {
+	function scavengerHunt(string memory _uuid) public payable {
 		require(listPrice <= msg.value, "LOW_ETH");
 		require(
 			saleLimitMap[_msgSender()] < saleLimitPerUser,
 			"MAX_LIMIT_PER_BUYER"
 		);
 		// Allocate for premint when checking max supply
-		require(_tokenIdCounter.current() < maxSupply, "MAX_REACHED");
-		require(scavengerHuntUUID == uuid, "WRONG_UUID");
+		require(_tokenIdCounter.current() < MAX_SUPPLY, "MAX_REACHED");
+		require(
+			keccak256(abi.encode(scavengerHuntUUID)) ==
+				keccak256(abi.encode(_uuid)),
+			"WRONG_UUID"
+		);
 
 		saleLimitMap[_msgSender()] = saleLimitMap[_msgSender()] + 1;
 
-		_safeMint(msg.sender, _tokenIdCounter.current());
-		_tokenIdCounter.increment();
+		// # TODO => fix this
+		_safeMint(msg.sender, 55);
+	}
+
+	/**
+	 * Get token IDs associated with a specific address.
+	 */
+	function getOwnedTokenIdsByAddress(address _address)
+		public
+		view
+		returns (bool[] memory)
+	{
+		require(balanceOf(_address) > 0, "NO_TOKENS");
+
+		bool[] memory tokens = new bool[](MAX_SUPPLY);
+
+		for (uint256 i = 0; i < tokens.length; i++) {
+			if (_exists(i) && ownerOf(i) == _address) {
+				tokens[i] = true;
+			}
+		}
+
+		return tokens;
 	}
 
 	/**
 	 * Mint, updating storage of sales.
 	 */
-	function mint() public payable {
+	function mint(uint256 _tokenId) public payable {
 		require(listPrice <= msg.value, "LOW_ETH");
 		require(
 			saleLimitMap[_msgSender()] < saleLimitPerUser,
 			"MAX_LIMIT_PER_BUYER"
 		);
 		// Allocate for premint when checking max supply
-		require(_tokenIdCounter.current() < maxSupply, "MAX_REACHED");
+		require(!_exists(_tokenId), "TOKEN_ALLOCATED");
 
 		saleLimitMap[_msgSender()] = saleLimitMap[_msgSender()] + 1;
 
-		_safeMint(msg.sender, _tokenIdCounter.current());
+		_safeMint(msg.sender, _tokenId);
 		_tokenIdCounter.increment();
 	}
 
