@@ -40,6 +40,13 @@ export const RoadmapChart = styled.div`
     `}
 `;
 
+export const RoadmapVideo = styled.video`
+    position: absolute;
+    width: 449px;
+    top: 672px;
+    left: 22px;
+`;
+
 export const RoadmapImage = styled.img`
     height: 100%;
     min-width: fit-content;

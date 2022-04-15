@@ -34,6 +34,10 @@ export const MapButton = styled.div`
         width: 200px;
         padding: 8px 36px;
     `}
+
+    ${(props) => props.theme.breakpoints.medium`
+        display: none;
+    `}
 `;
 
 export const buttonCss = css`

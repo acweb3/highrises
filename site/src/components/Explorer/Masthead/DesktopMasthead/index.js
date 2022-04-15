@@ -6,10 +6,8 @@ import * as S from 'components/Explorer/Masthead/DesktopMasthead/DesktopMasthead
 import { EthPrice } from 'components/Explorer/Masthead/Purchase/EthPrice';
 import { PurchaseItem } from 'components/Explorer/Masthead/Purchase/PurchaseItem';
 import { Box } from 'components/ui/Box';
-import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
 
-export const DesktopMasthead = () => {
-    const { activeHighrise } = useActiveHighriseContext();
+export const DesktopMasthead = ({ activeHighrise }) => {
     const { openseaURL, contractAddress } = useChainConfig();
     const { hasOwner } = useTokenOwner({
         tokenId: activeHighrise?.index,

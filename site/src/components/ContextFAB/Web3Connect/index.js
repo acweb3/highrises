@@ -10,8 +10,8 @@ export const Web3Connect = ({ tokenIds }) => {
         <>
             {tokenIds.length ? (
                 <S.Web3ConnectIcons>
-                    {tokenIds.map((tokenId, index) => (
-                        <HighriseIcon key={index} tokenId={tokenIds[tokenId]} />
+                    {tokenIds.map((tokenId) => (
+                        <HighriseIcon key={tokenId} tokenId={tokenId} />
                     ))}
                 </S.Web3ConnectIcons>
             ) : (

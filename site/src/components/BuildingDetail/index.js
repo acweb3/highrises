@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 import Helmet from 'react-helmet';
 
 export const BuildingDetail = ({ activeHighrise }) => {
-    const [imageSrc, setImageSrc] = useState(activeHighrise.posterSrc);
+    const [, setImageSrc] = useState(activeHighrise.posterSrc);
     const { initHighrisesState } = useActiveHighriseContext();
 
     useEffect(() => {

@@ -33,6 +33,7 @@ export const ActiveHighrise = ({ children }) => {
                         imageSrc: await pullImage('slide', index),
                         posterSrc: await pullImage('poster', index, 'jpg'),
                         nftSrc: await pullImage('nft', index, 'jpg'),
+                        mapSrc: await pullImage('map', index, 'jpg'),
                         index,
                     };
                 })

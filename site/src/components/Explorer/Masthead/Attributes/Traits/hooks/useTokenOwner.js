@@ -1,27 +1,32 @@
 import { useCall, useEthers, shortenAddress } from '@usedapp/core';
 import { useChainConfig } from 'common/hooks/useChainConfig';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export const useTokenOwner = ({ tokenId }) => {
     const { contract, openseaURL } = useChainConfig();
-    const [ens /*setEns*/] = useState();
+    const [ens, setEns] = useState();
     const ownerOf = useCall({
         contract,
         method: 'ownerOf',
         args: [tokenId],
     });
     const ethers = useEthers();
+    const hasCheckedEns = useRef(false);
 
     const ethAddress = ownerOf?.value[0];
 
     useEffect(() => {
         (async () => {
-            // # TODO => Fix this, reverse lookup not working.
-            // const lookupEns = await (ownerOf &&
-            //     ethers.library.lookupAddress(ownerOf));
-            // setEns(lookupEns);
+            if (ethAddress & !hasCheckedEns.current) {
+                hasCheckedEns.current = true;
+                const lookupEns = await ethers.library.lookupAddress(
+                    ethAddress
+                );
+
+                setEns(lookupEns);
+            }
         })();
-    }, [ethers.library, ownerOf]);
+    }, [ethers.library, ethAddress]);
 
     return {
         isCurrentOwner: ethers.account && ethAddress === ethers.account,

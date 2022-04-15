@@ -49,7 +49,7 @@ export const MapExplorer = () => {
                                     )}
                                     iconSrc={
                                         activeHighrise.index === highrise.index
-                                            ? highrise.imageSrc
+                                            ? highrise.mapSrc
                                             : undefined
                                     }
                                     position={highrise.ltlng}

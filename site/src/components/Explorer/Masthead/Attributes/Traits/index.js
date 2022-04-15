@@ -12,6 +12,7 @@ export const Traits = ({ activeHighrise, className }) => {
         ['Height', activeHighrise.height],
         ['Stories', activeHighrise.stories],
         ['Style', activeHighrise.style],
+        ['Secondary Style', activeHighrise.secondaryStyle],
         ['Designer', activeHighrise.architect],
         ['Token Owner', tokenOwnerAddress],
     ].filter(([, value]) => value);

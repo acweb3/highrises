@@ -1,3 +1,4 @@
+import clockFaceSrc from 'assets/images/clockFace.mp4';
 import inquirerSrc from 'assets/images/inquirer.png';
 import { Clouds } from 'components/Clouds';
 import { Point } from 'components/Roadmap/Point';
@@ -77,28 +78,49 @@ const POINTS = [
 
 export const Roadmap = () => {
     return (
-        <S.Roadmap>
-            <Clouds cloudKey="roadmap" />
-            <S.RoadmapImageWrapper>
-                <S.RoadmapImage src={inquirerSrc} />
-            </S.RoadmapImageWrapper>
-            <div
-                style={{
-                    width: '100vw',
-                }}
-            >
-                <Box>
-                    <S.RoadmapChart>
-                        <S.Title>Project Roadmap</S.Title>
-                        <S.Points>
-                            {POINTS.map((point) => {
-                                return <Point key={point.header} {...point} />;
-                            })}
-                        </S.Points>
-                    </S.RoadmapChart>
-                    <S.Sky />
-                </Box>
-            </div>
-        </S.Roadmap>
+        <>
+            {/* <S.MobileVideoWrapper>
+                <S.RoadmapVideo
+                    onError={(e) => console.log(e)}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    src={clockFaceSrc}
+                />
+            </S.MobileVideoWrapper> */}
+            <S.Roadmap>
+                <Clouds cloudKey="roadmap" />
+                <S.RoadmapImageWrapper>
+                    <S.RoadmapVideo
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        src={clockFaceSrc}
+                    />
+                    <S.RoadmapImage src={inquirerSrc} />
+                </S.RoadmapImageWrapper>
+                <div
+                    style={{
+                        width: '100vw',
+                    }}
+                >
+                    <Box>
+                        <S.RoadmapChart>
+                            <S.Title>Project Roadmap</S.Title>
+                            <S.Points>
+                                {POINTS.map((point) => {
+                                    return (
+                                        <Point key={point.header} {...point} />
+                                    );
+                                })}
+                            </S.Points>
+                        </S.RoadmapChart>
+                        <S.Sky />
+                    </Box>
+                </div>
+            </S.Roadmap>
+        </>
     );
 };

@@ -20,4 +20,8 @@ export const config = {
         'googleMapsMapID',
         process.env.REACT_APP_GOOGLE_MAPS_MAP_ID
     ),
+    googleFormUrl: requiredEnvVar(
+        'googleFormUrl',
+        process.env.REACT_APP_GOOGLE_FORM_URL
+    ),
 };

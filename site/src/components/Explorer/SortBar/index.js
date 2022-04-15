@@ -1,5 +1,5 @@
 import { highrises as highrisesData } from 'assets/data/highrises';
-import { Dropdown } from 'components/Explorer/Masthead/Dropdown';
+import { Dropdown } from 'components/Explorer/SortBar/Dropdown';
 import * as S from 'components/Explorer/SortBar/SortBar.styled';
 import { useEffect, useState } from 'react';
 
@@ -97,11 +97,12 @@ export const SORTS = {
                 [highrise.style]: {
                     value: highrise.style,
                     sort: (highrises) =>
-                        highrises.filter(
-                            ({ style }) =>
+                        highrises.filter(({ style, secondaryStyle }) => {
+                            return (
                                 highrise.style === style ||
-                                highrise.secondaryStyle === style
-                        ),
+                                highrise.style === secondaryStyle
+                            );
+                        }),
                 },
             };
         }, {}),

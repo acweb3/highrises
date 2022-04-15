@@ -83,8 +83,7 @@ export const SortBar = styled.div`
     `}
 
     ${(props) => props.theme.breakpoints.medium`
-        line-height: 4rem;
-        font-size: 1.175rem;
+        line-height: 2rem;
         padding: 32px 16px 0;
         width: calc(100% - 32px);
     `}

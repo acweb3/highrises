@@ -3,6 +3,7 @@ import { ActiveHighrise } from 'contexts/ActiveHighrise';
 import { DApp } from 'contexts/DApp';
 import { ExplorerRef } from 'contexts/ExplorerRef';
 import { MapView } from 'contexts/MapView';
+import { Sort } from 'contexts/Sort';
 import { ThemeProvider } from 'styled-components';
 
 export const Contexts = ({ children }) => {
@@ -10,9 +11,13 @@ export const Contexts = ({ children }) => {
         <DApp>
             <ActiveHighrise>
                 <MapView>
-                    <ExplorerRef>
-                        <ThemeProvider theme={theme}>{children}</ThemeProvider>
-                    </ExplorerRef>
+                    <Sort>
+                        <ExplorerRef>
+                            <ThemeProvider theme={theme}>
+                                {children}
+                            </ThemeProvider>
+                        </ExplorerRef>
+                    </Sort>
                 </MapView>
             </ActiveHighrise>
         </DApp>

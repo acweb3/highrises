@@ -24,6 +24,10 @@ export const highrises = [
                 value: '1 S. Penn Square',
             },
             {
+                trait_type: 'Long address',
+                value: '1 Penn Square Philadelphia, PA 19107, USA',
+            },
+            {
                 trait_type: 'Opened',
                 value: '1894',
             },
@@ -79,6 +83,10 @@ export const highrises = [
                 trait_type: 'Attributes',
                 value: 'Statue',
             },
+            {
+                trait_type: 'Attributes',
+                value: 'Lights on',
+            },
         ],
     },
     {
@@ -104,6 +112,10 @@ export const highrises = [
             {
                 trait_type: 'Address',
                 value: '1616 Walnut St.',
+            },
+            {
+                trait_type: 'Long address',
+                value: '1616 Walnut Philadelphia',
             },
             {
                 trait_type: 'Opened',
@@ -176,6 +188,10 @@ export const highrises = [
                 value: '117 S. 17th St.',
             },
             {
+                trait_type: 'Long address',
+                value: '117 S 17th St, Philadelphia, PA 19103',
+            },
+            {
                 trait_type: 'Opened',
                 value: '1930',
             },
@@ -244,6 +260,10 @@ export const highrises = [
             {
                 trait_type: 'Address',
                 value: '1 S. Broad St.',
+            },
+            {
+                trait_type: 'Long address',
+                value: '1 South Broad Street Philadelphia, PA 19107 United States',
             },
             {
                 trait_type: 'Opened',
@@ -321,6 +341,10 @@ export const highrises = [
                 value: '1512 Spruce St.',
             },
             {
+                trait_type: 'Long address',
+                value: '1512 Spruce St, Philadelphia, PA 19102',
+            },
+            {
                 trait_type: 'Opened',
                 value: '1929',
             },
@@ -376,6 +400,10 @@ export const highrises = [
                 trait_type: 'Attributes',
                 value: 'Sloped Roof',
             },
+            {
+                trait_type: 'Attributes',
+                value: 'Figures',
+            },
         ],
     },
     {
@@ -401,6 +429,10 @@ export const highrises = [
             {
                 trait_type: 'Address',
                 value: '400 N. Broad St.',
+            },
+            {
+                trait_type: 'Long address',
+                value: '400 N. Broad Street, Philadelphia, Pennsylvania',
             },
             {
                 trait_type: 'Opened',
@@ -460,6 +492,10 @@ export const highrises = [
             },
             {
                 trait_type: 'Attributes',
+                value: 'Figures',
+            },
+            {
+                trait_type: 'Attributes',
                 value: 'Bell',
             },
         ],
@@ -487,6 +523,10 @@ export const highrises = [
             {
                 trait_type: 'Address',
                 value: '10 Avenue of the Arts',
+            },
+            {
+                trait_type: 'Long address',
+                value: '10 Ave Of The Arts, Philadelphia, PA 19102',
             },
             {
                 trait_type: 'Opened',
@@ -536,10 +576,6 @@ export const highrises = [
                 trait_type: 'Attributes',
                 value: 'Sloped Roof',
             },
-            {
-                trait_type: 'Attributes',
-                value: 'Lights on',
-            },
         ],
     },
     {
@@ -566,6 +602,10 @@ export const highrises = [
             {
                 trait_type: 'Address',
                 value: '1500 Walnut St.',
+            },
+            {
+                trait_type: 'Long address',
+                value: '1500 Walnut St Philadelphia PA',
             },
             {
                 trait_type: 'Opened',
@@ -619,6 +659,10 @@ export const highrises = [
                 trait_type: 'Attributes',
                 value: 'Sloped Roof',
             },
+            {
+                trait_type: 'Attributes',
+                value: 'Figures',
+            },
         ],
     },
     {
@@ -635,7 +679,6 @@ export const highrises = [
         stories: '33',
         style: 'Art Deco',
         city: 'Philadelphia',
-        secondaryStyle: 'Neoclassical',
         opened: '1929',
         ltlng: {
             lat: 39.948588,
@@ -645,6 +688,10 @@ export const highrises = [
             {
                 trait_type: 'Address',
                 value: '1425 Locust St.',
+            },
+            {
+                trait_type: 'Long address',
+                value: '225 South 15th Street, Philadelphia, Pennsylvania, United States',
             },
             {
                 trait_type: 'Opened',
@@ -665,10 +712,6 @@ export const highrises = [
             {
                 trait_type: 'Style',
                 value: 'Art Deco',
-            },
-            {
-                trait_type: 'Secondary Style',
-                value: 'Neoclassical',
             },
             {
                 trait_type: 'City',
@@ -693,10 +736,6 @@ export const highrises = [
             {
                 trait_type: 'Height Bracket',
                 value: "300' - 399'",
-            },
-            {
-                trait_type: 'Attributes',
-                value: 'Lights on',
             },
         ],
     },
@@ -723,6 +762,10 @@ export const highrises = [
             {
                 trait_type: 'Address',
                 value: '230 S. Broad St.',
+            },
+            {
+                trait_type: 'Long address',
+                value: '1405 Locust Street Philadelphia PA',
             },
             {
                 trait_type: 'Opened',
@@ -795,6 +838,10 @@ export const highrises = [
                 value: '1200 Market St.',
             },
             {
+                trait_type: 'Long address',
+                value: '1200 Market Street, Philadelphia, PA',
+            },
+            {
                 trait_type: 'Opened',
                 value: '1932',
             },
@@ -846,10 +893,6 @@ export const highrises = [
                 trait_type: 'Attributes',
                 value: 'Antenna',
             },
-            {
-                trait_type: 'Attributes',
-                value: 'Lights on',
-            },
         ],
     },
     {
@@ -875,6 +918,10 @@ export const highrises = [
             {
                 trait_type: 'Address',
                 value: '1420–22 Chestnut St.',
+            },
+            {
+                trait_type: 'Long address',
+                value: '1420–1422 Chestnut St., Philadelphia, Pennsylvania',
             },
             {
                 trait_type: 'Opened',
@@ -928,6 +975,10 @@ export const highrises = [
                 trait_type: 'Attributes',
                 value: 'Statue',
             },
+            {
+                trait_type: 'Attributes',
+                value: 'Disrepair',
+            },
         ],
     },
     {
@@ -942,8 +993,9 @@ export const highrises = [
         address: '101 N. Broad St.',
         architect: 'Dennison & Hirons',
         stories: '21',
-        style: 'Renaissance',
+        style: 'Art Deco',
         city: 'Philadelphia',
+        secondaryStyle: 'Renaissance',
         opened: '1925',
         ltlng: {
             lat: 39.9546225,
@@ -953,6 +1005,10 @@ export const highrises = [
             {
                 trait_type: 'Address',
                 value: '101 N. Broad St.',
+            },
+            {
+                trait_type: 'Long address',
+                value: '101 North Broad Street Philadelphia PA',
             },
             {
                 trait_type: 'Opened',
@@ -972,6 +1028,10 @@ export const highrises = [
             },
             {
                 trait_type: 'Style',
+                value: 'Art Deco',
+            },
+            {
+                trait_type: 'Secondary Style',
                 value: 'Renaissance',
             },
             {
@@ -1002,6 +1062,14 @@ export const highrises = [
                 trait_type: 'Attributes',
                 value: 'Sloped Roof',
             },
+            {
+                trait_type: 'Attributes',
+                value: 'Figures',
+            },
+            {
+                trait_type: 'Attributes',
+                value: 'Graffiti',
+            },
         ],
     },
     {
@@ -1027,6 +1095,10 @@ export const highrises = [
             {
                 trait_type: 'Address',
                 value: '3701 N. Broad St.',
+            },
+            {
+                trait_type: 'Long address',
+                value: '3701 N Broad St Philadelphia, PA 19140',
             },
             {
                 trait_type: 'Opened',
@@ -1111,6 +1183,10 @@ export const highrises = [
                 value: '130 S. 9th St.',
             },
             {
+                trait_type: 'Long address',
+                value: '130 S 9th St, Philadelphia, PA 19107',
+            },
+            {
                 trait_type: 'Opened',
                 value: '1927',
             },
@@ -1178,6 +1254,7 @@ export const highrises = [
         stories: '40',
         style: 'Gothic',
         city: 'Pittsburgh',
+        secondaryStyle: 'Art Deco',
         opened: '1937',
         ltlng: {
             lat: 40.44439000000001,
@@ -1187,6 +1264,10 @@ export const highrises = [
             {
                 trait_type: 'Address',
                 value: '4200 Fifth Ave.',
+            },
+            {
+                trait_type: 'Long address',
+                value: '4200 Fifth Ave, Pittsburgh, PA 15260',
             },
             {
                 trait_type: 'Opened',
@@ -1207,6 +1288,10 @@ export const highrises = [
             {
                 trait_type: 'Style',
                 value: 'Gothic',
+            },
+            {
+                trait_type: 'Secondary Style',
+                value: 'Art Deco',
             },
             {
                 trait_type: 'City',
@@ -1257,6 +1342,10 @@ export const highrises = [
             {
                 trait_type: 'Address',
                 value: '436 Seventh Ave.',
+            },
+            {
+                trait_type: 'Long address',
+                value: '436 Seventh Avenue, Pittsburgh, PA',
             },
             {
                 trait_type: 'Opened',
@@ -1310,6 +1399,10 @@ export const highrises = [
                 trait_type: 'Attributes',
                 value: 'Signage',
             },
+            {
+                trait_type: 'Attributes',
+                value: 'Lights on',
+            },
         ],
     },
     {
@@ -1335,6 +1428,10 @@ export const highrises = [
             {
                 trait_type: 'Address',
                 value: '643 Liberty Ave.',
+            },
+            {
+                trait_type: 'Long address',
+                value: '643 Liberty Ave, Pittsburgh, PA 15222',
             },
             {
                 trait_type: 'Opened',
@@ -1406,7 +1503,7 @@ export const highrises = [
         address: '21 South Eutaw St.',
         architect: 'Joseph Sperry',
         stories: '15',
-        style: 'Gothic',
+        style: 'Renaissance',
         city: 'Baltimore',
         opened: '1911',
         ltlng: {
@@ -1417,6 +1514,10 @@ export const highrises = [
             {
                 trait_type: 'Address',
                 value: '21 South Eutaw St.',
+            },
+            {
+                trait_type: 'Long address',
+                value: '21 South Eutaw Street at West Lombard Street, Baltimore, Maryland',
             },
             {
                 trait_type: 'Opened',
@@ -1436,7 +1537,7 @@ export const highrises = [
             },
             {
                 trait_type: 'Style',
-                value: 'Gothic',
+                value: 'Renaissance',
             },
             {
                 trait_type: 'City',
@@ -1466,6 +1567,10 @@ export const highrises = [
                 trait_type: 'Attributes',
                 value: 'Clock',
             },
+            {
+                trait_type: 'Attributes',
+                value: 'Signage',
+            },
         ],
     },
     {
@@ -1492,6 +1597,10 @@ export const highrises = [
             {
                 trait_type: 'Address',
                 value: '10 Light St.',
+            },
+            {
+                trait_type: 'Long address',
+                value: '10 Light Street Baltimore, Maryland',
             },
             {
                 trait_type: 'Opened',
@@ -1543,11 +1652,11 @@ export const highrises = [
             },
             {
                 trait_type: 'Attributes',
-                value: 'Spire',
+                value: 'Sloped Roof',
             },
             {
                 trait_type: 'Attributes',
-                value: 'Sloped Roof',
+                value: 'Figures',
             },
         ],
     },

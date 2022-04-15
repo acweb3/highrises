@@ -1,26 +1,23 @@
-import { useCalls, useEthers } from '@usedapp/core';
+import { useCall, useEthers } from '@usedapp/core';
 import { useChainConfig } from 'common/hooks/useChainConfig';
+
+const getTokenIdsFromBoolArray = (tokenIdsByAddress) => {
+    return tokenIdsByAddress?.map((x, i) => x && i).filter((x) => x !== false);
+};
 
 export const useTokenHolder = () => {
     const { contract } = useChainConfig();
     const { account } = useEthers();
 
-    // # TODO => expand this
-    const tokenOwners = useCalls(
-        [...Array(2)].map((x, i) => ({
-            contract,
-            method: 'ownerOf',
-            args: [i],
-        }))
-    );
+    const tokenIdsByAddress = useCall({
+        contract,
+        method: 'getOwnedTokenIdsByAddress',
+        args: [account],
+    });
 
-    return tokenOwners
-        .map((tokenOwner, index) => {
-            if (account && tokenOwner?.value?.[0] === account) {
-                return index;
-            }
+    const ownedTokenIds = tokenIdsByAddress?.value?.[0]
+        ? getTokenIdsFromBoolArray(tokenIdsByAddress?.value?.[0])
+        : [];
 
-            return undefined;
-        })
-        .filter((tokenOwner) => tokenOwner !== undefined);
+    return ownedTokenIds;
 };

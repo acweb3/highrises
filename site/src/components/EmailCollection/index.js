@@ -1,8 +1,10 @@
 import * as S from 'components/EmailCollection/EmailCollection.styled';
+import { config } from 'config';
 import { useState } from 'react';
 
 export const EmailCollection = () => {
     const [email, setEmail] = useState('');
+    const [hasSubmitted, setHasSubmitted] = useState(false);
 
     return (
         <S.EmailCollection>
@@ -23,13 +25,28 @@ export const EmailCollection = () => {
                         setEmail(e.target.value);
                     }}
                     onKeyDown={(e) => {
-                        // # TODO => This needs to actually do something
                         if (e.key === 'Enter') {
+                            const formData = new FormData();
+                            formData.append('Email', email);
                             setEmail('');
+
+                            fetch(config.googleFormUrl, {
+                                method: 'POST',
+                                body: formData,
+                            });
+
+                            setHasSubmitted(true);
                         }
                     }}
                 />
             </S.EmailCollectionContent>
+            {hasSubmitted && (
+                <S.EmailCollectionContent>
+                    <S.Paragraph>
+                        Got it! We'll keep you up to date.
+                    </S.Paragraph>
+                </S.EmailCollectionContent>
+            )}
         </S.EmailCollection>
     );
 };

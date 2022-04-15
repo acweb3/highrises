@@ -22,7 +22,7 @@ export const DropdownName = styled.div`
         `};
 
     ${(props) => props.theme.breakpoints.medium`
-        padding: 0 32px;
+        padding: 0 16px;
     `}
 `;
 

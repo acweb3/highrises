@@ -5,8 +5,12 @@ import { Traits } from 'components/Explorer/Masthead/Attributes/Traits';
 export const Attributes = ({ activeHighrise }) => {
     return (
         <S.Attributes>
-            <Story activeHighrise={activeHighrise} />
-            <Traits activeHighrise={activeHighrise} />
+            {activeHighrise && (
+                <>
+                    <Story activeHighrise={activeHighrise} />
+                    <Traits activeHighrise={activeHighrise} />
+                </>
+            )}
         </S.Attributes>
     );
 };

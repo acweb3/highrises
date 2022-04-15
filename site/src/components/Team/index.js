@@ -2,7 +2,7 @@ import andySrc from 'assets/images/profiles/andy.jpg';
 import chrisSrc from 'assets/images/profiles/chris.jpg';
 import cooperSrc from 'assets/images/profiles/cooper.png';
 import markSrc from 'assets/images/profiles/mark.webp';
-import mikeSrc from 'assets/images/profiles/mike.jpeg';
+import mikeSrc from 'assets/images/profiles/mike.jpg';
 import nickSrc from 'assets/images/profiles/nick.jpg';
 import { Profile } from 'components/Team/Profile';
 import * as S from 'components/Team/Team.styled';
