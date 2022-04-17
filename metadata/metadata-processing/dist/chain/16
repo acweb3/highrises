@@ -1,0 +1,36 @@
+{
+    "description": "Highrises are among the most iconic and defining elements of American Cities, and the technological advancement of the twentieth century fostered new heights.",
+    "image": "ipfs://QmYZLQhmp2Kbs9HDafd7fQQnDSrPn5wKA4WqHrEgP1CdKC/16.jpg",
+    "name": "Koppers Building",
+    "heightBracket": "400' - 499'",
+    "attributes": [
+        {
+            "trait_type": "Style",
+            "value": "Art Deco"
+        },
+        {
+            "trait_type": "City",
+            "value": "Pittsburgh"
+        },
+        {
+            "trait_type": "Decade",
+            "value": "1920s"
+        },
+        {
+            "trait_type": "Height",
+            "value": "400' - 499'"
+        },
+        {
+            "trait_type": "Attributes",
+            "value": "Sloped Roof"
+        },
+        {
+            "trait_type": "Attributes",
+            "value": "Signage"
+        },
+        {
+            "trait_type": "Attributes",
+            "value": "Lights on"
+        }
+    ]
+}

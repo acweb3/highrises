@@ -1,0 +1,40 @@
+{
+    "description": "The Drake Apartment Hotel was originally 752 rooms of apartments and hotel lodging, and the architecture brilliantly evokes both a feeling of home and a feeling of adventurous vacation. The slender brick clad tower borrows many details from traditional Spanish and Baroque architecture, which was a popular style for domestic architecture in the United States in that decade. The upper levels present an elaborate interconnection of penthouses and porches topped with a bright terra cotta dome. It’s a highly expressive building featuring many nautical themes that is purely stylistic and is not necessarily based on any local historical themes. The building is an allegory for the life and adventure of Sir Francis Drake, an English explorer and sea captain who was most famous for his circumnavigation around the work in a single expedition from 1577-1580. Many of the motifs depicting Sir Francis Drake include sailing vessels, globes, dolphins, and seashells. The lower levels and lobby are also decorated with elaborate Spanish motifs. Personality:RomanticSpanish accentLatin loverBook Text:The Drake Apartment Hotel was designed by Ritter and Shay architects in 1929. Originally it had 752 rooms for apartments and hotel lodging, and the architecture brilliantly evokes both a feeling of home and a feeling of adventurous vacation. The slender brick clad tower borrows many details from traditional Spanish and Baroque architecture, which was a popular style for domestic architecture in the United States in that decade. The upper levels present an elaborate interconnection of penthouses and porches topped with a bright terra cotta dome. It’s a highly expressive building featuring many nautical themes that is purely stylistic and is not necessarily based on any local historical themes. The building is an allegory for the life and adventure of Sir Francis Drake, an English explorer and sea captain who was most famous for his circumnavigation around the work in a single expedition from 1577-1580. Many of the motifs depicting Sir Francis Drake include sailing vessels, globes, dolphins, and seashells. The lower levels and lobby are also decorated with elaborate Spanish motifs.",
+    "image": "ipfs://QmYZLQhmp2Kbs9HDafd7fQQnDSrPn5wKA4WqHrEgP1CdKC/4.jpg",
+    "name": "The Drake",
+    "heightBracket": "300' - 399'",
+    "attributes": [
+        {
+            "trait_type": "Style",
+            "value": "Spanish Baroque"
+        },
+        {
+            "trait_type": "Style",
+            "value": "Art Deco"
+        },
+        {
+            "trait_type": "City",
+            "value": "Philadelphia"
+        },
+        {
+            "trait_type": "Decade",
+            "value": "1920s"
+        },
+        {
+            "trait_type": "Height",
+            "value": "300' - 399'"
+        },
+        {
+            "trait_type": "Attributes",
+            "value": "Dome"
+        },
+        {
+            "trait_type": "Attributes",
+            "value": "Sloped Roof"
+        },
+        {
+            "trait_type": "Attributes",
+            "value": "Figures"
+        }
+    ]
+}

@@ -5,15 +5,19 @@ const sharp = require('sharp');
 
 const asyncReadfile = promisify(fs.readFile);
 
+const birds = async () => {
+    const birds = join(__dirname, 'raw', 'birds.png');
+    await asyncReadfile(birds);
+
+    await sharp(birds).toFile(join(__dirname, 'dist', 'birds.webp'));
+};
+
 const blueSky = async () => {
     const blueSky = join(__dirname, 'raw', 'blue-sky-background.jpg');
 
-    await sharp(blueSky)
-        // .resize({
-        //     width: 500,
-        // })
-        .jpeg({ quality: 80 })
-        .toFile(join(__dirname, 'dist', 'blue-sky-background.jpg'));
+    await sharp(blueSky).toFile(
+        join(__dirname, 'dist', 'blue-sky-background.webp')
+    );
 };
 
 const cloud = async () => {
@@ -24,7 +28,14 @@ const cloud = async () => {
         .resize({
             width: 500,
         })
-        .toFile(join(__dirname, 'dist', 'cloud.png'));
+        .toFile(join(__dirname, 'dist', 'cloud.webp'));
+};
+
+const drone = async () => {
+    const drone = join(__dirname, 'raw', 'drone.png');
+    await asyncReadfile(drone);
+
+    await sharp(drone).toFile(join(__dirname, 'dist', 'drone.webp'));
 };
 
 const edison = async () => {
@@ -35,7 +46,15 @@ const edison = async () => {
         .resize({
             height: 800,
         })
-        .toFile(join(__dirname, 'dist', 'edison-building.png'));
+        .toFile(join(__dirname, 'dist', 'edison-building.webp'));
+};
+
+const editing = async () => {
+    const editing = join(__dirname, 'raw', 'editing-tutorial.jpg');
+
+    await sharp(editing).toFile(
+        join(__dirname, 'dist', 'editing-tutorial.webp')
+    );
 };
 
 const inquirer = async () => {
@@ -55,7 +74,7 @@ const inquirer = async () => {
         .resize({
             width: 700,
         })
-        .toFile(join(__dirname, 'dist', 'inquirer.png'));
+        .toFile(join(__dirname, 'dist', 'inquirer.webp'));
 };
 
 const theDrake = async () => {
@@ -67,16 +86,21 @@ const theDrake = async () => {
         .resize({
             width: 700,
         })
-        .toFile(join(__dirname, 'dist', 'the-drake.png'));
+        .toFile(join(__dirname, 'dist', 'the-drake.webp'));
 };
 
 const site = async () => {
+    await birds();
     await blueSky();
     await cloud();
+    await drone();
     await edison();
+    await editing();
     await inquirer();
     await theDrake();
 };
+
+site();
 
 module.exports = {
     site,

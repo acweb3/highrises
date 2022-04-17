@@ -1,0 +1,32 @@
+{
+    "description": "The Edison Building was built in 1927 for the Philadelphia Electric Company (PECO), who were steadily outgrowing their offices in the 1920’s. The 23 story Art Deco tower was designed by JohnTorrey Windrim. Illuminated Architecture was becoming a popular trend, and PECO being an electric company, wanted to set the record for best lit building in the world. Arthur A. Brainerd designed lighting schemes with multi-colored lights moving across the building, each individually dimming and fading at regular intervals. The cherry on top was a small tower with a rotating spotlight. The building was named the Edison Building in honor of Thomas Edison. At its best, the building shined bright at nine watts per square foot and was visible 10 miles away. By the mid 1930’s, Illuminated Architecture was old news and taller buildings started to surround the Edison Building. PECO started to outgrow the Edison Building and moved out in the 1960’s. Jefferson university bought it in 1973 and installed massive lit-up signs on the north and south sides of the building, an homage to the building's history of impressive lighting.Personality:Tech NerdBook Format:The Edison Building was built in 1927 for the Philadelphia Electric Company (PECO), who were steadily outgrowing their offices in the 1920’s. It was designed by John Torrey Windrim, son of a Beaux-Arts legend John Hamilton Windrim. The 23 story Art Deco tower was far taller than any building in its near vicinity. Illuminated Architecture was becoming a popular trend, and PECO being an electric company, wanted to set the record for best lit building in the world. Arthur A. Brainerd, a technological wizard of the time, designed lighting schemes with multi-colored lights moving across the building, each individually dimming and fading at regular intervals. The cherry on top was a small tower with a rotating spotlight. The building was named the Edison Building in honor of Thomas Edison, who was 80 at the time and was invited to activate the lighting scheme via telegraph on opening night. At its best, the building shined bright at nine watts per square foot and was visible 10 miles away. By the mid 1930’s, Illuminated Architecture was old news so the lighting scheme was changed to be more conventional and taller buildings started to surround the Edison Building. In the mid-1940s, a power plant moved in right next door and attached a massive smokestack to the side of the Edison Building. PECO started to outgrow the Edison Building and moved out in the 1960’s. Jefferson university bought it in 1973 to expand their campus in the city, and installed massive lit-up signs on the north and south sides of the building, an homage to the building's history of impressive lighting.https://hiddencityphila.org/2012/01/electric/#:~:text=Construction%20began%20in%201926%20and,year%2Dold%20Thomas%20Alva%20Edison.",
+    "image": "ipfs://QmYZLQhmp2Kbs9HDafd7fQQnDSrPn5wKA4WqHrEgP1CdKC/14.jpg",
+    "name": "Edison Building",
+    "heightBracket": "300' - 399'",
+    "attributes": [
+        {
+            "trait_type": "Style",
+            "value": "Art Deco"
+        },
+        {
+            "trait_type": "City",
+            "value": "Philadelphia"
+        },
+        {
+            "trait_type": "Decade",
+            "value": "1920s"
+        },
+        {
+            "trait_type": "Height",
+            "value": "300' - 399'"
+        },
+        {
+            "trait_type": "Attributes",
+            "value": "Signage"
+        },
+        {
+            "trait_type": "Attributes",
+            "value": "Smokestack"
+        }
+    ]
+}

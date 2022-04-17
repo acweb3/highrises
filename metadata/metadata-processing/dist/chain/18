@@ -1,0 +1,32 @@
+{
+    "description": "Highrises are among the most iconic and defining elements of American Cities, and the technological advancement of the twentieth century fostered new heights.",
+    "image": "ipfs://QmYZLQhmp2Kbs9HDafd7fQQnDSrPn5wKA4WqHrEgP1CdKC/18.jpg",
+    "name": "Emerson Tower",
+    "heightBracket": "200' - 299'",
+    "attributes": [
+        {
+            "trait_type": "Style",
+            "value": "Renaissance"
+        },
+        {
+            "trait_type": "City",
+            "value": "Baltimore"
+        },
+        {
+            "trait_type": "Decade",
+            "value": "1910s"
+        },
+        {
+            "trait_type": "Height",
+            "value": "200' - 299'"
+        },
+        {
+            "trait_type": "Attributes",
+            "value": "Clock"
+        },
+        {
+            "trait_type": "Attributes",
+            "value": "Signage"
+        }
+    ]
+}

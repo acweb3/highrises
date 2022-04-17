@@ -1,0 +1,28 @@
+{
+    "description": "Highrises are among the most iconic and defining elements of American Cities, and the technological advancement of the twentieth century fostered new heights.",
+    "image": "ipfs://QmYZLQhmp2Kbs9HDafd7fQQnDSrPn5wKA4WqHrEgP1CdKC/15.jpg",
+    "name": "Cathedral of Learning",
+    "heightBracket": "500' - 599'",
+    "attributes": [
+        {
+            "trait_type": "Style",
+            "value": "Gothic"
+        },
+        {
+            "trait_type": "Style",
+            "value": "Art Deco"
+        },
+        {
+            "trait_type": "City",
+            "value": "Pittsburgh"
+        },
+        {
+            "trait_type": "Decade",
+            "value": "1930s"
+        },
+        {
+            "trait_type": "Height",
+            "value": "500' - 599'"
+        }
+    ]
+}

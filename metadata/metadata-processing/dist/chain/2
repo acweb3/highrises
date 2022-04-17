@@ -1,0 +1,24 @@
+{
+    "description": "The Architect’s Building was designed by a group of architectural firms in 1929. It was intended to be “a center for the architectural profession and the building industry of Philadelphia”, with a plan to house architecture firms, engineering firms, and construction companies. Even though it was designed by 20 something architecture firms, it was ironically quickly outdated for its small floor plates and antiquated building systems, like many 20th century towers. It was vacant and in disrepair for several years before the Kimpton hotel chain came along in 2009 to renovate it into a new boutique hotel, named Hotel Palomar. The facade had a partial exterior renovation to the detailed masonry, terracotta and bronze storefront, with a complete window replacement. Some interior elements were restored, like the tiled second-floor elevator landing, but the rooms which once served as studio space for architects were gutted and replaced with energy-efficient systems. Hotel Palomar is the first ever hotel in Philadelphia to hold a Silver LEED Certification from the U.S. Green Building Council. Personality:Architect nerdEco-conciousBeauty meets energy efficiencyBook Text:It is rare for early 20th century towers to sustain their original use, but what has stayed true with this building is its devotion to the practice of architecture. From Art Deco details of the 20’s to the energy-efficient systems of the 21st century, the Architect’s Building has always prioritized the most current topics in Architecture.The Architect’s Building was designed by a group of architectural firms in 1929. The team of 20 some firms was primarily led by Paul Cret, and his hand is evident in details like the brass-trimmed French doors, Beaux-Arts pilasters, and Parisian inspired drawing rooms on the top floor. It was intended to be “a center for the architectural profession and the building industry of Philadelphia”, with a plan to house architecture firms, engineering firms, and construction companies. The Philadelphia chapter of the AIA (American Institute of Architects) lived on the 24th floor, and the AIA bookstore was on the ground floor. Even though it was designed by 20 something architecture firms, it was ironically quickly outdated for its small floor plates and antiquated building systems, like many 20th century towers. It was vacant and in disrepair for several years before the Kimpton hotel chain came along to renovate it into a new boutique hotel, named Hotel Palomar. The $51 million remodeling project was led by Gensler Architects in 2009. The facade had a partial exterior renovation to the detailed masonry, terracotta and bronze storefront, with a complete window replacement. Some interior elements were restored, like the tiled second-floor elevator landing, but the rooms which once served as studio space for architects were gutted and replaced with energy-efficient systems. Hotel Palomar is the first ever hotel in Philadelphia to hold a Silver LEED Certification from the U.S. Green Building Council. As green sustainable design has become the primary and most important agenda for many practicing architects today, it is only appropriate that a highrise once known as the Architect’s Building receives such attention to eco-conscious design, water-use reduction, and conservation of energy, setting a prime example for other adaptive reuse projects.https://www.inquirer.com/philly/home/20091002_Changing_Skyline__Proving_green_can_be_gorgeous.html",
+    "image": "ipfs://QmYZLQhmp2Kbs9HDafd7fQQnDSrPn5wKA4WqHrEgP1CdKC/2.jpg",
+    "name": "Architects Building",
+    "heightBracket": "300' - 399'",
+    "attributes": [
+        {
+            "trait_type": "Style",
+            "value": "Art Deco"
+        },
+        {
+            "trait_type": "City",
+            "value": "Philadelphia"
+        },
+        {
+            "trait_type": "Decade",
+            "value": "1930s"
+        },
+        {
+            "trait_type": "Height",
+            "value": "300' - 399'"
+        }
+    ]
+}

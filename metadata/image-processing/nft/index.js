@@ -25,19 +25,19 @@ const nft = async () => {
                 width: 480,
                 height: 700,
             })
-            .toFile(join(outputDir, 'site', `${tokenID}.jpg`));
+            .toFile(join(outputDir, 'site', `${tokenID}.webp`));
 
         await sharp(join(rawImagesDir, file))
             .resize({
                 width: 80,
             })
-            .toFile(join(outputDir, 'icon', `${tokenID}.jpg`));
+            .toFile(join(outputDir, 'icon', `${tokenID}.webp`));
 
         await sharp(join(rawImagesDir, file))
             .resize({
                 width: 120,
             })
-            .toFile(join(outputDir, 'map', `${tokenID}.jpg`));
+            .toFile(join(outputDir, 'map', `${tokenID}.webp`));
     });
 };
 

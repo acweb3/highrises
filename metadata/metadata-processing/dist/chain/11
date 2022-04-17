@@ -1,0 +1,36 @@
+{
+    "description": "The site for this French inspired building used to be the headquarters of the American Baptist Historical Society, the oldest Baptist historical society in the US, established in 1853. Their mission was to collect “all kinds of documents that relate to ecclasiastical history.” In 1896, a fire destroyed the collection in the original office building of the Publication Society. In that same year, Samuel B. Colgate gave his personal collection to the Publication Society and a money donation to relocate to Rochester, New York. After the relocation, a new building was built the following year on the same site and it was named the American Baptist Publication Society Building in honor of the previous site owner. It was designed by architect Frank Miles Day in the French Renaissance Revival style. The 13 story highrise has a very distinct French Chateau inspired top. Being one of the first commercial highrises on this street, it set the standard for commercial buildings on Chestnut Street. The floors above the ground floor are single family units. Book Text:The site for this French inspired building used to be the headquarters of the American Baptist Historical Society, the oldest Baptist historical society in the US, established in 1853. Their mission was to collect “all kinds of documents that relate to ecclasiastical history.” In 1896, a fire destroyed the collection in the original office building of the Publication Society. In that same year, Samuel B. Colgate gave his personal collection to the Publication Society and a money donation to relocate to Rochester, New York. After the relocation, a new building was built the following year on the same site and it was named the American Baptist Publication Society Building in honor of the previous site owner. It was designed by architect Frank Miles Day in the French Renaissance Revival style. The 13 story highrise has a very distinct French Chateau inspired top. Being one of the first, it set the standard for commercial buildings on Chestnut Street. The floors above the ground floor are single family units.",
+    "image": "ipfs://QmYZLQhmp2Kbs9HDafd7fQQnDSrPn5wKA4WqHrEgP1CdKC/11.jpg",
+    "name": "Crozer Building",
+    "heightBracket": "Under 200'",
+    "attributes": [
+        {
+            "trait_type": "Style",
+            "value": "Second Empire"
+        },
+        {
+            "trait_type": "City",
+            "value": "Philadelphia"
+        },
+        {
+            "trait_type": "Decade",
+            "value": "1890s"
+        },
+        {
+            "trait_type": "Height",
+            "value": "Under 200'"
+        },
+        {
+            "trait_type": "Attributes",
+            "value": "Sloped Roof"
+        },
+        {
+            "trait_type": "Attributes",
+            "value": "Statue"
+        },
+        {
+            "trait_type": "Attributes",
+            "value": "Disrepair"
+        }
+    ]
+}

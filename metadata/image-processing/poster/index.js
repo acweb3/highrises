@@ -22,7 +22,7 @@ const poster = async () => {
             .resize({
                 width: 480,
             })
-            .toFile(join(outputDir, `${parsedIndex - 1}.jpg`));
+            .toFile(join(outputDir, `${parsedIndex - 1}.webp`));
     });
 };
 

@@ -18,13 +18,13 @@ const png = async () => {
             .resize({
                 width: 300,
             })
-            .toFile(join(outputDir, 'big', `${i}.png`));
+            .toFile(join(outputDir, 'big', `${i}.webp`));
 
         await sharp(fileName)
             .resize({
                 width: 100,
             })
-            .toFile(join(outputDir, 'small', `${i}.png`));
+            .toFile(join(outputDir, 'small', `${i}.webp`));
     });
 };
 
