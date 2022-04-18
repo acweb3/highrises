@@ -1,5 +1,4 @@
 const requiredEnvVar = (name, envVar) => {
-    console.log(envVar);
     if (!envVar) {
         throw new Error(`Environment variable ${name} missing`);
     }
@@ -8,7 +7,7 @@ const requiredEnvVar = (name, envVar) => {
 };
 
 export const config = {
-    release: new Date('4/20/2022'),
+    release: new Date('4/21/2022'),
     rinkebyContractAddress: requiredEnvVar(
         'rinkebyContractAddress',
         process.env.REACT_APP_RINKEBY_CONTRACT_ADDRESS

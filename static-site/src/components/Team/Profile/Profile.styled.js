@@ -71,6 +71,10 @@ export const Profile = styled.div`
 
     margin: 0 0 32px;
 
+    @media (max-width: 360px) {
+        width: 130px;
+    }
+
     ${(props) => props.theme.breakpoints.mobile`
         width: 200px;
     `}

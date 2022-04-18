@@ -10,7 +10,7 @@ import React, { useState } from 'react';
 const QUESTIONS = [
     {
         question: 'Who is the artist?',
-        answer: 'Chris Hytha is a photographer and digital artist who first began offering his work as NFTs in July 2021. His Rowhomes project has surpassed 300E in trading volume on OpenSea, and Chris has more than 60,000 Instagram followers. Chris earned a bachelor’s degree in architecture from Drexel University, and recently became an FAA-certified drone pilot.',
+        answer: 'Chris Hytha is a photographer and digital artist who first began offering his work as NFTs in July 2021. His Rowhomes project has surpassed 300E in trading volume on OpenSea, and Chris has more than 60,000 Instagram followers. He earned a bachelor’s degree in architecture from Drexel University, and recently became an FAA-certified drone pilot.',
     },
     {
         question: 'How are the buildings selected?',
@@ -18,7 +18,7 @@ const QUESTIONS = [
     },
     {
         question: 'How are the stories collected?',
-        answer: 'Mark Houser researches each Highrise thoroughly, with special attention to archival newspapers to see how they were described and received when they first appeared. The goal is to go beyond what is commonly known about it, to challenge urban myths and misperceptions, and to understand the people who commissioned and built them.',
+        answer: 'Mark Houser researches each Highrise thoroughly, with special attention to archival newspapers to see how they were described and received when they first appeared. The goal is to go beyond what is commonly known, to challenge urban myths and misperceptions, and to understand the people who commissioned and built them.',
     },
     {
         question: 'How have the images been altered?',

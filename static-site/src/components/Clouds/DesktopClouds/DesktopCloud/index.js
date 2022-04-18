@@ -12,12 +12,9 @@ export const DesktopCloud = ({ styles }) => {
     const throttledScroll = useThrottle(scroll, 200);
 
     useEffect(() => {
-        let sto;
-        if (hasScrolled) {
-            sto = setTimeout(() => {
-                setIsLoaded(true);
-            }, 300);
-        }
+        const sto = setTimeout(() => {
+            setIsLoaded(true);
+        }, 300);
 
         return () => {
             clearTimeout(sto);

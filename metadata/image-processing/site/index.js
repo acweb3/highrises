@@ -44,7 +44,7 @@ const edison = async () => {
 
     await sharp(edison)
         .resize({
-            height: 800,
+            height: 1400,
         })
         .toFile(join(__dirname, 'dist', 'edison-building.webp'));
 };
@@ -72,7 +72,7 @@ const inquirer = async () => {
             height: height - 5000,
         })
         .resize({
-            width: 700,
+            width: 1826,
         })
         .toFile(join(__dirname, 'dist', 'inquirer.webp'));
 };

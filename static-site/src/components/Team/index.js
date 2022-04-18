@@ -71,8 +71,8 @@ const PROFILES = [
     },
     {
         header: 'Nick Merutka',
-        title: 'Poster developer',
-        copy: 'Nick is a Brooklyn graphic designer and artist specializing in print and digital work. He was sole visual director and light designer for an exhibit of his Iowa State class project at the 2018 Venice Biennale of Architecture.',
+        title: 'Print designer',
+        copy: 'Nick is a Brooklyn-based artist and designer in print and digital, and works at a creative group focusing on experiential design and brand growth. He was visual director and sound designer for his class exhibition at the 2018 Venice Biennale.',
         src: 'nick',
         socials: [
             <Instagram key={1} href="https://www.instagram.com/Nico.Day" />,

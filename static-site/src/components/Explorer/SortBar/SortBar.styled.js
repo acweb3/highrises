@@ -1,4 +1,42 @@
+import ArrowRight from 'assets/icons/arrow--right.svg';
 import styled, { css } from 'styled-components';
+
+export const DropdownFilterScrollRight = styled(ArrowRight)`
+    fill: #fff;
+`;
+
+export const DropdownFiltersWrapper = styled.div`
+    position: relative;
+    width: 100%;
+`;
+
+export const DropdownExplorerArrow = styled.div`
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: ${(props) => props.theme.colors.grey[1]};
+    color: #fff;
+    width: 64px;
+    height: 100%;
+
+    cursor: pointer;
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    z-index: 2;
+
+    border-left: 1px dotted #fff;
+
+    ${(props) => props.theme.breakpoints.small`
+        display: flex;
+    `}
+
+    ${(props) => props.theme.breakpoints.medium`
+        right: 32px;
+    `}
+`;
 
 export const DropdownFilter = styled.div`
     white-space: nowrap;
@@ -19,7 +57,7 @@ export const DropdownFilters = styled.div`
     display: flex;
     width: 100vw;
     overflow-x: scroll;
-    padding: 16px;
+    padding: 16px 88px 16px 16px;
     color: ${(props) => props.theme.colors.blue[0]};
     background-color: ${(props) => props.theme.colors.grey[1]};
 

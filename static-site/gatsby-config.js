@@ -1,16 +1,49 @@
 require('dotenv').config();
 
+const URL =
+    process.env.TARGET === 'production'
+        ? 'highrises.hythacg.com'
+        : 'dev.hythacg.com';
+
 module.exports = {
     siteMetadata: {
-        title: `static-site`,
-        siteUrl: `https://www.yourdomain.tld`,
+        title: `highrises`,
+        siteUrl: `https://${URL}`,
     },
     plugins: [
         'gatsby-plugin-root-import',
         'gatsby-plugin-styled-components',
         'gatsby-plugin-react-helmet',
-        'gatsby-plugin-sitemap',
         'gatsby-plugin-provide-react',
+        {
+            resolve: 'gatsby-plugin-sitemap',
+            options: {
+                query: `
+                    {
+                        allSitePage {
+                            nodes {
+                                pageContext
+                                path
+                            }
+                        }
+                    }
+                `,
+                resolveSiteUrl: () => `https://${URL}`,
+                resolvePages: ({ allSitePage: { nodes: allPages } }) => {
+                    return allPages;
+                },
+                serialize: ({ path, modifiedGmt }) => {
+                    console.log({
+                        path,
+                        modifiedGmt,
+                        url: `https://${URL}${path}`,
+                    });
+                    return {
+                        url: `https://${URL}${path}`,
+                    };
+                },
+            },
+        },
         'gatsby-plugin-image',
         'gatsby-plugin-sharp',
         'gatsby-transformer-json',
@@ -63,10 +96,7 @@ module.exports = {
                         ? 'highrises--production'
                         : 'highrises',
                 protocol: 'https',
-                hostname:
-                    process.env.TARGET === 'production'
-                        ? 'highrises.hythacg.com'
-                        : 'dev.hythacg.com',
+                hostname: URL,
             },
         },
         {

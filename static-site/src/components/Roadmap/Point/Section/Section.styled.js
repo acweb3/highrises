@@ -11,10 +11,21 @@ export const List = styled.ul`
 `;
 
 export const SectionHeader = styled.div`
+    color: ${(props) => props.theme.colors.blue[0]};
+
     font-size: 1.25rem;
     font-weight: 500;
     font-family: poppins;
     margin-top: 16px;
+
+    & > a {
+        color: ${(props) => props.theme.colors.blue[0]};
+
+        font-size: 1.25rem;
+        font-weight: 500;
+        font-family: poppins;
+        margin-top: 16px;
+    }
 `;
 
 export const Section = styled(ViewScroll)`

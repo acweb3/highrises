@@ -4,10 +4,11 @@ import * as S from 'components/ContextFAB/ContextFAB.styled';
 import { Web3Connect } from 'components/ContextFAB/Web3Connect';
 import { useTokenHolder } from 'components/ContextFAB/hooks/useTokenHolder';
 import throttle from 'lodash.throttle';
-import { useCallback, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 export const ContextFAB = () => {
     const { isLoaded } = useWindowSize();
+    const [hasInitialized, setHasInitialized] = useState(false);
     const [isVisible, setIsVisible] = useState(false);
     const tokenIds = useTokenHolder();
     const scrollRef = useRef(0);
@@ -22,6 +23,16 @@ export const ContextFAB = () => {
         []
     );
 
+    useEffect(() => {
+        const sto = setTimeout(() => {
+            setHasInitialized(true);
+        }, 15000);
+
+        return () => {
+            clearTimeout(sto);
+        };
+    }, []);
+
     useWindowListener(
         'scroll',
         () => {
@@ -33,7 +44,7 @@ export const ContextFAB = () => {
     return (
         <S.ContextFAB
             isActive={tokenIds.length}
-            isVisible={isLoaded && isVisible}
+            isVisible={isLoaded && (!hasInitialized || isVisible)}
         >
             <S.ContextFABLinks>
                 <S.ContextFABButton

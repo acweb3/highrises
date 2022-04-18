@@ -42,6 +42,11 @@ export const cloudProps = {
             right: 0,
             scale: 0.4,
         },
+        {
+            top: 650,
+            right: 0,
+            scale: 0.4,
+        },
     ],
     roadmap: [
         {

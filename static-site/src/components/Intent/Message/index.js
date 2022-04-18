@@ -23,7 +23,7 @@ export const Message = ({ className }) => {
                             <Paragraph>
                                 The Highrises project{' '}
                                 <b>reveals hidden details</b> of remarkable
-                                buildings, including many that have been
+                                buildings, including many that are
                                 underappreciated. <b>The images</b> showcase
                                 structures that reflect the values and ideals
                                 animating the early 20th century.{' '}

@@ -8,20 +8,20 @@ const highrises = [
         height: 548,
         heightBracket: "500' - 599'",
         decade: 1890,
-        address: '1 S. Penn Square',
+        address: '1400 John F. Kennedy Blvd.',
         architect: 'John McArthur Jr.',
         stories: '22',
         style: 'Second Empire',
         city: 'Philadelphia',
         opened: '1897',
         ltlng: {
-            lat: 39.9512023,
-            lng: -75.163471,
+            lat: 39.9523861,
+            lng: -75.16360829999999,
         },
         attributes: [
             {
                 trait_type: 'Address',
-                value: '1 S. Penn Square',
+                value: '1400 John F. Kennedy Blvd.',
             },
             {
                 trait_type: 'Opened',
@@ -57,7 +57,7 @@ const highrises = [
             },
             {
                 trait_type: 'Map address',
-                value: '1 S. Penn Square, Philadelphia, PA  19107',
+                value: '1400 John F. Kennedy Blvd., Philadelphia, PA  19107',
             },
             {
                 trait_type: 'Decade',

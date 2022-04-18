@@ -8,12 +8,15 @@ import { useState } from 'react';
 
 export const MobileExplorer = () => {
     const [activeSort, setActiveSort] = useState(undefined);
-    const { buildingExplorerMobileRef } = useExplorerRefContext();
 
     return (
         <S.MobileExplorer>
             <MobileMap />
-            <SortBar activeSort={activeSort} setActiveSort={setActiveSort} />
+            <SortBar
+                isMobile
+                activeSort={activeSort}
+                setActiveSort={setActiveSort}
+            />
             <BuildingsExplorer activeSort={activeSort} />
             <S.MobileExplorerSection isVisible>
                 <Masthead />

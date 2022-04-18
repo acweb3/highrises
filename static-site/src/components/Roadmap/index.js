@@ -7,7 +7,7 @@ import { Box } from 'components/ui/Box';
 
 const POINTS = [
     {
-        header: 'April : Mid-Atlantic',
+        header: 'April: Mid-Atlantic',
         sections: [
             {
                 header: '',
@@ -19,7 +19,7 @@ const POINTS = [
             },
 
             {
-                header: '1 Retweet Giveaway: The Drake',
+                header: '<a href="https://twitter.com/Hythacg/status/1516084174914039808" rel="noopener noreferrer" target="_blank">1 Retweet Giveaway: The Drake</a>',
                 points: ['Winner announced 4/20 Noon EST'],
             },
             {
@@ -32,7 +32,7 @@ const POINTS = [
             {
                 header: '16 Presale at 1 ETH',
                 points: [
-                    'Presale opens 4/21 11am EST',
+                    'Presale opens 4/21 11am EST for 1 hour',
                     'Limited to Rowhomes NFT holders and collectors of Hythacg’s 1/1 works on SuperRare and Foundation as of 4/20 6pm EST',
                     'First come first served, limit one per collector',
                 ],
@@ -40,7 +40,7 @@ const POINTS = [
             {
                 header: 'Public Release',
                 points: [
-                    '4/21 12pm EST',
+                    '4/21 1pm EST',
                     'Any highrises not sold during presale will be publicly offered at 1 ETH',
                 ],
             },
@@ -82,7 +82,7 @@ const POINTS = [
         header: 'March 2023: NYC',
         sections: [
             {
-                header: ['Miami, Houston, Atlanta and more'],
+                header: [''],
             },
         ],
     },

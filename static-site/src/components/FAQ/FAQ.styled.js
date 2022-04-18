@@ -78,10 +78,18 @@ export const Questions = styled.div`
 
 export const FAQImage = styled.div`
     margin-top: auto;
-    height: 600px;
+    height: 500px;
+
+    ${(props) => props.theme.breakpoints.small`
+        height: 900px;
+    `}
+
+    ${(props) => props.theme.breakpoints.medium`
+        height: 1000px;
+    `}
 
     ${(props) => props.theme.breakpoints.large`
-        height: 800px;
+        height: 1200px;
     `}
 `;
 
@@ -92,18 +100,22 @@ export const FAQImageWrapper = styled.div`
     position: absolute;
     height: 100%;
     top: 0;
-    right: -35%;
+    right: 0;
 
     ${(props) => props.theme.breakpoints.small`
-        right: -15%;
+        right: -45%;
     `}
 
     ${(props) => props.theme.breakpoints.medium`
-        right: 5%;
+        right: -25%;
     `}
 
     ${(props) => props.theme.breakpoints.large`
-        right: 10%;
+        right: -15%;
+    `}
+
+    ${(props) => props.theme.breakpoints.extraLarge`
+        right: -5%;
     `}
 `;
 

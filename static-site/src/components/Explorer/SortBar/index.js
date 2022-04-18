@@ -1,7 +1,7 @@
 import { highrises as highrisesData } from 'assets/data/highrises';
 import { Dropdown } from 'components/Explorer/SortBar/Dropdown';
 import * as S from 'components/Explorer/SortBar/SortBar.styled';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export const SORTS = {
     attributes: {
@@ -109,12 +109,27 @@ export const SORTS = {
     },
 };
 
-export const SortBar = ({ activeSort, setActiveSort }) => {
+export const SortBar = ({ activeSort, setActiveSort, isMobile }) => {
     const [activeDropdown, setActiveDropdown] = useState();
     const [activeOption, setActiveOption] = useState();
+    const [hasArrow, setHasArrow] = useState(false);
+    const filtersRef = useRef();
 
     useEffect(() => {
         setActiveOption(undefined);
+    }, [activeDropdown]);
+
+    useEffect(() => {
+        if (
+            activeDropdown &&
+            filtersRef.current &&
+            filtersRef.current.childElementCount * 100 >
+                filtersRef.current.offsetWidth
+        ) {
+            setHasArrow(true);
+        } else {
+            setHasArrow(false);
+        }
     }, [activeDropdown]);
 
     return (
@@ -178,29 +193,73 @@ export const SortBar = ({ activeSort, setActiveSort }) => {
                         )
                 )}
             </S.SortBar>
-            {activeDropdown && (
-                <S.DropdownFilters>
-                    {Object.values(activeDropdown.dropdown.options)
-                        .sort((a, b) => a.value.localeCompare(b.value))
-                        .map(({ value, sort }) => {
-                            return (
-                                <S.DropdownFilter
-                                    key={value}
-                                    isActive={activeOption === value}
-                                    onClick={() => {
-                                        setActiveOption(value);
-                                        setActiveSort({
-                                            sortKey: activeDropdown.sortKey,
-                                            sort,
-                                        });
+            {activeDropdown &&
+                (isMobile ? (
+                    <S.DropdownFilters ref={filtersRef}>
+                        {Object.values(activeDropdown.dropdown.options)
+                            .sort((a, b) => a.value.localeCompare(b.value))
+                            .map(({ value, sort }) => {
+                                return (
+                                    <S.DropdownFilter
+                                        key={value}
+                                        isActive={activeOption === value}
+                                        onClick={() => {
+                                            setActiveOption(value);
+                                            setActiveSort({
+                                                sortKey: activeDropdown.sortKey,
+                                                sort,
+                                            });
+                                        }}
+                                    >
+                                        {value}
+                                    </S.DropdownFilter>
+                                );
+                            })}
+                    </S.DropdownFilters>
+                ) : (
+                    <S.DropdownFiltersWrapper>
+                        <S.DropdownFilters ref={filtersRef}>
+                            {Object.values(activeDropdown.dropdown.options)
+                                .sort((a, b) => a.value.localeCompare(b.value))
+                                .map(({ value, sort }) => {
+                                    return (
+                                        <S.DropdownFilter
+                                            key={value}
+                                            isActive={activeOption === value}
+                                            onClick={() => {
+                                                setActiveOption(value);
+                                                setActiveSort({
+                                                    sortKey:
+                                                        activeDropdown.sortKey,
+                                                    sort,
+                                                });
+                                            }}
+                                        >
+                                            {value}
+                                        </S.DropdownFilter>
+                                    );
+                                })}
+                            {hasArrow && (
+                                <S.DropdownExplorerArrow
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        e.stopPropagation();
+
+                                        if (filtersRef.current) {
+                                            filtersRef.current.scrollTo(
+                                                filtersRef.current.scrollLeft +
+                                                    500,
+                                                0
+                                            );
+                                        }
                                     }}
                                 >
-                                    {value}
-                                </S.DropdownFilter>
-                            );
-                        })}
-                </S.DropdownFilters>
-            )}
+                                    <S.DropdownFilterScrollRight />
+                                </S.DropdownExplorerArrow>
+                            )}
+                        </S.DropdownFilters>
+                    </S.DropdownFiltersWrapper>
+                ))}
         </>
     );
 };

@@ -49,7 +49,6 @@ const Building = ({
                         property="twitter:image:alt"
                         content={highrise.name}
                     />
-
                     <meta
                         property="og:url"
                         content={`highrises.hythacg.com/buildings/${highrise.name}`}
