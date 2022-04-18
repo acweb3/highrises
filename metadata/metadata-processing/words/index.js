@@ -1,23 +1,22 @@
 const fs = require('fs');
 const { join } = require('path');
 const { promisify } = require('util');
-const reader = require('any-text');
-
-const asyncReaddir = promisify(fs.readdir);
 
 (async () => {
-    const rawImagesDir = join(__dirname, 'raw');
+    const rawText = fs.readFileSync(
+        join(__dirname, 'raw', 'buildings.txt'),
+        'utf-8'
+    );
 
-    const files = await asyncReaddir(rawImagesDir);
+    const rawTextLines = rawText.split('--');
+    const buildingsText = rawTextLines.map((line) => {
+        return line
+            .split('\n')
+            .filter((paragraph) => paragraph.split(' ').length > 5)
+            .join('\n');
+    });
 
-    files.forEach(async (file) => {
-        const index = parseInt(file.split(' ')[0]);
-        const text = await reader.getText(join(__dirname, 'raw', file));
-        const cleaned = text.replace('Poster Text:', '').trim();
-        fs.writeFileSync(
-            join(__dirname, 'dist', `${index - 1}.txt`),
-            cleaned,
-            'utf8'
-        );
+    buildingsText.forEach(async (text, index) => {
+        fs.writeFileSync(join(__dirname, 'dist', `${index}.txt`), text, 'utf8');
     });
 })();

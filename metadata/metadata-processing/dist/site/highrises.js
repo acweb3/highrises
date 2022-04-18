@@ -1,6 +1,6 @@
 export const highrises = [
     {
-        "description": "Designed in the French Second Empire style, City Hall is a thick masonry construction with walls up to 22ft thick. In addition to the William Penn statue at the top, there are up to 250 relief and free-standing sculptures that convey moral allegories about the U.S. Each of the four facades carries a continental theme. The north face represents Europe, south face carries African figures, east face holds Asia, and west face supports Native Americans. Philadelphia City Hall was planned to be the tallest building in the world, but by the time it was completed in 1901, it had already been surpassed. There was a gentlemen’s agreement that no other building in Philadelphia would be taller than City Hall, which was maintained until 1986. As soon as it was complete, it was already out of fashion. City government even considered demolishing it in the 1950’s. However, the cost of demolition was equal to the cost of construction and would have bankrupted the city, so fortunately the city decided to suspend any plans for demolition. Personality:PoetOld english aristocratOld guy speaking in riddlesThe OG BoomerBook Text:Philadelphia City Hall is the elderly story-telling grandfather of the city. Although it was once considered antiquated enough to demolish, it is now one of the most beloved structures in the U.S. With no stone uncarved, this building continues to tell stories with its ornamentation for generations to come.Prior to the current City Hall, all municipal offices resided in a two-story building on Fifth and Chestnut Street. Plans to build a new City Hall started in 1838, when the city’s population doubled to 565,000 people. The architecture was intended to be a representation of the city’s aspirations. Designed in the French Second Empire style, City hall is a thick masonry construction with walls up to 22ft thick. The stonemason William Struthers and sculptor Alexander Milne Calder were responsible for casting 250 relief and free-standing sculptures that convey moral allegories about the nation and the city. Each of the four facades carries a continental theme. The north face represents Europe, south face carries African figures, east face holds Asia, and west face supports Native Americans. The statue of William Penn atop the clock tower is 37 feet tall and weighs 27 tons, and is required to be cleaned every 10 years. Philadelphia City Hall was planned to be the tallest building in the world, with the top of William Penn’s hat reaching 548 feet, but by the time it was completed in 1901, it had been surpassed by the Washington Monument and the Eiffel Tower. There was a gentlemen’s agreement that no other building in Philadelphia would be taller than City Hall, which was maintained until 1986. Nevertheless, it is still to this day the world’s largest free-standing masonry building. Because it took 30 years to build, by the time it was completed it was already out of fashion. City government even considered demolishing it in the 1950’s. However, the cost of demolition was equal to the cost of construction, nearly $25 million, and would have bankrupted the city, so fortunately the city decided to suspend any plans for demolition. Today, this building is included among the 150 most important buildings in the United States. This legend is not going anywhere anytime soon. https://billypenn.com/2021/06/14/philadelphia-city-hall-sculptures-calder-macarthur-building-history-masonry-carving/",
+        "description": "Planned as the world’s tallest building when construction commenced in 1871, the tower was usurped by the Washington Monument and Eiffel Tower before its completion. Alexander Milne Calder’s 37-foot bronze William Penn is the tallest statue on any building anywhere, double the size of Statue of Freedom on the U.S. Capitol.\nThat dome’s designer, Thomas Walker, came out of retirement to help architect John McArthur Jr. with this monumental edifice. Neither man lived to see their work completed. Calder, who crafted 250 sculptures for city hall and was there in 1894 to see his 27-ton Penn hoisted to its apex, despaired that the founder was installed looking north, which leaves his face perpetually in shadow.\nThe tower is built of load-bearing brick walls sheathed in marble and rests on 22-foot-thick granite walls at its base. Above the four clocks, marble gives way to white painted steel, a replacement of the original cast iron.\nBesides the internal clockwork and two extravagant mayoral and council rooms, the tower is basically empty but for a staircase and small, slow elevator to take passengers to the viewing deck. An unwritten agreement that kept Penn’s hat the tallest point in the city was finally broken in 1987.",
         "highriseNumber": "Highrise #01",
         "image": "ipfs://QmYZLQhmp2Kbs9HDafd7fQQnDSrPn5wKA4WqHrEgP1CdKC/0.jpg",
         "name": "Philadelphia City Hall",
@@ -12,7 +12,7 @@ export const highrises = [
         "stories": "22",
         "style": "Second Empire",
         "city": "Philadelphia",
-        "opened": "1894",
+        "opened": "1897",
         "ltlng": {
             "lat": 39.9512023,
             "lng": -75.163471
@@ -23,20 +23,12 @@ export const highrises = [
                 "value": "1 S. Penn Square"
             },
             {
-                "trait_type": "Long address",
-                "value": "1 Penn Square Philadelphia, PA 19107, USA"
-            },
-            {
                 "trait_type": "Opened",
-                "value": "1894"
+                "value": "1897"
             },
             {
                 "trait_type": "Height",
                 "value": "548'"
-            },
-            {
-                "trait_type": "Stories",
-                "value": "22"
             },
             {
                 "trait_type": "Architect",
@@ -45,6 +37,10 @@ export const highrises = [
             {
                 "trait_type": "Style",
                 "value": "Second Empire"
+            },
+            {
+                "trait_type": "Stories",
+                "value": "22"
             },
             {
                 "trait_type": "City",
@@ -84,12 +80,16 @@ export const highrises = [
             },
             {
                 "trait_type": "Attributes",
+                "value": "Figures"
+            },
+            {
+                "trait_type": "Attributes",
                 "value": "Lights on"
             }
         ]
     },
     {
-        "description": "The 1616 Building was an architectural marvel for the city being one of the first properties to feature on-site parking. The five-story parking garage was quite an advanced feature at the time. 1616 Walnut was built by the Pew Family, owners of the Sun Oil company who had their headquarters next door. The building was mostly office spaces, with the exception of the Pew family apartment on the 25th floor. Like many Art Deco Buildings, a lot of attention to detail was brought to the interior while having a rather subdued exterior cladding. The bronze screen entrance is detailed in zig-zag motifs, the main lobby features rare aluminum trims, and the Pew apartment is ornamented with whimsical decorative woodwork. In 2013, construction began to convert the building from office into apartments. The renovations involved full restoration of all of the original interior finishes and heavy restoration of the exterior facade, including the metal work, entrance, and installing more than 1,300 replica windows. Personality:WallflowerhumbleBeauty on the insideBook Text:Although modest in its height and ornamentation in comparison to other Art Deco towers in Philadelphia, The 1616 Building is a wallflower that has much to offer to its residents. Its exterior details are only a glimpse of the true beauty that lies within.Completed in 1929, the 1616 building was an architectural marvel for the city and even received top honors at the 12th International Building Congress in Budapest. It was one of the first properties to feature on-site parking with a five-story parking garage that was quite an advanced feature at the time. 1616 Walnut was built by the Pew Family, owners of the Sun Oil company who had their headquarters next door. The family apartment was on the 25th floor.  Many Art Deco buildings receive more attention to lavish details on the interior, but the 1616 Building takes the cake. The bronze screen entrance is detailed in zig-zag motifs, main lobby features rare aluminum trims, and the Pew apartment is ornamented with whimsical decorative woodwork. In 2013, construction began to convert the building from office into apartments. The renovations involved full restoration of all of the original interior finishes and heavy restoration of the exterior facade, including the metal work, entrance, and installing more than 1,300 replica windows.",
+        "description": "One of several skyscrapers built by real estate developer Joseph Greenberg, this has a garage occupying most of the first five floors. Ads when it opened promised “Park your car under your desk!” Office tenants included investment brokers, insurance firms, the Philadelphia Grand Opera and the local office for Cunard White Star ocean liners.\nThe powerfully wealthy but publicity-shy Pew family took the penthouse as their pied-a-terre, since it was conveniently located next door to the headquarters of their family business, Sun Oil Company, also known as Sunoco.\nPhiladelphia architects Tilden, Register & Pepper won an award for their design at the 12th International Buildings Congress in Budapest, Hungary. Their spectacular Art Deco lobby features a ceiling of contoured geometric patterns, futuristic chandeliers, mottled tan marble walls, a patterned terrazzo floor, and elegant aluminum trim and elevator doors.\nThe building served as the home of Temple University Center City from the 1970s until 2001. Now it contains luxury apartments, and residents have access to the Pews’ former rooftop sundeck.",
         "highriseNumber": "Highrise #02",
         "image": "ipfs://QmYZLQhmp2Kbs9HDafd7fQQnDSrPn5wKA4WqHrEgP1CdKC/1.jpg",
         "name": "1616 Walnut Street",
@@ -112,10 +112,6 @@ export const highrises = [
                 "value": "1616 Walnut St."
             },
             {
-                "trait_type": "Long address",
-                "value": "1616 Walnut Philadelphia"
-            },
-            {
                 "trait_type": "Opened",
                 "value": "1930"
             },
@@ -124,16 +120,16 @@ export const highrises = [
                 "value": "309'"
             },
             {
-                "trait_type": "Stories",
-                "value": "25"
-            },
-            {
                 "trait_type": "Architect",
                 "value": "Tilden, Register & Pepper"
             },
             {
                 "trait_type": "Style",
                 "value": "Art Deco"
+            },
+            {
+                "trait_type": "Stories",
+                "value": "25"
             },
             {
                 "trait_type": "City",
@@ -162,7 +158,7 @@ export const highrises = [
         ]
     },
     {
-        "description": "The Architect’s Building was designed by a group of architectural firms in 1929. It was intended to be “a center for the architectural profession and the building industry of Philadelphia”, with a plan to house architecture firms, engineering firms, and construction companies. Even though it was designed by 20 something architecture firms, it was ironically quickly outdated for its small floor plates and antiquated building systems, like many 20th century towers. It was vacant and in disrepair for several years before the Kimpton hotel chain came along in 2009 to renovate it into a new boutique hotel, named Hotel Palomar. The facade had a partial exterior renovation to the detailed masonry, terracotta and bronze storefront, with a complete window replacement. Some interior elements were restored, like the tiled second-floor elevator landing, but the rooms which once served as studio space for architects were gutted and replaced with energy-efficient systems. Hotel Palomar is the first ever hotel in Philadelphia to hold a Silver LEED Certification from the U.S. Green Building Council. Personality:Architect nerdEco-conciousBeauty meets energy efficiencyBook Text:It is rare for early 20th century towers to sustain their original use, but what has stayed true with this building is its devotion to the practice of architecture. From Art Deco details of the 20’s to the energy-efficient systems of the 21st century, the Architect’s Building has always prioritized the most current topics in Architecture.The Architect’s Building was designed by a group of architectural firms in 1929. The team of 20 some firms was primarily led by Paul Cret, and his hand is evident in details like the brass-trimmed French doors, Beaux-Arts pilasters, and Parisian inspired drawing rooms on the top floor. It was intended to be “a center for the architectural profession and the building industry of Philadelphia”, with a plan to house architecture firms, engineering firms, and construction companies. The Philadelphia chapter of the AIA (American Institute of Architects) lived on the 24th floor, and the AIA bookstore was on the ground floor. Even though it was designed by 20 something architecture firms, it was ironically quickly outdated for its small floor plates and antiquated building systems, like many 20th century towers. It was vacant and in disrepair for several years before the Kimpton hotel chain came along to renovate it into a new boutique hotel, named Hotel Palomar. The $51 million remodeling project was led by Gensler Architects in 2009. The facade had a partial exterior renovation to the detailed masonry, terracotta and bronze storefront, with a complete window replacement. Some interior elements were restored, like the tiled second-floor elevator landing, but the rooms which once served as studio space for architects were gutted and replaced with energy-efficient systems. Hotel Palomar is the first ever hotel in Philadelphia to hold a Silver LEED Certification from the U.S. Green Building Council. As green sustainable design has become the primary and most important agenda for many practicing architects today, it is only appropriate that a highrise once known as the Architect’s Building receives such attention to eco-conscious design, water-use reduction, and conservation of energy, setting a prime example for other adaptive reuse projects.https://www.inquirer.com/philly/home/20091002_Changing_Skyline__Proving_green_can_be_gorgeous.html",
+        "description": "As the name implies, this tower provided offices for architects. It also was designed by them, as 20 firms participated in a committee headed by John Hall Rankin, respected dean of the field and former president of the local chapter of the American Institute of Architects.\nShortly after the building opened, the AIA held a public exhibition showcasing the work of several members who now occupied offices upstairs. Paul Cret, for instance, displayed photos of his Rodin Museum on the Benjamin Franklin Parkway, recently dedicated and containing one of the most extensive collections of the Paris sculptor’s work. The AIA relocated in 2008, but its library on the top floor has been preserved as it once appeared.\nThe building, now the Hotel Palomar, has a sleek Art Deco exterior with handsome bronze panels and patterned brickwork testifying that the architects knew what they were doing. Best of all is the historic second floor elevator lobby, which combines vibrant tilework and carved wood with a dramatically coffered plaster ceiling and Welsh quarry tile floor.",
         "highriseNumber": "Highrise #03",
         "image": "ipfs://QmYZLQhmp2Kbs9HDafd7fQQnDSrPn5wKA4WqHrEgP1CdKC/2.jpg",
         "name": "Architects Building",
@@ -185,10 +181,6 @@ export const highrises = [
                 "value": "117 S. 17th St."
             },
             {
-                "trait_type": "Long address",
-                "value": "117 S 17th St, Philadelphia, PA 19103"
-            },
-            {
                 "trait_type": "Opened",
                 "value": "1930"
             },
@@ -197,16 +189,16 @@ export const highrises = [
                 "value": "313'"
             },
             {
-                "trait_type": "Stories",
-                "value": "24"
-            },
-            {
                 "trait_type": "Architect",
                 "value": "Rankin, Johnson, Abel et al."
             },
             {
                 "trait_type": "Style",
                 "value": "Art Deco"
+            },
+            {
+                "trait_type": "Stories",
+                "value": "24"
             },
             {
                 "trait_type": "City",
@@ -235,7 +227,7 @@ export const highrises = [
         ]
     },
     {
-        "description": "The Art Deco tower was commissioned by Rodman Wanamaker in 1932. The first seven floors was the Wanamaker’s Men’s Store, and the 24th and 25th floor was a luxury penthouse for Rodman Wanamaker and his wife. The bell tower housed the 15-ton Founder’s Bell. Opening during the Great Depression, the store unfortunately only lasted 20 years in the building. The Philadelphia National Bank (PNB) bought the building and converted it into banking offices in 1952. In an attempt to modernize the building, renovations removed a lot of the detailing and fluting of the original ornate lower facade, and replaced it with granite black slabs on the street level. After several owner changes, the building had been officially renamed to be One South Broad in 1996, but the famous PNB letters decorating the four sides of the bell tower weren’t removed until 2014. More renovations in 2000 converted the lower floors to retail and restaurant space. The granite black slabs added by PNB were removed and replaced with imported Italian granite to better match the original architecture. Personality:Well dressed gentlemanBankerBusiness guy in a nice suitAlso known as Lincoln-Liberty Building or PNB BuildingBook Text:One South Broad has always been in the business of money. Initially designed as a department store catering to the “Phialdleplhia Gentleman”, this building continues to resemble a well suited city bank owner.Built in 1932, the Art deco tower in Center City was commissioned by Rodman Wanamaker. The first seven floors was the Wanamaker’s Men’s Store, and on the 24th and 25th floor was a luxury penthouse for Rodman Wanamaker and his wife, although they lived there only briefly. The bell tower housed the 15-ton Founder’s Bell. The Bell was originally intended to swing, but the swinging of the bell shook the building. It’s now operated mechanically and rings hourly, except for Sundays. Despite opening during the Great Depression, the company had a lot of faith that the store would do exceptionally well, but unfortunately the store only lasted 20 years before moving to the Wanamaker building a few blocks away. The Philadelphia National Bank (PNB) bought the building for $9 million and converted it into banking offices in 1952. The now PNB building decorated the four sides of the bell tower with 16 feet tall stainless steel letters, which forecasted weather by turning letters red to indicate a warming trend, or green for cooling trend. In an attempt to modernize the building, renovations removed a lot of the detailing and fluting of the original ornate lower facade, and replaced it with granite black slabs on the street level. Over the years PNB became CoreState, First Union Corp, Wachovia and then Wells Fargo, which is now the largest tenant occupying most of the building. The building had been officially renamed to be One South Broad in 1996, but the famous PNB letters weren’t removed until 2014. More renovations in 2000 converted the lower floors to retail and restaurant space. The granite black slabs added by PNB were removed and replaced with imported Italian granite to better match the original architecture. Although no longer a department store, One South Broad in a way continues to keep the Wanamaker legacy alive by striving to portray a financially successful, well dressed, Philadelphia gentleman.",
+        "description": "While Wanamaker’s is famed for its enormous pipe organ, this granite highrise built to hold a much-expanded men’s department for the store is known for the hourly tolls of its gigantic bell. The 17-ton Founder’s Bell, commissioned in memory of John Wanamaker, first rang on New Year’s Day 1927 from a special tower constructed on the roof of the great department store.\nIt was soon relocated to the belfry of the new Lincoln-Liberty Building, the first seven floors of which purveyed a tasteful array of tailored suits, fashionable overcoats, hunting costumes and sporting goods for the discerning gentleman, with high-end leasable office space and a penthouse above. A pair of much-admired 1890s skyscrapers had to be torn down to make way for the new construction, so its original appellation name-checked them both in order to assuage any hard feelings.\nAfter Philadelphia National Bank bought the tower, four sets of its illuminated initials “PNB” perched atop the belfry for nearly 60 years. They were finally removed by cargo helicopter in 2014 from the building now known as One South Broad, and one huge “B” was rehung in the lobby.",
         "highriseNumber": "Highrise #04",
         "image": "ipfs://QmYZLQhmp2Kbs9HDafd7fQQnDSrPn5wKA4WqHrEgP1CdKC/3.jpg",
         "name": "Lincoln-Liberty Building",
@@ -244,7 +236,7 @@ export const highrises = [
         "decade": 1930,
         "address": "1 S. Broad St.",
         "architect": "John T. Windrim",
-        "stories": "28",
+        "stories": "25",
         "style": "Art Deco",
         "city": "Philadelphia",
         "opened": "1932",
@@ -258,10 +250,6 @@ export const highrises = [
                 "value": "1 S. Broad St."
             },
             {
-                "trait_type": "Long address",
-                "value": "1 South Broad Street Philadelphia, PA 19107 United States"
-            },
-            {
                 "trait_type": "Opened",
                 "value": "1932"
             },
@@ -270,16 +258,16 @@ export const highrises = [
                 "value": "472'"
             },
             {
-                "trait_type": "Stories",
-                "value": "28"
-            },
-            {
                 "trait_type": "Architect",
                 "value": "John T. Windrim"
             },
             {
                 "trait_type": "Style",
                 "value": "Art Deco"
+            },
+            {
+                "trait_type": "Stories",
+                "value": "25"
             },
             {
                 "trait_type": "City",
@@ -312,7 +300,7 @@ export const highrises = [
         ]
     },
     {
-        "description": "The Drake Apartment Hotel was originally 752 rooms of apartments and hotel lodging, and the architecture brilliantly evokes both a feeling of home and a feeling of adventurous vacation. The slender brick clad tower borrows many details from traditional Spanish and Baroque architecture, which was a popular style for domestic architecture in the United States in that decade. The upper levels present an elaborate interconnection of penthouses and porches topped with a bright terra cotta dome. It’s a highly expressive building featuring many nautical themes that is purely stylistic and is not necessarily based on any local historical themes. The building is an allegory for the life and adventure of Sir Francis Drake, an English explorer and sea captain who was most famous for his circumnavigation around the work in a single expedition from 1577-1580. Many of the motifs depicting Sir Francis Drake include sailing vessels, globes, dolphins, and seashells. The lower levels and lobby are also decorated with elaborate Spanish motifs. Personality:RomanticSpanish accentLatin loverBook Text:The Drake Apartment Hotel was designed by Ritter and Shay architects in 1929. Originally it had 752 rooms for apartments and hotel lodging, and the architecture brilliantly evokes both a feeling of home and a feeling of adventurous vacation. The slender brick clad tower borrows many details from traditional Spanish and Baroque architecture, which was a popular style for domestic architecture in the United States in that decade. The upper levels present an elaborate interconnection of penthouses and porches topped with a bright terra cotta dome. It’s a highly expressive building featuring many nautical themes that is purely stylistic and is not necessarily based on any local historical themes. The building is an allegory for the life and adventure of Sir Francis Drake, an English explorer and sea captain who was most famous for his circumnavigation around the work in a single expedition from 1577-1580. Many of the motifs depicting Sir Francis Drake include sailing vessels, globes, dolphins, and seashells. The lower levels and lobby are also decorated with elaborate Spanish motifs.",
+        "description": "The contours of this slab skyscraper are Art Deco, but slathered on top is an icing of terracotta and tiled rooftops and gazebos seemingly transplanted from Seville or Southern California. Developers named the luxury residential highrise for a celebrated English privateer who looted goodly sums of Spanish booty while claiming the Pacific coast for Queen Elizabeth I.\nArchitects Ritter & Shay also designed Market Street National Bank, a cousin to the Drake that features ornamentation more strictly Deco though no less exuberant. With 300 apartments and a cluster of penthouses, the Drake touted true high society city living.\nIn the 1970s, owners Stanton and Robert Miller ran high stakes bingo games in the ballroom five nights a week — allegedly for charity, in reality for their pockets. Unlike Sir Francis Drake, the Millers wound up sentenced to prison for their ill-gotten gains, and the property suffered through bankruptcy and other ignominies until its eventual renovation.\nThe two-story penthouse on top affords breathtaking views from its twin patios, but not from the red-roofed dome, which just hides a water tank.",
         "highriseNumber": "Highrise #05",
         "image": "ipfs://QmYZLQhmp2Kbs9HDafd7fQQnDSrPn5wKA4WqHrEgP1CdKC/4.jpg",
         "name": "The Drake",
@@ -321,7 +309,7 @@ export const highrises = [
         "decade": 1920,
         "address": "1512 Spruce St.",
         "architect": "Ritter & Shay",
-        "stories": "32",
+        "stories": "30",
         "style": "Spanish Baroque",
         "city": "Philadelphia",
         "secondaryStyle": "Art Deco",
@@ -336,10 +324,6 @@ export const highrises = [
                 "value": "1512 Spruce St."
             },
             {
-                "trait_type": "Long address",
-                "value": "1512 Spruce St, Philadelphia, PA 19102"
-            },
-            {
                 "trait_type": "Opened",
                 "value": "1929"
             },
@@ -348,16 +332,16 @@ export const highrises = [
                 "value": "375'"
             },
             {
-                "trait_type": "Stories",
-                "value": "32"
-            },
-            {
                 "trait_type": "Architect",
                 "value": "Ritter & Shay"
             },
             {
                 "trait_type": "Style",
                 "value": "Spanish Baroque"
+            },
+            {
+                "trait_type": "Stories",
+                "value": "30"
             },
             {
                 "trait_type": "Secondary Style",
@@ -402,7 +386,7 @@ export const highrises = [
         ]
     },
     {
-        "description": "Before the Inquirer Building, it was called the Elverson Building, after James Elverson, who was the publisher of the Inquirer from 1889-1911. James Elverson Jr. funded the construction of this building to dedicate to his father. The Beaux-Arts design tower was colloquially called “Tower of Truth”. Elverson Jr. and his wife lived in a duplex apartment on the 12th and 13th floor. In its early years, this newspaper operation was one of the most modern printing plants in the world. It had the largest composing room and the fastest printing presses. However, since the 1980’s the newspaper has gone through significant downsizing with staff buyouts, newsroom cuts, international bureau closures, and other operational cutbacks caused by declining advertising revenue. The Inquirer stood vacant for six years until 2017 when city officials announced plans to make it into the new headquarters for the Philadelphia Police Department. The city has spent $50.5 million to renovate both the interior and exterior. Personality:People pleaserOverachiever Voted in high school “most likely to succeed”Career didn’t take off as plannedHad to re-invent identity after career didn’t take off as plannedWent through a makeover and ready to start their new lifeBook Text:Born into a legacy and destined to succeed, the Inquirer Building was once the most impressive newspaper operation in business. But what started out as an accomplished career soon turned into a desperate need to change career paths. After an expensive makeover, this building is ready to start a new life. Before the Inquirer Building, it was called the Elverson Building, after James Elverson, who was the publisher of the Inquirer from 1889-1911. James Elverson Jr. funded the construction of this building to dedicate to his father. The $10 million project started in 1923 and the Philadelphia Inquirer officially occupied it in 1925. The Beaux-Arts design was in every detail intended to be for a newspaper operation and was colloquially called “Tower of Truth”. Elverson Jr. and his wife lived in a duplex apartment on the 12th and 13th floor. Though it was the tallest building north of City Hall at the time, it was still in a way operated like a  traditional “mom and pop” company with the owners living above the business. In its early years, this newspaper operation was one of the most modern printing plants in the world. It had the largest composing room and the fastest printing presses. However, since the 1980’s the newspaper has gone through significant downsizing with staff buyouts, newsroom cuts, international bureau closures, and other operational cutbacks caused by declining advertising revenue. The Inquirer went through several owner changes and by 2011 it was owned by Philadelphia Media Network. The newspaper operation had to move to 8th and Market, and the building was sold for around $19 million to developer Bart Blatstein. Blatstein had several ideas for how to occupy the Inquirer Building. First plan was to renovate it into a French-themed casino, and then plans changed to make it into a 125 room boutique hotel. The Inquirer instead just stood vacant for six years until 2017 when city officials announced plans to make it into the new headquarters for the Philadelphia Police Department. The city has spent $50.5 million to renovate both the interior and exterior. Renovations have been completed as of 2020, and with a hopeful future, the Inquirer Building now shines brighter than ever.",
+        "description": "Said to be the world’s largest newspaper plant at the time of its construction, the Elverson Building was named for the Philadelphia Inquirer’s fourth owner, James Elverson — according to its fifth owner, his son James Elverson Jr., who commissioned it.\nIt was built over the tracks of the Philadelphia & Reading Railroad so that the huge rolls of newsprint feeding the presses could be delivered directly by train. The paper needed 800 tons of it per week; storage rooms held 200 railcars worth.\nElverson and his wife, Eleanore, a former actress, lived in apartments upstairs until he died of a heart attack in 1929 while planning festivities for the paper’s 100th anniversary. The tower’s four 16-foot clocks are accompanied by Westminster chimes; Elverson loved clocks and kept a collection of rare timepieces.\nThe Inquirer won 17 Pulitzers in its heyday from 1975 to 1990 before departing the premises in 2012. Plans to make the building into a casino were abandoned, and instead the granite and ivory terracotta highrise has been repurposed as police headquarters.",
         "highriseNumber": "Highrise #06",
         "image": "ipfs://QmYZLQhmp2Kbs9HDafd7fQQnDSrPn5wKA4WqHrEgP1CdKC/5.jpg",
         "name": "Elverson Building",
@@ -410,7 +394,7 @@ export const highrises = [
         "heightBracket": "300' - 399'",
         "decade": 1920,
         "address": "400 N. Broad St.",
-        "architect": "Rankin & Kellogg",
+        "architect": "Rankin, Kellogg & Crane",
         "stories": "18",
         "style": "Neoclassical",
         "city": "Philadelphia",
@@ -425,10 +409,6 @@ export const highrises = [
                 "value": "400 N. Broad St."
             },
             {
-                "trait_type": "Long address",
-                "value": "400 N. Broad Street, Philadelphia, Pennsylvania"
-            },
-            {
                 "trait_type": "Opened",
                 "value": "1925"
             },
@@ -437,16 +417,16 @@ export const highrises = [
                 "value": "340'"
             },
             {
-                "trait_type": "Stories",
-                "value": "18"
-            },
-            {
                 "trait_type": "Architect",
-                "value": "Rankin & Kellogg"
+                "value": "Rankin, Kellogg & Crane"
             },
             {
                 "trait_type": "Style",
                 "value": "Neoclassical"
+            },
+            {
+                "trait_type": "Stories",
+                "value": "18"
             },
             {
                 "trait_type": "City",
@@ -495,7 +475,7 @@ export const highrises = [
         ]
     },
     {
-        "description": "Before the tower was born, the parent building was built in 1908 and designed to be a replica of the Pantheon in Rome. It was built for The Girard Trust Company, and the bank’s history was intentionally incorporated into the design palette of the hotel, including 9,000 tons of Georgia marble and rich colors resembling precious metals and currency. The adjoining tower was designed by McKim, Mead and White in 1931, and built to house The Girard Trust bank offices and boardrooms. It was originally supposed to be eight stories, but ended up reaching thirty. On the top floor was the Executive Boardroom of Girard Trust, and similar to the base building, it is furnished with expensive materials including carved wood paneling made from French walnut, a species that is now extinct. In 2000, The Girard Trust Building was converted into a 330 room Ritz-Carlton hotel, and it continues to shine in luxury and wealth today.Personality:Rich spoiled kidInseparable with his very rich fatherEndowed Book Text:Before the tower was born, the parent building was built in 1908 and designed to be a replica of the Pantheon in Rome. It was built for The Girard Trust Company, and the bank’s history was intentionally incorporated into the design palette of the hotel, including 9,000 tons of Georgia marble and rich colors resembling precious metals and currency. The adjoining tower was designed by McKim, Mead and White in 1931, and built to house The Girard Trust bank offices and boardrooms. It was originally supposed to be eight stories, but ended up reaching thirty stories. On the top 30th floor was the Executive Board Room of Girard Trust, and similar to the base building, it is furnished with expensive materials including carved wood paneling made from French walnut, a species that is now extinct. In 2000, The Girard Trust Building was converted into a 330 room Ritz-Carlton hotel, and it continues to shine in luxury and wealth today.",
+        "description": "Stephen Girard was one of the richest banking tycoons in American history, so the Philadelphian’s name held a natural appeal for financial institutions. The Girard Life Insurance, Annuity and Trust Company, formed five years after its namesake’s death, erected one of the city’s first highrises on the northeast corner of Broad and Chestnut.\nIn 1908, the truncated Girard Trust fittingly relocated to shorter headquarters — a two-story domed marble temple they built across the street. Eventually outgrowing that, they brought in the country’s preeminent architectural firm to design this tower, a marble-sheathed Neoclassical extension of their pantheon replica. A third skyscraper built next door in 1973, initially called Three Girard and later One Meridian Plaza, had to be demolished after it was gutted by a fire that also shut down the older highrise.\nIn 2000, the two marble Girard buildings reopened as a Ritz-Carlton, the city’s third. The first one still stands two blocks south on Broad Street; its owner built it out of spite when his wife was reprimanded for lighting a cigarette in the Bellevue-Stratford.",
         "highriseNumber": "Highrise #07",
         "image": "ipfs://QmYZLQhmp2Kbs9HDafd7fQQnDSrPn5wKA4WqHrEgP1CdKC/6.jpg",
         "name": "Girard Trust Building",
@@ -518,10 +498,6 @@ export const highrises = [
                 "value": "10 Avenue of the Arts"
             },
             {
-                "trait_type": "Long address",
-                "value": "10 Ave Of The Arts, Philadelphia, PA 19102"
-            },
-            {
                 "trait_type": "Opened",
                 "value": "1931"
             },
@@ -530,16 +506,16 @@ export const highrises = [
                 "value": "394'"
             },
             {
-                "trait_type": "Stories",
-                "value": "30"
-            },
-            {
                 "trait_type": "Architect",
                 "value": "McKim, Mead & White"
             },
             {
                 "trait_type": "Style",
                 "value": "Neoclassical"
+            },
+            {
+                "trait_type": "Stories",
+                "value": "30"
             },
             {
                 "trait_type": "City",
@@ -572,7 +548,7 @@ export const highrises = [
         ]
     },
     {
-        "description": "Market Street National Bank was designed by Philadelphia architects Ritter and Shay in 1931. The Art Deco style is most noticeable in the multicolored decoration on the street-level facade and the terra cotta details in the upper stories. The stepped nature of the upper stories is a result of municipal laws that require access to light and air, but the resulting form is actually quite complementary to the Art Deco manner. Although the tower is considered to be Art Deco, it also has some unmistakable Beaux-Arts influences seen in the volutes, swags and garlands. Some of these details interpret classical forms and others are more geometric, abstract, and modern. The design is a unique moment when classical details are evolving into modern characteristics all in one building. In 2001 it was converted into a Residence Inn by Marriott. The sign “Market Street National Bank” and the original multicolored details, continue to be on the face of the entrance to this day.Book Text:Market Street National Bank was designed by Philadelphia architects Ritter and Shay in 1931. The Art Deco style is most noticeable in the multicolored decoration on the street-level facade and the terra cotta details in the upper stories. The stepped nature of the upper stories is a result of municipal laws that require access to light and air, but the resulting form is actually quite complementary to the Art Deco manner. Although the tower is considered to be Art Deco, it also has some unmistakable Beaux-Arts influences seen in the volutes, swags and garlands. Some of these details interpret classical forms and others are more geometric, abstract, and modern. The design is a unique moment when classical details are evolving into modern characteristics all in one building. In 2001 it was converted into a Residence Inn by Marriott. The sign “Market Street National Bank” and the original multicolored details, continue to be on the face of the entrance to this day.",
+        "description": "Diners savoring the filet mignon at Butcher & Singer may not be aware that the steakhouse takes its name from a brokerage house that for decades occupied the space inside the medieval-style carved limestone entryway. Today’s grandiose dining room, with its 24-foot-high painted beam ceilings and square columns of red marble, was originally made for a bank.\nFounded by private financier Jay Cooke, the First National Bank of Philadelphia, as its name attests, was literally the first financial institution in the country chartered to print banknotes backed by the U.S. Treasury. Cooke was a private financier who loaned Pennsylvania $3 million to fund its Civil War efforts. He successfully lobbied President Abraham Lincoln and Congress to replace the country’s chaotic hodgepodge of state-run banks, establishing the banking system that exists to this day.\nLivingston Jones, First National president when this office opened, and his wife, Edith, were outdoorsy types who enjoyed canoe trips in Canada. Their daughter Cornelia became a Chestnut Hill sensation, becoming a pilot at 17 and competing in air races and shows.",
         "highriseNumber": "Highrise #08",
         "image": "ipfs://QmYZLQhmp2Kbs9HDafd7fQQnDSrPn5wKA4WqHrEgP1CdKC/7.jpg",
         "name": "1500 Walnut Street",
@@ -582,9 +558,9 @@ export const highrises = [
         "address": "1500 Walnut St.",
         "architect": "Ritter & Shay",
         "stories": "22",
-        "style": "Renaissance",
+        "style": "Art Deco",
         "city": "Philadelphia",
-        "secondaryStyle": "Art Deco",
+        "secondaryStyle": "Gothic",
         "opened": "1928",
         "ltlng": {
             "lat": 39.9489949,
@@ -596,10 +572,6 @@ export const highrises = [
                 "value": "1500 Walnut St."
             },
             {
-                "trait_type": "Long address",
-                "value": "1500 Walnut St Philadelphia PA"
-            },
-            {
                 "trait_type": "Opened",
                 "value": "1928"
             },
@@ -608,20 +580,20 @@ export const highrises = [
                 "value": "313'"
             },
             {
-                "trait_type": "Stories",
-                "value": "22"
-            },
-            {
                 "trait_type": "Architect",
                 "value": "Ritter & Shay"
             },
             {
                 "trait_type": "Style",
-                "value": "Renaissance"
+                "value": "Art Deco"
+            },
+            {
+                "trait_type": "Stories",
+                "value": "22"
             },
             {
                 "trait_type": "Secondary Style",
-                "value": "Art Deco"
+                "value": "Gothic"
             },
             {
                 "trait_type": "City",
@@ -658,7 +630,7 @@ export const highrises = [
         ]
     },
     {
-        "description": "The Lewis Tower, now known as the Aria, was built in 1929 and designed by architecture firm Edmund Gilchrist. Located in the vicinity of the Rittenhouse neighborhood, The Lewis Tower was one of Phialdelphia/s tallest office buildings until new construction started in Center City in 1980’s. The Art Deco tower’s bright brick cladding made it stand out in the skyline from similar towers that were built in that same year, like the Drake. In 2005, the office tower was sold to be converted into 114 units of condominiums, penthouses on the top three floors, and commercial space on the street level. In the Fall of 2005, a large section of stone facade fell from the 15th floor onto a neighboring building, and so the city ordained the new owners to facilitate major repairs. Exterior renovation included facade scrubbing and treatment, and additionally there were extensive interior renovations. The building was renamed to Aria because of its location just off the Avenue of the Arts. Book Text:The Lewis Tower, now known as the Aria, was built in 1929 and designed by architecture firm Edmund Gilchrist. Located in the vicinity of the Rittenhouse neighborhood, The Lewis Tower was one of Phialdelphia/s tallest office buildings until new construction started in Center City in 1980’s. The Art Deco tower’s bright brick cladding made it stand out in the skyline from similar towers that were built in that same year, like the Drake. In 2005, the office tower was sold to be converted into 114 units of condominiums, penthouses on the top three floors, and commercial space on the street level. In the Fall of 2005, a large section of stone facade fell from the 15th floor onto a neighboring building, and so the city ordained the new owners to facilitate major repairs. Exterior renovation included facade scrubbing and treatment, and additionally there were extensive interior renovations. The building was renamed to Aria because of its location just off the Avenue of the Arts. Even today, the Lewis Tower’s exceptionally bright faces poke through amidst much taller buildings surrounding it.",
+        "description": "This concrete and steel office highrise with its stark bright cladding was added to an existing 16-story building on 15th Street that covers its lower floors with a far more staid Neoclassical facade. Its architect, Staten Island native Arthur Hall, designed army posts across the country during World War I, then came to Philadelphia, where he drew up the plans of at least two other skyscrapers and a number of Main Line homes.\nDeveloper Richard Seltzer put a gymnasium with squash and handball courts halfway up the slender skyscraper so office tenants had a convenient place to exercise. In 1960 the Penthouse restaurant and cocktail lounge opened on the top floor, offering patrons spectacular city views with their nightcaps.\nLewis Tower was purchased in 2004 for conversion into condominiums, but things got complicated the following year, when a piece of stone veneer broke off and crashed through the roof of the restaurant next door, prompting city officials to close the building. Now fully repaired and renovated, it has been redubbed the Aria.",
         "highriseNumber": "Highrise #09",
         "image": "ipfs://QmYZLQhmp2Kbs9HDafd7fQQnDSrPn5wKA4WqHrEgP1CdKC/8.jpg",
         "name": "Lewis Tower",
@@ -681,10 +653,6 @@ export const highrises = [
                 "value": "1425 Locust St."
             },
             {
-                "trait_type": "Long address",
-                "value": "225 South 15th Street, Philadelphia, Pennsylvania, United States"
-            },
-            {
                 "trait_type": "Opened",
                 "value": "1929"
             },
@@ -693,16 +661,16 @@ export const highrises = [
                 "value": "389'"
             },
             {
-                "trait_type": "Stories",
-                "value": "33"
-            },
-            {
                 "trait_type": "Architect",
                 "value": "Arthur Hall"
             },
             {
                 "trait_type": "Style",
                 "value": "Art Deco"
+            },
+            {
+                "trait_type": "Stories",
+                "value": "33"
             },
             {
                 "trait_type": "City",
@@ -731,7 +699,7 @@ export const highrises = [
         ]
     },
     {
-        "description": "The Equitable Trust Building was designed by Horace Trumbauer in 1922, and commissioned by Louis Cahan, the leader of the Equitable Trust Company. The design is an inspiring Gothic office-castle with fortress towers on the roof. Cahan also requested that the letter “E” was to be placed on every window to mark the company’s name. The ground floor had a large Gothic theater, which was first occupied by The Fox-Locust Theatre in 1927. In 1930, Equitable Trust became part of Chase National Bank, and part of the company moved into the now Wells Fargo Building. With most of the office tower emptied, the theater became the main focus of the building. By 1970, the majority of the office spaces were completely empty and falling apart, and  even the theater was in such disrepair that it was controversially demolished in 1982 and turned into a parking garage. After two decades of several attempts at renovation and modernization, the tower is once again nearly 100 percent occupied.Book Text:The Equitable Trust Building was designed by Horace Trumbauer in 1922, and commissioned by Louis Cahan, the leader of the Equitable Trust Company. Trambauer and Cahan have worked on other French inspired buildings in Philadelphia but this time Cahan was building a Philadelphia headquarters for his own company. The design is an inspiring Gothic office-castle with fortress towers on the roof. Cahan also requested that the letter “E” was to be placed on every window to mark the company’s name. The ground floor had a large 1,580 seat Gothic theater, which was first occupied by The Fox-Locust Theatre in 1927. In 1930, Equitable Trust became part of Chase National Bank, and part of the company moved into the now Wells Fargo Building. With most of the office tower emptied, the theater became the main focus of the building. By 1970, the majority of the office spaces were completely empty and falling apart, and in 1980 the theater was in such disrepair that it was controversially demolished and turned into a parking garage. After two decades of several attempts at renovation and modernization, the tower is once again nearly 100 percent occupied.https://hiddencityphila.org/2012/06/horace-trumpowers-gilded-age-castle/",
+        "description": "The crenellated turrets on top of this building resemble Grey Towers Castle, a Glenside mansion that was the first major commission for architect Horace Trumbauer. Later jobs besides the Equitable Building included the Philadelphia Museum of Art and the Free Library of Philadelphia.\nWithin a year of its opening, this became the headquarters of the Philadelphia Rapid Transit Company and its powerful and visionary boss, Thomas Mitten. Mitten took the top floor for his management business and leased 12 floors for the transit company, putting bus waiting rooms and ticket offices on the ground floor along with his bank and securities company, which then acquired the property and renamed it the Mitten Building. Two years later, the city sued Mitten for alleged financial scams, and soon afterward his drowned body was discovered in a fishing pond on his Poconos estate.\nA theater next door on Broad Street had its main lobby in the Equitable Building; its marquee still hangs over the Locust Street sidewalk, though the theater is now a parking garage and the lobby is a restaurant.",
         "highriseNumber": "Highrise #10",
         "image": "ipfs://QmYZLQhmp2Kbs9HDafd7fQQnDSrPn5wKA4WqHrEgP1CdKC/9.jpg",
         "name": "Equitable Building",
@@ -754,10 +722,6 @@ export const highrises = [
                 "value": "230 S. Broad St."
             },
             {
-                "trait_type": "Long address",
-                "value": "1405 Locust Street Philadelphia PA"
-            },
-            {
                 "trait_type": "Opened",
                 "value": "1926"
             },
@@ -766,16 +730,16 @@ export const highrises = [
                 "value": "250'"
             },
             {
-                "trait_type": "Stories",
-                "value": "21"
-            },
-            {
                 "trait_type": "Architect",
                 "value": "Horace Trumbauer"
             },
             {
                 "trait_type": "Style",
                 "value": "Gothic"
+            },
+            {
+                "trait_type": "Stories",
+                "value": "21"
             },
             {
                 "trait_type": "City",
@@ -804,11 +768,11 @@ export const highrises = [
         ]
     },
     {
-        "description": "Originally built for the Philadelphia Savings Fund Society in 1932, it was designed by William Lescaze and George Howe. PSFS Building is most known for being the first International style skyscraper in the U.S. Unlike traditional banks, it doesn’t have conventional features like domes or classical ornamentation. The tower was built for functionality, in a T-shape to allow maximum amount of natural light and rentable space. The office tower attracted many tenants for modern features like radio receivers and air conditioning. Although it was completed during the Great Depression, the iconic PSFS neon sign was always kept lit to create a symbol of hope for the city. In tough times, the city jokingly called the sign  “Philadelphia Slowly Faces Starvation”. In the 1980’s, Philadelphia Savings Fund Society started to lose millions in new business ventures. By 1992, the building was 85 percent vacant, and was sold off to be converted into a Loews Hotel. Today the building does very well, attracting visitors in town for events at the Convention Center down the block.Book Text: Originally built for the Philadelphia Savings Fund Society in 1932, it was designed by William Lescaze and George Howe. PSFS Building is most known for being the first International style skyscraper in the U.S. Unlike traditional banks, it doesn’t have conventional features like domes or classical ornamentation. The tower was built for functionality, in a T-shape to allow maximum amount of natural light and rentable space. The office tower attracted many tenants for modern features like radio receivers and air conditioning. Although it was completed during the Great Depression, the iconic PSFS neon sign was always kept lit to create a symbol of hope for the city. In tough times, the city jokingly called the sign  “Philadelphia Slowly Faces Starvation”. In the 1980’s, Philadelphia Savings Fund Society started to lose millions in new business ventures. By 1992, the building was 85 percent vacant, and was sold off to be converted into a Loews Hotel. Today the building does very well, attracting visitors in town for events at the Convention Center down the block.https://en.wikipedia.org/wiki/PSFS_Building",
+        "description": "With his city in the midst of a highrise boom, James Willcox, president of the Philadelphia Saving Fund Society, felt his institution’s planned new office tower had to make a statement to attract new tenants. Thus America got its first International Style skyscraper, a cubist masterpiece of polished granite, limestone, glass, and brick.\nInside and out, it emphasizes what architect George Howe called “the beautiful surfaces of machine production,” relying on simple geometric forms and lines for its appeal. Escalators brought customers to the banking hall on the second floor, a vast open space where ranks of boxy marble columns rise 30 feet to the ceiling and support the building above.\nThis was one of the first fully air conditioned office towers, and its trademark rooftop sign hides the cooling machinery. The TV tower is not original, added in 1948.\nFurniture and fixtures were custom designed by the architects to complement their bold design, and main interior spaces have been meticulously preserved. The building is now a hotel, and guests seeking out the former boardroom on the 33rd floor can enjoy a sweeping panorama from Fairmount Park to the Delaware River.",
         "highriseNumber": "Highrise #11",
         "image": "ipfs://QmYZLQhmp2Kbs9HDafd7fQQnDSrPn5wKA4WqHrEgP1CdKC/10.jpg",
         "name": "PSFS Building",
-        "height": 492,
+        "height": 491,
         "heightBracket": "400' - 499'",
         "decade": 1930,
         "address": "1200 Market St.",
@@ -827,20 +791,12 @@ export const highrises = [
                 "value": "1200 Market St."
             },
             {
-                "trait_type": "Long address",
-                "value": "1200 Market Street, Philadelphia, PA"
-            },
-            {
                 "trait_type": "Opened",
                 "value": "1932"
             },
             {
                 "trait_type": "Height",
-                "value": "492'"
-            },
-            {
-                "trait_type": "Stories",
-                "value": "36"
+                "value": "491'"
             },
             {
                 "trait_type": "Architect",
@@ -849,6 +805,10 @@ export const highrises = [
             {
                 "trait_type": "Style",
                 "value": "International"
+            },
+            {
+                "trait_type": "Stories",
+                "value": "36"
             },
             {
                 "trait_type": "City",
@@ -885,7 +845,7 @@ export const highrises = [
         ]
     },
     {
-        "description": "The site for this French inspired building used to be the headquarters of the American Baptist Historical Society, the oldest Baptist historical society in the US, established in 1853. Their mission was to collect “all kinds of documents that relate to ecclasiastical history.” In 1896, a fire destroyed the collection in the original office building of the Publication Society. In that same year, Samuel B. Colgate gave his personal collection to the Publication Society and a money donation to relocate to Rochester, New York. After the relocation, a new building was built the following year on the same site and it was named the American Baptist Publication Society Building in honor of the previous site owner. It was designed by architect Frank Miles Day in the French Renaissance Revival style. The 13 story highrise has a very distinct French Chateau inspired top. Being one of the first commercial highrises on this street, it set the standard for commercial buildings on Chestnut Street. The floors above the ground floor are single family units. Book Text:The site for this French inspired building used to be the headquarters of the American Baptist Historical Society, the oldest Baptist historical society in the US, established in 1853. Their mission was to collect “all kinds of documents that relate to ecclasiastical history.” In 1896, a fire destroyed the collection in the original office building of the Publication Society. In that same year, Samuel B. Colgate gave his personal collection to the Publication Society and a money donation to relocate to Rochester, New York. After the relocation, a new building was built the following year on the same site and it was named the American Baptist Publication Society Building in honor of the previous site owner. It was designed by architect Frank Miles Day in the French Renaissance Revival style. The 13 story highrise has a very distinct French Chateau inspired top. Being one of the first, it set the standard for commercial buildings on Chestnut Street. The floors above the ground floor are single family units.",
+        "description": "The finery of a Loire Valley château was draped over a steel frame to create this early Philadelphia highrise. It was erected for the American Baptist Publication Society, which for years had printed and sold religious tracts and Bibles at its offices here, maintained a library, and coordinated various charitable causes until an 1896 fire destroyed it all.\nThe new building’s French style obviously curtsies to Philadelphia City Hall, while its name honors the society’s former president, John Crozer, a wealthy textile manufacturer and dedicated philanthropist. The building opened in time for Christmas in 1897, and visitors marveled at its finely appointed bookstore with oak cabinetry, cushioned settees for browsing, and a dainty reading room for women. \nThe lecture hall upstairs seated 600 guests, with high ceilings painted in allegorical frescoes. The exterior has suffered a bit since then, losing its original street-level façade and a sumptuous balcony railing that once stretched just below the steep mansard roof. But it still provides elegant quarters for the aspiring electricians who study at the charter trade school now located here.",
         "highriseNumber": "Highrise #12",
         "image": "ipfs://QmYZLQhmp2Kbs9HDafd7fQQnDSrPn5wKA4WqHrEgP1CdKC/11.jpg",
         "name": "Crozer Building",
@@ -908,10 +868,6 @@ export const highrises = [
                 "value": "1420–22 Chestnut St."
             },
             {
-                "trait_type": "Long address",
-                "value": "1420–1422 Chestnut St., Philadelphia, Pennsylvania"
-            },
-            {
                 "trait_type": "Opened",
                 "value": "1897"
             },
@@ -920,16 +876,16 @@ export const highrises = [
                 "value": "182'"
             },
             {
-                "trait_type": "Stories",
-                "value": "13"
-            },
-            {
                 "trait_type": "Architect",
                 "value": "Frank M. Day"
             },
             {
                 "trait_type": "Style",
                 "value": "Second Empire"
+            },
+            {
+                "trait_type": "Stories",
+                "value": "13"
             },
             {
                 "trait_type": "City",
@@ -965,12 +921,16 @@ export const highrises = [
             },
             {
                 "trait_type": "Attributes",
+                "value": "Figures"
+            },
+            {
+                "trait_type": "Attributes",
                 "value": "Disrepair"
             }
         ]
     },
     {
-        "description": "Built in 1924, the 21 story highrise was originally the headquarters for the bank Liberty Title and Trust Company. The tower was designed by Savery &amp; Sheetz with visible late Beaux-Arts training and emerging Art Deco inspirations. The east wall was left without details with the expectation that this face would be obscured by a neighboring building. Over the next few decades Liberty Title and Trust Building housed various owners. The last owner to vacate the building in 1990’s was the Philadelphia Water Department. In 2008, plans to convert the Liberty Title Building into a hotel were stalled for a couple of years due to the recession. When the Pennsylvania Convention Center started construction in 2011, The Liberty Title and Trust Building was the only existing building on the block to survive the expansion. Renovations were finally completed in 2016 and today it is an Aloft Hotel that is highly praised for its seamless blend between modern life and historic details.",
+        "description": "A rich marble staircase worn by a century of shoe leather leads from the sidewalk entrance to what was originally a brightly sunlit banking floor. Now an appealing modern hotel lobby, it still preserves Liberty Title & Trust’s original marble tiled floors, elaborate crown molding and wall medallions, and a bronze elevator that accessed the old safety deposit boxes, which are now stacked on a giant bookcase for atmosphere.\nArchitect Frederic Hirons liked to blend old and new motifs too, both here and in his Beaux-Arts Institute of Design in Manhattan, which opened shortly after this building did. In digging the foundations, builders discovered a buried creek feeding the Schuylkill River. They spent months pumping out millions of gallons of water to stabilize the soggy soil; appropriately, years later, the highrise housed the city water department. \nThis was the only building on the block spared when the convention center expanded to Broad Street. That was because the authority intended to put their headquarters here, but as costs ballooned, officials had to abandon their plan.",
         "highriseNumber": "Highrise #13",
         "image": "ipfs://QmYZLQhmp2Kbs9HDafd7fQQnDSrPn5wKA4WqHrEgP1CdKC/12.jpg",
         "name": "Liberty Trust Building",
@@ -979,11 +939,11 @@ export const highrises = [
         "decade": 1920,
         "address": "101 N. Broad St.",
         "architect": "Dennison & Hirons",
-        "stories": "21",
+        "stories": "20",
         "style": "Art Deco",
         "city": "Philadelphia",
         "secondaryStyle": "Renaissance",
-        "opened": "1925",
+        "opened": "1926",
         "ltlng": {
             "lat": 39.9546225,
             "lng": -75.16279209999999
@@ -994,20 +954,12 @@ export const highrises = [
                 "value": "101 N. Broad St."
             },
             {
-                "trait_type": "Long address",
-                "value": "101 North Broad Street Philadelphia PA"
-            },
-            {
                 "trait_type": "Opened",
-                "value": "1925"
+                "value": "1926"
             },
             {
                 "trait_type": "Height",
                 "value": "205'"
-            },
-            {
-                "trait_type": "Stories",
-                "value": "21"
             },
             {
                 "trait_type": "Architect",
@@ -1016,6 +968,10 @@ export const highrises = [
             {
                 "trait_type": "Style",
                 "value": "Art Deco"
+            },
+            {
+                "trait_type": "Stories",
+                "value": "20"
             },
             {
                 "trait_type": "Secondary Style",
@@ -1060,7 +1016,7 @@ export const highrises = [
         ]
     },
     {
-        "description": "Built in 1926, Beury is a unique blend of Late Gothic Revival and Art Deco. The National Bank of North Philadelphia was the original owner of the building. As World War II swept through the 1940’s, Beury provided rooms to serve as a rationing board office for Philadelphia. It was the largest designated air raid shelter. In 1995, the new owner, Mohammed Mizani, attempted to remove asbestos from the building by using unskilled labor of homeless people. Mizani was found guilty and the building was left abandoned. In 2017, Shift Capital announced plans to renovate. In the most recent development, the plan is to convert it into a Marriott hotel. Today, the most famous feature of The Buery is the signature graffiti, “Forever Boner”. Urban legend says the graffiti was made by two rivaling artists, one named Boner and the other Forever. When plans of development reached the news, there was so much public opposition to the removal of the graffiti that the developers promised to pay homage to the tag and keep it. Personality:Old military veteranTattooedCouple of war injuriesUnder-appreciated for military serviceMisfortune post military serviceBook Text:Battered and bruised, The Bruery building is an old military vet who has been left abandoned for nearly two decades. It is a tale about war, neglect, crime, and hope for redemption. This highrise is a tattooed, infamous badass in Philly who still has much to offer.Built in 1926, architect William H. Lee, a well known theater architect, designed this 14-story apartment building with a unique blend of Late Gothic Revival and Art Deco. A few years after completion, the National Bank of North Philadelphia moved in, and the building was named “The Beury” after Charles Beury, the president of the bank. As World War II swept through the 1940’s, Beury provided rooms to serve as a rationing board office for Philadelphia. It was one of twenty-eight facilities designated as an air raid shelter, and out of the twenty-eight, Beury was the largest holding up to 2,600 people. By 1985 it was abandoned, despite earning its place in the National Register of Historic Places, a medal of honor that did it little to no good. In 1995, then owner, Mohammed Mizani, attempted to remove asbestos from the building by using unskilled labor of homeless people from the city’s center city homeless shelter. After Mizani was found guilty, the building was once again left abandoned. In 2008, there was hope for Buery to become a new home for several displaced city offices that would have housed 900 state employees, but with the hefty price of $30 million, the plans never came to pass. For a decade Buery struggled to find investors that would take a chance on it. Finally in 2017, Shift Capital announced plans to renovate. The initial plan was for 80 apartment units, but in the most recent development the plans have changed to be a 160 room Marriott hotel with a ground floor restaurant. Today, the most famous feature of The Buery is the signature graffiti, “Forever Boner”. Urban legend says the graffiti was made by two rivaling artists, one named Boner and the other Forever. When plans of development reached the news, there was so much public opposition to the removal of the graffiti that the developers promised to pay homage to the tag and keep it. And so The Beury Building lives on, with a hopeful future, still standing strong and proud as “Forever Boner.”Notes:Built in 1926Architect William H. Lee designed this 14-story apartment building with a unusual blend of Late Gothic Revival and Art DecoClassic Art Deco trappings on the interiorOrnate terracotta rooftopWillima H. Lee was known as a theater architectHoused the National Bank of North Philadelphianamed after Charles Beury, the first president of the National Bank of North PhiladelphiaDuring WW2, Room 1018 served as a rationing board office in Philadeelphia1 of 28 facilities designated as an air raid shelterWas the biggest of the 28Could hold up to 2600 peopleListed in National Register of Historic Places in 19851995, then owner, Mohammed Mizani, was found guilty of illegally removing asbestos from the buildingUsed unskilled labor of homeless people from the city’s center city homeless shelterIn 2008, civic leader pushed the building as a new home for displaced city officesWould house 900 state employeesWould have cost $30 million This pursuit failedBuery building trapped in a dilemmaRestoration and population of the building could bring much-needed income and traffic to a poverty stricken area, but that same poverty make it undesirable for anyone to invest in.If a building stands vacant for more than 20 years, it is highly unlikely that anything will happen to it on the market without significant government incentivesIn 2017, Shift Capital announced plans to renovate the building into 80 apartment units50 would be for low-income rentersOthers leased to those with physical disabilitiesIn 2019, plans shifted to being renovated into a 160 room Marriott hotel with a restaurant on the ground floorProject was awarded a $477,00 state grant for sidewalks, streetlights, ADA ramps, and treesDue to public demandDevelopers promise to incorporate the locally famous “Boner 4Ever” and “Forever Boner” graffiti on the sides of the building into the redevelopment",
+        "description": "The founders of the National Bank of North Philadelphia, which opened in 1920, chose as their first president the attorney Charles Beury, a graduate of Princeton and Harvard Law. The financial institution’s rapid success led to construction of Uptown’s first skyscraper, called the National Bank of North Philadelphia Building.\nBeury, meanwhile, had new presidential obligations. An influential trustee at nearby Temple University, he was picked for the executive job following the death of the institution’s founder. Refocused on the university, Beury remained the bank’s chairman until it was acquired by Bankers Trust Company in 1930. The successors renamed the building after him in September, then three months later became the first large Philadelphia bank to fail in the Great Depression.\nBeury guided Temple’s steady growth in his 15 years as president, and a building on campus also bears his name. His once-stylish Art Deco tower on Broad Street long stood abandoned, crumbling, and infamously adorned by a pair of graffiti artists who proudly tagged it with their noms-de-can: “Forever” and “Boner.” After decades of neglect, it is being renovated into a hotel.",
         "highriseNumber": "Highrise #14",
         "image": "ipfs://QmYZLQhmp2Kbs9HDafd7fQQnDSrPn5wKA4WqHrEgP1CdKC/13.jpg",
         "name": "Beury Building",
@@ -1083,10 +1039,6 @@ export const highrises = [
                 "value": "3701 N. Broad St."
             },
             {
-                "trait_type": "Long address",
-                "value": "3701 N Broad St Philadelphia, PA 19140"
-            },
-            {
                 "trait_type": "Opened",
                 "value": "1926"
             },
@@ -1095,16 +1047,16 @@ export const highrises = [
                 "value": "178'"
             },
             {
-                "trait_type": "Stories",
-                "value": "14"
-            },
-            {
                 "trait_type": "Architect",
                 "value": "William Lee"
             },
             {
                 "trait_type": "Style",
                 "value": "Art Deco"
+            },
+            {
+                "trait_type": "Stories",
+                "value": "14"
             },
             {
                 "trait_type": "City",
@@ -1145,16 +1097,16 @@ export const highrises = [
         ]
     },
     {
-        "description": "The Edison Building was built in 1927 for the Philadelphia Electric Company (PECO), who were steadily outgrowing their offices in the 1920’s. The 23 story Art Deco tower was designed by JohnTorrey Windrim. Illuminated Architecture was becoming a popular trend, and PECO being an electric company, wanted to set the record for best lit building in the world. Arthur A. Brainerd designed lighting schemes with multi-colored lights moving across the building, each individually dimming and fading at regular intervals. The cherry on top was a small tower with a rotating spotlight. The building was named the Edison Building in honor of Thomas Edison. At its best, the building shined bright at nine watts per square foot and was visible 10 miles away. By the mid 1930’s, Illuminated Architecture was old news and taller buildings started to surround the Edison Building. PECO started to outgrow the Edison Building and moved out in the 1960’s. Jefferson university bought it in 1973 and installed massive lit-up signs on the north and south sides of the building, an homage to the building's history of impressive lighting.Personality:Tech NerdBook Format:The Edison Building was built in 1927 for the Philadelphia Electric Company (PECO), who were steadily outgrowing their offices in the 1920’s. It was designed by John Torrey Windrim, son of a Beaux-Arts legend John Hamilton Windrim. The 23 story Art Deco tower was far taller than any building in its near vicinity. Illuminated Architecture was becoming a popular trend, and PECO being an electric company, wanted to set the record for best lit building in the world. Arthur A. Brainerd, a technological wizard of the time, designed lighting schemes with multi-colored lights moving across the building, each individually dimming and fading at regular intervals. The cherry on top was a small tower with a rotating spotlight. The building was named the Edison Building in honor of Thomas Edison, who was 80 at the time and was invited to activate the lighting scheme via telegraph on opening night. At its best, the building shined bright at nine watts per square foot and was visible 10 miles away. By the mid 1930’s, Illuminated Architecture was old news so the lighting scheme was changed to be more conventional and taller buildings started to surround the Edison Building. In the mid-1940s, a power plant moved in right next door and attached a massive smokestack to the side of the Edison Building. PECO started to outgrow the Edison Building and moved out in the 1960’s. Jefferson university bought it in 1973 to expand their campus in the city, and installed massive lit-up signs on the north and south sides of the building, an homage to the building's history of impressive lighting.https://hiddencityphila.org/2012/01/electric/#:~:text=Construction%20began%20in%201926%20and,year%2Dold%20Thomas%20Alva%20Edison.",
+        "description": "Ever since Ben Franklin flew his famous kite, electricity has played a key role in the City of Brotherly Love. On New Year’s Eve 1927, Thomas Edison himself sent a telegraph message to this new office tower named in his honor and owned by Philadelphia Electric Company.\nOn the elderly inventor’s signal, keyed from his home in Menlo Park, 483 floodlights flicked on to bathe the upper floors of the Edison in a rainbow of nighttime illumination. Behind the new skyscraper on Sansom Street was a six-story coal-fired electrical station Edison’s company had built in 1888, before mergers consolidated the city’s power businesses.\nArchitect John T. Windrim designed several power plants, including an immense Beaux-Arts station on the Delaware River in Chester, and went on to design the Lincoln-Liberty Building. His bold diamond patterns in the ground-level brickwork subtly repeat near the top. They are eclipsed, however, by the building’s latest light display, an illuminated sign for Thomas Jefferson University, which acquired the property in 1973.\nThe smokestack rises from a power plant next door that stands on the footprint of Edison’s original generating station.",
         "highriseNumber": "Highrise #15",
         "image": "ipfs://QmYZLQhmp2Kbs9HDafd7fQQnDSrPn5wKA4WqHrEgP1CdKC/14.jpg",
         "name": "Edison Building",
         "height": 325,
         "heightBracket": "300' - 399'",
         "decade": 1920,
-        "address": "130 S. 9th St.",
+        "address": "130 S. Ninth St.",
         "architect": "John T. Windrim",
-        "stories": "22",
+        "stories": "24",
         "style": "Art Deco",
         "city": "Philadelphia",
         "opened": "1927",
@@ -1165,11 +1117,7 @@ export const highrises = [
         "attributes": [
             {
                 "trait_type": "Address",
-                "value": "130 S. 9th St."
-            },
-            {
-                "trait_type": "Long address",
-                "value": "130 S 9th St, Philadelphia, PA 19107"
+                "value": "130 S. Ninth St."
             },
             {
                 "trait_type": "Opened",
@@ -1180,16 +1128,16 @@ export const highrises = [
                 "value": "325'"
             },
             {
-                "trait_type": "Stories",
-                "value": "22"
-            },
-            {
                 "trait_type": "Architect",
                 "value": "John T. Windrim"
             },
             {
                 "trait_type": "Style",
                 "value": "Art Deco"
+            },
+            {
+                "trait_type": "Stories",
+                "value": "24"
             },
             {
                 "trait_type": "City",
@@ -1226,7 +1174,7 @@ export const highrises = [
         ]
     },
     {
-        "description": "Highrises are among the most iconic and defining elements of American Cities, and the technological advancement of the twentieth century fostered new heights.",
+        "description": "When John Bowman became chancellor of the University of Pittsburgh in 1921, he proposed a bold plan for his growing institution: a college skyscraper. Philadelphia architect Charles Klauder, renowned for his campus buildings at Princeton and Cornell, designed the tower as a blend of Art Deco and his signature Collegiate Gothic style.\nGround was broken in 1926, and the first classes were held in the building in 1931, though the Great Depression delayed completion of the dramatic four-story Commons Room for six more years. The 40-story limestone highrise was the tallest educational building in the world until Moscow State University surpassed it in 1953.\nAt the time of construction, surveys showed that one of every three Pitt students was the child of an immigrant. To honor that heritage, the university invited Pittsburgh’s various ethnic organizations to design and fund 18 Nationality Rooms representing the mother countries. Students taking classes in the rooms, which now number 31, quickly learn to expect occasional interruptions by curious visitors peeking in the doorways.",
         "highriseNumber": "Highrise #16",
         "image": "ipfs://QmYZLQhmp2Kbs9HDafd7fQQnDSrPn5wKA4WqHrEgP1CdKC/15.jpg",
         "name": "Cathedral of Learning",
@@ -1250,10 +1198,6 @@ export const highrises = [
                 "value": "4200 Fifth Ave."
             },
             {
-                "trait_type": "Long address",
-                "value": "4200 Fifth Ave, Pittsburgh, PA 15260"
-            },
-            {
                 "trait_type": "Opened",
                 "value": "1937"
             },
@@ -1262,16 +1206,16 @@ export const highrises = [
                 "value": "535'"
             },
             {
-                "trait_type": "Stories",
-                "value": "40"
-            },
-            {
                 "trait_type": "Architect",
                 "value": "Charles Klauder"
             },
             {
                 "trait_type": "Style",
                 "value": "Gothic"
+            },
+            {
+                "trait_type": "Stories",
+                "value": "40"
             },
             {
                 "trait_type": "Secondary Style",
@@ -1304,7 +1248,7 @@ export const highrises = [
         ]
     },
     {
-        "description": "Highrises are among the most iconic and defining elements of American Cities, and the technological advancement of the twentieth century fostered new heights.",
+        "description": "Heinrich Koppers of Germany developed an efficient industrial oven for producing coke, the essential fuel for iron and steel furnaces, while also capturing gas and tar byproducts for other uses. That interested U.S. Steel, so Koppers formed a Chicago company in 1907 to supply the American steel industry.\nFinancier Andrew Mellon soon acquired a controlling stake and moved the company to Pittsburgh. During World War I, he forced the German founder out entirely, and soon thereafter became Secretary of the Treasury.\nGraham, Anderson, Probst & White designed the company’s Art Deco headquarters with a polished granite and limestone exterior and a chateau-style roof made of – what else – copper. It was briefly the city’s tallest skyscraper until overshadowed by the Gulf Building across the street, the headquarters of another company in the Mellon portfolio.\nKoppers grew into a sprawling industrial conglomerate until a 1988 British hostile takeover led to the sale of several divisions. Managers bought the chemicals business, which is still based in the skyscraper. The building’s three-story marble lobby with bronze accents has been extensively restored.",
         "highriseNumber": "Highrise #17",
         "image": "ipfs://QmYZLQhmp2Kbs9HDafd7fQQnDSrPn5wKA4WqHrEgP1CdKC/16.jpg",
         "name": "Koppers Building",
@@ -1327,10 +1271,6 @@ export const highrises = [
                 "value": "436 Seventh Ave."
             },
             {
-                "trait_type": "Long address",
-                "value": "436 Seventh Avenue, Pittsburgh, PA"
-            },
-            {
                 "trait_type": "Opened",
                 "value": "1929"
             },
@@ -1339,16 +1279,16 @@ export const highrises = [
                 "value": "475'"
             },
             {
-                "trait_type": "Stories",
-                "value": "32"
-            },
-            {
                 "trait_type": "Architect",
                 "value": "Graham, Anderson, Probst & White"
             },
             {
                 "trait_type": "Style",
                 "value": "Art Deco"
+            },
+            {
+                "trait_type": "Stories",
+                "value": "32"
             },
             {
                 "trait_type": "City",
@@ -1389,7 +1329,7 @@ export const highrises = [
         ]
     },
     {
-        "description": "Highrises are among the most iconic and defining elements of American Cities, and the technological advancement of the twentieth century fostered new heights.",
+        "description": "After Thomas Keenan made a fortune selling his newspaper, the Pittsburgh Press, he commissioned the first skyscraper on Liberty Avenue. Its signature flourish, a cast concrete baroque dome, was inspired by an even more elaborate dome capping the headquarters of the San Francisco Call.\nThe Keenan dome was originally gold, not red, and was crowned by a large globe and eagle. First to move in under the golden dome was a photography studio, then for decades the uppermost stories housed a school for women.\nKeenan crusaded against civic corruption and vice; that, along with his bachelor status, may explain false rumors that he lived in a penthouse under the dome and used it for trysts. Today the space is a community room for residents of what is now called Midtown Towers. It has been extensively remodeled after a 2017 fire.\nTen bas-reliefs at sidewalk level honor important public figures including city namesake William Pitt, philanthropist Mary Schenley, and H.D.W. English, president of the chamber of commerce, which moved its offices here when the building opened.",
         "highriseNumber": "Highrise #18",
         "image": "ipfs://QmYZLQhmp2Kbs9HDafd7fQQnDSrPn5wKA4WqHrEgP1CdKC/17.jpg",
         "name": "Keenan Building",
@@ -1412,10 +1352,6 @@ export const highrises = [
                 "value": "643 Liberty Ave."
             },
             {
-                "trait_type": "Long address",
-                "value": "643 Liberty Ave, Pittsburgh, PA 15222"
-            },
-            {
                 "trait_type": "Opened",
                 "value": "1907"
             },
@@ -1424,16 +1360,16 @@ export const highrises = [
                 "value": "239'"
             },
             {
-                "trait_type": "Stories",
-                "value": "18"
-            },
-            {
                 "trait_type": "Architect",
                 "value": "Thomas Hannah"
             },
             {
                 "trait_type": "Style",
                 "value": "Beaux-Arts"
+            },
+            {
+                "trait_type": "Stories",
+                "value": "18"
             },
             {
                 "trait_type": "City",
@@ -1474,7 +1410,7 @@ export const highrises = [
         ]
     },
     {
-        "description": "Highrises are among the most iconic and defining elements of American Cities, and the technological advancement of the twentieth century fostered new heights.",
+        "description": "Like a bizarre lighthouse shining over the harbor, this showy brick replica of the Palazzo Vecchio in Florence, Italy, was once crowned with a revolving, illuminated 50-foot tall bottle of the Emerson Drug Company’s signature hangover cure.\nThat massive beacon caused cracks in the tower and had to come down in 1936. But the dozen letters spelling Bromo-Seltzer that replace traditional numerals on the clocks indicate how far Isaac Emerson was willing to go to flog his product.\nThe former drugstore proprietor invented a fizzy elixir to treat headaches and indigestion, and encouraged its widespread adoption by other druggists through offers of company stock in exchange for high sales volume. The powder was packaged in attractive blue glass bottles, samples of which are displayed in a quaint museum on the top floor.\nEmerson’s factory is gone, but the tower it was attached to was given to the city when the drug company left town. Too skinny for offices — two-thirds of each floor is used up by the elevator, stairs, and landing — it has been converted into loft space for artists.",
         "highriseNumber": "Highrise #19",
         "image": "ipfs://QmYZLQhmp2Kbs9HDafd7fQQnDSrPn5wKA4WqHrEgP1CdKC/18.jpg",
         "name": "Emerson Tower",
@@ -1497,10 +1433,6 @@ export const highrises = [
                 "value": "21 South Eutaw St."
             },
             {
-                "trait_type": "Long address",
-                "value": "21 South Eutaw Street at West Lombard Street, Baltimore, Maryland"
-            },
-            {
                 "trait_type": "Opened",
                 "value": "1911"
             },
@@ -1509,16 +1441,16 @@ export const highrises = [
                 "value": "289'"
             },
             {
-                "trait_type": "Stories",
-                "value": "15"
-            },
-            {
                 "trait_type": "Architect",
                 "value": "Joseph Sperry"
             },
             {
                 "trait_type": "Style",
                 "value": "Renaissance"
+            },
+            {
+                "trait_type": "Stories",
+                "value": "15"
             },
             {
                 "trait_type": "City",
@@ -1555,7 +1487,7 @@ export const highrises = [
         ]
     },
     {
-        "description": "Highrises are among the most iconic and defining elements of American Cities, and the technological advancement of the twentieth century fostered new heights.",
+        "description": "The exuberant exterior of Baltimore’s only Art Deco skyscraper features cresting ocean waves and crabs to go with its gargoyles. Its interior is equally breathtaking, with multicolored marble columns supporting the painted beamed ceiling and four large murals depicting the city in each century of its existence.\nAlas, the lovely hand-wrought iron gates by master blacksmith Samuel Yellin now bar the public from the former banking hall, which has been repurposed as a gym. Its spectacular mosaic floor by the acclaimed muralist Hildreth Meière — creator of Radio City Music Hall’s signature sculptures — is covered with mats to protect it.\nOnce the state’s biggest financial institution, Baltimore Trust did not survive the 1933 banking panic. Now a residential highrise, the building has changed hands and names repeatedly. Its most colorful owner, West Virginia millionaire and political gadfly Raymond J. Funkhouser, renamed it the O’Sullivan building in 1942 after a company he owned that made rubber shoe heels. He also kicked an upscale barbershop out of the top floor so he could put his penthouse there.",
         "highriseNumber": "Highrise #20",
         "image": "ipfs://QmYZLQhmp2Kbs9HDafd7fQQnDSrPn5wKA4WqHrEgP1CdKC/19.jpg",
         "name": "Baltimore Trust Building",
@@ -1579,10 +1511,6 @@ export const highrises = [
                 "value": "10 Light St."
             },
             {
-                "trait_type": "Long address",
-                "value": "10 Light Street Baltimore, Maryland"
-            },
-            {
                 "trait_type": "Opened",
                 "value": "1929"
             },
@@ -1591,16 +1519,16 @@ export const highrises = [
                 "value": "509'"
             },
             {
-                "trait_type": "Stories",
-                "value": "34"
-            },
-            {
                 "trait_type": "Architect",
                 "value": "Taylor & Fisher, Smith & May"
             },
             {
                 "trait_type": "Style",
                 "value": "Art Deco"
+            },
+            {
+                "trait_type": "Stories",
+                "value": "34"
             },
             {
                 "trait_type": "Secondary Style",

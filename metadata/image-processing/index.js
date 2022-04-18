@@ -4,8 +4,8 @@ const { png } = require('./png');
 const { site } = require('./site');
 
 (() => {
-    nft();
+    // nft();
     poster();
-    site();
-    png();
+    // site();
+    // png();
 })();
