@@ -2,11 +2,10 @@ import { Header } from 'components/ui/Header';
 import styled from 'styled-components';
 
 export const Title = styled(Header)`
-    margin-left: auto;
-
     ${(props) => props.theme.breakpoints.small`
-        text-align: initial;
         white-space: nowrap;
+        text-align: initial;
+        margin-left: auto;
     `}
 `;
 
@@ -20,6 +19,10 @@ export const Points = styled.div`
         margin-left: auto;
         margin-top: 88px;
     `}
+
+    ${(props) => props.theme.breakpoints.medium`
+        margin-right: 88px;
+    `}
 `;
 
 export const RoadmapChart = styled.div`
@@ -28,7 +31,7 @@ export const RoadmapChart = styled.div`
     display: flex;
     flex-direction: column;
 
-    ${(props) => props.theme.breakpoints.mobile`
+    ${(props) => props.theme.breakpoints.small`
         padding: 96px 96px 112px;
         margin-left: auto;
     `}
@@ -36,9 +39,9 @@ export const RoadmapChart = styled.div`
 
 export const RoadmapVideo = styled.video`
     position: absolute;
-    width: 449px;
-    top: 672px;
-    left: 22px;
+    width: 530px;
+    top: 1068px;
+    left: 27px;
 `;
 
 export const RoadmapImage = styled.img`
@@ -47,24 +50,29 @@ export const RoadmapImage = styled.img`
 `;
 
 export const RoadmapImageWrapper = styled.div`
-    z-index: 2;
     position: absolute;
-    height: 100%;
+    z-index: 2;
+    height: 1800px;
     top: 0;
-    left: -45%;
+    left: -25%;
 
     display: none;
 
-    ${(props) => props.theme.breakpoints.mobile`
+    ${(props) => props.theme.breakpoints.small`
         display: block;
+        left: -55%;
     `}
 
     ${(props) => props.theme.breakpoints.medium`
-        left: -25%;
+        left: -35%;
     `}
 
     ${(props) => props.theme.breakpoints.large`
-        left: 0;
+        left: -15%;
+    `}
+
+    ${(props) => props.theme.breakpoints.extraLarge`
+        left: -5%;
     `}
 `;
 

@@ -73,7 +73,15 @@ export const BuildingDetail = ({ activeHighrise, location }) => {
                     />
                 )}
                 <MobileMap />
-                <S.BuildingDetailBack to="/">
+                <S.BuildingDetailBack
+                    onClick={() => {
+                        if (location?.state?.fromStory) {
+                            navigate(-1);
+                        } else {
+                            navigate('/');
+                        }
+                    }}
+                >
                     ← Back to explorer
                 </S.BuildingDetailBack>
 

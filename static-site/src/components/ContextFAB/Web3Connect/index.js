@@ -6,8 +6,6 @@ import * as S from 'components/ContextFAB/Web3Connect/Web3Connect.styled';
 export const Web3Connect = ({ tokenIds }) => {
     const { activateBrowserWallet, error } = useEthers();
 
-    console.log(error);
-
     return (
         <>
             {tokenIds.length ? (

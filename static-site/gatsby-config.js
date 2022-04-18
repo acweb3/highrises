@@ -69,5 +69,17 @@ module.exports = {
                         : 'dev.hythacg.com',
             },
         },
+        {
+            resolve: `gatsby-plugin-google-gtag`,
+            options: {
+                trackingIds: [
+                    'G-TPGXGD018X', // Google Analytics / GA
+                ],
+                // This object is used for configuration specific to this plugin
+                pluginConfig: {
+                    head: true,
+                },
+            },
+        },
     ],
 };

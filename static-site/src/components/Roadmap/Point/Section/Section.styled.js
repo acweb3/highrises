@@ -18,5 +18,7 @@ export const SectionHeader = styled.div`
 `;
 
 export const Section = styled(ViewScroll)`
+    max-width: 400px;
+
     color: ${(props) => props.theme.colors.blue[0]};
 `;

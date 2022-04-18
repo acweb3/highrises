@@ -126,7 +126,7 @@ export const BuildingDetailNextHighrise = styled(Link)`
     background-color: ${(props) => props.theme.colors.grey[1]};
     position: fixed;
     bottom: 100px;
-    right: -48px;
+    right: -56px;
     transform: rotate(-90deg);
     padding: 16px;
     border-radius: 8px 8px 0 0;
@@ -139,7 +139,7 @@ export const BuildingDetailLastHighrise = styled(Link)`
     background-color: ${(props) => props.theme.colors.grey[1]};
     position: fixed;
     bottom: 100px;
-    left: -48px;
+    left: -56px;
     transform: rotate(-270deg);
     padding: 16px;
     border-radius: 8px 8px 0 0;

@@ -103,6 +103,12 @@ export const Link = styled.a`
     align-items: center;
     justify-content: center;
 
+    ${(props) =>
+        props.isActive &&
+        `
+        color: #000;
+    `}
+
     &:active,
     &:hover {
         color: #000;

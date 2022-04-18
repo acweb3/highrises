@@ -3,9 +3,8 @@ import { useWindowSize } from 'common/hooks/useWindowSize';
 import * as S from 'components/ContextFAB/ContextFAB.styled';
 import { Web3Connect } from 'components/ContextFAB/Web3Connect';
 import { useTokenHolder } from 'components/ContextFAB/hooks/useTokenHolder';
-import debounce from 'lodash.debounce';
+import throttle from 'lodash.throttle';
 import { useCallback, useRef, useState } from 'react';
-import { useDebounce } from 'use-debounce';
 
 export const ContextFAB = () => {
     const { isLoaded } = useWindowSize();
@@ -13,22 +12,22 @@ export const ContextFAB = () => {
     const tokenIds = useTokenHolder();
     const scrollRef = useRef(0);
 
-    const debounceScroll = useCallback(
-        debounce(() => {
+    const throttleScroll = useCallback(
+        throttle(() => {
             setIsVisible(
                 window.scrollY > 100 && scrollRef.current > window.scrollY
             );
             scrollRef.current = window.scrollY;
-        }, 200),
+        }, 100),
         []
     );
 
     useWindowListener(
         'scroll',
         () => {
-            debounceScroll();
+            throttleScroll();
         },
-        [debounceScroll]
+        [throttleScroll]
     );
 
     return (

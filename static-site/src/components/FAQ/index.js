@@ -9,28 +9,41 @@ import React, { useState } from 'react';
 // # TODO => get answers to these questions
 const QUESTIONS = [
     {
-        question: 'Are these images or renderings?',
-        answer: 'In the early phases of this project, Chris spent hundreds of hours flying around Google Earth in search of highly detailed historic buildings. The intent is to uncover hidden gems in smaller cities rather than only featuring well known buildings in cities like NYC or Chicago. Only historic highrises built before ~1940 are considered in the series, and because of the consistent vertical format, only narrow buildings could be photographed.',
+        question: 'Who is the artist?',
+        answer: 'Chris Hytha is a photographer and digital artist who first began offering his work as NFTs in July 2021. His Rowhomes project has surpassed 300E in trading volume on OpenSea, and Chris has more than 60,000 Instagram followers. Chris earned a bachelor’s degree in architecture from Drexel University, and recently became an FAA-certified drone pilot.',
     },
     {
-        question: 'How is this work created?',
-        answer: 'The Mavic Air 2S drone was used to create these visuals. The drone can only shoot in landscape orientation, so several images were stitched vertically to create a high resolution portrait orientation image. Chris is a licensed part 107 drone pilot.',
+        question: 'How are the buildings selected?',
+        answer: 'Highrises focuses on antique skyscrapers from the 1930s and earlier. The preference is for unique buildings with interesting upper features. These details are often difficult or impossible to see from the sidewalk, but they were no less important to the architects. Through drone photography, we can get closer and see more detail than has ever been possible.',
     },
     {
-        question: 'How were the buildings featured selected?',
-        answer: 'Historic highrises follow the format of classical columns with a base, middle and top. The creative choice was made to only feature the top portion of each building, as this is the expressive “face” that makes the building distinctive. Additionally, photographing only the top allows for a more detailed image to appreciate the craftsmanship far above street level that is rarely seen.',
+        question: 'How are the stories collected?',
+        answer: 'Mark Houser researches each Highrise thoroughly, with special attention to archival newspapers to see how they were described and received when they first appeared. The goal is to go beyond what is commonly known about it, to challenge urban myths and misperceptions, and to understand the people who commissioned and built them.',
     },
     {
-        question: 'What is an NFT?',
-        answer: 'NFTs (Non-Fungible Tokens) are unique and verifiable digital assets. They are created onto a Blockchain (Most popularly to Ethereum), which is a decentralized ledger that records who created the asset, as well as any time it changes hands. This technology is very broad, representing the general idea of ownership on the internet.',
+        question: 'How have the images been altered?',
+        answer: 'After a composite photo is stacked and stitched together from multiple high-res photos taken from the drone, Chris trims out distracting background images and adds light and color effects in Photoshop to enhance the artistic composition.',
     },
     {
-        question: 'Why buy a highrise NFT?',
-        answer: 'By owning a Highrise NFT you are directly supporting the team of people documenting these historic structures. Each NFT is a 1/1 digital collectible, with a value created by the community that forms around the project. Holding a Highrise NFT will grant you access to the private collectors channel of our discord where we encourage active participation in decision making regarding the project.',
+        question: 'How many Highrises are there, and which buildings?',
+        answer: 'The project will include well over 100 buildings from cities in every part of the country. Upcoming drops will focus on the Northeast, West, Midwest, and South, with a final drop for New York City. Stay tuned and join the mailing list to find out what’s next.',
     },
     {
-        question: 'Who is the Artist?',
-        answer: 'Our founder Chris Hytha has been an active member of the NFT Photography community since July 2021. He has been refining his skills as a photographer / digital artist while earning his bachelor of architecture degree from Drexel University. Chris has gained a following of over 60,000 people on instagram for his unique style of imagery heavily influenced by his architectural background.',
+        question: 'What benefits do I get when I buy a Highrise NFT?',
+        answer: 'The first owner receives the first numbered and signed architectural print mailed directly to them anywhere in the United States. (Postage fees apply for a foreign mailing address.) Collectors also get access to all full-res JPGs and photos from their Highrise and a curated collection of historic archival images that relate to it.',
+    },
+    {
+        question:
+            'Where can I connect with other Highrises fans and collectors?',
+        answer: 'We have a thriving community of fans and collectors that you can join on Discord. Join in the discussion and fun! Members get behind-the-scenes content, chats with the artist, sneak peeks and early access to releases, plus contests and giveaways.',
+    },
+    {
+        question: 'How can I have a Highrise without buying an NFT?',
+        answer: 'Each Highrise has a limited run of 100 high-res architectural prints, numbered and signed by the artist. The prints feature the NFT image accompanied by the history and vital statistics of each building.',
+    },
+    {
+        question: 'How does the Highrises project help?',
+        answer: 'Besides raising awareness and appreciation for overlooked marvels in cities across the country, the Highrises project reserves 5% of the proceeds from every primary NFT sale. Those funds are directed into a separate account to be donated to worthy charitable causes.',
     },
 ];
 

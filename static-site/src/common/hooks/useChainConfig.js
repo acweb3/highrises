@@ -7,15 +7,15 @@ export const useChainConfig = () => {
     const ethers = useEthers();
 
     const contractAddress =
-        ethers.library?.network?.chainId === 4
-            ? config.rinkebyContractAddress
+        ethers.library?.network?.chainId === 1
+            ? config.mainnetContractAddress
             : config.rinkebyContractAddress;
 
     return {
         openseaURL:
-            ethers.library?.network?.chainId === 4
-                ? 'testnets.opensea'
-                : 'opensea',
+            ethers.library?.network?.chainId === 1
+                ? 'opensea'
+                : 'testnets.opensea',
         contract: new Contract(contractAddress, simpleContractAbi),
         contractAddress,
     };

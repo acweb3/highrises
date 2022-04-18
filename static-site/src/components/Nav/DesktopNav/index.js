@@ -4,6 +4,11 @@ import * as S from 'components/Nav/DesktopNav/DesktopNav.styled';
 export const LINKS = [
     { text: 'About Me', href: 'https://www.hythacg.com/aboutme' },
     { text: 'Rowhomes', href: 'https://www.hythacg.com/rowhomes' },
+    {
+        text: 'Highrises',
+        href: '#',
+        isActive: true,
+    },
     { text: 'Prints', href: 'https://www.hythacg.com/print-shop' },
     {
         text: 'Architecture',
@@ -21,8 +26,8 @@ export const DesktopNav = () => {
 
             <S.Navigation>
                 <S.Links>
-                    {LINKS.map(({ text, href }) => (
-                        <S.Link key={href} href={href}>
+                    {LINKS.map(({ text, href, isActive }) => (
+                        <S.Link isActive={isActive} key={href} href={href}>
                             {text}
                         </S.Link>
                     ))}

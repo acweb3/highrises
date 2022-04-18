@@ -6,12 +6,14 @@ import styled from 'styled-components';
 export const Plus = styled(UnstyledPlus)`
     color: ${(props) => props.theme.colors.blue[0]};
     width: 24px;
+    min-width: 24px;
     margin-right: 4px;
 `;
 
 export const Minus = styled(UnstyledMinus)`
     color: ${(props) => props.theme.colors.blue[0]};
     width: 24px;
+    min-width: 24px;
     margin-right: 4px;
 `;
 
@@ -48,6 +50,7 @@ export const Question = styled(Paragraph)`
     ${(props) => props.theme.breakpoints.small`
         font-size: 1.25rem;
         margin-top: 32px;
+        white-space: nowrap;
     `}
 `;
 
@@ -133,17 +136,17 @@ export const FAQ = styled.div`
     display: flex;
     overflow: hidden;
 
-    min-height: 1300px;
+    min-height: 1600px;
 
     ${(props) => props.theme.breakpoints.small`
-        min-height: 1000px;
+        min-height: 1300px;
     `}
 
     ${(props) => props.theme.breakpoints.medium`
-        min-height: 900px;
+        min-height: 1400px;
     `}
 
     ${(props) => props.theme.breakpoints.large`
-        min-height: 1000px;
+        min-height: 1500px;
     `}
 `;

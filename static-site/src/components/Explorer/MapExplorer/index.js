@@ -13,11 +13,6 @@ export const MapExplorer = () => {
     const [zoom, setZoom] = useState(17);
     const [center, setCenter] = useState({ lat: 39.952583, lng: -75.165222 });
     const { setActiveHighrise } = useActiveHighriseContext();
-    const {
-        buildingExplorerDesktopRef,
-        buildingExplorerMobileRef,
-        mastheadRef,
-    } = useExplorerRefContext();
     const { activeHighrise, highrises } = useActiveHighriseContext();
     const { setIsMapView } = useMapViewContext();
 
@@ -53,27 +48,8 @@ export const MapExplorer = () => {
                                     }
                                     position={highrise.ltlng}
                                     onClick={() => {
-                                        navigate('/');
                                         setActiveHighrise(highrise);
                                         setIsMapView(false);
-
-                                        setTimeout(() => {
-                                            mastheadRef.current.scrollIntoView({
-                                                block: 'start',
-                                            });
-
-                                            buildingExplorerMobileRef.current.children[
-                                                index
-                                            ].scrollIntoView({
-                                                inline: 'center',
-                                            });
-
-                                            buildingExplorerDesktopRef.current.children[
-                                                index
-                                            ].scrollIntoView({
-                                                inline: 'center',
-                                            });
-                                        }, 0);
                                     }}
                                 />
                             );

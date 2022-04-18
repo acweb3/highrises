@@ -14,7 +14,7 @@ export const EmailCollection = () => {
                 </S.EmailCollectionHeader>
                 <S.Paragraph>
                     To recieve updates on future NFT releases, prints, and the
-                    photo book, please add your email below.
+                    book, please add your email below.
                 </S.Paragraph>
 
                 <S.EmailCollectionInput
@@ -53,6 +53,15 @@ export const EmailCollection = () => {
                     <S.EmailIcon /> hythacg.highrises@gmail.com
                 </S.EmailOutreach>
             </S.EmailCollectionContent>
+            <S.LogoSection>
+                <S.LogoLink
+                    href="http://aboltc.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <S.ABoltCIcon />
+                </S.LogoLink>
+            </S.LogoSection>
         </S.EmailCollection>
     );
 };

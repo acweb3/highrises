@@ -7,72 +7,87 @@ import { Box } from 'components/ui/Box';
 
 const POINTS = [
     {
-        header: 'NORTHEAST',
+        header: 'April : Mid-Atlantic',
         sections: [
             {
-                header: '25 highrises',
+                header: '',
                 points: [
-                    'Philadelphia, PA',
-                    'Camden, NJ',
-                    'Baltimore, MD',
-                    'Richmond, VA',
-                    'Pittsburgh. PA',
-                    'Buffalo, NY',
+                    'Philadelphia, Pittsburgh, Baltimore',
+                    '20 1/1 NFTs',
+                    'Custom smart contract, hosted on Opensea',
+                ],
+            },
+
+            {
+                header: '1 Retweet Giveaway: The Drake',
+                points: ['Winner announced 4/20 Noon EST'],
+            },
+            {
+                header: '3 Public Auctions',
+                points: [
+                    'Highrises #01, #16, #20',
+                    'Auctions begin 4/19 Noon EST and close 4/22 Noon EST',
                 ],
             },
             {
-                header: 'NFT Release',
+                header: '16 Presale at 1 ETH',
                 points: [
-                    '1 Giveaway (Hythacg Twitter)',
-                    '5 reserved for Rowhomes holders',
-                    '4 reserved for Hythacg 1/1 holders',
-                    '5 Auctions',
-                    '10 publicly available',
+                    'Presale opens 4/21 11am EST',
+                    'Limited to Rowhomes NFT holders and collectors of Hythacg’s 1/1 works on SuperRare and Foundation as of 4/20 6pm EST',
+                    'First come first served, limit one per collector',
+                ],
+            },
+            {
+                header: 'Public Release',
+                points: [
+                    '4/21 12pm EST',
+                    'Any highrises not sold during presale will be publicly offered at 1 ETH',
                 ],
             },
         ],
     },
     {
-        header: 'WEST COAST',
+        header: 'June: Northeast',
         sections: [
             {
-                header: '25 highrises',
-                points: [
-                    'Los Angeles, CA',
-                    'San Francisco. CA',
-                    'Oakland, CA',
-                    'Seattle. CA',
-                ],
-            },
-            {
-                header: 'NFT Release',
-                points: ['TBA'],
+                header: 'Boston, Buffalo, Albany and more',
             },
         ],
     },
     {
-        header: 'MIDWEST',
+        header: 'August: West',
         sections: [
             {
-                header: '25 highrises',
-                points: ['Chicago', 'Detroit', 'TBA'],
-            },
-            {
-                header: 'NFT Release',
-                points: ['TBA'],
+                header: 'Los Angeles, San Francisco, Seattle and more',
             },
         ],
     },
     {
-        header: 'NYC',
+        header: 'October: Midwest',
         sections: [
             {
-                points: ['TBA'],
+                header: 'Chicago, Detroit, Columbus and more',
             },
         ],
     },
     {
-        header: 'The Book',
+        header: 'December: South',
+        sections: [
+            {
+                header: ['Miami, Houston, Atlanta and more'],
+            },
+        ],
+    },
+    {
+        header: 'March 2023: NYC',
+        sections: [
+            {
+                header: ['Miami, Houston, Atlanta and more'],
+            },
+        ],
+    },
+    {
+        header: '2023: The Book',
     },
 ];
 

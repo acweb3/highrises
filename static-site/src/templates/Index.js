@@ -19,7 +19,7 @@ const App = ({ pageContext: { highrises, thumbnail } }) => {
                     <meta name="title" content="Highrises - HYTHA.CG" />
                     <meta
                         name="description"
-                        content="Highrises are the iconic elements of American cities. From their origins in Manhattan and Chicago, these soaring structures signaled radical new heights in technological advancement. By fusing Classical, Renaissance, and Gothic motifs onto immense steel forms, then defining a new architectural language with Art Deco and International, America’s skyscrapers set the tone for cities of the world to follow."
+                        content="Highrises are the iconic elements of American cities. Reaching radical new heights in technological advancement, skyscrapers fused Classical, Renaissance, and Gothic motifs onto steel and defined a new architectural language with Art Deco and International."
                     />
                     <meta property="og:type" content="website" />
                     <meta property="og:title" content="Highrises - HYTHA.CG" />
@@ -30,7 +30,7 @@ const App = ({ pageContext: { highrises, thumbnail } }) => {
                     />
                     <meta
                         property="og:description"
-                        content="Highrises are the iconic elements of American cities. From their origins in Manhattan and Chicago, these soaring structures signaled radical new heights in technological advancement. By fusing Classical, Renaissance, and Gothic motifs onto immense steel forms, then defining a new architectural language with Art Deco and International, America’s skyscrapers set the tone for cities of the world to follow."
+                        content="Highrises are the iconic elements of American cities. Reaching radical new heights in technological advancement, skyscrapers fused Classical, Renaissance, and Gothic motifs onto steel and defined a new architectural language with Art Deco and International."
                     />
                     <meta property="og:type" content="website" />
                     <meta

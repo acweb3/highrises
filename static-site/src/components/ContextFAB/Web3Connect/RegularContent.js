@@ -11,8 +11,8 @@ export const RegularContent = ({ error }) => {
     const ens = useLookupAddress();
     const connectText = isMobile ? 'Connect' : 'Connect wallet';
 
-    if (error) {
-        return errorMap[error] ?? error;
+    if (errorMap[error]) {
+        return errorMap[error];
     }
 
     return <>{account ? ens ?? shortenAddress(account) : connectText}</>;
