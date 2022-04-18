@@ -67,7 +67,7 @@ const inquirer = async () => {
     await sharp(inquirer)
         .extract({
             left: Math.floor(width / 3) + 400,
-            top: 2000,
+            top: 1500,
             width: Math.floor(width / 3) * 2 - 400,
             height: height - 5000,
         })
