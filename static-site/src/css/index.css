@@ -1,0 +1,49 @@
+@import url('//hello.myfonts.net/count/41bc0d');
+@font-face {
+    font-family: 'R&C-BasicLight';
+    font-display: swap;
+    src: url('../fonts/RCBasicLight/font.woff2') format('woff2'),
+        url('../fonts/RCBasicLight/font.woff') format('woff');
+}
+@font-face {
+    font-family: 'R&C-BasicFull';
+    font-display: swap;
+    src: url('../fonts/RCBasicFull/font.woff2') format('woff2'),
+        url('../fonts/RCBasicFull/font.woff') format('woff');
+}
+@font-face {
+    font-family: 'R&C-BasicEmpty';
+    font-display: swap;
+    src: url('../fonts/RCBasicEmpty/font.woff2') format('woff2'),
+        url('../fonts/RCBasicEmpty/font.woff') format('woff');
+}
+@font-face {
+    font-family: 'R&C-GuidelinesEmpty';
+    font-display: swap;
+    src: url('../fonts/RCGuidelinesEmpty/font.woff2') format('woff2'),
+        url('../fonts/RCGuidelinesEmpty/font.woff') format('woff');
+}
+@font-face {
+    font-family: 'R&C-GuidelinesDark';
+    font-display: swap;
+    src: url('../fonts/RCGuidelinesDark/font.woff2') format('woff2'),
+        url('../fonts/RCGuidelinesDark/font.woff') format('woff');
+}
+@font-face {
+    font-family: 'R&C-GuidelinesLight';
+    font-display: swap;
+    src: url('../fonts/RCGuidelinesLight/font.woff2') format('woff2'),
+        url('../fonts/RCGuidelinesLight/font.woff') format('woff');
+}
+@font-face {
+    font-family: 'R&C-GuidelinesFull';
+    font-display: swap;
+    src: url('../fonts/RCGuidelinesFull/font.woff2') format('woff2'),
+        url('../fonts/RCGuidelinesFull/font.woff') format('woff');
+}
+@font-face {
+    font-family: 'R&C-BasicDark';
+    font-display: swap;
+    src: url('../fonts/RCBasicDark/font.woff2') format('woff2'),
+        url('../fonts/RCBasicDark/font.woff') format('woff');
+}
