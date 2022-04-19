@@ -61,7 +61,11 @@ export const ContextFAB = () => {
                 >
                     <S.InstagramLogo />
                 </S.ContextFABButton>
-                <S.ContextFABButton isInactive>
+                <S.ContextFABButton
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    href="https://opensea.io/collection/highrises"
+                >
                     <S.OpenseaLogo />
                 </S.ContextFABButton>
                 <S.ContextFABButton
