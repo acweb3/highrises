@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" id="cart-icon--even" viewBox="0 0 31 26">
-    <circle stroke-miterlimit="10" cx="23" cy="23" r="1"/>
-    <circle stroke-miterlimit="10" cx="9" cy="23" r="1"/>
-    <path fill="none" stroke-miterlimit="10" d="M0,2h5c0.6,0,1.1,0.4,1.1,1l1.7,13c0.1,0.5,0.6,1,1.1,1h15c0.5,0,1.2-0.4,1.4-0.9l3.3-8.1C28.8,7.4,28.5,7,28,7H12"/>
-</svg>
