@@ -13,12 +13,14 @@
         "@trivago/prettier-plugin-sort-imports": "^3.2.0",
         "prettier": "^2.5.1"
     },
+    "type": "module",
     "dependencies": {
         "@googlemaps/google-maps-services-js": "^3.3.10",
         "any-text": "^1.2.0",
         "change-case": "^4.1.2",
         "dotenv": "^16.0.0",
         "iiif-processor": "^2.0.1",
+        "node-fetch": "^3.2.3",
         "sharp": "^0.30.0"
     }
 }

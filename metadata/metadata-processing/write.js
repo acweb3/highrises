@@ -62,11 +62,22 @@ const write = (traits) => {
                     return attribute;
                 });
 
+            if (index === 0) {
+                console.log({
+                    ...trait,
+                    attributes: filteredAttributes,
+                });
+            }
+
             fs.writeFileSync(
                 `dist/chain/${index}`,
                 JSON.stringify(
                     {
                         ...trait,
+                        name: `Highrise #${`${index + 1}`.padStart(2, '0')}`,
+                        description: `**${
+                            trait.name
+                        }**\n\n${trait.description.replace('\n', '\n\n')}`,
                         attributes: filteredAttributes,
                     },
                     null,
