@@ -81,6 +81,9 @@ module.exports = {
             resolve: `gatsby-plugin-env-variables`,
             options: {
                 allowList: [
+                    'REACT_APP_RINKEBY_ALCHEMY_URL',
+                    'REACT_APP_MAINNET_ALCHEMY_URL',
+                    'REACT_APP_MAINNET_CONTRACT_ADDRESS',
                     'REACT_APP_RINKEBY_CONTRACT_ADDRESS',
                     'REACT_APP_GOOGLE_MAPS_API_KEY',
                     'REACT_APP_GOOGLE_MAPS_MAP_ID',

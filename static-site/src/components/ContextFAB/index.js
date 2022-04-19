@@ -1,3 +1,4 @@
+import { useEthers } from '@usedapp/core';
 import { useWindowListener } from 'common/hooks/useWindowListener';
 import { useWindowSize } from 'common/hooks/useWindowSize';
 import * as S from 'components/ContextFAB/ContextFAB.styled';
@@ -6,12 +7,32 @@ import { useTokenHolder } from 'components/ContextFAB/hooks/useTokenHolder';
 import throttle from 'lodash.throttle';
 import { useCallback, useEffect, useRef, useState } from 'react';
 
+/**
+ * Hack for getting token ids and preventing sending invalid call when no account is present.
+ */
+const Tokens = ({ setTokenIds }) => {
+    const tokenIds = useTokenHolder();
+
+    useEffect(() => {
+        setTokenIds((oldTokenIds) => {
+            if (oldTokenIds.length !== tokenIds.length) {
+                return tokenIds;
+            }
+
+            return oldTokenIds;
+        });
+    }, [tokenIds]);
+
+    return null;
+};
+
 export const ContextFAB = () => {
     const { isLoaded } = useWindowSize();
     const [hasInitialized, setHasInitialized] = useState(false);
     const [isVisible, setIsVisible] = useState(false);
-    const tokenIds = useTokenHolder();
+    const [tokenIds, setTokenIds] = useState([]);
     const scrollRef = useRef(0);
+    const { account } = useEthers();
 
     const throttleScroll = useCallback(
         throttle(() => {
@@ -77,6 +98,7 @@ export const ContextFAB = () => {
                 </S.ContextFABButton>
             </S.ContextFABLinks>
             <Web3Connect tokenIds={tokenIds} />
+            {account && <Tokens setTokenIds={setTokenIds} />}
         </S.ContextFAB>
     );
 };

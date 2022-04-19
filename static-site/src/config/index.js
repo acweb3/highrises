@@ -14,7 +14,15 @@ export const config = {
     ),
     mainnetContractAddress: requiredEnvVar(
         'mainnetContractAddress',
-        '0xF1bFe8CAbf09e060e33125534F8404318707aE87'
+        process.env.REACT_APP_MAINNET_CONTRACT_ADDRESS
+    ),
+    rinkebyAlchemyUrl: requiredEnvVar(
+        'rinkebyAlchemyUrl',
+        process.env.REACT_APP_RINKEBY_ALCHEMY_URL
+    ),
+    mainnetAlchemyUrl: requiredEnvVar(
+        'mainnetAlchemyUrl',
+        process.env.REACT_APP_MAINNET_ALCHEMY_URL
     ),
     googleMapsAPIKey: requiredEnvVar(
         'googleMapsAPIKey',
