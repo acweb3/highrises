@@ -10,12 +10,12 @@ module.exports = {
 	solidity: "0.8.7",
 
 	networks: {
-		// mainnet: {
-		// 	url: config.mainnetAlchemyURL,
-		// 	accounts: [config.mainnetPrivateKey],
-		// },
+		mainnet: {
+			url: config.mainnetAlchemyURL,
+			accounts: [config.mainnetPrivateKey],
+		},
 
-		// ropsten: { 
+		// ropsten: {
 		// 	url: config.ropstenAlchemyURL,
 		// 	accounts: [config.ropstenPrivateKey],
 		// },

@@ -1,129 +1,110 @@
 // SPDX-License-Identifier: SPDX-License
+/// @author aboltc
 pragma solidity ^0.8.6;
 
-import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
-import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
+import "erc721a/contracts/ERC721A.sol";
+import "erc721a/contracts/extensions/ERC721AQueryable.sol";
 
 /*
-a⚡️c
+@Hythacg
+highrises.hythacg.com
 
-high rises demo
+Highrises are the iconic elements of American cities.
+Reaching radical new heights in technological advancement,
+skyscrapers fused Classical, Renaissance, and Gothic motifs
+onto steel and defined a new architectural language with
+Art Deco and International.
+
+The Highrises project reveals hidden details of remarkable buildings,
+including many that are underappreciated. The images showcase structures
+that reflect the values and ideals animating the early 20th century.
+The stories provide historical context and deepen our understanding
+of their importance and value.
+
+a⚡️c
+@aboltc_
 */
 
-contract Highrises is ERC721, Ownable {
+contract OwnableDelegateProxy {
+
+}
+
+contract OpenseaProxyRegistry {
+	mapping(address => OwnableDelegateProxy) public proxies;
+}
+
+contract Highrises is ERC721A, ERC721AQueryable, Ownable {
+	/**
+	 * @param __baseURI base uri
+	 */
+	constructor(string memory __baseURI) ERC721A("Highrises", "HIGHRISE") {
+		baseURI = __baseURI;
+	}
+
+	/**--------------------------
+	 * ERC721A implementation
+	 */
 	string public baseURI;
 
-	uint128 private constant MAX_SUPPLY = 50; // Max supply
-	uint128 private saleLimitPerUser = 777;
-	string private scavengerHuntUUID; // # TODO => fix this
-	uint256 public listPrice = 20000000000000000; // 0.02 eth initial list price
-
-	mapping(address => uint128) private saleLimitMap; // Tally if user has made a purchase
-
-	// Keep track of state
-	using Counters for Counters.Counter;
-	Counters.Counter private _tokenIdCounter; // For keeping track of sequence
-
-	constructor(string memory _baseURI) ERC721("Highrises", "Highrises") {
-		baseURI = _baseURI;
+	/**
+	 * @notice escape hatch to update URI.
+	 * @param __baseURI base uri
+	 */
+	function setBaseURI(string memory __baseURI) public onlyOwner {
+		baseURI = __baseURI;
 	}
 
 	/**
-	 * Escape hatch to update URI.
+	 * @notice mint functionality limited to owner
 	 */
-	function setBaseURI(string memory _baseURI) public onlyOwner {
-		baseURI = _baseURI;
+	function mint(uint256 _amount) public payable onlyOwner {
+		_safeMint(msg.sender, _amount);
 	}
 
-	// Minting
-	/*------------------------------------*/
-	function setScavengerHuntUUID(string memory _scavengerHuntUUID)
-		public
+	function _baseURI() internal view virtual override returns (string memory) {
+		return baseURI;
+	}
+
+	/**--------------------------
+	 * Marketplace functionality
+	 */
+
+	/// @dev rinkeby: 0xf57b2c51ded3a29e6891aba85459d600256cf317
+	address public proxyRegistryAddress =
+		0xa5409ec958C83C3f309868babACA7c86DCB077c1;
+	mapping(address => bool) projectProxy;
+
+	function flipProxyState(address proxyAddress) external onlyOwner {
+		projectProxy[proxyAddress] = !projectProxy[proxyAddress];
+	}
+
+	/**
+	 * @notice opensea setter
+	 */
+	function setProxyRegistryAddress(address _proxyRegistryAddress)
+		external
 		onlyOwner
 	{
-		scavengerHuntUUID = _scavengerHuntUUID;
-	}
-
-	function scavengerHunt(string memory _uuid) public payable {
-		require(listPrice <= msg.value, "LOW_ETH");
-		require(
-			saleLimitMap[_msgSender()] < saleLimitPerUser,
-			"MAX_LIMIT_PER_BUYER"
-		);
-		// Allocate for premint when checking max supply
-		require(_tokenIdCounter.current() < MAX_SUPPLY, "MAX_REACHED");
-		require(
-			keccak256(abi.encode(scavengerHuntUUID)) ==
-				keccak256(abi.encode(_uuid)),
-			"WRONG_UUID"
-		);
-
-		saleLimitMap[_msgSender()] = saleLimitMap[_msgSender()] + 1;
-
-		// # TODO => fix this
-		_safeMint(msg.sender, 55);
+		proxyRegistryAddress = _proxyRegistryAddress;
 	}
 
 	/**
-	 * Get token IDs associated with a specific address.
+	 * @dev preapprove for opensea
 	 */
-	function getOwnedTokenIdsByAddress(address _address)
-		public
-		view
-		returns (bool[] memory)
-	{
-		require(balanceOf(_address) > 0, "NO_TOKENS");
-
-		bool[] memory tokens = new bool[](MAX_SUPPLY);
-
-		for (uint256 i = 0; i < tokens.length; i++) {
-			if (_exists(i) && ownerOf(i) == _address) {
-				tokens[i] = true;
-			}
-		}
-
-		return tokens;
-	}
-
-	/**
-	 * Mint, updating storage of sales.
-	 */
-	function mint(uint256 _tokenId) public payable {
-		require(listPrice <= msg.value, "LOW_ETH");
-		require(
-			saleLimitMap[_msgSender()] < saleLimitPerUser,
-			"MAX_LIMIT_PER_BUYER"
-		);
-		// Allocate for premint when checking max supply
-		require(!_exists(_tokenId), "TOKEN_ALLOCATED");
-
-		saleLimitMap[_msgSender()] = saleLimitMap[_msgSender()] + 1;
-
-		_safeMint(msg.sender, _tokenId);
-		_tokenIdCounter.increment();
-	}
-
-	// ERC721 Things
-	/*------------------------------------*/
-
-	/**
-	 * Get total token supply
-	 */
-	function totalSupply() public view returns (uint256) {
-		return _tokenIdCounter.current();
-	}
-
-	/**
-	 * Get token URI
-	 */
-	function tokenURI(uint256 _tokenId)
+	function isApprovedForAll(address _owner, address operator)
 		public
 		view
 		override
-		returns (string memory)
+		returns (bool)
 	{
-		require(_exists(_tokenId), "TOKEN_DNE");
-		return string(abi.encodePacked(baseURI, Strings.toString(_tokenId)));
+		OpenseaProxyRegistry proxyRegistry = OpenseaProxyRegistry(
+			proxyRegistryAddress
+		);
+		if (address(proxyRegistry.proxies(_owner)) == operator) {
+			return true;
+		}
+
+		return super.isApprovedForAll(_owner, operator);
 	}
 }

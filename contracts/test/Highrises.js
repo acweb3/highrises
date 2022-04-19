@@ -38,39 +38,46 @@ describe("Highrises contract", () => {
 		});
 	});
 
-	describe("Metadata", async () => {
-		it("list correct token owners", async () => {
+	describe("Mint", async () => {
+		it("mint correctly", async () => {
 			const totalSupplyBefore = await hardhatToken.totalSupply();
 			expect(totalSupplyBefore).to.be.equal(0);
+			await hardhatToken.mint(20);
+			const totalSupplyAfter = await hardhatToken.totalSupply();
+			expect(totalSupplyAfter).to.be.equal(20);
+		});
 
-			console.log(ethers.utils.parseEther("0.02"));
+		it("should only let owner mint", async () => {
+			const signer = signers[0];
+			await expect(
+				hardhatToken.connect(signer).mint(1)
+			).to.be.revertedWith("caller is not the owner");
+		});
+	});
 
-			await Promise.all(
-				signers.slice(0, 4).map(async (signer, i) => {
-					await hardhatToken.connect(signer).mint(i, {
-						value: ethers.utils.parseEther("0.02"),
-					});
-				})
+	describe("Metadata", async () => {
+		it("should have correct uri", async () => {
+			await hardhatToken.mint(20);
+			const tokenURI = await hardhatToken.tokenURI(0);
+			expect(tokenURI).to.be.equal(`${config.ipfsURL}0`);
+		});
+
+		it("should have correct uri after update", async () => {
+			await hardhatToken.mint(20);
+			expect(await hardhatToken.tokenURI(0)).to.be.equal(
+				`${config.ipfsURL}0`
 			);
 
-			expect(
-				await hardhatToken.getOwnedTokenIdsByAddress(signers[0].address)
-			).to.deep.equal([true, ...[...Array(49)].map((x) => false)]);
+			await hardhatToken.setBaseURI("coolNewIPFS");
+			expect(await hardhatToken.tokenURI(0)).to.be.equal(`coolNewIPFS0`);
+		});
+	});
 
-			await hardhatToken.connect(signers[0]).mint(4, {
-				value: ethers.utils.parseEther("0.02"),
-			});
-
-			expect(
-				await hardhatToken.getOwnedTokenIdsByAddress(signers[0].address)
-			).to.deep.equal([
-				true,
-				false,
-				false,
-				false,
-				true,
-				...[...Array(45)].map((x) => false),
-			]);
+	describe("ERC721A Functionality", async () => {
+		it("should list owners of token", async () => {
+			await hardhatToken.mint(5);
+			const owner = await hardhatToken.owner();
+			const tokensOfOwner = await hardhatToken.tokensOfOwner(owner);
 		});
 	});
 });
