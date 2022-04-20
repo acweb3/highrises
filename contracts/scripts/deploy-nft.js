@@ -11,7 +11,7 @@ async function main() {
 
 	await highrises.deployed();
 
-	console.log("test deployed to:", highrises.address);
+	console.log("Highrises deployed to:", highrises.address);
 	console.log("estimated gas:", estimatedGas);
 }
 
