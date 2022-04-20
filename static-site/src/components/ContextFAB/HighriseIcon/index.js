@@ -1,5 +1,5 @@
 import { pullImage } from 'common/images';
-import * as S from 'components/ContextFAB/Web3Connect/HighriseIcon/HighriseIcon.styled';
+import * as S from 'components/ContextFAB/HighriseIcon/HighriseIcon.styled';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
 import { navigate } from 'gatsby';
 import kebabCase from 'just-kebab-case';

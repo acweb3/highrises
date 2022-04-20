@@ -5,7 +5,12 @@ import styled from 'styled-components';
 export const ReserveCountdownWrapper = styled.div`
     display: flex;
     justify-content: space-between;
-    width: 400px;
+
+    width: 100%;
+
+    ${(props) => props.theme.breakpoints.medium`
+        width: 400px;
+    `}
 `;
 
 export const ReserveCountdowns = styled.div`
@@ -26,26 +31,41 @@ export const ReserveCountdowns = styled.div`
 `;
 
 export const ReserveParagraph = styled(Paragraph)`
-    width: 50%;
     text-align: center;
     margin-bottom: 48px;
+
+    ${(props) => props.theme.breakpoints.medium`
+        width: 50%;
+    `}
 `;
 
 export const ReserveHeader = styled(Header)`
-    ${(props) => props.theme.utility.bubbleBorder};
+    width: 100%;
     padding-bottom: 24px;
     margin-bottom: 48px;
-    width: 50%;
     text-align: center;
+
+    ${(props) => props.theme.utility.bubbleBorder};
+
+    ${(props) => props.theme.breakpoints.medium`
+        width: 50%;
+    `}
 `;
 
 export const ReserveGrid = styled.div`
-    margin-top: 48px;
+    margin-top: 64px;
     display: grid;
-    grid-template-rows: repeat(5, auto);
-    grid-template-columns: repeat(4, 200px);
-    column-gap: 32px;
-    row-gap: 32px;
+    grid-template-rows: repeat(10, auto);
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 16px;
+    row-gap: 16px;
+
+    ${(props) => props.theme.breakpoints.medium`
+        grid-template-rows: repeat(5, auto);
+        grid-template-columns: repeat(4, 200px);
+        column-gap: 32px;
+        row-gap: 32px;
+    `}
 `;
 
 export const Reserve = styled.div`
@@ -54,7 +74,8 @@ export const Reserve = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 88px 32px 32px;
+
+    padding: 16px 32px;
 
     background: #fff;
     background: linear-gradient(
@@ -63,4 +84,8 @@ export const Reserve = styled.div`
         rgba(255, 255, 255, 0.8) 70%,
         rgba(255, 255, 255, 1) 100%
     );
+
+    ${(props) => props.theme.breakpoints.medium`
+        padding: 88px 32px 32px;
+    `}
 `;

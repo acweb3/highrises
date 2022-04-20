@@ -24,6 +24,11 @@ export const TwitterLogo = styled(UnstyledTwitterLogo)`
     }
 `;
 
+export const ContextFABIcons = styled.div`
+    margin-left: 16px;
+    display: flex;
+`;
+
 export const ContextFABButton = styled.a`
     width: 40px;
     height: 40px;

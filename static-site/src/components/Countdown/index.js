@@ -1,8 +1,9 @@
 import * as S from 'components/Countdown/Countdown.styled';
 import { useEffect, useState } from 'react';
 
-export const Countdown = ({ countDownTarget }) => {
+export const Countdown = ({ countDownTarget, terminatedText }) => {
     const [countdown, setCountdown] = useState('');
+    const [isTerminated, setIsTerminated] = useState(false);
 
     useEffect(() => {
         const sti = setInterval(() => {
@@ -13,6 +14,10 @@ export const Countdown = ({ countDownTarget }) => {
             const hours = Math.max(Math.floor(diff / 1000 / 60 / 60) % 24, 0);
             const minutes = Math.max(Math.floor(diff / 1000 / 60) % 60, 0);
             const seconds = Math.max(Math.floor(diff / 1000) % 60, 0);
+
+            if (days === 0 && hours === 0 && minutes === 0 && seconds === 0) {
+                setIsTerminated(true);
+            }
             setCountdown(`${days}d ${hours}h ${minutes}m ${seconds}s`);
         }, 1000);
 
@@ -21,5 +26,9 @@ export const Countdown = ({ countDownTarget }) => {
         };
     }, [countDownTarget]);
 
-    return <S.Countdown isActive={Boolean(countdown)}>{countdown}</S.Countdown>;
+    return (
+        <S.Countdown isActive={Boolean(countdown)}>
+            {isTerminated ? terminatedText : countdown}
+        </S.Countdown>
+    );
 };

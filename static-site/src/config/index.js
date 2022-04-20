@@ -7,6 +7,7 @@ const requiredEnvVar = (name, envVar) => {
 };
 
 export const config = {
+    nodeEnv: requiredEnvVar('nodeEnv', process.env.NODE_ENV),
     release: new Date('4/21/2022'),
     rinkebyContractAddress: requiredEnvVar(
         'rinkebyContractAddress',

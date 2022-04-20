@@ -3,6 +3,7 @@ import { BaseButton } from 'components/ui/BaseButton';
 import styled, { css } from 'styled-components';
 
 export const ReserveHighriseCheckmark = styled(CheckmarkFilledIcon)`
+    z-index: 2;
     position: absolute;
     top: 16px;
     right: 16px;
@@ -15,7 +16,21 @@ export const ReserveHighriseImage = styled.img``;
 
 export const ReserveHighriseButton = styled(BaseButton)`
     margin-top: 16px;
-    cursor: ${(props) => (!props.isActive ? 'not-allowed' : 'pointer')};
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+
+    ${(props) =>
+        !props.isActive &&
+        css`
+            opacity: 0.3;
+            cursor: not-allowed;
+            text-decoration: line-through;
+
+            &:hover {
+                opacity: 0.3;
+            }
+        `}
 `;
 
 export const ReserveHighriseLink = styled.a`
@@ -26,17 +41,23 @@ export const ReserveHighriseLink = styled.a`
     align-items: center;
     justify-content: center;
 
-    min-height: 291.66px;
+    min-height: 200px;
+
+    ${(props) => props.theme.breakpoints.medium`
+        min-height: 291.66px;
+    `}
 `;
 
 export const ReserveHighriseMessage = styled.div`
+    z-index: 2;
+
     color: red;
     position: absolute;
     text-transform: uppercase;
     width: 80%;
 
+    font-size: 16px;
     font-weight: 900;
-    font-size: 24px;
 
     text-align: center;
     display: flex;
@@ -52,6 +73,10 @@ export const ReserveHighriseMessage = styled.div`
 
     overflow: hidden;
 
+    ${(props) => props.theme.breakpoints.medium`
+        font-size: 24px;
+    `}
+
     ${(props) =>
         props.isReservedByYou &&
         css`
@@ -62,9 +87,14 @@ export const ReserveHighriseMessage = styled.div`
     ${(props) =>
         props.isReservedAddress &&
         css`
-            margin-top: 88px;
-            font-size: 16px;
+            margin-top: 64px;
+            font-size: 12px;
             transform: rotate(8deg);
+
+            ${(props) => props.theme.breakpoints.medium`
+                margin-top: 88px;
+                font-size: 16px;
+            `}
         `}
 `;
 
@@ -75,7 +105,6 @@ export const ReserveHighrise = styled.div`
             & > ${ReserveHighriseButton}, & ${ReserveHighriseImage} {
                 opacity: 0.3;
                 transition: opacity 0.4s;
-                text-decoration: line-through;
             }
 
             & ${ReserveHighriseImage} {

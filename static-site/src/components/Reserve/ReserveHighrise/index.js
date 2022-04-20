@@ -36,6 +36,7 @@ export const ReserveHighrise = ({
     isAuction,
     isGiveaway,
     isLoading,
+    isWaiting,
     reservedAddress,
 }) => {
     const { activateBrowserWallet, account } = useEthers();
@@ -49,6 +50,7 @@ export const ReserveHighrise = ({
     const isActive = !reservedAddress && !isAuction && !isGiveaway;
     const isReservedByYou =
         reservedAddress &&
+        account &&
         reservedAddress.toLowerCase() === account.toLowerCase();
 
     return (
@@ -85,7 +87,7 @@ export const ReserveHighrise = ({
                 if (account) {
                     return (
                         <ReserveHighriseButton
-                            isActive={isActive && !isLoading}
+                            isActive={isActive && !isLoading && !isWaiting}
                             tokenId={highrise.index}
                         />
                     );
@@ -96,7 +98,7 @@ export const ReserveHighrise = ({
                         <S.ReserveHighriseButton
                             onClick={activateBrowserWallet}
                         >
-                            Loading
+                            Reserve
                         </S.ReserveHighriseButton>
                     );
                 }

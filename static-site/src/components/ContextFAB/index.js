@@ -2,6 +2,7 @@ import { useEthers } from '@usedapp/core';
 import { useWindowListener } from 'common/hooks/useWindowListener';
 import { useWindowSize } from 'common/hooks/useWindowSize';
 import * as S from 'components/ContextFAB/ContextFAB.styled';
+import { HighriseIcon } from 'components/ContextFAB/HighriseIcon';
 import { Web3Connect } from 'components/ContextFAB/Web3Connect';
 import { useTokenHolder } from 'components/ContextFAB/hooks/useTokenHolder';
 import throttle from 'lodash.throttle';
@@ -97,7 +98,18 @@ export const ContextFAB = () => {
                     <S.TwitterLogo />
                 </S.ContextFABButton>
             </S.ContextFABLinks>
-            <Web3Connect tokenIds={tokenIds} />
+            {/* {
+                <Web3Connect tokenIds={tokenIds} />
+            } */}
+            {tokenIds.length ? (
+                <S.ContextFABIcons>
+                    {tokenIds.map((tokenId) => (
+                        <HighriseIcon key={tokenId} tokenId={tokenId} />
+                    ))}
+                </S.ContextFABIcons>
+            ) : (
+                <Web3Connect />
+            )}
             {account && <Tokens setTokenIds={setTokenIds} />}
         </S.ContextFAB>
     );

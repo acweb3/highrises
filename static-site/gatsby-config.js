@@ -32,12 +32,7 @@ module.exports = {
                 resolvePages: ({ allSitePage: { nodes: allPages } }) => {
                     return allPages;
                 },
-                serialize: ({ path, modifiedGmt }) => {
-                    console.log({
-                        path,
-                        modifiedGmt,
-                        url: `https://${URL}${path}`,
-                    });
+                serialize: ({ path }) => {
                     return {
                         url: `https://${URL}${path}`,
                     };
@@ -81,6 +76,7 @@ module.exports = {
             resolve: `gatsby-plugin-env-variables`,
             options: {
                 allowList: [
+                    'NODE_ENV',
                     'REACT_APP_RINKEBY_ALCHEMY_URL',
                     'REACT_APP_MAINNET_ALCHEMY_URL',
                     'REACT_APP_MAINNET_CONTRACT_ADDRESS',

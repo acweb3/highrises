@@ -1,17 +1,30 @@
 import { ChainId, DAppProvider } from '@usedapp/core';
 import { config } from 'config';
 
-const dappConfig = {
-    // readOnlyChainId: ChainId.Mainnet,
-    // readOnlyUrls: {
-    //     [ChainId.Mainnet]: config.mainnetAlchemyUrl,
-    // },
+const devDappConfig = {
     readOnlyChainId: ChainId.Rinkeby,
     readOnlyUrls: {
         [ChainId.Rinkeby]: config.rinkebyAlchemyUrl,
     },
 };
 
+const prodDappConfig = {
+    readOnlyChainId: ChainId.Mainnet,
+    readOnlyUrls: {
+        [ChainId.Mainnet]: config.mainnetAlchemyUrl,
+    },
+};
+
 export const DApp = ({ children }) => {
-    return <DAppProvider config={dappConfig}>{children}</DAppProvider>;
+    return (
+        <DAppProvider
+            config={
+                config.nodeEnv === 'development'
+                    ? devDappConfig
+                    : prodDappConfig
+            }
+        >
+            {children}
+        </DAppProvider>
+    );
 };

@@ -1,10 +1,5 @@
 import styled from 'styled-components';
 
-export const Web3ConnectIcons = styled.div`
-    margin-left: 16px;
-    display: flex;
-`;
-
 export const Web3Connect = styled.div`
     user-select: none;
 

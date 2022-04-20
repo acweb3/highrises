@@ -94,16 +94,6 @@ const POINTS = [
 export const Roadmap = () => {
     return (
         <>
-            {/* <S.MobileVideoWrapper>
-                <S.RoadmapVideo
-                    onError={(e) => console.log(e)}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    src={clockFaceSrc}
-                />
-            </S.MobileVideoWrapper> */}
             <S.Roadmap>
                 <Clouds cloudKey="roadmap" />
                 <S.RoadmapImageWrapper>
