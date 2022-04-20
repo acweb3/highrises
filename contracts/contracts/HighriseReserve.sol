@@ -7,52 +7,47 @@ import "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol";
 
 contract HighriseReserve is Ownable {
 	constructor(uint8 lowerTokenIdBound_, uint8 upperTokenIdBound_) {
-		// merkleRoot = _merkleRoot;
 		lowerTokenIdBound = lowerTokenIdBound_;
 		upperTokenIdBound = upperTokenIdBound_;
 	}
 
 	/**--------------------------
-	 * Merkle root allowlist
-	 */
-	/// @notice root of hash generated in scripts directory
-	bytes32 merkleRoot;
-
-	/**
-	 * @notice reset merkle root
-	 * @param _merkleRoot root of hash generated in scripts directory
-	 */
-	function setMerkleRoot(bytes32 _merkleRoot) public onlyOwner {
-		merkleRoot = _merkleRoot;
-	}
-
-	/**--------------------------
 	 * Opening mechanics
 	 */
+	/// @dev private sale bounds
 	bool public isPrivateReserveOpen = false;
 	bool public isPublicReserveOpen = false;
 
-	// function handleEndDrop() public onlyOwner {
-	// 	isPrivateReserveOpen = false;
-	// 	isPublicReserveOpen = false;
-	// 	currentDropIndex = currentDropIndex + 1;
-	// }
-
-	function openPrivateReserve() public onlyOwner {
-		isPrivateReserveOpen = true;
+	/// @notice toggle private sale open state
+	function setIsPrivateReserveOpen(bool isPrivateReserveOpen_)
+		public
+		onlyOwner
+	{
+		isPrivateReserveOpen = isPrivateReserveOpen_;
 	}
 
-	function openPublicReserve() public onlyOwner {
-		isPublicReserveOpen = true;
+	/// @notice toggle public sale open state
+	function setIsPublicReserveOpen(bool isPublicReserveOpen_)
+		public
+		onlyOwner
+	{
+		isPublicReserveOpen = isPublicReserveOpen_;
 	}
 
 	/**--------------------------
 	 * Reserve mechanics
 	 */
+
+	/// @dev token bounds
 	uint8 lowerTokenIdBound;
 	uint8 upperTokenIdBound;
+	mapping(address => bool) public reserveAddressMap;
 	mapping(uint8 => address) public tokenAddressMap;
 
+	/**
+	 * @notice get current reserve
+	 * @return list of addresses that have reserved current tokens
+	 */
 	function getCurrentReserve() public view returns (address[] memory) {
 		require(lowerTokenIdBound < upperTokenIdBound, "TOKEN_BOUNDS_ERROR");
 
@@ -66,6 +61,9 @@ contract HighriseReserve is Ownable {
 		return currentReserve;
 	}
 
+	/**
+	 * @notice set token bounds
+	 */
 	function setTokenBounds(uint8 lowerTokenIdBound_, uint8 upperTokenIdBound_)
 		public
 		onlyOwner
@@ -75,39 +73,49 @@ contract HighriseReserve is Ownable {
 		upperTokenIdBound = upperTokenIdBound_;
 	}
 
+	/**
+	 * @notice check if address is on private reserve
+	 * @param privateReserveAddress address on private reserve
+	 * @return isPrivateReserve if item is private reserve
+	 */
+	function checkPrivateReserve(address privateReserveAddress)
+		private
+		returns (bool)
+	{
+		if (reserveAddressMap[privateReserveAddress]) {
+			reserveAddressMap[privateReserveAddress] = false;
+			return true;
+		}
+
+		return false;
+	}
+
+	/**
+	 * @notice set reserve addresses from array
+	 * @param addresses addresses to add to reserve mapping
+	 */
+	function setReserveAddresses(address[] memory addresses) public {
+		for (uint8 i = 0; i < addresses.length; i++) {
+			reserveAddressMap[addresses[i]] = true;
+		}
+	}
+
+	/**
+	 * @notice reserve token bounds
+	 * @param tokenId token id to reserve
+	 */
 	function reserve(uint8 tokenId) public {
 		require(
 			tokenId >= lowerTokenIdBound && tokenId <= upperTokenIdBound,
 			"TOKEN_OUT_OF_BOUNDS"
 		);
+		require(tokenAddressMap[tokenId] == address(0), "TOKEN_RESERVED");
+		require(
+			(checkPrivateReserve(msg.sender) && isPrivateReserveOpen) ||
+				isPublicReserveOpen,
+			"RESERVE_NOT_OPEN"
+		);
 
 		tokenAddressMap[tokenId] = msg.sender;
 	}
-
-	// function privateReserveTokenId(uint8 tokenId, bytes32 calldata _merkleProof) public {
-
-	// }
-
-	// function isAddressOnAllowList(address _address) pure private returns (bool) {
-	//     bytes32 leaf = keccak256(abi.encodePacked(_address));
-	//     return MerkleProof.verify(proof, root, leaf);
-	// }
-
-	// function privateReserveTokenId(uint8 tokenId, bytes32 calldata _merkleProof) public {
-	// require(
-	// 	addressReserve[currentDropIndex][msg.sender] != true,
-	// 	"ADDRESS_ALREADY_RESERVED"
-	// );
-	// 	require(
-	// 		addressTokenReserve[currentDropIndex][tokenId] == address(0),
-	// 		"TOKEN_ALREADY_RESERVED"
-	// 	);
-	// 	require(
-	// 		isPrivateReserveOpen && isAddressOnAllowList(msg.sender),
-	// 		"NOT_ON_LIST"
-	// 	);
-
-	// 	addressReserve[currentDropIndex][msg.sender] = true;
-	// 	addressTokenReserve[currentDropIndex][tokenId] = msg.sender;
-	// }
 }

@@ -15,9 +15,6 @@ describe("Highrises contract", () => {
 	let owner;
 	let signers;
 
-	/**
-	 * Mocha has four lifecycle methods — before, beforeEach, after, afterEach
-	 */
 	beforeEach(async () => {
 		Highrises = await ethers.getContractFactory("Highrises");
 		[owner, ...signers] = await ethers.getSigners();
@@ -70,14 +67,6 @@ describe("Highrises contract", () => {
 
 			await hardhatToken.setBaseURI("coolNewIPFS");
 			expect(await hardhatToken.tokenURI(0)).to.be.equal(`coolNewIPFS0`);
-		});
-	});
-
-	describe("ERC721A Functionality", async () => {
-		it("should list owners of token", async () => {
-			await hardhatToken.mint(5);
-			const owner = await hardhatToken.owner();
-			const tokensOfOwner = await hardhatToken.tokensOfOwner(owner);
 		});
 	});
 });
