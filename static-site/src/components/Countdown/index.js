@@ -1,33 +1,25 @@
 import * as S from 'components/Countdown/Countdown.styled';
+import { useEffect, useState } from 'react';
 
-// import { config } from 'config';
-// import { useEffect, useState } from 'react';
+export const Countdown = ({ countDownTarget }) => {
+    const [countdown, setCountdown] = useState('');
 
-export const Countdown = () => {
-    // const [countdown, setCountdown] = useState('');
+    useEffect(() => {
+        const sti = setInterval(() => {
+            const now = new Date();
+            const diff = countDownTarget.valueOf() - now.valueOf();
 
-    // useEffect(() => {
-    //     const sti = setInterval(() => {
-    //         const now = new Date();
-    //         const diff = config.release.valueOf() - now.valueOf();
+            const days = Math.max(Math.floor(diff / 1000 / 60 / 60 / 24), 0);
+            const hours = Math.max(Math.floor(diff / 1000 / 60 / 60) % 24, 0);
+            const minutes = Math.max(Math.floor(diff / 1000 / 60) % 60, 0);
+            const seconds = Math.max(Math.floor(diff / 1000) % 60, 0);
+            setCountdown(`${days}d ${hours}h ${minutes}m ${seconds}s`);
+        }, 1000);
 
-    //         const days = Math.max(Math.floor(diff / 1000 / 60 / 60 / 24), 0);
-    //         const hours = Math.max(Math.floor(diff / 1000 / 60 / 60) % 24, 0);
-    //         const minutes = Math.max(Math.floor(diff / 1000 / 60) % 60, 0);
-    //         const seconds = Math.max(Math.floor(diff / 1000) % 60, 0);
-    //         setCountdown(`${days}d ${hours}h ${minutes}m ${seconds}s`);
-    //     }, 1000);
+        return () => {
+            clearInterval(sti);
+        };
+    }, [countDownTarget]);
 
-    //     return () => {
-    //         clearInterval(sti);
-    //     };
-    // }, []);
-
-    return (
-        <S.Countdown>
-            {/* <S.CountdownCounter isActive={Boolean(countdown)}>
-                Next NFT Release {countdown}
-            </S.CountdownCounter> */}
-        </S.Countdown>
-    );
+    return <S.Countdown isActive={Boolean(countdown)}>{countdown}</S.Countdown>;
 };

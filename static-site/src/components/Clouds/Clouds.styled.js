@@ -8,6 +8,4 @@ export const Clouds = styled.div`
     width: 100%;
 
     overflow: hidden;
-
-    background: rgba(0, 0, 0, 0.04);
 `;

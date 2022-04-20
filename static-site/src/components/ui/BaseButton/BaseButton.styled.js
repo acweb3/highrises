@@ -1,6 +1,8 @@
 import styled, { css } from 'styled-components';
 
 export const baseButtonCss = css`
+    user-select: none;
+
     font-family: Anton, sans-serif;
 
     text-transform: uppercase;

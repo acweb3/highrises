@@ -147,27 +147,6 @@ export const PurchaseHeader = styled(Header)`
     `}
 `;
 
-export const PurchaseComingSoon = styled.div`
-    text-transform: uppercase;
-    width: 80%;
-
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    letter-spacing: 0.16em;
-
-    transform: rotate(7deg);
-
-    border: 1px dashed ${(props) => props.theme.colors.blue[0]};
-
-    ${(props) => props.theme.breakpoints.mobile`
-        width: 180px;
-        height: 40px;
-    `}
-`;
-
 export const PurchaseItemAsset = styled.div`
     display: flex;
     flex-direction: column;

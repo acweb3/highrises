@@ -1,6 +1,5 @@
 import { useDocumentListener } from '../../common/hooks/useDocumentListener';
 import { ContextFAB } from 'components/ContextFAB';
-import { Countdown } from 'components/Countdown';
 import { Nav } from 'components/Nav';
 import * as S from 'components/SiteWrapper/SiteWrapper.styled';
 import { Sky } from 'components/Sky';
@@ -23,7 +22,6 @@ export const SiteWrapper = ({ children }) => {
         <>
             <S.GlobalStyle />
             <Nav />
-            <Countdown />
             <ContextFAB />
             <Sky />
             <S.SiteWrapper>{children}</S.SiteWrapper>
