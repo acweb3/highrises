@@ -1,5 +1,6 @@
 import { useEthers, shortenAddress } from '@usedapp/core';
 import { useChainConfig } from 'common/hooks/useChainConfig';
+import { useEnsAddress } from 'common/hooks/useEnsAddress';
 import * as S from 'components/Reserve/ReserveHighrise/ReserveHighrise.styled';
 import { useReserve } from 'components/Reserve/hooks/useReserve';
 
@@ -33,6 +34,7 @@ export const ReserveHighriseButton = ({ isActive, tokenId }) => {
 
 export const ReserveHighrise = ({
     highrise,
+    hasReservedToken,
     isAuction,
     isGiveaway,
     isLoading,
@@ -46,6 +48,7 @@ export const ReserveHighrise = ({
         isGiveaway,
         isReserved: reservedAddress,
     });
+    const ens = useEnsAddress(reservedAddress);
 
     const isActive = !reservedAddress && !isAuction && !isGiveaway;
     const isReservedByYou =
@@ -74,7 +77,9 @@ export const ReserveHighrise = ({
                         >
                             {isReservedByYou
                                 ? 'BY YOU'
-                                : `BY ${shortenAddress(reservedAddress)}`}
+                                : `BY ${
+                                      ens || shortenAddress(reservedAddress)
+                                  }`}
                         </S.ReserveHighriseMessage>
                     </>
                 )}
@@ -87,7 +92,12 @@ export const ReserveHighrise = ({
                 if (account) {
                     return (
                         <ReserveHighriseButton
-                            isActive={isActive && !isLoading && !isWaiting}
+                            isActive={
+                                isActive &&
+                                !isLoading &&
+                                !isWaiting &&
+                                !hasReservedToken
+                            }
                             tokenId={highrise.index}
                         />
                     );
@@ -98,7 +108,7 @@ export const ReserveHighrise = ({
                         <S.ReserveHighriseButton
                             onClick={activateBrowserWallet}
                         >
-                            Reserve
+                            Loading
                         </S.ReserveHighriseButton>
                     );
                 }

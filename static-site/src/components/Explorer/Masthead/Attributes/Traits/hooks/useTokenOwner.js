@@ -1,32 +1,18 @@
 import { useCall, useEthers, shortenAddress } from '@usedapp/core';
 import { useChainConfig } from 'common/hooks/useChainConfig';
-import { useEffect, useRef, useState } from 'react';
+import { useEnsAddress } from 'common/hooks/useEnsAddress';
 
 export const useTokenOwner = ({ tokenId }) => {
     const { contract, openseaURL } = useChainConfig();
-    const [ens, setEns] = useState();
     const ownerOf = useCall({
         contract,
         method: 'ownerOf',
         args: [tokenId],
     });
     const ethers = useEthers();
-    const hasCheckedEns = useRef(false);
 
     const ethAddress = ownerOf?.value[0];
-
-    useEffect(() => {
-        (async () => {
-            if (ethAddress & !hasCheckedEns.current) {
-                hasCheckedEns.current = true;
-                const lookupEns = await ethers.library.lookupAddress(
-                    ethAddress
-                );
-
-                setEns(lookupEns);
-            }
-        })();
-    }, [ethers.library, ethAddress]);
+    const ens = useEnsAddress(ethAddress);
 
     return {
         isCurrentOwner: ethers.account && ethAddress === ethers.account,

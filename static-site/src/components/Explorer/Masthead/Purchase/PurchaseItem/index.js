@@ -1,5 +1,7 @@
+import regrettable from 'assets/images/regrettable.jpg';
 import { useWindowSize } from 'common/hooks/useWindowSize';
 import * as S from 'components/Explorer/Masthead/Purchase/PurchaseItem/PurchaseItem.styled';
+import { useEffect, useState } from 'react';
 
 const Asset = ({ children, isFullPage }) => {
     const { isSmallish } = useWindowSize();
@@ -28,6 +30,22 @@ export const PurchaseItem = ({
     price,
     src,
 }) => {
+    const [isRegrettable, setIsRegrettable] = useState(false);
+
+    useEffect(() => {
+        let sto;
+
+        if (isRegrettable) {
+            sto = setTimeout(() => {
+                setIsRegrettable(false);
+            }, 10000);
+        }
+
+        return () => {
+            clearTimeout(sto);
+        };
+    }, [isRegrettable]);
+
     return (
         <S.PurchaseItem isCentered={isCentered}>
             <S.PurchaseHeader>{header}</S.PurchaseHeader>
@@ -43,8 +61,11 @@ export const PurchaseItem = ({
                         >
                             <S.PurchaseImage
                                 alt={buttonText}
-                                src={src}
+                                src={isRegrettable ? regrettable : src}
                                 isFullPage={isFullPage}
+                                onContextMenu={() => {
+                                    setIsRegrettable(true);
+                                }}
                             />
                         </a>
                     ) : (

@@ -57,7 +57,7 @@ export const ReserveCheck = styled.div`
         `}
 
     ${(props) => props.theme.breakpoints.medium`
-        width: 66%;
+        width: 896px;
         flex-direction: row;
     `}
 `;

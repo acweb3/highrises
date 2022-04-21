@@ -5,6 +5,8 @@ import styled from 'styled-components';
 export const ReserveCountdownWrapper = styled.div`
     display: flex;
     justify-content: space-between;
+    align-items: end;
+    white-space: nowrap;
 
     width: 100%;
 
@@ -24,9 +26,17 @@ export const ReserveCountdowns = styled.div`
 
     & * {
         color: ${(props) => props.theme.colors.blue[0]};
-        font-family: poppins;
+        font-family: 'R&C-BasicFull';
+
+        font-size: 16px;
         line-height: 32px;
         font-weight: 500;
+        text-transform: uppercase;
+
+        ${(props) => props.theme.breakpoints.medium`
+            font-size: 24px;
+            line-height: 32px;
+        `}
     }
 `;
 
@@ -35,7 +45,7 @@ export const ReserveParagraph = styled(Paragraph)`
     margin-bottom: 48px;
 
     ${(props) => props.theme.breakpoints.medium`
-        width: 50%;
+        width: 896px;
     `}
 `;
 

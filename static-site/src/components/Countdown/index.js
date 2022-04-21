@@ -1,14 +1,20 @@
 import * as S from 'components/Countdown/Countdown.styled';
 import { useEffect, useState } from 'react';
 
-export const Countdown = ({ countDownTarget, terminatedText }) => {
+export const Countdown = ({
+    countDownStart,
+    countDownEnd,
+    endedText,
+    startedText,
+}) => {
     const [countdown, setCountdown] = useState('');
-    const [isTerminated, setIsTerminated] = useState(false);
+    const [isStarted, setIsStarted] = useState(false);
+    const [isEnded, setIsEnded] = useState(false);
 
     useEffect(() => {
         const sti = setInterval(() => {
             const now = new Date();
-            const diff = countDownTarget.valueOf() - now.valueOf();
+            const diff = countDownStart.valueOf() - now.valueOf();
 
             const days = Math.max(Math.floor(diff / 1000 / 60 / 60 / 24), 0);
             const hours = Math.max(Math.floor(diff / 1000 / 60 / 60) % 24, 0);
@@ -16,19 +22,34 @@ export const Countdown = ({ countDownTarget, terminatedText }) => {
             const seconds = Math.max(Math.floor(diff / 1000) % 60, 0);
 
             if (days === 0 && hours === 0 && minutes === 0 && seconds === 0) {
-                setIsTerminated(true);
+                setIsStarted(true);
             }
+
+            if (now > countDownEnd) {
+                setIsEnded(true);
+            }
+
             setCountdown(`${days}d ${hours}h ${minutes}m ${seconds}s`);
         }, 1000);
 
         return () => {
             clearInterval(sti);
         };
-    }, [countDownTarget]);
+    }, [countDownStart, countDownEnd]);
 
     return (
         <S.Countdown isActive={Boolean(countdown)}>
-            {isTerminated ? terminatedText : countdown}
+            {(() => {
+                if (isEnded) {
+                    return endedText;
+                }
+
+                if (isStarted) {
+                    return startedText;
+                }
+
+                return countdown;
+            })()}
         </S.Countdown>
     );
 };

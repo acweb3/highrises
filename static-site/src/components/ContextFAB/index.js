@@ -38,7 +38,8 @@ export const ContextFAB = () => {
     const throttleScroll = useCallback(
         throttle(() => {
             setIsVisible(
-                window.scrollY > 100 && scrollRef.current > window.scrollY
+                window.scrollY < 1500 || scrollRef.current > window.scrollY
+                // window.scrollY > 100 && scrollRef.current > window.scrollY
             );
             scrollRef.current = window.scrollY;
         }, 100),
