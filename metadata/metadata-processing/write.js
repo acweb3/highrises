@@ -77,7 +77,7 @@ const write = (traits) => {
                         name: `Highrise #${`${index + 1}`.padStart(2, '0')}`,
                         description: `**${
                             trait.name
-                        }**\n\n${trait.description.replace('\n', '\n\n')}`,
+                        }**\n\n${trait.description.replaceAll('\n', '\n\n')}`,
                         attributes: filteredAttributes,
                     },
                     null,
