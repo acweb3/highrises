@@ -11,7 +11,7 @@ export const useTokenOwner = ({ tokenId }) => {
     });
     const ethers = useEthers();
 
-    const ethAddress = ownerOf?.value[0];
+    const ethAddress = ownerOf?.value?.[0];
     const ens = useEnsAddress(ethAddress);
 
     return {

@@ -8,22 +8,22 @@ export const useChainConfig = () => {
     const ethers = useEthers();
 
     const contractAddress =
-        ethers.library?.network?.chainId === 1
-            ? config.mainnetContractAddress
-            : config.rinkebyContractAddress;
+        ethers.library?.network?.chainId === 4
+            ? config.rinkebyContractAddress
+            : config.mainnetContractAddress;
 
-    const reserveContractAddress =
-        ethers.library?.network?.chainId === 1
-            ? config.mainnetReserveContractAddress
-            : config.rinkebyReserveContractAddress;
+    // const reserveContractAddress =
+    //     ethers.library?.network?.chainId === 1
+    //         ? config.mainnetReserveContractAddress
+    //         : config.rinkebyReserveContractAddress;
 
     return {
         openseaURL:
-            ethers.library?.network?.chainId === 1
-                ? 'opensea'
-                : 'testnets.opensea',
+            ethers.library?.network?.chainId === 4
+                ? 'testnets.opensea'
+                : 'opensea',
         contract: new Contract(contractAddress, nftAbi),
-        reserveContract: new Contract(reserveContractAddress, reserveAbi),
+        // reserveContract: new Contract(reserveContractAddress, reserveAbi),
         contractAddress,
     };
 };
