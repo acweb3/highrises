@@ -42,6 +42,7 @@ contract HighriseReserve is Ownable {
 	uint8 lowerTokenIdBound;
 	uint8 upperTokenIdBound;
 	mapping(address => bool) public reserveAddressMap;
+	mapping(address => bool) public claimedTokenMap;
 	mapping(uint8 => address) public tokenAddressMap;
 
 	/**
@@ -111,11 +112,15 @@ contract HighriseReserve is Ownable {
 		);
 		require(tokenAddressMap[tokenId] == address(0), "TOKEN_RESERVED");
 		require(
-			(checkPrivateReserve(msg.sender) && isPrivateReserveOpen) ||
-				isPublicReserveOpen,
+			isPrivateReserveOpen || isPublicReserveOpen,
 			"RESERVE_NOT_OPEN"
+		);
+		require(
+			claimedTokenMap[msg.sender] == false,
+			"ADDRESS_ALREADY_CLAIMED"
 		);
 
 		tokenAddressMap[tokenId] = msg.sender;
+		claimedTokenMap[msg.sender] = true;
 	}
 }
