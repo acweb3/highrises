@@ -71,10 +71,7 @@ export const Hero = styled.div`
     max-width: 100vw;
     overflow: hidden;
 
-    min-height: ${(props) =>
-        props.resizeHeight
-            ? `${props.resizeHeight - 205.5}px`
-            : 'calc(100vh - 205.5px)'};
+    min-height: calc(100vh - 250.5px);
 
     ${(props) => props.theme.breakpoints.mobile`
         min-height: 800px;

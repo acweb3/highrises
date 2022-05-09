@@ -46,7 +46,7 @@ const App = ({ pageContext: { highrises, thumbnail } }) => {
                     <meta property="twitter:image:alt" content="" />
                     <link rel="canonical" href="highrises.hythacg.com" />
                 </Helmet>
-                <Reserve />
+                {/* <Reserve /> */}
                 <Intent />
                 <Explorer />
                 <Roadmap />
