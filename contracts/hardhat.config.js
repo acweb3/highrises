@@ -13,6 +13,7 @@ module.exports = {
 		mainnet: {
 			url: config.mainnetAlchemyURL,
 			accounts: [config.mainnetPrivateKey],
+			gasPrice: 50000000000,
 		},
 
 		// ropsten: {
