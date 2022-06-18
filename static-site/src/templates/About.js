@@ -1,6 +1,12 @@
+import { Editing } from 'components/Editing';
 import { EmailCollection } from 'components/EmailCollection';
-import { ExplorerV2 } from 'components/ExplorerV2';
+import { Explorer } from 'components/Explorer';
+import { FAQ } from 'components/FAQ';
+import { Intent } from 'components/Intent';
+import { Reserve } from 'components/Reserve';
+import { Roadmap } from 'components/Roadmap';
 import { SiteWrapper } from 'components/SiteWrapper';
+import { Team } from 'components/Team';
 import { Contexts } from 'contexts';
 import 'css/index.css';
 import Helmet from 'react-helmet';
@@ -40,8 +46,14 @@ const App = ({ pageContext: { highrises, thumbnail } }) => {
                     <meta property="twitter:image:alt" content="" />
                     <link rel="canonical" href="highrises.hythacg.com" />
                 </Helmet>
+                {/* <Reserve /> */}
+                <Intent />
 
-                <ExplorerV2 />
+                <Explorer />
+                <Roadmap />
+                <Team />
+                <Editing />
+                <FAQ />
                 <EmailCollection />
             </SiteWrapper>
         </Contexts>

@@ -1,12 +1,10 @@
 import { Wrapper } from '@googlemaps/react-wrapper';
-import { Map } from 'components/Explorer/MapExplorer/Map';
-import * as S from 'components/Explorer/MapExplorer/MapExplorer.styled';
-import { Marker } from 'components/Explorer/MapExplorer/Marker';
+import { Map } from 'components/ExplorerV2/MapExplorer/Map';
+import * as S from 'components/ExplorerV2/MapExplorer/MapExplorer.styled';
+import { Marker } from 'components/ExplorerV2/MapExplorer/Marker';
 import { config } from 'config';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
-import { useExplorerRefContext } from 'contexts/ExplorerRef';
 import { useMapViewContext } from 'contexts/MapView';
-import { navigate } from 'gatsby';
 import { useEffect, useState } from 'react';
 
 export const MapExplorer = () => {

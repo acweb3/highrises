@@ -1,5 +1,6 @@
 import logoSrc from 'assets/images/logos/hytha-logo.png';
 import * as S from 'components/Nav/DesktopNav/DesktopNav.styled';
+import { BaseLink } from 'components/ui/BaseLink';
 
 export const LINKS = [
     { text: 'About Me', href: 'https://www.hythacg.com/aboutme' },
@@ -27,9 +28,9 @@ export const DesktopNav = () => {
             <S.Navigation>
                 <S.Links>
                     {LINKS.map(({ text, href, isActive }) => (
-                        <S.Link isActive={isActive} key={href} href={href}>
+                        <BaseLink.A isActive={isActive} key={href} href={href}>
                             {text}
-                        </S.Link>
+                        </BaseLink.A>
                     ))}
                 </S.Links>
 
