@@ -7,14 +7,11 @@ const { camelCase } = require('change-case');
 const DELIMITER = '\t';
 const DESCRIPTION_PLACEHOLDER =
     'Highrises are among the most iconic and defining elements of American Cities, and the technological advancement of the twentieth century fostered new heights.';
-const IPFS_DIR = 'ipfs://QmfHyjTQsCDCRgXrkY8qrNfdjxCRKMdcor8SVQftCHuxf4';
+const IPFS_DIR = 'ipfs://Qmde8KeQsHCUDZqyQ3iz8F8oeFMAVYuTBMdr2gm6mvWm2N';
 
 const client = new Client({});
 
 const getWords = (index) => {
-    if (index === 0) {
-        console.log(fs.readFileSync(`words/dist/${index}.txt`, 'utf-8'));
-    }
     try {
         return fs.readFileSync(`words/dist/${index}.txt`, 'utf-8');
     } catch (e) {
@@ -132,7 +129,7 @@ const read = async () => {
                     image: `${IPFS_DIR}/${index}.jpg`,
                     name: building.value,
                     height,
-                    heightBracket: processed.heightBracket.value,
+                    heightBracket: processed.heightBracket?.value,
                     decade,
 
                     address: processed.address.value,
