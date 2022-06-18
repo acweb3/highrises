@@ -29,7 +29,7 @@ const Tokens = ({ setTokenIds }) => {
 
 export const ContextFAB = () => {
     const { isLoaded } = useWindowSize();
-    const [hasInitialized, setHasInitialized] = useState(false);
+    const [hasInitialized, setHasInitialized] = useState(true);
     const [isVisible, setIsVisible] = useState(false);
     const [tokenIds, setTokenIds] = useState([]);
     const scrollRef = useRef(0);
@@ -38,23 +38,23 @@ export const ContextFAB = () => {
     const throttleScroll = useCallback(
         throttle(() => {
             setIsVisible(
-                window.scrollY < 1500 || scrollRef.current > window.scrollY
-                // window.scrollY > 100 && scrollRef.current > window.scrollY
+                // window.scrollY < 1500 || scrollRef.current > window.scrollY
+                window.scrollY > 100 && scrollRef.current > window.scrollY
             );
             scrollRef.current = window.scrollY;
         }, 100),
         []
     );
 
-    useEffect(() => {
-        const sto = setTimeout(() => {
-            setHasInitialized(true);
-        }, 15000);
+    // useEffect(() => {
+    //     const sto = setTimeout(() => {
+    //         setHasInitialized(true);
+    //     }, 15000);
 
-        return () => {
-            clearTimeout(sto);
-        };
-    }, []);
+    //     return () => {
+    //         clearTimeout(sto);
+    //     };
+    // }, []);
 
     useWindowListener(
         'scroll',
