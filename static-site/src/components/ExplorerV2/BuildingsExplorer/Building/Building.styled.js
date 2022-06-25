@@ -67,8 +67,6 @@ export const Building = styled.div`
 
     position: relative;
 
-    margin-right: -32px;
-
     &
         ${BuildingIndex.Mobile},
         &

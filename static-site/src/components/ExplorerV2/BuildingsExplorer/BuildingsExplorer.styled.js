@@ -70,7 +70,6 @@ export const BuildingsExplorerArrow = styled.div`
 export const BuildingsExplorer = styled.div`
     position: relative;
     margin-top: auto;
-    border-bottom: 1px solid ${(props) => props.theme.colors.grey[0]};
 `;
 
 export const BuildingsWrapper = styled.div`

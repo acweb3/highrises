@@ -23,7 +23,7 @@ export const SiteWrapper = ({ children }) => {
         <>
             <S.GlobalStyle />
             <Nav />
-            <NavTabs />
+            {/* <NavTabs /> */}
             <ContextFAB />
             <Sky />
             <S.SiteWrapper>{children}</S.SiteWrapper>

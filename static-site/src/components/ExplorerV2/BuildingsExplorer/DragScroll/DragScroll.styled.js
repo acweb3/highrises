@@ -1,14 +1,20 @@
 import styled from 'styled-components';
 
-export const DragScroll = styled.div`
+export const DragScrollContent = styled.div`
     display: flex;
     flex-direction: row;
-    overflow-x: scroll;
+    overflow: visible;
 
     cursor: pointer !important;
-    overflow-y: hidden;
+
+    transition: transform 500ms ease;
 
     &::-webkit-scrollbar {
         display: none;
     }
+`;
+
+export const DragScroll = styled.div`
+    width: 100%;
+    overflow: hidden;
 `;

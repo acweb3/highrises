@@ -1,3 +1,4 @@
+import seamlessBackgroundSrc from 'assets/images/seamless-background.jpg';
 import { BuildingsExplorer } from 'components/ExplorerV2/BuildingsExplorer';
 import * as S from 'components/ExplorerV2/DesktopExplorer/DesktopExplorer.styled';
 import { MapExplorer } from 'components/ExplorerV2/MapExplorer';
@@ -28,8 +29,17 @@ export const DesktopExplorer = () => {
                     width: 64vw;
                     min-width: 64vw;
                     position: relative;
+                    border-left: 1px solid
+                        ${(props) => props.theme.colors.grey[0]};
                 `}
             >
+                <img
+                    css={`
+                        position: absolute;
+                        bottom: 120px;
+                    `}
+                    src={seamlessBackgroundSrc}
+                />
                 {Boolean(highrises.length) && (
                     <>
                         <SortBar

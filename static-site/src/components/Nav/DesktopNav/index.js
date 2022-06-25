@@ -1,6 +1,7 @@
 import logoSrc from 'assets/images/logos/hytha-logo.png';
 import * as S from 'components/Nav/DesktopNav/DesktopNav.styled';
 import { BaseLink } from 'components/ui/BaseLink';
+import { useExplorerRefContext } from 'contexts/ExplorerRef';
 
 export const LINKS = [
     { text: 'About Me', href: 'https://www.hythacg.com/aboutme' },
@@ -19,8 +20,10 @@ export const LINKS = [
 ];
 
 export const DesktopNav = () => {
+    const { desktopNavRef } = useExplorerRefContext();
+
     return (
-        <S.DesktopNav>
+        <S.DesktopNav ref={desktopNavRef}>
             <S.LogoWrapper href="https://www.hythacg.com">
                 <S.Logo alt="logo" src={logoSrc} />
             </S.LogoWrapper>

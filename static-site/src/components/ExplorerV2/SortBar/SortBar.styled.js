@@ -6,8 +6,9 @@ export const DropdownFilterScrollRight = styled(ArrowRight)`
 `;
 
 export const DropdownFiltersWrapper = styled.div`
-    position: relative;
-    width: 100%;
+    width: min-content;
+    max-width: 100%;
+    margin-left: auto;
 `;
 
 export const DropdownFilter = styled.div`
@@ -39,7 +40,7 @@ export const DropdownFilters = styled.div`
     display: flex;
     width: 100%;
     overflow-x: scroll;
-    padding: 0px 88px 16px 48px;
+    padding: 0px 16px 16px 48px;
     color: ${(props) => props.theme.colors.blue[0]};
 
     &::-webkit-scrollbar {
@@ -84,6 +85,7 @@ export const SortBar = styled.div`
     flex-wrap: wrap;
 
     padding: 32px 32px 16px;
+    margin-left: auto;
 
     overflow-x: auto;
 
@@ -97,7 +99,7 @@ export const SortBar = styled.div`
 
     ${(props) => props.theme.breakpoints.medium`
         line-height: 2rem;
-        padding: 64px 48px 0;
+        padding: 48px 32px 0;
     `}
 
     &::-webkit-scrollbar {
