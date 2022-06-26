@@ -1,10 +1,13 @@
+import { useWindowSize } from 'common/hooks/useWindowSize';
 import { DesktopExplorer } from 'components/ExplorerV2/DesktopExplorer';
 import * as S from 'components/ExplorerV2/ExplorerV2.styled';
+import { MobileExplorer } from 'components/ExplorerV2/MobileExplorer';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
 import { useExplorerRefContext } from 'contexts/ExplorerRef';
 import { useEffect, useRef } from 'react';
 
 export const ExplorerV2 = () => {
+    const { isLoaded, isMobile } = useWindowSize();
     const { explorerRef, buildingExplorerMobileRefState } =
         useExplorerRefContext();
 
@@ -15,20 +18,23 @@ export const ExplorerV2 = () => {
 
     useEffect(() => {
         if (
-            window.scrollY >= explorerRef.current?.getBoundingClientRect().top
+            window.scrollY >=
+                explorerRef.current?.getBoundingClientRect().top &&
+            isLoaded &&
+            !isMobile
         ) {
             explorerRef.current?.scrollIntoView(true);
         }
-    }, [buildingExplorerMobileRefState]);
+    }, [buildingExplorerMobileRefState, isLoaded, isMobile]);
 
     return (
         <S.ExplorerV2
             ref={explorerRef}
             style={{
-                height,
+                height: isLoaded && !isMobile ? height : undefined,
             }}
         >
-            <DesktopExplorer />
+            {isLoaded && isMobile ? <MobileExplorer /> : <DesktopExplorer />}
         </S.ExplorerV2>
     );
 };

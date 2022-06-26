@@ -2,9 +2,15 @@ import styled, { css } from 'styled-components';
 
 export const BuildingImage = styled.img`
     flex: 1;
-    max-width: 400px;
-    width: 400px;
-    height: 600px;
+    max-width: 250px;
+    width: 250px;
+    height: 375px;
+
+    ${(props) => props.theme.breakpoints.extraSmall`
+        max-width: 400px;
+        width: 400px;
+        height: 600px;
+    `}
 `;
 
 export const BuildingCaption = styled.div`
@@ -23,35 +29,17 @@ export const BuildingIndex = {
         font-size: 1.175rem;
         font-weight: 800;
         user-select: none;
-
-        display: block;
-
-        /* ${(props) => props.theme.breakpoints.small`
-            display: none;
-        `} */
     `,
     Desktop: styled.div`
         font-size: 1.175rem;
         font-weight: 800;
         user-select: none;
-
-        display: none;
-
-        ${(props) => props.theme.breakpoints.small`
-            display: block;
-        `}
     `,
 };
 
 export const BuildingName = styled.div`
     font-size: 1rem;
     text-align: center;
-
-    display: none;
-
-    ${(props) => props.theme.breakpoints.small`
-        display: block;
-    `}
 `;
 
 export const Building = styled.div`

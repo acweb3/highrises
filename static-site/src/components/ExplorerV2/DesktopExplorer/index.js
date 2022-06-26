@@ -1,4 +1,5 @@
-import seamlessBackgroundSrc from 'assets/images/seamless-background.jpg';
+import seamlessBackgroundSrc from 'assets/images/seamless-background.webp';
+import { useDocumentListener } from 'common/hooks/useDocumentListener';
 import { BuildingsExplorer } from 'components/ExplorerV2/BuildingsExplorer';
 import * as S from 'components/ExplorerV2/DesktopExplorer/DesktopExplorer.styled';
 import { MapExplorer } from 'components/ExplorerV2/MapExplorer';
@@ -7,11 +8,36 @@ import { SortBar } from 'components/ExplorerV2/SortBar';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
 import { useExplorerRefContext } from 'contexts/ExplorerRef';
 import { useState } from 'react';
+import { useThrottle } from 'react-use';
 
 export const DesktopExplorer = () => {
     const [activeSort, setActiveSort] = useState(undefined);
     const { buildingExplorerDesktopRef } = useExplorerRefContext();
     const { highrises } = useActiveHighriseContext();
+
+    const [scroll, setScroll] = useState(0);
+    const throttledScroll = useThrottle(scroll, 100);
+
+    useDocumentListener(
+        'scroll',
+        () => {
+            const body = document.body;
+            const html = document.documentElement;
+
+            const documentHeight = Math.max(
+                body.scrollHeight,
+                body.offsetHeight,
+                html.clientHeight,
+                html.scrollHeight,
+                html.offsetHeight
+            );
+
+            setScroll(
+                Math.max(Math.min(window.scrollY / documentHeight, 1), 0)
+            );
+        },
+        []
+    );
 
     return (
         <S.DesktopExplorer>
@@ -26,6 +52,7 @@ export const DesktopExplorer = () => {
 
             <S.DesktopExplorerSection
                 css={`
+                    overflow: hidden;
                     width: 64vw;
                     min-width: 64vw;
                     position: relative;
@@ -33,11 +60,12 @@ export const DesktopExplorer = () => {
                         ${(props) => props.theme.colors.grey[0]};
                 `}
             >
-                <img
-                    css={`
-                        position: absolute;
-                        bottom: 120px;
-                    `}
+                <S.DesktopExplorerBackground
+                    style={{
+                        transform: `translate3D(${
+                            -20 + 20 * throttledScroll
+                        }%, 0, 0)`,
+                    }}
                     src={seamlessBackgroundSrc}
                 />
                 {Boolean(highrises.length) && (

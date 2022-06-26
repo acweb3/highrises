@@ -70,6 +70,20 @@ export const BuildingsExplorerArrow = styled.div`
 export const BuildingsExplorer = styled.div`
     position: relative;
     margin-top: auto;
+
+    ${(props) => props.theme.breakpoints.small`
+    &::before {
+        content: ' ';
+        z-index: 0;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: block;
+        height: 120px;
+        width: 100%;
+        background: white;
+    }
+    `}
 `;
 
 export const BuildingsWrapper = styled.div`

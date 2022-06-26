@@ -9,6 +9,7 @@ export const DropdownFiltersWrapper = styled.div`
     width: min-content;
     max-width: 100%;
     margin-left: auto;
+    z-index: 2;
 `;
 
 export const DropdownFilter = styled.div`
@@ -90,6 +91,8 @@ export const SortBar = styled.div`
     overflow-x: auto;
 
     justify-content: center;
+
+    z-index: 2;
 
     ${(props) => props.theme.breakpoints.small`
         justify-content: initial;

@@ -1,28 +1,28 @@
 import styled from 'styled-components';
 
-export const DesktopExplorerBackground = styled.img`
+export const MobileExplorerBackground = styled.img`
     position: absolute;
     bottom: 120px;
     height: 100%;
     max-width: initial;
     z-index: 0;
-    transition: transform 800ms;
 `;
 
-export const DesktopExplorerSection = styled.div`
+export const MobileExplorerSection = styled.div`
     display: flex;
     flex: 1;
     flex-direction: column;
 `;
 
-export const DesktopExplorer = styled.div`
+export const MobileExplorer = styled.div`
     width: 100vw;
-    display: none;
+    height: 100%;
+    display: flex;
 
     position: sticky;
     top: 0;
 
     ${(props) => props.theme.breakpoints.extraSmall`
-        display: flex;
+        display: none;
     `}
 `;

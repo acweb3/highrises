@@ -5,7 +5,7 @@ import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
 import { useExplorerRefContext } from 'contexts/ExplorerRef';
 import { useEffect } from 'react';
 
-export const BuildingsExplorer = ({ activeSort }) => {
+export const BuildingsExplorer = ({ activeSort, isMobile }) => {
     const { highrises, initHighrises, setActiveHighrise, setHighrises } =
         useActiveHighriseContext();
     const { buildingExplorerMobileRefState } = useExplorerRefContext();
@@ -43,11 +43,24 @@ export const BuildingsExplorer = ({ activeSort }) => {
             >
                 <S.BuildingsExplorerScrollLeft />
             </S.BuildingsExplorerArrow>
-            <DragScroll>
-                {highrises.map((building, index) => (
-                    <Building key={building.name} building={building} />
-                ))}
-            </DragScroll>
+            {isMobile ? (
+                <div
+                    css={`
+                        display: flex;
+                        overflow-x: scroll;
+                    `}
+                >
+                    {highrises.map((building, index) => (
+                        <Building key={building.name} building={building} />
+                    ))}
+                </div>
+            ) : (
+                <DragScroll>
+                    {highrises.map((building, index) => (
+                        <Building key={building.name} building={building} />
+                    ))}
+                </DragScroll>
+            )}
 
             <S.BuildingsExplorerArrow
                 right

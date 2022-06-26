@@ -20,25 +20,20 @@ export const DesktopMastheadExternalButtonLink = styled(ExternalButtonLink)`
 
     text-align: center;
     border-radius: 8px;
-    background: ${(props) => props.theme.colors.white[0]};
-    color: ${(props) => props.theme.colors.blue[0]};
+    background: ${(props) => props.theme.colors.blue[0]};
+    color: ${(props) => props.theme.colors.white[0]};
     padding: 8px 0;
 `;
 
 export const DesktopMastheadImage = styled.img`
-    margin: 16px 0;
-    width: 100%;
+    margin: 16px auto 32px;
+    width: 75%;
 `;
 
 export const DesktopMasthead = styled.div`
     color: ${(props) => props.theme.colors.blue[0]};
-    background: rgba(255, 255, 255, 0.6);
-    background: linear-gradient(
-        180deg,
-        rgba(255, 255, 255, 0.6) 0%,
-        rgba(255, 255, 255, 0.8) calc(100% - 121px),
-        rgba(255, 255, 255, 1) calc(100% - 120px)
-    );
+    background: ${(props) => props.theme.colors.white[0]};
+
     border-bottom: 1px solid ${(props) => props.theme.colors.grey[0]};
 
     box-sizing: border-box;
@@ -48,15 +43,31 @@ export const DesktopMasthead = styled.div`
 
     min-height: 100vh;
     height: 100vh;
-    width: 33vw;
 
     display: flex;
     flex-direction: column;
-    position: absolute;
-    top: 0;
-    right: 0;
 
-    padding: 48px 48px 168px;
+    padding: 16px 32px 168px;
 
     z-index: 2;
+
+    position: fixed;
+    top: 83.65px;
+    right: 0;
+
+    ${(props) => props.theme.breakpoints.extraSmall`
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 33vw;
+        max-width: 480px;
+        background: rgba(255, 255, 255, 0.6);
+        background: linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.6) 0%,
+            rgba(255, 255, 255, 0.8) calc(100% - 120px),
+            rgba(255, 255, 255, 1) calc(100% - 119px)
+        );
+        padding: 48px 48px 168px;
+    `}
 `;
