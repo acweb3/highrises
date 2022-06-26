@@ -119,12 +119,12 @@ export const EditingDescription = styled.div`
 export const EditingContent = styled.div`
     width: 100%;
     display: flex;
-    padding: 16px 0px 80px 0px;
+    padding: 80px 0px 80px 0px;
 
     ${(props) => props.theme.breakpoints.mobile`
         width: auto;
         flex: 0 0 75%;
-        padding: 48px 0px 120px 0px;
+        padding: 96px 0px 96px 0px;
     `}
 `;
 

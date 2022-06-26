@@ -5,19 +5,34 @@ import { Marker } from 'components/ExplorerV2/MapExplorer/Marker';
 import { config } from 'config';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
 import { useMapViewContext } from 'contexts/MapView';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export const MapExplorer = () => {
-    const [zoom, setZoom] = useState(17);
-    const [center, setCenter] = useState({ lat: 39.952583, lng: -75.165222 });
-    const { setActiveHighrise } = useActiveHighriseContext();
-    const { activeHighrise, highrises } = useActiveHighriseContext();
+    const initialRenderRef = useRef(false);
+    const [zoom, setZoom] = useState(6);
+    // 42.217054, -76.058521
+    const [center, setCenter] = useState({ lat: 42.217054, lng: -76.058521 });
+    const { activeHighrise, highrises, setActiveHighrise } =
+        useActiveHighriseContext();
     const { setIsMapView } = useMapViewContext();
 
     const onIdle = (m) => {
         setZoom(m.getZoom());
         setCenter(m.getCenter().toJSON());
     };
+
+    useEffect(() => {
+        if (
+            highrises.length &&
+            !activeHighrise &&
+            initialRenderRef.current === true
+        ) {
+            setCenter(highrises[0].ltlng);
+            setZoom(15);
+        } else {
+            initialRenderRef.current = true;
+        }
+    }, [highrises, activeHighrise]);
 
     useEffect(() => {
         if (activeHighrise) {

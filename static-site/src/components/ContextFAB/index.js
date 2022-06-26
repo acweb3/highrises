@@ -5,6 +5,7 @@ import * as S from 'components/ContextFAB/ContextFAB.styled';
 import { HighriseIcon } from 'components/ContextFAB/HighriseIcon';
 import { Web3Connect } from 'components/ContextFAB/Web3Connect';
 import { useTokenHolder } from 'components/ContextFAB/hooks/useTokenHolder';
+import { GatsbyLink } from 'components/ui/BaseLink/BaseLink.styled';
 import throttle from 'lodash.throttle';
 import { useCallback, useEffect, useRef, useState } from 'react';
 
@@ -27,7 +28,7 @@ const Tokens = ({ setTokenIds }) => {
     return null;
 };
 
-export const ContextFAB = () => {
+export const ContextFAB = ({ hideFABOnMobile }) => {
     const { isLoaded } = useWindowSize();
     const [hasInitialized, setHasInitialized] = useState(true);
     const [isVisible, setIsVisible] = useState(false);
@@ -39,9 +40,10 @@ export const ContextFAB = () => {
         throttle(() => {
             setIsVisible(
                 // window.scrollY < 1500 || scrollRef.current > window.scrollY
-                window.scrollY > 100 && scrollRef.current > window.scrollY
+                // window.scrollY > 100 && scrollRef.current > window.scrollY
+                window.scrollY > 100
             );
-            scrollRef.current = window.scrollY;
+            // scrollRef.current = window.scrollY;
         }, 100),
         []
     );
@@ -68,9 +70,16 @@ export const ContextFAB = () => {
         <S.ContextFAB
             isActive={tokenIds.length}
             isVisible={isLoaded && (!hasInitialized || isVisible)}
+            isHiddenOnMobile={hideFABOnMobile}
         >
             <S.ContextFABLinks>
-                <S.ContextFABButton
+                <GatsbyLink activeClassName="active" to="/">
+                    collection
+                </GatsbyLink>
+                <GatsbyLink activeClassName="active" to="/about">
+                    about
+                </GatsbyLink>
+                {/* <S.ContextFABButton
                     rel="noopener noreferrer"
                     target="_blank"
                     href="https://discord.gg/meX2WS6Jjk"
@@ -97,7 +106,7 @@ export const ContextFAB = () => {
                     href="https://mobile.twitter.com/Hythacg"
                 >
                     <S.TwitterLogo />
-                </S.ContextFABButton>
+                </S.ContextFABButton> */}
             </S.ContextFABLinks>
             {/* {
                 <Web3Connect tokenIds={tokenIds} />

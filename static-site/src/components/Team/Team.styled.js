@@ -101,26 +101,10 @@ export const Profiles = styled.div`
     `}
 `;
 
-export const BorderBottom = styled.div`
-    ${(props) => props.theme.utility.bubbleBorder}
-
-    padding-top: 40px;
-    width: 80%;
-
-    ${(props) => props.theme.breakpoints.mobile`
-        padding-top: 80px;
-    `}
-
-    ${(props) => props.theme.breakpoints.large`
-        width: 100%;
-        max-width: 800px;
-    `}
-`;
-
 export const Team = styled.div`
     background: ${(props) => props.theme.colors.white[0]};
 
-    padding: 72px 0 48px;
+    padding: 72px 0 120px;
 
     display: flex;
     flex-direction: column;

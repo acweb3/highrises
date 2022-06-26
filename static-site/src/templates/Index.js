@@ -1,5 +1,6 @@
 import { EmailCollection } from 'components/EmailCollection';
 import { ExplorerV2 } from 'components/ExplorerV2';
+import { NavTabs } from 'components/NavTabs';
 import { SiteWrapper } from 'components/SiteWrapper';
 import { Contexts } from 'contexts';
 import 'css/index.css';
@@ -8,7 +9,7 @@ import Helmet from 'react-helmet';
 const App = ({ pageContext: { highrises, thumbnail } }) => {
     return (
         <Contexts highrises={highrises}>
-            <SiteWrapper>
+            <SiteWrapper hideFABOnMobile>
                 <Helmet>
                     <title>Highrises - HYTHA.CG</title>
                     <meta name="title" content="Highrises - HYTHA.CG" />
@@ -40,7 +41,7 @@ const App = ({ pageContext: { highrises, thumbnail } }) => {
                     <meta property="twitter:image:alt" content="" />
                     <link rel="canonical" href="highrises.hythacg.com" />
                 </Helmet>
-
+                <NavTabs />
                 <ExplorerV2 />
                 <EmailCollection />
             </SiteWrapper>

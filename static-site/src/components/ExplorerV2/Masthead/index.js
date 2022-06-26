@@ -4,11 +4,5 @@ import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
 export const Masthead = () => {
     const { activeHighrise } = useActiveHighriseContext();
 
-    return (
-        <>
-            {activeHighrise && (
-                <DesktopMasthead activeHighrise={activeHighrise} />
-            )}
-        </>
-    );
+    return <DesktopMasthead activeHighrise={activeHighrise} />;
 };

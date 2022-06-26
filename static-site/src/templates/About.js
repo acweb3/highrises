@@ -3,7 +3,7 @@ import { EmailCollection } from 'components/EmailCollection';
 import { Explorer } from 'components/Explorer';
 import { FAQ } from 'components/FAQ';
 import { Intent } from 'components/Intent';
-import { Reserve } from 'components/Reserve';
+import { NavTabs } from 'components/NavTabs';
 import { Roadmap } from 'components/Roadmap';
 import { SiteWrapper } from 'components/SiteWrapper';
 import { Team } from 'components/Team';
@@ -46,13 +46,14 @@ const App = ({ pageContext: { highrises, thumbnail } }) => {
                     <meta property="twitter:image:alt" content="" />
                     <link rel="canonical" href="highrises.hythacg.com" />
                 </Helmet>
+                <NavTabs />
                 {/* <Reserve /> */}
                 <Intent />
-
-                <Explorer />
+                <Editing />
+                {/* <Explorer /> */}
                 <Roadmap />
                 <Team />
-                <Editing />
+
                 <FAQ />
                 <EmailCollection />
             </SiteWrapper>

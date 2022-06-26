@@ -1,12 +1,11 @@
 import { useDocumentListener } from 'common/hooks/useDocumentListener';
 import { ContextFAB } from 'components/ContextFAB';
 import { Nav } from 'components/Nav';
-import { NavTabs } from 'components/NavTabs';
 import * as S from 'components/SiteWrapper/SiteWrapper.styled';
 import { Sky } from 'components/Sky';
 import { useMapViewContext } from 'contexts/MapView';
 
-export const SiteWrapper = ({ children }) => {
+export const SiteWrapper = ({ children, hideFABOnMobile }) => {
     const { setIsMapView } = useMapViewContext();
 
     useDocumentListener(
@@ -23,8 +22,7 @@ export const SiteWrapper = ({ children }) => {
         <>
             <S.GlobalStyle />
             <Nav />
-            {/* <NavTabs /> */}
-            <ContextFAB />
+            <ContextFAB hideFABOnMobile={hideFABOnMobile} />
             <Sky />
             <S.SiteWrapper>{children}</S.SiteWrapper>
         </>

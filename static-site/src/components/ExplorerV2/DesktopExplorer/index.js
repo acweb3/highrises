@@ -63,7 +63,7 @@ export const DesktopExplorer = () => {
                 <S.DesktopExplorerBackground
                     style={{
                         transform: `translate3D(${
-                            -20 + 20 * throttledScroll
+                            -42 * throttledScroll
                         }%, 0, 0)`,
                     }}
                     src={seamlessBackgroundSrc}

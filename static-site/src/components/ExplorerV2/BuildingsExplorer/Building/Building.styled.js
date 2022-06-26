@@ -2,14 +2,15 @@ import styled, { css } from 'styled-components';
 
 export const BuildingImage = styled.img`
     flex: 1;
-    max-width: 250px;
-    width: 250px;
-    height: 375px;
+    max-width: 66vw;
+    width: 66vw;
+    height: auto;
 
     ${(props) => props.theme.breakpoints.extraSmall`
-        max-width: 400px;
-        width: 400px;
-        height: 600px;
+        min-width: 400px;
+        max-width: initial;
+        width: 25vw;
+        height: auto;
     `}
 `;
 

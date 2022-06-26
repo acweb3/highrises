@@ -78,6 +78,18 @@ export const ContextFABButton = styled.a`
 
 export const ContextFABLinks = styled.div`
     display: flex;
+    align-items: center;
+
+    & a {
+        margin: 0 12px;
+        &.active {
+            color: ${(props) => props.theme.colors.white[0]};
+        }
+
+        &:hover {
+            color: ${(props) => props.theme.colors.white[0]};
+        }
+    }
 `;
 
 export const ContextFAB = styled.div`
@@ -101,7 +113,19 @@ export const ContextFAB = styled.div`
 
     ${(props) => props.theme.breakpoints.mobile`
         top: 32px;
+        left: 3%;
+        transform: translateX(-3%)
     `};
+
+    ${(props) =>
+        props.isHiddenOnMobile &&
+        css`
+            display: none;
+
+            ${props.theme.breakpoints.mobile`
+                display: flex;
+            `};
+        `}
 
     ${(props) => props.isActive && props.theme.utility.membersGradient}
 `;

@@ -2,12 +2,13 @@ import { useWindowSize } from 'common/hooks/useWindowSize';
 import { DesktopExplorer } from 'components/ExplorerV2/DesktopExplorer';
 import * as S from 'components/ExplorerV2/ExplorerV2.styled';
 import { MobileExplorer } from 'components/ExplorerV2/MobileExplorer';
+import { GatsbyLink } from 'components/ui/BaseLink/BaseLink.styled';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
 import { useExplorerRefContext } from 'contexts/ExplorerRef';
 import { useEffect, useRef } from 'react';
 
 export const ExplorerV2 = () => {
-    const { isLoaded, isMobile } = useWindowSize();
+    const { isLoaded, isSmallish } = useWindowSize();
     const { explorerRef, buildingExplorerMobileRefState } =
         useExplorerRefContext();
 
@@ -21,20 +22,24 @@ export const ExplorerV2 = () => {
             window.scrollY >=
                 explorerRef.current?.getBoundingClientRect().top &&
             isLoaded &&
-            !isMobile
+            !isSmallish
         ) {
             explorerRef.current?.scrollIntoView(true);
         }
-    }, [buildingExplorerMobileRefState, isLoaded, isMobile]);
+    }, [buildingExplorerMobileRefState, isLoaded, isSmallish]);
 
     return (
         <S.ExplorerV2
             ref={explorerRef}
+            css={`
+                opacity: ${isLoaded ? 1 : 0};
+                transition: opacity 400ms;
+            `}
             style={{
-                height: isLoaded && !isMobile ? height : undefined,
+                height: isLoaded && !isSmallish ? height : undefined,
             }}
         >
-            {isLoaded && isMobile ? <MobileExplorer /> : <DesktopExplorer />}
+            {isSmallish ? <MobileExplorer /> : <DesktopExplorer />}
         </S.ExplorerV2>
     );
 };

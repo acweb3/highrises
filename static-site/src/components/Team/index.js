@@ -116,7 +116,6 @@ export const Team = () => {
                     );
                 })}
             </S.Profiles>
-            <S.BorderBottom />
         </S.Team>
     );
 };

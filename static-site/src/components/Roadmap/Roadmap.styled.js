@@ -45,8 +45,9 @@ export const RoadmapVideo = styled.video`
 `;
 
 export const RoadmapImage = styled.img`
-    height: 100%;
+    height: 200vh;
     min-width: fit-content;
+    transition: transform 400ms;
 `;
 
 export const RoadmapImageWrapper = styled.div`
@@ -56,23 +57,24 @@ export const RoadmapImageWrapper = styled.div`
     top: 0;
     left: -25%;
 
+    height: 100vh;
+    position: sticky;
+    overflow: visible;
+    overflow-y: hidden;
+
     display: none;
 
     ${(props) => props.theme.breakpoints.small`
         display: block;
-        left: -55%;
-    `}
-
-    ${(props) => props.theme.breakpoints.medium`
-        left: -35%;
+        margin-left: -55%;
     `}
 
     ${(props) => props.theme.breakpoints.large`
-        left: -15%;
+        margin-left: -15%;
     `}
 
     ${(props) => props.theme.breakpoints.extraLarge`
-        left: -5%;
+        margin-left: 0%;
     `}
 `;
 
@@ -82,5 +84,4 @@ export const Roadmap = styled.div`
     min-height: 800px;
     display: flex;
     flex-direction: row;
-    overflow: hidden;
 `;

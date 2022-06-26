@@ -1,10 +1,12 @@
 import { Header } from 'components/ui/Header';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const PointHeader = styled(Header)`
     font-size: 1.5rem;
     line-height: 1;
     margin-top: -3px;
+
+    ${(props) => props.props}
 `;
 
 export const Point = styled.div`
@@ -36,4 +38,11 @@ export const Point = styled.div`
             bottom: 0;
         }
     }
+
+    ${(props) =>
+        props.isCompleted &&
+        css`
+            opacity: 0.6;
+            cursor: pointer;
+        `}
 `;

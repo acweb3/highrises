@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const MobileExplorerBackground = styled.img`
     position: absolute;
-    bottom: 120px;
+    bottom: 0px;
     height: 100%;
     max-width: initial;
     z-index: 0;
@@ -22,7 +22,7 @@ export const MobileExplorer = styled.div`
     position: sticky;
     top: 0;
 
-    ${(props) => props.theme.breakpoints.extraSmall`
+    ${(props) => props.theme.breakpoints.small`
         display: none;
     `}
 `;

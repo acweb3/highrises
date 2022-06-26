@@ -72,17 +72,17 @@ export const BuildingsExplorer = styled.div`
     margin-top: auto;
 
     ${(props) => props.theme.breakpoints.small`
-    &::before {
-        content: ' ';
-        z-index: 0;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        display: block;
-        height: 120px;
-        width: 100%;
-        background: white;
-    }
+        &::before {
+            content: ' ';
+            z-index: 0;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            display: block;
+            height: 120px;
+            width: 100%;
+            background: white;
+        }
     `}
 `;
 

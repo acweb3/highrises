@@ -1,5 +1,6 @@
 import * as S from 'components/ExplorerV2/BuildingsExplorer/Building/Building.styled';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
+import { useState } from 'react';
 
 export const Building = ({ building }) => {
     const { activeHighrise, setActiveHighrise } = useActiveHighriseContext();

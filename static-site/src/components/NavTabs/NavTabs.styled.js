@@ -25,19 +25,12 @@ export const NavTabs = styled.div`
     display: flex;
     border-top: 1px solid ${(props) => props.theme.colors.grey[0]};
 
-    ${(props) => props.theme.breakpoints.mobile`
-        padding: 48px 48px 32px;
-    `}
+    align-items: center;
+    justify-content: center;
+
+    padding: 16px 48px 16px;
 
     ${(props) => props.theme.breakpoints.small`
-        padding: 48px 48px 32px;
-    `}
-
-    ${(props) => props.theme.breakpoints.medium`
-        padding: 48px 80px 32px;
-    `}
-
-    ${(props) => props.theme.breakpoints.large`
-        padding: 48px 88px 48px;
+        display: none;
     `}
 `;

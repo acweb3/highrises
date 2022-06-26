@@ -1,6 +1,6 @@
 import { CloseButton } from 'components/CloseButton';
 import { ExternalButtonLink } from 'components/ui/BaseButton';
-import styled from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
 export const DesktopMastheadX = styled(CloseButton)`
     position: relative;
@@ -25,6 +25,24 @@ export const DesktopMastheadExternalButtonLink = styled(ExternalButtonLink)`
     padding: 8px 0;
 `;
 
+const bounce = keyframes`
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 
+   40% {transform: translateY(-8px);} 
+   60% {transform: translateY(-10px);} 
+`;
+
+export const DesktopMastheadAlert = styled.div`
+    font-style: italic;
+    text-align: right;
+
+    margin: 16px 0 0;
+
+    ${(props) => props.theme.breakpoints.small`
+        animation: ${bounce} 1s;
+        animation-delay: 1s;
+    `}
+`;
+
 export const DesktopMastheadImage = styled.img`
     margin: 16px auto 32px;
     width: 75%;
@@ -42,18 +60,28 @@ export const DesktopMasthead = styled.div`
     overflow-y: scroll;
 
     min-height: 100vh;
-    height: 100vh;
+    height: 100%;
 
     display: flex;
     flex-direction: column;
 
-    padding: 16px 32px 168px;
+    padding: 16px 32px 196px;
 
     z-index: 2;
 
     position: fixed;
     top: 83.65px;
     right: 0;
+
+    transform: translate3D(0, 100%, 0);
+
+    transition: transform 400ms;
+
+    ${(props) =>
+        props.isActive &&
+        css`
+            transform: translate3D(0, 0, 0);
+        `}
 
     ${(props) => props.theme.breakpoints.extraSmall`
         position: absolute;
@@ -69,5 +97,13 @@ export const DesktopMasthead = styled.div`
             rgba(255, 255, 255, 1) calc(100% - 119px)
         );
         padding: 48px 48px 168px;
+        transform: translate3D(100%, 0, 0);
+
+        ${
+            props.isActive &&
+            css`
+                transform: translate3D(0, 0, 0);
+            `
+        }
     `}
 `;

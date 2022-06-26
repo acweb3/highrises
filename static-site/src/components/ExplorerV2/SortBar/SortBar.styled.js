@@ -88,7 +88,7 @@ export const SortBar = styled.div`
     padding: 32px 32px 16px;
     margin-left: auto;
 
-    overflow-x: auto;
+    overflow: visible;
 
     justify-content: center;
 
@@ -96,13 +96,12 @@ export const SortBar = styled.div`
 
     ${(props) => props.theme.breakpoints.small`
         justify-content: initial;
-        padding: 24px 32px 0;
-        margin-bottom: 16px;
+        padding: 16px 32px 0;
+        margin-bottom: 4px;
     `}
 
     ${(props) => props.theme.breakpoints.medium`
         line-height: 2rem;
-        padding: 48px 32px 0;
     `}
 
     &::-webkit-scrollbar {

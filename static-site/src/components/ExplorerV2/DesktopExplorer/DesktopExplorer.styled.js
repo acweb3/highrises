@@ -2,11 +2,15 @@ import styled from 'styled-components';
 
 export const DesktopExplorerBackground = styled.img`
     position: absolute;
-    bottom: 120px;
-    height: 100%;
+    bottom: 80px;
     max-width: initial;
     z-index: 0;
     transition: transform 800ms;
+    height: 100%;
+
+    ${(props) => props.theme.breakpoints.extraLarge`
+        width: 166%;
+    `}
 `;
 
 export const DesktopExplorerSection = styled.div`
@@ -22,7 +26,9 @@ export const DesktopExplorer = styled.div`
     position: sticky;
     top: 0;
 
-    ${(props) => props.theme.breakpoints.extraSmall`
+    background: ${(props) => props.theme.colors.white[0]};
+
+    ${(props) => props.theme.breakpoints.small`
         display: flex;
     `}
 `;

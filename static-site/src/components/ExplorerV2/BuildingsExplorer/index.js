@@ -2,26 +2,11 @@ import { Building } from 'components/ExplorerV2/BuildingsExplorer/Building';
 import * as S from 'components/ExplorerV2/BuildingsExplorer/BuildingsExplorer.styled';
 import { DragScroll } from 'components/ExplorerV2/BuildingsExplorer/DragScroll';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
-import { useExplorerRefContext } from 'contexts/ExplorerRef';
 import { useEffect } from 'react';
 
 export const BuildingsExplorer = ({ activeSort, isMobile }) => {
     const { highrises, initHighrises, setActiveHighrise, setHighrises } =
         useActiveHighriseContext();
-    const { buildingExplorerMobileRefState } = useExplorerRefContext();
-
-    const scrollBuildings = (e, isRight) => {
-        e.preventDefault();
-        e.stopPropagation();
-
-        if (buildingExplorerMobileRefState.current) {
-            buildingExplorerMobileRefState.current.scrollTo(
-                buildingExplorerMobileRefState.current.scrollLeft +
-                    700 * (isRight ? 1 : -1),
-                0
-            );
-        }
-    };
 
     useEffect(() => {
         if (activeSort) {
@@ -37,17 +22,15 @@ export const BuildingsExplorer = ({ activeSort, isMobile }) => {
 
     return (
         <S.BuildingsExplorer>
-            <S.BuildingsExplorerArrow
-                left
-                onClick={(e) => scrollBuildings(e, false)}
-            >
-                <S.BuildingsExplorerScrollLeft />
-            </S.BuildingsExplorerArrow>
             {isMobile ? (
                 <div
                     css={`
                         display: flex;
                         overflow-x: scroll;
+
+                        ::-webkit-scrollbar {
+                            display: none;
+                        }
                     `}
                 >
                     {highrises.map((building, index) => (
@@ -61,13 +44,6 @@ export const BuildingsExplorer = ({ activeSort, isMobile }) => {
                     ))}
                 </DragScroll>
             )}
-
-            <S.BuildingsExplorerArrow
-                right
-                onClick={(e) => scrollBuildings(e, true)}
-            >
-                <S.BuildingsExplorerScrollRight />
-            </S.BuildingsExplorerArrow>
         </S.BuildingsExplorer>
     );
 };

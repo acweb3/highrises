@@ -18,9 +18,7 @@ export const DragScroll = ({ children }) => {
         'scroll',
         () => {
             const offset =
-                window.scrollY -
-                (contentRef.current?.getBoundingClientRect().top +
-                    contentRef.current?.offsetHeight ?? 0);
+                window.scrollY - contentRef.current?.offsetHeight ?? 0;
 
             setScroll(
                 Math.max(
@@ -45,9 +43,8 @@ export const DragScroll = ({ children }) => {
                 0,
                 Math.max(
                     Math.min(
-                        (index + 1) * 400 +
+                        (index + 1) * Math.max(window.innerWidth / 4, 400) +
                             desktopNavRef.current.offsetHeight +
-                            contentRef.current.getBoundingClientRect().top +
                             64
                     ),
                     0

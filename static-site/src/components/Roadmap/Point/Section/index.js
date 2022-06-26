@@ -8,7 +8,12 @@ export const Section = ({ header = '', points = [] }) => {
             ></S.SectionHeader>
             <S.List>
                 {points.map((point) => {
-                    return <S.ListItem key={point}>{point}</S.ListItem>;
+                    return (
+                        <S.ListItem
+                            key={point}
+                            dangerouslySetInnerHTML={{ __html: point }}
+                        />
+                    );
                 })}
             </S.List>
         </S.Section>

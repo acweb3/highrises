@@ -3,6 +3,10 @@ import styled from 'styled-components';
 
 export const ListItem = styled.li`
     font-family: poppins;
+
+    & > a {
+        color: ${(props) => props.theme.colors.blue[0]};
+    }
 `;
 
 export const List = styled.ul`
