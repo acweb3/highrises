@@ -37,6 +37,7 @@ export const ReserveHighrise = ({
     hasReservedToken,
     isAuction,
     isGiveaway,
+    isReserved,
     isLoading,
     isWaiting,
     reservedAddress,
@@ -46,11 +47,12 @@ export const ReserveHighrise = ({
     const reservedMessage = getReservedText({
         isAuction,
         isGiveaway,
-        isReserved: reservedAddress,
+        isReserved: isReserved || reservedAddress,
     });
     const ens = useEnsAddress(reservedAddress);
 
-    const isActive = !reservedAddress && !isAuction && !isGiveaway;
+    const isActive =
+        !reservedAddress && !isAuction && !isGiveaway && !isReserved;
     const isReservedByYou =
         reservedAddress &&
         account &&

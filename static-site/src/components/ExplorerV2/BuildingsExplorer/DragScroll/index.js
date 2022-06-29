@@ -8,7 +8,7 @@ import { useThrottle } from 'react-use';
 export const DragScroll = ({ children }) => {
     const contentRef = useRef(null);
     const hasSetRef = useRef(false);
-    const { desktopNavRef, setBuildingExplorerMobileRefState } =
+    const { desktopNavRef, explorerRef, setBuildingExplorerMobileRefState } =
         useExplorerRefContext();
     const { activeHighrise, highrises } = useActiveHighriseContext();
     const [scroll, setScroll] = useState(0);
@@ -18,7 +18,10 @@ export const DragScroll = ({ children }) => {
         'scroll',
         () => {
             const offset =
-                window.scrollY - contentRef.current?.offsetHeight ?? 0;
+                window.scrollY -
+                30 -
+                (window.scrollY +
+                    explorerRef.current.getBoundingClientRect().top ?? 0);
 
             setScroll(
                 Math.max(
@@ -45,7 +48,10 @@ export const DragScroll = ({ children }) => {
                     Math.min(
                         (index + 1) * Math.max(window.innerWidth / 4, 400) +
                             desktopNavRef.current.offsetHeight +
-                            64
+                            64 +
+                            (window.scrollY +
+                                explorerRef.current.getBoundingClientRect()
+                                    .top ?? 0)
                     ),
                     0
                 )

@@ -12,10 +12,10 @@ export const useChainConfig = () => {
             ? config.rinkebyContractAddress
             : config.mainnetContractAddress;
 
-    // const reserveContractAddress =
-    //     ethers.library?.network?.chainId === 1
-    //         ? config.mainnetReserveContractAddress
-    //         : config.rinkebyReserveContractAddress;
+    const reserveContractAddress =
+        ethers.library?.network?.chainId === 1
+            ? config.mainnetReserveContractAddress
+            : config.rinkebyReserveContractAddress;
 
     return {
         openseaURL:
@@ -23,7 +23,7 @@ export const useChainConfig = () => {
                 ? 'testnets.opensea'
                 : 'opensea',
         contract: new Contract(contractAddress, nftAbi),
-        // reserveContract: new Contract(reserveContractAddress, reserveAbi),
+        reserveContract: new Contract(reserveContractAddress, reserveAbi),
         contractAddress,
     };
 };

@@ -20,14 +20,14 @@ const getReserveStatus = (account, hasReservedToken) => {
         return {
             isReserved: true,
             reserveCopy:
-                'The connected wallet is on the private list.  You will be able to reserve a token during the private reserve period.',
+                'The connected wallet is in the snapshot.  You will be able to reserve a highrise during the private reserve period.',
         };
     }
 
     return {
         isReserved: false,
         reserveCopy:
-            'The connected wallet is not on the private list.  You will still be able to reserve a token during the public reserve period.',
+            'The connected wallet is not in the snapshot.  You will still be able to buy a highrise during the public sale.',
     };
 };
 

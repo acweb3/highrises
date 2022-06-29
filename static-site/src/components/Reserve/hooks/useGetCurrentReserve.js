@@ -1,4 +1,4 @@
-import { useCall, useEthers, shortenAddress } from '@usedapp/core';
+import { useCall } from '@usedapp/core';
 import { useChainConfig } from 'common/hooks/useChainConfig';
 
 export const useGetCurrentReserve = () => {

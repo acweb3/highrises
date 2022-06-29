@@ -4,6 +4,7 @@ import { Explorer } from 'components/Explorer';
 import { FAQ } from 'components/FAQ';
 import { Intent } from 'components/Intent';
 import { NavTabs } from 'components/NavTabs';
+import { Reserve } from 'components/Reserve';
 import { Roadmap } from 'components/Roadmap';
 import { SiteWrapper } from 'components/SiteWrapper';
 import { Team } from 'components/Team';
@@ -34,10 +35,7 @@ const App = ({ pageContext: { highrises, thumbnail } }) => {
                         content="Highrises are the iconic elements of American cities. Reaching radical new heights in technological advancement, skyscrapers fused Classical, Renaissance, and Gothic motifs onto steel and defined a new architectural language with Art Deco and International."
                     />
                     <meta property="og:type" content="website" />
-                    <meta
-                        name="twitter:title"
-                        content="Highrisess - HYTHA.CG"
-                    />
+                    <meta name="twitter:title" content="Highrises - HYTHA.CG" />
                     <meta property="og:image" content={thumbnail} />
                     <meta name="twitter:card" content="summary_large_image" />
                     <meta name="twitter:creator" content="@Hythacg" />
@@ -47,7 +45,7 @@ const App = ({ pageContext: { highrises, thumbnail } }) => {
                     <link rel="canonical" href="highrises.hythacg.com" />
                 </Helmet>
                 <NavTabs />
-                {/* <Reserve /> */}
+                <Reserve />
                 <Intent />
                 <Editing />
                 {/* <Explorer /> */}
