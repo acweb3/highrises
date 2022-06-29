@@ -46,8 +46,7 @@ export const DragScroll = ({ children }) => {
                 0,
                 Math.max(
                     Math.min(
-                        (index + 1) * Math.max(window.innerWidth / 4, 400) +
-                            desktopNavRef.current.offsetHeight +
+                        index * Math.max(window.innerWidth / 4, 400) +
                             64 +
                             (window.scrollY +
                                 explorerRef.current.getBoundingClientRect()
