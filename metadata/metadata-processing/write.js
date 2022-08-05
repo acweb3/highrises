@@ -36,6 +36,7 @@ const write = (traits) => {
                 attributes,
                 ltlng,
                 city,
+                heightBracket,
                 ...trait
             },
             index
@@ -77,7 +78,10 @@ const write = (traits) => {
                         name: `Highrise #${`${index + 1}`.padStart(2, '0')}`,
                         description: `**${
                             trait.name
-                        }**\n\n${trait.description.replaceAll('\n', '\n\n')}`,
+                        }**\n\n**Art by:** Chris Hytha\n\n**Research by: ** Mark Houser\n\n${trait.description.replaceAll(
+                            '\n',
+                            '\n\n'
+                        )}`,
                         attributes: filteredAttributes,
                     },
                     null,
