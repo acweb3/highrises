@@ -40,11 +40,11 @@ const App = ({ pageContext: { highrises, thumbnail } }) => {
                     <link rel="canonical" href="highrises.hythacg.com" />
                 </Helmet>
                 <NavTabs />
-                <Reserve
+                {/* <Reserve
                     css={`
                         background: ${(props) => props.theme.colors.white[0]};
                     `}
-                />
+                /> */}
                 <ExplorerV2 />
                 <EmailCollection />
             </SiteWrapper>

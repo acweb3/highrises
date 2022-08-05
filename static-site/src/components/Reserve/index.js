@@ -37,10 +37,7 @@ export const Reserve = ({ className }) => {
                 new Date() > PRIVATE_SALE_START &&
                 new Date() < PRIVATE_SALE_END;
 
-            const isPublicSaleOngoing =
-                new Date() > PUBLIC_SALE_START && new Date() < PUBLIC_SALE_END;
-
-            setIsWaiting(!(isPrivateSaleOngoing || isPublicSaleOngoing));
+            setIsWaiting(!isPrivateSaleOngoing);
         }, 1000);
 
         return () => {
@@ -78,7 +75,7 @@ export const Reserve = ({ className }) => {
                         countDownStart={PUBLIC_SALE_START}
                         countDownEnd={PUBLIC_SALE_END}
                         startedText="Now Open"
-                        endedText="Closed"
+                        endedText="Now Open"
                     />
                 </S.ReserveCountdownWrapper>
             </S.ReserveCountdowns>

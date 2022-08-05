@@ -45,7 +45,7 @@ const App = ({ pageContext: { highrises, thumbnail } }) => {
                     <link rel="canonical" href="highrises.hythacg.com" />
                 </Helmet>
                 <NavTabs />
-                <Reserve />
+                {/* <Reserve /> */}
                 <Intent />
                 <Editing />
                 {/* <Explorer /> */}
