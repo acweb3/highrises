@@ -1,6 +1,7 @@
+import seamlessBackgroundSrc from 'assets/images/seamless-background.webp';
 import styled from 'styled-components';
 
-export const DesktopExplorerBackground = styled.img`
+export const DesktopExplorerBackground = styled.div`
     position: absolute;
     bottom: 80px;
     max-width: initial;
@@ -8,8 +9,12 @@ export const DesktopExplorerBackground = styled.img`
     transition: transform 800ms;
     height: 100%;
 
+    background-image: url(${seamlessBackgroundSrc});
+    background-repeat: repeat-x;
+    background-size: auto 100%;
+
     ${(props) => props.theme.breakpoints.extraLarge`
-        width: 166%;
+        width: 300%;
     `}
 `;
 

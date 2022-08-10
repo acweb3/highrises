@@ -1,4 +1,3 @@
-import seamlessBackgroundSrc from 'assets/images/seamless-background.webp';
 import { useDocumentListener } from 'common/hooks/useDocumentListener';
 import { BuildingsExplorer } from 'components/ExplorerV2/BuildingsExplorer';
 import * as S from 'components/ExplorerV2/DesktopExplorer/DesktopExplorer.styled';
@@ -66,7 +65,6 @@ export const DesktopExplorer = () => {
                             -42 * throttledScroll
                         }%, 0, 0)`,
                     }}
-                    src={seamlessBackgroundSrc}
                 />
                 {Boolean(highrises.length) && (
                     <>
