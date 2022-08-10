@@ -46,6 +46,12 @@ export const DesktopMastheadAlert = styled.div`
 export const DesktopMastheadImage = styled.img`
     margin: 16px auto 32px;
     width: 75%;
+
+    transition: opacity 100ms;
+
+    &:hover {
+        opacity: 0.9;
+    }
 `;
 
 export const DesktopMasthead = styled.div`
