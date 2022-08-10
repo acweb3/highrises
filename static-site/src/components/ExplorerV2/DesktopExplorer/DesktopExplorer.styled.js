@@ -13,9 +13,7 @@ export const DesktopExplorerBackground = styled.div`
     background-repeat: repeat-x;
     background-size: auto 100%;
 
-    ${(props) => props.theme.breakpoints.extraLarge`
-        width: 300%;
-    `}
+    width: 300%;
 `;
 
 export const DesktopExplorerSection = styled.div`

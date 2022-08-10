@@ -3,6 +3,7 @@ import { Story } from 'components/ExplorerV2/Masthead/Attributes/Story';
 import { Traits } from 'components/ExplorerV2/Masthead/Attributes/Traits';
 import * as S from 'components/ExplorerV2/Masthead/DesktopMasthead/DesktopMasthead.styled';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
+import kebabCase from 'just-kebab-case';
 import { useEffect, useState } from 'react';
 
 export const DesktopMasthead = ({ activeHighrise }) => {
@@ -45,6 +46,15 @@ export const DesktopMasthead = ({ activeHighrise }) => {
                     >
                         <S.DesktopMastheadImage src={tempHighrise.posterSrc} />
                     </a>
+                    <S.DesktopMastheadExternalButtonLink
+                        rel="noopener noreferrer"
+                        target="_blank"
+                        href={`https://highrises.hythacg.com/building/${kebabCase(
+                            tempHighrise.name
+                        )}`}
+                    >
+                        View Detail
+                    </S.DesktopMastheadExternalButtonLink>
                     <S.DesktopMastheadExternalButtonLink
                         rel="noopener noreferrer"
                         target="_blank"
