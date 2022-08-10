@@ -6,6 +6,6 @@ const { site } = require('./site');
 (() => {
     // nft();
     // poster();
-    site();
-    // png();
+    // site();
+    png();
 })();
