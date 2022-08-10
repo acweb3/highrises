@@ -39,7 +39,7 @@ const drone = async () => {
 };
 
 const edison = async () => {
-    const edison = join(__dirname, 'raw', 'edison-building.png');
+    const edison = join(__dirname, 'raw', 'Website About Page 3.png');
     await asyncReadfile(edison);
 
     await sharp(edison)
@@ -58,7 +58,7 @@ const editing = async () => {
 };
 
 const inquirer = async () => {
-    const inquirer = join(__dirname, 'raw', 'inquirer.png');
+    const inquirer = join(__dirname, 'raw', 'Website About Page 2.png');
     await asyncReadfile(inquirer);
 
     const width = 5464;
@@ -78,11 +78,11 @@ const inquirer = async () => {
 };
 
 const theDrake = async () => {
-    const drake = join(__dirname, 'raw', 'the-drake.png');
+    const drake = join(__dirname, 'raw', 'Website About Page 1.png');
     await asyncReadfile(drake);
 
     await sharp(drake)
-        .extract({ left: 0, top: 0, width: 2732, height: 8196 })
+        .extract({ left: 0, top: 0, width: 2732, height: 8000 })
         .resize({
             width: 700,
         })
@@ -90,12 +90,12 @@ const theDrake = async () => {
 };
 
 const site = async () => {
-    await birds();
-    await blueSky();
-    await cloud();
-    await drone();
+    // await birds();
+    // await blueSky();
+    // await cloud();
+    // await drone();
     await edison();
-    await editing();
+    // await editing();
     await inquirer();
     await theDrake();
 };

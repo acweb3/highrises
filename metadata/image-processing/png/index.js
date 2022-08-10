@@ -12,19 +12,20 @@ const png = async () => {
     const files = await asyncReaddir(rawImagesDir);
 
     files.forEach(async (file, i) => {
+        console.log({ file, i });
         const fileName = join(__dirname, 'raw', file);
 
         await sharp(fileName)
             .resize({
-                width: 300,
+                width: 800,
             })
             .toFile(join(outputDir, 'big', `${i}.webp`));
 
-        await sharp(fileName)
-            .resize({
-                width: 100,
-            })
-            .toFile(join(outputDir, 'small', `${i}.webp`));
+        // await sharp(fileName)
+        //     .resize({
+        //         width: 400,
+        //     })
+        //     .toFile(join(outputDir, 'small', `${i}.webp`));
     });
 };
 

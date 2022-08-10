@@ -53,6 +53,16 @@ const write = (traits) => {
                         };
                     }
 
+                    if (
+                        attribute.trait_type === 'AKA 2' ||
+                        attribute.trait_type === 'AKA now'
+                    ) {
+                        return {
+                            ...attribute,
+                            trait_type: 'AKA',
+                        };
+                    }
+
                     if (attribute.trait_type === 'Height Bracket') {
                         return {
                             ...attribute,
@@ -78,7 +88,7 @@ const write = (traits) => {
                         name: `Highrise #${`${index + 1}`.padStart(2, '0')}`,
                         description: `**${
                             trait.name
-                        }**\n\n**Art by:** Chris Hytha\n\n**Research by: ** Mark Houser\n\n${trait.description.replaceAll(
+                        }**\n\n**Art by:** Chris Hytha\n\n**Story by: ** Mark Houser\n\n${trait.description.replaceAll(
                             '\n',
                             '\n\n'
                         )}`,
