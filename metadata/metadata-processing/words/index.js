@@ -12,7 +12,17 @@ const { promisify } = require('util');
     const buildingsText = rawTextLines.map((line) => {
         return line
             .split('\n')
-            .filter((paragraph) => paragraph.split(' ').length > 5)
+            .filter((paragraph) => {
+                // make a (maybe dumb) assumption that a title will start w a number
+                const isTitle = /^[0-9]/.test(paragraph);
+
+                if (isTitle) {
+                    console.log(paragraph);
+                }
+
+                return !isTitle;
+            })
+            .filter(Boolean)
             .join('\n');
     });
 

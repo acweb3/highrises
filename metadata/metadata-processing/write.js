@@ -103,7 +103,12 @@ const write = (traits) => {
 
     fs.writeFileSync(
         'dist/site/highrises.js',
-        `export const highrises = ${JSON.stringify(traits, null, 4)}`
+        `const highrises = ${JSON.stringify(traits, null, 4)}
+        
+        module.exports = {
+            highrises,
+        };        
+        `
     );
 };
 
