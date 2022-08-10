@@ -50,6 +50,7 @@ const POINTS = [
         ],
     },
     {
+        isCompleted: true,
         header: 'June: Upstate New York',
         sections: [
             {
@@ -92,10 +93,46 @@ const POINTS = [
         ],
     },
     {
-        header: 'July: Northeast',
+        header: 'August: Northeast',
         sections: [
             {
-                header: 'Boston, Providence, Hartford, and more',
+                header: 'Boston, Providence, Hartford and more',
+            },
+            {
+                header: '1 Retweet Giveaway: Highrise #32',
+                points: [
+                    'A random RTer will be selected to win the 1/1 Highrise NFT',
+                    'Starting Tuesday 8/9 12pm EST',
+                    'Winner announced 8/11 12pm EST',
+                ],
+            },
+            {
+                header: 'Public Auctions - Highrise #45 and #48',
+                points: [
+                    'Industrial Trust Building and Custom House',
+                    'Auctions start 8/11 6pm EST',
+                    'Auctions close 8/12 6pm EST',
+                ],
+            },
+            {
+                header: 'Collector Reserves — 12 Highrise NFTs Available',
+                points: [
+                    'Set price 1 ETH (.5 ETH discount)',
+                    'Thursday 8/11 1pm EST, open for 1 hour only',
+                    'Reserve on <a href="https://highrises.hythacg.com/">https://highrises.hythacg.com/</a>',
+                    'Only available for collectors of Rowhomes and Hythacg 1/1 NFTs',
+                    'Snapshot will be taken Wednesday 8/10 at 6pm EST. If a Hythacg NFT is in your wallet, that wallet will be eligible to reserve when connected to the website.',
+                    'Collectors who have reserved a highrise in a previous release are not eligible',
+                    'Once reserves are closed, private listings are created on Opensea Thursday 8/11 3pm EST',
+                    'Private listings expire after 3 days.',
+                ],
+            },
+            {
+                header: 'Public Release',
+                points: [
+                    'Any Highrise NFTs that are unclaimed after collector reserves will go live to the public Thursday 8/11 at 3pm EST',
+                    'Set price 1.5 ETH',
+                ],
             },
         ],
     },
