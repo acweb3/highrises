@@ -2,10 +2,8 @@ import { useWindowSize } from 'common/hooks/useWindowSize';
 import { DesktopExplorer } from 'components/ExplorerV2/DesktopExplorer';
 import * as S from 'components/ExplorerV2/ExplorerV2.styled';
 import { MobileExplorer } from 'components/ExplorerV2/MobileExplorer';
-import { GatsbyLink } from 'components/ui/BaseLink/BaseLink.styled';
-import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
 import { useExplorerRefContext } from 'contexts/ExplorerRef';
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 
 export const ExplorerV2 = () => {
     const { isLoaded, isSmallish } = useWindowSize();

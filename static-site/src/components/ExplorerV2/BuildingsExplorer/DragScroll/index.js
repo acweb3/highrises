@@ -2,17 +2,24 @@ import { useDocumentListener } from 'common/hooks/useDocumentListener';
 import * as S from 'components/ExplorerV2/BuildingsExplorer/DragScroll/DragScroll.styled';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
 import { useExplorerRefContext } from 'contexts/ExplorerRef';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useThrottle } from 'react-use';
 
 export const DragScroll = ({ children }) => {
     const contentRef = useRef(null);
     const hasSetRef = useRef(false);
-    const { desktopNavRef, explorerRef, setBuildingExplorerMobileRefState } =
+    const { explorerRef, setBuildingExplorerMobileRefState } =
         useExplorerRefContext();
     const { activeHighrise, highrises } = useActiveHighriseContext();
     const [scroll, setScroll] = useState(0);
     const throttledScroll = useThrottle(scroll, 100);
+
+    const isLastHighrise = useMemo(() => {
+        return (
+            activeHighrise &&
+            activeHighrise.name === highrises[highrises.length - 1].name
+        );
+    }, [activeHighrise, highrises]);
 
     useDocumentListener(
         'scroll',
@@ -28,13 +35,14 @@ export const DragScroll = ({ children }) => {
                     Math.min(
                         offset,
                         contentRef.current.scrollWidth -
-                            contentRef.current.offsetWidth
+                            contentRef.current.offsetWidth +
+                            (isLastHighrise ? 480 : 0)
                     ),
                     0
                 )
             );
         },
-        []
+        [isLastHighrise]
     );
 
     useEffect(() => {
@@ -56,6 +64,24 @@ export const DragScroll = ({ children }) => {
                 )
             );
         }
+
+        const offset =
+            window.scrollY -
+            30 -
+            (window.scrollY + explorerRef.current.getBoundingClientRect().top ??
+                0);
+
+        setScroll(
+            Math.max(
+                Math.min(
+                    offset,
+                    contentRef.current.scrollWidth -
+                        contentRef.current.offsetWidth +
+                        (isLastHighrise ? 480 : 0)
+                ),
+                0
+            )
+        );
     }, [activeHighrise, highrises]);
 
     useEffect(() => {
