@@ -119,7 +119,7 @@ export const EditingDescription = styled.div`
 export const EditingContent = styled.div`
     width: 100%;
     display: flex;
-    padding: 80px 0px 80px 0px;
+    padding: 120px 0px 80px 0px;
 
     ${(props) => props.theme.breakpoints.mobile`
         width: auto;
