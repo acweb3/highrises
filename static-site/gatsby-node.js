@@ -44,11 +44,11 @@ exports.createPages = async function ({ actions, graphql }) {
 
     const highrisesWithImages = highrises.map((highrise, index) => ({
         ...highrise,
-        iconSrc: urlMap[index]['icon-highrises'],
-        imageSrc: urlMap[index]['slide-highrises'],
-        posterSrc: urlMap[index]['poster-highrises'],
-        nftSrc: urlMap[index]['nft-highrises'],
-        mapSrc: urlMap[index]['map-highrises'],
+        iconSrc: urlMap[index]?.['icon-highrises'],
+        imageSrc: urlMap[index]?.['slide-highrises'],
+        posterSrc: urlMap[index]?.['poster-highrises'],
+        nftSrc: urlMap[index]?.['nft-highrises'],
+        mapSrc: urlMap[index]?.['map-highrises'],
         index,
     }));
 
