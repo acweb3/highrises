@@ -80,12 +80,13 @@ const write = (traits) => {
                 });
             }
 
+            console.log(highriseNumber);
             fs.writeFileSync(
                 `dist/chain/${index}`,
                 JSON.stringify(
                     {
                         ...trait,
-                        name: `Highrise #${`${index + 1}`.padStart(2, '0')}`,
+                        name: highriseNumber,
                         description: `**${
                             trait.name
                         }**\n\n**Art by:** Chris Hytha\n\n**Story by: ** Mark Houser\n\n${trait.description.replaceAll(

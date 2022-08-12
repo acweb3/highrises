@@ -7,7 +7,7 @@ const pause = () => {
 	return new Promise((res) => {
 		setTimeout(() => {
 			res();
-		}, 3000);
+		}, 1000);
 	});
 };
 
@@ -16,7 +16,7 @@ export const config = {
 };
 
 (async () => {
-	for (let i = 0; i < 35; i++) {
+	for (let i = 0; i < 50; i++) {
 		const res = await fetch(
 			`https://api.opensea.io/api/v1/asset/0x516d85f0c80d2c4809736aca3f3f95ce8545b5d2/${i}/?force_update=true`,
 			{
@@ -25,7 +25,7 @@ export const config = {
 				},
 			}
 		);
-		console.log(res);
+		console.log({ i, status: res.status });
 		await pause();
 	}
 })();
