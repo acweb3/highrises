@@ -99,7 +99,7 @@ const POINTS = [
                 header: 'Boston, Providence, Hartford and more',
             },
             {
-                header: '1 Retweet Giveaway: Highrise #32',
+                header: '1 Retweet Giveaway: Highrise #38',
                 points: [
                     'A random RTer will be selected to win the 1/1 Highrise NFT',
                     'Starting Tuesday 8/9 12pm EST',

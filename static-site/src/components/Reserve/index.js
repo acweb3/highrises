@@ -11,14 +11,12 @@ import { useEffect, useState } from 'react';
 export const RESERVED_ADDRESSES = [...reserve].map((address) =>
     address.toLowerCase()
 );
-const PRIVATE_SALE_START = new Date(Date.UTC(2022, 5, 29, 16, 0, 0, 0));
-const PRIVATE_SALE_END = new Date(Date.UTC(2022, 5, 29, 17, 0, 0, 0));
-const PUBLIC_SALE_START = new Date(Date.UTC(2022, 5, 29, 20, 0, 0, 0));
-const PUBLIC_SALE_END = new Date(Date.UTC(2022, 5, 29, 21, 0, 0, 0));
+const PRIVATE_SALE_START = new Date(Date.UTC(2022, 7, 11, 16, 0, 0, 0));
+const PRIVATE_SALE_END = new Date(Date.UTC(2022, 7, 11, 18, 0, 0, 0));
 
-const AUCTIONS = [0, 15, 19, 21, 29];
+const AUCTIONS = [0, 15, 19, 21, 29, 44, 47];
 const GIVEAWAYS = [4, 31];
-const RESERVED = [23];
+const RESERVED = [23, 37];
 
 export const Reserve = ({ className }) => {
     const { account } = useEthers();
@@ -51,12 +49,12 @@ export const Reserve = ({ className }) => {
 
             <S.ReserveParagraph>
                 Collectors of any Hythacg NFTs are eligible to reserve a
-                Highrise starting 6/29 12 PM EST. Collectors will have one hour
+                Highrise starting 8/11 1 PM EST. Collectors will have one hour
                 to reserve and are limited to one Highrise per collector. If any
                 highrises are unclaimed by collectors, they will be released for
-                public reserve 6/29 4 PM EST. To finalize the transfer of the
-                Highrise NFT, private sales will be listed on Opensea for 1.5
-                ETH to reserved wallets at 6/29 4 PM EST.
+                public reserve 8/11 3 PM EST at 1.5 ETH. To finalize the
+                transfer of the Highrise NFT, private sales will be listed on
+                Opensea for 1 ETH to reserved wallets at 8/11 3PM EST.
             </S.ReserveParagraph>
             <S.ReserveCountdowns>
                 <S.ReserveCountdownWrapper>
@@ -69,19 +67,19 @@ export const Reserve = ({ className }) => {
                         endedText="Closed"
                     />
                 </S.ReserveCountdownWrapper>
-                <S.ReserveCountdownWrapper>
+                {/* <S.ReserveCountdownWrapper>
                     <div>Public sale:&nbsp;</div>
                     <Countdown
                         countDownStart={PUBLIC_SALE_START}
                         countDownEnd={PUBLIC_SALE_END}
                         startedText="Now Open"
-                        endedText="Now Open"
+                        endedText="Closed"
                     />
-                </S.ReserveCountdownWrapper>
+                </S.ReserveCountdownWrapper> */}
             </S.ReserveCountdowns>
             <ReserveCheck hasReservedToken={hasReservedToken} />
             <S.ReserveGrid>
-                {initHighrises.current.slice(20, 35).map((highrise) => (
+                {initHighrises.current.slice(35, 50).map((highrise) => (
                     <ReserveHighrise
                         key={highrise.index}
                         hasReservedToken={hasReservedToken}

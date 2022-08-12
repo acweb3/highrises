@@ -1,6 +1,5 @@
 import { Editing } from 'components/Editing';
 import { EmailCollection } from 'components/EmailCollection';
-import { Explorer } from 'components/Explorer';
 import { FAQ } from 'components/FAQ';
 import { Intent } from 'components/Intent';
 import { NavTabs } from 'components/NavTabs';
@@ -48,7 +47,6 @@ const App = ({ pageContext: { highrises, thumbnail } }) => {
                 {/* <Reserve /> */}
                 <Intent />
                 <Editing />
-                {/* <Explorer /> */}
                 <Roadmap />
                 <Team />
 
