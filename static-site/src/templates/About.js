@@ -1,9 +1,10 @@
+import { Collage } from 'components/Collage';
 import { Editing } from 'components/Editing';
 import { EmailCollection } from 'components/EmailCollection';
 import { FAQ } from 'components/FAQ';
 import { Intent } from 'components/Intent';
 import { NavTabs } from 'components/NavTabs';
-import { Reserve } from 'components/Reserve';
+// import { Reserve } from 'components/Reserve';
 import { Roadmap } from 'components/Roadmap';
 import { SiteWrapper } from 'components/SiteWrapper';
 import { Team } from 'components/Team';
@@ -45,6 +46,7 @@ const App = ({ pageContext: { highrises, thumbnail } }) => {
                 </Helmet>
                 <NavTabs />
                 {/* <Reserve /> */}
+                <Collage />
                 <Intent />
                 <Editing />
                 <Roadmap />
