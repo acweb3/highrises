@@ -16,6 +16,6 @@ import '@fontsource/poppins/500.css';
 // # TODO => simplify this
 export const fontFamily = {
     anton: `'Anton', sans-serif`,
-    karla: `'Poppins', sans-serif`,
+    poppins: `'Poppins', sans-serif`,
     karla: `'karla', sans-serif`,
 };

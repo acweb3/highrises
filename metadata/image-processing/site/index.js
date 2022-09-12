@@ -77,6 +77,16 @@ const inquirer = async () => {
         .toFile(join(__dirname, 'dist', 'inquirer.webp'));
 };
 
+const collage = async () => {
+    const editing = join(__dirname, 'raw', 'collage.jpg');
+
+    await sharp(editing)
+        .resize({
+            width: 700,
+        })
+        .toFile(join(__dirname, 'dist', 'collage.webp'));
+};
+
 const theDrake = async () => {
     const drake = join(__dirname, 'raw', 'Website About Page 1.png');
     await asyncReadfile(drake);
@@ -94,10 +104,11 @@ const site = async () => {
     // await blueSky();
     // await cloud();
     // await drone();
-    await edison();
+    // await edison();
     // await editing();
-    await inquirer();
-    await theDrake();
+    // await inquirer();
+    // await theDrake();
+    await collage();
 };
 
 site();

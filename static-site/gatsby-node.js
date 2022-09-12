@@ -81,4 +81,13 @@ exports.createPages = async function ({ actions, graphql }) {
             thumbnail: `${fullyAccessibleURL}${featureURL}`,
         },
     });
+
+    actions.createPage({
+        component: require.resolve(`./src/templates/Collage.js`),
+        path: '/collage',
+        context: {
+            highrises: highrisesWithImages,
+            thumbnail: `${fullyAccessibleURL}${featureURL}`,
+        },
+    });
 };

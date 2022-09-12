@@ -13,7 +13,7 @@ export const EmailCollection = () => {
                     Stay up to date
                 </S.EmailCollectionHeader>
                 <S.Paragraph>
-                    To recieve updates on future NFT releases, prints, and the
+                    To receive updates on future NFT releases, prints, and the
                     book, please add your email below.
                 </S.Paragraph>
 
