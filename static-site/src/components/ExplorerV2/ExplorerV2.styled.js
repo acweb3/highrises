@@ -1,4 +1,9 @@
+import { Header } from '../ui/Header';
 import styled from 'styled-components';
+
+export const ExplorerHeader = styled(Header)`
+    font-size: 32px;
+`;
 
 export const ExplorerV2 = styled.div`
     /* height: calc(100vh - 140px); */

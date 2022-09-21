@@ -46,7 +46,7 @@ const App = ({ pageContext: { highrises, thumbnail } }) => {
                 </Helmet>
                 <NavTabs />
                 {/* <Reserve /> */}
-                <Collage />
+                {/* <Collage /> */}
                 <Intent />
                 <Editing />
                 <Roadmap />
