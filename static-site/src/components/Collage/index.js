@@ -10,6 +10,7 @@ export const Collage = ({ isIndex }) => {
                     src={'../../assets/images/collage.webp'}
                     alt=""
                     placeholder="blurred"
+                    objectPosition="center"
                 />
             </S.CollageImage>
             <S.CollageCard>

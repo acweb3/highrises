@@ -1,4 +1,5 @@
 import { BaseButton, ExternalButtonLink } from '../ui/BaseButton';
+import collageBackground from 'assets/images/collage-background.webp';
 import { Header } from 'components/ui/Header';
 import { Link } from 'gatsby';
 import styled, { css } from 'styled-components';
@@ -81,16 +82,16 @@ export const CollageCard = styled.div`
 `;
 
 export const CollageImage = styled.div`
-    max-width: 400px;
-
     box-shadow: ${(props) => props.theme.shadows.high};
 
+    max-width: 400px;
+
     ${(props) => props.theme.breakpoints.medium`
-        max-width: 500px;
+        max-width: 400px;
     `}
 
     ${(props) => props.theme.breakpoints.extraLarge`
-        max-width: 650px;
+        max-width: 500px;
     `};
 `;
 
@@ -111,4 +112,7 @@ export const Collage = styled.div`
     ${(props) => props.theme.breakpoints.mobile`
         min-height: 800px;
     `};
+
+    background: url(${collageBackground});
+    background-size: 1000px auto;
 `;
