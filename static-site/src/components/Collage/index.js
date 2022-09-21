@@ -46,20 +46,30 @@ const Mint = () => {
 
     if (hasSubmitted) {
         return (
-            <Paragraph
-                css={`
-                    text-align: center;
-                    padding-bottom: 32px;
-                `}
-            >
-                We're sending a poster over to:
-                <br />
-                {hasSubmitted.split('\n').map((line) => (
-                    <React.Fragment key={line}>
-                        {line} <br />
-                    </React.Fragment>
-                ))}
-            </Paragraph>
+            <>
+                <Paragraph
+                    css={`
+                        text-align: center;
+                        padding-bottom: 16px;
+                        font-weight: 100;
+                    `}
+                >
+                    We're sending a poster over to:
+                </Paragraph>
+                <Paragraph
+                    css={`
+                        text-align: center;
+                        padding-bottom: 48px;
+                        font-weight: 100;
+                    `}
+                >
+                    {hasSubmitted.split('\n').map((line) => (
+                        <React.Fragment key={line}>
+                            {line} <br />
+                        </React.Fragment>
+                    ))}
+                </Paragraph>
+            </>
         );
     }
 
@@ -69,6 +79,7 @@ const Mint = () => {
                 <Paragraph
                     css={`
                         text-align: center;
+                        font-weight: 100;
                     `}
                 >
                     With minting a Northeast Collage, you get a free poster!
@@ -168,13 +179,18 @@ const Mint = () => {
                 <Paragraph
                     css={`
                         text-align: center;
+                        font-weight: 100;
                     `}
                 >
                     This mint is 0.08Ξ for general sale.
                 </Paragraph>
             )}
 
-            <Paragraph>
+            <Paragraph
+                css={`
+                    font-weight: 100;
+                `}
+            >
                 This colorful poster features a collage of historic highrises in
                 18 cities across the Northeastern United States. Decorate your
                 space with 100-year-old landmarks from Philadelphia, Boston,
