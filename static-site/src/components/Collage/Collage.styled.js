@@ -30,6 +30,11 @@ export const CollageSubtext = styled.div`
 
 export const CollageButton = styled(BaseButton)`
     ${collageLinkCss}
+
+    & > svg {
+        height: 24px;
+        margin: 0 auto;
+    }
 `;
 
 export const CollageLink = styled(Link)`
@@ -93,6 +98,16 @@ export const CollageImage = styled.div`
     ${(props) => props.theme.breakpoints.extraLarge`
         max-width: 500px;
     `};
+`;
+
+export const CollageInput = styled.input`
+    margin-top: 16px;
+    border-radius: 16px;
+    padding: 8px 16px;
+
+    border: 1px solid ${(props) => props.theme.colors.grey[0]};
+
+    width: 100%;
 `;
 
 export const Collage = styled.div`

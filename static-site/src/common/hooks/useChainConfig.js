@@ -1,3 +1,4 @@
+import collageAbi from './collage-abi.json';
 import nftAbi from './nft-abi.json';
 import reserveAbi from './reserve-abi.json';
 import { useEthers } from '@usedapp/core';
@@ -13,9 +14,14 @@ export const useChainConfig = () => {
             : config.mainnetContractAddress;
 
     const reserveContractAddress =
-        ethers.library?.network?.chainId === 1
-            ? config.mainnetReserveContractAddress
-            : config.rinkebyReserveContractAddress;
+        ethers.library?.network?.chainId === 4
+            ? config.rinkebyReserveContractAddress
+            : config.mainnetReserveContractAddress;
+
+    const collageContractAddress =
+        ethers.library?.network?.chainId === 4
+            ? config.rinkebyCollageContractAddress
+            : config.mainnetCollageContractAddress;
 
     return {
         openseaURL:
@@ -23,7 +29,10 @@ export const useChainConfig = () => {
                 ? 'testnets.opensea'
                 : 'opensea',
         contract: new Contract(contractAddress, nftAbi),
-        reserveContract: new Contract(reserveContractAddress, reserveAbi),
         contractAddress,
+        reserveContract: new Contract(reserveContractAddress, reserveAbi),
+        collageContractAddress,
+        collageContract: new Contract(collageContractAddress, collageAbi),
+        collageAbi,
     };
 };

@@ -86,6 +86,8 @@ module.exports = {
                     'REACT_APP_GOOGLE_FORM_URL',
                     'REACT_APP_RINKEBY_RESERVE_CONTRACT_ADDRESS',
                     'REACT_APP_MAINNET_RESERVE_CONTRACT_ADDRESS',
+                    'REACT_APP_RINKEBY_COLLAGE_CONTRACT_ADDRESS',
+                    'REACT_APP_MAINNET_COLLAGE_CONTRACT_ADDRESS',
                 ],
             },
         },

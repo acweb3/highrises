@@ -17,6 +17,14 @@ export const config = {
         'mainnetContractAddress',
         process.env.REACT_APP_MAINNET_CONTRACT_ADDRESS
     ),
+    rinkebyCollageContractAddress: requiredEnvVar(
+        'rinkebyCollageContractAddress',
+        process.env.REACT_APP_RINKEBY_COLLAGE_CONTRACT_ADDRESS
+    ),
+    mainnetCollageContractAddress: requiredEnvVar(
+        'mainnetCollageContractAddress',
+        process.env.REACT_APP_MAINNET_COLLAGE_CONTRACT_ADDRESS
+    ),
     rinkebyReserveContractAddress: requiredEnvVar(
         'rinkebyReserveContractAddress',
         process.env.REACT_APP_RINKEBY_RESERVE_CONTRACT_ADDRESS
