@@ -3,23 +3,26 @@
  */
 require("@nomiclabs/hardhat-ethers");
 require("@nomiclabs/hardhat-etherscan");
+require("hardhat-abi-exporter");
 
 const { config } = require("./config");
 
 module.exports = {
 	solidity: "0.8.7",
 
+	abiExporter: {
+		runOnCompile: true,
+		clear: true,
+		flat: false,
+		spacing: 2,
+		pretty: true,
+	},
+
 	networks: {
 		mainnet: {
 			url: config.mainnetAlchemyURL,
 			accounts: [config.mainnetPrivateKey],
-			gasPrice: 30000000000,
 		},
-
-		// ropsten: {
-		// 	url: config.ropstenAlchemyURL,
-		// 	accounts: [config.ropstenPrivateKey],
-		// },
 
 		rinkeby: {
 			url: config.rinkebyAlchemyURL,
