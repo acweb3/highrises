@@ -4,7 +4,7 @@ import { useMint } from 'components/Collage/useMint';
 import { Paragraph } from 'components/ui/Paragraph';
 import { config } from 'config';
 import { StaticImage } from 'gatsby-plugin-image';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Bars } from 'react-loading-icons';
 
 const errorMap = {
@@ -23,9 +23,11 @@ const Mint = () => {
     } = useMint();
     const { account, activateBrowserWallet, error } = useEthers();
 
-    const [hasSubmitted, setHasSubmitted] = useState(
-        localStorage.getItem('hasSubmitted')
-    );
+    const [hasSubmitted, setHasSubmitted] = useState(undefined);
+
+    useEffect(() => {
+        setHasSubmitted(localStorage.getItem('hasSubmitted'));
+    }, []);
 
     const name = useState('');
     const street = useState('');
@@ -52,6 +54,11 @@ const Mint = () => {
                         text-align: center;
                         padding-bottom: 16px;
                         font-weight: 100;
+
+                        text-align: center;
+                        ${(props) => props.theme.breakpoints.mobile`
+                            text-align: initial;
+                        `}
                     `}
                 >
                     We're sending a poster over to:
@@ -132,6 +139,7 @@ const Mint = () => {
                             formData.append('state', state[0]);
                             formData.append('zip', zip[0]);
                             formData.append('email', email[0]);
+                            formData.append('account', account);
 
                             fetch(config.googleFormUrl, {
                                 method: 'POST',
@@ -180,6 +188,11 @@ const Mint = () => {
                     css={`
                         text-align: center;
                         font-weight: 100;
+
+                        text-align: center;
+                        ${(props) => props.theme.breakpoints.mobile`
+                            text-align: initial;
+                        `}
                     `}
                 >
                     This mint is 0.08Ξ for general sale.
@@ -189,6 +202,11 @@ const Mint = () => {
             <Paragraph
                 css={`
                     font-weight: 100;
+
+                    text-align: center;
+                    ${(props) => props.theme.breakpoints.mobile`
+                        text-align: initial;
+                    `}
                 `}
             >
                 This colorful poster features a collage of historic highrises in
@@ -270,6 +288,11 @@ export const Collage = ({ isIndex }) => {
                         <Paragraph
                             css={`
                                 font-weight: 100;
+
+                                text-align: center;
+                                ${(props) => props.theme.breakpoints.mobile`
+                                    text-align: initial;
+                                `}
                             `}
                         >
                             This colorful poster features a collage of historic

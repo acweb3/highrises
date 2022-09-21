@@ -50,14 +50,18 @@ export const CollageButtons = styled.div`
     flex-direction: column;
     align-items: center;
 
-    width: 50%;
     margin: 32px auto;
+
+    ${(props) => props.theme.breakpoints.mobile`
+        width: 50%;
+    `}
 `;
 
 export const CollageHeader = styled(Header)`
     font-family: ${(props) => props.theme.typography.fontFamily.poppins};
     font-family: 'proxima nova';
     font-weight: 700;
+    line-height: 1.075;
     text-transform: initial;
 
     margin-bottom: 16px;
@@ -69,13 +73,17 @@ export const CollageCard = styled.div`
     border-radius: 16px;
     background-color: ${(props) => props.theme.colors.white[0]};
 
-    margin-left: 48px;
-
     padding: 24px 32px 16px;
 
     max-width: 500px;
 
     box-shadow: ${(props) => props.theme.shadows.medium};
+
+    margin: 32px 0 48px 0;
+
+    ${(props) => props.theme.breakpoints.mobile`
+        margin: 0 0 0 48px;
+    `}
 
     ${(props) => props.theme.breakpoints.medium`
         max-width: 600px;
@@ -122,12 +130,16 @@ export const Collage = styled.div`
     align-items: center;
     justify-content: center;
 
-    padding: 64px 32px;
+    flex-direction: column;
 
-    ${(props) => props.theme.breakpoints.mobile`
-        min-height: 800px;
-    `};
+    padding: 32px;
 
     background: url(${collageBackground});
     background-size: 1000px auto;
+
+    ${(props) => props.theme.breakpoints.mobile`
+        min-height: 800px;
+        flex-direction: row;
+        padding: 64px 32px;
+    `};
 `;
