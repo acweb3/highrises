@@ -56,9 +56,6 @@ const Mint = () => {
                         font-weight: 100;
 
                         text-align: center;
-                        ${(props) => props.theme.breakpoints.mobile`
-                            text-align: initial;
-                        `}
                     `}
                 >
                     We're sending a poster over to:
@@ -190,12 +187,9 @@ const Mint = () => {
                         font-weight: 100;
 
                         text-align: center;
-                        ${(props) => props.theme.breakpoints.mobile`
-                            text-align: initial;
-                        `}
                     `}
                 >
-                    This mint is 0.08Ξ for general sale.
+                    0.08 ETH limited to 100 editions.
                 </Paragraph>
             )}
 
@@ -209,10 +203,12 @@ const Mint = () => {
                     `}
                 `}
             >
-                This colorful poster features a collage of historic highrises in
-                18 cities across the Northeastern United States. Decorate your
-                space with 100-year-old landmarks from Philadelphia, Boston,
-                Baltimore, Newark, Pittsburgh, Buffalo, and more!
+                The first region of the Highrises project is complete! To
+                celebrate, we are releasing our first NFT edition of 49
+                Northeast Highrises. This is a free mint for all collectors of
+                Northeast Highrise NFTs, and is also available to the public.
+                Each edition is redeemable for a signed 20x30 poster of the
+                Northeast Collage.
             </Paragraph>
 
             <S.CollageButtons>
@@ -278,7 +274,9 @@ export const Collage = ({ isIndex }) => {
                 />
             </S.CollageImage>
             <S.CollageCard>
-                <S.CollageHeader>The Northeast Collage</S.CollageHeader>
+                <S.CollageHeader>
+                    The Northeast Collage{isIndex && ' NFT'}
+                </S.CollageHeader>
                 {isIndex ? (
                     <>
                         <Mint />

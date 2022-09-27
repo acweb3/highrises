@@ -59,7 +59,6 @@ export const CollageButtons = styled.div`
 
 export const CollageHeader = styled(Header)`
     font-family: ${(props) => props.theme.typography.fontFamily.poppins};
-    font-family: 'proxima nova';
     font-weight: 700;
     line-height: 1.075;
     text-transform: initial;
