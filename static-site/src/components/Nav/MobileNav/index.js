@@ -10,9 +10,7 @@ export const MobileNav = () => {
                 <S.MobileNavLogoContainer>
                     <S.MobileNavLogo src={logoSrc} />
                 </S.MobileNavLogoContainer>
-                <S.MobileNavMenu>
-                    <S.Hamburger />
-                </S.MobileNavMenu>
+                <S.MobileNavMenu>{/* <S.Hamburger /> */}</S.MobileNavMenu>
             </S.MobileNav>
         </>
     );
