@@ -14,13 +14,13 @@ export const ABoltCIcon = styled(UnstyledABoltC)`
 
     & > path,
     polygon {
-        fill: ${(props) => props.theme.colors.grey[1]};
+        fill: rgba(155, 180, 192, 0.6);
     }
 
     &:hover {
         & > path,
         polygon {
-            fill: ${(props) => props.theme.colors.grey[0]};
+            fill: rgba(155, 180, 192, 0.6);
         }
     }
 `;
@@ -38,7 +38,7 @@ export const LogoSection = styled.div`
 
 export const EmailOutreach = styled.a`
     margin-top: 16px;
-    color: ${(props) => props.theme.colors.blue[0]};
+    color: #9bb4c0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -46,6 +46,7 @@ export const EmailOutreach = styled.a`
 
 export const EmailCollectionHeader = styled(UnstyledHeader)`
     text-align: center;
+    color: #9bb4c0;
 `;
 
 export const EmailCollectionInput = styled.input`
@@ -53,9 +54,16 @@ export const EmailCollectionInput = styled.input`
     border-radius: 16px;
     padding: 16px;
 
-    border: 1px solid ${(props) => props.theme.colors.grey[0]};
+    border: 1px solid #9bb4c0;
     text-align: center;
     min-width: 360px;
+
+    color: #9bb4c0;
+    background: #3f6788;
+
+    &::placeholder {
+        color: rgba(155, 180, 192, 0.6);
+    }
 `;
 
 export const EmailCollectionContent = styled.div`
@@ -77,10 +85,12 @@ export const Paragraph = styled(UnstyledParagraph)`
     text-align: center;
     max-width: 570px;
     margin-top: 16px;
+    color: #9bb4c0;
 `;
 
 export const EmailCollection = styled.div`
     background: ${(props) => props.theme.colors.white[0]};
+    background: #3f6788;
 
     padding: 72px 0 32px;
 `;

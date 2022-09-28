@@ -17,13 +17,6 @@ export const StoryCopy = styled.div`
     word-break: break-word;
     text-align: left;
     text-indent: 16px;
-
-    ${(props) =>
-        props.isExpanded &&
-        css`
-            &:first-of-type {
-            }
-        `}
 `;
 
 export const StoryTransparencyWrapper = styled.div`

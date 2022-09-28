@@ -37,7 +37,11 @@ const write = (traits) => {
                 ltlng,
                 city,
                 heightBracket,
-                ...trait
+
+                // ...trait
+                image,
+                name,
+                description,
             },
             index
         ) => {
@@ -73,23 +77,14 @@ const write = (traits) => {
                     return attribute;
                 });
 
-            if (index === 0) {
-                console.log({
-                    ...trait,
-                    attributes: filteredAttributes,
-                });
-            }
-
             console.log(highriseNumber);
             fs.writeFileSync(
                 `dist/chain/${index}`,
                 JSON.stringify(
                     {
-                        ...trait,
+                        image,
                         name: highriseNumber,
-                        description: `**${
-                            trait.name
-                        }**\n\n**Art by:** Chris Hytha\n\n**Story by: ** Mark Houser\n\n${trait.description.replaceAll(
+                        description: `**${name}**\n\n**Art by:** Chris Hytha\n\n**Story by: ** Mark Houser\n\n${description.replaceAll(
                             '\n',
                             '\n\n'
                         )}`,

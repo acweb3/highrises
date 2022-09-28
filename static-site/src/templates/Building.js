@@ -1,4 +1,5 @@
 import { BuildingDetail } from 'components/BuildingDetail';
+import { EmailCollection } from 'components/EmailCollection';
 import { SiteWrapper } from 'components/SiteWrapper';
 import { Contexts } from 'contexts';
 import Helmet from 'react-helmet';
@@ -55,6 +56,7 @@ const Building = ({
                     />
                 </Helmet>
                 <BuildingDetail activeHighrise={highrise} location={location} />
+                <EmailCollection />
             </SiteWrapper>
         </Contexts>
     );

@@ -67,7 +67,7 @@ export const DesktopMasthead = ({ activeHighrise }) => {
                     <S.DesktopMastheadExternalButtonLink
                         href={`https://${openseaURL}.io/assets/${contractAddress}/${`${tempHighrise.index}`}`}
                     >
-                        View NFT
+                        Digital Collectible
                     </S.DesktopMastheadExternalButtonLink>
                     <S.DesktopMastheadAlert>
                         Scroll for more info ↴

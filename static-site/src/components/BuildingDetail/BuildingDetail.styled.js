@@ -2,9 +2,10 @@ import { Story as UnstyledStory } from 'components/Explorer/Masthead/Attributes/
 import { Traits as UnstyledTraits } from 'components/Explorer/Masthead/Attributes/Traits';
 import { Purchase as UnstyledPurchase } from 'components/Explorer/Masthead/Purchase';
 import { ExternalNavigation as UnstyledExternalNavigtion } from 'components/ExternalNavigation';
+import { ExternalButton, ExternalButtonLink } from 'components/ui/BaseButton';
 import { Header as UnstyledHeader } from 'components/ui/Header';
 import { Link } from 'gatsby';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const ExternalNavigation = styled(UnstyledExternalNavigtion)`
     width: 100%;
@@ -21,16 +22,11 @@ export const ExternalNavigation = styled(UnstyledExternalNavigtion)`
 `;
 
 export const Traits = styled(UnstyledTraits)`
-    margin-top: 16px;
     margin-bottom: 32px;
 
-    padding: 0 0 32px;
-    ${(props) => props.theme.utility.bubbleBorder};
+    width: 100%;
 
     ${(props) => props.theme.breakpoints.mobile`
-        padding: 0 32px 32px;
-        min-width: 500px;
-        max-width: 720px;
         margin-bottom: 48px;
     `}
 `;
@@ -39,35 +35,49 @@ export const Story = styled(UnstyledStory)`
     margin: 16px auto 16px;
     text-align: justify;
 
-    ${(props) => props.theme.breakpoints.small`
-        min-width: 500px;
-        max-width: 720px;
-    `}
+    & * {
+        text-indent: 0px;
+    }
 `;
 
 export const Header = styled(UnstyledHeader)`
     font-size: 32px;
     line-height: 32px;
+    margin-bottom: 12px;
+
+    text-transform: initial;
+
     text-align: center;
-    margin-bottom: 16px;
 
     ${(props) => props.theme.breakpoints.small`
         font-size: 48px;
         line-height: 4rem;
         margin-bottom: 0px;
+        text-align: left;
     `}
 `;
 
 export const SubHeader = styled(UnstyledHeader)`
-    font-size: 32px;
-    line-height: 32px;
-    text-align: center;
+    font-size: 24px;
+    line-height: 24px;
     margin-top: ${(props) => (props.isMarginTop ? '48px' : '8px')};
+
+    font-weight: 100;
+
+    text-transform: initial;
+
+    text-align: center;
+
+    ${(props) => props.theme.breakpoints.small`
+        font-size: 48px;
+        line-height: 4rem;
+        margin-bottom: 0px;
+        text-align: left;
+    `}
 `;
 
 export const BuildingDetailHeader = styled.div`
-    ${(props) => props.theme.utility.bubbleBorder};
-    padding: 0 32px 24px;
+    padding: 0 0 24px;
 `;
 
 export const Purchase = styled(UnstyledPurchase)`
@@ -116,9 +126,9 @@ export const BuildingDetailImageContainer = styled.div`
 export const BuildingDetailBack = styled.div`
     color: ${(props) => props.theme.colors.blue[0]};
     margin-bottom: 32px;
-    width: 100%;
     cursor: pointer;
     text-decoration: underline;
+    width: fit-content;
 `;
 
 export const BuildingDetailNextHighrise = styled(Link)`
@@ -147,6 +157,33 @@ export const BuildingDetailLastHighrise = styled(Link)`
     text-decoration: none;
 `;
 
+const buttonCss = css`
+    text-align: center;
+    background: ${(props) => props.theme.colors.blue[0]};
+    color: ${(props) => props.theme.colors.white[0]};
+    padding: 12px 0;
+
+    font-family: Karla, sans-serif;
+    letter-spacing: initial;
+    text-transform: initial;
+    font-size: initial;
+
+    border-radius: 16px;
+`;
+
+export const BuildingDetailButton = styled(ExternalButton)`
+    ${buttonCss}
+
+    ${(props) =>
+        props.disabled && `opacity: 0.6; text-decoration: line-through;`}
+`;
+
+export const BuildingDetailButtonLink = styled(ExternalButtonLink)`
+    ${buttonCss}
+
+    flex: 1;
+`;
+
 export const BuildingDetail = styled.div`
     position: relative;
     z-index: 1;
@@ -159,13 +196,12 @@ export const BuildingDetail = styled.div`
 
     z-index: 999;
 
-    padding: 32px 32px 48px;
-
     display: flex;
     flex-direction: column;
-    align-items: center;
+
+    padding: 0 32px;
 
     ${(props) => props.theme.breakpoints.mobile`
-        padding: 48px 15%;
+        padding: 0 15% 48px;
     `}
 `;

@@ -150,6 +150,7 @@ const read = async () => {
                 address: processed.address.value,
                 architect: processed.architect.value,
                 stories: processed.stories.value,
+                state: processed.state.value,
                 style: processed.style.value,
                 city: processed.city.value,
                 secondaryStyle: processed.secondaryStyle?.value,
