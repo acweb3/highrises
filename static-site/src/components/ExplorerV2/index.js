@@ -2,7 +2,6 @@ import { useWindowSize } from 'common/hooks/useWindowSize';
 import { DesktopExplorer } from 'components/ExplorerV2/DesktopExplorer';
 import * as S from 'components/ExplorerV2/ExplorerV2.styled';
 import { MobileExplorer } from 'components/ExplorerV2/MobileExplorer';
-import { Header } from 'components/ui/Header';
 import { useExplorerRefContext } from 'contexts/ExplorerRef';
 import { useEffect, useState } from 'react';
 import { Bars } from 'react-loading-icons';
@@ -11,7 +10,6 @@ export const ExplorerV2 = () => {
     const { isLoaded, isSmallish } = useWindowSize();
     const { explorerRef, buildingExplorerMobileRefState } =
         useExplorerRefContext();
-    const [isShow, setIsShow] = useState(false);
 
     const height = buildingExplorerMobileRefState.current
         ? explorerRef.current?.children[0].offsetHeight * 2 +
@@ -28,19 +26,6 @@ export const ExplorerV2 = () => {
             explorerRef.current?.scrollIntoView(true);
         }
     }, [buildingExplorerMobileRefState, isLoaded, isSmallish]);
-
-    useEffect(() => {
-        let sto;
-        if (isLoaded) {
-            sto = setTimeout(() => {
-                setIsShow(true);
-            }, 800);
-        }
-
-        return () => {
-            clearTimeout(sto);
-        };
-    }, [isLoaded]);
 
     return (
         <>
@@ -59,7 +44,6 @@ export const ExplorerV2 = () => {
                     position: relative;
                     background: #a8b5bd;
                     transition: border-color 400ms;
-                    border-color: ${isShow ? 'initial' : 'transparent'};
                 `}
                 style={{
                     height: isLoaded && !isSmallish ? height : undefined,
@@ -87,8 +71,6 @@ export const ExplorerV2 = () => {
                 </div>
                 <div
                     css={`
-                        opacity: ${isShow ? 1 : 0};
-                        transition: opacity 100ms;
                         height: 100%;
                         z-index: 1;
                     `}

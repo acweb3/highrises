@@ -9,9 +9,9 @@ import { useEffect, useRef, useState } from 'react';
 
 export const MapExplorer = () => {
     const initialRenderRef = useRef(false);
-    const [zoom, setZoom] = useState(6);
+    const [zoom, setZoom] = useState(4);
     // 42.217054, -76.058521
-    const [center, setCenter] = useState({ lat: 42.217054, lng: -76.058521 });
+    const [center, setCenter] = useState({ lat: 39.5, lng: -94.35 });
     const { activeHighrise, highrises, setActiveHighrise } =
         useActiveHighriseContext();
     const { setIsMapView } = useMapViewContext();
@@ -27,8 +27,8 @@ export const MapExplorer = () => {
             !activeHighrise &&
             initialRenderRef.current === true
         ) {
-            setCenter(highrises[0].ltlng);
-            setZoom(15);
+            setCenter({ lat: 39.5, lng: -94.35 });
+            setZoom(4);
         } else {
             initialRenderRef.current = true;
         }
