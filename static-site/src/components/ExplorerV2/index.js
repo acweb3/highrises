@@ -3,16 +3,30 @@ import { DesktopExplorer } from 'components/ExplorerV2/DesktopExplorer';
 import * as S from 'components/ExplorerV2/ExplorerV2.styled';
 import { MobileExplorer } from 'components/ExplorerV2/MobileExplorer';
 import { useExplorerRefContext } from 'contexts/ExplorerRef';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { Bars } from 'react-loading-icons';
+
+const getExplorerHeight = (explorerRef) => {
+    let cached;
+
+    return () => {
+        if (!cached && explorerRef.current?.children[0].offsetHeight) {
+            cached = explorerRef.current?.children[0].offsetHeight * 2;
+        }
+
+        return cached;
+    };
+};
 
 export const ExplorerV2 = () => {
     const { isLoaded, isSmallish } = useWindowSize();
     const { explorerRef, buildingExplorerMobileRefState } =
         useExplorerRefContext();
 
+    const explorerHeight = useRef(getExplorerHeight(explorerRef));
+
     const height = buildingExplorerMobileRefState.current
-        ? explorerRef.current?.children[0].offsetHeight * 2 +
+        ? explorerHeight.current() +
           buildingExplorerMobileRefState.current.scrollWidth
         : 0;
 

@@ -11,8 +11,6 @@ export const BuildingDetail = ({ activeHighrise, location }) => {
     const { initHighrisesState } = useActiveHighriseContext();
     const { openseaURL, contractAddress } = useChainConfig();
 
-    console.log({ activeHighrise });
-
     useEffect(() => {
         setImageSrc(activeHighrise.posterSrc);
     }, [activeHighrise]);
