@@ -44,7 +44,7 @@ export const NewHighrises = ({ highrises }) => {
                 css={`
                     display: flex;
                     overflow-x: auto;
-                    overflow-y: visible;
+                    overflow-y: hidden;
 
                     &::-webkit-scrollbar {
                         display: none;

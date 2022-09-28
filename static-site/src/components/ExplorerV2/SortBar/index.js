@@ -66,6 +66,25 @@ export const SORTS = {
             };
         }, {}),
     },
+    state: {
+        isSelect: true,
+        name: 'State',
+        // # TODO => Remove this slice
+        options: highrisesData.reduce((acc, highrise) => {
+            if (acc[highrise?.state]) return acc;
+
+            return {
+                ...acc,
+                [highrise.state]: {
+                    value: highrise.state,
+                    sort: (highrises) =>
+                        highrises.filter(
+                            ({ state }) => highrise.state === state
+                        ),
+                },
+            };
+        }, {}),
+    },
     decade: {
         isSelect: true,
         name: 'Decade',
