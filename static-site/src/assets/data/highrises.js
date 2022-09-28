@@ -2778,28 +2778,27 @@ const highrises = [
     },
     {
         description:
-            'For a brief moment, this Newark highrise was a bauble in the empire of Abraham Lefcourt, a bombastic real estate titan who slapped his name on Midtown skyscrapers long before the world ever heard of Donald Trump.\nBorn Abraham Lefkowitz, Lefcourt came to the Lower East Side with his Russian Jewish family in 1882. He made money in garment wholesaling, then put it into commercial lofts and offices. Through shrewd deals and luck, Lefcourt built a Manhattan skyscraper portfolio worth $125 million, and started boasting he would put up the world’s tallest one next. But the death in 1930 of his 17 - year - old son—two months before this highrise opened—sent Lefcourt reeling, and the stock market collapse wiped him out. He died of a heart attack two years later.\nAnother immigrant, Frank Grad, designed Lefcourt’s handsome Newark tower with its elegant details and opulent black marble and bronze entrances. Grad’s two sons joined him in the business, which steadily grew into New Jersey’s biggest architectural firm.\nThe tower, known for most of its existence as the Raymond Commerce Building, was vacant for nearly two decades before 2006, when it reopened as a luxury apartment complex. As its namesake knew, real estate can be unpredictable.',
-        highriseNumber: 'Highrise #38',
-        image: 'ipfs://QmVWSEMX7K3xpToGQNcn9x8Cr7GotswyC3Cta9hVnoGDK9/37.jpg',
-        name: 'Lefcourt-Newark Building',
-        height: 448,
-        heightBracket: "400' - 499'",
+            'Turquoise, gold, and cerulean blue glazed terracotta tiles sheath this Art Deco landmark that was originally a department store — actually, two department stores under one roof. The four clock faces held special significance for Adolph Sieroty, a Polish immigrant who got his start in L.A. retail when he opened a clock shop.\nBolstered by Sieroty’s willingness to sell on credit, the business grew into Eastern Outfitting, a California chain of furniture and housewares stores. A retail clothing business, Columbia Outfitting, prospered too, and in 1930 Sieroty put both into this flagship store. Entering through the three-story vestibule under a Mayan-inspired sunburst design in gold leaf and glazed tiles, visitors could stroll past displays for Columbia men’s and women’s outfits on the left and Eastern home furnishings on the right. Up above, beneath the clock, a model bungalow showhome stood in the rooftop garden. Fashion shows filled the 700-seat auditorium on the 12th floor.\nThe retail business closed in 1957, and Sieroty’s son Julian converted the tower to office space. Now it has been renovated as a condominium with 147 residential units. Swimmers in the rooftop pool never have to wonder what time it is.',
+        highriseNumber: 'Highrise #51',
+        image: 'ipfs://QmVWSEMX7K3xpToGQNcn9x8Cr7GotswyC3Cta9hVnoGDK9/50.jpg',
+        name: 'Eastern Columbia Building',
+        height: 264,
+        heightBracket: "200' - 299'",
         decade: 1930,
-        address: '1180 Raymond Blvd.',
-        architect: 'Frank Grad',
-        stories: '35',
+        address: '849 S. Broadway',
+        architect: 'Claud Beelman',
+        stories: '14',
         style: 'Art Deco',
-        city: 'Newark',
-        secondaryStyle: 'Gothic',
+        city: 'Los Angeles',
         opened: '1930',
         ltlng: {
-            lat: 40.7371131,
-            lng: -74.1701217,
+            lat: 34.0426475,
+            lng: -118.255991,
         },
         attributes: [
             {
                 trait_type: 'Address',
-                value: '1180 Raymond Blvd.',
+                value: '849 S. Broadway',
             },
             {
                 trait_type: 'Opened',
@@ -2807,11 +2806,11 @@ const highrises = [
             },
             {
                 trait_type: 'Height',
-                value: "448'",
+                value: '264’',
             },
             {
                 trait_type: 'Architect',
-                value: 'Frank Grad',
+                value: 'Claud Beelman',
             },
             {
                 trait_type: 'Style',
@@ -2819,31 +2818,19 @@ const highrises = [
             },
             {
                 trait_type: 'Stories',
-                value: '35',
-            },
-            {
-                trait_type: 'Secondary Style',
-                value: 'Gothic',
+                value: '14',
             },
             {
                 trait_type: 'City',
-                value: 'Newark',
+                value: 'Los Angeles',
             },
             {
                 trait_type: 'State',
-                value: 'NJ',
+                value: 'CA',
             },
             {
                 trait_type: 'Map address',
-                value: '1180 Raymond Blvd, Newark, NJ 07102',
-            },
-            {
-                trait_type: 'AKA now',
-                value: 'Eleven80',
-            },
-            {
-                trait_type: 'AKA 2',
-                value: 'Raymond Commerce Building',
+                value: '849 S. Broadway, Los Angeles, CA 90014',
             },
             {
                 trait_type: 'Decade',
@@ -2851,7 +2838,15 @@ const highrises = [
             },
             {
                 trait_type: 'Height Bracket',
-                value: "400' - 499'",
+                value: "200' - 299'",
+            },
+            {
+                trait_type: 'Attributes',
+                value: 'Clock',
+            },
+            {
+                trait_type: 'Attributes',
+                value: 'Signage',
             },
         ],
     },
@@ -3807,6 +3802,399 @@ const highrises = [
             {
                 trait_type: 'Attributes',
                 value: 'Lights on',
+            },
+        ],
+    },
+    {
+        description:
+            'For a brief moment, this Newark highrise was a bauble in the empire of Abraham Lefcourt, a bombastic real estate titan who slapped his name on Midtown skyscrapers long before the world ever heard of Donald Trump.\nBorn Abraham Lefkowitz, Lefcourt came to the Lower East Side with his Russian Jewish family in 1882. He made money in garment wholesaling, then put it into commercial lofts and offices. Through shrewd deals and luck, Lefcourt built a Manhattan skyscraper portfolio worth $125 million, and started boasting he would put up the world’s tallest one next. But the death in 1930 of his 17 - year - old son—two months before this highrise opened—sent Lefcourt reeling, and the stock market collapse wiped him out. He died of a heart attack two years later.\nAnother immigrant, Frank Grad, designed Lefcourt’s handsome Newark tower with its elegant details and opulent black marble and bronze entrances. Grad’s two sons joined him in the business, which steadily grew into New Jersey’s biggest architectural firm.\nThe tower, known for most of its existence as the Raymond Commerce Building, was vacant for nearly two decades before 2006, when it reopened as a luxury apartment complex. As its namesake knew, real estate can be unpredictable.',
+        highriseNumber: 'Highrise #38',
+        image: 'ipfs://QmVWSEMX7K3xpToGQNcn9x8Cr7GotswyC3Cta9hVnoGDK9/37.jpg',
+        name: 'Lefcourt-Newark Building',
+        height: 448,
+        heightBracket: "400' - 499'",
+        decade: 1930,
+        address: '1180 Raymond Blvd.',
+        architect: 'Frank Grad',
+        stories: '35',
+        style: 'Art Deco',
+        city: 'Newark',
+        secondaryStyle: 'Gothic',
+        opened: '1930',
+        ltlng: {
+            lat: 40.7371131,
+            lng: -74.1701217,
+        },
+        attributes: [
+            {
+                trait_type: 'Address',
+                value: '1180 Raymond Blvd.',
+            },
+            {
+                trait_type: 'Opened',
+                value: '1930',
+            },
+            {
+                trait_type: 'Height',
+                value: "448'",
+            },
+            {
+                trait_type: 'Architect',
+                value: 'Frank Grad',
+            },
+            {
+                trait_type: 'Style',
+                value: 'Art Deco',
+            },
+            {
+                trait_type: 'Stories',
+                value: '35',
+            },
+            {
+                trait_type: 'Secondary Style',
+                value: 'Gothic',
+            },
+            {
+                trait_type: 'City',
+                value: 'Newark',
+            },
+            {
+                trait_type: 'State',
+                value: 'NJ',
+            },
+            {
+                trait_type: 'Map address',
+                value: '1180 Raymond Blvd, Newark, NJ 07102',
+            },
+            {
+                trait_type: 'AKA now',
+                value: 'Eleven80',
+            },
+            {
+                trait_type: 'AKA 2',
+                value: 'Raymond Commerce Building',
+            },
+            {
+                trait_type: 'Decade',
+                value: '1930s',
+            },
+            {
+                trait_type: 'Height Bracket',
+                value: "400' - 499'",
+            },
+        ],
+    },
+    {
+        description:
+            'Like candles on a birthday cake, 16 cement spikes once lined the rooftop of this highrise. They disappeared long ago, replaced by an electric billboard wrapped around the rooftop. Before its long-defunct Samsung sign, the tower at the entrance to L.A.’s “Miracle Mile” has also advertised beer and two insurance companies. For one TV season in 1952, before the sign went up, the building played the role of the Daily Planet newspaper in “Adventures of Superman.”\nOhio native Elihu Clement Wilson made his fortune in California’s oil business. Wilson founded a company to manufacture drilling tools, and got rich enough to buy a 124-foot motor yacht for cruises to Catalina Island. He then sold the company and commissioned his eponymous office building, erected in a rapidly developing part of town that had been forested with oil derricks only a decade earlier.\nMayor Meredith Snyder appointed Wilson to the city police commission in 1920, but soon came to regret it. Wilson turned on him the following year, publicly quitting a week before the election and accusing the mayor of covering up gambling, prostitution, and illegal alcohol sales in the City of Angels. Snyder lost his reelection bid.',
+        highriseNumber: 'Highrise #52',
+        image: 'ipfs://QmVWSEMX7K3xpToGQNcn9x8Cr7GotswyC3Cta9hVnoGDK9/51.jpg',
+        name: 'E. Clem Wilson Building',
+        height: 183,
+        heightBracket: "Under 200'",
+        decade: 1930,
+        address: '5225 Wilshire Blvd.',
+        architect: 'Meyer & Holler',
+        stories: '12',
+        style: 'Art Deco',
+        city: 'Los Angeles',
+        opened: '1930',
+        ltlng: {
+            lat: 34.0627352,
+            lng: -118.3438381,
+        },
+        attributes: [
+            {
+                trait_type: 'Address',
+                value: '5225 Wilshire Blvd.',
+            },
+            {
+                trait_type: 'Opened',
+                value: '1930',
+            },
+            {
+                trait_type: 'Height',
+                value: '183’',
+            },
+            {
+                trait_type: 'Architect',
+                value: 'Meyer & Holler',
+            },
+            {
+                trait_type: 'Style',
+                value: 'Art Deco',
+            },
+            {
+                trait_type: 'Stories',
+                value: '12',
+            },
+            {
+                trait_type: 'City',
+                value: 'Los Angeles',
+            },
+            {
+                trait_type: 'State',
+                value: 'CA',
+            },
+            {
+                trait_type: 'Map address',
+                value: '5225 Wilshire Blvd, Los Angeles, CA 90036',
+            },
+            {
+                trait_type: 'AKA 2',
+                value: 'Mutual of Omaha Tower',
+            },
+            {
+                trait_type: 'Decade',
+                value: '1930s',
+            },
+            {
+                trait_type: 'Height Bracket',
+                value: "Under 200'",
+            },
+            {
+                trait_type: 'Attributes',
+                value: 'Signage',
+            },
+            {
+                trait_type: 'Attributes',
+                value: 'Figures',
+            },
+        ],
+    },
+    {
+        description:
+            'Nine years after they opened their 13-story Hotel Rosslyn, brothers George and Dwight Hart added this nearly identical annex across the street. That brought the total number of guest rooms to 1,100, more than any other hospitality property on the West Coast. In case anyone wasn’t paying attention, the Harts topped their twin hotel buildings with huge electric signs emblazoned with their logo, a heart.\nThe brothers’ parents were Ohio farmers who came to Los Angeles during a speculative land boom in the 1880s. Their father managed the Natick Hotel in town, and they took over after his premature death. Later they bought an old hotel called the Rosslyn, which they would soon replace with a mammoth complex by the city’s preeminent architectural firm to handle the streams of tourists pouring into sunny southern California.\nBoth properties were linked by a marble-lined underground corridor so guests wouldn’t have to dodge traffic on Fifth Street when walking to the dining rooms or main reception desk. Converted recently into affordable housing for homeless veterans, the annex has had its lobby partially restored with its decorative metallic friezes and molding, marble reception desk, and attractive wrought iron skylight.',
+        highriseNumber: 'Highrise #53',
+        image: 'ipfs://QmVWSEMX7K3xpToGQNcn9x8Cr7GotswyC3Cta9hVnoGDK9/52.jpg',
+        name: 'Rosslyn Hotel Annex',
+        height: 150,
+        heightBracket: "Under 200'",
+        decade: 1920,
+        address: '112 W. Fifth St.',
+        architect: 'John & Donald Parkinson',
+        stories: '13',
+        style: 'Renaissance',
+        city: 'Los Angeles',
+        secondaryStyle: 'Beaux-Arts',
+        opened: '1923',
+        ltlng: {
+            lat: 34.0466859,
+            lng: -118.2488927,
+        },
+        attributes: [
+            {
+                trait_type: 'Address',
+                value: '112 W. Fifth St.',
+            },
+            {
+                trait_type: 'Opened',
+                value: '1923',
+            },
+            {
+                trait_type: 'Height',
+                value: '150’',
+            },
+            {
+                trait_type: 'Architect',
+                value: 'John & Donald Parkinson',
+            },
+            {
+                trait_type: 'Style',
+                value: 'Renaissance',
+            },
+            {
+                trait_type: 'Stories',
+                value: '13',
+            },
+            {
+                trait_type: 'Secondary Style',
+                value: 'Beaux-Arts',
+            },
+            {
+                trait_type: 'City',
+                value: 'Los Angeles',
+            },
+            {
+                trait_type: 'State',
+                value: 'CA',
+            },
+            {
+                trait_type: 'Map address',
+                value: '112 W 5th St, Los Angeles, CA 90013',
+            },
+            {
+                trait_type: 'Decade',
+                value: '1920s',
+            },
+            {
+                trait_type: 'Height Bracket',
+                value: "Under 200'",
+            },
+            {
+                trait_type: 'Attributes',
+                value: 'Signage',
+            },
+        ],
+    },
+    {
+        description:
+            'The Walk of Fame passes directly in front of the entrance of this iconic Hollywood highrise. Now vacant, the property has a showbiz origin story. It stands almost precisely between the Chinese and Egyptian theaters on Hollywood Boulevard, and was designed by the same architects who created those two fabled movie palaces.\nLos Angeles First National Bank & Trust, which occupied the main floor and basement, was perhaps a bit strait-laced for the neighborhood, going so far as to run ads when construction began nagging the public not to shorten the financial institution’s name by saying “L.A.” The floodlit tower ornamented with eagles, lions, and medieval figures was meant to convey grandeur and scale — and to tweak the city’s 150-foot height limit, since unoccupied structural parts such as its top section could push past the otherwise strict boundary.\nBank chairman Henry Robinson was a personal friend of President Woodrow Wilson, and he turned down several offers to join the Cabinet. He was frequently called to Washington to serve on various federal boards and committees. The U.S. Navy posthumously named a troop ship after him during World War II.',
+        highriseNumber: 'Highrise #54',
+        image: 'ipfs://QmVWSEMX7K3xpToGQNcn9x8Cr7GotswyC3Cta9hVnoGDK9/53.jpg',
+        name: 'Hollywood First National Building',
+        height: 191,
+        heightBracket: "Under 200'",
+        decade: 1920,
+        address: '6777 Hollywood Blvd.',
+        architect: 'Meyer & Holler',
+        stories: '12',
+        style: 'Art Deco',
+        city: 'Los Angeles',
+        secondaryStyle: 'Gothic',
+        opened: '1928',
+        ltlng: {
+            lat: 34.1019062,
+            lng: -118.3385247,
+        },
+        attributes: [
+            {
+                trait_type: 'Address',
+                value: '6777 Hollywood Blvd.',
+            },
+            {
+                trait_type: 'Opened',
+                value: '1928',
+            },
+            {
+                trait_type: 'Height',
+                value: '191’',
+            },
+            {
+                trait_type: 'Architect',
+                value: 'Meyer & Holler',
+            },
+            {
+                trait_type: 'Style',
+                value: 'Art Deco',
+            },
+            {
+                trait_type: 'Stories',
+                value: '12',
+            },
+            {
+                trait_type: 'Secondary Style',
+                value: 'Gothic',
+            },
+            {
+                trait_type: 'City',
+                value: 'Los Angeles',
+            },
+            {
+                trait_type: 'State',
+                value: 'CA',
+            },
+            {
+                trait_type: 'Map address',
+                value: '6777 Hollywood Blvd, Los Angeles, CA 90028',
+            },
+            {
+                trait_type: 'Decade',
+                value: '1920s',
+            },
+            {
+                trait_type: 'Height Bracket',
+                value: "Under 200'",
+            },
+            {
+                trait_type: 'Attributes',
+                value: 'Sloped Roof',
+            },
+            {
+                trait_type: 'Attributes',
+                value: 'Statue',
+            },
+            {
+                trait_type: 'Attributes',
+                value: 'Figures',
+            },
+        ],
+    },
+    {
+        description:
+            'This highrise in the showy Art Deco style known as Zigzag Moderne was constructed for real estate developer Preston Wright to house offices for doctors and dentists. The contractors who poured its concrete form also installed a terrazzo sidewalk in front that remains today.\nGaylord Wilshire, namesake of the building and the boulevard, was a land developer and an ardent socialist. The son of a rich Cincinnati banker, Wilshire purchased 35 acres of farmland west of what is now MacArthur Park and offered to give the city a strip down the middle as long as the road was named after him and permitted no train tracks or heavy trucks. Wilshire ran as a socialist for Congress three times — and for the British Parliament once while married to a Welsh woman — but was unsuccessful each time. He also founded a magazine, “The Challenge,” and a quack medical company, Ionaco, that made an electric plug-in belt Wilshire claimed could cure cancer, tuberculosis, arthritis, and a host of other ailments by magnetizing the iron in its wearer’s blood. \nThe building has been vacant for years and is tagged with graffiti. Its owner, one of Koreatown’s biggest landlords, is building an eight-story apartment complex behind it.',
+        highriseNumber: 'Highrise #55',
+        image: 'ipfs://QmVWSEMX7K3xpToGQNcn9x8Cr7GotswyC3Cta9hVnoGDK9/54.jpg',
+        name: 'Wilshire Professional Building',
+        height: 181,
+        heightBracket: "Under 200'",
+        decade: 1920,
+        address: '3875 Wilshire Blvd.',
+        architect: 'Arthur Harvey',
+        stories: '13',
+        style: 'Art Deco',
+        city: 'Los Angeles',
+        opened: '1929',
+        ltlng: {
+            lat: 34.0619227,
+            lng: -118.3112632,
+        },
+        attributes: [
+            {
+                trait_type: 'Address',
+                value: '3875 Wilshire Blvd.',
+            },
+            {
+                trait_type: 'Opened',
+                value: '1929',
+            },
+            {
+                trait_type: 'Height',
+                value: '181’',
+            },
+            {
+                trait_type: 'Architect',
+                value: 'Arthur Harvey',
+            },
+            {
+                trait_type: 'Style',
+                value: 'Art Deco',
+            },
+            {
+                trait_type: 'Stories',
+                value: '13',
+            },
+            {
+                trait_type: 'City',
+                value: 'Los Angeles',
+            },
+            {
+                trait_type: 'State',
+                value: 'CA',
+            },
+            {
+                trait_type: 'Map address',
+                value: '3875 Wilshire Blvd, Los Angeles, CA 90010',
+            },
+            {
+                trait_type: 'Decade',
+                value: '1920s',
+            },
+            {
+                trait_type: 'Height Bracket',
+                value: "Under 200'",
+            },
+            {
+                trait_type: 'Attributes',
+                value: 'Sloped Roof',
+            },
+            {
+                trait_type: 'Attributes',
+                value: 'Disrepair',
+            },
+            {
+                trait_type: 'Attributes',
+                value: 'Graffiti',
             },
         ],
     },
