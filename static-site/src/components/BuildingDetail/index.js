@@ -1,3 +1,4 @@
+import { getIndex } from 'common/helpers';
 import { useChainConfig } from 'common/hooks/useChainConfig';
 import * as S from 'components/BuildingDetail/BuildingDetail.styled';
 import { MobileMap } from 'components/Explorer/MobileExplorer/MobileMap';
@@ -115,7 +116,7 @@ export const BuildingDetail = ({ activeHighrise, location }) => {
                                 rel="noopener noreferrer"
                                 target="_blank"
                                 href={`https://www.hythacg.com/prints/highrise${`${
-                                    activeHighrise.index + 1
+                                    getIndex(activeHighrise) + 1
                                 }`.padStart(2, '0')}`}
                             >
                                 Order Print

@@ -22,9 +22,12 @@ export const Building = ({ building, isNewHighrise }) => {
             />
             <S.BuildingCaption>
                 <S.BuildingIndex.Desktop>
-                    {building.highriseNumber}
+                    {building.name}
                 </S.BuildingIndex.Desktop>
-                <S.BuildingName>{building.name}</S.BuildingName>
+                <S.BuildingName>
+                    {building.city}
+                    {building.state && `, ${building.state}`}
+                </S.BuildingName>
             </S.BuildingCaption>
         </S.Building>
     );

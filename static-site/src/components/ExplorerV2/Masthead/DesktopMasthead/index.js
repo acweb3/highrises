@@ -1,3 +1,4 @@
+import { getIndex } from 'common/helpers';
 import { useChainConfig } from 'common/hooks/useChainConfig';
 import { Story } from 'components/ExplorerV2/Masthead/Attributes/Story';
 import { Traits } from 'components/ExplorerV2/Masthead/Attributes/Traits';
@@ -59,16 +60,18 @@ export const DesktopMasthead = ({ activeHighrise }) => {
                         rel="noopener noreferrer"
                         target="_blank"
                         href={`https://www.hythacg.com/prints/highrise${`${
-                            tempHighrise.index + 1
+                            getIndex(tempHighrise) + 1
                         }`.padStart(2, '0')}`}
                     >
                         Order Print
                     </S.DesktopMastheadExternalButtonLink>
-                    <S.DesktopMastheadExternalButtonLink
-                        href={`https://${openseaURL}.io/assets/${contractAddress}/${`${tempHighrise.index}`}`}
-                    >
-                        Digital Collectible
-                    </S.DesktopMastheadExternalButtonLink>
+                    {getIndex(tempHighrise) < 50 && (
+                        <S.DesktopMastheadExternalButtonLink
+                            href={`https://${openseaURL}.io/assets/${contractAddress}/${`${tempHighrise.index}`}`}
+                        >
+                            Digital Collectible
+                        </S.DesktopMastheadExternalButtonLink>
+                    )}
                     <S.DesktopMastheadAlert>
                         Scroll for more info ↴
                     </S.DesktopMastheadAlert>

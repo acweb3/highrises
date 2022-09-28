@@ -48,16 +48,24 @@ export const BuildingIndex = {
         font-size: 1.175rem;
         font-weight: 800;
         user-select: none;
+        text-align: center;
     `,
     Desktop: styled.div`
         font-size: 1.175rem;
         font-weight: 800;
         user-select: none;
+        text-align: center;
+        padding: 0 4px;
+
+        ${(props) => props.theme.breakpoints.mobile`
+            padding: 0 16px;
+        `}
     `,
 };
 
 export const BuildingName = styled.div`
     font-size: 1rem;
+    text-align: center;
     text-align: center;
 `;
 
