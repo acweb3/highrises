@@ -12,6 +12,18 @@ export const BuildingImage = styled.img`
         width: 25vw;
         height: auto;
     `}
+
+    ${(props) =>
+        props.isNewHighrise &&
+        css`
+            min-width: initial !important;
+
+            width: 42vw;
+
+            ${(props) => props.theme.breakpoints.mobile`
+                width: 20vw;
+            `}
+        `}
 `;
 
 export const BuildingCaption = styled.div`
@@ -19,10 +31,16 @@ export const BuildingCaption = styled.div`
     background: ${(props) => props.theme.colors.white[0]};
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     width: 100%;
     height: 120px;
+
+    padding-top: 16px;
+
+    ${(props) => props.theme.breakpoints.mobile`
+        padding-top: initial;
+        justify-content: center;
+    `}
 `;
 
 export const BuildingIndex = {
@@ -49,7 +67,6 @@ export const Building = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 1200px;
     flex: 1;
 
     cursor: pointer;
