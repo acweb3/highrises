@@ -32,8 +32,7 @@ export const SORTS = {
     height: {
         isSelect: true,
         name: 'Height',
-        // # TODO => Remove this slice
-        options: highrisesData.slice(0, 20).reduce((acc, highrise) => {
+        options: highrisesData.reduce((acc, highrise) => {
             if (acc[highrise?.heightBracket]) return acc;
 
             return {
@@ -52,8 +51,7 @@ export const SORTS = {
     city: {
         isSelect: true,
         name: 'City',
-        // # TODO => Remove this slice
-        options: highrisesData.slice(0, 20).reduce((acc, highrise) => {
+        options: highrisesData.reduce((acc, highrise) => {
             if (acc[highrise?.city]) return acc;
 
             return {
@@ -69,8 +67,7 @@ export const SORTS = {
     decade: {
         isSelect: true,
         name: 'Decade',
-        // # TODO => Remove this slice
-        options: highrisesData.slice(0, 20).reduce((acc, highrise) => {
+        options: highrisesData.reduce((acc, highrise) => {
             if (acc[highrise?.decade]) return acc;
 
             return {
@@ -88,8 +85,7 @@ export const SORTS = {
     style: {
         isSelect: true,
         name: 'Style',
-        // # TODO => Remove this slice
-        options: highrisesData.slice(0, 20).reduce((acc, highrise) => {
+        options: highrisesData.reduce((acc, highrise) => {
             if (acc[highrise?.style]) return acc;
 
             return {
