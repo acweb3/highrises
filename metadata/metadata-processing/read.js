@@ -10,6 +10,11 @@ const DESCRIPTION_PLACEHOLDER =
 const IPFS_DIR = 'ipfs://QmVWSEMX7K3xpToGQNcn9x8Cr7GotswyC3Cta9hVnoGDK9';
 const NULL_TOKEN_NAME = 'Null Token';
 
+const getIndex = (highriseNumber) => {
+    console.log({ highriseNumber });
+    return parseInt(highriseNumber.replace('Highrise #', '')) - 1;
+};
+
 const client = new Client({});
 
 const getWords = (index) => {
@@ -102,69 +107,61 @@ const read = async () => {
         }, {});
     });
     const standardizedMetadata = await Promise.all(
-        accumulated.map(async ({ building, highriseNo, ...processed }) => {
-            if (highriseNo.value === NULL_TOKEN_NAME) {
+        accumulated.map(
+            async ({ building, highriseNo, ...processed }, imageIndex) => {
+                if (isNaN(imageIndex)) {
+                    throw new Error('Invalid index');
+                }
+
+                const height = parseInt(
+                    processed.height.value.replace(`'`, '')
+                );
+                const decade = parseInt(
+                    processed.decade.value.replace(`'`, '')
+                );
+                const { data } = await client.geocode({
+                    params: {
+                        key: process.env.GOOGLE_MAPS_API_KEY,
+                        address: processed.mapAddress.value,
+                    },
+                });
+
+                const words = getWords(getIndex(highriseNo.value));
+
+                if (isNaN(height)) {
+                    console.error(`height is nan for ${building}`);
+                }
+                if (isNaN(decade)) {
+                    console.error(`decade is nan for ${building}`);
+                }
+
                 return {
-                    name: NULL_TOKEN_NAME,
-                    description:
-                        '**Null token**\n\nThis token was intended to go to the giveaway winner @cribsonite, but a scammer swooped in with a duplicate account @cribsnoite, and the token was transferred to their account. Very slick, and a good reminder to triple check anything done in crypto. Do not buy this token.',
-                    attributes: [],
-                    image: 'https://ipfs.io/ipfs/QmcnYSwN3WMZQkHNWSQ3aaqeTThSfa12QuajpKQr5UAGQy',
+                    description: words || DESCRIPTION_PLACEHOLDER,
+                    highriseNumber: highriseNo.value,
+                    image: `${IPFS_DIR}/${imageIndex}.jpg`,
+                    name: building.value,
+                    height,
+                    heightBracket: processed.heightBracket?.value,
+                    decade,
+
+                    address: processed.address.value,
+                    architect: processed.architect.value,
+                    stories: processed.stories.value,
+                    state: processed.state.value,
+                    style: processed.style.value,
+                    city: processed.city.value,
+                    secondaryStyle: processed.secondaryStyle?.value,
+                    opened: processed.opened.value,
+
+                    ltlng: data.results[0].geometry.location,
+                    attributes: Object.values(processed)
+                        .flat()
+                        .filter((attr) => attr.value !== 'x'),
                 };
             }
-
-            const imageIndex =
-                parseInt(highriseNo.value.replace('Highrise #', '')) - 1;
-
-            if (isNaN(imageIndex)) {
-                throw new Error('ffff');
-            }
-
-            const height = parseInt(processed.height.value.replace(`'`, ''));
-            const decade = parseInt(processed.decade.value.replace(`'`, ''));
-            const { data } = await client.geocode({
-                params: {
-                    key: process.env.GOOGLE_MAPS_API_KEY,
-                    address: processed.mapAddress.value,
-                },
-            });
-
-            const words = getWords(imageIndex);
-
-            if (isNaN(height)) {
-                console.error(`height is nan for ${building}`);
-            }
-            if (isNaN(decade)) {
-                console.error(`decade is nan for ${building}`);
-            }
-
-            return {
-                description: words || DESCRIPTION_PLACEHOLDER,
-                highriseNumber: highriseNo.value,
-                image: `${IPFS_DIR}/${imageIndex}.jpg`,
-                name: building.value,
-                height,
-                heightBracket: processed.heightBracket?.value,
-                decade,
-
-                address: processed.address.value,
-                architect: processed.architect.value,
-                stories: processed.stories.value,
-                state: processed.state.value,
-                style: processed.style.value,
-                city: processed.city.value,
-                secondaryStyle: processed.secondaryStyle?.value,
-                opened: processed.opened.value,
-
-                ltlng: data.results[0].geometry.location,
-                attributes: Object.values(processed)
-                    .flat()
-                    .filter((attr) => attr.value !== 'x'),
-            };
-        })
+        )
     );
 
-    console.log({ standardizedMetadata });
     return standardizedMetadata;
 };
 

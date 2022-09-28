@@ -1,4 +1,5 @@
 import { Wrapper } from '@googlemaps/react-wrapper';
+import { getIndex } from 'common/helpers';
 import { Map } from 'components/ExplorerV2/MapExplorer/Map';
 import * as S from 'components/ExplorerV2/MapExplorer/MapExplorer.styled';
 import { Marker } from 'components/ExplorerV2/MapExplorer/Marker';
@@ -55,7 +56,9 @@ export const MapExplorer = () => {
                                         '0'
                                     )}
                                     iconSrc={
-                                        activeHighrise?.index === highrise.index
+                                        activeHighrise &&
+                                        getIndex(activeHighrise) ===
+                                            getIndex(highrise)
                                             ? highrise.mapSrc
                                             : undefined
                                     }

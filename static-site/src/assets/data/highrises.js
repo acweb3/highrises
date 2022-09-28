@@ -2817,7 +2817,7 @@ const highrises = [
         description:
             'Turquoise, gold, and cerulean blue glazed terracotta tiles sheath this Art Deco landmark that was originally a department store — actually, two department stores under one roof. The four clock faces held special significance for Adolph Sieroty, a Polish immigrant who got his start in L.A. retail when he opened a clock shop.\nBolstered by Sieroty’s willingness to sell on credit, the business grew into Eastern Outfitting, a California chain of furniture and housewares stores. A retail clothing business, Columbia Outfitting, prospered too, and in 1930 Sieroty put both into this flagship store. Entering through the three-story vestibule under a Mayan-inspired sunburst design in gold leaf and glazed tiles, visitors could stroll past displays for Columbia men’s and women’s outfits on the left and Eastern home furnishings on the right. Up above, beneath the clock, a model bungalow showhome stood in the rooftop garden. Fashion shows filled the 700-seat auditorium on the 12th floor.\nThe retail business closed in 1957, and Sieroty’s son Julian converted the tower to office space. Now it has been renovated as a condominium with 147 residential units. Swimmers in the rooftop pool never have to wonder what time it is.',
         highriseNumber: 'Highrise #51',
-        image: 'ipfs://QmVWSEMX7K3xpToGQNcn9x8Cr7GotswyC3Cta9hVnoGDK9/50.jpg',
+        image: 'ipfs://QmVWSEMX7K3xpToGQNcn9x8Cr7GotswyC3Cta9hVnoGDK9/37.jpg',
         name: 'Eastern Columbia Building',
         height: 264,
         heightBracket: "200' - 299'",
@@ -3859,7 +3859,7 @@ const highrises = [
         description:
             'For a brief moment, this Newark highrise was a bauble in the empire of Abraham Lefcourt, a bombastic real estate titan who slapped his name on Midtown skyscrapers long before the world ever heard of Donald Trump.\nBorn Abraham Lefkowitz, Lefcourt came to the Lower East Side with his Russian Jewish family in 1882. He made money in garment wholesaling, then put it into commercial lofts and offices. Through shrewd deals and luck, Lefcourt built a Manhattan skyscraper portfolio worth $125 million, and started boasting he would put up the world’s tallest one next. But the death in 1930 of his 17 - year - old son—two months before this highrise opened—sent Lefcourt reeling, and the stock market collapse wiped him out. He died of a heart attack two years later.\nAnother immigrant, Frank Grad, designed Lefcourt’s handsome Newark tower with its elegant details and opulent black marble and bronze entrances. Grad’s two sons joined him in the business, which steadily grew into New Jersey’s biggest architectural firm.\nThe tower, known for most of its existence as the Raymond Commerce Building, was vacant for nearly two decades before 2006, when it reopened as a luxury apartment complex. As its namesake knew, real estate can be unpredictable.',
         highriseNumber: 'Highrise #38',
-        image: 'ipfs://QmVWSEMX7K3xpToGQNcn9x8Cr7GotswyC3Cta9hVnoGDK9/37.jpg',
+        image: 'ipfs://QmVWSEMX7K3xpToGQNcn9x8Cr7GotswyC3Cta9hVnoGDK9/50.jpg',
         name: 'Lefcourt-Newark Building',
         height: 448,
         heightBracket: "400' - 499'",

@@ -3,7 +3,6 @@ import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
 
 export const Building = ({ building, isNewHighrise }) => {
     const { activeHighrise, setActiveHighrise } = useActiveHighriseContext();
-    const buildingIndex = `${building.index + 1}`;
 
     return (
         <S.Building
@@ -23,7 +22,7 @@ export const Building = ({ building, isNewHighrise }) => {
             />
             <S.BuildingCaption>
                 <S.BuildingIndex.Desktop>
-                    Highrise #{buildingIndex.padStart(2, '0')}
+                    {building.highriseNumber}
                 </S.BuildingIndex.Desktop>
                 <S.BuildingName>{building.name}</S.BuildingName>
             </S.BuildingCaption>
