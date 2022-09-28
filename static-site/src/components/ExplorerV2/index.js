@@ -2,6 +2,7 @@ import { useWindowSize } from 'common/hooks/useWindowSize';
 import { DesktopExplorer } from 'components/ExplorerV2/DesktopExplorer';
 import * as S from 'components/ExplorerV2/ExplorerV2.styled';
 import { MobileExplorer } from 'components/ExplorerV2/MobileExplorer';
+import { Paragraph } from 'components/ui/Paragraph';
 import { useExplorerRefContext } from 'contexts/ExplorerRef';
 import { useEffect, useRef } from 'react';
 import { Bars } from 'react-loading-icons';
@@ -46,11 +47,23 @@ export const ExplorerV2 = () => {
             <div
                 css={`
                     background: #fff;
-                    padding: 32px 64px;
+                    padding: 48px 64px 32px;
                     min-height: 96px;
                 `}
             >
-                {/* <S.ExplorerHeader>Explore all highrises</S.ExplorerHeader> */}
+                <S.ExplorerHeader>New highrises</S.ExplorerHeader>
+                <Paragraph
+                    css={`
+                        text-indent: 0;
+                        max-width: 750px;
+                        margin-bottom: 16px !important;
+                    `}
+                >
+                    Flip through the collection of more than 50 historic
+                    American skyscrapers and learn how each one came to be. Sort
+                    by architectural style, city, decade, and more to find your
+                    favorites!
+                </Paragraph>
             </div>
             <S.ExplorerV2
                 ref={explorerRef}

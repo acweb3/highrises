@@ -3,6 +3,7 @@ import { Collage } from 'components/Collage';
 import { EmailCollection } from 'components/EmailCollection';
 import { ExplorerV2 } from 'components/ExplorerV2';
 import { NavTabs } from 'components/NavTabs';
+import { NewHighrises } from 'components/NewHighrises';
 import { SiteWrapper } from 'components/SiteWrapper';
 import { Contexts } from 'contexts';
 import 'css/index.css';
@@ -46,6 +47,7 @@ const App = ({ pageContext: { highrises, thumbnail } }) => {
                         background: ${(props) => props.theme.colors.white[0]};
                     `}
                 /> */}
+                <NewHighrises />
                 <Collage />
                 <ExplorerV2 />
                 <EmailCollection />
