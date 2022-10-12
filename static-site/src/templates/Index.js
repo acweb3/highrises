@@ -47,7 +47,7 @@ const App = ({ pageContext: { highrises, thumbnail } }) => {
                         background: ${(props) => props.theme.colors.white[0]};
                     `}
                 /> */}
-                <NewHighrises highrises={highrises.slice(50)} />
+                <NewHighrises highrises={highrises.slice(55)} />
                 <Collage />
                 <ExplorerV2 />
                 <EmailCollection />

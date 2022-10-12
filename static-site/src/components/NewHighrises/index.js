@@ -1,5 +1,6 @@
-import { Building } from '../ExplorerV2/BuildingsExplorer/Building';
+import { Building } from 'components/ExplorerV2/BuildingsExplorer/Building';
 import * as S from 'components/NewHighrises/NewHighrises.styled';
+import { BaseLink } from 'components/ui/BaseLink';
 import { Paragraph } from 'components/ui/Paragraph';
 import { Link } from 'gatsby';
 import kebabCase from 'just-kebab-case';
@@ -19,12 +20,14 @@ export const NewHighrises = ({ highrises }) => {
         >
             <div
                 css={`
-                    padding: 0 88.5px 32px;
+                    padding: 0 64px 32px;
+
+                    ${(props) => props.theme.breakpoints.small`
+                        padding: 0 88.5px 32px;
+                    `}
                 `}
             >
-                <S.NewHighrisesHeader>
-                    Explore all highrises
-                </S.NewHighrisesHeader>
+                <S.NewHighrisesHeader>New highrises</S.NewHighrisesHeader>
                 <Paragraph
                     css={`
                         text-indent: 0;
@@ -32,9 +35,26 @@ export const NewHighrises = ({ highrises }) => {
                         margin-bottom: 16px !important;
                     `}
                 >
-                    Releasing Oct. 5 at noon EST on OpenSea: Five historic
-                    landmark skyscrapers from Los Angeles! New sets of digital
-                    collectibles are released every two weeks.
+                    <BaseLink.A
+                        rel="noopener noreferrer"
+                        target="_blank"
+                        href="https://opensea.io/collection/highrises"
+                        css={`
+                            display: inline-block;
+                            padding: 0;
+                            margin: 0;
+                            height: initial;
+                            text-transform: none;
+                            color: #3b5d78;
+                            font-family: poppins;
+                            font-size: 16px;
+                            text-decoration: underline;
+                        `}
+                    >
+                        Now available on OpenSea
+                    </BaseLink.A>
+                    : Five historic landmark skyscrapers from Los Angeles! New
+                    sets of digital collectibles are released every two weeks.
                     <br />
                     Coming next: Chicago.
                 </Paragraph>

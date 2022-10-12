@@ -1,10 +1,6 @@
 const kebabCase = require('just-kebab-case');
 const { highrises } = require('./src/assets/data/highrises');
 
-const getIndex = (highrise) => {
-    return parseInt(highrise.highriseNumber.replace('Highrise #', '')) - 1;
-};
-
 exports.createPages = async function ({ actions, graphql }) {
     const {
         data: {
@@ -54,6 +50,7 @@ exports.createPages = async function ({ actions, graphql }) {
             posterSrc: urlMap[index]?.['poster-highrises'],
             nftSrc: urlMap[index]?.['nft-highrises'],
             mapSrc: urlMap[index]?.['map-highrises'],
+            detailSrc: urlMap[index]?.['detail-highrises'],
             index: index,
         }))
         .sort((a, b) => a.highriseNumber.localeCompare(b.highriseNumber));

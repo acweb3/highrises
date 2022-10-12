@@ -10,7 +10,8 @@ export const DragScroll = ({ children }) => {
     const hasSetRef = useRef(false);
     const { explorerRef, setBuildingExplorerMobileRefState } =
         useExplorerRefContext();
-    const { activeHighrise, highrises } = useActiveHighriseContext();
+    const { activeHighrise, highrises, setActiveHighrise } =
+        useActiveHighriseContext();
     const [scroll, setScroll] = useState(0);
     const throttledScroll = useThrottle(scroll, 100);
 

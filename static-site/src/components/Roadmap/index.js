@@ -93,6 +93,7 @@ const POINTS = [
         ],
     },
     {
+        isCompleted: true,
         header: 'August: Northeast',
         sections: [
             {

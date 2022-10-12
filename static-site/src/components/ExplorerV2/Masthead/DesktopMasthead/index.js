@@ -5,16 +5,19 @@ import { Traits } from 'components/ExplorerV2/Masthead/Attributes/Traits';
 import * as S from 'components/ExplorerV2/Masthead/DesktopMasthead/DesktopMasthead.styled';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
 import kebabCase from 'just-kebab-case';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export const DesktopMasthead = ({ activeHighrise }) => {
     const { openseaURL, contractAddress } = useChainConfig();
     const { setActiveHighrise } = useActiveHighriseContext();
+    const desktopMastheadRef = useRef(null);
 
     const [tempHighrise, setTempHighrise] = useState();
 
     useEffect(() => {
         let sto;
+
+        desktopMastheadRef.current?.scrollTo(0, 0);
 
         if (activeHighrise) {
             setTempHighrise(activeHighrise);
@@ -30,7 +33,10 @@ export const DesktopMasthead = ({ activeHighrise }) => {
     }, [activeHighrise]);
 
     return (
-        <S.DesktopMasthead isActive={Boolean(activeHighrise)}>
+        <S.DesktopMasthead
+            ref={desktopMastheadRef}
+            isActive={Boolean(activeHighrise)}
+        >
             <S.DesktopMastheadX
                 onClick={() => {
                     setActiveHighrise(undefined);
@@ -48,11 +54,7 @@ export const DesktopMasthead = ({ activeHighrise }) => {
                         <S.DesktopMastheadImage src={tempHighrise.posterSrc} />
                     </a>
                     <S.DesktopMastheadExternalButtonLink
-                        rel="noopener noreferrer"
-                        target="_blank"
-                        href={`https://highrises.hythacg.com/building/${kebabCase(
-                            tempHighrise.name
-                        )}`}
+                        href={`/building/${kebabCase(tempHighrise.name)}`}
                     >
                         View Detail
                     </S.DesktopMastheadExternalButtonLink>
@@ -65,13 +67,21 @@ export const DesktopMasthead = ({ activeHighrise }) => {
                     >
                         Order Print
                     </S.DesktopMastheadExternalButtonLink>
-                    {getIndex(tempHighrise) < 50 && (
+
+                    {/* <S.DesktopMastheadExternalButtonLink
+                        href={`https://${openseaURL}.io/assets/${contractAddress}/${`${tempHighrise.index}`}`}
+                    >
+                        Digital Collectible
+                    </S.DesktopMastheadExternalButtonLink> */}
+
+                    {getIndex(tempHighrise) < 55 && (
                         <S.DesktopMastheadExternalButtonLink
                             href={`https://${openseaURL}.io/assets/${contractAddress}/${`${tempHighrise.index}`}`}
                         >
                             Digital Collectible
                         </S.DesktopMastheadExternalButtonLink>
                     )}
+
                     <S.DesktopMastheadAlert>
                         Scroll for more info ↴
                     </S.DesktopMastheadAlert>

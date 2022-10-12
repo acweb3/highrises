@@ -41,6 +41,9 @@ export const GlobalStyle = createGlobalStyle`
     body {
         line-height: 1.5;
         -webkit-font-smoothing: antialiased;
+
+        max-width: 100vw;
+        overflow-x: hidden;
     }
     /*
     6. Improve media defaults

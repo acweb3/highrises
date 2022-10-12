@@ -4,6 +4,7 @@
 /src/assets/images/poster-highrises/*
 /src/assets/images/nft-highrises/*
 /src/assets/images/icon-highrises/*
+/src/assets/images/detail-highrises/*
 
 node_modules/
 .cache/

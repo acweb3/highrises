@@ -8,13 +8,8 @@ import kebabCase from 'just-kebab-case';
 import { useEffect, useState } from 'react';
 
 export const BuildingDetail = ({ activeHighrise, location }) => {
-    const [, setImageSrc] = useState(activeHighrise.posterSrc);
     const { initHighrisesState } = useActiveHighriseContext();
     const { openseaURL, contractAddress } = useChainConfig();
-
-    useEffect(() => {
-        setImageSrc(activeHighrise.posterSrc);
-    }, [activeHighrise]);
 
     return (
         <>
@@ -63,7 +58,7 @@ export const BuildingDetail = ({ activeHighrise, location }) => {
                         `}
                     >
                         <img
-                            src={activeHighrise.nftSrc}
+                            src={activeHighrise.detailSrc}
                             css={`
                                 width: 100%;
                             `}
@@ -121,7 +116,7 @@ export const BuildingDetail = ({ activeHighrise, location }) => {
                             >
                                 Order Print
                             </S.BuildingDetailButtonLink>
-                            {activeHighrise.index > 50 ? (
+                            {activeHighrise.index > 55 ? (
                                 <S.BuildingDetailButton
                                     disabled
                                     css={`

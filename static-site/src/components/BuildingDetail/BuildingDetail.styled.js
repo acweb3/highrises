@@ -69,8 +69,8 @@ export const SubHeader = styled(UnstyledHeader)`
     text-align: center;
 
     ${(props) => props.theme.breakpoints.small`
-        font-size: 48px;
-        line-height: 4rem;
+        font-size: 24px;
+        line-height: 1;
         margin-bottom: 0px;
         text-align: left;
     `}

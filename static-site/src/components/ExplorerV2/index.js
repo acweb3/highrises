@@ -51,7 +51,7 @@ export const ExplorerV2 = () => {
                     min-height: 96px;
                 `}
             >
-                <S.ExplorerHeader>New highrises</S.ExplorerHeader>
+                <S.ExplorerHeader>Explore all highrises</S.ExplorerHeader>
                 <Paragraph
                     css={`
                         text-indent: 0;
