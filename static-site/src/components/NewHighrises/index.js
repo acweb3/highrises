@@ -1,9 +1,9 @@
+import { getBuildingURL } from 'common/helpers';
 import { Building } from 'components/ExplorerV2/BuildingsExplorer/Building';
 import * as S from 'components/NewHighrises/NewHighrises.styled';
 import { BaseLink } from 'components/ui/BaseLink';
 import { Paragraph } from 'components/ui/Paragraph';
 import { Link } from 'gatsby';
-import kebabCase from 'just-kebab-case';
 
 export const NewHighrises = ({ highrises }) => {
     return (
@@ -27,7 +27,9 @@ export const NewHighrises = ({ highrises }) => {
                     `}
                 `}
             >
-                <S.NewHighrisesHeader>New highrises</S.NewHighrisesHeader>
+                <S.NewHighrisesHeader>
+                    Releasing Wednesday Nov. 2nd
+                </S.NewHighrisesHeader>
                 <Paragraph
                     css={`
                         text-indent: 0;
@@ -35,7 +37,7 @@ export const NewHighrises = ({ highrises }) => {
                         margin-bottom: 16px !important;
                     `}
                 >
-                    <BaseLink.A
+                    {/* <BaseLink.A
                         rel="noopener noreferrer"
                         target="_blank"
                         href="https://opensea.io/collection/highrises"
@@ -52,11 +54,12 @@ export const NewHighrises = ({ highrises }) => {
                         `}
                     >
                         Now available on OpenSea
-                    </BaseLink.A>
-                    : Five historic landmark skyscrapers from Los Angeles! New
+                    </BaseLink.A> */}
+                    {/* <>: </> */}
+                    Five historic landmark skyscrapers from the Bay Area! New
                     sets of digital collectibles are released every two weeks.
-                    <br />
-                    Coming next: Chicago.
+                    {/* <br />
+                    Coming next: San Francisco. */}
                 </Paragraph>
             </div>
 
@@ -87,7 +90,7 @@ export const NewHighrises = ({ highrises }) => {
                             }
                         `}
                         key={highrise.name}
-                        to={`/building/${kebabCase(highrise.name)}`}
+                        to={getBuildingURL(highrise)}
                     >
                         <Building isNewHighrise building={highrise} />
                     </Link>

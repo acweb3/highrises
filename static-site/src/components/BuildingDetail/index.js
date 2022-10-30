@@ -1,11 +1,9 @@
-import { getIndex } from 'common/helpers';
+import { getBuildingURL, getIndex } from 'common/helpers';
 import { useChainConfig } from 'common/hooks/useChainConfig';
 import * as S from 'components/BuildingDetail/BuildingDetail.styled';
 import { MobileMap } from 'components/Explorer/MobileExplorer/MobileMap';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
 import { navigate } from 'gatsby';
-import kebabCase from 'just-kebab-case';
-import { useEffect, useState } from 'react';
 
 export const BuildingDetail = ({ activeHighrise, location }) => {
     const { initHighrisesState } = useActiveHighriseContext();
@@ -116,7 +114,7 @@ export const BuildingDetail = ({ activeHighrise, location }) => {
                             >
                                 Order Print
                             </S.BuildingDetailButtonLink>
-                            {activeHighrise.index > 55 ? (
+                            {activeHighrise.index >= 60 ? (
                                 <S.BuildingDetailButton
                                     disabled
                                     css={`
@@ -169,20 +167,18 @@ export const BuildingDetail = ({ activeHighrise, location }) => {
                         {activeHighrise.index <
                             initHighrisesState.length - 1 && (
                             <S.BuildingDetailNextHighrise
-                                to={`/building/${kebabCase(
+                                to={getBuildingURL(
                                     initHighrisesState[activeHighrise.index + 1]
-                                        .name
-                                )}`}
+                                )}
                             >
                                 Next Highrise ↴
                             </S.BuildingDetailNextHighrise>
                         )}
                         {activeHighrise.index > 0 && (
                             <S.BuildingDetailLastHighrise
-                                to={`/building/${kebabCase(
+                                to={getBuildingURL(
                                     initHighrisesState[activeHighrise.index - 1]
-                                        .name
-                                )}`}
+                                )}
                             >
                                 Last Highrise ↴
                             </S.BuildingDetailLastHighrise>

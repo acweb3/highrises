@@ -1,10 +1,10 @@
+import { getBuildingURL } from 'common/helpers';
 import * as S from 'components/Explorer/Masthead/Attributes/Story/Story.styled';
 import { navigate } from 'gatsby';
-import kebabCase from 'just-kebab-case';
 
 export const Story = ({ isModal, activeHighrise, className }) => {
     const handleClick = () => {
-        navigate(`/building/${kebabCase(activeHighrise.name)}`, {
+        navigate(getBuildingURL(activeHighrise), {
             state: {
                 fromStory: true,
             },

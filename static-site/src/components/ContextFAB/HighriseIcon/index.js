@@ -1,8 +1,8 @@
+import { getBuildingURL } from 'common/helpers';
 import { pullImage } from 'common/images';
 import * as S from 'components/ContextFAB/HighriseIcon/HighriseIcon.styled';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
 import { navigate } from 'gatsby';
-import kebabCase from 'just-kebab-case';
 import { useEffect, useState } from 'react';
 
 export const HighriseIcon = ({ tokenId }) => {
@@ -19,9 +19,7 @@ export const HighriseIcon = ({ tokenId }) => {
     return (
         <S.HighriseIcon
             onClick={() => {
-                navigate(
-                    `/building/${kebabCase(initHighrisesState[tokenId].name)}`
-                );
+                navigate(getBuildingURL(initHighrisesState[tokenId]));
             }}
         >
             {imageSrc && <S.HighriseIconImage src={imageSrc} />}

@@ -1,6 +1,7 @@
 import { ChainId, DAppProvider } from '@usedapp/core';
 import { config } from 'config';
 
+// This is now deprecated
 const devDappConfig = {
     readOnlyChainId: ChainId.Rinkeby,
     readOnlyUrls: {
@@ -20,7 +21,7 @@ export const DApp = ({ children }) => {
         <DAppProvider
             config={
                 config.nodeEnv === 'development'
-                    ? devDappConfig
+                    ? prodDappConfig
                     : prodDappConfig
             }
         >

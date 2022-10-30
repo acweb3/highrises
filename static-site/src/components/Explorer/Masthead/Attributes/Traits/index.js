@@ -9,7 +9,7 @@ export const Traits = ({ activeHighrise, className }) => {
     const traits = [
         ['Address', activeHighrise.address],
         ['Opened', activeHighrise.opened],
-        ['Height', activeHighrise.height],
+        ['Height', `${activeHighrise.height}'`],
         ['Stories', activeHighrise.stories],
         ['Style', activeHighrise.style],
         ['Secondary Style', activeHighrise.secondaryStyle],

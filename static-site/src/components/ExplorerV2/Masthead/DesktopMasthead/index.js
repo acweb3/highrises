@@ -1,10 +1,9 @@
-import { getIndex } from 'common/helpers';
+import { getBuildingURL, getIndex } from 'common/helpers';
 import { useChainConfig } from 'common/hooks/useChainConfig';
 import { Story } from 'components/ExplorerV2/Masthead/Attributes/Story';
 import { Traits } from 'components/ExplorerV2/Masthead/Attributes/Traits';
 import * as S from 'components/ExplorerV2/Masthead/DesktopMasthead/DesktopMasthead.styled';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
-import kebabCase from 'just-kebab-case';
 import { useEffect, useRef, useState } from 'react';
 
 export const DesktopMasthead = ({ activeHighrise }) => {
@@ -54,7 +53,7 @@ export const DesktopMasthead = ({ activeHighrise }) => {
                         <S.DesktopMastheadImage src={tempHighrise.posterSrc} />
                     </a>
                     <S.DesktopMastheadExternalButtonLink
-                        href={`/building/${kebabCase(tempHighrise.name)}`}
+                        href={getBuildingURL(tempHighrise)}
                     >
                         View Detail
                     </S.DesktopMastheadExternalButtonLink>

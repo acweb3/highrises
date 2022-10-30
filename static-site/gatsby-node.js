@@ -1,5 +1,5 @@
-const kebabCase = require('just-kebab-case');
 const { highrises } = require('./src/assets/data/highrises');
+const kebabCase = require('just-kebab-case');
 
 exports.createPages = async function ({ actions, graphql }) {
     const {
@@ -57,7 +57,9 @@ exports.createPages = async function ({ actions, graphql }) {
 
     highrisesWithImages.forEach((highrise) => {
         actions.createPage({
-            path: `building/${kebabCase(highrise.name)}`,
+            path: `/building/${kebabCase(highrise.name)}-${kebabCase(
+                highrise.architect
+            )}`,
             component: require.resolve(`./src/templates/Building.js`),
             context: {
                 highrise,
