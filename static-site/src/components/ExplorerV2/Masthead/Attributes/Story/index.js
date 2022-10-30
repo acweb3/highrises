@@ -1,5 +1,5 @@
 import { getBuildingURL } from 'common/helpers';
-import * as S from 'components/Explorer/Masthead/Attributes/Story/Story.styled';
+import * as S from 'components/ExplorerV2/Masthead/Attributes/Story/Story.styled';
 import { navigate } from 'gatsby';
 
 export const Story = ({ isModal, activeHighrise, className }) => {

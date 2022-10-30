@@ -1,4 +1,4 @@
-import * as S from 'components/Explorer/Masthead/Purchase/EthPrice/EthPrice.styled';
+import * as S from 'components/ExplorerV2/Masthead/Purchase/EthPrice/EthPrice.styled';
 
 export const EthPrice = () => {
     return (

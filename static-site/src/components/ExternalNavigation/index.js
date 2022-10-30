@@ -1,5 +1,5 @@
 import { useChainConfig } from 'common/hooks/useChainConfig';
-import { useTokenOwner } from 'components/Explorer/Masthead/Attributes/Traits/hooks/useTokenOwner';
+import { useTokenOwner } from 'components/ExplorerV2/Masthead/Attributes/Traits/hooks/useTokenOwner';
 import * as S from 'components/ExternalNavigation/ExternalNavigation.styled';
 import { useMapViewContext } from 'contexts/MapView';
 

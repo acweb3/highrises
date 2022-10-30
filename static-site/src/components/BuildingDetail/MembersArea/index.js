@@ -1,6 +1,6 @@
 import * as S from 'components/BuildingDetail/MembersArea/MembersArea.styled';
 import { googleDriveMap } from 'components/BuildingDetail/MembersArea/googleDriveMap';
-import { useTokenOwner } from 'components/Explorer/Masthead/Attributes/Traits/hooks/useTokenOwner';
+import { useTokenOwner } from 'components/ExplorerV2/Masthead/Attributes/Traits/hooks/useTokenOwner';
 import { ExternalButtonLink } from 'components/ui/BaseButton/ExternalButtonLink';
 
 export const MembersArea = ({ activeHighrise }) => {

@@ -30,7 +30,7 @@ export const DropdownFilter = styled.div`
     ${(props) =>
         props.isActive &&
         css`
-            opacity: 1;
+            opacity: 0.9;
             color: ${(props) => props.theme.colors.white[0]};
             background-color: ${props.theme.colors.blue[2]};
             border: 1px solid ${props.theme.colors.blue[2]};
@@ -43,6 +43,12 @@ export const DropdownFilters = styled.div`
     overflow-x: scroll;
     padding: 0px 16px 16px 48px;
     color: ${(props) => props.theme.colors.blue[0]};
+
+    min-height: 52px;
+
+    ${(props) => props.theme.breakpoints.small`
+        min-height: initial;
+    `}
 
     &::-webkit-scrollbar {
         display: none;

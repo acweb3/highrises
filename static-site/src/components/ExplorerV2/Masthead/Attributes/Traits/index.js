@@ -1,5 +1,5 @@
-import * as S from 'components/Explorer/Masthead/Attributes/Traits/Traits.styled';
-import { useTokenOwner } from 'components/Explorer/Masthead/Attributes/Traits/hooks/useTokenOwner';
+import * as S from 'components/ExplorerV2/Masthead/Attributes/Traits/Traits.styled';
+import { useTokenOwner } from 'components/ExplorerV2/Masthead/Attributes/Traits/hooks/useTokenOwner';
 
 export const Traits = ({ activeHighrise, className }) => {
     const { tokenOwnerAddress } = useTokenOwner({
@@ -14,7 +14,7 @@ export const Traits = ({ activeHighrise, className }) => {
         ['Style', activeHighrise.style],
         ['Secondary Style', activeHighrise.secondaryStyle],
         ['Architect', activeHighrise.architect],
-        ['Token Owner', tokenOwnerAddress],
+        ['Token Owner', tokenOwnerAddress ?? '0x...'],
     ].filter(([, value]) => value);
 
     return (

@@ -1,6 +1,6 @@
-import * as S from 'components/Explorer/Masthead/Attributes/Attributes.styled';
-import { Story } from 'components/Explorer/Masthead/Attributes/Story';
-import { Traits } from 'components/Explorer/Masthead/Attributes/Traits';
+import * as S from 'components/ExplorerV2/Masthead/Attributes/Attributes.styled';
+import { Story } from 'components/ExplorerV2/Masthead/Attributes/Story';
+import { Traits } from 'components/ExplorerV2/Masthead/Attributes/Traits';
 
 export const Attributes = ({ activeHighrise }) => {
     return (

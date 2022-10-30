@@ -131,24 +131,11 @@ export const SORTS = {
 export const SortBar = ({ activeSort, setActiveSort, isMobile }) => {
     const [activeDropdown, setActiveDropdown] = useState();
     const [activeOption, setActiveOption] = useState();
-    const [hasArrow, setHasArrow] = useState(false);
+
     const filtersRef = useRef();
 
     useEffect(() => {
         setActiveOption(undefined);
-    }, [activeDropdown]);
-
-    useEffect(() => {
-        if (
-            activeDropdown &&
-            filtersRef.current &&
-            filtersRef.current.childElementCount * 100 >
-                filtersRef.current.offsetWidth
-        ) {
-            setHasArrow(true);
-        } else {
-            setHasArrow(false);
-        }
     }, [activeDropdown]);
 
     return (
@@ -212,10 +199,10 @@ export const SortBar = ({ activeSort, setActiveSort, isMobile }) => {
                         )
                 )}
             </S.SortBar>
-            {activeDropdown &&
-                (isMobile ? (
-                    <S.DropdownFilters ref={filtersRef}>
-                        {Object.values(activeDropdown.dropdown.options)
+            {isMobile ? (
+                <S.DropdownFilters ref={filtersRef}>
+                    {activeDropdown &&
+                        Object.values(activeDropdown.dropdown.options)
                             .sort((a, b) => a.value.localeCompare(b.value))
                             .map(({ value, sort }) => {
                                 return (
@@ -234,8 +221,9 @@ export const SortBar = ({ activeSort, setActiveSort, isMobile }) => {
                                     </S.DropdownFilter>
                                 );
                             })}
-                    </S.DropdownFilters>
-                ) : (
+                </S.DropdownFilters>
+            ) : (
+                activeDropdown && (
                     <S.DropdownFiltersWrapper>
                         <S.DropdownFilters ref={filtersRef}>
                             {Object.values(activeDropdown.dropdown.options)
@@ -261,7 +249,8 @@ export const SortBar = ({ activeSort, setActiveSort, isMobile }) => {
                                 })}
                         </S.DropdownFilters>
                     </S.DropdownFiltersWrapper>
-                ))}
+                )
+            )}
         </>
     );
 };

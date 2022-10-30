@@ -1,6 +1,6 @@
-import { Story as UnstyledStory } from 'components/Explorer/Masthead/Attributes/Story';
-import { Traits as UnstyledTraits } from 'components/Explorer/Masthead/Attributes/Traits';
-import { Purchase as UnstyledPurchase } from 'components/Explorer/Masthead/Purchase';
+import { Story as UnstyledStory } from 'components/ExplorerV2/Masthead/Attributes/Story';
+import { Traits as UnstyledTraits } from 'components/ExplorerV2/Masthead/Attributes/Traits';
+import { Purchase as UnstyledPurchase } from 'components/ExplorerV2/Masthead/Purchase';
 import { ExternalNavigation as UnstyledExternalNavigtion } from 'components/ExternalNavigation';
 import { ExternalButton, ExternalButtonLink } from 'components/ui/BaseButton';
 import { Header as UnstyledHeader } from 'components/ui/Header';

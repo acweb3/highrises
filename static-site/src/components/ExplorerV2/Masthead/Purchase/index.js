@@ -1,8 +1,8 @@
 import { useChainConfig } from 'common/hooks/useChainConfig';
-import { useTokenOwner } from 'components/Explorer/Masthead/Attributes/Traits/hooks/useTokenOwner';
-import { EthPrice } from 'components/Explorer/Masthead/Purchase/EthPrice';
-import * as S from 'components/Explorer/Masthead/Purchase/Purchase.styled';
-import { PurchaseItem } from 'components/Explorer/Masthead/Purchase/PurchaseItem';
+import { useTokenOwner } from 'components/ExplorerV2/Masthead/Attributes/Traits/hooks/useTokenOwner';
+import { EthPrice } from 'components/ExplorerV2/Masthead/Purchase/EthPrice';
+import * as S from 'components/ExplorerV2/Masthead/Purchase/Purchase.styled';
+import { PurchaseItem } from 'components/ExplorerV2/Masthead/Purchase/PurchaseItem';
 
 export const Purchase = ({
     activeHighrise,

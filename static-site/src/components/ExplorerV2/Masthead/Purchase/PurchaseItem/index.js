@@ -1,6 +1,6 @@
 import regrettable from 'assets/images/regrettable.jpg';
 import { useWindowSize } from 'common/hooks/useWindowSize';
-import * as S from 'components/Explorer/Masthead/Purchase/PurchaseItem/PurchaseItem.styled';
+import * as S from 'components/ExplorerV2/Masthead/Purchase/PurchaseItem/PurchaseItem.styled';
 
 const Asset = ({ children, isFullPage }) => {
     const { isSmallish } = useWindowSize();

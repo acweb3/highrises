@@ -37,6 +37,7 @@ export const MobileExplorer = () => {
                 {Boolean(highrises.length) && (
                     <>
                         <SortBar
+                            isMobile
                             activeSort={activeSort}
                             setActiveSort={setActiveSort}
                         />

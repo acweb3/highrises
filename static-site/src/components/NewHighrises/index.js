@@ -89,7 +89,7 @@ export const NewHighrises = ({ highrises }) => {
                                 opacity: 1;
                             }
                         `}
-                        key={highrise.name}
+                        key={getBuildingURL(highrise)}
                         to={getBuildingURL(highrise)}
                     >
                         <Building isNewHighrise building={highrise} />

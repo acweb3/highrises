@@ -1,7 +1,6 @@
 import { getBuildingURL, getIndex } from 'common/helpers';
 import { useChainConfig } from 'common/hooks/useChainConfig';
 import * as S from 'components/BuildingDetail/BuildingDetail.styled';
-import { MobileMap } from 'components/Explorer/MobileExplorer/MobileMap';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
 import { navigate } from 'gatsby';
 
@@ -136,8 +135,6 @@ export const BuildingDetail = ({ activeHighrise, location }) => {
                     </div>
                 </div>
 
-                <MobileMap />
-
                 <div
                     css={`
                         display: none;
@@ -168,7 +165,13 @@ export const BuildingDetail = ({ activeHighrise, location }) => {
                             initHighrisesState.length - 1 && (
                             <S.BuildingDetailNextHighrise
                                 to={getBuildingURL(
-                                    initHighrisesState[activeHighrise.index + 1]
+                                    initHighrisesState[
+                                        initHighrisesState.findIndex(
+                                            (highrise) =>
+                                                highrise.index ===
+                                                activeHighrise.index
+                                        ) + 1
+                                    ]
                                 )}
                             >
                                 Next Highrise ↴
@@ -177,7 +180,13 @@ export const BuildingDetail = ({ activeHighrise, location }) => {
                         {activeHighrise.index > 0 && (
                             <S.BuildingDetailLastHighrise
                                 to={getBuildingURL(
-                                    initHighrisesState[activeHighrise.index - 1]
+                                    initHighrisesState[
+                                        initHighrisesState.findIndex(
+                                            (highrise) =>
+                                                highrise.index ===
+                                                activeHighrise.index
+                                        ) - 1
+                                    ]
                                 )}
                             >
                                 Last Highrise ↴

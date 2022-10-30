@@ -1,11 +1,19 @@
 import './Popup.css';
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 export const Marker = ({ onClick, iconSrc, index, position, ...options }) => {
     const [marker, setMarker] = useState();
+    const [hasRef, setHasRef] = useState(false);
     const ref = useRef();
     const markerIndexRef = useRef();
     const iconSrcRef = useRef();
+
+    const onRefChange = useCallback((node) => {
+        if (node !== null) {
+            ref.current = node;
+            setHasRef(true);
+        }
+    }, []); // adjust deps
 
     useEffect(() => {
         const createPopup = async () => {
@@ -18,7 +26,7 @@ export const Marker = ({ onClick, iconSrc, index, position, ...options }) => {
                 markerIndexRef.current = index;
                 iconSrcRef.current = iconSrc;
                 const { Popup } = await import(
-                    'components/Explorer/MapExplorer/Marker/Popup'
+                    'components/ExplorerV2/MapExplorer/Marker/Popup'
                 );
 
                 setMarker(
@@ -27,7 +35,9 @@ export const Marker = ({ onClick, iconSrc, index, position, ...options }) => {
             }
         };
 
-        createPopup();
+        if (hasRef) {
+            createPopup();
+        }
 
         // remove marker from map on unmount
         return () => {
@@ -35,7 +45,7 @@ export const Marker = ({ onClick, iconSrc, index, position, ...options }) => {
                 marker.onRemove();
             }
         };
-    }, [marker, position, index, onClick, iconSrc]);
+    }, [hasRef, marker, position, index, onClick, iconSrc]);
 
     useEffect(() => {
         if (marker) {
@@ -46,7 +56,7 @@ export const Marker = ({ onClick, iconSrc, index, position, ...options }) => {
 
     return (
         <div>
-            <div ref={ref}></div>
+            <div ref={onRefChange}></div>
         </div>
     );
 };

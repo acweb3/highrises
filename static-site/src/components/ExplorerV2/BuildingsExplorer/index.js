@@ -1,3 +1,4 @@
+import { getBuildingURL } from 'common/helpers';
 import { Building } from 'components/ExplorerV2/BuildingsExplorer/Building';
 import * as S from 'components/ExplorerV2/BuildingsExplorer/BuildingsExplorer.styled';
 import { DragScroll } from 'components/ExplorerV2/BuildingsExplorer/DragScroll';
@@ -33,14 +34,20 @@ export const BuildingsExplorer = ({ activeSort, isMobile }) => {
                         }
                     `}
                 >
-                    {highrises.map((building, index) => (
-                        <Building key={building.name} building={building} />
+                    {highrises.map((building) => (
+                        <Building
+                            key={getBuildingURL(building)}
+                            building={building}
+                        />
                     ))}
                 </div>
             ) : (
                 <DragScroll>
                     {highrises.map((building, index) => (
-                        <Building key={building.name} building={building} />
+                        <Building
+                            key={getBuildingURL(building)}
+                            building={building}
+                        />
                     ))}
                 </DragScroll>
             )}

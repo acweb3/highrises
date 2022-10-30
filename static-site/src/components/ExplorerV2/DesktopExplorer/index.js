@@ -6,7 +6,7 @@ import { Masthead } from 'components/ExplorerV2/Masthead';
 import { SortBar } from 'components/ExplorerV2/SortBar';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
 import { useExplorerRefContext } from 'contexts/ExplorerRef';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useThrottle } from 'react-use';
 
 export const DesktopExplorer = () => {
