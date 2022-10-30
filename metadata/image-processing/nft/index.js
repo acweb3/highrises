@@ -22,6 +22,13 @@ const nft = async () => {
 
         await sharp(join(rawImagesDir, file))
             .resize({
+                width: 1440,
+                height: 2100,
+            })
+            .toFile(join(outputDir, 'detail', `${tokenID}.webp`));
+
+        await sharp(join(rawImagesDir, file))
+            .resize({
                 width: 480,
                 height: 700,
             })
