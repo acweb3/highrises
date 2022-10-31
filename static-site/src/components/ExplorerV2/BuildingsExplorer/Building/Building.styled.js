@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-export const BuildingImage = styled.img`
+const buildingCss = css`
     flex: 1;
     max-width: 66vw;
     width: 66vw;
@@ -24,6 +24,13 @@ export const BuildingImage = styled.img`
                 width: 20vw;
             `}
         `}
+`;
+
+export const BuildingImage = styled.img`
+    ${buildingCss}
+`;
+export const BuildingPlaceholder = styled.div`
+    ${buildingCss}
 `;
 
 export const BuildingCaption = styled.div`

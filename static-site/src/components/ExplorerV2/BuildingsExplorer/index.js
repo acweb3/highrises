@@ -3,11 +3,16 @@ import { Building } from 'components/ExplorerV2/BuildingsExplorer/Building';
 import * as S from 'components/ExplorerV2/BuildingsExplorer/BuildingsExplorer.styled';
 import { DragScroll } from 'components/ExplorerV2/BuildingsExplorer/DragScroll';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 export const BuildingsExplorer = ({ activeSort, isMobile }) => {
     const { highrises, initHighrises, setActiveHighrise, setHighrises } =
         useActiveHighriseContext();
+    const [visibleIndex, setVisibleIndex] = useState(5);
+
+    const onInView = (index) => {
+        setVisibleIndex((visibleIndex) => Math.max(visibleIndex, index + 5));
+    };
 
     useEffect(() => {
         if (activeSort) {
@@ -34,10 +39,12 @@ export const BuildingsExplorer = ({ activeSort, isMobile }) => {
                         }
                     `}
                 >
-                    {highrises.map((building) => (
+                    {highrises.map((building, index) => (
                         <Building
                             key={getBuildingURL(building)}
                             building={building}
+                            isVisible={index <= visibleIndex}
+                            onInView={onInView}
                         />
                     ))}
                 </div>
@@ -47,6 +54,8 @@ export const BuildingsExplorer = ({ activeSort, isMobile }) => {
                         <Building
                             key={getBuildingURL(building)}
                             building={building}
+                            isVisible={index <= visibleIndex}
+                            onInView={onInView}
                         />
                     ))}
                 </DragScroll>
