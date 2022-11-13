@@ -6,7 +6,6 @@ export const MobileNav = () => {
         <>
             <S.InitOffset />
             <S.MobileNav>
-                <S.MobileNavCart>Cart</S.MobileNavCart>
                 <S.MobileNavLogoContainer>
                     <S.MobileNavLogo src={logoSrc} />
                 </S.MobileNavLogoContainer>

@@ -45,9 +45,9 @@ export const ExplorerV2 = () => {
     return (
         <>
             <div
+                className="Main-content"
                 css={`
                     background: #fff;
-                    padding: 48px 64px 32px;
                     min-height: 96px;
                 `}
             >

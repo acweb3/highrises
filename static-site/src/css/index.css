@@ -46,3 +46,5 @@
     src: url('../fonts/RCBasicDark/font.woff2') format('woff2'),
         url('../fonts/RCBasicDark/font.woff') format('woff');
 }
+
+@import url('./squarespace.css');

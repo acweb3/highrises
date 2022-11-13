@@ -10,20 +10,16 @@ export const NewHighrises = ({ highrises }) => {
         <div
             css={`
                 background: #fff;
-                padding: 48px 0 32px;
                 min-height: 96px;
-
-                ${(props) => props.theme.breakpoints.small`
-                    padding: 0 0 32px;
-                `}
             `}
         >
             <div
+                className="Main-content"
                 css={`
-                    padding: 0 64px 32px;
+                    padding-top: 32px !important;
 
                     ${(props) => props.theme.breakpoints.small`
-                        padding: 0 88.5px 32px;
+                        padding-top: 0 !important;
                     `}
                 `}
             >
