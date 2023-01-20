@@ -28,38 +28,25 @@ export const BuildingsExplorer = ({ activeSort, isMobile }) => {
 
     return (
         <S.BuildingsExplorer>
-            {isMobile ? (
-                <div
-                    css={`
-                        display: flex;
-                        overflow-x: scroll;
+            <div
+                css={`
+                    display: flex;
+                    overflow-x: scroll;
 
-                        ::-webkit-scrollbar {
-                            display: none;
-                        }
-                    `}
-                >
-                    {highrises.map((building, index) => (
-                        <Building
-                            key={getBuildingURL(building)}
-                            building={building}
-                            isVisible={index <= visibleIndex}
-                            onInView={onInView}
-                        />
-                    ))}
-                </div>
-            ) : (
-                <DragScroll>
-                    {highrises.map((building, index) => (
-                        <Building
-                            key={getBuildingURL(building)}
-                            building={building}
-                            isVisible={index <= visibleIndex}
-                            onInView={onInView}
-                        />
-                    ))}
-                </DragScroll>
-            )}
+                    ::-webkit-scrollbar {
+                        display: none;
+                    }
+                `}
+            >
+                {highrises.map((building, index) => (
+                    <Building
+                        key={getBuildingURL(building)}
+                        building={building}
+                        isVisible={index <= visibleIndex}
+                        onInView={onInView}
+                    />
+                ))}
+            </div>
         </S.BuildingsExplorer>
     );
 };
