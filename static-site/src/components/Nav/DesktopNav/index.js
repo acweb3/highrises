@@ -1,8 +1,3 @@
-import logoSrc from 'assets/images/logos/hytha-logo.png';
-import * as S from 'components/Nav/DesktopNav/DesktopNav.styled';
-import { BaseLink } from 'components/ui/BaseLink';
-import { useExplorerRefContext } from 'contexts/ExplorerRef';
-
 const raw = `
 <div class="Header-inner Header-inner--top" data-nc-group="top">
   <div data-nc-container="top-left">
@@ -23,8 +18,6 @@ const raw = `
 `;
 
 export const DesktopNav = () => {
-    const { desktopNavRef } = useExplorerRefContext();
-
     return (
         <header
             className="Header Header--top tweak-header-primary-nav-hover-style-active"
@@ -38,7 +31,6 @@ export const DesktopNav = () => {
                     }
                 `}
             `}
-            ref={desktopNavRef}
             dangerouslySetInnerHTML={{ __html: raw }}
         />
     );

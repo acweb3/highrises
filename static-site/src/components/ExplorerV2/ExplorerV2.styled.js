@@ -20,8 +20,4 @@ export const ExplorerV2 = styled.div`
     border-bottom: 1px solid ${(props) => props.theme.colors.grey[0]};
 
     position: relative;
-
-    ${(props) => props.theme.breakpoints.small`
-        min-height: calc(100vh + 350px);
-    `}
 `;

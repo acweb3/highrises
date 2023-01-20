@@ -5,12 +5,10 @@ import { Masthead } from 'components/ExplorerV2/Masthead';
 import * as S from 'components/ExplorerV2/MobileExplorer/MobileExplorer.styled';
 import { SortBar } from 'components/ExplorerV2/SortBar';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
-import { useExplorerRefContext } from 'contexts/ExplorerRef';
 import { useState } from 'react';
 
 export const MobileExplorer = () => {
     const [activeSort, setActiveSort] = useState(undefined);
-    const { buildingExplorerMobileRef } = useExplorerRefContext();
     const { highrises } = useActiveHighriseContext();
 
     return (
@@ -41,11 +39,7 @@ export const MobileExplorer = () => {
                             activeSort={activeSort}
                             setActiveSort={setActiveSort}
                         />
-                        <BuildingsExplorer
-                            isMobile
-                            activeSort={activeSort}
-                            buildingExplorerRef={buildingExplorerMobileRef}
-                        />
+                        <BuildingsExplorer activeSort={activeSort} />
                     </>
                 )}
             </S.MobileExplorerSection>
