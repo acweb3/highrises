@@ -47,10 +47,6 @@ export const ExplorerV2 = () => {
                         height: 100%;
 
                         z-index: 0;
-
-                        ${(props) => props.theme.breakpoints.medium`
-                        padding-bottom: 320px;
-                    `}
                     `}
                 >
                     <Bars stroke="#FFF" />
