@@ -23,7 +23,6 @@ export const DesktopExplorer = () => {
 
             <S.DesktopExplorerSection
                 css={`
-                    overflow: hidden;
                     width: 64vw;
                     min-width: 64vw;
                     position: relative;
