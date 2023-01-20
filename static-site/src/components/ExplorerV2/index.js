@@ -1,47 +1,10 @@
-import { useWindowSize } from 'common/hooks/useWindowSize';
 import { DesktopExplorer } from 'components/ExplorerV2/DesktopExplorer';
 import * as S from 'components/ExplorerV2/ExplorerV2.styled';
 import { MobileExplorer } from 'components/ExplorerV2/MobileExplorer';
 import { Paragraph } from 'components/ui/Paragraph';
-import { useExplorerRefContext } from 'contexts/ExplorerRef';
-import { useEffect, useRef } from 'react';
 import { Bars } from 'react-loading-icons';
 
-const getExplorerHeight = (explorerRef) => {
-    let cached;
-
-    return () => {
-        if (!cached && explorerRef.current?.children[0].offsetHeight) {
-            cached = explorerRef.current?.children[0].offsetHeight * 2;
-        }
-
-        return cached;
-    };
-};
-
 export const ExplorerV2 = () => {
-    const { isLoaded, isSmallish } = useWindowSize();
-    const { explorerRef, buildingExplorerMobileRefState } =
-        useExplorerRefContext();
-
-    const explorerHeight = useRef(getExplorerHeight(explorerRef));
-
-    const height = buildingExplorerMobileRefState.current
-        ? explorerHeight.current() +
-          buildingExplorerMobileRefState.current.scrollWidth
-        : 0;
-
-    useEffect(() => {
-        if (
-            window.scrollY >=
-                explorerRef.current?.getBoundingClientRect().top &&
-            isLoaded &&
-            !isSmallish
-        ) {
-            explorerRef.current?.scrollIntoView(true);
-        }
-    }, [buildingExplorerMobileRefState, isLoaded, isSmallish]);
-
     return (
         <>
             <div
@@ -66,15 +29,11 @@ export const ExplorerV2 = () => {
                 </Paragraph>
             </div>
             <S.ExplorerV2
-                ref={explorerRef}
                 css={`
                     position: relative;
                     background: #a8b5bd;
                     transition: border-color 400ms;
                 `}
-                style={{
-                    height: isLoaded && !isSmallish ? height : undefined,
-                }}
             >
                 <div
                     css={`
@@ -102,7 +61,7 @@ export const ExplorerV2 = () => {
                         z-index: 1;
                     `}
                 >
-                    {isSmallish ? <MobileExplorer /> : <DesktopExplorer />}
+                    <DesktopExplorer />
                 </div>
             </S.ExplorerV2>
         </>

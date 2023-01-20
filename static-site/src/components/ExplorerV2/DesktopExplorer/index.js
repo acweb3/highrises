@@ -4,12 +4,10 @@ import { MapExplorer } from 'components/ExplorerV2/MapExplorer';
 import { Masthead } from 'components/ExplorerV2/Masthead';
 import { SortBar } from 'components/ExplorerV2/SortBar';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
-import { useExplorerRefContext } from 'contexts/ExplorerRef';
 import { useState } from 'react';
 
 export const DesktopExplorer = () => {
     const [activeSort, setActiveSort] = useState(undefined);
-    const { buildingExplorerDesktopRef } = useExplorerRefContext();
     const { highrises } = useActiveHighriseContext();
 
     return (
@@ -33,23 +31,14 @@ export const DesktopExplorer = () => {
                         ${(props) => props.theme.colors.grey[0]};
                 `}
             >
-                <S.DesktopExplorerBackground
-                    style={{
-                        transform: `translate3D(${
-                            -42 * throttledScroll
-                        }%, 0, 0)`,
-                    }}
-                />
+                <S.DesktopExplorerBackground />
                 {Boolean(highrises.length) && (
                     <>
                         <SortBar
                             activeSort={activeSort}
                             setActiveSort={setActiveSort}
                         />
-                        <BuildingsExplorer
-                            activeSort={activeSort}
-                            buildingExplorerRef={buildingExplorerDesktopRef}
-                        />
+                        <BuildingsExplorer activeSort={activeSort} />
                         <Masthead />
                     </>
                 )}
