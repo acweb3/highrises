@@ -16,9 +16,6 @@ async function main() {
 	);
 
 	await highrisesCollage.deployed();
-
-	console.log("HighriseCollage deployed to:", highrisesCollage.address);
-	console.log("estimated gas:", estimatedGas);
 }
 
 main()

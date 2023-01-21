@@ -12,7 +12,6 @@ const png = async () => {
     const files = await asyncReaddir(rawImagesDir);
 
     files.forEach(async (file, i) => {
-        console.log({ file, i });
         const fileName = join(__dirname, 'raw', file);
 
         await sharp(fileName)

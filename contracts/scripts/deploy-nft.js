@@ -10,9 +10,6 @@ async function main() {
 	const highrises = await Highrises.deploy(config.ipfsURL);
 
 	await highrises.deployed();
-
-	console.log("Highrises deployed to:", highrises.address);
-	console.log("estimated gas:", estimatedGas);
 }
 
 main()

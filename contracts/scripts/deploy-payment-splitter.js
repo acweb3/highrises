@@ -30,12 +30,6 @@ async function main() {
 	);
 
 	await highrisePaymentSplitter.deployed();
-
-	console.log(
-		"HighrisePaymentSplitter deployed to:",
-		highrisePaymentSplitter.address
-	);
-	console.log("estimated gas:", estimatedGas);
 }
 
 main()

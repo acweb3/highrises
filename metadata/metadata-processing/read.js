@@ -20,7 +20,6 @@ const getWords = (index) => {
     try {
         return fs.readFileSync(`words/dist/${index}.txt`, 'utf-8');
     } catch (e) {
-        // console.log(e);
         return DESCRIPTION_PLACEHOLDER;
     }
 };

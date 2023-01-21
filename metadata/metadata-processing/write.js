@@ -77,7 +77,6 @@ const write = (traits) => {
                     return attribute;
                 });
 
-            console.log(highriseNumber);
             fs.writeFileSync(
                 `dist/chain/${index}`,
                 JSON.stringify(

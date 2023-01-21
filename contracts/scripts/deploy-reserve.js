@@ -12,9 +12,6 @@ async function main() {
 	const highriseReserve = await HighriseReserve.deploy(0, 20);
 
 	await highriseReserve.deployed();
-
-	console.log("HighriseReserve deployed to:", highriseReserve.address);
-	console.log("estimated gas:", estimatedGas);
 }
 
 main()

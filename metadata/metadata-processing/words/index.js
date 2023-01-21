@@ -15,11 +15,6 @@ const { promisify } = require('util');
             .filter((paragraph) => {
                 // make a (maybe dumb) assumption that a title will start w a number
                 const isTitle = /^[0-9]/.test(paragraph);
-
-                if (isTitle) {
-                    console.log(paragraph);
-                }
-
                 return !isTitle;
             })
             .filter(Boolean)

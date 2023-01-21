@@ -11,16 +11,6 @@ export class Popup extends window.google.maps.OverlayView {
         this.position = position;
         this.onClick = onClick;
 
-        if (!content) {
-            console.log({
-                position,
-                content,
-                index,
-                onClick,
-                iconSrc,
-            });
-        }
-
         content.innerHTML = '';
         content.addEventListener('click', onClick);
 
