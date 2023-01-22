@@ -17,7 +17,7 @@ export const Building = ({
         if (inViewport) {
             onInView?.(building.index);
         }
-    }, [inViewport, onInView]);
+    }, [inViewport, onInView, building.index]);
 
     return (
         <S.Building

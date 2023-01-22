@@ -23,7 +23,7 @@ const Tokens = ({ setTokenIds }) => {
 
             return oldTokenIds;
         });
-    }, [tokenIds]);
+    }, [tokenIds, setTokenIds]);
 
     return null;
 };
@@ -36,6 +36,7 @@ export const ContextFAB = ({ hideFABOnMobile }) => {
     const scrollRef = useRef(0);
     const { account } = useEthers();
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     const throttleScroll = useCallback(
         throttle(() => {
             setIsVisible(

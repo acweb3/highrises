@@ -1,6 +1,6 @@
 import { useCall, useEthers } from '@usedapp/core';
 import { useChainConfig } from 'common/hooks/useChainConfig';
-import { utils, Contract } from 'ethers';
+import { Contract, utils } from 'ethers';
 import { useState } from 'react';
 
 export const useMint = () => {
@@ -74,6 +74,7 @@ export const useMint = () => {
             }
 
             setError('Something went wrong');
+            // eslint-disable-next-line no-console
             console.error(e);
         } finally {
             setIsMinting(false);
