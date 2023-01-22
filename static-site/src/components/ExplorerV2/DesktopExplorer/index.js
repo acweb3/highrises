@@ -30,7 +30,6 @@ export const DesktopExplorer = () => {
                         ${(props) => props.theme.colors.grey[0]};
                 `}
             >
-                <S.DesktopExplorerBackground />
                 {Boolean(highrises.length) && (
                     <>
                         <SortBar
