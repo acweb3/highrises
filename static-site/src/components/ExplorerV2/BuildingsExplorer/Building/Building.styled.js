@@ -78,21 +78,16 @@ export const Building = styled.div`
 
     position: relative;
 
-    & ${BuildingIndex},, & ${BuildingName}, & > ${BuildingImage} {
-        transition: opacity 400ms;
-    }
-
     ${(props) =>
-        !props.isActive &&
+        props.isActive &&
         css`
-            & ${BuildingIndex}, & ${BuildingName}, & > ${BuildingImage} {
-                opacity: 0.4;
-            }
+            &::after {
+                content: ' ';
+                position: absolute;
+                width: 100%;
+                height: 100%;
 
-            &:hover {
-                & ${BuildingIndex}, & ${BuildingName}, & > ${BuildingImage} {
-                    opacity: 0.7;
-                }
+                border: 2px solid ${(props) => props.theme.colors.white[0]};
             }
-        `};
+        `}
 `;

@@ -1,7 +1,6 @@
 import { BuildingsExplorer } from 'components/ExplorerV2/BuildingsExplorer';
 import * as S from 'components/ExplorerV2/DesktopExplorer/DesktopExplorer.styled';
 import { MapExplorer } from 'components/ExplorerV2/MapExplorer';
-import { Masthead } from 'components/ExplorerV2/Masthead';
 import { SortBar } from 'components/ExplorerV2/SortBar';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
 import { useState } from 'react';
@@ -39,7 +38,7 @@ export const DesktopExplorer = () => {
                                 setActiveSort={setActiveSort}
                             />
                         </S.DesktopExplorerBuildings>
-                        <Masthead />
+                        {/* <Masthead /> */}
                     </>
                 )}
             </S.DesktopExplorerSection>

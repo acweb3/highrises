@@ -17,9 +17,7 @@ export const Building = ({ building, onInView, isVisible = true }) => {
     return (
         <S.Building
             ref={ref}
-            isActive={
-                !activeHighrise || building.index === activeHighrise.index
-            }
+            isActive={building.index === activeHighrise?.index}
             onClick={() => {
                 setActiveHighrise(building);
             }}
