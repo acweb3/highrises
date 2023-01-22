@@ -3,12 +3,7 @@ import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
 import { useEffect, useRef } from 'react';
 import { useInViewport } from 'react-in-viewport';
 
-export const Building = ({
-    building,
-    isNewHighrise,
-    onInView,
-    isVisible = true,
-}) => {
+export const Building = ({ building, onInView, isVisible = true }) => {
     const { activeHighrise, setActiveHighrise } = useActiveHighriseContext();
     const ref = useRef();
     const { inViewport } = useInViewport(ref, { threshold: 0 });
@@ -26,24 +21,16 @@ export const Building = ({
                 !activeHighrise || building.index === activeHighrise.index
             }
             onClick={() => {
-                if (!isNewHighrise) {
-                    setActiveHighrise(building);
-                }
+                setActiveHighrise(building);
             }}
         >
-            {isVisible ? (
-                <S.BuildingImage
-                    isNewHighrise={isNewHighrise}
-                    alt={`building ${building.index}`}
-                    src={isNewHighrise ? building.nftSrc : building.imageSrc}
-                />
-            ) : (
-                <S.BuildingPlaceholder />
-            )}
+            <S.BuildingImage
+                alt={`building ${building.index}`}
+                src={building.nftSrc}
+            />
+
             <S.BuildingCaption>
-                <S.BuildingIndex.Desktop>
-                    {building.name}
-                </S.BuildingIndex.Desktop>
+                <S.BuildingIndex>{building.name}</S.BuildingIndex>
                 <S.BuildingName>
                     {building.city}
                     {building.state && `, ${building.state}`}
