@@ -93,7 +93,6 @@ export const SortBar = styled.div`
     flex-wrap: wrap;
 
     padding: 32px 32px 16px;
-    margin-left: auto;
 
     overflow: visible;
 
@@ -104,7 +103,6 @@ export const SortBar = styled.div`
     ${(props) => props.theme.breakpoints.small`
         justify-content: initial;
         padding: 16px 32px 0;
-        margin-bottom: 4px;
     `}
 
     ${(props) => props.theme.breakpoints.medium`
