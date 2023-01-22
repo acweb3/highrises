@@ -1,19 +1,11 @@
-import seamlessBackgroundSrc from 'assets/images/seamless-background.webp';
 import styled from 'styled-components';
 
-export const DesktopExplorerBackground = styled.div`
-    position: absolute;
-    bottom: 80px;
-    max-width: initial;
-    z-index: 0;
-    transition: transform 800ms;
-    height: 100%;
+export const DesktopExplorerBuildings = styled.div`
+    height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
 
-    background-image: url(${seamlessBackgroundSrc});
-    background-repeat: repeat-x;
-    background-size: auto 100%;
-
-    width: 300%;
+    display: flex;
 `;
 
 export const DesktopExplorerSection = styled.div`

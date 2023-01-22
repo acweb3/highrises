@@ -84,6 +84,7 @@ export const SortLink = styled.div`
 export const SortBar = styled.div`
     font-size: 16px;
     font-weight: 500;
+    background: ${(props) => props.theme.colors.grey[1]};
 
     white-space: nowrap;
 
@@ -92,7 +93,10 @@ export const SortBar = styled.div`
     flex-wrap: wrap;
 
     padding: 32px 32px 16px;
-    margin-left: auto;
+
+    position: absolute;
+    width: 100%;
+    bottom: 0;
 
     overflow: visible;
 
@@ -103,7 +107,6 @@ export const SortBar = styled.div`
     ${(props) => props.theme.breakpoints.small`
         justify-content: initial;
         padding: 16px 32px 0;
-        margin-bottom: 4px;
     `}
 
     ${(props) => props.theme.breakpoints.medium`

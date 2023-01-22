@@ -1,9 +1,7 @@
 // import { Reserve } from 'components/Reserve';
-import { Collage } from 'components/Collage';
 import { EmailCollection } from 'components/EmailCollection';
 import { ExplorerV2 } from 'components/ExplorerV2';
 import { NavTabs } from 'components/NavTabs';
-import { NewHighrises } from 'components/NewHighrises';
 import { SiteWrapper } from 'components/SiteWrapper';
 import { Contexts } from 'contexts';
 import 'css/index.css';
@@ -42,13 +40,7 @@ const App = ({ pageContext: { highrises, thumbnail } }) => {
                     <link rel="canonical" href="highrises.hythacg.com" />
                 </Helmet>
                 <NavTabs />
-                {/* <Reserve
-                    css={`
-                        background: ${(props) => props.theme.colors.white[0]};
-                    `}
-                /> */}
-                <NewHighrises highrises={highrises.slice(60)} />
-                <Collage />
+
                 <ExplorerV2 />
                 <EmailCollection />
             </SiteWrapper>
