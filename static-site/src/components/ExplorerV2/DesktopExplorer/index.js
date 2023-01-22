@@ -32,11 +32,13 @@ export const DesktopExplorer = () => {
             >
                 {Boolean(highrises.length) && (
                     <>
-                        <SortBar
-                            activeSort={activeSort}
-                            setActiveSort={setActiveSort}
-                        />
-                        <BuildingsExplorer activeSort={activeSort} />
+                        <S.DesktopExplorerBuildings>
+                            <BuildingsExplorer activeSort={activeSort} />
+                            <SortBar
+                                activeSort={activeSort}
+                                setActiveSort={setActiveSort}
+                            />
+                        </S.DesktopExplorerBuildings>
                         <Masthead />
                     </>
                 )}

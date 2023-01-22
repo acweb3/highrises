@@ -94,6 +94,10 @@ export const SortBar = styled.div`
 
     padding: 32px 32px 16px;
 
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+
     overflow: visible;
 
     justify-content: center;

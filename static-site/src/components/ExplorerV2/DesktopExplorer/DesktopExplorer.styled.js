@@ -1,5 +1,13 @@
 import styled from 'styled-components';
 
+export const DesktopExplorerBuildings = styled.div`
+    height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
+
+    display: flex;
+`;
+
 export const DesktopExplorerSection = styled.div`
     display: flex;
     flex: 1;
