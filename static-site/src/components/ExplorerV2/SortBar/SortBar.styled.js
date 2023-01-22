@@ -84,6 +84,7 @@ export const SortLink = styled.div`
 export const SortBar = styled.div`
     font-size: 16px;
     font-weight: 500;
+    background: ${(props) => props.theme.colors.grey[1]};
 
     white-space: nowrap;
 
