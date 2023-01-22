@@ -1,20 +1,23 @@
 {
     "name": "highrises",
-    "version": "1.0.0",
-    "private": true,
+    "version": "1.1.0",
     "description": "highrises static site",
     "author": "andy",
     "keywords": [
         "gatsby"
     ],
     "scripts": {
-        "develop": "PORT=7779 gatsby develop",
+        "develop": "gatsby develop",
         "start": "gatsby develop",
         "build": "gatsby build",
         "serve": "gatsby serve",
         "clean": "gatsby clean",
         "deploy:dev": "npm run -n \"-r dotenv/config\" && TARGET=development npm run build && gatsby-plugin-s3 deploy",
         "deploy:prod": "npm run -n \"-r dotenv/config\" && TARGET=production npm run build && gatsby-plugin-s3 deploy"
+    },
+    "engines": {
+        "node": "14.17.0",
+        "npm": "6.14.13"
     },
     "dependencies": {
         "@fontsource/anton": "^4.5.6",
@@ -54,7 +57,6 @@
         "react-loading-icons": "^1.1.0",
         "react-scripts": "4.0.3",
         "react-use": "^17.3.2",
-        "react-use-draggable-scroll": "^0.4.2",
         "sharp": "^0.30.7",
         "smoothscroll-polyfill": "^0.4.4",
         "styled-components": "^5.3.5",
@@ -64,6 +66,8 @@
     },
     "devDependencies": {
         "@trivago/prettier-plugin-sort-imports": "^3.2.0",
+        "eslint": "^8.32.0",
+        "eslint-plugin-react-hooks": "^4.6.0",
         "prettier": "^2.6.2"
     }
 }

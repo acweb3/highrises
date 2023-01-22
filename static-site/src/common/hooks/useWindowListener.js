@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-properties */
 import { useEffect } from 'react';
 
 export const useWindowListener = (
@@ -27,5 +28,6 @@ export const useWindowListener = (
                 window.removeEventListener(eventListenerTypes, callback);
             }
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [eventListenerTypes, callback, ...deps, options]);
 };
