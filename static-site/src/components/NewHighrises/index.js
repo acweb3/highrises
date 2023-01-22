@@ -1,7 +1,6 @@
 import { getBuildingURL } from 'common/helpers';
 import { Building } from 'components/ExplorerV2/BuildingsExplorer/Building';
 import * as S from 'components/NewHighrises/NewHighrises.styled';
-import { BaseLink } from 'components/ui/BaseLink';
 import { Paragraph } from 'components/ui/Paragraph';
 import { Link } from 'gatsby';
 
