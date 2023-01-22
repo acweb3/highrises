@@ -11,14 +11,7 @@ export const ExplorerV2 = () => {
                     transition: border-color 400ms;
                 `}
             >
-                <div
-                    css={`
-                        height: 100%;
-                        z-index: 1;
-                    `}
-                >
-                    <DesktopExplorer />
-                </div>
+                <DesktopExplorer />
             </S.ExplorerV2>
         </>
     );

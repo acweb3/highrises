@@ -4,7 +4,6 @@ export const BuildingImage = styled.img``;
 
 export const BuildingCaption = styled.div`
     color: ${(props) => props.theme.colors.blue[0]};
-    background: ${(props) => props.theme.colors.white[0]};
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -12,6 +11,35 @@ export const BuildingCaption = styled.div`
     height: 120px;
 
     padding-top: 16px;
+
+    position: absolute;
+
+    height: 100%;
+    width: 100%;
+
+    z-index: 1;
+
+    opacity: 0;
+    transition: opacity 400ms;
+
+    &::before {
+        content: ' ';
+        position: absolute;
+        background: ${(props) => props.theme.colors.white[0]};
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 400ms;
+    }
+
+    &:hover {
+        opacity: 1;
+
+        &::before {
+            opacity: 0.4;
+        }
+    }
 
     ${(props) => props.theme.breakpoints.mobile`
         padding-top: initial;
@@ -43,6 +71,7 @@ export const Building = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     flex: 1;
 
     cursor: pointer;
