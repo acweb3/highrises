@@ -23,9 +23,9 @@ export const Building = ({ building, onInView, isVisible = true }) => {
             }}
         >
             <div>
-                <S.BuildingBadge>{building.index}</S.BuildingBadge>
+                <S.BuildingBadge>{building.index + 1}</S.BuildingBadge>
                 <S.BuildingImage
-                    alt={`building ${building.index}`}
+                    alt={`building ${building.index + 1}`}
                     src={building.nftSrc}
                 />
             </div>
