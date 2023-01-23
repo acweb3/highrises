@@ -22,10 +22,13 @@ export const Building = ({ building, onInView, isVisible = true }) => {
                 setActiveHighrise(building);
             }}
         >
-            <S.BuildingImage
-                alt={`building ${building.index}`}
-                src={building.nftSrc}
-            />
+            <div>
+                <S.BuildingBadge>{building.index + 1}</S.BuildingBadge>
+                <S.BuildingImage
+                    alt={`building ${building.index + 1}`}
+                    src={building.nftSrc}
+                />
+            </div>
 
             <S.BuildingCaption>
                 <S.BuildingIndex>{building.name}</S.BuildingIndex>

@@ -2,6 +2,22 @@ import styled, { css } from 'styled-components';
 
 export const BuildingImage = styled.img``;
 
+export const BuildingBadge = styled.div`
+    position: absolute;
+    z-index: 1;
+
+    background-color: ${(props) => props.theme.colors.blue[1]};
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+
+    font-size: small;
+
+    text-align: center;
+    margin-left: 10px;
+    bottom: 10px;
+`;
+
 export const BuildingCaption = styled.div`
     color: ${(props) => props.theme.colors.blue[0]};
     display: flex;
