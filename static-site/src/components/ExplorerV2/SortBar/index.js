@@ -1,11 +1,9 @@
 import { highrises as highrisesData } from 'assets/data/highrises';
-import { Dropdown } from 'components/ExplorerV2/SortBar/Dropdown';
 import * as S from 'components/ExplorerV2/SortBar/SortBar.styled';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export const SORTS = {
     attributes: {
-        isSelect: true,
         name: 'Attributes',
         options: [
             ...new Set(
@@ -30,7 +28,6 @@ export const SORTS = {
         })),
     },
     height: {
-        isSelect: true,
         name: 'Height',
         // # TODO => Remove this slice
         options: highrisesData.reduce((acc, highrise) => {
@@ -50,7 +47,6 @@ export const SORTS = {
         }, {}),
     },
     city: {
-        isSelect: true,
         name: 'City',
         // # TODO => Remove this slice
         options: highrisesData.reduce((acc, highrise) => {
@@ -67,7 +63,6 @@ export const SORTS = {
         }, {}),
     },
     state: {
-        isSelect: true,
         name: 'State',
         // # TODO => Remove this slice
         options: highrisesData.reduce((acc, highrise) => {
@@ -86,7 +81,6 @@ export const SORTS = {
         }, {}),
     },
     decade: {
-        isSelect: true,
         name: 'Decade',
         // # TODO => Remove this slice
         options: highrisesData.reduce((acc, highrise) => {
@@ -105,7 +99,6 @@ export const SORTS = {
         }, {}),
     },
     style: {
-        isSelect: true,
         name: 'Style',
         // # TODO => Remove this slice
         options: highrisesData.reduce((acc, highrise) => {
@@ -132,17 +125,15 @@ export const SortBar = ({ activeSort, setActiveSort, isMobile }) => {
     const [activeDropdown, setActiveDropdown] = useState();
     const [activeOption, setActiveOption] = useState();
 
-    const filtersRef = useRef();
-
     useEffect(() => {
         setActiveOption(undefined);
     }, [activeDropdown]);
 
     return (
-        <>
-            <S.SortBar>
+        <S.SortBar>
+            <S.SortBarFilters>
                 {activeSort ? (
-                    <S.SortLink
+                    <S.SortBarLink
                         isReset
                         isActive
                         tabIndex={0}
@@ -152,105 +143,76 @@ export const SortBar = ({ activeSort, setActiveSort, isMobile }) => {
                         }}
                     >
                         Reset Sort —
-                    </S.SortLink>
+                    </S.SortBarLink>
                 ) : (
-                    <S.SortLink isReset isActive>
-                        Select Sort —{' '}
-                    </S.SortLink>
+                    <S.SortBarLink isReset isActive>
+                        Filter{' '}
+                    </S.SortBarLink>
                 )}
+
                 {Object.entries(SORTS).map(
-                    ([sortKey, { isSelect, name, sort }]) =>
-                        isSelect ? (
-                            <Dropdown
-                                key={name}
-                                name={name}
-                                isActive={activeDropdown?.sortKey === sortKey}
-                                onClick={() => {
-                                    setActiveDropdown(
-                                        activeDropdown?.sortKey !== sortKey
-                                            ? {
-                                                  sortKey,
-                                                  dropdown: SORTS[sortKey],
-                                              }
-                                            : undefined
-                                    );
-                                    setActiveSort(undefined);
-                                }}
-                            />
-                        ) : (
-                            <S.SortLink
-                                key={name}
-                                tabIndex={0}
-                                isActive={sortKey === activeSort?.sortKey}
-                                onClick={() => {
-                                    setActiveDropdown(undefined);
-                                    setActiveSort(
-                                        sortKey === activeSort?.sortKey
-                                            ? undefined
-                                            : {
-                                                  sortKey,
-                                                  sort,
-                                              }
-                                    );
-                                }}
-                            >
-                                {name}
-                            </S.SortLink>
-                        )
-                )}
-            </S.SortBar>
-            {isMobile ? (
-                <S.DropdownFilters ref={filtersRef}>
-                    {activeDropdown &&
-                        Object.values(activeDropdown.dropdown.options)
-                            .sort((a, b) => a.value.localeCompare(b.value))
-                            .map(({ value, sort }) => {
-                                return (
-                                    <S.DropdownFilter
-                                        key={value}
-                                        isActive={activeOption === value}
-                                        onClick={() => {
-                                            setActiveOption(value);
-                                            setActiveSort({
-                                                sortKey: activeDropdown.sortKey,
-                                                sort,
-                                            });
-                                        }}
-                                    >
-                                        {value}
-                                    </S.DropdownFilter>
+                    ([sortKey, { isSelect, name, sort }]) => (
+                        <S.SortBarPill
+                            key={name}
+                            activeSelectLevel={(() => {
+                                if (activeDropdown === undefined) {
+                                    return 'NotSet';
+                                }
+
+                                return activeDropdown.sortKey === sortKey
+                                    ? 'Active'
+                                    : 'Inactive';
+                            })()}
+                            onClick={() => {
+                                setActiveDropdown(
+                                    activeDropdown?.sortKey !== sortKey
+                                        ? {
+                                              sortKey,
+                                              dropdown: SORTS[sortKey],
+                                          }
+                                        : undefined
                                 );
-                            })}
-                </S.DropdownFilters>
-            ) : (
-                activeDropdown && (
-                    <S.DropdownFiltersWrapper>
-                        <S.DropdownFilters ref={filtersRef}>
-                            {Object.values(activeDropdown.dropdown.options)
-                                .filter((options) => options.value)
-                                .sort((a, b) => a.value.localeCompare(b.value))
-                                .map(({ value, sort }) => {
-                                    return (
-                                        <S.DropdownFilter
-                                            key={value}
-                                            isActive={activeOption === value}
-                                            onClick={() => {
-                                                setActiveOption(value);
-                                                setActiveSort({
-                                                    sortKey:
-                                                        activeDropdown.sortKey,
-                                                    sort,
-                                                });
-                                            }}
-                                        >
-                                            {value}
-                                        </S.DropdownFilter>
-                                    );
-                                })}
-                        </S.DropdownFilters>
-                    </S.DropdownFiltersWrapper>
-                )
+                                setActiveSort(undefined);
+                            }}
+                        >
+                            {name}
+                        </S.SortBarPill>
+                    )
+                )}
+            </S.SortBarFilters>
+
+            {activeDropdown && (
+                <S.SortBarFilters>
+                    {Object.values(activeDropdown.dropdown.options)
+                        .filter((options) => options.value)
+                        .sort((a, b) => a.value.localeCompare(b.value))
+                        .map(({ value, sort }) => {
+                            return (
+                                <S.SortBarPill
+                                    key={value}
+                                    activeSelectLevel={(() => {
+                                        if (activeOption === undefined) {
+                                            return 'NotSet';
+                                        }
+
+                                        return activeOption === value
+                                            ? 'Active'
+                                            : 'Inactive';
+                                    })()}
+                                    onClick={() => {
+                                        setActiveOption(value);
+                                        setActiveSort({
+                                            sortKey: activeDropdown.sortKey,
+                                            sort,
+                                        });
+                                    }}
+                                >
+                                    {value}
+                                </S.SortBarPill>
+                            );
+                        })}
+                </S.SortBarFilters>
             )}
-        </>
+        </S.SortBar>
     );
 };
