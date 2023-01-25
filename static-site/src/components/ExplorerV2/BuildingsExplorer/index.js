@@ -17,12 +17,12 @@ export const BuildingsExplorer = ({ activeSort }) => {
     useEffect(() => {
         if (activeSort) {
             const sortedHighrises = activeSort.sort([...initHighrises.current]);
-            setHighrises(sortedHighrises);
 
-            setActiveHighrise(undefined);
+            setHighrises(sortedHighrises);
+            setActiveHighrise(sortedHighrises[0]);
         } else if (initHighrises.current) {
             setHighrises(initHighrises.current);
-            setActiveHighrise(undefined);
+            setActiveHighrise(initHighrises.current[0]);
         }
     }, [activeSort, setActiveHighrise, setHighrises, initHighrises]);
 

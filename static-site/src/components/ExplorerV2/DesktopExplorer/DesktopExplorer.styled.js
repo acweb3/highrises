@@ -1,5 +1,10 @@
 import styled from 'styled-components';
 
+export const DesktopExplorerSideBar = styled.div`
+    display: flex;
+    flex-direction: column;
+`;
+
 export const DesktopExplorerBuildings = styled.div`
     height: 100vh;
     max-height: 100vh;

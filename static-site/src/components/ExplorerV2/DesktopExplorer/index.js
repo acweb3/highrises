@@ -1,3 +1,4 @@
+import { Masthead } from '../Masthead';
 import { BuildingsExplorer } from 'components/ExplorerV2/BuildingsExplorer';
 import * as S from 'components/ExplorerV2/DesktopExplorer/DesktopExplorer.styled';
 import { MapExplorer } from 'components/ExplorerV2/MapExplorer';
@@ -13,17 +14,28 @@ export const DesktopExplorer = () => {
         <S.DesktopExplorer>
             <S.DesktopExplorerSection
                 css={`
-                    width: 36vw;
-                    min-width: 36vw;
+                    width: 27vw;
+                    min-width: 27vw;
                 `}
             >
-                <MapExplorer />
+                <S.DesktopExplorerSideBar>
+                    <Masthead />
+                    <MapExplorer />
+                </S.DesktopExplorerSideBar>
             </S.DesktopExplorerSection>
 
             <S.DesktopExplorerSection
                 css={`
-                    width: 64vw;
-                    min-width: 64vw;
+                    width: 38vw;
+                    min-width: 38vw;
+                    background: ${(props) => props.theme.colors.grey[1]};
+                `}
+            ></S.DesktopExplorerSection>
+
+            <S.DesktopExplorerSection
+                css={`
+                    width: 35vw;
+                    min-width: 35vw;
                     position: relative;
                     border-left: 1px solid
                         ${(props) => props.theme.colors.grey[0]};
@@ -38,7 +50,7 @@ export const DesktopExplorer = () => {
                                 setActiveSort={setActiveSort}
                             />
                         </S.DesktopExplorerBuildings>
-                        {/* <Masthead /> */}
+                        <Masthead />
                     </>
                 )}
             </S.DesktopExplorerSection>
