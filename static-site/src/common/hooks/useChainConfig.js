@@ -23,11 +23,21 @@ export const useChainConfig = () => {
             ? config.rinkebyCollageContractAddress
             : config.mainnetCollageContractAddress;
 
+    // put this right here?
+    const openseaURL =
+        ethers.library?.network?.chainId === 4 ? 'testnets.opensea' : 'opensea';
+
     return {
-        openseaURL:
-            ethers.library?.network?.chainId === 4
-                ? 'testnets.opensea'
-                : 'opensea',
+        openseaURL,
+
+        getOpenseaAssetsURL: (index) => {
+            return `https://${openseaURL}.io/assets/${contractAddress}/${`${index}`}`;
+        },
+
+        getOpenseaEthURL: (ethAddress) => {
+            return `https://${openseaURL}.io/${ethAddress}`;
+        },
+
         contract: new Contract(contractAddress, nftAbi),
         contractAddress,
         reserveContract: new Contract(reserveContractAddress, reserveAbi),

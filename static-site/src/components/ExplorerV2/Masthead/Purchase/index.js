@@ -10,7 +10,7 @@ export const Purchase = ({
     isCentered,
     isFullPage,
 }) => {
-    const { openseaURL, contractAddress } = useChainConfig();
+    const { getOpenseaAssetsURL, contractAddress } = useChainConfig();
     const { hasOwner } = useTokenOwner({
         tokenId: activeHighrise.index,
     });
@@ -32,7 +32,7 @@ export const Purchase = ({
             />
             <PurchaseItem
                 hasMinted={hasOwner}
-                href={`https://${openseaURL}.io/assets/${contractAddress}/${`${activeHighrise.index}`}`}
+                href={getOpenseaAssetsURL(highrise.index)}
                 header="The NFT"
                 buttonText="View Secondary"
                 isCentered={isCentered}

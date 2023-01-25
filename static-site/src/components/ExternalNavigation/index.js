@@ -1,11 +1,11 @@
 import { useChainConfig } from 'common/hooks/useChainConfig';
-import { useTokenOwner } from 'components/ExplorerV2/Masthead/Attributes/Traits/hooks/useTokenOwner';
+import { useTokenOwner } from 'components/ExplorerV2/Masthead/Traits/hooks/useTokenOwner';
 import * as S from 'components/ExternalNavigation/ExternalNavigation.styled';
 import { useMapViewContext } from 'contexts/MapView';
 
 export const ExternalNavigation = ({ activeHighrise, className, showMap }) => {
     const { setIsMapView } = useMapViewContext();
-    const { openseaURL, contractAddress } = useChainConfig();
+    const { getOpenseaAssetsURL } = useChainConfig();
     const { hasOwner } = useTokenOwner({
         tokenId: activeHighrise.index,
     });
