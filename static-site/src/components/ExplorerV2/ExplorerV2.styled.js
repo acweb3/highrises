@@ -15,7 +15,9 @@ export const ExplorerHeader = styled(Header)`
 `;
 
 export const ExplorerV2 = styled.div`
-    /* height: calc(100vh - 140px); */
+    position: relative;
+    background: 1px solid ${(props) => props.theme.colors.grey[1]};
+
     border-top: 1px solid ${(props) => props.theme.colors.grey[0]};
     border-bottom: 1px solid ${(props) => props.theme.colors.grey[0]};
 
