@@ -1,9 +1,9 @@
+import { getBuildingURL } from 'common/helpers';
 import { BuildingDetail } from 'components/BuildingDetail';
 import { EmailCollection } from 'components/EmailCollection';
 import { Metadata } from 'components/Metadata';
 import { SiteWrapper } from 'components/SiteWrapper';
 import { Contexts } from 'contexts';
-import kebabCase from 'just-kebab-case';
 
 const Building = ({
     pageContext: { highrise, highrises, thumbnail },
@@ -15,9 +15,7 @@ const Building = ({
                 <Metadata
                     title={`${highrise.name} - HYTHA.CG`}
                     description={highrise.description}
-                    ogUrl={`highrises.hythacg.com/building/${kebabCase(
-                        highrise.name
-                    )}-${kebabCase(highrise.architect)}`}
+                    ogUrl={`highrises.hythacg.com${getBuildingURL(highrise)}`}
                     thumbnail={thumbnail}
                     thumbnailAlt={highrise.name}
                 />
