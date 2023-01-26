@@ -46,8 +46,6 @@ export const ProfileText = styled.div`
     `};
 `;
 
-export const ProfileImage = styled.img``;
-
 export const ProfileImageWrapper = styled.div`
     background: #e0e0e0;
     overflow: hidden;
