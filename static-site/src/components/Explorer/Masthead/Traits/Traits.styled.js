@@ -24,6 +24,8 @@ export const Trait = styled.div`
 `;
 
 export const Traits = styled.div`
+    margin-top: 32px;
+
     flex: 1;
     min-width: 100%;
 

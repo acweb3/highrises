@@ -1,4 +1,6 @@
 import { useDelayed } from 'common/hooks/useDelayed';
+import { BuildingName } from 'components/Explorer/Masthead/BuildingName';
+import { EmailCollection } from 'components/Explorer/Masthead/EmailCollection';
 import { Header } from 'components/Explorer/Masthead/Header';
 import * as S from 'components/Explorer/Masthead/Masthead.styled';
 import { Story } from 'components/Explorer/Masthead/Story';
@@ -19,8 +21,10 @@ export const Masthead = () => {
     return (
         <S.Masthead ref={mastheadRef} onScroll={() => setDidScroll(true)}>
             <Header />
+            <BuildingName />
             <Story isModal activeHighrise={activeHighrise} />
             <Traits activeHighrise={activeHighrise} />
+            <EmailCollection />
 
             {!delayedDidScrolled && (
                 <S.MastheadScrollMore isShowing={!didScroll}>

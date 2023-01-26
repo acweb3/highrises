@@ -1,4 +1,4 @@
-import * as S from 'components/EmailCollection/EmailCollection.styled';
+import * as S from 'components/Explorer/Masthead/EmailCollection/EmailCollection.styled';
 import { config } from 'config';
 import { useState } from 'react';
 
@@ -19,7 +19,7 @@ export const EmailCollection = () => {
 
                 <S.EmailCollectionInput
                     type="text"
-                    placeholder="xxx@gmail.com"
+                    placeholder="Enter Email"
                     value={email}
                     onChange={(e) => {
                         setEmail(e.target.value);
@@ -53,15 +53,6 @@ export const EmailCollection = () => {
                     <S.EmailIcon /> hythacg.highrises@gmail.com
                 </S.EmailOutreach>
             </S.EmailCollectionContent>
-            <S.LogoSection>
-                <S.LogoLink
-                    href="http://aboltc.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <S.ABoltCIcon />
-                </S.LogoLink>
-            </S.LogoSection>
         </S.EmailCollection>
     );
 };

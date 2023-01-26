@@ -1,5 +1,3 @@
-// import { Reserve } from 'components/Reserve';
-import { EmailCollection } from 'components/EmailCollection';
 import { Explorer } from 'components/Explorer';
 import { Metadata } from 'components/Metadata';
 import { NavTabs } from 'components/NavTabs';
@@ -22,7 +20,6 @@ const App = ({ pageContext: { highrises, thumbnail } }) => {
                 />
                 <NavTabs />
                 <Explorer />
-                <EmailCollection />
             </SiteWrapper>
         </Contexts>
     );

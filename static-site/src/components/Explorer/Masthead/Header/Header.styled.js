@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 export const HeaderSubtitle = styled.div`
     font-size: ${(props) => props.theme.typography.fontSize.prose};
-    margin-top: 0.75rem;
+    margin-top: 1rem;
+    color: ${(props) => props.theme.colors.grey[0]};
 `;
 
 export const HeaderBasic = styled.div`
@@ -18,7 +19,6 @@ export const HeaderBasic = styled.div`
 export const HeaderFilled = styled.div`
     z-index: 1;
 
-    font-size: ${(props) => props.theme.typography.fontSize.h2};
     font-family: ${(props) =>
         props.theme.typography.fontFamily.rc.guidelinesFull};
 `;
@@ -26,7 +26,7 @@ export const HeaderFilled = styled.div`
 export const HeaderDouble = styled.div`
     position: relative;
     display: flex;
-    font-size: ${(props) => props.theme.typography.fontSize.h2};
+    font-size: ${(props) => props.theme.typography.fontSize.h1};
 `;
 
 export const Header = styled.div`
@@ -38,5 +38,5 @@ export const Header = styled.div`
     align-items: center;
     justify-content: center;
 
-    padding: 16px 0 32px;
+    padding: 32px 0 32px;
 `;

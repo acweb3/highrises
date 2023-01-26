@@ -1,8 +1,6 @@
 import { Editing } from 'components/Editing';
-import { EmailCollection } from 'components/EmailCollection';
 import { FAQ } from 'components/FAQ';
 import { Intent } from 'components/Intent';
-// import { Reserve } from 'components/Reserve';
 import { Metadata } from 'components/Metadata';
 import { NavTabs } from 'components/NavTabs';
 import { Roadmap } from 'components/Roadmap';
@@ -25,14 +23,12 @@ const App = ({ pageContext: { highrises, thumbnail } }) => {
                     thumbnailAlt={''}
                 />
                 <NavTabs />
-                {/* <Reserve /> */}
-                {/* <Collage /> */}
+
                 <Intent />
                 <Editing />
                 <Roadmap />
                 <Team />
                 <FAQ />
-                <EmailCollection />
             </SiteWrapper>
         </Contexts>
     );
