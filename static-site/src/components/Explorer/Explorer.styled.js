@@ -22,7 +22,7 @@ export const ExplorerSection = styled.div`
     flex-direction: column;
 `;
 
-export const ExplorerV2 = styled.div`
+export const Explorer = styled.div`
     display: flex;
 
     position: relative;

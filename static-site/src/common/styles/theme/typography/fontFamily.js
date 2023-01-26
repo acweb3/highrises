@@ -18,4 +18,15 @@ export const fontFamily = {
     anton: `'Anton', sans-serif`,
     poppins: `'Poppins', sans-serif`,
     karla: `'karla', sans-serif`,
+
+    rc: {
+        basicLight: '"R&C-BasicLight"',
+        basicFull: '"R&C-BasicFull"',
+        basicEmpty: '"R&C-BasicEmpty"',
+        guidelinesEmpty: '"R&C-GuidelinesEmpty"',
+        guidelinesDark: '"R&C-GuidelinesDark"',
+        guidelinesLight: '"R&C-GuidelinesLight"',
+        guidelinesFull: '"R&C-GuidelinesFull"',
+        basicDark: '"R&C-BasicDark"',
+    },
 };

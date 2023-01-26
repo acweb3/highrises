@@ -1,5 +1,5 @@
 import { highrises as highrisesData } from 'assets/data/highrises';
-import * as S from 'components/ExplorerV2/SortBar/SortBar.styled';
+import * as S from 'components/Explorer/SortBar/SortBar.styled';
 import { useEffect, useState } from 'react';
 
 export const SORTS = {

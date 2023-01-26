@@ -1,6 +1,7 @@
-import { Story } from './Story';
-import { Traits } from './Traits';
-import * as S from 'components/ExplorerV2/Masthead/Masthead.styled';
+import { Header } from 'components/Explorer/Masthead/Header';
+import * as S from 'components/Explorer/Masthead/Masthead.styled';
+import { Story } from 'components/Explorer/Masthead/Story';
+import { Traits } from 'components/Explorer/Masthead/Traits';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
 import { useEffect, useRef } from 'react';
 
@@ -14,6 +15,7 @@ export const Masthead = () => {
 
     return (
         <S.Masthead ref={mastheadRef}>
+            <Header />
             <Story isModal activeHighrise={activeHighrise} />
             <Traits activeHighrise={activeHighrise} />
         </S.Masthead>

@@ -1,7 +1,7 @@
-import { useActiveHighriseContext } from '../../../contexts/ActiveHighrise';
 import { getBuildingURL } from 'common/helpers';
-import { Building } from 'components/ExplorerV2/BuildingsExplorer/Building';
-import * as S from 'components/ExplorerV2/BuildingsExplorer/BuildingsExplorer.styled';
+import { Building } from 'components/Explorer/BuildingsExplorer/Building';
+import * as S from 'components/Explorer/BuildingsExplorer/BuildingsExplorer.styled';
+import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
 import { useEffect } from 'react';
 
 export const BuildingsExplorer = ({ activeSort }) => {

@@ -1,4 +1,4 @@
-import './Popup.css';
+import 'components/Explorer/MapExplorer/Marker/Popup.css';
 import { useCallback, useEffect, useRef, useState } from 'react';
 
 export const Marker = ({ onClick, iconSrc, index, position, ...options }) => {
@@ -26,7 +26,7 @@ export const Marker = ({ onClick, iconSrc, index, position, ...options }) => {
                 markerIndexRef.current = index;
                 iconSrcRef.current = iconSrc;
                 const { Popup } = await import(
-                    'components/ExplorerV2/MapExplorer/Marker/Popup'
+                    'components/Explorer/MapExplorer/Marker/Popup'
                 );
 
                 setMarker(

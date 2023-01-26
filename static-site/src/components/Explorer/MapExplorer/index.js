@@ -1,8 +1,8 @@
 import { Wrapper } from '@googlemaps/react-wrapper';
 import { getIndex } from 'common/helpers';
-import { Map } from 'components/ExplorerV2/MapExplorer/Map';
-import * as S from 'components/ExplorerV2/MapExplorer/MapExplorer.styled';
-import { Marker } from 'components/ExplorerV2/MapExplorer/Marker';
+import { Map } from 'components/Explorer/MapExplorer/Map';
+import * as S from 'components/Explorer/MapExplorer/MapExplorer.styled';
+import { Marker } from 'components/Explorer/MapExplorer/Marker';
 import { config } from 'config';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
 import { useEffect, useRef, useState } from 'react';

@@ -1,6 +1,6 @@
-import * as S from 'components/ExplorerV2/MapExplorer/Map/Map.styled';
+import * as S from 'components/Explorer/MapExplorer/Map/Map.styled';
 import { config } from 'config';
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import useDeepCompareEffect from 'use-deep-compare-effect';
 
 export const Map = ({ onClick, onIdle, children, style, ...options }) => {

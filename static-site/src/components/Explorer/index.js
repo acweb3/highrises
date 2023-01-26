@@ -1,17 +1,17 @@
-import { BuildingsExplorer } from './BuildingsExplorer';
-import { MapExplorer } from './MapExplorer';
-import { Masthead } from './Masthead';
-import { SortBar } from './SortBar';
-import * as S from 'components/ExplorerV2/ExplorerV2.styled';
+import { BuildingsExplorer } from 'components/Explorer/BuildingsExplorer';
+import * as S from 'components/Explorer/Explorer.styled';
+import { MapExplorer } from 'components/Explorer/MapExplorer';
+import { Masthead } from 'components/Explorer/Masthead';
+import { SortBar } from 'components/Explorer/SortBar';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
 import { useState } from 'react';
 
-export const ExplorerV2 = () => {
+export const Explorer = () => {
     const [activeSort, setActiveSort] = useState(undefined);
     const { highrises } = useActiveHighriseContext();
 
     return (
-        <S.ExplorerV2>
+        <S.Explorer>
             <S.ExplorerSection>
                 <S.ExplorerSideBar>
                     <Masthead />
@@ -32,6 +32,6 @@ export const ExplorerV2 = () => {
                     </S.ExplorerBuildings>
                 )}
             </S.ExplorerSection>
-        </S.ExplorerV2>
+        </S.Explorer>
     );
 };

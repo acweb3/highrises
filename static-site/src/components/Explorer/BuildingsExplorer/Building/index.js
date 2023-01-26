@@ -1,4 +1,4 @@
-import * as S from 'components/ExplorerV2/BuildingsExplorer/Building/Building.styled';
+import * as S from 'components/Explorer/BuildingsExplorer/Building/Building.styled';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
 import { useEffect, useRef } from 'react';
 import { useInViewport } from 'react-in-viewport';
