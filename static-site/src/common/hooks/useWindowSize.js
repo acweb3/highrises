@@ -20,33 +20,34 @@ const getWindowSize = (size) => {
     return breakpointsMap.mobile;
 };
 
+const getWindowDimensions = () => ({
+    width: window.visualViewport.width,
+    height: window.visualViewport.height,
+    scrollHeight: document.documentElement.scrollHeight,
+});
+
 export const useWindowSize = () => {
-    const [windowSize, setWindowSize] = useState(undefined);
+    const [windowSize, setWindowSize] = useState(getWindowDimensions());
     const [debouncedWindowSize] = useDebounce(windowSize, 400);
 
     useEffect(() => {
-        setWindowSize(getWindowSize(window.visualViewport.width));
+        setWindowSize(getWindowDimensions());
     }, []);
 
     useWindowListener(
         'resize',
         () => {
-            setWindowSize(getWindowSize(window.visualViewport.width));
+            setWindowSize(getWindowDimensions());
         },
         []
     );
 
     return {
         windowSize: debouncedWindowSize || windowSize,
-        isSmallish: debouncedWindowSize
-            ? debouncedWindowSize === breakpointsMap.mobile ||
-              debouncedWindowSize === breakpointsMap.extraSmall
-            : undefined,
         isMobile: debouncedWindowSize
             ? debouncedWindowSize === breakpointsMap.mobile ||
               debouncedWindowSize === breakpointsMap.extraSmall ||
               debouncedWindowSize === breakpointsMap.small
             : undefined,
-        isLoaded: debouncedWindowSize !== undefined,
     };
 };

@@ -1,5 +1,21 @@
 import styled, { createGlobalStyle, css } from 'styled-components';
 
+export const SiteWrapperScroll = styled.div`
+    position: fixed;
+    top: 0;
+    z-index: 2;
+
+    transition: transform 400ms, box-shadow 1000ms;
+    transform: translate3D(0px, 0, 0px);
+
+    ${(props) =>
+        props.transform &&
+        css`
+            box-shadow: ${(props) => props.theme.shadows.inset.medium};
+            transform: translate3D(0px, ${props.transform}px, 0px);
+        `}
+`;
+
 export const SiteWrapper = styled.div`
     height: 100%;
     overflow: hidden;
@@ -44,6 +60,13 @@ export const GlobalStyle = createGlobalStyle`
 
         max-width: 100vw;
         overflow-x: hidden;
+
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        &::-webkit-scrollbar {
+            width: 0 !important;
+            display: none;
+        }
     }
     /*
     6. Improve media defaults

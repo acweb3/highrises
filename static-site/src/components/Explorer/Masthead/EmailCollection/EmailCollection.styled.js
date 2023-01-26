@@ -55,9 +55,10 @@ export const EmailCollectionInput = styled.input`
 
     border: 1px solid ${(props) => props.theme.colors.grey[1]};
     text-align: center;
-    min-width: 360px;
 
-    color: ${(props) => props.theme.colors.grey[1]};
+    width: 100%;
+
+    color: ${(props) => props.theme.colors.grey[0]};
     background: ${(props) => props.theme.colors.grey[2]};
 
     &::placeholder {
@@ -77,5 +78,5 @@ export const Paragraph = styled.div`
 `;
 
 export const EmailCollection = styled.div`
-    padding: 72px 32px 32px;
+    padding: 72px 0 32px;
 `;

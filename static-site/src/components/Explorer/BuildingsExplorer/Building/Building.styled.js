@@ -53,7 +53,7 @@ export const BuildingCaption = styled.div`
         opacity: 1;
 
         &::before {
-            opacity: 0.4;
+            opacity: 0.75;
         }
     }
 

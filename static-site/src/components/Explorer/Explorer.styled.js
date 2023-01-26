@@ -26,8 +26,6 @@ export const Explorer = styled.div`
     display: flex;
 
     position: relative;
-    border-top: 1px solid ${(props) => props.theme.colors.grey[0]};
-    border-bottom: 1px solid ${(props) => props.theme.colors.grey[0]};
 
     height: 100vh;
     width: 100vw;

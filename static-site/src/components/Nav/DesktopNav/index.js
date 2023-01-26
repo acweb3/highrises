@@ -1,4 +1,5 @@
 import * as S from './DesktopNav.styled';
+import { forwardRef } from 'react';
 
 const raw = `
 <div class="Header-inner Header-inner--top" data-nc-group="top">
@@ -19,11 +20,12 @@ const raw = `
 </div>
 `;
 
-export const DesktopNav = () => {
+export const DesktopNav = forwardRef((props, ref) => {
     return (
         <S.DesktopNavHeader
             className="Header Header--top tweak-header-primary-nav-hover-style-active"
             dangerouslySetInnerHTML={{ __html: raw }}
+            ref={ref}
         />
     );
-};
+});

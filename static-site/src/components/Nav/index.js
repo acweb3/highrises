@@ -1,11 +1,12 @@
 import { DesktopNav } from 'components/Nav/DesktopNav';
 import { MobileNav } from 'components/Nav/MobileNav';
+import { forwardRef } from 'react';
 
-export const Nav = () => {
+export const Nav = forwardRef((props, ref) => {
     return (
         <>
-            <DesktopNav />
+            <DesktopNav ref={ref} />
             <MobileNav />
         </>
     );
-};
+});

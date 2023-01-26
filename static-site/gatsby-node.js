@@ -78,13 +78,4 @@ exports.createPages = async function ({ actions, graphql }) {
             thumbnail: `${fullyAccessibleURL}${featureURL}`,
         },
     });
-
-    actions.createPage({
-        component: require.resolve(`./src/templates/About.js`),
-        path: '/about',
-        context: {
-            highrises: highrisesWithImages,
-            thumbnail: `${fullyAccessibleURL}${featureURL}`,
-        },
-    });
 };

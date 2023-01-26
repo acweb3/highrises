@@ -25,10 +25,10 @@ export const shadows = {
         inset 0.9px 0.7px 1px -1.9px hsl(${boxShadowColor} / 0.08),
         inset 2.2px 1.6px 2.5px -3.9px hsl(${boxShadowColor} / 0.05);`,
         medium: `
-        inset 0.6px 0.5px 0.7px hsl(${boxShadowColor} / 0.11),
-        inset 1.4px 1.1px 1.6px -1.3px hsl(${boxShadowColor} / 0.09),
-        inset 4px 3.1px 4.6px -2.6px hsl(${boxShadowColor} / 0.07),
-        inset 10.8px 8.2px 12.4px -3.9px hsl(${boxShadowColor} / 0.05);`,
+        0.6px -0.5px 0.7px hsl(${boxShadowColor} / 0.11),
+        1.4px -1.1px 1.6px -1.3px hsl(${boxShadowColor} / 0.09),
+        4px -3.1px 4.6px -2.6px hsl(${boxShadowColor} / 0.07),
+        10.8px -8.2px 12.4px -3.9px hsl(${boxShadowColor} / 0.05)`,
         high: `
         inset 0.6px 0.5px 0.7px hsl(${boxShadowColor} / 0.1),
         inset 1.6px 1.2px 1.8px -0.6px hsl(${boxShadowColor} / 0.09),

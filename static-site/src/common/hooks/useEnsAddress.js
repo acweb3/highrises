@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 export const useEnsAddress = (ethAddress) => {
     const ethers = useEthers();
     const [ens, setEns] = useState();
+
     useEffect(() => {
         (async () => {
             if (ethAddress) {
