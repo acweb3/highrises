@@ -1,23 +1,35 @@
 import { useWindowListener } from 'common/hooks/useWindowListener';
 import { Nav } from 'components/Nav';
 import * as S from 'components/SiteWrapper/SiteWrapper.styled';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const useTransformScroll = () => {
     const [isTransform, setIsTransform] = useState(false);
     const scrollRef = useRef(document.documentElement.scrollHeight);
+    const isInitializedRef = useRef(false);
 
     useWindowListener(
         'scroll',
         (e) => {
-            setIsTransform(
-                document.documentElement.scrollTop < scrollRef.current
-            );
+            if (isInitializedRef.current) {
+                setIsTransform(
+                    document.documentElement.scrollTop < scrollRef.current
+                );
 
-            scrollRef.current = document.documentElement.scrollTop;
+                scrollRef.current = document.documentElement.scrollTop;
+            }
         },
         []
     );
+
+    // Sensible guess for when we should start tracking scroll events.
+    useEffect(() => {
+        const sto = setTimeout(() => {
+            isInitializedRef.current = true;
+        }, 1500);
+
+        return () => clearTimeout(sto);
+    }, []);
 
     return isTransform;
 };
@@ -30,20 +42,11 @@ export const SiteWrapper = ({ children }) => {
         <>
             <S.GlobalStyle />
 
-            <div
-                css={`
-                    position: fixed;
-                    top: 0;
-                `}
-            >
+            <S.SiteWrapperNav>
                 <Nav ref={navRef} />
-            </div>
+            </S.SiteWrapperNav>
 
-            <div
-                css={`
-                    height: calc(100vh + 100px);
-                `}
-            />
+            <S.SiteWrapperOffset />
 
             <S.SiteWrapperScroll
                 transform={isTransform ? navRef.current.offsetHeight : 0}

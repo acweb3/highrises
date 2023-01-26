@@ -5,7 +5,7 @@ export const MapExplorerSticky = styled.div`
     flex-direction: row;
     overflow-x: scroll;
 
-    height: 40vh;
+    height: 33vh;
 
     position: sticky;
     top: 0;

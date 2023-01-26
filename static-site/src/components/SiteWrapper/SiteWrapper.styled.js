@@ -1,17 +1,28 @@
 import styled, { createGlobalStyle, css } from 'styled-components';
 
+export const SiteWrapperOffset = styled.div`
+    height: calc(100vh + 100px);
+`;
+
+export const SiteWrapperNav = styled.div`
+    position: fixed;
+    top: 0;
+    width: 100%;
+`;
+
 export const SiteWrapperScroll = styled.div`
     position: fixed;
     top: 0;
     z-index: 2;
 
-    transition: transform 400ms, box-shadow 1000ms;
+    transition: transform 400ms;
     transform: translate3D(0px, 0, 0px);
+    box-shadow: ${(props) => props.theme.shadows.inset.medium};
+    will-change: transform;
 
     ${(props) =>
         props.transform &&
         css`
-            box-shadow: ${(props) => props.theme.shadows.inset.medium};
             transform: translate3D(0px, ${props.transform}px, 0px);
         `}
 `;
