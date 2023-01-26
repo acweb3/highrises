@@ -1,5 +1,5 @@
 import { ExternalButtonLink } from 'components/ui/BaseButton';
-import styled, { css, keyframes } from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 export const DesktopMastheadExternalButtonLink = styled(ExternalButtonLink)`
     width: 100%;
@@ -49,36 +49,8 @@ export const DesktopMasthead = styled.div`
     overflow-x: hidden;
     overflow-y: scroll;
 
-    min-height: 100vh;
-    height: 100%;
-
     display: flex;
     flex-direction: column;
 
-    ${(props) =>
-        props.isActive &&
-        css`
-            transform: translate3D(0, 0, 0);
-        `}
-
-    ${(props) => props.theme.breakpoints.extraSmall`
-        
-        
-        background: rgba(255, 255, 255, 0.6);
-        background: linear-gradient(
-            180deg,
-            rgba(255, 255, 255, 0.6) 0%,
-            rgba(255, 255, 255, 0.8) calc(100% - 120px),
-            rgba(255, 255, 255, 1) calc(100% - 119px)
-        );
-        padding: 48px 48px 168px;
-        transform: translate3D(100%, 0, 0);
-
-        ${
-            props.isActive &&
-            css`
-                transform: translate3D(0, 0, 0);
-            `
-        }
-    `}
+    padding: 16px 32px 32px;
 `;

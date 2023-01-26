@@ -13,10 +13,7 @@ export const Masthead = () => {
     }, [activeHighrise]);
 
     return (
-        <S.DesktopMasthead
-            ref={desktopMastheadRef}
-            isActive={Boolean(activeHighrise)}
-        >
+        <S.DesktopMasthead ref={desktopMastheadRef}>
             <Story isModal activeHighrise={activeHighrise} />
             <Traits activeHighrise={activeHighrise} />
         </S.DesktopMasthead>

@@ -10,7 +10,7 @@ import 'css/index.css';
 const App = ({ pageContext: { highrises, thumbnail } }) => {
     return (
         <Contexts highrises={highrises}>
-            <SiteWrapper hideFABOnMobile>
+            <SiteWrapper>
                 <Metadata
                     title={'Highrises - HYTHA.CG'}
                     description={

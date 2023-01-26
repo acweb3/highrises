@@ -12,46 +12,24 @@ export const DesktopExplorer = () => {
 
     return (
         <S.DesktopExplorer>
-            <S.DesktopExplorerSection
-                css={`
-                    width: 27vw;
-                    min-width: 27vw;
-                `}
-            >
+            <S.DesktopExplorerSection>
                 <S.DesktopExplorerSideBar>
                     <Masthead />
                     <MapExplorer />
                 </S.DesktopExplorerSideBar>
             </S.DesktopExplorerSection>
 
-            <S.DesktopExplorerSection
-                css={`
-                    width: 38vw;
-                    min-width: 38vw;
-                    background: ${(props) => props.theme.colors.grey[1]};
-                `}
-            ></S.DesktopExplorerSection>
+            <S.DesktopExplorerSection></S.DesktopExplorerSection>
 
-            <S.DesktopExplorerSection
-                css={`
-                    width: 35vw;
-                    min-width: 35vw;
-                    position: relative;
-                    border-left: 1px solid
-                        ${(props) => props.theme.colors.grey[0]};
-                `}
-            >
+            <S.DesktopExplorerSection>
                 {Boolean(highrises.length) && (
-                    <>
-                        <S.DesktopExplorerBuildings>
-                            <BuildingsExplorer activeSort={activeSort} />
-                            <SortBar
-                                activeSort={activeSort}
-                                setActiveSort={setActiveSort}
-                            />
-                        </S.DesktopExplorerBuildings>
-                        <Masthead />
-                    </>
+                    <S.DesktopExplorerBuildings>
+                        <BuildingsExplorer activeSort={activeSort} />
+                        <SortBar
+                            activeSort={activeSort}
+                            setActiveSort={setActiveSort}
+                        />
+                    </S.DesktopExplorerBuildings>
                 )}
             </S.DesktopExplorerSection>
         </S.DesktopExplorer>

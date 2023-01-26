@@ -5,7 +5,6 @@ import * as S from 'components/ExplorerV2/MapExplorer/MapExplorer.styled';
 import { Marker } from 'components/ExplorerV2/MapExplorer/Marker';
 import { config } from 'config';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
-import { useMapViewContext } from 'contexts/MapView';
 import { useEffect, useRef, useState } from 'react';
 
 export const MapExplorer = () => {
@@ -14,7 +13,6 @@ export const MapExplorer = () => {
     const [center, setCenter] = useState({ lat: 39.5, lng: -96.35 });
     const { activeHighrise, highrises, setActiveHighrise } =
         useActiveHighriseContext();
-    const { setIsMapView } = useMapViewContext();
 
     const onIdle = (m) => {
         setZoom(m.getZoom());
@@ -62,10 +60,7 @@ export const MapExplorer = () => {
                                             : undefined
                                     }
                                     position={highrise.ltlng}
-                                    onClick={() => {
-                                        setActiveHighrise(highrise);
-                                        setIsMapView(false);
-                                    }}
+                                    onClick={() => setActiveHighrise(highrise)}
                                 />
                             );
                         })}
