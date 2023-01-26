@@ -1,3 +1,5 @@
+import * as S from './DesktopNav.styled';
+
 const raw = `
 <div class="Header-inner Header-inner--top" data-nc-group="top">
   <div data-nc-container="top-left">
@@ -19,18 +21,8 @@ const raw = `
 
 export const DesktopNav = () => {
     return (
-        <header
+        <S.DesktopNavHeader
             className="Header Header--top tweak-header-primary-nav-hover-style-active"
-            css={`
-                ${(props) => props.theme.breakpoints.mobile`
-                    background: #fff;
-                    display: block !important;
-
-                    & * {
-                        font-family: poppins;
-                    }
-                `}
-            `}
             dangerouslySetInnerHTML={{ __html: raw }}
         />
     );

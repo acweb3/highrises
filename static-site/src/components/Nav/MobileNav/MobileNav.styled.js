@@ -33,20 +33,6 @@ export const InitOffset = styled.div`
     `}
 `;
 
-export const MobileNavCart = styled.div`
-    padding: 8px;
-
-    font-family: Karla;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 10px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    white-space: nowrap;
-    color: rgba(34, 34, 34, 0.6);
-    line-height: 1em;
-`;
-
 export const MobileNav = styled.div`
     background: ${(props) => props.theme.colors.white[0]};
 

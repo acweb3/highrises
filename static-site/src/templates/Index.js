@@ -1,6 +1,6 @@
 // import { Reserve } from 'components/Reserve';
 import { EmailCollection } from 'components/EmailCollection';
-import { ExplorerV2 } from 'components/ExplorerV2';
+import { Explorer } from 'components/Explorer';
 import { Metadata } from 'components/Metadata';
 import { NavTabs } from 'components/NavTabs';
 import { SiteWrapper } from 'components/SiteWrapper';
@@ -10,7 +10,7 @@ import 'css/index.css';
 const App = ({ pageContext: { highrises, thumbnail } }) => {
     return (
         <Contexts highrises={highrises}>
-            <SiteWrapper hideFABOnMobile>
+            <SiteWrapper>
                 <Metadata
                     title={'Highrises - HYTHA.CG'}
                     description={
@@ -21,7 +21,7 @@ const App = ({ pageContext: { highrises, thumbnail } }) => {
                     thumbnailAlt={''}
                 />
                 <NavTabs />
-                <ExplorerV2 />
+                <Explorer />
                 <EmailCollection />
             </SiteWrapper>
         </Contexts>

@@ -37,13 +37,6 @@ export const RoadmapChart = styled.div`
     `}
 `;
 
-export const RoadmapVideo = styled.video`
-    position: absolute;
-    width: 530px;
-    top: 1068px;
-    left: 27px;
-`;
-
 export const RoadmapImage = styled.img`
     height: 200vh;
     min-width: fit-content;
