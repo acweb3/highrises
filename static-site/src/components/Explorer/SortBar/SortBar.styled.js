@@ -82,7 +82,7 @@ export const SortBar = styled.div`
     position: absolute;
     width: 100%;
     bottom: 0;
-    z-index: 3;
+    z-index: 4;
 
     padding: 16px 32px;
 `;
