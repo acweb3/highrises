@@ -1,3 +1,4 @@
+import sortbarBackground from 'assets/images/sortbar-background/blue-graph-paper.jpg';
 import styled, { css } from 'styled-components';
 
 export const SortBarLink = styled.div`
@@ -77,7 +78,7 @@ export const SortBarFilters = styled.div`
 `;
 
 export const SortBar = styled.div`
-    background: ${(props) => props.theme.colors.blue[1]};
+    background-image: url(${sortbarBackground});
     position: absolute;
     width: 100%;
     bottom: 0;
