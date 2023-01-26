@@ -17,15 +17,5 @@ const prodDappConfig = {
 };
 
 export const DApp = ({ children }) => {
-    return (
-        <DAppProvider
-            config={
-                config.nodeEnv === 'development'
-                    ? prodDappConfig
-                    : prodDappConfig
-            }
-        >
-            {children}
-        </DAppProvider>
-    );
+    return <DAppProvider config={prodDappConfig}>{children}</DAppProvider>;
 };

@@ -6,16 +6,16 @@ import { useEffect, useRef } from 'react';
 
 export const Masthead = () => {
     const { activeHighrise } = useActiveHighriseContext();
-    const desktopMastheadRef = useRef(null);
+    const mastheadRef = useRef(null);
 
     useEffect(() => {
-        desktopMastheadRef.current?.scrollTo(0, 0);
+        mastheadRef.current?.scrollTo(0, 0);
     }, [activeHighrise]);
 
     return (
-        <S.DesktopMasthead ref={desktopMastheadRef}>
+        <S.Masthead ref={mastheadRef}>
             <Story isModal activeHighrise={activeHighrise} />
             <Traits activeHighrise={activeHighrise} />
-        </S.DesktopMasthead>
+        </S.Masthead>
     );
 };
