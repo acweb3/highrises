@@ -1,5 +1,6 @@
 import { Wrapper } from '@googlemaps/react-wrapper';
 import { getIndex } from 'common/helpers';
+import { useDelayed } from 'common/hooks/useDelayed';
 import { Map } from 'components/Explorer/MapExplorer/Map';
 import * as S from 'components/Explorer/MapExplorer/MapExplorer.styled';
 import { Marker } from 'components/Explorer/MapExplorer/Marker';
@@ -13,6 +14,9 @@ export const MapExplorer = () => {
     const [center, setCenter] = useState({ lat: 39.5, lng: -96.35 });
     const { activeHighrise, highrises, setActiveHighrise } =
         useActiveHighriseContext();
+
+    const [didMouseEnter, setDidMouseEnter] = useState(false);
+    const delayedDidMouseEnter = useDelayed(didMouseEnter, 400);
 
     const onIdle = (m) => {
         setZoom(m.getZoom());
@@ -66,6 +70,17 @@ export const MapExplorer = () => {
                         })}
                     </Map>
                 </Wrapper>
+                {!delayedDidMouseEnter && (
+                    <S.MapExplorerOnboarding
+                        isActive={!didMouseEnter}
+                        onMouseEnter={() => setDidMouseEnter(true)}
+                    >
+                        <S.MapExplorerHeader>
+                            Interactive Map
+                        </S.MapExplorerHeader>
+                        <div>Zoom to explore</div>
+                    </S.MapExplorerOnboarding>
+                )}
             </S.MapExplorerSticky>
         </S.MapExplorer>
     );
