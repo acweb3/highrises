@@ -1,12 +1,17 @@
 import { getBuildingURL } from 'common/helpers';
+import { useDelayed } from 'common/hooks/useDelayed';
 import { Building } from 'components/Explorer/BuildingsExplorer/Building';
 import * as S from 'components/Explorer/BuildingsExplorer/BuildingsExplorer.styled';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 export const BuildingsExplorer = ({ activeSort }) => {
     const { highrises, setActiveHighrise, setHighrises, initHighrises } =
         useActiveHighriseContext();
+
+    const [didMouseEnter, setDidMouseEnter] = useState(false);
+    const delayedDidMouseEnter = useDelayed(didMouseEnter, 400);
+
     // #todo reimplement virtualization
     // const [visibleIndex, setVisibleIndex] = useState(5);
 
@@ -37,6 +42,18 @@ export const BuildingsExplorer = ({ activeSort }) => {
                     // onInView={onInView}
                 />
             ))}
+
+            {!delayedDidMouseEnter && (
+                <S.BuildingsExplorerOnboarding
+                    isActive={!didMouseEnter}
+                    onMouseEnter={() => setDidMouseEnter(true)}
+                >
+                    <S.BuildingsExplorerHeader>
+                        Select a Highrise
+                    </S.BuildingsExplorerHeader>
+                    <div>Use filters to narrow your search</div>
+                </S.BuildingsExplorerOnboarding>
+            )}
         </S.BuildingsExplorer>
     );
 };
