@@ -45,12 +45,12 @@ exports.createPages = async function ({ actions, graphql }) {
     const highrisesWithImages = highrises
         .map((highrise, index) => ({
             ...highrise,
-            iconSrc: urlMap[index]?.['icon-highrises'],
-            imageSrc: urlMap[index]?.['slide-highrises'],
+            blurFeatureSrc: urlMap[index]?.['blur-feature-highrises'],
+            featureSrc: urlMap[index]?.['feature-highrises'],
             posterSrc: urlMap[index]?.['poster-highrises'],
+            blurNftSrc: urlMap[index]?.['blur-nft-highrises'],
             nftSrc: urlMap[index]?.['nft-highrises'],
             mapSrc: urlMap[index]?.['map-highrises'],
-            detailSrc: urlMap[index]?.['detail-highrises'],
             index: index,
         }))
         .sort((a, b) => a.highriseNumber.localeCompare(b.highriseNumber));

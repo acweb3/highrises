@@ -1,6 +1,7 @@
+import { BlurLoader } from 'components/ui/BlurLoader';
 import styled, { css } from 'styled-components';
 
-export const BuildingImage = styled.img``;
+export const BuildingImage = styled(BlurLoader)``;
 
 export const BuildingBadge = styled.div`
     position: absolute;
@@ -23,8 +24,6 @@ export const BuildingCaption = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
-    height: 120px;
 
     padding-top: 16px;
 

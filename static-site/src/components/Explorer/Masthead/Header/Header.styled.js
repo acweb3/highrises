@@ -19,6 +19,7 @@ export const HeaderBasic = styled.div`
 export const HeaderFilled = styled.div`
     z-index: 1;
 
+    height: ${(props) => props.theme.typography.fontSize.h1};
     font-family: ${(props) =>
         props.theme.typography.fontFamily.rc.guidelinesFull};
 `;

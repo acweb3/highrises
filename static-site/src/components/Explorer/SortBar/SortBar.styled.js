@@ -1,4 +1,4 @@
-import sortbarBackground from 'assets/images/sortbar-background/blue-graph-paper.jpg';
+import sortbarBackground from 'assets/images/blue-graph-paper.jpg';
 import styled, { css } from 'styled-components';
 
 export const SortBarLink = styled.div`

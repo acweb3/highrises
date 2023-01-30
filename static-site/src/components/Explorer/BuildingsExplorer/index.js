@@ -12,12 +12,10 @@ export const BuildingsExplorer = ({ activeSort }) => {
     const [didMouseEnter, setDidMouseEnter] = useState(false);
     const delayedDidMouseEnter = useDelayed(didMouseEnter, 400);
 
-    // #todo reimplement virtualization
-    // const [visibleIndex, setVisibleIndex] = useState(5);
-
-    // const onInView = (index) => {
-    //     setVisibleIndex((visibleIndex) => Math.max(visibleIndex, index + 5));
-    // };
+    const [visibleIndex, setVisibleIndex] = useState(5);
+    const onInView = (index) => {
+        setVisibleIndex((visibleIndex) => Math.max(visibleIndex, index + 5));
+    };
 
     useEffect(() => {
         if (activeSort) {
@@ -37,9 +35,8 @@ export const BuildingsExplorer = ({ activeSort }) => {
                 <Building
                     key={getBuildingURL(building)}
                     building={building}
-                    // #todo reimplement virtualization
-                    // isVisible={index <= visibleIndex}
-                    // onInView={onInView}
+                    isVisible={building.index <= visibleIndex}
+                    onInView={onInView}
                 />
             ))}
 

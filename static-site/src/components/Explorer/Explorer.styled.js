@@ -47,7 +47,6 @@ export const Explorer = styled.div`
             width: 35vw;
             min-width: 35vw;
             position: relative;
-            border-left: 1px solid ${(props) => props.theme.colors.grey[0]};
         }
     }
 `;

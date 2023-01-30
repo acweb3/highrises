@@ -13,8 +13,10 @@ export const EmailCollection = () => {
                     Stay up to date
                 </S.EmailCollectionHeader>
                 <S.Paragraph>
-                    To receive updates on future NFT releases, prints, and the
-                    book, please add your email below.
+                    At the conclusion of the Highrises project, a graphic coffee
+                    table book will be released featuring the most beautiful
+                    historic skyscrapers across the United States. Enter your
+                    email below to get updates on new releases.
                 </S.Paragraph>
 
                 <S.EmailCollectionInput

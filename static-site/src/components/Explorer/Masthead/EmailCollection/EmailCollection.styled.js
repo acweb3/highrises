@@ -45,6 +45,7 @@ export const EmailOutreach = styled.a`
 export const EmailCollectionHeader = styled.div`
     font-family: ${(props) => props.theme.typography.fontFamily.rc.basicFull};
     font-size: ${(props) => props.theme.typography.fontSize.h3};
+    height: ${(props) => props.theme.typography.fontSize.h3};
     text-align: center;
 `;
 
