@@ -5,30 +5,34 @@ const sharp = require('sharp');
 
 const asyncReaddir = promisify(fs.readdir);
 
-const png = async () => {
+const feature = async () => {
     const rawImagesDir = join(__dirname, 'raw');
     const outputDir = join(__dirname, 'dist');
 
     const files = await asyncReaddir(rawImagesDir);
 
-    files.forEach(async (file, i) => {
+    files.forEach(async (file) => {
         const fileName = join(__dirname, 'raw', file);
+        const [index] = fileName
+            .replace(join(__dirname, 'raw/'), '')
+            .split('_');
+        const parsedIndex = parseInt(index);
 
         await sharp(fileName)
             .resize({
-                width: 400,
+                width: 1222,
             })
-            .toFile(join(outputDir, 'big', `${i}.webp`));
+            .toFile(join(outputDir, 'regular', `${parsedIndex - 1}.webp`));
 
-        await sharp(join(rawImagesDir, file))
+        await sharp(fileName)
             .resize({
-                width: 400,
+                width: 1222,
             })
-            .blur(10)
-            .toFile(join(outputDir, 'blur', `${i}.webp`));
+            .blur(100)
+            .toFile(join(outputDir, 'blur', `${parsedIndex - 1}.webp`));
     });
 };
 
 module.exports = {
-    png,
+    feature,
 };

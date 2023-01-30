@@ -7,6 +7,8 @@ image-processing/png/dist
 image-processing/png/raw
 image-processing/poster/dist
 image-processing/poster/raw
+image-processing/feature/dist
+image-processing/feature/raw
 metadata-processing/dist
 metadata-processing/words/dist
 metadata-processing/words/raw
