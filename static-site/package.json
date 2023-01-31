@@ -14,8 +14,7 @@
         "clean": "gatsby clean",
         "lint": "eslint src --ext .js",
         "deploy:dev": "npm run -n \"-r dotenv/config\" && TARGET=development npm run build && gatsby-plugin-s3 deploy",
-        "deploy:prod": "npm run -n \"-r dotenv/config\" && TARGET=production npm run build && gatsby-plugin-s3 deploy",
-        "install": "npm install"
+        "deploy:prod": "npm run -n \"-r dotenv/config\" && TARGET=production npm run build && gatsby-plugin-s3 deploy"
     },
     "engines": {
         "node": "14.17.0",
