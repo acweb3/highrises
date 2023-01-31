@@ -1,0 +1,26 @@
+{
+  "name": "highrises",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "husky": "^8.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install",
+    "lint": "cd static-site && npm run lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/acweb3/highrises.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/acweb3/highrises/issues"
+  },
+  "homepage": "https://github.com/acweb3/highrises#readme"
+}
