@@ -1,4 +1,5 @@
 import { useWindowListener } from 'common/hooks/useWindowListener';
+import { useWindowSize } from 'common/hooks/useWindowSize';
 import * as S from 'components/Explorer/FeatureImage/FeatureImage.styled';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
 import { useEffect, useRef, useState } from 'react';
@@ -32,15 +33,10 @@ const useLastFeatureImage = (highrise) => {
 const FeatureImageRandomizer = () => {
     const { randomHighrise } = useActiveHighriseContext();
     const { a, b, activeLayer } = useLastFeatureImage(randomHighrise);
+    const { width } = useZoomWidth();
 
     return (
-        <div
-            css={`
-                position: relative;
-                height: 100%;
-                width: 100%;
-            `}
-        >
+        <S.FeatureImageRandomContainer style={{ width }}>
             <S.FeatureImageRandom
                 isActive={activeLayer === 0}
                 src={a.featureSrc}
@@ -54,15 +50,13 @@ const FeatureImageRandomizer = () => {
                 blurSrc={b.blurFeatureSrc}
                 alt={`${b.name} feature image`}
             />
-        </div>
+        </S.FeatureImageRandomContainer>
     );
 };
 
-const FeatureImageZoom = () => {
-    const { activeHighrise } = useActiveHighriseContext();
-    const openseaDragonRef = useRef();
-
+const useZoomWidth = () => {
     const [width, setWidth] = useState(0);
+    const { isMobile } = useWindowSize();
 
     useEffect(() => {
         setWidth((window.innerHeight * 2) / 3);
@@ -75,6 +69,14 @@ const FeatureImageZoom = () => {
         },
         []
     );
+
+    return { width: isMobile ? undefined : width };
+};
+
+const FeatureImageZoom = () => {
+    const { activeHighrise } = useActiveHighriseContext();
+    const openseaDragonRef = useRef();
+    const { width } = useZoomWidth();
 
     useEffect(() => {
         if (!openseaDragonRef.current) {
@@ -101,12 +103,14 @@ const FeatureImageZoom = () => {
     }, [activeHighrise]);
 
     return (
-        <S.FeatureImageZoom
-            id="openseaDragon"
-            style={{
-                width,
-            }}
-        />
+        <S.FeatureImageZoomWrapper>
+            <S.FeatureImageZoom
+                id="openseaDragon"
+                style={{
+                    width,
+                }}
+            />
+        </S.FeatureImageZoomWrapper>
     );
 };
 

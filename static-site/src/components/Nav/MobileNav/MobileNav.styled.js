@@ -49,6 +49,9 @@ export const MobileNav = styled.div`
     align-items: center;
     justify-content: space-between;
 
+    // # FIXME
+    display: none;
+
     ${(props) => props.theme.breakpoints.mobile`
         display: none;
     `}

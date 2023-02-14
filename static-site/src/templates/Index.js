@@ -1,6 +1,5 @@
 import { Explorer } from 'components/Explorer';
 import { Metadata } from 'components/Metadata';
-import { NavTabs } from 'components/NavTabs';
 import { SiteWrapper } from 'components/SiteWrapper';
 import { Contexts } from 'contexts';
 import 'css/index.css';
@@ -18,7 +17,7 @@ const App = ({ pageContext: { highrises, thumbnail } }) => {
                     thumbnail={thumbnail}
                     thumbnailAlt={''}
                 />
-                <NavTabs />
+
                 <Explorer />
             </SiteWrapper>
         </Contexts>

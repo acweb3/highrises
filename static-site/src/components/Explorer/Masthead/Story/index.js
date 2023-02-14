@@ -2,7 +2,7 @@ import { getBuildingURL } from 'common/helpers';
 import * as S from 'components/Explorer/Masthead/Story/Story.styled';
 import { navigate } from 'gatsby';
 
-export const Story = ({ isModal, activeHighrise, className }) => {
+export const Story = ({ activeHighrise, className }) => {
     const handleClick = () => {
         navigate(getBuildingURL(activeHighrise), {
             state: {
@@ -15,16 +15,11 @@ export const Story = ({ isModal, activeHighrise, className }) => {
 
     return (
         <S.Story className={className}>
-            <S.StoryCopy isExpanded={isModal}>{paragraphs[0]}</S.StoryCopy>
+            <S.StoryCopy>{paragraphs[0]}</S.StoryCopy>
 
-            <S.StoryTransparencyWrapper
-                isExpanded={isModal}
-                onClick={isModal ? undefined : handleClick}
-            >
+            <S.StoryTransparencyWrapper>
                 {paragraphs.slice(1).map((paragraph, index) => (
-                    <S.StoryCopy key={index} isExpanded={isModal}>
-                        {paragraph}
-                    </S.StoryCopy>
+                    <S.StoryCopy key={index}>{paragraph}</S.StoryCopy>
                 ))}
             </S.StoryTransparencyWrapper>
         </S.Story>

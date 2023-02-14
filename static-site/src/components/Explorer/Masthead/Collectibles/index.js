@@ -20,6 +20,7 @@ export const Collectibles = forwardRef((_, ref) => {
                     .filter((product) => product.productLink)
                     .map((product) => (
                         <S.Collectible
+                            key={product.blurSrc}
                             href={product.productLink}
                             rel="noopener noreferrer"
                             target="_blank"

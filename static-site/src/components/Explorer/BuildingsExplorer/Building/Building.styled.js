@@ -1,7 +1,19 @@
 import { BlurLoader } from 'components/ui/BlurLoader';
 import styled, { css } from 'styled-components';
 
-export const BuildingImage = styled(BlurLoader)``;
+export const BuildingImage = styled(BlurLoader)`
+    & > img {
+        height: 100%;
+        width: auto;
+    }
+
+    ${(props) => props.theme.breakpoints.small`
+        & > img {
+            height: initial;
+            width: initial;
+        }
+    `}
+`;
 
 export const BuildingBadge = styled.div`
     position: absolute;
@@ -17,15 +29,21 @@ export const BuildingBadge = styled.div`
     text-align: center;
     margin-left: 10px;
     bottom: 10px;
+
+    display: none;
+
+    ${(props) => props.theme.breakpoints.small`
+        display: block;
+    `}
 `;
 
 export const BuildingCaption = styled.div`
     color: ${(props) => props.theme.colors.blue[0]};
-    display: flex;
+
+    display: none;
     flex-direction: column;
     align-items: center;
-
-    padding-top: 16px;
+    justify-content: center;
 
     position: absolute;
 
@@ -56,9 +74,10 @@ export const BuildingCaption = styled.div`
         }
     }
 
-    ${(props) => props.theme.breakpoints.mobile`
-        padding-top: initial;
-        justify-content: center;
+    display: none;
+
+    ${(props) => props.theme.breakpoints.small`
+        display: flex;
     `}
 `;
 
@@ -68,16 +87,21 @@ export const BuildingIndex = styled.div`
     user-select: none;
     text-align: center;
     padding: 0 4px;
-
-    ${(props) => props.theme.breakpoints.mobile`
-        padding: 0 16px;
-    `}
 `;
 
 export const BuildingName = styled.div`
     font-size: 1rem;
     text-align: center;
     text-align: center;
+`;
+
+export const BuildingAspectRatio = styled.div`
+    height: 100%;
+
+    ${(props) => props.theme.breakpoints.small`
+        height: 0;
+        padding-bottom: 150%;
+    `}
 `;
 
 export const Building = styled.div`
@@ -87,7 +111,9 @@ export const Building = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex: 1;
+
+    height: 100%;
+    width: max-content;
 
     cursor: pointer;
 
@@ -103,6 +129,23 @@ export const Building = styled.div`
                 height: 100%;
 
                 border: 2px solid ${(props) => props.theme.colors.white[0]};
+                border-top: none;
             }
         `}
+
+    ${(props) => props.theme.breakpoints.small`
+        flex: 1;
+        height: initial;
+        width: initial;
+
+        ${
+            props.isActive &&
+            css`
+                &::after {
+                    border-top: 2px solid
+                        ${(props) => props.theme.colors.white[0]};
+                }
+            `
+        }}
+    `}
 `;

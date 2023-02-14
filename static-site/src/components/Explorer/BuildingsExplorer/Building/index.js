@@ -3,7 +3,7 @@ import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
 import { useEffect, useRef } from 'react';
 import { useInViewport } from 'react-in-viewport';
 
-export const Building = ({ building, onInView, isVisible = true }) => {
+export const Building = ({ building, onInView }) => {
     const { activeHighrise, setActiveHighrise } = useActiveHighriseContext();
     const ref = useRef();
     const { inViewport } = useInViewport(ref, { threshold: 0 });
@@ -22,19 +22,14 @@ export const Building = ({ building, onInView, isVisible = true }) => {
                 setActiveHighrise(building);
             }}
         >
-            <div
-                css={`
-                    height: 0;
-                    padding-bottom: 150%;
-                `}
-            >
+            <S.BuildingAspectRatio>
                 <S.BuildingBadge>{building.index + 1}</S.BuildingBadge>
                 <S.BuildingImage
                     alt={`building ${building.index + 1}`}
                     src={building.nftSrc}
                     blurSrc={building.blurNftSrc}
                 />
-            </div>
+            </S.BuildingAspectRatio>
 
             <S.BuildingCaption>
                 <S.BuildingIndex>{building.name}</S.BuildingIndex>

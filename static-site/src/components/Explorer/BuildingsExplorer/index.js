@@ -1,15 +1,16 @@
 import { getBuildingURL } from 'common/helpers';
 import { useDelayed } from 'common/hooks/useDelayed';
+import { useWindowSize } from 'common/hooks/useWindowSize';
 import { Building } from 'components/Explorer/BuildingsExplorer/Building';
 import * as S from 'components/Explorer/BuildingsExplorer/BuildingsExplorer.styled';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export const BuildingsExplorer = ({ activeSort }) => {
     const { highrises, setActiveHighrise, setHighrises, initHighrises } =
         useActiveHighriseContext();
-    const isInitRef = useRef();
 
+    const { isMobile } = useWindowSize();
     const [didMouseEnter, setDidMouseEnter] = useState(false);
     const delayedDidMouseEnter = useDelayed(didMouseEnter, 400);
 
@@ -43,7 +44,7 @@ export const BuildingsExplorer = ({ activeSort }) => {
                 ))}
             </S.BuildingsExplorerGrid>
 
-            {!delayedDidMouseEnter && (
+            {!delayedDidMouseEnter && !isMobile && (
                 <S.BuildingsExplorerOnboarding
                     isActive={!didMouseEnter}
                     onMouseEnter={() => setDidMouseEnter(true)}

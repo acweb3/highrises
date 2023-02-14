@@ -2,7 +2,6 @@ import { Editing } from 'components/Editing';
 import { FAQ } from 'components/FAQ';
 import { Intent } from 'components/Intent';
 import { Metadata } from 'components/Metadata';
-import { NavTabs } from 'components/NavTabs';
 import { Roadmap } from 'components/Roadmap';
 import { SiteWrapper } from 'components/SiteWrapper';
 import { Team } from 'components/Team';
@@ -22,7 +21,6 @@ const App = ({ pageContext: { highrises, thumbnail } }) => {
                     thumbnail={thumbnail}
                     thumbnailAlt={''}
                 />
-                <NavTabs />
 
                 <Intent />
                 <Editing />

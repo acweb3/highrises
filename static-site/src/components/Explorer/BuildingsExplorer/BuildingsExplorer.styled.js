@@ -34,27 +34,40 @@ export const BuildingsExplorerOnboarding = styled.div`
 `;
 
 export const BuildingsExplorerGrid = styled.div`
-    display: grid;
-    grid-template-columns: ${(props) => {
-        if (props.count > 16) {
-            return '1fr 1fr 1fr 1fr';
-        }
+    display: flex;
 
-        if (props.count > 8) {
-            return '1fr 1fr 1fr';
-        }
+    ${(props) => props.theme.breakpoints.small`
+        display: grid;
+        grid-template-columns: ${() => {
+            if (props.count > 16) {
+                return '1fr 1fr 1fr 1fr';
+            }
 
-        return '1fr 1fr';
-    }};
-    height: min-content;
+            if (props.count > 8) {
+                return '1fr 1fr 1fr';
+            }
+
+            return '1fr 1fr';
+        }};
+        height: min-content;
+    `}
 `;
 
 export const BuildingsExplorer = styled.div`
     flex: 1;
 
-    overflow-x: hidden;
-
-    overflow-y: scroll;
-
+    overflow-x: scroll;
+    overflow-y: hidden;
     position: relative;
+
+    display: flex;
+
+    border-top: 2px solid ${(props) => props.theme.colors.white[0]};
+
+    ${(props) => props.theme.breakpoints.small`
+        overflow-x: hidden;
+        overflow-y: scroll;
+
+        border: none;
+    `};
 `;

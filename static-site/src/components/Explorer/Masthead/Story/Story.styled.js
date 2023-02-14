@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 export const StoryCopy = styled.div`
     line-height: 1.5rem;
@@ -8,43 +8,11 @@ export const StoryCopy = styled.div`
     word-break: break-word;
     text-align: left;
     text-indent: 16px;
-
-    ${(props) =>
-        props.isExpanded &&
-        css`
-            &:first-of-type {
-            }
-        `}
 `;
 
 export const StoryTransparencyWrapper = styled.div`
     position: relative;
     overflow: hidden;
-
-    ${(props) =>
-        !props.isExpanded &&
-        css`
-            cursor: pointer;
-            max-height: 150px;
-            margin-bottom: 32px;
-
-            &::after {
-                content: ' ';
-                position: absolute;
-                height: 80px;
-                width: 100%;
-
-                left: 0;
-                bottom: 0;
-
-                background: linear-gradient(
-                    180deg,
-                    rgba(255, 255, 255, 0) 0%,
-                    rgba(255, 255, 255, 0.8) 70%,
-                    rgba(255, 255, 255, 1) 100%
-                );
-            }
-        `}
 `;
 
 export const Story = styled.div`

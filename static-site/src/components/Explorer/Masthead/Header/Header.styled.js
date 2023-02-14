@@ -28,8 +28,15 @@ export const HeaderFilled = styled.div`
 export const HeaderDouble = styled.div`
     position: relative;
     display: flex;
-    font-size: ${(props) => props.theme.typography.fontSize.h1};
-    margin-bottom: 16px;
+
+    text-transform: uppercase;
+
+    font-size: ${(props) => props.theme.typography.fontSize.h2};
+
+    ${(props) => props.theme.breakpoints.small`
+        font-size: ${props.theme.typography.fontSize.h1};
+        margin-bottom: 16px;
+    `}
 `;
 
 export const Header = styled.div`
@@ -41,5 +48,11 @@ export const Header = styled.div`
     align-items: center;
     justify-content: center;
 
-    padding: 32px 0 32px;
+    color: ${(props) => props.theme.colors.blue[0]};
+
+    padding: 0 0 16px;
+
+    ${(props) => props.theme.breakpoints.small`
+        padding: 32px 0 32px;
+    `}
 `;

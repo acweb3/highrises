@@ -1,4 +1,5 @@
 import { useDelayed } from 'common/hooks/useDelayed';
+import { useWindowSize } from 'common/hooks/useWindowSize';
 import { BuildingName } from 'components/Explorer/Masthead/BuildingName';
 import { Collectibles } from 'components/Explorer/Masthead/Collectibles';
 import { EmailCollection } from 'components/Explorer/Masthead/EmailCollection';
@@ -10,7 +11,61 @@ import { BaseButton } from 'components/ui/BaseButton';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
 import { useEffect, useRef, useState } from 'react';
 
-export const Masthead = ({ activeSort }) => {
+const MobileMasthead = ({ activeSort }) => {
+    const { activeHighrise } = useActiveHighriseContext();
+    const [isMastheadShowing, setIsMastheadShowing] = useState(false);
+    const [isCollectiblesShowing, setIsCollectiblesShowing] = useState(false);
+
+    console.log({ isMastheadShowing });
+
+    return (
+        <S.MobileMasthead>
+            <S.MobileReadMore
+                onClick={() =>
+                    setIsMastheadShowing(
+                        (isMastheadShowing) => !isMastheadShowing
+                    )
+                }
+            >
+                Read More
+            </S.MobileReadMore>
+
+            <S.MobileMastheadContent isMastheadShowing={isMastheadShowing}>
+                <S.MobileMastheadSection>
+                    <BaseButton
+                        onClick={() => {
+                            setIsCollectiblesShowing(
+                                (isCollectiblesShowing) =>
+                                    !isCollectiblesShowing
+                            );
+                        }}
+                    >
+                        Collectibles
+                    </BaseButton>
+
+                    <BaseButton
+                        onClick={() => {
+                            setIsCollectiblesShowing(true);
+                        }}
+                    >
+                        Collectibles
+                    </BaseButton>
+
+                    <Story isModal activeHighrise={activeHighrise} />
+                    <Traits activeHighrise={activeHighrise} />
+                </S.MobileMastheadSection>
+
+                <Collectibles />
+
+                <S.MobileMastheadSection>
+                    <EmailCollection />
+                </S.MobileMastheadSection>
+            </S.MobileMastheadContent>
+        </S.MobileMasthead>
+    );
+};
+
+const DesktopMasthead = ({ activeSort }) => {
     const [didScroll, setDidScroll] = useState(false);
     const delayedDidScrolled = useDelayed(didScroll, 400);
     const { activeHighrise } = useActiveHighriseContext();
@@ -22,10 +77,12 @@ export const Masthead = ({ activeSort }) => {
     }, [activeHighrise]);
 
     return (
-        <S.Masthead ref={mastheadRef} onScroll={() => setDidScroll(true)}>
-            <S.MastheadSection>
+        <S.DesktopMasthead
+            ref={mastheadRef}
+            onScroll={() => setDidScroll(true)}
+        >
+            <S.DesktopMastheadSection>
                 <Header activeSort={activeSort} />
-
                 <BuildingName />
 
                 <div
@@ -49,19 +106,37 @@ export const Masthead = ({ activeSort }) => {
 
                 <Story isModal activeHighrise={activeHighrise} />
                 <Traits activeHighrise={activeHighrise} />
-            </S.MastheadSection>
+            </S.DesktopMastheadSection>
 
             <Collectibles ref={collectiblesRef} />
 
-            <S.MastheadSection>
+            <S.DesktopMastheadSection>
                 <EmailCollection />
-            </S.MastheadSection>
+            </S.DesktopMastheadSection>
 
             {!delayedDidScrolled && (
-                <S.MastheadScrollMore isShowing={!didScroll}>
+                <S.DesktopMastheadScrollMore isShowing={!didScroll}>
                     Scroll To Read More
-                </S.MastheadScrollMore>
+                </S.DesktopMastheadScrollMore>
             )}
-        </S.Masthead>
+        </S.DesktopMasthead>
+    );
+};
+
+export const Masthead = ({ activeSort }) => {
+    const { isMobile } = useWindowSize();
+
+    if (isMobile === undefined) {
+        return null;
+    }
+
+    return (
+        <>
+            {isMobile ? (
+                <MobileMasthead activeSort={activeSort} />
+            ) : (
+                <DesktopMasthead activeSort={activeSort} />
+            )}
+        </>
     );
 };
