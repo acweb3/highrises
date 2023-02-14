@@ -3,11 +3,12 @@ import { useDelayed } from 'common/hooks/useDelayed';
 import { Building } from 'components/Explorer/BuildingsExplorer/Building';
 import * as S from 'components/Explorer/BuildingsExplorer/BuildingsExplorer.styled';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export const BuildingsExplorer = ({ activeSort }) => {
     const { highrises, setActiveHighrise, setHighrises, initHighrises } =
         useActiveHighriseContext();
+    const isInitRef = useRef();
 
     const [didMouseEnter, setDidMouseEnter] = useState(false);
     const delayedDidMouseEnter = useDelayed(didMouseEnter, 400);
@@ -31,14 +32,16 @@ export const BuildingsExplorer = ({ activeSort }) => {
 
     return (
         <S.BuildingsExplorer>
-            {highrises.map((building) => (
-                <Building
-                    key={getBuildingURL(building)}
-                    building={building}
-                    isVisible={building.index <= visibleIndex}
-                    onInView={onInView}
-                />
-            ))}
+            <S.BuildingsExplorerGrid count={highrises.length}>
+                {highrises.map((building) => (
+                    <Building
+                        key={getBuildingURL(building)}
+                        building={building}
+                        isVisible={building.index <= visibleIndex}
+                        onInView={onInView}
+                    />
+                ))}
+            </S.BuildingsExplorerGrid>
 
             {!delayedDidMouseEnter && (
                 <S.BuildingsExplorerOnboarding

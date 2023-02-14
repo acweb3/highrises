@@ -34,16 +34,25 @@ export const MapExplorerSticky = styled.div`
     flex-direction: row;
     overflow-x: scroll;
 
-    height: 33vh;
+    height: 34vh;
+    max-height: 22vh;
 
     position: sticky;
     top: 0;
 
+    transition: max-height 400ms;
+
     &::-webkit-scrollbar {
         display: none;
+    }
+
+    &:hover {
+        max-height: 34vh;
     }
 `;
 
 export const MapExplorer = styled.div`
     flex: 1;
+    padding: 16px;
+    border-radius: 4px;
 `;

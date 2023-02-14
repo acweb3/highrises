@@ -1,13 +1,4 @@
-import { BaseButton } from 'components/ui/BaseButton';
 import styled, { css } from 'styled-components';
-
-export const StoryExpand = styled(BaseButton)`
-    width: 100%;
-
-    ${(props) => props.theme.breakpoints.mobile`
-        max-width: 200px;
-    `}
-`;
 
 export const StoryCopy = styled.div`
     line-height: 1.5rem;

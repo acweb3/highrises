@@ -27,10 +27,6 @@ export const Story = ({ isModal, activeHighrise, className }) => {
                     </S.StoryCopy>
                 ))}
             </S.StoryTransparencyWrapper>
-
-            {!isModal && (
-                <S.StoryExpand onClick={handleClick}>Read more</S.StoryExpand>
-            )}
         </S.Story>
     );
 };

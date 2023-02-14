@@ -15,7 +15,7 @@ export const Explorer = () => {
         <S.Explorer>
             <S.ExplorerSection>
                 <S.ExplorerSideBar>
-                    <Masthead />
+                    <Masthead activeSort={activeSort} />
                     <MapExplorer />
                 </S.ExplorerSideBar>
             </S.ExplorerSection>

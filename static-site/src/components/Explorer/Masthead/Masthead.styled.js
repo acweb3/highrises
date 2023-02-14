@@ -30,6 +30,10 @@ export const MastheadScrollMore = styled.div`
     );
 `;
 
+export const MastheadSection = styled.div`
+    padding: 0 32px;
+`;
+
 export const Masthead = styled.div`
     position: relative;
 
@@ -42,5 +46,5 @@ export const Masthead = styled.div`
     display: flex;
     flex-direction: column;
 
-    padding: 16px 32px 32px;
+    padding: 16px 0 32px;
 `;

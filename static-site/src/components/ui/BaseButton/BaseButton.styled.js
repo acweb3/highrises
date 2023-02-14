@@ -3,14 +3,14 @@ import styled, { css } from 'styled-components';
 export const baseButtonCss = css`
     user-select: none;
 
-    font-family: Anton, sans-serif;
+    font-family: ${(props) => props.theme.typography.fontFamily.karla};
 
     text-transform: uppercase;
     width: fit-content;
     font-size: 12px;
 
-    border-radius: 3px;
-    padding: 12px 12px;
+    border-radius: 24px;
+    padding: 4px 4px;
     letter-spacing: 0.3em;
 
     border: none;

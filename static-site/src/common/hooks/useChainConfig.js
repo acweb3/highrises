@@ -31,7 +31,7 @@ export const useChainConfig = () => {
         openseaURL,
 
         getOpenseaAssetsURL: (index) => {
-            return `https://${openseaURL}.io/assets/${contractAddress}/${`${index}`}`;
+            return `https://${openseaURL}.io/assets/ethereum/${contractAddress}/${`${index}`}`;
         },
 
         getOpenseaEthURL: (ethAddress) => {

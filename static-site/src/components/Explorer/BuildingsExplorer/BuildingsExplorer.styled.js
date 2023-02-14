@@ -33,13 +33,27 @@ export const BuildingsExplorerOnboarding = styled.div`
     padding-bottom: 128px;
 `;
 
-export const BuildingsExplorer = styled.div`
+export const BuildingsExplorerGrid = styled.div`
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: ${(props) => {
+        if (props.count > 16) {
+            return '1fr 1fr 1fr 1fr';
+        }
+
+        if (props.count > 8) {
+            return '1fr 1fr 1fr';
+        }
+
+        return '1fr 1fr';
+    }};
+    height: min-content;
+`;
+
+export const BuildingsExplorer = styled.div`
+    flex: 1;
 
     overflow-x: hidden;
 
-    flex: 1;
     overflow-y: scroll;
 
     position: relative;

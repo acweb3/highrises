@@ -1,3 +1,4 @@
+import gridSrc from 'assets/images/blue-graph-paper.jpg';
 import styled from 'styled-components';
 
 export const ExplorerSideBar = styled.div`
@@ -14,6 +15,8 @@ export const ExplorerBuildings = styled.div`
     overflow: hidden;
 
     display: flex;
+    flex-direction: column;
+    background-image: url(${gridSrc});
 `;
 
 export const ExplorerSection = styled.div`

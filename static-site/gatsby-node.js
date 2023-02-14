@@ -42,18 +42,82 @@ exports.createPages = async function ({ actions, graphql }) {
         };
     }, {});
 
+    const productMap = edges
+        .filter(({ node }) => {
+            return ['blur-products', 'products'].includes(
+                node.relativeDirectory
+            );
+        })
+        .reduce((acc, { node }) => {
+            const renamed =
+                node.relativeDirectory === 'products'
+                    ? 'productSrc'
+                    : 'blurSrc';
+
+            return {
+                ...acc,
+                [node.name]: {
+                    ...(acc[node.name] || {}),
+                    [renamed]: node.publicURL,
+                },
+            };
+        }, {});
+
     const highrisesWithImages = highrises
-        .map((highrise, index) => ({
-            ...highrise,
-            blurFeatureSrc: urlMap[index]?.['blur-feature-highrises'],
-            featureSrc: urlMap[index]?.['feature-highrises'],
-            posterSrc: urlMap[index]?.['poster-highrises'],
-            blurNftSrc: urlMap[index]?.['blur-nft-highrises'],
-            nftSrc: urlMap[index]?.['nft-highrises'],
-            mapSrc: urlMap[index]?.['map-highrises'],
-            index: index,
-        }))
-        .sort((a, b) => a.highriseNumber.localeCompare(b.highriseNumber));
+        .map(({ products, ...highrise }, index) => {
+            const irlProducts = [
+                // Poster
+                // {
+                //     // # TODO => Blur this
+                //     productSrc: urlMap[index]?.['poster-highrises'],
+                //     blurSrc: urlMap[index]?.['poster-highrises'],
+                //     productLink: `https://www.opensea.io/assets/0x516d85f0c80d2c4809736aca3f3f95ce8545b5d2/${`${index}`}`,
+                // },
+            ];
+
+            const metaverseProducts = [
+                // Opensea NFT
+                {
+                    isNft: true,
+                    productSrc: urlMap[index]?.['nft-highrises'],
+                    blurSrc: urlMap[index]?.['blur-nft-highrises'],
+                    productLink: `https://www.opensea.io/ethereum/assets/0x516d85f0c80d2c4809736aca3f3f95ce8545b5d2/${`${index}`}`,
+                },
+
+                // Northeast collage
+                index < 50 && {
+                    isNft: true,
+                    productSrc: productMap['northeast-collage']['productSrc'],
+                    blurSrc: productMap['northeast-collage']['blurSrc'],
+                    productLink: `https://www.opensea.io/collection/highrisescollage`,
+                },
+            ].filter(Boolean);
+
+            const totalProducts = [
+                ...irlProducts,
+                ...products,
+                ...metaverseProducts,
+            ];
+
+            return {
+                ...highrise,
+                index: index,
+
+                blurFeatureSrc: urlMap[index]?.['blur-feature-highrises'],
+                featureSrc: urlMap[index]?.['feature-highrises'],
+                posterSrc: urlMap[index]?.['poster-highrises'],
+                blurNftSrc: urlMap[index]?.['blur-nft-highrises'],
+                nftSrc: urlMap[index]?.['nft-highrises'],
+                mapSrc: urlMap[index]?.['map-highrises'],
+
+                products:
+                    totalProducts.map((product) => ({
+                        ...product,
+                        ...productMap[product.productName],
+                    })) || [],
+            };
+        })
+        .sort((a, b) => b.highriseNumber.localeCompare(a.highriseNumber));
 
     // # TODO => Create a bunch of Index pages with this metadata
     // highrisesWithImages.forEach((highrise) => {

@@ -5,8 +5,12 @@ import { useEffect, useRef, useState } from 'react';
 
 const useTransformScroll = () => {
     const [isTransform, setIsTransform] = useState(false);
-    const scrollRef = useRef(document.documentElement.scrollHeight);
+    const scrollRef = useRef(0);
     const isInitializedRef = useRef(false);
+
+    useEffect(() => {
+        scrollRef.current = document.documentElement.scrollHeight;
+    }, []);
 
     useWindowListener(
         'scroll',

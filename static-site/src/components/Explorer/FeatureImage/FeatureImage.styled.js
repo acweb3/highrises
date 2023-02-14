@@ -1,5 +1,5 @@
 import { BlurLoader } from 'components/ui/BlurLoader';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const FeatureImage = styled(BlurLoader)`
     & > img {
@@ -9,6 +9,23 @@ export const FeatureImage = styled(BlurLoader)`
         object-fit: cover;
     }
 `;
+
+export const FeatureImageRandom = styled(FeatureImage)`
+    transition: opacity 1000ms;
+
+    opacity: 0;
+    z-index: 2;
+
+    position: absolute;
+
+    ${(props) =>
+        props.isActive &&
+        css`
+            opacity: 1;
+        `}
+`;
+
+export const FeatureImageZoom = styled.div``;
 
 export const FeatureImageWrapper = styled.div`
     position: relative;

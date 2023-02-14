@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const HeaderSubtitle = styled.div`
     font-size: ${(props) => props.theme.typography.fontSize.prose};
-    margin-top: 1rem;
+    margin-top: 8px;
     color: ${(props) => props.theme.colors.grey[0]};
 `;
 
@@ -11,6 +11,7 @@ export const HeaderBasic = styled.div`
 
     position: absolute;
     padding-left: 3px;
+    margin-right: -3px;
 
     color: ${(props) => props.theme.colors.grey[1]};
     font-family: ${(props) => props.theme.typography.fontFamily.rc.basicFull};
@@ -28,6 +29,7 @@ export const HeaderDouble = styled.div`
     position: relative;
     display: flex;
     font-size: ${(props) => props.theme.typography.fontSize.h1};
+    margin-bottom: 16px;
 `;
 
 export const Header = styled.div`
