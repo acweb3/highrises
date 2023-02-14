@@ -25,10 +25,17 @@ export const FeatureImageRandom = styled(FeatureImage)`
         `}
 `;
 
-export const FeatureImageZoom = styled.div``;
+export const FeatureImageZoom = styled.div`
+    height: 100vh;
+
+    & * {
+        &:focus {
+            outline: none;
+        }
+    }
+`;
 
 export const FeatureImageWrapper = styled.div`
     position: relative;
     overflow: hidden;
-    height: 100vh;
 `;

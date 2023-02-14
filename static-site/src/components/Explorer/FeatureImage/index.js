@@ -1,3 +1,4 @@
+import { useWindowListener } from 'common/hooks/useWindowListener';
 import * as S from 'components/Explorer/FeatureImage/FeatureImage.styled';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
 import { useEffect, useRef, useState } from 'react';
@@ -61,6 +62,20 @@ const FeatureImageZoom = () => {
     const { activeHighrise } = useActiveHighriseContext();
     const openseaDragonRef = useRef();
 
+    const [width, setWidth] = useState(0);
+
+    useEffect(() => {
+        setWidth((window.innerHeight * 2) / 3);
+    }, []);
+
+    useWindowListener(
+        'resize',
+        () => {
+            setWidth((window.innerHeight * 2) / 3);
+        },
+        []
+    );
+
     useEffect(() => {
         if (!openseaDragonRef.current) {
             (async () => {
@@ -72,7 +87,9 @@ const FeatureImageZoom = () => {
                         url: activeHighrise.featureSrc,
                     },
                     showNavigationControl: false,
-                    defaultZoomLevel: 1.1,
+                    defaultZoomLevel: 1,
+                    minZoomLevel: 1,
+                    visibilityRatio: 1,
                 });
             })();
         } else {
@@ -84,13 +101,12 @@ const FeatureImageZoom = () => {
     }, [activeHighrise]);
 
     return (
-        <div
+        <S.FeatureImageZoom
             id="openseaDragon"
-            css={`
-                width: 100%;
-                height: 100%;
-            `}
-        ></div>
+            style={{
+                width,
+            }}
+        />
     );
 };
 
