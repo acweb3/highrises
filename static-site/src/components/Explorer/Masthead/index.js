@@ -11,12 +11,10 @@ import { BaseButton } from 'components/ui/BaseButton';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
 import { useEffect, useRef, useState } from 'react';
 
-const MobileMasthead = ({ activeSort }) => {
+const MobileMasthead = () => {
     const { activeHighrise } = useActiveHighriseContext();
     const [isMastheadShowing, setIsMastheadShowing] = useState(false);
     const [isCollectiblesShowing, setIsCollectiblesShowing] = useState(false);
-
-    console.log({ isMastheadShowing });
 
     return (
         <S.MobileMasthead>
@@ -32,30 +30,39 @@ const MobileMasthead = ({ activeSort }) => {
 
             <S.MobileMastheadContent isMastheadShowing={isMastheadShowing}>
                 <S.MobileMastheadSection>
-                    <BaseButton
-                        onClick={() => {
-                            setIsCollectiblesShowing(
-                                (isCollectiblesShowing) =>
-                                    !isCollectiblesShowing
-                            );
-                        }}
-                    >
-                        Collectibles
-                    </BaseButton>
-
-                    <BaseButton
-                        onClick={() => {
-                            setIsCollectiblesShowing(true);
-                        }}
-                    >
-                        Collectibles
-                    </BaseButton>
-
-                    <Story isModal activeHighrise={activeHighrise} />
-                    <Traits activeHighrise={activeHighrise} />
+                    <BuildingName />
                 </S.MobileMastheadSection>
 
-                <Collectibles />
+                <S.MobileMastheadSection>
+                    <S.MobileMastheadNav>
+                        <BaseButton
+                            onClick={() => {
+                                setIsCollectiblesShowing(false);
+                            }}
+                        >
+                            About
+                        </BaseButton>
+
+                        <BaseButton
+                            onClick={() => {
+                                setIsCollectiblesShowing(true);
+                            }}
+                        >
+                            Collectibles
+                        </BaseButton>
+                    </S.MobileMastheadNav>
+                </S.MobileMastheadSection>
+
+                <S.MobileMastheadSection>
+                    {isCollectiblesShowing ? (
+                        <Collectibles />
+                    ) : (
+                        <>
+                            <Story isModal activeHighrise={activeHighrise} />
+                            <Traits activeHighrise={activeHighrise} />
+                        </>
+                    )}
+                </S.MobileMastheadSection>
 
                 <S.MobileMastheadSection>
                     <EmailCollection />
@@ -133,7 +140,7 @@ export const Masthead = ({ activeSort }) => {
     return (
         <>
             {isMobile ? (
-                <MobileMasthead activeSort={activeSort} />
+                <MobileMasthead />
             ) : (
                 <DesktopMasthead activeSort={activeSort} />
             )}

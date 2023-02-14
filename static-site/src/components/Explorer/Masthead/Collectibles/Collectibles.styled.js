@@ -36,10 +36,14 @@ export const CollectiblesGrid = styled.div`
 `;
 
 export const CollectiblesCopy = styled.div`
-    text-indent: 1rem;
     margin-top: 32px;
 
-    padding: 0 32px 32px;
+    padding: 0 0 32px;
+
+    ${(props) => props.theme.breakpoints.small`
+        padding: 0 32px 32px;
+        text-indent: 1rem;
+    `}
 `;
 
 export const CollectiblesHeader = styled.div`
@@ -49,8 +53,18 @@ export const CollectiblesHeader = styled.div`
     text-align: center;
 
     padding: 0 32px;
+
+    display: none;
+
+    ${(props) => props.theme.breakpoints.small`
+        display: block;
+    `}
 `;
 
 export const Collectibles = styled.div`
-    padding: 64px 0 0;
+    padding: 0;
+
+    ${(props) => props.theme.breakpoints.small`
+        padding: 64px 0 0;
+    `}
 `;
