@@ -4,7 +4,7 @@ import { SORTS, useSorts } from 'components/Explorer/SortBar';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
 import { useMobilePopoverContext } from 'contexts/MobilePopover';
 import { useWindowSizeContext } from 'contexts/WindowSize';
-import { useEffect, useRef, useState } from 'react';
+import { forwardRef, useEffect, useRef, useState } from 'react';
 
 const useLastFeatureImage = (highrise) => {
     const [a, setA] = useState(highrise);
@@ -253,7 +253,7 @@ export const FeatureImageFilterAbout = () => {
     );
 };
 
-export const FeatureImage = () => {
+export const FeatureImage = forwardRef((_, ref) => {
     const { isMobilePopoverOpen, setIsMobilePopoverOpen } =
         useMobilePopoverContext();
     const { activeHighrise, hasInteracted } = useActiveHighriseContext();
@@ -266,7 +266,10 @@ export const FeatureImage = () => {
     }, [isMobilePopoverOpen]);
 
     return (
-        <S.FeatureImageWrapper onClick={() => setIsMobilePopoverOpen(false)}>
+        <S.FeatureImageWrapper
+            ref={ref}
+            onClick={() => setIsMobilePopoverOpen(false)}
+        >
             <S.FeatureImageActions>
                 <FeatureImageFilterButton
                     isFiltering={isFiltering}
@@ -286,4 +289,4 @@ export const FeatureImage = () => {
             )}
         </S.FeatureImageWrapper>
     );
-};
+});

@@ -6,7 +6,7 @@ import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
 import { useWindowSizeContext } from 'contexts/WindowSize';
 import { useState } from 'react';
 
-export const BuildingsExplorer = () => {
+export const BuildingsExplorer = ({ buildingExplorerHeight }) => {
     const { highrises } = useActiveHighriseContext();
 
     const { isMobile } = useWindowSizeContext();
@@ -20,7 +20,10 @@ export const BuildingsExplorer = () => {
 
     return (
         <S.BuildingsExplorer>
-            <S.BuildingsExplorerGrid count={highrises.length}>
+            <S.BuildingsExplorerGrid
+                buildingExplorerHeight={buildingExplorerHeight}
+                count={highrises.length}
+            >
                 {highrises.map((building) => (
                     <Building
                         key={getBuildingURL(building)}

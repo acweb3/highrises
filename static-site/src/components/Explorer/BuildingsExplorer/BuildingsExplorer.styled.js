@@ -1,5 +1,5 @@
 import gridSrc from 'assets/images/blue-graph-paper.jpg';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const BuildingsExplorerHeader = styled.div`
     text-align: center;
@@ -36,6 +36,15 @@ export const BuildingsExplorerOnboarding = styled.div`
 
 export const BuildingsExplorerGrid = styled.div`
     display: flex;
+
+    ${(props) =>
+        props.buildingExplorerHeight &&
+        css`
+            height: ${props.buildingExplorerHeight}px;
+            position: fixed;
+            bottom: 0;
+            z-index: 2;
+        `}
 
     ${(props) => props.theme.breakpoints.small`
         display: grid;

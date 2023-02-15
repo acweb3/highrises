@@ -1,16 +1,13 @@
 import gridSrc from 'assets/images/blue-graph-paper.jpg';
 import styled from 'styled-components';
 
-export const MobileExplorerPopover = styled.div`
-    position: relative;
-`;
+export const MobileExplorerPopover = styled.div``;
 
 export const MobileExplorer = styled.div`
     display: flex;
     flex-direction: column;
 
     width: 100vw;
-    height: 100vh;
 `;
 
 export const DesktopExplorerSideBar = styled.div`

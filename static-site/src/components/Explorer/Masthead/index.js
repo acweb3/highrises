@@ -12,7 +12,7 @@ import { useMobilePopoverContext } from 'contexts/MobilePopover';
 import { useWindowSizeContext } from 'contexts/WindowSize';
 import { useEffect, useRef, useState } from 'react';
 
-const MobileMasthead = () => {
+const MobileMasthead = ({ buildingExplorerHeight }) => {
     const mastheadRef = useRef();
     const { activeHighrise, activeDescription } = useActiveHighriseContext();
     const { isMobilePopoverOpen, setIsMobilePopoverOpen } =
@@ -24,7 +24,7 @@ const MobileMasthead = () => {
     }, [activeHighrise]);
 
     return (
-        <S.MobileMasthead>
+        <S.MobileMasthead buildingExplorerHeight={buildingExplorerHeight}>
             <S.MobileReadMore
                 onClick={() =>
                     setIsMobilePopoverOpen(
@@ -173,12 +173,22 @@ const DesktopMasthead = () => {
     );
 };
 
-export const Masthead = () => {
+export const Masthead = ({ buildingExplorerHeight }) => {
     const { isMobile } = useWindowSizeContext();
 
     if (isMobile === undefined) {
         return null;
     }
 
-    return <>{isMobile ? <MobileMasthead /> : <DesktopMasthead />}</>;
+    return (
+        <>
+            {isMobile ? (
+                <MobileMasthead
+                    buildingExplorerHeight={buildingExplorerHeight}
+                />
+            ) : (
+                <DesktopMasthead />
+            )}
+        </>
+    );
 };

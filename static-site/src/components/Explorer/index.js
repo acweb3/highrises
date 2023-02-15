@@ -7,17 +7,47 @@ import { Header } from 'components/Explorer/Masthead/Header';
 import { SortBar } from 'components/Explorer/SortBar';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
 import { useWindowSizeContext } from 'contexts/WindowSize';
+import { useEffect, useRef, useState } from 'react';
+import { use100vh } from 'react-div-100vh';
+
+const BUILDING_EXPLORER_MIN_HEIGHT = 80;
 
 const MobileExplorer = () => {
+    const hundo = use100vh();
+    const headerRef = useRef();
+    const featureImageRef = useRef();
+    const [buildingExplorerHeight, setBuildingExplorerHeight] = useState(
+        BUILDING_EXPLORER_MIN_HEIGHT
+    );
+
+    useEffect(() => {
+        const { height: featureImageHeight } =
+            featureImageRef.current.getBoundingClientRect();
+        const { height: headerHeight } =
+            headerRef.current.getBoundingClientRect();
+
+        setBuildingExplorerHeight(
+            Math.max(
+                hundo - featureImageHeight - headerHeight,
+                BUILDING_EXPLORER_MIN_HEIGHT
+            )
+        );
+    }, [hundo]);
+
     return (
-        <S.MobileExplorer>
+        <S.MobileExplorer style={{ height: hundo }}>
             <S.MobileExplorerPopover>
-                <Header />
-                <FeatureImage />
-                <Masthead />
+                <Header ref={headerRef} />
+                <FeatureImage
+                    ref={featureImageRef}
+                    buildingExplorerHeight={buildingExplorerHeight}
+                />
+                <Masthead buildingExplorerHeight={buildingExplorerHeight} />
             </S.MobileExplorerPopover>
 
-            <BuildingsExplorer />
+            <BuildingsExplorer
+                buildingExplorerHeight={buildingExplorerHeight}
+            />
         </S.MobileExplorer>
     );
 };

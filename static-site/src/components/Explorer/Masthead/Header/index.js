@@ -1,11 +1,12 @@
 import * as S from 'components/Explorer/Masthead/Header/Header.styled';
 import { useActiveSortContext } from 'contexts/ActiveSort';
+import { forwardRef } from 'react';
 
-export const Header = () => {
+export const Header = forwardRef((_, ref) => {
     const { activeSort } = useActiveSortContext();
 
     return (
-        <S.Header>
+        <S.Header ref={ref}>
             <S.HeaderDouble>
                 <S.HeaderFilled>
                     {activeSort?.sortValue ?? 'Highrises'}
@@ -20,4 +21,4 @@ export const Header = () => {
             </S.HeaderSubtitle>
         </S.Header>
     );
-};
+});
