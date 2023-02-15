@@ -91,7 +91,7 @@ const MobileMasthead = () => {
     );
 };
 
-const DesktopMasthead = ({ activeSort }) => {
+const DesktopMasthead = () => {
     const [didScroll, setDidScroll] = useState(false);
     const delayedDidScrolled = useDelayed(didScroll, 400);
     const { activeHighrise } = useActiveHighriseContext();
@@ -108,7 +108,7 @@ const DesktopMasthead = ({ activeSort }) => {
             onScroll={() => setDidScroll(true)}
         >
             <S.DesktopMastheadSection>
-                <Header activeSort={activeSort} />
+                <Header />
                 <BuildingName />
 
                 <S.DesktopMastheadNav>
@@ -143,20 +143,12 @@ const DesktopMasthead = ({ activeSort }) => {
     );
 };
 
-export const Masthead = ({ activeSort }) => {
+export const Masthead = () => {
     const { isMobile } = useWindowSize();
 
     if (isMobile === undefined) {
         return null;
     }
 
-    return (
-        <>
-            {isMobile ? (
-                <MobileMasthead />
-            ) : (
-                <DesktopMasthead activeSort={activeSort} />
-            )}
-        </>
-    );
+    return <>{isMobile ? <MobileMasthead /> : <DesktopMasthead />}</>;
 };

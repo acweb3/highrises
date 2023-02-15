@@ -1,6 +1,9 @@
 import * as S from 'components/Explorer/Masthead/Header/Header.styled';
+import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
 
-export const Header = ({ activeSort }) => {
+export const Header = () => {
+    const { activeSort } = useActiveHighriseContext();
+
     return (
         <S.Header>
             <S.HeaderDouble>

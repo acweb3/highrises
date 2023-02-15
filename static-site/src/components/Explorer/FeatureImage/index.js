@@ -1,6 +1,7 @@
 import { useWindowListener } from 'common/hooks/useWindowListener';
 import { useWindowSize } from 'common/hooks/useWindowSize';
 import * as S from 'components/Explorer/FeatureImage/FeatureImage.styled';
+import { SORTS, useSorts } from 'components/Explorer/SortBar';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
 import { useMobilePopoverContext } from 'contexts/MobilePopover';
 import { useEffect, useRef, useState } from 'react';
@@ -31,13 +32,16 @@ const useLastFeatureImage = (highrise) => {
     };
 };
 
-const FeatureImageRandomizer = () => {
+const FeatureImageRandomizer = ({ resetFiltering }) => {
     const { randomHighrise } = useActiveHighriseContext();
     const { a, b, activeLayer } = useLastFeatureImage(randomHighrise);
     const { width } = useZoomWidth();
 
     return (
-        <S.FeatureImageRandomContainer style={{ width }}>
+        <S.FeatureImageRandomContainer
+            style={{ width }}
+            onClick={resetFiltering}
+        >
             <S.FeatureImageRandom
                 isActive={activeLayer === 0}
                 src={a.featureSrc}
@@ -74,7 +78,7 @@ const useZoomWidth = () => {
     return { width: isMobile ? undefined : width };
 };
 
-const FeatureImageZoom = () => {
+const FeatureImageZoom = ({ resetFiltering }) => {
     const { activeHighrise } = useActiveHighriseContext();
     const openseaDragonRef = useRef();
     const { width } = useZoomWidth();
@@ -104,7 +108,7 @@ const FeatureImageZoom = () => {
     }, [activeHighrise]);
 
     return (
-        <S.FeatureImageZoomWrapper>
+        <S.FeatureImageZoomWrapper onClick={resetFiltering}>
             <S.FeatureImageBadge>
                 {activeHighrise.index + 1}
             </S.FeatureImageBadge>
@@ -119,8 +123,83 @@ const FeatureImageZoom = () => {
     );
 };
 
-export const FeatureImageFilterButton = () => {
-    return <S.FeatureImageFilterButton>Filter</S.FeatureImageFilterButton>;
+export const FeatureImageFilterButton = ({ isFiltering, setIsFiltering }) => {
+    const {
+        activeSort,
+        activeDropdown,
+        fieldActiveSelectLevel,
+        selectField,
+        optionActiveSelectLevel,
+        selectOption,
+        reset,
+    } = useSorts();
+
+    return (
+        <S.FeatureImageFilters>
+            <S.FeatureImageFilterButton
+                isSelecting={isFiltering}
+                isActive={isFiltering || activeSort}
+                onClick={() => {
+                    setIsFiltering((isFiltering) => !isFiltering);
+                }}
+            >
+                {activeSort?.sortValue ?? 'Filter'}
+            </S.FeatureImageFilterButton>
+
+            {activeSort && !isFiltering && (
+                <S.FeatureImageFilterCloseWrapper onClick={reset}>
+                    <S.FeatureImageFilterClose />
+                </S.FeatureImageFilterCloseWrapper>
+            )}
+
+            {isFiltering &&
+                Object.entries(SORTS).map(([sortKey, { name }]) => {
+                    return (
+                        <S.FeatureImageFilterButton
+                            key={name}
+                            isActive={
+                                fieldActiveSelectLevel(sortKey) === 'Active'
+                            }
+                            isSelecting={
+                                fieldActiveSelectLevel(sortKey) === 'Inactive'
+                            }
+                            onClick={() => selectField(sortKey, name)}
+                        >
+                            {name}
+                        </S.FeatureImageFilterButton>
+                    );
+                })}
+
+            {isFiltering && activeDropdown && (
+                <S.FeatureImageSubFilters>
+                    {Object.values(activeDropdown.dropdown.options)
+                        .filter((options) => options.value)
+                        .sort((a, b) => a.value.localeCompare(b.value))
+                        .map(({ value, sort }) => {
+                            return (
+                                <S.FeatureImageFilterButton
+                                    key={value}
+                                    isActive={
+                                        optionActiveSelectLevel(value) ===
+                                        'Active'
+                                    }
+                                    isSelecting={
+                                        optionActiveSelectLevel(value) ===
+                                        'Inactive'
+                                    }
+                                    onClick={() => {
+                                        selectOption(value, sort);
+                                        setIsFiltering(false);
+                                    }}
+                                >
+                                    {value}
+                                </S.FeatureImageFilterButton>
+                            );
+                        })}
+                </S.FeatureImageSubFilters>
+            )}
+        </S.FeatureImageFilters>
+    );
 };
 
 export const FeatureImageFilterAbout = () => {
@@ -130,8 +209,7 @@ export const FeatureImageFilterAbout = () => {
     return (
         <S.FeatureImageFilterButton
             isActive={isMobilePopoverOpen}
-            onClick={(e) => {
-                e.stopPropagation();
+            onClick={() => {
                 setIsMobilePopoverOpen(
                     (isMobilePopoverOpen) => !isMobilePopoverOpen
                 );
@@ -145,15 +223,31 @@ export const FeatureImageFilterAbout = () => {
 export const FeatureImage = () => {
     const { setIsMobilePopoverOpen } = useMobilePopoverContext();
     const { hasInteracted } = useActiveHighriseContext();
+    const [isFiltering, setIsFiltering] = useState(false);
 
     return (
         <S.FeatureImageWrapper onClick={() => setIsMobilePopoverOpen(false)}>
-            <S.FeatureImageFilters>
-                <FeatureImageFilterButton />
-                <FeatureImageFilterAbout />
-            </S.FeatureImageFilters>
+            <S.FeatureImageActions
+                onClick={(e) => {
+                    e.stopPropagation();
+                }}
+            >
+                <FeatureImageFilterButton
+                    isFiltering={isFiltering}
+                    setIsFiltering={setIsFiltering}
+                />
+                {!isFiltering && <FeatureImageFilterAbout />}
+            </S.FeatureImageActions>
 
-            {hasInteracted ? <FeatureImageZoom /> : <FeatureImageRandomizer />}
+            {hasInteracted ? (
+                <FeatureImageZoom
+                    resetFiltering={() => setIsFiltering(false)}
+                />
+            ) : (
+                <FeatureImageRandomizer
+                    resetFiltering={() => setIsFiltering(false)}
+                />
+            )}
         </S.FeatureImageWrapper>
     );
 };

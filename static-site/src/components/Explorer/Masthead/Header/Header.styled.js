@@ -32,6 +32,7 @@ export const HeaderDouble = styled.div`
     text-transform: uppercase;
 
     font-size: ${(props) => props.theme.typography.fontSize.h2};
+    height: ${(props) => props.theme.typography.fontSize.h2};
 
     ${(props) => props.theme.breakpoints.small`
         font-size: ${props.theme.typography.fontSize.h1};

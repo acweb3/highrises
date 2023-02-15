@@ -7,30 +7,29 @@ import { Masthead } from 'components/Explorer/Masthead';
 import { Header } from 'components/Explorer/Masthead/Header';
 import { SortBar } from 'components/Explorer/SortBar';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
-import { useState } from 'react';
 
-const MobileExplorer = ({ activeSort }) => {
+const MobileExplorer = () => {
     return (
         <S.MobileExplorer>
             <S.MobileExplorerPopover>
-                <Header activeSort={activeSort} />
+                <Header />
                 <FeatureImage />
                 <Masthead />
             </S.MobileExplorerPopover>
 
-            <BuildingsExplorer activeSort={activeSort} />
+            <BuildingsExplorer />
         </S.MobileExplorer>
     );
 };
 
-const DesktopExplorer = ({ activeSort, setActiveSort }) => {
+const DesktopExplorer = () => {
     const { highrises } = useActiveHighriseContext();
 
     return (
         <S.DesktopExplorer>
             <S.DesktopExplorerSection>
                 <S.DesktopExplorerSideBar>
-                    <Masthead activeSort={activeSort} />
+                    <Masthead />
                     <MapExplorer />
                 </S.DesktopExplorerSideBar>
             </S.DesktopExplorerSection>
@@ -42,11 +41,8 @@ const DesktopExplorer = ({ activeSort, setActiveSort }) => {
             <S.DesktopExplorerSection>
                 {Boolean(highrises.length) && (
                     <S.DesktopExplorerBuildings>
-                        <BuildingsExplorer activeSort={activeSort} />
-                        <SortBar
-                            activeSort={activeSort}
-                            setActiveSort={setActiveSort}
-                        />
+                        <BuildingsExplorer />
+                        <SortBar />
                     </S.DesktopExplorerBuildings>
                 )}
             </S.DesktopExplorerSection>
@@ -56,25 +52,10 @@ const DesktopExplorer = ({ activeSort, setActiveSort }) => {
 
 export const Explorer = () => {
     const { isMobile } = useWindowSize();
-    const [activeSort, setActiveSort] = useState(undefined);
 
     if (isMobile === undefined) {
         return null;
     }
 
-    return (
-        <>
-            {isMobile ? (
-                <MobileExplorer
-                    activeSort={activeSort}
-                    setActiveSort={setActiveSort}
-                />
-            ) : (
-                <DesktopExplorer
-                    activeSort={activeSort}
-                    setActiveSort={setActiveSort}
-                />
-            )}
-        </>
-    );
+    return <>{isMobile ? <MobileExplorer /> : <DesktopExplorer />}</>;
 };

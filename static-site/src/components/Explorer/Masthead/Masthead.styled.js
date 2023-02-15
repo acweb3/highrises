@@ -72,6 +72,8 @@ export const MobileMastheadShadow = styled.div`
     position: relative;
     overflow: hidden;
 
+    border-radius: 16px 16px 0 0;
+
     &::before {
         z-index: 2;
         content: ' ';
@@ -111,13 +113,15 @@ export const MobileMasthead = styled.div`
     position: absolute;
     bottom: 0;
 
-    z-index: 2;
+    z-index: 4;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
 
     max-height: 75%;
+
+    box-shadow: ${(props) => props.theme.shadows.high};
 `;
 
 export const DesktopMastheadNav = styled.div`

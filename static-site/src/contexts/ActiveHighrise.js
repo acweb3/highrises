@@ -1,3 +1,4 @@
+import { useActiveSortContext } from 'contexts/ActiveSort';
 import { createContext, useContext, useEffect, useRef, useState } from 'react';
 
 export const ActiveHighriseContext = createContext({});
@@ -19,6 +20,7 @@ const useHasInteracted = (activeHighrise) => {
 };
 
 export const ActiveHighrise = ({ children, highrises: init }) => {
+    const { activeSort } = useActiveSortContext();
     const [highrises, setHighrises] = useState(init);
     const [activeHighrise, setActiveHighrise] = useState(init[0]);
     const [randomHighrise, setRandomHighrise] = useState(
@@ -42,6 +44,18 @@ export const ActiveHighrise = ({ children, highrises: init }) => {
             clearInterval(sti);
         };
     }, [highrises]);
+
+    useEffect(() => {
+        if (activeSort) {
+            const sortedHighrises = activeSort.sort([...initHighrises.current]);
+
+            setHighrises(sortedHighrises);
+            setActiveHighrise(sortedHighrises[0]);
+        } else if (initHighrises.current) {
+            setHighrises(initHighrises.current);
+            setActiveHighrise(initHighrises.current[0]);
+        }
+    }, [activeSort, setActiveHighrise, setHighrises, initHighrises]);
 
     return (
         <ActiveHighriseContext.Provider

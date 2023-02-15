@@ -4,11 +4,10 @@ import { useWindowSize } from 'common/hooks/useWindowSize';
 import { Building } from 'components/Explorer/BuildingsExplorer/Building';
 import * as S from 'components/Explorer/BuildingsExplorer/BuildingsExplorer.styled';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
-export const BuildingsExplorer = ({ activeSort }) => {
-    const { highrises, setActiveHighrise, setHighrises, initHighrises } =
-        useActiveHighriseContext();
+export const BuildingsExplorer = () => {
+    const { highrises } = useActiveHighriseContext();
 
     const { isMobile } = useWindowSize();
     const [didMouseEnter, setDidMouseEnter] = useState(false);
@@ -18,18 +17,6 @@ export const BuildingsExplorer = ({ activeSort }) => {
     const onInView = (index) => {
         setVisibleIndex((visibleIndex) => Math.max(visibleIndex, index + 5));
     };
-
-    useEffect(() => {
-        if (activeSort) {
-            const sortedHighrises = activeSort.sort([...initHighrises.current]);
-
-            setHighrises(sortedHighrises);
-            setActiveHighrise(sortedHighrises[0]);
-        } else if (initHighrises.current) {
-            setHighrises(initHighrises.current);
-            setActiveHighrise(initHighrises.current[0]);
-        }
-    }, [activeSort, setActiveHighrise, setHighrises, initHighrises]);
 
     return (
         <S.BuildingsExplorer>

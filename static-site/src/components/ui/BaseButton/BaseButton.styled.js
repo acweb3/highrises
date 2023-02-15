@@ -23,6 +23,8 @@ export const baseButtonCss = css`
     width: 100%;
     text-align: center;
 
+    white-space: nowrap;
+
     &:focus,
     &:hover {
         opacity: 0.8;

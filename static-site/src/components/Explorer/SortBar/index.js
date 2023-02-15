@@ -1,5 +1,6 @@
 import { highrises as highrisesData } from 'assets/data/highrises';
 import * as S from 'components/Explorer/SortBar/SortBar.styled';
+import { useActiveSortContext } from 'contexts/ActiveSort';
 import { useEffect, useState } from 'react';
 
 export const SORTS = {
@@ -66,9 +67,11 @@ export const SORTS = {
     },
 };
 
-export const SortBar = ({ activeSort, setActiveSort }) => {
-    const [activeDropdown, setActiveDropdown] = useState();
-    const [activeOption, setActiveOption] = useState();
+export const useSorts = () => {
+    const { activeSort, setActiveSort } = useActiveSortContext();
+    const [activeDropdown, setActiveDropdown] = useState(undefined);
+    const [activeOption, setActiveOption] = useState(undefined);
+
     const [isAnimated, setIsAnimated] = useState(false);
 
     useEffect(() => {
@@ -78,6 +81,69 @@ export const SortBar = ({ activeSort, setActiveSort }) => {
     useEffect(() => {
         setActiveOption(undefined);
     }, [activeDropdown]);
+
+    return {
+        activeSort,
+        activeOption,
+        activeDropdown,
+
+        fieldActiveSelectLevel: (sortKey) => {
+            if (activeDropdown === undefined) {
+                return 'NotSet';
+            }
+
+            return activeDropdown.sortKey === sortKey ? 'Active' : 'Inactive';
+        },
+        selectField: (sortKey, name) => {
+            setActiveDropdown(
+                activeDropdown?.sortKey !== sortKey
+                    ? {
+                          sortKey,
+                          dropdown: SORTS[sortKey],
+                          name,
+                      }
+                    : undefined
+            );
+        },
+
+        optionActiveSelectLevel: (value) => {
+            if (activeOption === undefined) {
+                return 'NotSet';
+            }
+
+            return activeOption === value ? 'Active' : 'Inactive';
+        },
+        selectOption: (value, sort) => {
+            setActiveOption(value);
+            setActiveSort({
+                sortKey: activeDropdown.sortKey,
+                sort,
+                sortName: activeDropdown.name,
+                sortValue: value,
+            });
+        },
+
+        reset: (isHard = true) => {
+            if (isHard) {
+                setActiveSort(undefined);
+            }
+
+            setActiveDropdown(undefined);
+            setActiveOption(undefined);
+        },
+    };
+};
+
+export const SortBar = () => {
+    const {
+        activeSort,
+        activeOption,
+        activeDropdown,
+        fieldActiveSelectLevel,
+        selectField,
+        optionActiveSelectLevel,
+        selectOption,
+    } = useSorts();
 
     return (
         <S.SortBar>
@@ -100,30 +166,12 @@ export const SortBar = ({ activeSort, setActiveSort }) => {
                     </S.SortBarLink>
                 )}
 
-                {Object.entries(SORTS).map(([sortKey, { name, sort }]) => {
+                {Object.entries(SORTS).map(([sortKey, { name }]) => {
                     return (
                         <S.SortBarPill
                             key={name}
-                            activeSelectLevel={(() => {
-                                if (activeDropdown === undefined) {
-                                    return 'NotSet';
-                                }
-
-                                return activeDropdown.sortKey === sortKey
-                                    ? 'Active'
-                                    : 'Inactive';
-                            })()}
-                            onClick={() => {
-                                setActiveDropdown(
-                                    activeDropdown?.sortKey !== sortKey
-                                        ? {
-                                              sortKey,
-                                              dropdown: SORTS[sortKey],
-                                              name,
-                                          }
-                                        : undefined
-                                );
-                            }}
+                            activeSelectLevel={fieldActiveSelectLevel(sortKey)}
+                            onClick={() => selectField(sortKey, name)}
                         >
                             {activeSort?.sortKey === sortKey && activeOption
                                 ? activeOption
@@ -145,24 +193,10 @@ export const SortBar = ({ activeSort, setActiveSort }) => {
                             return (
                                 <S.SortBarPill
                                     key={value}
-                                    activeSelectLevel={(() => {
-                                        if (activeOption === undefined) {
-                                            return 'NotSet';
-                                        }
-
-                                        return activeOption === value
-                                            ? 'Active'
-                                            : 'Inactive';
-                                    })()}
-                                    onClick={() => {
-                                        setActiveOption(value);
-                                        setActiveSort({
-                                            sortKey: activeDropdown.sortKey,
-                                            sort,
-                                            sortName: activeDropdown.name,
-                                            sortValue: value,
-                                        });
-                                    }}
+                                    activeSelectLevel={optionActiveSelectLevel(
+                                        value
+                                    )}
+                                    onClick={() => selectOption(value, sort)}
                                 >
                                     {value}
                                 </S.SortBarPill>
