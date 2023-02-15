@@ -1,3 +1,8 @@
+import {
+    featureAttribute,
+    featureCity,
+    featureStyle,
+} from 'assets/data/features';
 import { highrises as highrisesData } from 'assets/data/highrises';
 import * as S from 'components/Explorer/SortBar/SortBar.styled';
 import { useActiveSortContext } from 'contexts/ActiveSort';
@@ -7,7 +12,12 @@ export const SORTS = {
     city: {
         name: 'Featured Cities',
         options: highrisesData.reduce((acc, highrise) => {
-            if (acc[highrise?.city]) return acc;
+            if (acc[highrise?.city]) {
+                return acc;
+            }
+            if (!featureCity[highrise.city.toUpperCase()]) {
+                return acc;
+            }
 
             return {
                 ...acc,
@@ -24,6 +34,9 @@ export const SORTS = {
         name: 'Style',
         options: highrisesData.reduce((acc, highrise) => {
             if (acc[highrise?.style]) return acc;
+            if (!featureStyle[highrise.style.toUpperCase()]) {
+                return acc;
+            }
 
             return {
                 ...acc,
@@ -53,19 +66,23 @@ export const SORTS = {
                         .map((attribute) => attribute.value)
                 )
             ),
-        ].map((value) => ({
-            value,
-            sort: (highrises) => {
-                return highrises.filter((highrise) => {
-                    const attributes = highrise.attributes.map(
-                        (attribute) => attribute.value
-                    );
-                    return attributes.includes(value);
-                });
-            },
-        })),
+        ]
+            .filter((value) => featureAttribute[value.toUpperCase()])
+            .map((value) => ({
+                value,
+                sort: (highrises) => {
+                    return highrises.filter((highrise) => {
+                        const attributes = highrise.attributes.map(
+                            (attribute) => attribute.value
+                        );
+                        return attributes.includes(value);
+                    });
+                },
+            })),
     },
 };
+
+console.log({ SORTS });
 
 export const useSorts = () => {
     const { activeSort, setActiveSort } = useActiveSortContext();

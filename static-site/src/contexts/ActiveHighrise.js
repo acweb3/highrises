@@ -1,3 +1,4 @@
+import { featureCity, featureStyle } from 'assets/data/features';
 import { useActiveSortContext } from 'contexts/ActiveSort';
 import { createContext, useContext, useEffect, useRef, useState } from 'react';
 
@@ -28,6 +29,13 @@ export const ActiveHighrise = ({ children, highrises: init }) => {
     );
     const hasInteracted = useHasInteracted(activeHighrise);
     const initHighrises = useRef(init);
+    const [activeDescription, setActiveDescription] = useState(undefined);
+
+    useEffect(() => {
+        if (activeHighrise) {
+            setActiveDescription(undefined);
+        }
+    }, [activeHighrise]);
 
     useEffect(() => {
         setRandomHighrise(
@@ -49,6 +57,8 @@ export const ActiveHighrise = ({ children, highrises: init }) => {
         if (activeSort) {
             const sortedHighrises = activeSort.sort([...initHighrises.current]);
 
+            console.log(featureCity, featureStyle, activeSort);
+
             setHighrises(sortedHighrises);
             setActiveHighrise(sortedHighrises[0]);
         } else if (initHighrises.current) {
@@ -60,6 +70,7 @@ export const ActiveHighrise = ({ children, highrises: init }) => {
     return (
         <ActiveHighriseContext.Provider
             value={{
+                activeDescription,
                 hasInteracted,
                 randomHighrise,
                 activeHighrise,
