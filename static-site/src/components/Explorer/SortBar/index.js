@@ -80,9 +80,33 @@ export const SORTS = {
                 },
             })),
     },
-};
 
-console.log({ SORTS });
+    region: {
+        name: 'Region',
+        options: {
+            ['Northeast']: {
+                value: 'Northeast',
+                sort: (highrises) =>
+                    highrises.filter((highrise) => highrise.index < 50),
+            },
+
+            ['West']: {
+                value: 'West',
+                sort: (highrises) =>
+                    highrises.filter(
+                        (highrise) =>
+                            highrise.index >= 50 && highrise.index < 65
+                    ),
+            },
+
+            ['Midwest']: {
+                value: 'Midwest',
+                sort: (highrises) =>
+                    highrises.filter((highrise) => highrise.index >= 65),
+            },
+        },
+    },
+};
 
 export const useSorts = () => {
     const { activeSort, setActiveSort } = useActiveSortContext();
