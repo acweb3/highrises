@@ -80,8 +80,12 @@ const useZoomWidth = () => {
 
 const FeatureImageZoom = ({ resetFiltering }) => {
     const { activeHighrise } = useActiveHighriseContext();
+    const { isMobile } = useWindowSize();
     const openseaDragonRef = useRef();
     const { width } = useZoomWidth();
+
+    const [isShowInstructions, setIsShowInstructions] = useState(true);
+    const [isShowNumber, setIsShowNumber] = useState(true);
 
     useEffect(() => {
         if (!openseaDragonRef.current) {
@@ -107,11 +111,38 @@ const FeatureImageZoom = ({ resetFiltering }) => {
         }
     }, [activeHighrise]);
 
+    useEffect(() => {
+        const sto = setTimeout(() => {
+            setIsShowInstructions(false);
+        }, 8000);
+
+        return () => {
+            clearTimeout(sto);
+        };
+    }, []);
+
+    useEffect(() => {
+        setIsShowNumber(true);
+
+        const sto = setTimeout(() => {
+            setIsShowNumber(false);
+        }, 12000);
+
+        return () => {
+            clearTimeout(sto);
+        };
+    }, [activeHighrise]);
+
     return (
         <S.FeatureImageZoomWrapper onClick={resetFiltering}>
-            <S.FeatureImageBadge>
+            <S.FeatureImageBadge isShowing={isShowNumber}>
                 {activeHighrise.index + 1}
             </S.FeatureImageBadge>
+
+            <S.FeatureImageInstructions isShowing={isShowInstructions}>
+                <S.FeatureImageInstructionsPinch />
+                {isMobile ? 'Pinch to zoom' : 'Scroll to zoom'}
+            </S.FeatureImageInstructions>
 
             <S.FeatureImageZoom
                 id="openseaDragon"
@@ -209,7 +240,9 @@ export const FeatureImageFilterAbout = () => {
     return (
         <S.FeatureImageFilterButton
             isActive={isMobilePopoverOpen}
-            onClick={() => {
+            onClick={(e) => {
+                e.stopPropagation();
+
                 setIsMobilePopoverOpen(
                     (isMobilePopoverOpen) => !isMobilePopoverOpen
                 );
@@ -221,17 +254,20 @@ export const FeatureImageFilterAbout = () => {
 };
 
 export const FeatureImage = () => {
-    const { setIsMobilePopoverOpen } = useMobilePopoverContext();
+    const { isMobilePopoverOpen, setIsMobilePopoverOpen } =
+        useMobilePopoverContext();
     const { hasInteracted } = useActiveHighriseContext();
     const [isFiltering, setIsFiltering] = useState(false);
 
+    useEffect(() => {
+        if (isMobilePopoverOpen) {
+            setIsFiltering(false);
+        }
+    }, [isMobilePopoverOpen]);
+
     return (
         <S.FeatureImageWrapper onClick={() => setIsMobilePopoverOpen(false)}>
-            <S.FeatureImageActions
-                onClick={(e) => {
-                    e.stopPropagation();
-                }}
-            >
+            <S.FeatureImageActions>
                 <FeatureImageFilterButton
                     isFiltering={isFiltering}
                     setIsFiltering={setIsFiltering}

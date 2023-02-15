@@ -1,3 +1,4 @@
+import gridSrc from 'assets/images/blue-graph-paper.jpg';
 import styled from 'styled-components';
 
 export const BuildingsExplorerHeader = styled.div`
@@ -63,6 +64,8 @@ export const BuildingsExplorer = styled.div`
     display: flex;
 
     border-top: 2px solid ${(props) => props.theme.colors.white[0]};
+
+    background-image: url(${gridSrc});
 
     ${(props) => props.theme.breakpoints.small`
         overflow-x: hidden;

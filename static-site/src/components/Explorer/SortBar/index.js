@@ -95,15 +95,16 @@ export const useSorts = () => {
             return activeDropdown.sortKey === sortKey ? 'Active' : 'Inactive';
         },
         selectField: (sortKey, name) => {
-            setActiveDropdown(
-                activeDropdown?.sortKey !== sortKey
-                    ? {
-                          sortKey,
-                          dropdown: SORTS[sortKey],
-                          name,
-                      }
-                    : undefined
-            );
+            if (activeDropdown?.sortKey === sortKey) {
+                setActiveDropdown(undefined);
+                setActiveSort(undefined);
+            } else {
+                setActiveDropdown({
+                    sortKey,
+                    dropdown: SORTS[sortKey],
+                    name,
+                });
+            }
         },
 
         optionActiveSelectLevel: (value) => {

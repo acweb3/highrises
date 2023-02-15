@@ -20,9 +20,9 @@ export const Collectibles = forwardRef(({ isHeaderShowing = true }, ref) => {
             <S.CollectiblesGrid>
                 {activeHighrise.products
                     .filter((product) => product.productLink)
-                    .map((product) => (
+                    .map((product, index) => (
                         <S.Collectible
-                            key={product.blurSrc}
+                            key={`${activeHighrise.name}--${index}`}
                             href={product.productLink}
                             rel="noopener noreferrer"
                             target="_blank"

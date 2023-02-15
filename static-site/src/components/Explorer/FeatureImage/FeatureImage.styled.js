@@ -1,8 +1,59 @@
 import UnstyledClose from 'assets/icons/close.svg';
+import UnstyledPinch from 'assets/icons/pinch.svg';
 import { BuildingBadge } from 'components/BuildingBadge/BuildingBadge.styled';
 import { BaseButton } from 'components/ui/BaseButton';
 import { BlurLoader } from 'components/ui/BlurLoader';
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
+
+const pulse = keyframes`{
+    0% { transform: scale(1)}
+    20% { transform: scale(1.2)}
+    100% { transform: scale(1)}
+  }`;
+
+export const FeatureImageInstructionsPinch = styled(UnstyledPinch)`
+    width: 32px;
+    height: 32px;
+`;
+
+export const isShowingCss = css`
+    opacity: 0;
+    transition: opacity 400ms;
+
+    ${(props) =>
+        props.isShowing &&
+        css`
+            opacity: 1;
+        `}
+`;
+
+export const FeatureImageInstructions = styled.div`
+    position: absolute;
+    bottom: 48px;
+    left: 32px;
+
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    line-height: 1;
+
+    z-index: 3;
+    background-color: ${(props) => props.theme.colors.blue[0]};
+    color: ${(props) => props.theme.colors.white[0]};
+
+    box-shadow: ${(props) => props.theme.shadows.high};
+
+    animation: ${pulse} 3s linear infinite;
+
+    ${isShowingCss}
+`;
 
 export const FeatureImageFilterClose = styled(UnstyledClose)`
     & polygon {
@@ -88,6 +139,10 @@ export const FeatureImageActions = styled.div`
 `;
 
 export const FeatureImageBadge = styled(BuildingBadge)`
+    box-shadow: ${(props) => props.theme.shadows.medium};
+
+    ${isShowingCss}
+
     ${(props) => props.theme.breakpoints.small`
         display: none;
     `}

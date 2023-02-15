@@ -37,6 +37,7 @@ export const HeaderDouble = styled.div`
     ${(props) => props.theme.breakpoints.small`
         font-size: ${props.theme.typography.fontSize.h1};
         margin-bottom: 16px;
+        height: initial;
     `}
 `;
 
