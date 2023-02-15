@@ -1,6 +1,10 @@
 const { highrises } = require('./src/assets/data/highrises');
 const kebabCase = require('just-kebab-case');
 
+const getIndex = (highrise) => {
+    return parseInt(highrise.highriseNumber.replace('Highrise #', '')) - 1;
+};
+
 exports.createPages = async function ({ actions, graphql }) {
     const {
         data: {
@@ -64,6 +68,7 @@ exports.createPages = async function ({ actions, graphql }) {
         }, {});
 
     const highrisesWithImages = highrises
+        .sort((a, b) => getIndex(a) - getIndex(b))
         .map(({ products, ...highrise }, index) => {
             const irlProducts = [
                 // Poster
@@ -117,7 +122,7 @@ exports.createPages = async function ({ actions, graphql }) {
                     })) || [],
             };
         })
-        .sort((a, b) => b.highriseNumber.localeCompare(a.highriseNumber));
+        .sort((b, a) => getIndex(a) - getIndex(b));
 
     // # TODO => Create a bunch of Index pages with this metadata
     // highrisesWithImages.forEach((highrise) => {
