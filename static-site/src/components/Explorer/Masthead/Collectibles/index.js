@@ -3,14 +3,16 @@ import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
 import { StaticImage } from 'gatsby-plugin-image';
 import { forwardRef } from 'react';
 
-export const Collectibles = forwardRef((_, ref) => {
+export const Collectibles = forwardRef(({ isHeaderShowing = true }, ref) => {
     const { activeHighrise } = useActiveHighriseContext();
 
     return (
         <S.Collectibles ref={ref}>
-            <S.CollectiblesHeader>Collectibles</S.CollectiblesHeader>
+            <S.CollectiblesHeader isHeaderShowing={isHeaderShowing}>
+                Collectibles
+            </S.CollectiblesHeader>
 
-            <S.CollectiblesCopy>
+            <S.CollectiblesCopy isHeaderShowing={isHeaderShowing}>
                 Explore products featuring this Highrise including graphic
                 prints, phone wallpapers and NFTs!
             </S.CollectiblesCopy>

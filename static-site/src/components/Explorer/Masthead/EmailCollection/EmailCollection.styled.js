@@ -45,7 +45,7 @@ export const EmailOutreach = styled.a`
 export const EmailCollectionHeader = styled.div`
     font-family: ${(props) => props.theme.typography.fontFamily.rc.basicFull};
     font-size: ${(props) => props.theme.typography.fontSize.h3};
-    height: ${(props) => props.theme.typography.fontSize.h3};
+
     text-align: center;
 `;
 
@@ -75,9 +75,17 @@ export const EmailCollectionContent = styled.div`
 
 export const Paragraph = styled.div`
     text-indent: 1rem;
-    margin-top: 32px;
+    margin-top: 16px;
+
+    ${(props) => props.theme.breakpoints.small`
+        margin-top: 32px;
+    `}
 `;
 
 export const EmailCollection = styled.div`
-    padding: 72px 0 32px;
+    padding: 48px 0 32px;
+
+    ${(props) => props.theme.breakpoints.small`
+        padding: 72px 0 32px;
+    `}
 `;

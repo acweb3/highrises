@@ -9,65 +9,84 @@ import { Story } from 'components/Explorer/Masthead/Story';
 import { Traits } from 'components/Explorer/Masthead/Traits';
 import { BaseButton } from 'components/ui/BaseButton';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
+import { useMobilePopoverContext } from 'contexts/MobilePopover';
 import { useEffect, useRef, useState } from 'react';
 
 const MobileMasthead = () => {
+    const mastheadRef = useRef();
     const { activeHighrise } = useActiveHighriseContext();
-    const [isMastheadShowing, setIsMastheadShowing] = useState(false);
+    const { isMobilePopoverOpen, setIsMobilePopoverOpen } =
+        useMobilePopoverContext();
     const [isCollectiblesShowing, setIsCollectiblesShowing] = useState(false);
+
+    useEffect(() => {
+        mastheadRef.current?.scrollTo(0, 0);
+    }, [activeHighrise]);
 
     return (
         <S.MobileMasthead>
             <S.MobileReadMore
                 onClick={() =>
-                    setIsMastheadShowing(
-                        (isMastheadShowing) => !isMastheadShowing
+                    setIsMobilePopoverOpen(
+                        (isMobilePopoverOpen) => !isMobilePopoverOpen
                     )
                 }
             >
-                Read More
+                {isMobilePopoverOpen ? 'Show Less' : 'Read More'}
             </S.MobileReadMore>
 
-            <S.MobileMastheadContent isMastheadShowing={isMastheadShowing}>
-                <S.MobileMastheadSection>
-                    <BuildingName />
-                </S.MobileMastheadSection>
+            <S.MobileMastheadShadow>
+                <S.MobileMastheadContent
+                    ref={mastheadRef}
+                    isMobilePopoverOpen={isMobilePopoverOpen}
+                >
+                    <S.MobileMastheadSection>
+                        <BuildingName />
+                    </S.MobileMastheadSection>
 
-                <S.MobileMastheadSection>
-                    <S.MobileMastheadNav>
-                        <BaseButton
-                            onClick={() => {
-                                setIsCollectiblesShowing(false);
-                            }}
-                        >
-                            About
-                        </BaseButton>
+                    <S.MobileMastheadSection>
+                        <S.MobileMastheadNav>
+                            <S.MobileMastheadButton
+                                isActive={!isCollectiblesShowing}
+                                onClick={() => {
+                                    setIsCollectiblesShowing(false);
+                                }}
+                            >
+                                About
+                            </S.MobileMastheadButton>
 
-                        <BaseButton
-                            onClick={() => {
-                                setIsCollectiblesShowing(true);
-                            }}
-                        >
-                            Collectibles
-                        </BaseButton>
-                    </S.MobileMastheadNav>
-                </S.MobileMastheadSection>
+                            <S.MobileMastheadButton
+                                isActive={isCollectiblesShowing}
+                                onClick={() => {
+                                    setIsCollectiblesShowing(true);
+                                }}
+                            >
+                                Collectibles
+                            </S.MobileMastheadButton>
+                        </S.MobileMastheadNav>
+                    </S.MobileMastheadSection>
 
-                <S.MobileMastheadSection>
                     {isCollectiblesShowing ? (
-                        <Collectibles />
+                        <Collectibles isHeaderShowing={false} />
                     ) : (
                         <>
-                            <Story isModal activeHighrise={activeHighrise} />
-                            <Traits activeHighrise={activeHighrise} />
+                            <S.MobileMastheadSection>
+                                <Story
+                                    isModal
+                                    activeHighrise={activeHighrise}
+                                />
+                                <Traits activeHighrise={activeHighrise} />
+                            </S.MobileMastheadSection>
+
+                            <Collectibles />
+
+                            <S.MobileMastheadSection>
+                                <EmailCollection />
+                            </S.MobileMastheadSection>
                         </>
                     )}
-                </S.MobileMastheadSection>
-
-                <S.MobileMastheadSection>
-                    <EmailCollection />
-                </S.MobileMastheadSection>
-            </S.MobileMastheadContent>
+                </S.MobileMastheadContent>
+            </S.MobileMastheadShadow>
         </S.MobileMasthead>
     );
 };
@@ -92,13 +111,7 @@ const DesktopMasthead = ({ activeSort }) => {
                 <Header activeSort={activeSort} />
                 <BuildingName />
 
-                <div
-                    css={`
-                        display: flex;
-                        justify-content: center;
-                        padding: 16px 0 32px;
-                    `}
-                >
+                <S.DesktopMastheadNav>
                     <BaseButton
                         onClick={() => {
                             collectiblesRef.current.scrollIntoView({
@@ -109,7 +122,7 @@ const DesktopMasthead = ({ activeSort }) => {
                     >
                         Collectibles
                     </BaseButton>
-                </div>
+                </S.DesktopMastheadNav>
 
                 <Story isModal activeHighrise={activeHighrise} />
                 <Traits activeHighrise={activeHighrise} />

@@ -1,7 +1,36 @@
+import { BaseButton } from 'components/ui/BaseButton';
 import styled, { css } from 'styled-components';
+
+export const MobileMastheadButton = styled(BaseButton)`
+    width: min-content;
+    padding: 4px 16px;
+
+    opacity: 0.6;
+
+    &:focus,
+    &:hover {
+        opacity: 1;
+    }
+
+    ${(props) =>
+        props.isActive &&
+        css`
+            opacity: 1;
+        `}
+`;
 
 export const MobileMastheadNav = styled.div`
     display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 16px 0 32px;
+
+    & * {
+        &:first-of-type {
+            margin-right: 8px;
+        }
+    }
 `;
 
 export const MobileMastheadSection = styled.div`
@@ -9,13 +38,14 @@ export const MobileMastheadSection = styled.div`
 `;
 
 export const MobileReadMore = styled.div`
+    color: ${(props) => props.theme.colors.grey[0]};
     background: ${(props) => props.theme.colors.white[0]};
-    padding: 4px 12px;
+    padding: 0 12px;
     border-radius: 8px 8px 0 0;
     width: min-content;
     white-space: nowrap;
 
-    margin: 0 auto;
+    margin: 0 auto -2px;
 `;
 
 export const MobileMastheadContent = styled.div`
@@ -25,14 +55,56 @@ export const MobileMastheadContent = styled.div`
     background: ${(props) => props.theme.colors.white[0]};
     color: ${(props) => props.theme.colors.blue[0]};
 
+    transition: max-height 600ms;
+
     ${(props) =>
-        props.isMastheadShowing &&
+        props.isMobilePopoverOpen &&
         css`
-            max-height: 75%;
+            height: 75%;
+            max-height: 500px;
             padding: 16px 0 32px;
             overflow-x: hidden;
             overflow-y: scroll;
         `}
+`;
+
+export const MobileMastheadShadow = styled.div`
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        z-index: 2;
+        content: ' ';
+        position: absolute;
+        top: -2px;
+        left: 0;
+        width: 100%;
+        height: 16px;
+        background: linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.8) 0%,
+            rgba(255, 255, 255, 0.8) 20%,
+            rgba(255, 255, 255, 0.6) 40%,
+            rgba(255, 255, 255, 0) 100%
+        );
+    }
+
+    &::after {
+        z-index: 2;
+        content: ' ';
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        width: 100%;
+        height: 16px;
+        background: linear-gradient(
+            0deg,
+            rgba(255, 255, 255, 0.8) 0%,
+            rgba(255, 255, 255, 0.8) 20%,
+            rgba(255, 255, 255, 0.6) 40%,
+            rgba(255, 255, 255, 0) 100%
+        );
+    }
 `;
 
 export const MobileMasthead = styled.div`
@@ -46,6 +118,12 @@ export const MobileMasthead = styled.div`
     justify-content: center;
 
     max-height: 75%;
+`;
+
+export const DesktopMastheadNav = styled.div`
+    display: flex;
+    justify-content: center;
+    padding: 16px 0 32px;
 `;
 
 export const DesktopMastheadScrollMore = styled.div`

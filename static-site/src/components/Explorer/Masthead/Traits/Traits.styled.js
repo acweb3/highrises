@@ -24,15 +24,13 @@ export const Trait = styled.div`
 `;
 
 export const Traits = styled.div`
-    margin-top: 32px;
-
     flex: 1;
     min-width: 100%;
 
-    margin-bottom: 32px;
+    margin: 32px 0 48px;
 
-    ${(props) => props.theme.breakpoints.mobile`
+    ${(props) => props.theme.breakpoints.small`
         min-width: auto;
-        margin-bottom: 0;
+        margin: 32px 0;
     `}
 `;

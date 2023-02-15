@@ -3,8 +3,6 @@ import { createContext, useContext, useEffect, useRef, useState } from 'react';
 export const ActiveHighriseContext = createContext({});
 export const useActiveHighriseContext = () => useContext(ActiveHighriseContext);
 
-const ACTIVE_HIGHRISE_LOCAL_STORAGE_KEY = 'ACTIVE_HIGHRISE_LOCAL_STORAGE_KEY';
-
 const useHasInteracted = (activeHighrise) => {
     const isInitRef = useRef(false);
     const [hasInteracted, setHasInteracted] = useState(false);
@@ -28,15 +26,6 @@ export const ActiveHighrise = ({ children, highrises: init }) => {
     );
     const hasInteracted = useHasInteracted(activeHighrise);
     const initHighrises = useRef(init);
-
-    useEffect(() => {
-        if (activeHighrise) {
-            localStorage.setItem(
-                ACTIVE_HIGHRISE_LOCAL_STORAGE_KEY,
-                activeHighrise.index
-            );
-        }
-    }, [activeHighrise]);
 
     useEffect(() => {
         setRandomHighrise(

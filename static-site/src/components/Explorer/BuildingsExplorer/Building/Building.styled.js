@@ -1,5 +1,15 @@
+import { BuildingBadge } from 'components/BuildingBadge/BuildingBadge.styled';
 import { BlurLoader } from 'components/ui/BlurLoader';
 import styled, { css } from 'styled-components';
+
+// lol
+export const BuildingBuildingBadge = styled(BuildingBadge)`
+    display: none;
+
+    ${(props) => props.theme.breakpoints.small`
+        display: flex;
+    `}
+`;
 
 export const BuildingImage = styled(BlurLoader)`
     & > img {
@@ -12,28 +22,6 @@ export const BuildingImage = styled(BlurLoader)`
             height: initial;
             width: initial;
         }
-    `}
-`;
-
-export const BuildingBadge = styled.div`
-    position: absolute;
-    z-index: 1;
-
-    background-color: ${(props) => props.theme.colors.blue[1]};
-    border-radius: 50%;
-    height: 20px;
-    width: 20px;
-
-    font-size: small;
-
-    text-align: center;
-    margin-left: 10px;
-    bottom: 10px;
-
-    display: none;
-
-    ${(props) => props.theme.breakpoints.small`
-        display: block;
     `}
 `;
 

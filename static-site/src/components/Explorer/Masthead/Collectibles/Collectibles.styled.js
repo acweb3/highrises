@@ -1,5 +1,5 @@
 import { BlurLoader } from 'components/ui/BlurLoader';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const CollectibleImage = styled(BlurLoader)``;
 
@@ -36,29 +36,34 @@ export const CollectiblesGrid = styled.div`
 `;
 
 export const CollectiblesCopy = styled.div`
-    margin-top: 32px;
+    margin-top: 16px;
+    padding: 0 32px 32px;
 
-    padding: 0 0 32px;
+    ${(props) =>
+        props.isHeaderShowing &&
+        css`
+            text-indent: 1rem;
+        `}
 
     ${(props) => props.theme.breakpoints.small`
-        padding: 0 32px 32px;
-        text-indent: 1rem;
+        margin-top: 32px;
     `}
 `;
 
 export const CollectiblesHeader = styled.div`
     font-family: ${(props) => props.theme.typography.fontFamily.rc.basicFull};
     font-size: ${(props) => props.theme.typography.fontSize.h3};
-    height: ${(props) => props.theme.typography.fontSize.h3};
     text-align: center;
 
     padding: 0 32px;
 
     display: none;
 
-    ${(props) => props.theme.breakpoints.small`
-        display: block;
-    `}
+    ${(props) =>
+        props.isHeaderShowing &&
+        css`
+            display: block;
+        `}
 `;
 
 export const Collectibles = styled.div`

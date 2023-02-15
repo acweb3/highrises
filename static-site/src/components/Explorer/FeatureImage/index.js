@@ -2,6 +2,7 @@ import { useWindowListener } from 'common/hooks/useWindowListener';
 import { useWindowSize } from 'common/hooks/useWindowSize';
 import * as S from 'components/Explorer/FeatureImage/FeatureImage.styled';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
+import { useMobilePopoverContext } from 'contexts/MobilePopover';
 import { useEffect, useRef, useState } from 'react';
 
 const useLastFeatureImage = (highrise) => {
@@ -104,6 +105,10 @@ const FeatureImageZoom = () => {
 
     return (
         <S.FeatureImageZoomWrapper>
+            <S.FeatureImageBadge>
+                {activeHighrise.index + 1}
+            </S.FeatureImageBadge>
+
             <S.FeatureImageZoom
                 id="openseaDragon"
                 style={{
@@ -114,11 +119,40 @@ const FeatureImageZoom = () => {
     );
 };
 
+export const FeatureImageFilterButton = () => {
+    return <S.FeatureImageFilterButton>Filter</S.FeatureImageFilterButton>;
+};
+
+export const FeatureImageFilterAbout = () => {
+    const { isMobilePopoverOpen, setIsMobilePopoverOpen } =
+        useMobilePopoverContext();
+
+    return (
+        <S.FeatureImageFilterButton
+            isActive={isMobilePopoverOpen}
+            onClick={(e) => {
+                e.stopPropagation();
+                setIsMobilePopoverOpen(
+                    (isMobilePopoverOpen) => !isMobilePopoverOpen
+                );
+            }}
+        >
+            About
+        </S.FeatureImageFilterButton>
+    );
+};
+
 export const FeatureImage = () => {
+    const { setIsMobilePopoverOpen } = useMobilePopoverContext();
     const { hasInteracted } = useActiveHighriseContext();
 
     return (
-        <S.FeatureImageWrapper>
+        <S.FeatureImageWrapper onClick={() => setIsMobilePopoverOpen(false)}>
+            <S.FeatureImageFilters>
+                <FeatureImageFilterButton />
+                <FeatureImageFilterAbout />
+            </S.FeatureImageFilters>
+
             {hasInteracted ? <FeatureImageZoom /> : <FeatureImageRandomizer />}
         </S.FeatureImageWrapper>
     );

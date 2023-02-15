@@ -10,6 +10,8 @@ export const BuildingNameHeader = styled.div`
     text-align: center;
     width: 100%;
 
+    line-height: 1;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,12 +21,20 @@ export const BuildingNameHeader = styled.div`
     font-family: ${(props) => props.theme.typography.fontFamily.rc.basicFull};
     font-size: ${(props) => props.theme.typography.fontSize.h3};
 
-    margin-bottom: 8px;
+    margin-bottom: 16px;
+
+    ${(props) => props.theme.breakpoints.small`
+        margin-bottom: 8px;
+    `}
 `;
 
 export const BuildingName = styled.div`
     display: flex;
     flex-direction: column;
 
-    padding: 0 0 8px;
+    padding: 32px 0 8px;
+
+    ${(props) => props.theme.breakpoints.small`
+        padding: 0 0 8px;
+    `}
 `;

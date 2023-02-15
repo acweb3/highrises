@@ -1,6 +1,10 @@
 import gridSrc from 'assets/images/blue-graph-paper.jpg';
 import styled from 'styled-components';
 
+export const MobileExplorerPopover = styled.div`
+    position: relative;
+`;
+
 export const MobileExplorer = styled.div`
     display: flex;
     flex-direction: column;

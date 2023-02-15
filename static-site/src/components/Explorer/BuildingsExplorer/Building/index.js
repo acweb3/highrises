@@ -23,7 +23,9 @@ export const Building = ({ building, onInView }) => {
             }}
         >
             <S.BuildingAspectRatio>
-                <S.BuildingBadge>{building.index + 1}</S.BuildingBadge>
+                <S.BuildingBuildingBadge>
+                    {building.index + 1}
+                </S.BuildingBuildingBadge>
                 <S.BuildingImage
                     alt={`building ${building.index + 1}`}
                     src={building.nftSrc}

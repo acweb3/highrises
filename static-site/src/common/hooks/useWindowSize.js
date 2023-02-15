@@ -27,7 +27,7 @@ const getWindowDimensions = () => ({
 });
 
 export const useWindowSize = () => {
-    const [windowSize, setWindowSize] = useState(getWindowDimensions());
+    const [windowSize, setWindowSize] = useState(undefined);
     const [debouncedWindowSize] = useDebounce(windowSize, 400);
 
     useEffect(() => {
@@ -44,6 +44,7 @@ export const useWindowSize = () => {
 
     return {
         isMobile:
+            debouncedWindowSize &&
             getWindowSize(debouncedWindowSize.width) <= breakpointsMap.small,
     };
 };

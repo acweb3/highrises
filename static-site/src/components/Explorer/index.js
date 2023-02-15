@@ -10,19 +10,14 @@ import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
 import { useState } from 'react';
 
 const MobileExplorer = ({ activeSort }) => {
-    const { highrises } = useActiveHighriseContext();
-
     return (
         <S.MobileExplorer>
-            <div
-                css={`
-                    position: relative;
-                `}
-            >
+            <S.MobileExplorerPopover>
                 <Header activeSort={activeSort} />
                 <FeatureImage />
                 <Masthead />
-            </div>
+            </S.MobileExplorerPopover>
+
             <BuildingsExplorer activeSort={activeSort} />
         </S.MobileExplorer>
     );
