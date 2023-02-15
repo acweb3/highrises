@@ -2,6 +2,8 @@ import { featureCity, featureStyle } from 'assets/data/features';
 import { useActiveSortContext } from 'contexts/ActiveSort';
 import { createContext, useContext, useEffect, useRef, useState } from 'react';
 
+const features = { ...featureCity, ...featureStyle };
+
 export const ActiveHighriseContext = createContext({});
 export const useActiveHighriseContext = () => useContext(ActiveHighriseContext);
 
@@ -56,14 +58,27 @@ export const ActiveHighrise = ({ children, highrises: init }) => {
     useEffect(() => {
         if (activeSort) {
             const sortedHighrises = activeSort.sort([...initHighrises.current]);
-
-            console.log(featureCity, featureStyle, activeSort);
-
             setHighrises(sortedHighrises);
-            setActiveHighrise(sortedHighrises[0]);
+
+            const copy = features[activeSort.sortValue.toUpperCase()];
+
+            if (copy) {
+                setActiveDescription({
+                    header: activeSort.sortValue,
+                    copy,
+                });
+                setActiveHighrise(undefined);
+            } else {
+                setActiveDescription(undefined);
+                setActiveHighrise(sortedHighrises[0]);
+            }
         } else if (initHighrises.current) {
             setHighrises(initHighrises.current);
-            setActiveHighrise(initHighrises.current[0]);
+            setActiveHighrise(undefined);
+            setActiveDescription({
+                header: 'About',
+                copy: `The prosperity of early 20th century America resulted in a boom of skyscrapers that still tower over cities across the country today. Focusing on the character and craftsmanship on display at the top of these landmark buildings in a way that can’t be seen from street level, the Highrises Collection reveals fascinating details and stories of these distinctly American icons.`,
+            });
         }
     }, [activeSort, setActiveHighrise, setHighrises, initHighrises]);
 

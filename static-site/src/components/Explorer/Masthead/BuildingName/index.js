@@ -3,15 +3,19 @@ import * as S from 'components/Explorer/Masthead/BuildingName/BuildingName.style
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
 
 export const BuildingName = () => {
-    const { activeHighrise } = useActiveHighriseContext();
+    const { activeHighrise, activeDescription } = useActiveHighriseContext();
 
     return (
         <S.BuildingName>
-            <S.BuildingNameHeader>{activeHighrise.name}</S.BuildingNameHeader>
-            <S.BuildingNameLocation>
-                #{getIndex(activeHighrise) + 1} — {activeHighrise.city},{' '}
-                {activeHighrise.state}
-            </S.BuildingNameLocation>
+            <S.BuildingNameHeader>
+                {activeDescription?.header ?? activeHighrise.name}
+            </S.BuildingNameHeader>
+            {activeHighrise && (
+                <S.BuildingNameLocation>
+                    #{getIndex(activeHighrise) + 1} — {activeHighrise.city},{' '}
+                    {activeHighrise.state}
+                </S.BuildingNameLocation>
+            )}
         </S.BuildingName>
     );
 };

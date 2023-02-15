@@ -256,7 +256,7 @@ export const FeatureImageFilterAbout = () => {
 export const FeatureImage = () => {
     const { isMobilePopoverOpen, setIsMobilePopoverOpen } =
         useMobilePopoverContext();
-    const { hasInteracted } = useActiveHighriseContext();
+    const { activeHighrise, hasInteracted } = useActiveHighriseContext();
     const [isFiltering, setIsFiltering] = useState(false);
 
     useEffect(() => {
@@ -275,7 +275,7 @@ export const FeatureImage = () => {
                 {!isFiltering && <FeatureImageFilterAbout />}
             </S.FeatureImageActions>
 
-            {hasInteracted ? (
+            {hasInteracted && activeHighrise ? (
                 <FeatureImageZoom
                     resetFiltering={() => setIsFiltering(false)}
                 />
