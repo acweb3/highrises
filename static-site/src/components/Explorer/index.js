@@ -1,4 +1,3 @@
-import { useWindowSize } from 'common/hooks/useWindowSize';
 import { BuildingsExplorer } from 'components/Explorer/BuildingsExplorer';
 import * as S from 'components/Explorer/Explorer.styled';
 import { FeatureImage } from 'components/Explorer/FeatureImage';
@@ -7,6 +6,7 @@ import { Masthead } from 'components/Explorer/Masthead';
 import { Header } from 'components/Explorer/Masthead/Header';
 import { SortBar } from 'components/Explorer/SortBar';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
+import { useWindowSizeContext } from 'contexts/WindowSize';
 
 const MobileExplorer = () => {
     return (
@@ -51,7 +51,7 @@ const DesktopExplorer = () => {
 };
 
 export const Explorer = () => {
-    const { isMobile } = useWindowSize();
+    const { isMobile } = useWindowSizeContext();
 
     if (isMobile === undefined) {
         return null;

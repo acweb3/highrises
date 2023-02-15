@@ -1,15 +1,15 @@
 import { getBuildingURL } from 'common/helpers';
 import { useDelayed } from 'common/hooks/useDelayed';
-import { useWindowSize } from 'common/hooks/useWindowSize';
 import { Building } from 'components/Explorer/BuildingsExplorer/Building';
 import * as S from 'components/Explorer/BuildingsExplorer/BuildingsExplorer.styled';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
+import { useWindowSizeContext } from 'contexts/WindowSize';
 import { useState } from 'react';
 
 export const BuildingsExplorer = () => {
     const { highrises } = useActiveHighriseContext();
 
-    const { isMobile } = useWindowSize();
+    const { isMobile } = useWindowSizeContext();
     const [didMouseEnter, setDidMouseEnter] = useState(false);
     const delayedDidMouseEnter = useDelayed(didMouseEnter, 400);
 

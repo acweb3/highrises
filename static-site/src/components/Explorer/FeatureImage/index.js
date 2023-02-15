@@ -1,9 +1,9 @@
 import { useWindowListener } from 'common/hooks/useWindowListener';
-import { useWindowSize } from 'common/hooks/useWindowSize';
 import * as S from 'components/Explorer/FeatureImage/FeatureImage.styled';
 import { SORTS, useSorts } from 'components/Explorer/SortBar';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
 import { useMobilePopoverContext } from 'contexts/MobilePopover';
+import { useWindowSizeContext } from 'contexts/WindowSize';
 import { useEffect, useRef, useState } from 'react';
 
 const useLastFeatureImage = (highrise) => {
@@ -61,7 +61,7 @@ const FeatureImageRandomizer = ({ resetFiltering }) => {
 
 const useZoomWidth = () => {
     const [width, setWidth] = useState(0);
-    const { isMobile } = useWindowSize();
+    const { isMobile } = useWindowSizeContext();
 
     useEffect(() => {
         setWidth((window.innerHeight * 2) / 3);
@@ -80,7 +80,7 @@ const useZoomWidth = () => {
 
 const FeatureImageZoom = ({ resetFiltering }) => {
     const { activeHighrise } = useActiveHighriseContext();
-    const { isMobile } = useWindowSize();
+    const { isMobile } = useWindowSizeContext();
     const openseaDragonRef = useRef();
     const { width } = useZoomWidth();
 

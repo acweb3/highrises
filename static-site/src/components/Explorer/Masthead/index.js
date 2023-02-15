@@ -1,5 +1,4 @@
 import { useDelayed } from 'common/hooks/useDelayed';
-import { useWindowSize } from 'common/hooks/useWindowSize';
 import { BuildingName } from 'components/Explorer/Masthead/BuildingName';
 import { Collectibles } from 'components/Explorer/Masthead/Collectibles';
 import { EmailCollection } from 'components/Explorer/Masthead/EmailCollection';
@@ -10,6 +9,7 @@ import { Traits } from 'components/Explorer/Masthead/Traits';
 import { BaseButton } from 'components/ui/BaseButton';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
 import { useMobilePopoverContext } from 'contexts/MobilePopover';
+import { useWindowSizeContext } from 'contexts/WindowSize';
 import { useEffect, useRef, useState } from 'react';
 
 const MobileMasthead = () => {
@@ -144,7 +144,7 @@ const DesktopMasthead = () => {
 };
 
 export const Masthead = () => {
-    const { isMobile } = useWindowSize();
+    const { isMobile } = useWindowSizeContext();
 
     if (isMobile === undefined) {
         return null;

@@ -1,6 +1,6 @@
 import { useWindowListener } from 'common/hooks/useWindowListener';
 import { breakpointsMap } from 'common/styles/theme/breakpoints';
-import { useEffect, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 import { useDebounce } from 'use-debounce';
 
 const getWindowSize = (size) => {
@@ -26,7 +26,10 @@ const getWindowDimensions = () => ({
     scrollHeight: document.documentElement.scrollHeight,
 });
 
-export const useWindowSize = () => {
+export const WindowSizeContext = createContext();
+export const useWindowSizeContext = () => useContext(WindowSizeContext);
+
+export const WindowSize = ({ children }) => {
     const [windowSize, setWindowSize] = useState(undefined);
     const [debouncedWindowSize] = useDebounce(windowSize, 400);
 
@@ -42,9 +45,16 @@ export const useWindowSize = () => {
         []
     );
 
-    return {
-        isMobile:
-            debouncedWindowSize &&
-            getWindowSize(debouncedWindowSize.width) <= breakpointsMap.small,
-    };
+    return (
+        <WindowSizeContext.Provider
+            value={{
+                isMobile:
+                    debouncedWindowSize &&
+                    getWindowSize(debouncedWindowSize.width) <=
+                        breakpointsMap.small,
+            }}
+        >
+            {children}
+        </WindowSizeContext.Provider>
+    );
 };

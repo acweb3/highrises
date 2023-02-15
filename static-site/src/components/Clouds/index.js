@@ -1,9 +1,9 @@
-import { useWindowSize } from 'common/hooks/useWindowSize';
 import { DesktopClouds } from 'components/Clouds/DesktopClouds';
 import { MobileClouds } from 'components/Clouds/MobileClouds';
+import { useWindowSizeContext } from 'contexts/WindowSize';
 
 export const Clouds = ({ ...props }) => {
-    const { isMobile } = useWindowSize();
+    const { isMobile } = useWindowSizeContext();
 
     if (isMobile === undefined) {
         return null;

@@ -3,6 +3,7 @@ import { ActiveHighrise } from 'contexts/ActiveHighrise';
 import { ActiveSort } from 'contexts/ActiveSort';
 import { DApp } from 'contexts/DApp';
 import { MobilePopover } from 'contexts/MobilePopover';
+import { WindowSize } from 'contexts/WindowSize';
 import { ThemeProvider } from 'styled-components';
 
 export const Contexts = ({ children, highrises }) => {
@@ -10,9 +11,13 @@ export const Contexts = ({ children, highrises }) => {
         <DApp>
             <ActiveSort>
                 <ActiveHighrise highrises={highrises}>
-                    <MobilePopover>
-                        <ThemeProvider theme={theme}>{children}</ThemeProvider>
-                    </MobilePopover>
+                    <WindowSize>
+                        <MobilePopover>
+                            <ThemeProvider theme={theme}>
+                                {children}
+                            </ThemeProvider>
+                        </MobilePopover>
+                    </WindowSize>
                 </ActiveHighrise>
             </ActiveSort>
         </DApp>
