@@ -313,6 +313,8 @@ export const FeatureImage = forwardRef(({ buildingExplorerHeight }, ref) => {
             clearTimeout(sto1);
             clearTimeout(sto2);
             clearTimeout(sto3);
+            setIsShowingToast(false);
+            setToast(undefined);
         };
     }, [activeDescription]);
 
