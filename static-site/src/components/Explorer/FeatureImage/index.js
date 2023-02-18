@@ -79,7 +79,7 @@ const useZoomWidth = () => {
 };
 
 const FeatureImageZoom = ({ resetFiltering, buildingExplorerHeight }) => {
-    const { activeHighrise, ...rest } = useActiveHighriseContext();
+    const { activeHighrise } = useActiveHighriseContext();
     const { isMobile } = useWindowSizeContext();
     const openseaDragonRef = useRef();
     const { width } = useZoomWidth();
@@ -279,7 +279,7 @@ export const FeatureImage = forwardRef(({ buildingExplorerHeight }, ref) => {
 
     const [toast, setToast] = useState(undefined);
     const [isShowingToast, setIsShowingToast] = useState(false);
-
+    const [zoomWrapperHeight, setZoomWrapperHeight] = useState(undefined);
     const [isFiltering, setIsFiltering] = useState(false);
 
     useEffect(() => {
@@ -294,7 +294,7 @@ export const FeatureImage = forwardRef(({ buildingExplorerHeight }, ref) => {
         let sto3;
 
         if (activeDescription && activeDescription.header !== 'About') {
-            setToast(`Read more about ${activeDescription.header}`);
+            setToast(`Click to see more about ${activeDescription.header}`);
 
             sto1 = setTimeout(() => {
                 setIsShowingToast(true);
@@ -317,6 +317,12 @@ export const FeatureImage = forwardRef(({ buildingExplorerHeight }, ref) => {
             setToast(undefined);
         };
     }, [activeDescription]);
+
+    useEffect(() => {
+        if (buildingExplorerHeight) {
+            setZoomWrapperHeight(window.innerHeight - buildingExplorerHeight);
+        }
+    }, [buildingExplorerHeight]);
 
     return (
         <S.FeatureImageWrapper
@@ -345,6 +351,7 @@ export const FeatureImage = forwardRef(({ buildingExplorerHeight }, ref) => {
             {isMobile && toast && (
                 <S.FeatureImageToast
                     isShowing={isShowingToast}
+                    zoomWrapperHeight={zoomWrapperHeight}
                     onClick={(e) => {
                         e.stopPropagation();
 

@@ -224,14 +224,20 @@ export const FeatureImageZoomWrapper = styled.div`
 `;
 
 export const FeatureImageToast = styled.div`
-    position: absolute;
+    position: fixed;
     bottom: 48px;
     right: 16px;
     width: 144px;
+    height: 72px;
     padding: 8px;
     border-radius: 8px;
     z-index: 3;
 
+    line-height: 1.1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
 
     background-color: ${(props) => props.theme.colors.blue[0]};
@@ -240,6 +246,12 @@ export const FeatureImageToast = styled.div`
     box-shadow: ${(props) => props.theme.shadows.medium};
 
     ${isShowingCss}
+
+    ${(props) =>
+        props.zoomWrapperHeight &&
+        css`
+            top: ${props.zoomWrapperHeight - 136}px;
+        `}
 `;
 
 export const FeatureImageWrapper = styled.div`
