@@ -271,12 +271,15 @@ export const FeatureImageFilterAbout = () => {
 };
 
 export const FeatureImage = forwardRef(({ buildingExplorerHeight }, ref) => {
-    const [toast, setToast] = useState(undefined);
-    const [isShowingToast, setIsShowingToast] = useState(false);
+    const { isMobile } = useWindowSizeContext();
     const { isMobilePopoverOpen, setIsMobilePopoverOpen } =
         useMobilePopoverContext();
     const { activeHighrise, activeDescription, hasInteracted } =
         useActiveHighriseContext();
+
+    const [toast, setToast] = useState(undefined);
+    const [isShowingToast, setIsShowingToast] = useState(false);
+
     const [isFiltering, setIsFiltering] = useState(false);
 
     useEffect(() => {
@@ -337,7 +340,7 @@ export const FeatureImage = forwardRef(({ buildingExplorerHeight }, ref) => {
                 />
             )}
 
-            {toast && (
+            {isMobile && toast && (
                 <S.FeatureImageToast
                     isShowing={isShowingToast}
                     onClick={(e) => {

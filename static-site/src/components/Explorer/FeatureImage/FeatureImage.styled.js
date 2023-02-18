@@ -237,6 +237,8 @@ export const FeatureImageToast = styled.div`
     background-color: ${(props) => props.theme.colors.blue[0]};
     color: ${(props) => props.theme.colors.white[0]};
 
+    box-shadow: ${(props) => props.theme.shadows.medium};
+
     ${isShowingCss}
 `;
 
