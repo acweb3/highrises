@@ -12,6 +12,8 @@ export const HeaderBasic = styled.div`
     position: absolute;
     padding-left: 3px;
     margin-right: -3px;
+    padding-top: 3px;
+    margin-bottom: -3px;
 
     color: ${(props) => props.theme.colors.grey[1]};
     font-family: ${(props) => props.theme.typography.fontFamily.rc.basicFull};
