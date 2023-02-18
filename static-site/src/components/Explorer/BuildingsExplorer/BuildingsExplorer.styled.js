@@ -36,14 +36,12 @@ export const BuildingsExplorerOnboarding = styled.div`
 
 export const BuildingsExplorerGrid = styled.div`
     display: flex;
+    margin: 0 auto;
 
     ${(props) =>
         props.buildingExplorerHeight &&
         css`
             height: ${props.buildingExplorerHeight + 1}px;
-            position: fixed;
-            bottom: 0;
-            z-index: 5;
         `}
 
     ${(props) => props.theme.breakpoints.small`
@@ -75,6 +73,15 @@ export const BuildingsExplorer = styled.div`
     border-top: 2px solid ${(props) => props.theme.colors.white[0]};
 
     background-image: url(${gridSrc});
+
+    ${(props) =>
+        props.buildingExplorerHeight &&
+        css`
+            position: fixed;
+            bottom: 0;
+            z-index: 5;
+            width: 100%;
+        `}
 
     ${(props) => props.theme.breakpoints.small`
         overflow-x: hidden;

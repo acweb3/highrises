@@ -28,8 +28,7 @@ export const isShowingCss = css`
 `;
 
 export const FeatureImageInstructions = styled.div`
-    position: absolute;
-    bottom: 48px;
+    position: fixed;
     left: 32px;
 
     width: 88px;
@@ -53,6 +52,18 @@ export const FeatureImageInstructions = styled.div`
     animation: ${pulse} 3s linear infinite;
 
     ${isShowingCss}
+
+    ${(props) => props.theme.breakpoints.small`
+        position: absolute;
+        top: initial;
+        bottom: 48px;
+    `}
+    
+    ${(props) =>
+        props.zoomWrapperHeight &&
+        css`
+            top: ${props.zoomWrapperHeight - 136}px;
+        `}
 `;
 
 export const FeatureImageFilterClose = styled(UnstyledClose)`
@@ -139,9 +150,16 @@ export const FeatureImageActions = styled.div`
 `;
 
 export const FeatureImageBadge = styled(BuildingBadge)`
+    position: fixed;
     box-shadow: ${(props) => props.theme.shadows.medium};
 
     ${isShowingCss}
+
+    ${(props) =>
+        props.zoomWrapperHeight &&
+        css`
+            top: ${props.zoomWrapperHeight - 40}px;
+        `}
 
     ${(props) => props.theme.breakpoints.small`
         display: none;

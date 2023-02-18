@@ -76,7 +76,7 @@ export const Header = styled.div`
 
     color: ${(props) => props.theme.colors.blue[0]};
 
-    padding: 0 0 16px;
+    padding: 8px 0;
 
     ${(props) => props.theme.breakpoints.small`
         padding: 32px 0 32px;

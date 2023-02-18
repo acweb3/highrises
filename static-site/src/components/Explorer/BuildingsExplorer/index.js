@@ -19,7 +19,7 @@ export const BuildingsExplorer = ({ buildingExplorerHeight }) => {
     };
 
     return (
-        <S.BuildingsExplorer>
+        <S.BuildingsExplorer buildingExplorerHeight={buildingExplorerHeight}>
             <S.BuildingsExplorerGrid
                 buildingExplorerHeight={buildingExplorerHeight}
                 count={highrises.length}

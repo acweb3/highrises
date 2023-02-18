@@ -78,11 +78,12 @@ const useZoomWidth = () => {
     return { width: isMobile ? undefined : width };
 };
 
-const FeatureImageZoom = ({ resetFiltering }) => {
-    const { activeHighrise } = useActiveHighriseContext();
+const FeatureImageZoom = ({ resetFiltering, buildingExplorerHeight }) => {
+    const { activeHighrise, activeDescription } = useActiveHighriseContext();
     const { isMobile } = useWindowSizeContext();
     const openseaDragonRef = useRef();
     const { width } = useZoomWidth();
+    const [zoomWrapperHeight, setZoomWrapperHeight] = useState(undefined);
 
     const [isShowInstructions, setIsShowInstructions] = useState(true);
     const [isShowNumber, setIsShowNumber] = useState(true);
@@ -112,6 +113,8 @@ const FeatureImageZoom = ({ resetFiltering }) => {
     }, [activeHighrise]);
 
     useEffect(() => {
+        setIsShowInstructions(true);
+
         const sto = setTimeout(() => {
             setIsShowInstructions(false);
         }, 8000);
@@ -133,13 +136,29 @@ const FeatureImageZoom = ({ resetFiltering }) => {
         };
     }, [activeHighrise]);
 
+    useEffect(() => {
+        if (buildingExplorerHeight) {
+            setZoomWrapperHeight(window.innerHeight - buildingExplorerHeight);
+        }
+    }, [buildingExplorerHeight]);
+
+    console.log({ activeDescription });
+
     return (
         <S.FeatureImageZoomWrapper onClick={resetFiltering}>
-            <S.FeatureImageBadge isShowing={isShowNumber}>
+            <S.FeatureImageBadge
+                zoomWrapperHeight={zoomWrapperHeight}
+                isShowing={(!isMobile || zoomWrapperHeight) && isShowNumber}
+            >
                 {activeHighrise.index + 1}
             </S.FeatureImageBadge>
 
-            <S.FeatureImageInstructions isShowing={isShowInstructions}>
+            <S.FeatureImageInstructions
+                zoomWrapperHeight={zoomWrapperHeight}
+                isShowing={
+                    (!isMobile || zoomWrapperHeight) && isShowInstructions
+                }
+            >
                 <S.FeatureImageInstructionsPinch />
                 {isMobile ? 'Pinch to zoom' : 'Scroll to zoom'}
             </S.FeatureImageInstructions>
@@ -253,7 +272,7 @@ export const FeatureImageFilterAbout = () => {
     );
 };
 
-export const FeatureImage = forwardRef((_, ref) => {
+export const FeatureImage = forwardRef(({ buildingExplorerHeight }, ref) => {
     const { isMobilePopoverOpen, setIsMobilePopoverOpen } =
         useMobilePopoverContext();
     const { activeHighrise, hasInteracted } = useActiveHighriseContext();
@@ -280,6 +299,7 @@ export const FeatureImage = forwardRef((_, ref) => {
 
             {hasInteracted && activeHighrise ? (
                 <FeatureImageZoom
+                    buildingExplorerHeight={buildingExplorerHeight}
                     resetFiltering={() => setIsFiltering(false)}
                 />
             ) : (
