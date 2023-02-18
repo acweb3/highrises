@@ -1,5 +1,6 @@
 import UnstyledABoltC from 'assets/icons/aboltc.svg';
 import UnstyledEmail from 'assets/icons/email.svg';
+import gridSrc from 'assets/images/blue-graph-paper.jpg';
 import styled from 'styled-components';
 
 export const EmailIcon = styled(UnstyledEmail)`
@@ -36,7 +37,7 @@ export const LogoSection = styled.div`
 
 export const EmailOutreach = styled.a`
     margin-top: 16px;
-    color: ${(props) => props.theme.colors.grey[1]};
+    color: ${(props) => props.theme.colors.white[0]};
     display: flex;
     align-items: center;
     justify-content: center;
@@ -57,7 +58,7 @@ export const EmailCollectionInput = styled.input`
     border: 1px solid ${(props) => props.theme.colors.grey[1]};
     text-align: center;
 
-    width: 100%;
+    width: calc(100% - 32px);
 
     color: ${(props) => props.theme.colors.grey[0]};
     background: ${(props) => props.theme.colors.grey[2]};
@@ -65,12 +66,10 @@ export const EmailCollectionInput = styled.input`
     &::placeholder {
         color: ${(props) => props.theme.colors.grey[0]};
     }
-`;
 
-export const EmailCollectionContent = styled.div`
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+    ${(props) => props.theme.breakpoints.small`
+        width: calc(100% - 64px);
+    `}
 `;
 
 export const Paragraph = styled.div`
@@ -82,10 +81,24 @@ export const Paragraph = styled.div`
     `}
 `;
 
+export const EmailCollectionContent = styled.div`
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    & > ${Paragraph} {
+        margin-top: 16px;
+    }
+`;
+
 export const EmailCollection = styled.div`
-    padding: 48px 0 32px;
+    color: ${(props) => props.theme.colors.white[0]};
+
+    padding: 32px 16px 32px;
+
+    background-image: url(${gridSrc});
 
     ${(props) => props.theme.breakpoints.small`
-        padding: 72px 0 32px;
+        padding: 48px 32px;
     `}
 `;

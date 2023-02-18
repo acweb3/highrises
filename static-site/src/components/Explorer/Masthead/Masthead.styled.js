@@ -1,6 +1,10 @@
 import { BaseButton } from 'components/ui/BaseButton';
 import styled, { css } from 'styled-components';
 
+export const MobileEmailCollectionWrapper = styled.div`
+    margin-top: 32px;
+`;
+
 export const MobileMastheadButton = styled(BaseButton)`
     width: min-content;
     padding: 4px 16px;
@@ -38,6 +42,8 @@ export const MobileMastheadSection = styled.div`
 `;
 
 export const MobileReadMore = styled.div`
+    position: relative;
+
     color: ${(props) => props.theme.colors.grey[0]};
     background: ${(props) => props.theme.colors.white[0]};
     padding: 0 12px;
@@ -45,34 +51,53 @@ export const MobileReadMore = styled.div`
     width: min-content;
     white-space: nowrap;
 
-    margin: 0 auto -2px;
+    margin: 0 auto;
+
+    &::after {
+        content: ' ';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: ${(props) => props.theme.colors.white[0]};
+    }
 `;
 
 export const MobileMastheadContent = styled.div`
     max-height: 0;
-    overflow: hidden;
 
     background: ${(props) => props.theme.colors.white[0]};
     color: ${(props) => props.theme.colors.blue[0]};
 
-    transition: max-height 600ms;
+    transition: max-height 400ms;
 
     ${(props) =>
         props.isMobilePopoverOpen &&
         css`
             height: 75%;
-            max-height: 500px;
-            padding: 16px 0 32px;
+            max-height: 2999px;
+            padding: 16px 0 0;
             overflow-x: hidden;
-            overflow-y: scroll;
         `}
 `;
 
-export const MobileMastheadShadow = styled.div`
+export const MobileMastheadShadowWrapper = styled.div`
     position: relative;
-    overflow: hidden;
+    overflow: scroll;
 
     border-radius: 16px 16px 0 0;
+
+    position: relative;
+`;
+
+export const MobileMastheadShadow = styled.div`
+    height: 100%;
+    width: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
 
     &::before {
         z-index: 2;
@@ -111,7 +136,7 @@ export const MobileMastheadShadow = styled.div`
 
 export const MobileMasthead = styled.div`
     position: absolute;
-    bottom: ${(props) => props.buildingExplorerHeight + 2}px;
+    bottom: ${(props) => props.buildingExplorerHeight}px;
 
     z-index: 4;
 
@@ -120,6 +145,10 @@ export const MobileMasthead = styled.div`
     justify-content: center;
 
     max-height: 60%;
+`;
+
+export const DesktopMastheadEmailCollectionWrapper = styled.div`
+    margin-top: 32px;
 `;
 
 export const DesktopMastheadNav = styled.div`
@@ -174,5 +203,5 @@ export const DesktopMasthead = styled.div`
     display: flex;
     flex-direction: column;
 
-    padding: 16px 0 32px;
+    padding: 16px 0 0;
 `;

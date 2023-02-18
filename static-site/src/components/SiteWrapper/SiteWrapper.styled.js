@@ -1,7 +1,9 @@
 import styled, { createGlobalStyle, css } from 'styled-components';
 
 export const SiteWrapperOffset = styled.div`
-    height: calc(100vh + 100px);
+    ${(props) => props.theme.breakpoints.small`
+        height: calc(100vh + 100px);
+    `}
 `;
 
 export const SiteWrapperNav = styled.div`

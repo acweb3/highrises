@@ -35,9 +35,10 @@ const MobileMasthead = ({ buildingExplorerHeight }) => {
                 {isMobilePopoverOpen ? 'Show Less' : 'Read More'}
             </S.MobileReadMore>
 
-            <S.MobileMastheadShadow>
+            <S.MobileMastheadShadowWrapper ref={mastheadRef}>
+                {/** # TODO => Fix this so there is white shadow around the words here */}
+                {/* <S.MobileMastheadShadow /> */}
                 <S.MobileMastheadContent
-                    ref={mastheadRef}
                     isMobilePopoverOpen={isMobilePopoverOpen}
                 >
                     <S.MobileMastheadSection>
@@ -79,15 +80,23 @@ const MobileMasthead = ({ buildingExplorerHeight }) => {
                                         />
                                     </S.MobileMastheadSection>
 
-                                    <S.MobileMastheadSection>
+                                    <S.MobileEmailCollectionWrapper>
                                         <EmailCollection />
-                                    </S.MobileMastheadSection>
+                                    </S.MobileEmailCollectionWrapper>
                                 </>
                             );
                         }
 
                         if (isCollectiblesShowing) {
-                            return <Collectibles isHeaderShowing={false} />;
+                            return (
+                                <div
+                                    css={`
+                                        padding-bottom: 32px;
+                                    `}
+                                >
+                                    <Collectibles isHeaderShowing={false} />
+                                </div>
+                            );
                         }
 
                         return (
@@ -102,14 +111,14 @@ const MobileMasthead = ({ buildingExplorerHeight }) => {
 
                                 <Collectibles />
 
-                                <S.MobileMastheadSection>
+                                <S.MobileEmailCollectionWrapper>
                                     <EmailCollection />
-                                </S.MobileMastheadSection>
+                                </S.MobileEmailCollectionWrapper>
                             </>
                         );
                     })()}
                 </S.MobileMastheadContent>
-            </S.MobileMastheadShadow>
+            </S.MobileMastheadShadowWrapper>
         </S.MobileMasthead>
     );
 };
@@ -160,9 +169,9 @@ const DesktopMasthead = () => {
 
             {activeHighrise && <Collectibles ref={collectiblesRef} />}
 
-            <S.DesktopMastheadSection>
+            <S.DesktopMastheadEmailCollectionWrapper>
                 <EmailCollection />
-            </S.DesktopMastheadSection>
+            </S.DesktopMastheadEmailCollectionWrapper>
 
             {!delayedDidScrolled && (
                 <S.DesktopMastheadScrollMore isShowing={!didScroll}>

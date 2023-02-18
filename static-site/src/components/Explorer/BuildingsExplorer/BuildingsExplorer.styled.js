@@ -40,10 +40,10 @@ export const BuildingsExplorerGrid = styled.div`
     ${(props) =>
         props.buildingExplorerHeight &&
         css`
-            height: ${props.buildingExplorerHeight}px;
+            height: ${props.buildingExplorerHeight + 1}px;
             position: fixed;
             bottom: 0;
-            z-index: 2;
+            z-index: 5;
         `}
 
     ${(props) => props.theme.breakpoints.small`
