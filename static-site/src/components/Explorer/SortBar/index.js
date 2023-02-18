@@ -81,6 +81,26 @@ export const SORTS = {
             })),
     },
 
+    decade: {
+        isSelect: true,
+        name: 'Decade',
+        // # TODO => Remove this slice
+        options: highrisesData.reduce((acc, highrise) => {
+            if (acc[highrise?.decade]) return acc;
+
+            return {
+                ...acc,
+                [highrise.decade]: {
+                    value: `${highrise.decade}`,
+                    sort: (highrises) =>
+                        highrises.filter(
+                            ({ decade }) => highrise.decade === decade
+                        ),
+                },
+            };
+        }, {}),
+    },
+
     region: {
         name: 'Region',
         options: {
