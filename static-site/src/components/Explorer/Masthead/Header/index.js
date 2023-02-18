@@ -5,16 +5,16 @@ import { forwardRef } from 'react';
 export const Header = forwardRef((_, ref) => {
     const { activeSort } = useActiveSortContext();
 
+    const text = activeSort?.sortValue ?? 'Highrises';
+
     return (
         <S.Header ref={ref}>
-            <S.HeaderDouble>
-                <S.HeaderFilled>
-                    {activeSort?.sortValue ?? 'Highrises'}
-                </S.HeaderFilled>
-                <S.HeaderBasic>
-                    {activeSort?.sortValue ?? 'Highrises'}
-                </S.HeaderBasic>
-            </S.HeaderDouble>
+            <S.HeaderSizeWrapper>
+                <S.HeaderDouble isLarge={text.length > 10}>
+                    <S.HeaderFilled>{text}</S.HeaderFilled>
+                    <S.HeaderBasic>{text}</S.HeaderBasic>
+                </S.HeaderDouble>
+            </S.HeaderSizeWrapper>
 
             <S.HeaderSubtitle>
                 {activeSort?.sortName ?? 'Collection'}

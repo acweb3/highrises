@@ -205,6 +205,7 @@ export const SortBar = () => {
         selectField,
         optionActiveSelectLevel,
         selectOption,
+        reset,
     } = useSorts();
 
     return (
@@ -215,10 +216,7 @@ export const SortBar = () => {
                         isReset
                         isActive
                         tabIndex={0}
-                        onClick={() => {
-                            setActiveDropdown(undefined);
-                            setActiveSort(undefined);
-                        }}
+                        onClick={() => reset(true)}
                     >
                         Reset Sort
                     </S.SortBarLink>

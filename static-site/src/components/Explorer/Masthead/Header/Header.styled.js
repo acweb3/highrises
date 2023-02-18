@@ -1,8 +1,7 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const HeaderSubtitle = styled.div`
     font-size: ${(props) => props.theme.typography.fontSize.prose};
-    margin-top: 8px;
     color: ${(props) => props.theme.colors.grey[0]};
 `;
 
@@ -22,7 +21,6 @@ export const HeaderBasic = styled.div`
 export const HeaderFilled = styled.div`
     z-index: 1;
 
-    height: ${(props) => props.theme.typography.fontSize.h1};
     font-family: ${(props) =>
         props.theme.typography.fontFamily.rc.guidelinesFull};
 `;
@@ -34,13 +32,37 @@ export const HeaderDouble = styled.div`
     text-transform: uppercase;
 
     font-size: ${(props) => props.theme.typography.fontSize.h2};
-    height: ${(props) => props.theme.typography.fontSize.h2};
+    line-height: ${(props) => props.theme.typography.fontSize.h2};
+
+    ${(props) =>
+        props.isLarge &&
+        css`
+            font-size: ${(props) => props.theme.typography.fontSize.h3};
+            line-height: ${(props) => props.theme.typography.fontSize.h3};
+        `}
 
     ${(props) => props.theme.breakpoints.small`
         font-size: ${props.theme.typography.fontSize.h1};
         margin-bottom: 16px;
         height: initial;
+
+        ${
+            props.isLarge &&
+            css`
+                font-size: ${(props) => props.theme.typography.fontSize.h2};
+                line-height: ${(props) => props.theme.typography.fontSize.h2};
+            `
+        }}
     `}
+`;
+
+export const HeaderSizeWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    height: 4rem;
 `;
 
 export const Header = styled.div`
