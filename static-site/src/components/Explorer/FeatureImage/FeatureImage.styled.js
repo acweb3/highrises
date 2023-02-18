@@ -223,6 +223,23 @@ export const FeatureImageZoomWrapper = styled.div`
     `}
 `;
 
+export const FeatureImageToast = styled.div`
+    position: absolute;
+    bottom: 48px;
+    right: 16px;
+    width: 144px;
+    padding: 8px;
+    border-radius: 8px;
+    z-index: 3;
+
+    text-align: center;
+
+    background-color: ${(props) => props.theme.colors.blue[0]};
+    color: ${(props) => props.theme.colors.white[0]};
+
+    ${isShowingCss}
+`;
+
 export const FeatureImageWrapper = styled.div`
     position: relative;
     overflow: hidden;

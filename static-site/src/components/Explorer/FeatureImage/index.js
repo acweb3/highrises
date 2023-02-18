@@ -79,7 +79,7 @@ const useZoomWidth = () => {
 };
 
 const FeatureImageZoom = ({ resetFiltering, buildingExplorerHeight }) => {
-    const { activeHighrise, activeDescription } = useActiveHighriseContext();
+    const { activeHighrise, ...rest } = useActiveHighriseContext();
     const { isMobile } = useWindowSizeContext();
     const openseaDragonRef = useRef();
     const { width } = useZoomWidth();
@@ -141,8 +141,6 @@ const FeatureImageZoom = ({ resetFiltering, buildingExplorerHeight }) => {
             setZoomWrapperHeight(window.innerHeight - buildingExplorerHeight);
         }
     }, [buildingExplorerHeight]);
-
-    console.log({ activeDescription });
 
     return (
         <S.FeatureImageZoomWrapper onClick={resetFiltering}>
@@ -273,9 +271,12 @@ export const FeatureImageFilterAbout = () => {
 };
 
 export const FeatureImage = forwardRef(({ buildingExplorerHeight }, ref) => {
+    const [toast, setToast] = useState(undefined);
+    const [isShowingToast, setIsShowingToast] = useState(false);
     const { isMobilePopoverOpen, setIsMobilePopoverOpen } =
         useMobilePopoverContext();
-    const { activeHighrise, hasInteracted } = useActiveHighriseContext();
+    const { activeHighrise, activeDescription, hasInteracted } =
+        useActiveHighriseContext();
     const [isFiltering, setIsFiltering] = useState(false);
 
     useEffect(() => {
@@ -283,6 +284,34 @@ export const FeatureImage = forwardRef(({ buildingExplorerHeight }, ref) => {
             setIsFiltering(false);
         }
     }, [isMobilePopoverOpen]);
+
+    useEffect(() => {
+        let sto1;
+        let sto2;
+        let sto3;
+
+        if (activeDescription && activeDescription.header !== 'About') {
+            setToast(`Read more about ${activeDescription.header}`);
+
+            sto1 = setTimeout(() => {
+                setIsShowingToast(true);
+            }, 1000);
+
+            sto2 = setTimeout(() => {
+                setToast(undefined);
+            }, 10000);
+
+            sto3 = setTimeout(() => {
+                setIsShowingToast(false);
+            }, 8000);
+        }
+
+        return () => {
+            clearTimeout(sto1);
+            clearTimeout(sto2);
+            clearTimeout(sto3);
+        };
+    }, [activeDescription]);
 
     return (
         <S.FeatureImageWrapper
@@ -306,6 +335,19 @@ export const FeatureImage = forwardRef(({ buildingExplorerHeight }, ref) => {
                 <FeatureImageRandomizer
                     resetFiltering={() => setIsFiltering(false)}
                 />
+            )}
+
+            {toast && (
+                <S.FeatureImageToast
+                    isShowing={isShowingToast}
+                    onClick={(e) => {
+                        e.stopPropagation();
+
+                        setIsMobilePopoverOpen(true);
+                    }}
+                >
+                    {toast}
+                </S.FeatureImageToast>
             )}
         </S.FeatureImageWrapper>
     );
