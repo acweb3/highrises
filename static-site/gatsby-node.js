@@ -86,7 +86,7 @@ exports.createPages = async function ({ actions, graphql }) {
                     isNft: true,
                     productSrc: urlMap[index]?.['nft-highrises'],
                     blurSrc: urlMap[index]?.['blur-nft-highrises'],
-                    productLink: `https://www.opensea.io/assets/ethereum/0x516d85f0c80d2c4809736aca3f3f95ce8545b5d2/${`${index}`}`,
+                    productLink: `https://opensea.io/assets/ethereum/0x516d85f0c80d2c4809736aca3f3f95ce8545b5d2/${`${index}`}`,
                 },
 
                 // Northeast collage
@@ -94,7 +94,7 @@ exports.createPages = async function ({ actions, graphql }) {
                     isNft: true,
                     productSrc: productMap['northeast-collage']['productSrc'],
                     blurSrc: productMap['northeast-collage']['blurSrc'],
-                    productLink: `https://www.opensea.io/collection/highrisescollage`,
+                    productLink: `https://opensea.io/collection/highrisescollage`,
                 },
             ].filter(Boolean);
 

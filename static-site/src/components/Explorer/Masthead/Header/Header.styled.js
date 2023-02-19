@@ -62,7 +62,11 @@ export const HeaderSizeWrapper = styled.div`
     align-items: center;
     justify-content: center;
 
-    height: 4rem;
+    height: 3rem;
+
+    ${(props) => props.theme.breakpoints.small`
+        height: 4rem;
+    `}
 `;
 
 export const Header = styled.div`
