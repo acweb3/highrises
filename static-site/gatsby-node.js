@@ -123,20 +123,19 @@ exports.createPages = async function ({ actions, graphql }) {
         })
         .sort((b, a) => getIndex(a) - getIndex(b));
 
-    // # TODO => Create a bunch of Index pages with this metadata
-    // highrisesWithImages.forEach((highrise) => {
-    //     actions.createPage({
-    //         path: `/building/${kebabCase(highrise.name)}-${kebabCase(
-    //             highrise.architect
-    //         )}`,
-    //         component: require.resolve(`./src/templates/Building.js`),
-    //         context: {
-    //             highrise,
-    //             highrises: highrisesWithImages,
-    //             thumbnail: `${fullyAccessibleURL}${highrise.nftSrc}`,
-    //         },
-    //     });
-    // });
+    highrisesWithImages.forEach((highrise) => {
+        actions.createPage({
+            path: `/building/${kebabCase(highrise.name)}-${kebabCase(
+                highrise.architect
+            )}`,
+            component: require.resolve(`./src/templates/Building.js`),
+            context: {
+                highrise,
+                highrises: highrisesWithImages,
+                thumbnail: `${fullyAccessibleURL}${highrise.nftSrc}`,
+            },
+        });
+    });
 
     actions.createPage({
         component: require.resolve(`./src/templates/Index.js`),

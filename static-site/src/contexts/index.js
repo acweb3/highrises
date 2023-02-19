@@ -6,11 +6,11 @@ import { MobilePopover } from 'contexts/MobilePopover';
 import { WindowSize } from 'contexts/WindowSize';
 import { ThemeProvider } from 'styled-components';
 
-export const Contexts = ({ children, highrises }) => {
+export const Contexts = ({ children, highrise, highrises }) => {
     return (
         <DApp>
             <ActiveSort>
-                <ActiveHighrise highrises={highrises}>
+                <ActiveHighrise initHighrise={highrise} highrises={highrises}>
                     <WindowSize>
                         <MobilePopover>
                             <ThemeProvider theme={theme}>

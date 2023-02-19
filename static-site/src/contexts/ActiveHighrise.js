@@ -22,10 +22,12 @@ const useHasInteracted = (activeHighrise) => {
     return hasInteracted;
 };
 
-export const ActiveHighrise = ({ children, highrises: init }) => {
+export const ActiveHighrise = ({ children, initHighrise, highrises: init }) => {
     const { activeSort } = useActiveSortContext();
     const [highrises, setHighrises] = useState(init);
-    const [activeHighrise, setActiveHighrise] = useState(init[0]);
+    const [activeHighrise, setActiveHighrise] = useState(
+        initHighrise ?? init[0]
+    );
     const [randomHighrise, setRandomHighrise] = useState(
         init[Math.floor(Math.random() * highrises.length)]
     );
