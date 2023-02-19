@@ -23,8 +23,11 @@ export const BuildingNameHeader = styled.div`
 
     margin-bottom: 16px;
 
+    padding: 0 16px;
+
     ${(props) => props.theme.breakpoints.small`
         margin-bottom: 8px;
+        padding: 0;
     `}
 `;
 

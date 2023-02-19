@@ -72,12 +72,11 @@ exports.createPages = async function ({ actions, graphql }) {
         .map(({ products, ...highrise }, index) => {
             const irlProducts = [
                 // Poster
-                // {
-                //     // # TODO => Blur this
-                //     productSrc: urlMap[index]?.['poster-highrises'],
-                //     blurSrc: urlMap[index]?.['poster-highrises'],
-                //     productLink: `https://www.opensea.io/assets/0x516d85f0c80d2c4809736aca3f3f95ce8545b5d2/${`${index}`}`,
-                // },
+                {
+                    productSrc: urlMap[index]?.['poster-highrises'],
+                    blurSrc: urlMap[index]?.['blur-poster-highrises'],
+                    productLink: `https://www.opensea.io/assets/0x516d85f0c80d2c4809736aca3f3f95ce8545b5d2/${`${index}`}`,
+                },
             ];
 
             const metaverseProducts = [
@@ -100,7 +99,7 @@ exports.createPages = async function ({ actions, graphql }) {
 
             const totalProducts = [
                 ...irlProducts,
-                ...products,
+                ...(products || []),
                 ...metaverseProducts,
             ];
 

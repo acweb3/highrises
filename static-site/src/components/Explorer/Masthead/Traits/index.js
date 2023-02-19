@@ -6,7 +6,12 @@ export const Traits = ({ activeHighrise, className }) => {
         tokenId: activeHighrise.index,
     });
 
+    const aka = activeHighrise.attributes.find(
+        ({ trait_type }) => trait_type === 'AKA now'
+    );
+
     const traits = [
+        ['AKA', aka?.value],
         ['Address', activeHighrise.address],
         ['Opened', activeHighrise.opened],
         ['Height', `${activeHighrise.height}'`],

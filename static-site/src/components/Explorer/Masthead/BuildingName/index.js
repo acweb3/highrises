@@ -4,12 +4,26 @@ import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
 
 export const BuildingName = () => {
     const { activeHighrise, activeDescription } = useActiveHighriseContext();
-
+    const aka = activeHighrise?.attributes.find(
+        ({ trait_type }) => trait_type === 'AKA now'
+    );
     return (
         <S.BuildingName>
             <S.BuildingNameHeader>
                 {activeDescription?.header ?? activeHighrise.name}
             </S.BuildingNameHeader>
+
+            {aka && (
+                <S.BuildingNameLocation
+                    css={`
+                        margin-top: -4px;
+                        margin-bottom: 8px;
+                    `}
+                >
+                    {aka.value}
+                </S.BuildingNameLocation>
+            )}
+
             {activeHighrise && (
                 <S.BuildingNameLocation>
                     #{getIndex(activeHighrise) + 1} — {activeHighrise.city},{' '}

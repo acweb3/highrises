@@ -20,9 +20,16 @@ const poster = async () => {
 
         await sharp(fileName)
             .resize({
-                width: 480,
+                width: 400,
             })
-            .toFile(join(outputDir, `${parsedIndex - 1}.webp`));
+            .toFile(join(outputDir, 'regular', `${parsedIndex - 1}.webp`));
+
+        await sharp(join(rawImagesDir, file))
+            .resize({
+                width: 400,
+            })
+            .blur(10)
+            .toFile(join(outputDir, 'blur', `${parsedIndex - 1}.webp`));
     });
 };
 

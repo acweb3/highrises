@@ -36,10 +36,10 @@ const { highrises } = require('./dist/site/highrises');
     fs.writeFileSync(
         'dist/site/highrises.js',
         `const highrises = ${JSON.stringify(highrises, null, 4)}
-        
+
         module.exports = {
             highrises,
-        };        
+        };
         `
     );
 })();
