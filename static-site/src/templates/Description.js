@@ -3,9 +3,15 @@ import { SiteWrapper } from 'components/SiteWrapper';
 import { Contexts } from 'contexts';
 import 'css/index.css';
 
-const App = ({ pageContext: { highrises, thumbnail } }) => {
+const App = ({
+    pageContext: { sortName, description, highrises, thumbnail },
+}) => {
     return (
-        <Contexts highrises={highrises}>
+        <Contexts
+            sortName={sortName}
+            description={description}
+            highrises={highrises}
+        >
             <SiteWrapper>
                 <Explorer thumbnail={thumbnail} />
             </SiteWrapper>
