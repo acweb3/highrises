@@ -8,7 +8,7 @@ const featureCity = {
         "As the first great city of the West Coast, San Francisco boasts a spectacular collection of classic skyscrapers. Some highrises survived the devastating 1906 earthquake and fire, and many more arose in the Roaring Twenties, helping to develop a new stylistic vocabulary for tall buildings. The city's tradition of daring and innovative architecture continues to the present.",
     OAKLAND:
         "Although its bigger neighbor across the bay grabs the spotlight, Oakland has a small but unique selection of attractive antique highrises. Led by a modernizing mayor who was the city's first telephone operator before entering public service, Oakland built the country's first skyscraper city hall. Its subsequent seismic retrofitting ensures citizens will continue to enjoy their landmark.",
-    PHILADELPHIA: `By an unwritten "gentlemen's agreement" that lasted almost a century, the tallest point in Philadelphia was the statue of William Penn crowning the City Hall bell tower. That still left plenty of room for elegant highrises in a range of styles, including many fine Art Deco examples and one modernist pioneer years ahead of its time that would become a prototype for the new International Style.`,
+    PHILADELPHIA: `The tallest point in Philadelphia for most of the 20th century was the statue of William Penn crowning city hall, until the unwritten "gentlemen's agreement" was broken by One Liberty Place in 1986. That still left plenty of room for elegant highrises in a range of styles, including many fine Art Deco examples and one modernist pioneer years ahead of its time that would become a prototype for the new International Style.`,
     BUFFALO:
         "A major transportation hub since the opening of the Erie Canal, Buffalo demonstrated its technological prowess by harnessing the energy from nearby Niagara Falls to power its streetlights and trolleys. The city's former economic might is mirrored in its early highrises, including a city hall that is one of America's most attractive Art Deco skyscrapers.",
     SEATTLE:
@@ -16,7 +16,7 @@ const featureCity = {
     'LOS ANGELES':
         ' Sunny skies and scenic vistas that lured the motion picture industry to Hollywood a century ago also attracted throngs of new residents and businesses. Building height restrictions meant City Hall towered over everything else until the late 1960s, but architects found creative ways to bend the rules and build highrises that dominated their blocks downtown or on car-crazy Wilshire Boulevard.',
     ALBANY: "Inspired in part by the much larger metropolis at the other end of the Hudson River, New York's state capital has several excellent historic highrises clustered on its gently sloping city grid. Taken together, they make fitting accessories to the magnificent architectural ensemble housing the government of the Empire State.",
-    NEWARK: "As Manhattan was unable to contain the contagious spread of skyscrapers, several fine examples sprang up across the Hudson a century ago in New Jersey's biggest city. Most of the historic highrises of Newark stand on the edge of Military Park or within a few minutes' walk of the former parade ground.",
+    NEWARK: "As if Manhattan were unable to contain the contagious spread of skyscrapers, several fine examples sprang up across the Hudson a century ago in New Jersey's biggest city. Most of the historic highrises of Newark stand on the edge of Military Park or within a few minutes' walk of the former parade ground.",
 };
 
 const featureStyle = {
@@ -104,7 +104,9 @@ exports.createPages = async function ({ actions, graphql }) {
                 {
                     productSrc: urlMap[index]?.['poster-highrises'],
                     blurSrc: urlMap[index]?.['blur-poster-highrises'],
-                    productLink: `https://www.opensea.io/assets/0x516d85f0c80d2c4809736aca3f3f95ce8545b5d2/${`${index}`}`,
+                    productLink: `https://www.hythacg.com/prints/highrise${`${
+                        getIndex(activeHighrise) + 1
+                    }`.padStart(2, '0')}`,
                 },
             ];
 

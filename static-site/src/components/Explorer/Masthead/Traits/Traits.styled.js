@@ -32,5 +32,6 @@ export const Traits = styled.div`
     ${(props) => props.theme.breakpoints.small`
         min-width: auto;
         margin: 32px 0;
+        width: 100%;
     `}
 `;

@@ -11,7 +11,6 @@ export const Traits = ({ activeHighrise, className }) => {
     );
 
     const traits = [
-        ['AKA', aka?.value],
         ['Address', activeHighrise.address],
         ['Opened', activeHighrise.opened],
         ['Height', `${activeHighrise.height}'`],

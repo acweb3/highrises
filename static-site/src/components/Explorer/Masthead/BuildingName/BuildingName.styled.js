@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const BuildingNameLocation = styled.div`
     display: flex;
@@ -39,5 +39,12 @@ export const BuildingName = styled.div`
 
     ${(props) => props.theme.breakpoints.small`
         padding: 0 0 8px;
+
+        ${
+            props.isActiveDescription &&
+            css`
+                display: none;
+            `
+        }
     `}
 `;

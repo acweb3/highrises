@@ -10,7 +10,7 @@ export const Header = forwardRef((_, ref) => {
     return (
         <S.Header ref={ref}>
             <S.HeaderSizeWrapper>
-                <S.HeaderDouble isLarge={text.length > 10}>
+                <S.HeaderDouble isLarge={text.length >= 10}>
                     <S.HeaderFilled>{text}</S.HeaderFilled>
                     <S.HeaderBasic>{text}</S.HeaderBasic>
                 </S.HeaderDouble>

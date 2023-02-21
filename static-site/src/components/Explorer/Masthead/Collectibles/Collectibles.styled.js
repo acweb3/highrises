@@ -70,6 +70,6 @@ export const Collectibles = styled.div`
     padding: 0;
 
     ${(props) => props.theme.breakpoints.small`
-        padding: 64px 0 0;
+        padding: 32px 0 0;
     `}
 `;

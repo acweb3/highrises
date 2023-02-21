@@ -189,6 +189,9 @@ export const DesktopMastheadScrollMore = styled.div`
 
 export const DesktopMastheadSection = styled.div`
     padding: 0 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 `;
 
 export const DesktopMasthead = styled.div`
@@ -204,4 +207,6 @@ export const DesktopMasthead = styled.div`
     flex-direction: column;
 
     padding: 16px 0 0;
+
+    min-width: 300px;
 `;

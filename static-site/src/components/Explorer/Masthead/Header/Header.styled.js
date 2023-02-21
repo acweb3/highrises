@@ -42,15 +42,15 @@ export const HeaderDouble = styled.div`
         `}
 
     ${(props) => props.theme.breakpoints.small`
-        font-size: ${props.theme.typography.fontSize.h1};
+        font-size: ${props.theme.typography.fontSize.h2};
         margin-bottom: 16px;
         height: initial;
 
         ${
             props.isLarge &&
             css`
-                font-size: ${(props) => props.theme.typography.fontSize.h2};
-                line-height: ${(props) => props.theme.typography.fontSize.h2};
+                font-size: ${(props) => props.theme.typography.fontSize.h3};
+                line-height: ${(props) => props.theme.typography.fontSize.h3};
             `
         }}
     `}
@@ -84,5 +84,6 @@ export const Header = styled.div`
 
     ${(props) => props.theme.breakpoints.small`
         padding: 32px 0 32px;
+        max-width: 300px;
     `}
 `;

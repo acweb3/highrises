@@ -8,7 +8,7 @@ export const BuildingName = () => {
         ({ trait_type }) => trait_type === 'AKA now'
     );
     return (
-        <S.BuildingName>
+        <S.BuildingName isActiveDescription={Boolean(activeDescription)}>
             <S.BuildingNameHeader>
                 {activeDescription?.header ?? activeHighrise.name}
             </S.BuildingNameHeader>
