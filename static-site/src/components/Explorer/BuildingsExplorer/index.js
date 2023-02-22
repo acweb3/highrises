@@ -9,7 +9,7 @@ import { useState } from 'react';
 export const BuildingsExplorer = ({ buildingExplorerHeight }) => {
     const { highrises } = useActiveHighriseContext();
 
-    const { isMobile } = useWindowSizeContext();
+    const { isTablet } = useWindowSizeContext();
     const [didMouseEnter, setDidMouseEnter] = useState(false);
     const delayedDidMouseEnter = useDelayed(didMouseEnter, 400);
 
@@ -34,7 +34,7 @@ export const BuildingsExplorer = ({ buildingExplorerHeight }) => {
                 ))}
             </S.BuildingsExplorerGrid>
 
-            {!delayedDidMouseEnter && !isMobile && (
+            {!delayedDidMouseEnter && !isTablet && (
                 <S.BuildingsExplorerOnboarding
                     isActive={!didMouseEnter}
                     onMouseEnter={() => setDidMouseEnter(true)}

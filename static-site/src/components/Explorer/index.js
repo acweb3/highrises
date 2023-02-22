@@ -14,7 +14,7 @@ import { use100vh } from 'react-div-100vh';
 
 const BUILDING_EXPLORER_MIN_HEIGHT = 80;
 
-const MobileExplorer = () => {
+const useBuildingExplorerHeight = () => {
     const hundo = use100vh();
     const headerRef = useRef();
     const featureImageRef = useRef();
@@ -25,8 +25,8 @@ const MobileExplorer = () => {
     useEffect(() => {
         const { height: featureImageHeight } =
             featureImageRef.current.getBoundingClientRect();
-        const { height: headerHeight } =
-            headerRef.current.getBoundingClientRect();
+        const headerRect = headerRef.current?.getBoundingClientRect();
+        const headerHeight = headerRect?.height ?? 0;
 
         setBuildingExplorerHeight(
             Math.max(
@@ -35,6 +35,18 @@ const MobileExplorer = () => {
             )
         );
     }, [hundo]);
+
+    return {
+        headerRef,
+        hundo,
+        featureImageRef,
+        buildingExplorerHeight,
+    };
+};
+
+const MobileExplorer = () => {
+    const { headerRef, hundo, featureImageRef, buildingExplorerHeight } =
+        useBuildingExplorerHeight();
 
     return (
         <S.MobileExplorer style={{ height: hundo }}>
@@ -51,6 +63,32 @@ const MobileExplorer = () => {
                 buildingExplorerHeight={buildingExplorerHeight}
             />
         </S.MobileExplorer>
+    );
+};
+
+const TabletExplorer = () => {
+    const { featureImageRef, buildingExplorerHeight } =
+        useBuildingExplorerHeight();
+
+    return (
+        <S.DesktopExplorer>
+            <S.DesktopExplorerSection>
+                <S.DesktopExplorerSideBar>
+                    <Masthead />
+                    <MapExplorer />
+                </S.DesktopExplorerSideBar>
+            </S.DesktopExplorerSection>
+
+            <S.DesktopExplorerSection>
+                <FeatureImage
+                    ref={featureImageRef}
+                    buildingExplorerHeight={buildingExplorerHeight}
+                />
+                <BuildingsExplorer
+                    buildingExplorerHeight={buildingExplorerHeight}
+                />
+            </S.DesktopExplorerSection>
+        </S.DesktopExplorer>
     );
 };
 
@@ -83,10 +121,10 @@ const DesktopExplorer = () => {
 };
 
 export const Explorer = ({ thumbnail }) => {
-    const { isMobile } = useWindowSizeContext();
+    const { isMobile, isTablet } = useWindowSizeContext();
     const { activeHighrise, activeDescription } = useActiveHighriseContext();
 
-    if (isMobile === undefined) {
+    if (isMobile === undefined || isTablet === undefined) {
         return null;
     }
 
@@ -138,7 +176,17 @@ export const Explorer = ({ thumbnail }) => {
                 );
             })()}
 
-            {isMobile ? <MobileExplorer /> : <DesktopExplorer />}
+            {(() => {
+                if (isMobile) {
+                    return <MobileExplorer />;
+                }
+
+                if (isTablet) {
+                    return <TabletExplorer />;
+                }
+
+                return <DesktopExplorer />;
+            })()}
         </>
     );
 };

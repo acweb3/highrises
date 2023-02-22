@@ -6,7 +6,7 @@ import styled, { css } from 'styled-components';
 export const BuildingBuildingBadge = styled(BuildingBadge)`
     display: none;
 
-    ${(props) => props.theme.breakpoints.small`
+    ${(props) => props.theme.breakpoints.large`
         display: flex;
     `}
 `;
@@ -17,7 +17,7 @@ export const BuildingImage = styled(BlurLoader)`
         width: auto;
     }
 
-    ${(props) => props.theme.breakpoints.small`
+    ${(props) => props.theme.breakpoints.large`
         & > img {
             height: initial;
             width: initial;
@@ -64,7 +64,7 @@ export const BuildingCaption = styled.div`
 
     display: none;
 
-    ${(props) => props.theme.breakpoints.small`
+    ${(props) => props.theme.breakpoints.large`
         display: flex;
     `}
 `;
@@ -86,7 +86,7 @@ export const BuildingName = styled.div`
 export const BuildingAspectRatio = styled.div`
     height: 100%;
 
-    ${(props) => props.theme.breakpoints.small`
+    ${(props) => props.theme.breakpoints.large`
         height: 0;
         padding-bottom: 150%;
     `}
@@ -121,7 +121,7 @@ export const Building = styled.div`
             }
         `}
 
-    ${(props) => props.theme.breakpoints.small`
+    ${(props) => props.theme.breakpoints.large`
         flex: 1;
         height: initial;
         width: initial;

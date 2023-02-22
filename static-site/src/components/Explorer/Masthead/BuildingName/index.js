@@ -14,14 +14,7 @@ export const BuildingName = () => {
             </S.BuildingNameHeader>
 
             {aka && (
-                <S.BuildingNameLocation
-                    css={`
-                        margin-top: -4px;
-                        margin-bottom: 8px;
-                    `}
-                >
-                    {aka.value}
-                </S.BuildingNameLocation>
+                <S.BuildingNameLocation>{aka.value}</S.BuildingNameLocation>
             )}
 
             {activeHighrise && (

@@ -19,10 +19,6 @@ export const SortBarLink = styled.div`
             padding: 0 8px;
             color: ${(props) => props.theme.colors.grey[0]};
             border: 1px solid ${(props) => props.theme.colors.grey[0]};
-
-            ${(props) => props.theme.breakpoints.medium`
-                padding: 0 32px;
-            `}
         `}
 `;
 

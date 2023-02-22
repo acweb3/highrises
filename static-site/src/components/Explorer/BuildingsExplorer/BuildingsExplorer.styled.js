@@ -44,7 +44,7 @@ export const BuildingsExplorerGrid = styled.div`
             height: ${props.buildingExplorerHeight + 1}px;
         `}
 
-    ${(props) => props.theme.breakpoints.small`
+    ${(props) => props.theme.breakpoints.large`
         display: grid;
         grid-template-columns: ${() => {
             if (props.count > 16) {
@@ -74,6 +74,10 @@ export const BuildingsExplorer = styled.div`
 
     background-image: url(${gridSrc});
 
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
     ${(props) =>
         props.buildingExplorerHeight &&
         css`
@@ -83,7 +87,15 @@ export const BuildingsExplorer = styled.div`
             width: 100%;
         `}
 
-    ${(props) => props.theme.breakpoints.small`
+    ${(props) => props.theme.breakpoints.medium`
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    `}
+
+    ${(props) => props.theme.breakpoints.large`
+        position: relative;
+
         overflow-x: hidden;
         overflow-y: scroll;
 

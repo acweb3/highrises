@@ -1,6 +1,6 @@
 import { useWindowListener } from 'common/hooks/useWindowListener';
 import { breakpointsMap } from 'common/styles/theme/breakpoints';
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { useDebounce } from 'use-debounce';
 
 const getWindowSize = (size) => {
@@ -10,14 +10,8 @@ const getWindowSize = (size) => {
     if (size >= breakpointsMap.medium) {
         return breakpointsMap.medium;
     }
-    if (size >= breakpointsMap.small) {
-        return breakpointsMap.small;
-    }
-    if (size >= breakpointsMap.extraSmall) {
-        return breakpointsMap.extraSmall;
-    }
 
-    return breakpointsMap.mobile;
+    return breakpointsMap.small;
 };
 
 const getWindowDimensions = () => ({
@@ -32,6 +26,11 @@ export const useWindowSizeContext = () => useContext(WindowSizeContext);
 export const WindowSize = ({ children }) => {
     const [windowSize, setWindowSize] = useState(undefined);
     const [debouncedWindowSize] = useDebounce(windowSize, 400);
+    const debouncedWindowSizeWidth = debouncedWindowSize?.width;
+    const breakpoint = useMemo(
+        () => getWindowSize(debouncedWindowSizeWidth),
+        [debouncedWindowSizeWidth]
+    );
 
     useEffect(() => {
         setWindowSize(getWindowDimensions());
@@ -49,9 +48,9 @@ export const WindowSize = ({ children }) => {
         <WindowSizeContext.Provider
             value={{
                 isMobile:
-                    debouncedWindowSize &&
-                    getWindowSize(debouncedWindowSize.width) <=
-                        breakpointsMap.small,
+                    debouncedWindowSize && breakpoint <= breakpointsMap.small,
+                isTablet:
+                    debouncedWindowSize && breakpoint <= breakpointsMap.medium,
             }}
         >
             {children}

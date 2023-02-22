@@ -41,7 +41,7 @@ export const HeaderDouble = styled.div`
             line-height: ${(props) => props.theme.typography.fontSize.h3};
         `}
 
-    ${(props) => props.theme.breakpoints.small`
+    ${(props) => props.theme.breakpoints.large`
         font-size: ${props.theme.typography.fontSize.h2};
         margin-bottom: 16px;
         height: initial;
@@ -85,5 +85,6 @@ export const Header = styled.div`
     ${(props) => props.theme.breakpoints.small`
         padding: 32px 0 32px;
         max-width: 300px;
+        margin: 0 auto;
     `}
 `;

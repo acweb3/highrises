@@ -1,6 +1,8 @@
 import styled, { css } from 'styled-components';
 
-export const baseButtonCss = css`
+export const baseButtonCss = css``;
+
+export const BaseButton = styled.div`
     user-select: none;
 
     font-family: ${(props) => props.theme.typography.fontFamily.karla};
@@ -30,29 +32,10 @@ export const baseButtonCss = css`
         opacity: 0.8;
     }
 
-    ${(props) => props.theme.breakpoints.mobile`
+    ${(props) => props.theme.breakpoints.small`
         width: 200px;
         padding: 8px 36px;
         white-space: nowrap;
         text-align: center;
     `}
-`;
-
-export const BaseButton = styled.div`
-    ${baseButtonCss}
-`;
-
-export const ExternalButton = styled(BaseButton)`
-    margin-top: 16px;
-    width: 100%;
-
-    min-width: min-content;
-
-    ${(props) => props.theme.breakpoints.extraSmall`width: 304px;`}
-    ${(props) => props.theme.breakpoints.medium`width: 160px;`}
-    ${(props) => props.theme.breakpoints.large`width: 304px;`}
-`;
-
-export const ExternalButtonLink = styled.a`
-    text-decoration: none;
 `;

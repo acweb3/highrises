@@ -55,6 +55,10 @@ export const FeatureImageInstructions = styled.div`
 
     ${(props) => props.theme.breakpoints.small`
         position: absolute;
+    `}
+
+    ${(props) => props.theme.breakpoints.large`
+        position: absolute;
         top: initial;
         bottom: 48px;
     `}
@@ -144,7 +148,7 @@ export const FeatureImageActions = styled.div`
 
     padding: 16px;
 
-    ${(props) => props.theme.breakpoints.small`
+    ${(props) => props.theme.breakpoints.large`
         display: none;
     `}
 `;
@@ -160,8 +164,13 @@ export const FeatureImageBadge = styled(BuildingBadge)`
         css`
             top: ${props.zoomWrapperHeight - 40}px;
         `}
-
+    
     ${(props) => props.theme.breakpoints.small`
+        position: absolute;
+        left: 16px;
+    `}
+
+    ${(props) => props.theme.breakpoints.large`
         display: none;
     `}
 `;
