@@ -185,10 +185,6 @@ const DesktopMasthead = () => {
 export const Masthead = ({ buildingExplorerHeight }) => {
     const { isMobile } = useWindowSizeContext();
 
-    if (isMobile === undefined) {
-        return null;
-    }
-
     return (
         <>
             {isMobile ? (

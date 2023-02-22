@@ -1,6 +1,7 @@
 import { useWindowListener } from 'common/hooks/useWindowListener';
 import { Nav } from 'components/Nav';
 import * as S from 'components/SiteWrapper/SiteWrapper.styled';
+import { useWindowSizeContext } from 'contexts/WindowSize';
 import { useEffect, useRef, useState } from 'react';
 
 const useTransformScroll = () => {
@@ -41,13 +42,16 @@ const useTransformScroll = () => {
 export const SiteWrapper = ({ children }) => {
     const isTransform = useTransformScroll();
     const navRef = useRef();
+    const { isMobile, isTablet } = useWindowSizeContext();
+
+    const isWindowSizeLoaded = isMobile !== undefined && isTablet !== undefined;
 
     return (
         <>
             <S.GlobalStyle />
 
             <S.SiteWrapperNav>
-                <Nav ref={navRef} />
+                {isWindowSizeLoaded && <Nav ref={navRef} />}
             </S.SiteWrapperNav>
 
             <S.SiteWrapperOffset />
@@ -55,7 +59,7 @@ export const SiteWrapper = ({ children }) => {
             <S.SiteWrapperScroll
                 transform={isTransform ? navRef.current.offsetHeight : 0}
             >
-                <S.SiteWrapper>{children}</S.SiteWrapper>
+                <S.SiteWrapper>{isWindowSizeLoaded && children}</S.SiteWrapper>
             </S.SiteWrapperScroll>
         </>
     );

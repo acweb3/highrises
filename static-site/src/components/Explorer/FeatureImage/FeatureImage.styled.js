@@ -192,6 +192,8 @@ export const FeatureImageRandom = styled(FeatureImage)`
 
     position: absolute;
 
+    cursor: pointer;
+
     ${(props) =>
         props.isActive &&
         css`

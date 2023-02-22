@@ -124,10 +124,6 @@ export const Explorer = ({ thumbnail }) => {
     const { isMobile, isTablet } = useWindowSizeContext();
     const { activeHighrise, activeDescription } = useActiveHighriseContext();
 
-    if (isMobile === undefined || isTablet === undefined) {
-        return null;
-    }
-
     const aka = activeHighrise?.attributes.find(
         ({ trait_type }) => trait_type === 'AKA now'
     );

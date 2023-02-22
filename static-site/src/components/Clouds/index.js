@@ -5,10 +5,6 @@ import { useWindowSizeContext } from 'contexts/WindowSize';
 export const Clouds = ({ ...props }) => {
     const { isMobile } = useWindowSizeContext();
 
-    if (isMobile === undefined) {
-        return null;
-    }
-
     return (
         <>
             {!isMobile ? (

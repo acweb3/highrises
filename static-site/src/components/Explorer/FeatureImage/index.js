@@ -33,14 +33,17 @@ const useLastFeatureImage = (highrise) => {
 };
 
 const FeatureImageRandomizer = ({ resetFiltering }) => {
-    const { randomHighrise } = useActiveHighriseContext();
+    const { randomHighrise, setActiveHighrise } = useActiveHighriseContext();
     const { a, b, activeLayer } = useLastFeatureImage(randomHighrise);
     const { width } = useZoomWidth();
 
     return (
         <S.FeatureImageRandomContainer
             style={{ width }}
-            onClick={resetFiltering}
+            onClick={() => {
+                resetFiltering();
+                setActiveHighrise(activeLayer === 1 ? b : a);
+            }}
         >
             <S.FeatureImageRandom
                 isActive={activeLayer === 0}

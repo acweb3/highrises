@@ -43,6 +43,8 @@ export const BuildingCaption = styled.div`
     opacity: 0;
     transition: opacity 400ms;
 
+    line-height: 1.05;
+
     &::before {
         content: ' ';
         position: absolute;
@@ -81,6 +83,7 @@ export const BuildingName = styled.div`
     font-size: 1rem;
     text-align: center;
     text-align: center;
+    margin-top: 8px;
 `;
 
 export const BuildingAspectRatio = styled.div`
