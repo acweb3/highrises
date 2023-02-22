@@ -76,6 +76,7 @@ export const GlobalStyle = createGlobalStyle`
 
         -ms-overflow-style: none;
         scrollbar-width: none;
+
         &::-webkit-scrollbar {
             width: 0 !important;
             display: none;
@@ -105,5 +106,9 @@ export const GlobalStyle = createGlobalStyle`
     */
     #root, #__next {
         isolation: isolate;
+    }
+
+    html, body {
+        touch-action: none
     }
 `;

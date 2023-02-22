@@ -42,6 +42,11 @@ export const Metadata = ({
             <link rel="canonical" href="highrises.hythacg.com" />
             <meta property="og:type" content="website" />
             <meta name="twitter:card" content="summary_large_image" />
+
+            <meta
+                name="viewport"
+                content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+            />
         </Helmet>
     );
 };

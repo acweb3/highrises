@@ -103,28 +103,27 @@ export const SORTS = {
 
     region: {
         name: 'Region',
-        options: {
-            ['Northeast']: {
-                value: 'Northeast',
-                sort: (highrises) =>
-                    highrises.filter((highrise) => highrise.index < 50),
+        options: [
+            ...new Set(
+                highrisesData.flatMap((highrise) =>
+                    highrise.attributes
+                        .filter(
+                            (attribute) => attribute.trait_type === 'Region'
+                        )
+                        .map((attribute) => attribute.value)
+                )
+            ),
+        ].map((value) => ({
+            value,
+            sort: (highrises) => {
+                return highrises.filter((highrise) => {
+                    const attributes = highrise.attributes.map(
+                        (attribute) => attribute.value
+                    );
+                    return attributes.includes(value);
+                });
             },
-
-            ['West']: {
-                value: 'West',
-                sort: (highrises) =>
-                    highrises.filter(
-                        (highrise) =>
-                            highrise.index >= 50 && highrise.index < 65
-                    ),
-            },
-
-            ['Midwest']: {
-                value: 'Midwest',
-                sort: (highrises) =>
-                    highrises.filter((highrise) => highrise.index >= 65),
-            },
-        },
+        })),
     },
 };
 

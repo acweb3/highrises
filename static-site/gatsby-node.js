@@ -105,14 +105,14 @@ exports.createPages = async function ({ actions, graphql }) {
                     productSrc: urlMap[index]?.['poster-highrises'],
                     blurSrc: urlMap[index]?.['blur-poster-highrises'],
                     productLink: `https://www.hythacg.com/prints/highrise${`${
-                        getIndex(activeHighrise) + 1
+                        getIndex(highrise) + 1
                     }`.padStart(2, '0')}`,
                 },
             ];
 
             const metaverseProducts = [
                 // Opensea NFT
-                {
+                index < 75 && {
                     isNft: true,
                     productSrc: urlMap[index]?.['nft-highrises'],
                     blurSrc: urlMap[index]?.['blur-nft-highrises'],
