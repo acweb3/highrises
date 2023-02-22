@@ -1,4 +1,3 @@
-import { useWindowListener } from 'common/hooks/useWindowListener';
 import * as S from 'components/Explorer/FeatureImage/FeatureImage.styled';
 import { SORTS, useSorts } from 'components/Explorer/SortBar';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
@@ -35,11 +34,9 @@ const useLastFeatureImage = (highrise) => {
 const FeatureImageRandomizer = ({ resetFiltering }) => {
     const { randomHighrise, setActiveHighrise } = useActiveHighriseContext();
     const { a, b, activeLayer } = useLastFeatureImage(randomHighrise);
-    const { width } = useZoomWidth();
 
     return (
         <S.FeatureImageRandomContainer
-            style={{ width }}
             onClick={() => {
                 resetFiltering();
                 setActiveHighrise(activeLayer === 1 ? b : a);
@@ -62,30 +59,10 @@ const FeatureImageRandomizer = ({ resetFiltering }) => {
     );
 };
 
-const useZoomWidth = () => {
-    const [width, setWidth] = useState(0);
-    const { isMobile } = useWindowSizeContext();
-
-    useEffect(() => {
-        setWidth((window.innerHeight * 2) / 3);
-    }, []);
-
-    useWindowListener(
-        'resize',
-        () => {
-            setWidth((window.innerHeight * 2) / 3);
-        },
-        []
-    );
-
-    return { width: isMobile ? undefined : width };
-};
-
 const FeatureImageZoom = ({ resetFiltering, buildingExplorerHeight }) => {
     const { activeHighrise } = useActiveHighriseContext();
     const { isMobile } = useWindowSizeContext();
     const openseaDragonRef = useRef();
-    const { width } = useZoomWidth();
     const [zoomWrapperHeight, setZoomWrapperHeight] = useState(undefined);
 
     const [isShowInstructions, setIsShowInstructions] = useState(true);
@@ -164,12 +141,7 @@ const FeatureImageZoom = ({ resetFiltering, buildingExplorerHeight }) => {
                 {isMobile ? 'Pinch to zoom' : 'Scroll to zoom'}
             </S.FeatureImageInstructions>
 
-            <S.FeatureImageZoom
-                id="openseaDragon"
-                style={{
-                    width,
-                }}
-            />
+            <S.FeatureImageZoom id="openseaDragon" />
         </S.FeatureImageZoomWrapper>
     );
 };
@@ -274,7 +246,7 @@ export const FeatureImageFilterAbout = () => {
 };
 
 export const FeatureImage = forwardRef(({ buildingExplorerHeight }, ref) => {
-    const { isMobile } = useWindowSizeContext();
+    const { isMobile, zoomWidth } = useWindowSizeContext();
     const { isMobilePopoverOpen, setIsMobilePopoverOpen } =
         useMobilePopoverContext();
     const { activeHighrise, activeDescription, hasInteracted } =
@@ -330,6 +302,7 @@ export const FeatureImage = forwardRef(({ buildingExplorerHeight }, ref) => {
     return (
         <S.FeatureImageWrapper
             ref={ref}
+            style={{ width: zoomWidth }}
             onClick={() => setIsMobilePopoverOpen(false)}
         >
             <S.FeatureImageActions>

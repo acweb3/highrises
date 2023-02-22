@@ -14,6 +14,24 @@ const getWindowSize = (size) => {
     return breakpointsMap.small;
 };
 
+const useZoomWidth = (isMobile) => {
+    const [width, setWidth] = useState(0);
+
+    useEffect(() => {
+        setWidth((window.innerHeight * 2) / 3);
+    }, []);
+
+    useWindowListener(
+        'resize',
+        () => {
+            setWidth((window.innerHeight * 2) / 3);
+        },
+        []
+    );
+
+    return isMobile ? undefined : width;
+};
+
 const getWindowDimensions = () => ({
     width: window.visualViewport.width,
     height: window.visualViewport.height,
@@ -32,6 +50,11 @@ export const WindowSize = ({ children }) => {
         [debouncedWindowSizeWidth]
     );
 
+    const isMobile = debouncedWindowSize && breakpoint <= breakpointsMap.small;
+    const isTablet = debouncedWindowSize && breakpoint <= breakpointsMap.medium;
+
+    const zoomWidth = useZoomWidth(isMobile);
+
     useEffect(() => {
         setWindowSize(getWindowDimensions());
     }, []);
@@ -47,10 +70,10 @@ export const WindowSize = ({ children }) => {
     return (
         <WindowSizeContext.Provider
             value={{
-                isMobile:
-                    debouncedWindowSize && breakpoint <= breakpointsMap.small,
-                isTablet:
-                    debouncedWindowSize && breakpoint <= breakpointsMap.medium,
+                isMobile,
+                isTablet,
+
+                zoomWidth,
             }}
         >
             {children}
