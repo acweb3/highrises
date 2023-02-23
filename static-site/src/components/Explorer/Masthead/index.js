@@ -126,7 +126,8 @@ const MobileMasthead = ({ buildingExplorerHeight }) => {
 const DesktopMasthead = () => {
     const [didScroll, setDidScroll] = useState(false);
     const delayedDidScrolled = useDelayed(didScroll, 400);
-    const { activeHighrise, activeDescription } = useActiveHighriseContext();
+    const { activeHighrise, activeDescription, reset } =
+        useActiveHighriseContext();
     const mastheadRef = useRef(null);
     const collectiblesRef = useRef();
 
@@ -143,6 +144,16 @@ const DesktopMasthead = () => {
             ref={mastheadRef}
             onScroll={() => setDidScroll(true)}
         >
+            {activeDescription?.header !== 'About' && (
+                <S.DesktopMastheadCloseButton
+                    onClick={() => {
+                        reset();
+                    }}
+                >
+                    <S.DesktopMastheadClose />
+                </S.DesktopMastheadCloseButton>
+            )}
+
             <S.DesktopMastheadSection>
                 <Header />
                 <BuildingName />

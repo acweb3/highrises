@@ -1,3 +1,4 @@
+import UnstyledClose from 'assets/icons/close.svg';
 import { BaseButton } from 'components/ui/BaseButton';
 import styled, { css } from 'styled-components';
 
@@ -145,6 +146,20 @@ export const MobileMasthead = styled.div`
     justify-content: center;
 
     max-height: 60%;
+`;
+
+export const DesktopMastheadClose = styled(UnstyledClose)`
+    width: 24px;
+    height: 24px;
+`;
+
+export const DesktopMastheadCloseButton = styled.div`
+    position: absolute;
+    top: 8px;
+    right: 16px;
+
+    cursor: pointer;
+    padding: 8px;
 `;
 
 export const DesktopMastheadEmailCollectionWrapper = styled.div`

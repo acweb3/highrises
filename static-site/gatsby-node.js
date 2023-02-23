@@ -157,7 +157,7 @@ exports.createPages = async function ({ actions, graphql }) {
     highrisesWithImages.forEach((highrise) => {
         actions.createPage({
             path: `/building/${kebabCase(highrise.name)}-${kebabCase(
-                highrise.architect
+                highrise.architect.split('.').join('')
             )}`,
             component: require.resolve(`./src/templates/Building.js`),
             context: {

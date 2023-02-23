@@ -43,7 +43,7 @@ export const HeaderDouble = styled.div`
 
     ${(props) => props.theme.breakpoints.large`
         font-size: ${props.theme.typography.fontSize.h2};
-        margin-bottom: 16px;
+        margin-bottom: 8px;
         height: initial;
 
         ${
@@ -63,10 +63,6 @@ export const HeaderSizeWrapper = styled.div`
     justify-content: center;
 
     height: 3rem;
-
-    ${(props) => props.theme.breakpoints.small`
-        height: 4rem;
-    `}
 `;
 
 export const Header = styled.div`

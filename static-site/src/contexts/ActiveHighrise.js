@@ -85,6 +85,15 @@ export const ActiveHighrise = ({
         setActiveDescription(description);
     }, []);
 
+    const reset = useCallback(() => {
+        setHighrises(initHighrises.current);
+        updateHighrise(undefined, false);
+        updateDescription({
+            header: 'About',
+            copy: `The prosperity of early 20th century America resulted in a boom of skyscrapers that still tower over cities across the country today. Focusing on the character and craftsmanship on display at the top of these landmark buildings in a way that can’t be seen from street level, the Highrises Collection reveals fascinating details and stories of these distinctly American icons.`,
+        });
+    }, [updateHighrise, updateDescription]);
+
     useEffect(() => {
         if (activeHighrise) {
             updateDescription(undefined, false);
@@ -131,12 +140,7 @@ export const ActiveHighrise = ({
             updateHighrise(initHighrise);
             updateDescription(undefined, false);
         } else if (initHighrises.current) {
-            setHighrises(initHighrises.current);
-            updateHighrise(undefined, false);
-            updateDescription({
-                header: 'About',
-                copy: `The prosperity of early 20th century America resulted in a boom of skyscrapers that still tower over cities across the country today. Focusing on the character and craftsmanship on display at the top of these landmark buildings in a way that can’t be seen from street level, the Highrises Collection reveals fascinating details and stories of these distinctly American icons.`,
-            });
+            reset();
         }
     }, [
         activeSort,
@@ -145,6 +149,7 @@ export const ActiveHighrise = ({
         initHighrises,
         initHighrise,
         updateDescription,
+        reset,
     ]);
 
     return (
@@ -159,6 +164,7 @@ export const ActiveHighrise = ({
                 setHighrises,
                 initHighrises,
                 initHighrisesState: init,
+                reset,
             }}
         >
             {children}

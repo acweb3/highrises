@@ -59,7 +59,12 @@ const FeatureImageRandomizer = ({ resetFiltering }) => {
     );
 };
 
-const FeatureImageZoom = ({ resetFiltering, buildingExplorerHeight }) => {
+const FeatureImageZoom = ({
+    resetFiltering,
+    buildingExplorerHeight,
+    didShowInstructions,
+    setDidShowInstructions,
+}) => {
     const { activeHighrise } = useActiveHighriseContext();
     const { isMobile } = useWindowSizeContext();
     const openseaDragonRef = useRef();
@@ -97,12 +102,13 @@ const FeatureImageZoom = ({ resetFiltering, buildingExplorerHeight }) => {
 
         const sto = setTimeout(() => {
             setIsShowInstructions(false);
+            setDidShowInstructions(true);
         }, 8000);
 
         return () => {
             clearTimeout(sto);
         };
-    }, []);
+    }, [setDidShowInstructions]);
 
     useEffect(() => {
         setIsShowNumber(true);
@@ -134,7 +140,9 @@ const FeatureImageZoom = ({ resetFiltering, buildingExplorerHeight }) => {
             <S.FeatureImageInstructions
                 zoomWrapperHeight={zoomWrapperHeight}
                 isShowing={
-                    (!isMobile || zoomWrapperHeight) && isShowInstructions
+                    (!isMobile || zoomWrapperHeight) &&
+                    isShowInstructions &&
+                    !didShowInstructions
                 }
             >
                 <S.FeatureImageInstructionsPinch />
@@ -256,6 +264,7 @@ export const FeatureImage = forwardRef(({ buildingExplorerHeight }, ref) => {
     const [isShowingToast, setIsShowingToast] = useState(false);
     const [zoomWrapperHeight, setZoomWrapperHeight] = useState(undefined);
     const [isFiltering, setIsFiltering] = useState(false);
+    const [didShowInstructions, setDidShowInstructions] = useState(false);
 
     useEffect(() => {
         if (isMobilePopoverOpen) {
@@ -315,6 +324,8 @@ export const FeatureImage = forwardRef(({ buildingExplorerHeight }, ref) => {
 
             {hasInteracted && activeHighrise ? (
                 <FeatureImageZoom
+                    didShowInstructions={didShowInstructions}
+                    setDidShowInstructions={setDidShowInstructions}
                     buildingExplorerHeight={buildingExplorerHeight}
                     resetFiltering={() => setIsFiltering(false)}
                 />

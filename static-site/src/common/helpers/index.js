@@ -6,6 +6,6 @@ export const getIndex = (highrise) => {
 
 export const getBuildingURL = (highrise) => {
     return `/building/${kebabCase(highrise.name)}-${kebabCase(
-        highrise.architect
+        highrise.architect.split('.').join('')
     )}`;
 };
