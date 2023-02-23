@@ -1,4 +1,5 @@
 import * as S from 'components/Explorer/BuildingsExplorer/Building/Building.styled';
+import { HoverDescription } from 'components/ui/HoverDescription';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
 import { useEffect, useRef } from 'react';
 import { useInViewport } from 'react-in-viewport';
@@ -15,12 +16,19 @@ export const Building = ({ building, onInView }) => {
     }, [inViewport, onInView, building.index]);
 
     return (
-        <S.Building
+        <HoverDescription
             ref={ref}
             isActive={building.index === activeHighrise?.index}
             onClick={() => {
                 setActiveHighrise(building);
             }}
+            title={building.name}
+            subtitle={
+                <>
+                    {building.city}
+                    {building.state && `, ${building.state}`}
+                </>
+            }
         >
             <S.BuildingAspectRatio>
                 <S.BuildingBuildingBadge>
@@ -32,14 +40,6 @@ export const Building = ({ building, onInView }) => {
                     blurSrc={building.blurNftSrc}
                 />
             </S.BuildingAspectRatio>
-
-            <S.BuildingCaption>
-                <S.BuildingIndex>{building.name}</S.BuildingIndex>
-                <S.BuildingName>
-                    {building.city}
-                    {building.state && `, ${building.state}`}
-                </S.BuildingName>
-            </S.BuildingCaption>
-        </S.Building>
+        </HoverDescription>
     );
 };

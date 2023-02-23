@@ -37,9 +37,10 @@ const poster = async () => {
     //     }
     // });
 
-    files.forEach(async (file, index) => {
+    files.forEach(async (file) => {
         try {
             const fileName = join(rawImagesDir, file);
+            const [index] = file.split('.');
 
             await sharp(fileName)
                 .resize({

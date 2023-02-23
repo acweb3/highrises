@@ -11,6 +11,24 @@ export const CollectibleNFTOverlay = styled.div`
     z-index: 2;
 `;
 
+export const CollectibleName = styled.div`
+    display: flex;
+    text-align: center;
+    padding: 8px 8px 16px;
+    align-self: center;
+    line-height: 1.1;
+    font-weight: 600;
+
+    ${(props) => props.theme.breakpoints.small`
+        display: none;
+    `}
+`;
+
+export const CollectibleWrapper = styled.a`
+    display: flex;
+    flex-direction: column;
+`;
+
 export const CollectibleSquare = styled.div`
     position: absolute;
     height: 100%;
@@ -22,7 +40,7 @@ export const CollectibleSquare = styled.div`
     z-index: 1;
 `;
 
-export const Collectible = styled.a`
+export const Collectible = styled.div`
     position: relative;
 
     padding-bottom: 100%;
@@ -33,6 +51,12 @@ export const Collectible = styled.a`
 export const CollectiblesGrid = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
+
+    grid-column-gap: 16px;
+
+    ${(props) => props.theme.breakpoints.small`
+        grid-column-gap: 0;
+    `}
 `;
 
 export const CollectiblesCopy = styled.div`

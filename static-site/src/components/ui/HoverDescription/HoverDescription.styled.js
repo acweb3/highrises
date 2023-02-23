@@ -1,9 +1,46 @@
-import { BuildingBadge } from 'components/BuildingBadge/BuildingBadge.styled';
-import { BlurLoader } from 'components/ui/BlurLoader';
 import styled, { css } from 'styled-components';
 
-// lol
-export const BuildingBuildingBadge = styled(BuildingBadge)`
+export const HoverDescriptionCaption = styled.div`
+    color: ${(props) => props.theme.colors.blue[0]};
+
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+
+    height: 100%;
+    width: 100%;
+
+    z-index: 1;
+
+    opacity: 0;
+    transition: opacity 400ms;
+
+    line-height: 1.05;
+
+    padding: 16px;
+
+    &::before {
+        content: ' ';
+        position: absolute;
+        background: ${(props) => props.theme.colors.white[0]};
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 400ms;
+    }
+
+    &:hover {
+        opacity: 1;
+
+        &::before {
+            opacity: 0.75;
+        }
+    }
+
     display: none;
 
     ${(props) => props.theme.breakpoints.large`
@@ -11,30 +48,22 @@ export const BuildingBuildingBadge = styled(BuildingBadge)`
     `}
 `;
 
-export const BuildingImage = styled(BlurLoader)`
-    & > img {
-        height: 100%;
-        width: auto;
-    }
-
-    ${(props) => props.theme.breakpoints.large`
-        & > img {
-            height: initial;
-            width: initial;
-        }
-    `}
+export const HoverDescriptionIndex = styled.div`
+    line-height: 1.25;
+    font-weight: 600;
+    user-select: none;
+    text-align: center;
+    padding: 0 4px;
 `;
 
-export const BuildingAspectRatio = styled.div`
-    height: 100%;
-
-    ${(props) => props.theme.breakpoints.large`
-        height: 0;
-        padding-bottom: 150%;
-    `}
+export const HoverDescriptionName = styled.div`
+    font-size: 1rem;
+    text-align: center;
+    text-align: center;
+    margin-top: 8px;
 `;
 
-export const Building = styled.div`
+export const HoverDescription = styled.div`
     color: #fff;
 
     display: flex;

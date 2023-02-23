@@ -18,12 +18,14 @@ const { highrises } = require('./dist/site/highrises');
                         ? [
                               ...highrise.products,
                               {
+                                  name: productName,
                                   productName: kebabCase(productName),
                                   productLink,
                               },
                           ]
                         : [
                               {
+                                  name: productName,
                                   productName: kebabCase(productName),
                                   productLink,
                               },

@@ -91,15 +91,18 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Northeast Collage',
                 productName: 'northeast-collage',
                 productLink: 'https://www.hythacg.com/prints/northeastcollage',
             },
             {
+                name: 'Philly Collage',
                 productName: 'philly-collage',
                 productLink:
                     'https://www.hythacg.com/prints/philadelphia-collage',
             },
             {
+                name: 'Philly Wallpapers',
                 productName: 'philly-wallpapers',
                 productLink:
                     'https://www.hythacg.com/prints/philadelphia-wallpaper',
@@ -182,10 +185,12 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Northeast Collage',
                 productName: 'northeast-collage',
                 productLink: 'https://www.hythacg.com/prints/northeastcollage',
             },
             {
+                name: 'Philly Wallpapers',
                 productName: 'philly-wallpapers',
                 productLink:
                     'https://www.hythacg.com/prints/philadelphia-wallpaper',
@@ -268,15 +273,18 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Northeast Collage',
                 productName: 'northeast-collage',
                 productLink: 'https://www.hythacg.com/prints/northeastcollage',
             },
             {
+                name: 'Philly Collage',
                 productName: 'philly-collage',
                 productLink:
                     'https://www.hythacg.com/prints/philadelphia-collage',
             },
             {
+                name: 'Philly Wallpapers',
                 productName: 'philly-wallpapers',
                 productLink:
                     'https://www.hythacg.com/prints/philadelphia-wallpaper',
@@ -363,15 +371,18 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Northeast Collage',
                 productName: 'northeast-collage',
                 productLink: 'https://www.hythacg.com/prints/northeastcollage',
             },
             {
+                name: 'Philly Collage',
                 productName: 'philly-collage',
                 productLink:
                     'https://www.hythacg.com/prints/philadelphia-collage',
             },
             {
+                name: 'Philly Wallpapers',
                 productName: 'philly-wallpapers',
                 productLink:
                     'https://www.hythacg.com/prints/philadelphia-wallpaper',
@@ -467,15 +478,18 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Northeast Collage',
                 productName: 'northeast-collage',
                 productLink: 'https://www.hythacg.com/prints/northeastcollage',
             },
             {
+                name: 'Philly Collage',
                 productName: 'philly-collage',
                 productLink:
                     'https://www.hythacg.com/prints/philadelphia-collage',
             },
             {
+                name: 'Philly Wallpapers',
                 productName: 'philly-wallpapers',
                 productLink:
                     'https://www.hythacg.com/prints/philadelphia-wallpaper',
@@ -574,15 +588,18 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Northeast Collage',
                 productName: 'northeast-collage',
                 productLink: 'https://www.hythacg.com/prints/northeastcollage',
             },
             {
+                name: 'Philly Collage',
                 productName: 'philly-collage',
                 productLink:
                     'https://www.hythacg.com/prints/philadelphia-collage',
             },
             {
+                name: 'Philly Wallpapers',
                 productName: 'philly-wallpapers',
                 productLink:
                     'https://www.hythacg.com/prints/philadelphia-wallpaper',
@@ -669,10 +686,12 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Northeast Collage',
                 productName: 'northeast-collage',
                 productLink: 'https://www.hythacg.com/prints/northeastcollage',
             },
             {
+                name: 'Philly Wallpapers',
                 productName: 'philly-wallpapers',
                 productLink:
                     'https://www.hythacg.com/prints/philadelphia-wallpaper',
@@ -764,10 +783,12 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Northeast Collage',
                 productName: 'northeast-collage',
                 productLink: 'https://www.hythacg.com/prints/northeastcollage',
             },
             {
+                name: 'Philly Wallpapers',
                 productName: 'philly-wallpapers',
                 productLink:
                     'https://www.hythacg.com/prints/philadelphia-wallpaper',
@@ -850,10 +871,12 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Northeast Collage',
                 productName: 'northeast-collage',
                 productLink: 'https://www.hythacg.com/prints/northeastcollage',
             },
             {
+                name: 'Philly Wallpapers',
                 productName: 'philly-wallpapers',
                 productLink:
                     'https://www.hythacg.com/prints/philadelphia-wallpaper',
@@ -932,10 +955,12 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Northeast Collage',
                 productName: 'northeast-collage',
                 productLink: 'https://www.hythacg.com/prints/northeastcollage',
             },
             {
+                name: 'Philly Wallpapers',
                 productName: 'philly-wallpapers',
                 productLink:
                     'https://www.hythacg.com/prints/philadelphia-wallpaper',
@@ -1026,15 +1051,18 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Northeast Collage',
                 productName: 'northeast-collage',
                 productLink: 'https://www.hythacg.com/prints/northeastcollage',
             },
             {
+                name: 'Philly Collage',
                 productName: 'philly-collage',
                 productLink:
                     'https://www.hythacg.com/prints/philadelphia-collage',
             },
             {
+                name: 'Philly Wallpapers',
                 productName: 'philly-wallpapers',
                 productLink:
                     'https://www.hythacg.com/prints/philadelphia-wallpaper',
@@ -1129,10 +1157,12 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Northeast Collage',
                 productName: 'northeast-collage',
                 productLink: 'https://www.hythacg.com/prints/northeastcollage',
             },
             {
+                name: 'Philly Wallpapers',
                 productName: 'philly-wallpapers',
                 productLink:
                     'https://www.hythacg.com/prints/philadelphia-wallpaper',
@@ -1232,15 +1262,18 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Northeast Collage',
                 productName: 'northeast-collage',
                 productLink: 'https://www.hythacg.com/prints/northeastcollage',
             },
             {
+                name: 'Philly Collage',
                 productName: 'philly-collage',
                 productLink:
                     'https://www.hythacg.com/prints/philadelphia-collage',
             },
             {
+                name: 'Philly Wallpapers',
                 productName: 'philly-wallpapers',
                 productLink:
                     'https://www.hythacg.com/prints/philadelphia-wallpaper',
@@ -1331,15 +1364,18 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Northeast Collage',
                 productName: 'northeast-collage',
                 productLink: 'https://www.hythacg.com/prints/northeastcollage',
             },
             {
+                name: 'Philly Collage',
                 productName: 'philly-collage',
                 productLink:
                     'https://www.hythacg.com/prints/philadelphia-collage',
             },
             {
+                name: 'Philly Wallpapers',
                 productName: 'philly-wallpapers',
                 productLink:
                     'https://www.hythacg.com/prints/philadelphia-wallpaper',
@@ -1426,15 +1462,18 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Northeast Collage',
                 productName: 'northeast-collage',
                 productLink: 'https://www.hythacg.com/prints/northeastcollage',
             },
             {
+                name: 'Philly Collage',
                 productName: 'philly-collage',
                 productLink:
                     'https://www.hythacg.com/prints/philadelphia-collage',
             },
             {
+                name: 'Philly Wallpapers',
                 productName: 'philly-wallpapers',
                 productLink:
                     'https://www.hythacg.com/prints/philadelphia-wallpaper',
@@ -1518,14 +1557,17 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Northeast Collage',
                 productName: 'northeast-collage',
                 productLink: 'https://www.hythacg.com/prints/northeastcollage',
             },
             {
+                name: 'Pittsburgh Collage',
                 productName: 'pittsburgh-collage',
                 productLink: '',
             },
             {
+                name: 'Pittsburgh Wallpapers',
                 productName: 'pittsburgh-wallpapers',
                 productLink: '',
             },
@@ -1615,14 +1657,17 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Northeast Collage',
                 productName: 'northeast-collage',
                 productLink: 'https://www.hythacg.com/prints/northeastcollage',
             },
             {
+                name: 'Pittsburgh Collage',
                 productName: 'pittsburgh-collage',
                 productLink: '',
             },
             {
+                name: 'Pittsburgh Wallpapers',
                 productName: 'pittsburgh-wallpapers',
                 productLink: '',
             },
@@ -1716,14 +1761,17 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Northeast Collage',
                 productName: 'northeast-collage',
                 productLink: 'https://www.hythacg.com/prints/northeastcollage',
             },
             {
+                name: 'Pittsburgh Collage',
                 productName: 'pittsburgh-collage',
                 productLink: '',
             },
             {
+                name: 'Pittsburgh Wallpapers',
                 productName: 'pittsburgh-wallpapers',
                 productLink: '',
             },
@@ -1813,6 +1861,7 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Northeast Collage',
                 productName: 'northeast-collage',
                 productLink: 'https://www.hythacg.com/prints/northeastcollage',
             },
@@ -1903,6 +1952,7 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Northeast Collage',
                 productName: 'northeast-collage',
                 productLink: 'https://www.hythacg.com/prints/northeastcollage',
             },
@@ -1988,6 +2038,7 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Northeast Collage',
                 productName: 'northeast-collage',
                 productLink: 'https://www.hythacg.com/prints/northeastcollage',
             },
@@ -2073,10 +2124,12 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Northeast Collage',
                 productName: 'northeast-collage',
                 productLink: 'https://www.hythacg.com/prints/northeastcollage',
             },
             {
+                name: 'Buffalo Wallpapers',
                 productName: 'buffalo-wallpapers',
                 productLink: '',
             },
@@ -2162,10 +2215,12 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Northeast Collage',
                 productName: 'northeast-collage',
                 productLink: 'https://www.hythacg.com/prints/northeastcollage',
             },
             {
+                name: 'Buffalo Wallpapers',
                 productName: 'buffalo-wallpapers',
                 productLink: '',
             },
@@ -2255,10 +2310,12 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Northeast Collage',
                 productName: 'northeast-collage',
                 productLink: 'https://www.hythacg.com/prints/northeastcollage',
             },
             {
+                name: 'Buffalo Wallpapers',
                 productName: 'buffalo-wallpapers',
                 productLink: '',
             },
@@ -2344,10 +2401,12 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Northeast Collage',
                 productName: 'northeast-collage',
                 productLink: 'https://www.hythacg.com/prints/northeastcollage',
             },
             {
+                name: 'Buffalo Wallpapers',
                 productName: 'buffalo-wallpapers',
                 productLink: '',
             },
@@ -2433,10 +2492,12 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Northeast Collage',
                 productName: 'northeast-collage',
                 productLink: 'https://www.hythacg.com/prints/northeastcollage',
             },
             {
+                name: 'Buffalo Wallpapers',
                 productName: 'buffalo-wallpapers',
                 productLink: '',
             },
@@ -2514,6 +2575,7 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Northeast Collage',
                 productName: 'northeast-collage',
                 productLink: 'https://www.hythacg.com/prints/northeastcollage',
             },
@@ -2608,6 +2670,7 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Northeast Collage',
                 productName: 'northeast-collage',
                 productLink: 'https://www.hythacg.com/prints/northeastcollage',
             },
@@ -2684,6 +2747,7 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Northeast Collage',
                 productName: 'northeast-collage',
                 productLink: 'https://www.hythacg.com/prints/northeastcollage',
             },
@@ -2782,6 +2846,7 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Northeast Collage',
                 productName: 'northeast-collage',
                 productLink: 'https://www.hythacg.com/prints/northeastcollage',
             },
@@ -2875,6 +2940,7 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Northeast Collage',
                 productName: 'northeast-collage',
                 productLink: 'https://www.hythacg.com/prints/northeastcollage',
             },
@@ -2956,6 +3022,7 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Northeast Collage',
                 productName: 'northeast-collage',
                 productLink: 'https://www.hythacg.com/prints/northeastcollage',
             },
@@ -3053,6 +3120,7 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Northeast Collage',
                 productName: 'northeast-collage',
                 productLink: 'https://www.hythacg.com/prints/northeastcollage',
             },
@@ -3134,6 +3202,7 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Northeast Collage',
                 productName: 'northeast-collage',
                 productLink: 'https://www.hythacg.com/prints/northeastcollage',
             },
@@ -3219,6 +3288,7 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Northeast Collage',
                 productName: 'northeast-collage',
                 productLink: 'https://www.hythacg.com/prints/northeastcollage',
             },
@@ -3308,14 +3378,17 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Northeast Collage',
                 productName: 'northeast-collage',
                 productLink: 'https://www.hythacg.com/prints/northeastcollage',
             },
             {
+                name: 'Newark Collage',
                 productName: 'newark-collage',
                 productLink: '',
             },
             {
+                name: 'Newark Wallpapers',
                 productName: 'newark-wallpapers',
                 productLink: '',
             },
@@ -3406,14 +3479,17 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Northeast Collage',
                 productName: 'northeast-collage',
                 productLink: 'https://www.hythacg.com/prints/northeastcollage',
             },
             {
+                name: 'Newark Collage',
                 productName: 'newark-collage',
                 productLink: '',
             },
             {
+                name: 'Newark Wallpapers',
                 productName: 'newark-wallpapers',
                 productLink: '',
             },
@@ -3499,14 +3575,17 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Northeast Collage',
                 productName: 'northeast-collage',
                 productLink: 'https://www.hythacg.com/prints/northeastcollage',
             },
             {
+                name: 'Newark Collage',
                 productName: 'newark-collage',
                 productLink: '',
             },
             {
+                name: 'Newark Wallpapers',
                 productName: 'newark-wallpapers',
                 productLink: '',
             },
@@ -3597,14 +3676,17 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Northeast Collage',
                 productName: 'northeast-collage',
                 productLink: 'https://www.hythacg.com/prints/northeastcollage',
             },
             {
+                name: 'Newark Collage',
                 productName: 'newark-collage',
                 productLink: '',
             },
             {
+                name: 'Newark Wallpapers',
                 productName: 'newark-wallpapers',
                 productLink: '',
             },
@@ -3699,6 +3781,7 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Northeast Collage',
                 productName: 'northeast-collage',
                 productLink: 'https://www.hythacg.com/prints/northeastcollage',
             },
@@ -3784,6 +3867,7 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Northeast Collage',
                 productName: 'northeast-collage',
                 productLink: 'https://www.hythacg.com/prints/northeastcollage',
             },
@@ -3874,6 +3958,7 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Northeast Collage',
                 productName: 'northeast-collage',
                 productLink: 'https://www.hythacg.com/prints/northeastcollage',
             },
@@ -3959,6 +4044,7 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Northeast Collage',
                 productName: 'northeast-collage',
                 productLink: 'https://www.hythacg.com/prints/northeastcollage',
             },
@@ -4052,6 +4138,7 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Northeast Collage',
                 productName: 'northeast-collage',
                 productLink: 'https://www.hythacg.com/prints/northeastcollage',
             },
@@ -4145,6 +4232,7 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Northeast Collage',
                 productName: 'northeast-collage',
                 productLink: 'https://www.hythacg.com/prints/northeastcollage',
             },
@@ -4234,6 +4322,7 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Northeast Collage',
                 productName: 'northeast-collage',
                 productLink: 'https://www.hythacg.com/prints/northeastcollage',
             },
@@ -4331,6 +4420,7 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Northeast Collage',
                 productName: 'northeast-collage',
                 productLink: 'https://www.hythacg.com/prints/northeastcollage',
             },
@@ -4420,6 +4510,7 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Northeast Collage',
                 productName: 'northeast-collage',
                 productLink: 'https://www.hythacg.com/prints/northeastcollage',
             },
@@ -4513,6 +4604,7 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Northeast Collage',
                 productName: 'northeast-collage',
                 productLink: 'https://www.hythacg.com/prints/northeastcollage',
             },
@@ -5091,10 +5183,12 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Chicago Collage',
                 productName: 'chicago-collage',
                 productLink: 'https://www.hythacg.com/prints/chicago-collage',
             },
             {
+                name: 'Chicago Wallpapers',
                 productName: 'chicago-wallpapers',
                 productLink:
                     'https://www.hythacg.com/prints/chicago-wallpaper-pack',
@@ -5190,10 +5284,12 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Chicago Collage',
                 productName: 'chicago-collage',
                 productLink: 'https://www.hythacg.com/prints/chicago-collage',
             },
             {
+                name: 'Chicago Wallpapers',
                 productName: 'chicago-wallpapers',
                 productLink:
                     'https://www.hythacg.com/prints/chicago-wallpaper-pack',
@@ -5284,10 +5380,12 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Chicago Collage',
                 productName: 'chicago-collage',
                 productLink: 'https://www.hythacg.com/prints/chicago-collage',
             },
             {
+                name: 'Chicago Wallpapers',
                 productName: 'chicago-wallpapers',
                 productLink:
                     'https://www.hythacg.com/prints/chicago-wallpaper-pack',
@@ -5387,10 +5485,12 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Chicago Collage',
                 productName: 'chicago-collage',
                 productLink: 'https://www.hythacg.com/prints/chicago-collage',
             },
             {
+                name: 'Chicago Wallpapers',
                 productName: 'chicago-wallpapers',
                 productLink:
                     'https://www.hythacg.com/prints/chicago-wallpaper-pack',
@@ -5477,10 +5577,12 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Chicago Collage',
                 productName: 'chicago-collage',
                 productLink: 'https://www.hythacg.com/prints/chicago-collage',
             },
             {
+                name: 'Chicago Wallpapers',
                 productName: 'chicago-wallpapers',
                 productLink:
                     'https://www.hythacg.com/prints/chicago-wallpaper-pack',
@@ -5579,11 +5681,13 @@ const highrises = [
         ],
         products: [
             {
+                name: 'San Francisco Collage',
                 productName: 'san-francisco-collage',
                 productLink:
                     'https://www.hythacg.com/prints/sanfrancisco-collage',
             },
             {
+                name: 'San Francisco Wallpaper',
                 productName: 'san-francisco-wallpaper',
                 productLink:
                     'https://www.hythacg.com/prints/sanfrancisco-wallpaper',
@@ -5679,11 +5783,13 @@ const highrises = [
         ],
         products: [
             {
+                name: 'San Francisco Collage',
                 productName: 'san-francisco-collage',
                 productLink:
                     'https://www.hythacg.com/prints/sanfrancisco-collage',
             },
             {
+                name: 'San Francisco Wallpaper',
                 productName: 'san-francisco-wallpaper',
                 productLink:
                     'https://www.hythacg.com/prints/sanfrancisco-wallpaper',
@@ -5770,11 +5876,13 @@ const highrises = [
         ],
         products: [
             {
+                name: 'San Francisco Collage',
                 productName: 'san-francisco-collage',
                 productLink:
                     'https://www.hythacg.com/prints/sanfrancisco-collage',
             },
             {
+                name: 'San Francisco Wallpaper',
                 productName: 'san-francisco-wallpaper',
                 productLink:
                     'https://www.hythacg.com/prints/sanfrancisco-wallpaper',
@@ -5861,10 +5969,12 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Oakland Collage',
                 productName: 'oakland-collage',
                 productLink: 'https://www.hythacg.com/prints/oakland-collage',
             },
             {
+                name: 'Oakland Wallpapers',
                 productName: 'oakland-wallpapers',
                 productLink: 'https://www.hythacg.com/prints/oakland-wallpaper',
             },
@@ -5954,10 +6064,12 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Oakland Collage',
                 productName: 'oakland-collage',
                 productLink: 'https://www.hythacg.com/prints/oakland-collage',
             },
             {
+                name: 'Oakland Wallpapers',
                 productName: 'oakland-wallpapers',
                 productLink: 'https://www.hythacg.com/prints/oakland-wallpaper',
             },
@@ -6479,6 +6591,7 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Seattle Wallpaper',
                 productName: 'seattle-wallpaper',
                 productLink: '',
             },
@@ -6560,6 +6673,7 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Seattle Wallpaper',
                 productName: 'seattle-wallpaper',
                 productLink: '',
             },
@@ -6637,6 +6751,7 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Seattle Wallpaper',
                 productName: 'seattle-wallpaper',
                 productLink: '',
             },
@@ -6726,6 +6841,7 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Seattle Wallpaper',
                 productName: 'seattle-wallpaper',
                 productLink: '',
             },
@@ -6898,6 +7014,7 @@ const highrises = [
         ],
         products: [
             {
+                name: 'San Francisco Wallpaper',
                 productName: 'san-francisco-wallpaper',
                 productLink:
                     'https://www.hythacg.com/prints/sanfrancisco-wallpaper',
@@ -6976,11 +7093,13 @@ const highrises = [
         ],
         products: [
             {
+                name: 'San Francisco Collage',
                 productName: 'san-francisco-collage',
                 productLink:
                     'https://www.hythacg.com/prints/sanfrancisco-collage',
             },
             {
+                name: 'San Francisco Wallpaper',
                 productName: 'san-francisco-wallpaper',
                 productLink:
                     'https://www.hythacg.com/prints/sanfrancisco-wallpaper',
@@ -7063,11 +7182,13 @@ const highrises = [
         ],
         products: [
             {
+                name: 'San Francisco Collage',
                 productName: 'san-francisco-collage',
                 productLink:
                     'https://www.hythacg.com/prints/sanfrancisco-collage',
             },
             {
+                name: 'San Francisco Wallpaper',
                 productName: 'san-francisco-wallpaper',
                 productLink:
                     'https://www.hythacg.com/prints/sanfrancisco-wallpaper',
@@ -7146,11 +7267,13 @@ const highrises = [
         ],
         products: [
             {
+                name: 'San Francisco Collage',
                 productName: 'san-francisco-collage',
                 productLink:
                     'https://www.hythacg.com/prints/sanfrancisco-collage',
             },
             {
+                name: 'San Francisco Wallpaper',
                 productName: 'san-francisco-wallpaper',
                 productLink:
                     'https://www.hythacg.com/prints/sanfrancisco-wallpaper',
@@ -7238,11 +7361,13 @@ const highrises = [
         ],
         products: [
             {
+                name: 'San Francisco Collage',
                 productName: 'san-francisco-collage',
                 productLink:
                     'https://www.hythacg.com/prints/sanfrancisco-collage',
             },
             {
+                name: 'San Francisco Wallpaper',
                 productName: 'san-francisco-wallpaper',
                 productLink:
                     'https://www.hythacg.com/prints/sanfrancisco-wallpaper',
@@ -7329,6 +7454,7 @@ const highrises = [
         ],
         products: [
             {
+                name: 'San Francisco Wallpaper',
                 productName: 'san-francisco-wallpaper',
                 productLink:
                     'https://www.hythacg.com/prints/sanfrancisco-wallpaper',
@@ -7420,11 +7546,13 @@ const highrises = [
         ],
         products: [
             {
+                name: 'San Francisco Collage',
                 productName: 'san-francisco-collage',
                 productLink:
                     'https://www.hythacg.com/prints/sanfrancisco-collage',
             },
             {
+                name: 'San Francisco Wallpaper',
                 productName: 'san-francisco-wallpaper',
                 productLink:
                     'https://www.hythacg.com/prints/sanfrancisco-wallpaper',
@@ -7515,11 +7643,13 @@ const highrises = [
         ],
         products: [
             {
+                name: 'San Francisco Collage',
                 productName: 'san-francisco-collage',
                 productLink:
                     'https://www.hythacg.com/prints/sanfrancisco-collage',
             },
             {
+                name: 'San Francisco Wallpaper',
                 productName: 'san-francisco-wallpaper',
                 productLink:
                     'https://www.hythacg.com/prints/sanfrancisco-wallpaper',
@@ -7603,10 +7733,12 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Oakland Collage',
                 productName: 'oakland-collage',
                 productLink: 'https://www.hythacg.com/prints/oakland-collage',
             },
             {
+                name: 'Oakland Wallpapers',
                 productName: 'oakland-wallpapers',
                 productLink: 'https://www.hythacg.com/prints/oakland-wallpaper',
             },
@@ -7692,10 +7824,12 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Oakland Collage',
                 productName: 'oakland-collage',
                 productLink: 'https://www.hythacg.com/prints/oakland-collage',
             },
             {
+                name: 'Oakland Wallpapers',
                 productName: 'oakland-wallpapers',
                 productLink: 'https://www.hythacg.com/prints/oakland-wallpaper',
             },

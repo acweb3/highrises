@@ -1,4 +1,5 @@
 import * as S from 'components/Explorer/Masthead/Collectibles/Collectibles.styled';
+import { HoverDescription } from 'components/ui/HoverDescription';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
 import { StaticImage } from 'gatsby-plugin-image';
 import { forwardRef } from 'react';
@@ -21,31 +22,42 @@ export const Collectibles = forwardRef(({ isHeaderShowing = true }, ref) => {
                 {activeHighrise.products
                     .filter((product) => product.productLink)
                     .map((product, index) => (
-                        <S.Collectible
-                            key={`${activeHighrise.name}--${index}`}
+                        <S.CollectibleWrapper
                             href={product.productLink}
                             rel="noopener noreferrer"
                             target="_blank"
                         >
-                            {product.isNft && (
-                                <S.CollectibleNFTOverlay>
-                                    <StaticImage
-                                        src={
-                                            '../../../../assets/images/nft-overlay.webp'
-                                        }
-                                        placeholder="blurred"
-                                        alt=""
-                                    />
-                                </S.CollectibleNFTOverlay>
-                            )}
+                            <S.Collectible
+                                key={`${activeHighrise.name}--${index}`}
+                            >
+                                {product.isNft && (
+                                    <S.CollectibleNFTOverlay>
+                                        <HoverDescription title={product.name}>
+                                            <StaticImage
+                                                src={
+                                                    '../../../../assets/images/nft-overlay.webp'
+                                                }
+                                                placeholder="blurred"
+                                                alt=""
+                                            />
+                                        </HoverDescription>
+                                    </S.CollectibleNFTOverlay>
+                                )}
 
-                            <S.CollectibleSquare>
-                                <S.CollectibleImage
-                                    blurSrc={product.blurSrc}
-                                    src={product.productSrc}
-                                />
-                            </S.CollectibleSquare>
-                        </S.Collectible>
+                                <S.CollectibleSquare>
+                                    <HoverDescription title={product.name}>
+                                        <S.CollectibleImage
+                                            blurSrc={product.blurSrc}
+                                            src={product.productSrc}
+                                        />
+                                    </HoverDescription>
+                                </S.CollectibleSquare>
+                            </S.Collectible>
+
+                            <S.CollectibleName>
+                                {product.name}
+                            </S.CollectibleName>
+                        </S.CollectibleWrapper>
                     ))}
             </S.CollectiblesGrid>
         </S.Collectibles>

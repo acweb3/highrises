@@ -102,6 +102,7 @@ exports.createPages = async function ({ actions, graphql }) {
             const irlProducts = [
                 // Poster
                 {
+                    name: `${highrise.name} Print`,
                     productSrc: urlMap[index]?.['poster-highrises'],
                     blurSrc: urlMap[index]?.['blur-poster-highrises'],
                     productLink: `https://www.hythacg.com/prints/highrise${`${
@@ -114,6 +115,7 @@ exports.createPages = async function ({ actions, graphql }) {
                 // Opensea NFT
                 index < 75 && {
                     isNft: true,
+                    name: `${highrise.name} NFT`,
                     productSrc: urlMap[index]?.['nft-highrises'],
                     blurSrc: urlMap[index]?.['blur-nft-highrises'],
                     productLink: `https://opensea.io/assets/ethereum/0x516d85f0c80d2c4809736aca3f3f95ce8545b5d2/${`${index}`}`,
@@ -122,6 +124,7 @@ exports.createPages = async function ({ actions, graphql }) {
                 // Northeast collage
                 index < 50 && {
                     isNft: true,
+                    name: `Northeast Collage NFT`,
                     productSrc: productMap['northeast-collage']['productSrc'],
                     blurSrc: productMap['northeast-collage']['blurSrc'],
                     productLink: `https://opensea.io/collection/highrisescollage`,
