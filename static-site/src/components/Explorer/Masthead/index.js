@@ -1,11 +1,11 @@
 import { useDelayed } from 'common/hooks/useDelayed';
+import { About } from 'components/Explorer/Masthead/About';
 import { BuildingName } from 'components/Explorer/Masthead/BuildingName';
 import { Collectibles } from 'components/Explorer/Masthead/Collectibles';
 import { EmailCollection } from 'components/Explorer/Masthead/EmailCollection';
 import { Header } from 'components/Explorer/Masthead/Header';
 import * as S from 'components/Explorer/Masthead/Masthead.styled';
 import { Story } from 'components/Explorer/Masthead/Story';
-import { Team } from 'components/Explorer/Masthead/Team';
 import { Traits } from 'components/Explorer/Masthead/Traits';
 import { BaseButton } from 'components/ui/BaseButton';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
@@ -44,58 +44,7 @@ const MobileMasthead = ({ buildingExplorerHeight }) => {
                 >
                     {(() => {
                         if (activeDescription?.header === 'About') {
-                            return (
-                                <>
-                                    <S.MastheadAboutHeader>
-                                        About the Project
-                                    </S.MastheadAboutHeader>
-
-                                    <S.MobileMastheadSection>
-                                        <Story
-                                            description={activeDescription.copy}
-                                        />
-                                    </S.MobileMastheadSection>
-
-                                    <S.MastheadAboutHeader>
-                                        The Art
-                                    </S.MastheadAboutHeader>
-
-                                    <S.MobileMastheadSection>
-                                        <Story
-                                            description={activeDescription.copy}
-                                        />
-                                    </S.MobileMastheadSection>
-
-                                    <S.MastheadAboutHeader>
-                                        The History
-                                    </S.MastheadAboutHeader>
-
-                                    <S.MobileMastheadSection>
-                                        <Story
-                                            description={activeDescription.copy}
-                                        />
-                                    </S.MobileMastheadSection>
-
-                                    <S.MobileEmailCollectionWrapper>
-                                        <div
-                                            css={`
-                                                background: blue;
-                                                padding: 64px;
-                                            `}
-                                        />
-                                    </S.MobileEmailCollectionWrapper>
-
-                                    <S.MastheadAboutHeader>
-                                        The Team
-                                    </S.MastheadAboutHeader>
-
-                                    <Team />
-
-                                    <S.MobileEmailCollectionWrapper>
-                                        <EmailCollection />
-                                    </S.MobileEmailCollectionWrapper>
-                                </>
-                            );
+                            return <About />;
                         }
 
                         return (
@@ -230,38 +179,61 @@ const DesktopMasthead = () => {
                 </S.DesktopMastheadCloseButton>
             )}
 
-            <S.DesktopMastheadSection>
-                <Header />
-                <BuildingName />
+            {(() => {
+                if (activeDescription?.header === 'About') {
+                    return (
+                        <>
+                            <S.DesktopMastheadSection>
+                                <Header />
+                            </S.DesktopMastheadSection>
+                            <About />
+                        </>
+                    );
+                }
 
-                {activeHighrise && (
-                    <S.DesktopMastheadNav>
-                        <BaseButton
-                            onClick={() => {
-                                collectiblesRef.current.scrollIntoView({
-                                    behavior: 'smooth',
-                                    block: 'center',
-                                });
-                            }}
-                        >
-                            Collectibles
-                        </BaseButton>
-                    </S.DesktopMastheadNav>
-                )}
+                return (
+                    <>
+                        <S.DesktopMastheadSection>
+                            <Header />
+                            <BuildingName />
+                            {activeHighrise && (
+                                <S.DesktopMastheadNav>
+                                    <BaseButton
+                                        onClick={() => {
+                                            collectiblesRef.current.scrollIntoView(
+                                                {
+                                                    behavior: 'smooth',
+                                                    block: 'center',
+                                                }
+                                            );
+                                        }}
+                                    >
+                                        Collectibles
+                                    </BaseButton>
+                                </S.DesktopMastheadNav>
+                            )}
 
-                <Story
-                    description={
-                        activeDescription?.copy ?? activeHighrise.description
-                    }
-                />
-                {activeHighrise && <Traits activeHighrise={activeHighrise} />}
-            </S.DesktopMastheadSection>
+                            <Story
+                                description={
+                                    activeDescription?.copy ??
+                                    activeHighrise.description
+                                }
+                            />
+                            {activeHighrise && (
+                                <Traits activeHighrise={activeHighrise} />
+                            )}
 
-            {activeHighrise && <Collectibles ref={collectiblesRef} />}
+                            {activeHighrise && (
+                                <Collectibles ref={collectiblesRef} />
+                            )}
+                        </S.DesktopMastheadSection>
 
-            <S.DesktopMastheadEmailCollectionWrapper>
-                <EmailCollection />
-            </S.DesktopMastheadEmailCollectionWrapper>
+                        <S.DesktopMastheadEmailCollectionWrapper>
+                            <EmailCollection />
+                        </S.DesktopMastheadEmailCollectionWrapper>
+                    </>
+                );
+            })()}
 
             {!delayedDidScrolled && !isShortDescription && (
                 <S.DesktopMastheadScrollMore isShowing={!didScroll}>

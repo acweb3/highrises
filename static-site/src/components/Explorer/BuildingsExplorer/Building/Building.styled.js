@@ -72,8 +72,8 @@ export const BuildingCaption = styled.div`
 `;
 
 export const BuildingIndex = styled.div`
-    font-size: 1.175rem;
-    font-weight: 800;
+    line-height: 1.25;
+    font-weight: 600;
     user-select: none;
     text-align: center;
     padding: 0 4px;

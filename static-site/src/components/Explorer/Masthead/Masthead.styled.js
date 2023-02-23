@@ -1,11 +1,6 @@
 import UnstyledClose from 'assets/icons/close.svg';
 import { BaseButton } from 'components/ui/BaseButton';
-import { Header } from 'components/ui/Header';
 import styled, { css } from 'styled-components';
-
-export const MastheadAboutHeader = styled(Header)`
-    padding: 32px 0 8px;
-`;
 
 export const MobileEmailCollectionWrapper = styled.div`
     margin-top: 32px;

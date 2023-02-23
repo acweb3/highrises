@@ -1,6 +1,7 @@
 import { Profile } from 'components/Explorer/Masthead/Team/Profile';
 import * as S from 'components/Explorer/Masthead/Team/Team.styled';
 import { graphql, useStaticQuery } from 'gatsby';
+import { useState } from 'react';
 
 export const Twitter = ({ href }) => (
     <S.SocialIcon rel="noopener noreferrer" target="_blank" href={href}>
@@ -92,6 +93,7 @@ export const Team = () => {
             }
         }
     `);
+    const [activeIndex, setActiveIndex] = useState(undefined);
 
     const teamMap = team.allFile.edges.reduce(
         (acc, { node: { name, publicURL } }) => ({
@@ -110,6 +112,12 @@ export const Team = () => {
                             key={`${profile.header}${i}`}
                             {...profile}
                             src={teamMap[profile.src]}
+                            isActive={activeIndex === i}
+                            onClick={() =>
+                                setActiveIndex((activeIndex) =>
+                                    activeIndex === i ? undefined : i
+                                )
+                            }
                         />
                     );
                 })}

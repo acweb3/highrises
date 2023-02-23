@@ -19,9 +19,7 @@ export const ProfileTitle = styled.div`
 export const ProfileText = styled.div`
     color: ${(props) => props.theme.colors.blue[0]};
 
-    ${(props) => props.theme.breakpoints.small`
-        text-align: center;
-    `};
+    padding: 16px 0;
 `;
 
 export const ProfileImageWrapper = styled.div`

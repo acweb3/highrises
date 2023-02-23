@@ -11,7 +11,7 @@ export const Header = styled.div`
     align-items: center;
     justify-content: center;
 
-    font-weight: 800;
+    font-weight: 600;
     font-family: ${(props) => props.theme.typography.fontFamily.rc.basicFull};
     font-size: ${(props) => props.theme.typography.fontSize.h3};
 

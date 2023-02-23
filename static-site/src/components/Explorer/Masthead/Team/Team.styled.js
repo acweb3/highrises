@@ -54,7 +54,7 @@ export const Profiles = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: 0 16px;
+    padding: 0 16px 16px;
 
     & > div {
         margin-bottom: 16px;
