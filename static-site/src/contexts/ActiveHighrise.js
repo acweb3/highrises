@@ -56,13 +56,13 @@ export const ActiveHighrise = ({
     const updateHighrise = useCallback((highrise, withReplace = true) => {
         if (withReplace) {
             if (highrise) {
-                window.history.pushState(
+                window.history.replaceState(
                     null,
                     '',
                     `${getBuildingURL(highrise)}/`
                 );
             } else {
-                window.history.pushState(null, '', '/');
+                window.history.replaceState(null, '', '/');
             }
         }
 
@@ -72,13 +72,13 @@ export const ActiveHighrise = ({
     const updateDescription = useCallback((description, withReplace = true) => {
         if (withReplace) {
             if (description && description.header !== 'About') {
-                window.history.pushState(
+                window.history.replaceState(
                     null,
                     '',
                     `/${kebabCase(description.header)}/`
                 );
             } else {
-                window.history.pushState(null, '', '/');
+                window.history.replaceState(null, '', '/');
             }
         }
 
