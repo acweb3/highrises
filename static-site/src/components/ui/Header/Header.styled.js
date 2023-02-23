@@ -1,14 +1,26 @@
 import styled from 'styled-components';
 
 export const Header = styled.div`
-    font-family: 'R&C-BasicFull';
-    font-size: 32px;
-    line-height: 3rem;
-    color: ${(props) => props.theme.colors.blue[0]};
-    text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+
+    line-height: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: 800;
+    font-family: ${(props) => props.theme.typography.fontFamily.rc.basicFull};
+    font-size: ${(props) => props.theme.typography.fontSize.h3};
+
+    margin-bottom: 16px;
+
+    padding: 0 16px;
 
     ${(props) => props.theme.breakpoints.small`
-        font-size: 48px;
-        line-height: 4rem;
+        margin-bottom: 8px;
+        padding: 0;
     `}
 `;

@@ -37,7 +37,7 @@ export const ActiveHighrise = ({
     initDescription,
     highrises: init,
 }) => {
-    const { activeSort } = useActiveSortContext();
+    const { activeSort, setActiveSort } = useActiveSortContext();
     const [highrises, setHighrises] = useState(init);
     const [activeHighrise, setActiveHighrise] = useState(
         initHighrise ?? init[0]
@@ -92,7 +92,8 @@ export const ActiveHighrise = ({
             header: 'About',
             copy: `The prosperity of early 20th century America resulted in a boom of skyscrapers that still tower over cities across the country today. Focusing on the character and craftsmanship on display at the top of these landmark buildings in a way that can’t be seen from street level, the Highrises Collection reveals fascinating details and stories of these distinctly American icons.`,
         });
-    }, [updateHighrise, updateDescription]);
+        setActiveSort(undefined);
+    }, [updateHighrise, updateDescription, setActiveSort]);
 
     useEffect(() => {
         if (activeHighrise) {

@@ -7,6 +7,7 @@ export const BuildingName = () => {
     const aka = activeHighrise?.attributes.find(
         ({ trait_type }) => trait_type === 'AKA now'
     );
+
     return (
         <S.BuildingName isActiveDescription={Boolean(activeDescription)}>
             <S.BuildingNameHeader>
