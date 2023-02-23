@@ -1,7 +1,7 @@
 import gridSrc from 'assets/images/blue-graph-paper.jpg';
 import { BaseButton } from 'components/ui/BaseButton';
 import { Header } from 'components/ui/Header';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 export const AboutButton = styled(BaseButton)`
     max-width: 220px;
@@ -13,9 +13,8 @@ export const AboutHeader = styled(Header)`
     padding: 32px 0 8px;
 
     ${(props) =>
-        props.theme.breakpoints.small &&
         props.isFirst &&
-        css`
+        props.theme.breakpoints.small`
             padding-top: 0;
         `}
 `;
@@ -24,8 +23,7 @@ export const AboutSection = styled.div`
     padding: 0 16px;
 
     ${(props) =>
-        props.theme.breakpoints.small &&
-        css`
+        props.theme.breakpoints.small`
             padding: 0 32px;
         `}
 `;
@@ -41,8 +39,7 @@ export const AboutPlanCityButton = styled(BaseButton)`
     border: 1px solid ${(props) => props.theme.colors.white[0]};
 
     ${(props) =>
-        props.theme.breakpoints.small &&
-        css`
+        props.theme.breakpoints.small`
             max-width: 180px;
             width: 180px;
             margin: 32px auto 0;
@@ -79,8 +76,7 @@ export const AboutPlan = styled.div`
     background-image: url(${gridSrc});
 
     ${(props) =>
-        props.theme.breakpoints.small &&
-        css`
+        props.theme.breakpoints.small`
             padding: 16px 32px 32px;
         `}
 `;

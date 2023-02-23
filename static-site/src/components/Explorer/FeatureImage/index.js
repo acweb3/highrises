@@ -168,7 +168,6 @@ export const FeatureImageFilterButton = ({ isFiltering, setIsFiltering }) => {
     return (
         <S.FeatureImageFilters>
             <S.FeatureImageFilterButton
-                isSelecting={isFiltering}
                 isActive={isFiltering || activeSort}
                 onClick={() => {
                     setIsFiltering((isFiltering) => !isFiltering);
