@@ -5,6 +5,7 @@ import { EmailCollection } from 'components/Explorer/Masthead/EmailCollection';
 import { Header } from 'components/Explorer/Masthead/Header';
 import * as S from 'components/Explorer/Masthead/Masthead.styled';
 import { Story } from 'components/Explorer/Masthead/Story';
+import { Team } from 'components/Explorer/Masthead/Team';
 import { Traits } from 'components/Explorer/Masthead/Traits';
 import { BaseButton } from 'components/ui/BaseButton';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
@@ -41,44 +42,54 @@ const MobileMasthead = ({ buildingExplorerHeight }) => {
                 <S.MobileMastheadContent
                     isMobilePopoverOpen={isMobilePopoverOpen}
                 >
-                    <S.MobileMastheadSection>
-                        <BuildingName />
-                    </S.MobileMastheadSection>
-
-                    {activeHighrise && (
-                        <S.MobileMastheadSection>
-                            <S.MobileMastheadNav>
-                                <S.MobileMastheadButton
-                                    isActive={!isCollectiblesShowing}
-                                    onClick={() => {
-                                        setIsCollectiblesShowing(false);
-                                    }}
-                                >
-                                    About
-                                </S.MobileMastheadButton>
-
-                                <S.MobileMastheadButton
-                                    isActive={isCollectiblesShowing}
-                                    onClick={() => {
-                                        setIsCollectiblesShowing(true);
-                                    }}
-                                >
-                                    Collectibles
-                                </S.MobileMastheadButton>
-                            </S.MobileMastheadNav>
-                        </S.MobileMastheadSection>
-                    )}
-
                     {(() => {
-                        if (activeDescription) {
+                        if (activeDescription?.header === 'About') {
                             return (
                                 <>
+                                    <S.MastheadAboutHeader>
+                                        About the Project
+                                    </S.MastheadAboutHeader>
+
                                     <S.MobileMastheadSection>
                                         <Story
                                             description={activeDescription.copy}
-                                            isModal
                                         />
                                     </S.MobileMastheadSection>
+
+                                    <S.MastheadAboutHeader>
+                                        The Art
+                                    </S.MastheadAboutHeader>
+
+                                    <S.MobileMastheadSection>
+                                        <Story
+                                            description={activeDescription.copy}
+                                        />
+                                    </S.MobileMastheadSection>
+
+                                    <S.MastheadAboutHeader>
+                                        The History
+                                    </S.MastheadAboutHeader>
+
+                                    <S.MobileMastheadSection>
+                                        <Story
+                                            description={activeDescription.copy}
+                                        />
+                                    </S.MobileMastheadSection>
+
+                                    <S.MobileEmailCollectionWrapper>
+                                        <div
+                                            css={`
+                                                background: blue;
+                                                padding: 64px;
+                                            `}
+                                        />
+                                    </S.MobileEmailCollectionWrapper>
+
+                                    <S.MastheadAboutHeader>
+                                        The Team
+                                    </S.MastheadAboutHeader>
+
+                                    <Team />
 
                                     <S.MobileEmailCollectionWrapper>
                                         <EmailCollection />
@@ -87,33 +98,98 @@ const MobileMasthead = ({ buildingExplorerHeight }) => {
                             );
                         }
 
-                        if (isCollectiblesShowing) {
-                            return (
-                                <div
-                                    css={`
-                                        padding-bottom: 32px;
-                                    `}
-                                >
-                                    <Collectibles isHeaderShowing={false} />
-                                </div>
-                            );
-                        }
-
                         return (
                             <>
                                 <S.MobileMastheadSection>
-                                    <Story
-                                        description={activeHighrise.description}
-                                        isModal
-                                    />
-                                    <Traits activeHighrise={activeHighrise} />
+                                    <BuildingName />
                                 </S.MobileMastheadSection>
 
-                                <Collectibles />
+                                {activeHighrise && (
+                                    <S.MobileMastheadSection>
+                                        <S.MobileMastheadNav>
+                                            <S.MobileMastheadButton
+                                                isActive={
+                                                    !isCollectiblesShowing
+                                                }
+                                                onClick={() => {
+                                                    setIsCollectiblesShowing(
+                                                        false
+                                                    );
+                                                }}
+                                            >
+                                                About
+                                            </S.MobileMastheadButton>
 
-                                <S.MobileEmailCollectionWrapper>
-                                    <EmailCollection />
-                                </S.MobileEmailCollectionWrapper>
+                                            <S.MobileMastheadButton
+                                                isActive={isCollectiblesShowing}
+                                                onClick={() => {
+                                                    setIsCollectiblesShowing(
+                                                        true
+                                                    );
+                                                }}
+                                            >
+                                                Collectibles
+                                            </S.MobileMastheadButton>
+                                        </S.MobileMastheadNav>
+                                    </S.MobileMastheadSection>
+                                )}
+
+                                {(() => {
+                                    if (activeDescription) {
+                                        return (
+                                            <>
+                                                <S.MobileMastheadSection>
+                                                    <Story
+                                                        description={
+                                                            activeDescription.copy
+                                                        }
+                                                    />
+                                                </S.MobileMastheadSection>
+
+                                                <S.MobileEmailCollectionWrapper>
+                                                    <EmailCollection />
+                                                </S.MobileEmailCollectionWrapper>
+                                            </>
+                                        );
+                                    }
+
+                                    if (isCollectiblesShowing) {
+                                        return (
+                                            <div
+                                                css={`
+                                                    padding-bottom: 32px;
+                                                `}
+                                            >
+                                                <Collectibles
+                                                    isHeaderShowing={false}
+                                                />
+                                            </div>
+                                        );
+                                    }
+
+                                    return (
+                                        <>
+                                            <S.MobileMastheadSection>
+                                                <Story
+                                                    description={
+                                                        activeHighrise.description
+                                                    }
+                                                />
+                                                <Traits
+                                                    activeHighrise={
+                                                        activeHighrise
+                                                    }
+                                                />
+                                            </S.MobileMastheadSection>
+
+                                            <Collectibles />
+
+                                            <S.MobileEmailCollectionWrapper>
+                                                <EmailCollection />
+                                            </S.MobileEmailCollectionWrapper>
+                                        </>
+                                    );
+                                })()}
                             </>
                         );
                     })()}
@@ -174,7 +250,6 @@ const DesktopMasthead = () => {
                 )}
 
                 <Story
-                    isModal
                     description={
                         activeDescription?.copy ?? activeHighrise.description
                     }

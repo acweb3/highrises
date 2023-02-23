@@ -1,6 +1,5 @@
-import { Profile } from 'components/Team/Profile';
-import * as S from 'components/Team/Team.styled';
-import { Header } from 'components/ui/Header';
+import { Profile } from 'components/Explorer/Masthead/Team/Profile';
+import * as S from 'components/Explorer/Masthead/Team/Team.styled';
 import { graphql, useStaticQuery } from 'gatsby';
 
 export const Twitter = ({ href }) => (
@@ -43,15 +42,6 @@ const PROFILES = [
         ],
     },
     {
-        header: 'Cooper Sherwin',
-        title: 'Web3 community developer and project advisor',
-        copy: "Cooper is a Philadelphia business developer specializing in NFT strategy, crypto culture, and Discord design. He has led multiple projects to OpenSea's #1 trending position, most notably Rowhomes and LinksDAO, the world's greatest golf and leisure club.",
-        src: 'cooper',
-        socials: [
-            <Twitter key={1} href="https://mobile.twitter.com/CoopNFT" />,
-        ],
-    },
-    {
         header: 'Andy Gallagher',
         title: 'Software developer',
         copy: 'Andrew is a Philadelphia software engineer interested in creating beautiful interactions for the web and crypto. He is the technical co-founder of the web3 studio a⚡️c and a front-end developer for 1build, a startup backed by Y Combinator.',
@@ -61,23 +51,32 @@ const PROFILES = [
         ],
     },
     {
-        header: 'Michael B. Stuart',
-        title: 'Software developer',
-        copy: 'Michael is a photographer and web designer at Stu Stu Studio, a Lewiston, N.Y., business he runs with his wife, Nicole, a portrait specialist. He enjoys being an active artist and small-time collector in the NFT community.',
-        src: 'mike',
+        header: 'Cooper Sherwin',
+        title: 'Project advisor',
+        copy: "Cooper is a Philadelphia business developer specializing in NFT strategy, crypto culture, and Discord design. He has led multiple projects to OpenSea's #1 trending position, most notably Rowhomes and LinksDAO, the world's greatest golf and leisure club.",
+        src: 'cooper',
         socials: [
-            <Twitter key={1} href="https://mobile.twitter.com/mbstuart" />,
+            <Twitter key={1} href="https://mobile.twitter.com/CoopNFT" />,
         ],
     },
-    {
-        header: 'Nick Merutka',
-        title: 'Print designer',
-        copy: 'Nick is a Brooklyn-based artist and designer in print and digital, and works at a creative group focusing on experiential design and brand growth. He was visual director and sound designer for his class exhibition at the 2018 Venice Biennale.',
-        src: 'nick',
-        socials: [
-            <Instagram key={1} href="https://www.instagram.com/Nico.Day" />,
-        ],
-    },
+    // {
+    //     header: 'Michael B. Stuart',
+    //     title: 'Software developer',
+    //     copy: 'Michael is a photographer and web designer at Stu Stu Studio, a Lewiston, N.Y., business he runs with his wife, Nicole, a portrait specialist. He enjoys being an active artist and small-time collector in the NFT community.',
+    //     src: 'mike',
+    //     socials: [
+    //         <Twitter key={1} href="https://mobile.twitter.com/mbstuart" />,
+    //     ],
+    // },
+    // {
+    //     header: 'Nick Merutka',
+    //     title: 'Print designer',
+    //     copy: 'Nick is a Brooklyn-based artist and designer in print and digital, and works at a creative group focusing on experiential design and brand growth. He was visual director and sound designer for his class exhibition at the 2018 Venice Biennale.',
+    //     src: 'nick',
+    //     socials: [
+    //         <Instagram key={1} href="https://www.instagram.com/Nico.Day" />,
+    //     ],
+    // },
 ];
 
 export const Team = () => {
@@ -104,7 +103,6 @@ export const Team = () => {
 
     return (
         <S.Team>
-            <Header>The Team</Header>
             <S.Profiles>
                 {PROFILES.map((profile, i) => {
                     return (
