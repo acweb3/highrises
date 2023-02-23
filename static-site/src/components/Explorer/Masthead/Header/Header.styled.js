@@ -84,7 +84,7 @@ export const Header = styled.div`
 
     ${(props) => props.theme.breakpoints.small`
         padding: 32px 0 32px;
-        max-width: 300px;
+        max-width: 380px;
         margin: 0 auto;
     `}
 `;

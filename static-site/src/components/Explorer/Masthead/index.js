@@ -130,6 +130,10 @@ const DesktopMasthead = () => {
     const mastheadRef = useRef(null);
     const collectiblesRef = useRef();
 
+    // Descriptions, with exception of about, are short
+    const isShortDescription =
+        activeDescription && activeDescription.header !== 'About';
+
     useEffect(() => {
         mastheadRef.current?.scrollTo(0, 0);
     }, [activeHighrise]);
@@ -173,7 +177,7 @@ const DesktopMasthead = () => {
                 <EmailCollection />
             </S.DesktopMastheadEmailCollectionWrapper>
 
-            {!delayedDidScrolled && (
+            {!delayedDidScrolled && !isShortDescription && (
                 <S.DesktopMastheadScrollMore isShowing={!didScroll}>
                     Scroll To Read More
                 </S.DesktopMastheadScrollMore>

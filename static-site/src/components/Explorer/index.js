@@ -72,7 +72,7 @@ const TabletExplorer = () => {
 
     return (
         <S.DesktopExplorer>
-            <S.DesktopExplorerSection>
+            <S.DesktopExplorerSection isMasthead>
                 <S.DesktopExplorerSideBar>
                     <Masthead />
                     <MapExplorer />
@@ -97,7 +97,7 @@ const DesktopExplorer = () => {
 
     return (
         <S.DesktopExplorer>
-            <S.DesktopExplorerSection>
+            <S.DesktopExplorerSection isMasthead>
                 <S.DesktopExplorerSideBar>
                     <Masthead />
                     <MapExplorer />

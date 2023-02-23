@@ -1,5 +1,5 @@
 import gridSrc from 'assets/images/blue-graph-paper.jpg';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const MobileExplorerPopover = styled.div``;
 
@@ -33,6 +33,12 @@ export const DesktopExplorerSection = styled.div`
     flex-direction: column;
 
     position: relative;
+
+    ${(props) =>
+        props.isMasthead &&
+        css`
+            min-width: 380px;
+        `}
 `;
 
 export const DesktopExplorer = styled.div`
