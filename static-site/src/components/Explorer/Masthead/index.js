@@ -222,11 +222,11 @@ const DesktopMasthead = () => {
                             {activeHighrise && (
                                 <Traits activeHighrise={activeHighrise} />
                             )}
-
-                            {activeHighrise && (
-                                <Collectibles ref={collectiblesRef} />
-                            )}
                         </S.DesktopMastheadSection>
+
+                        {activeHighrise && (
+                            <Collectibles ref={collectiblesRef} />
+                        )}
 
                         <S.DesktopMastheadEmailCollectionWrapper>
                             <EmailCollection />

@@ -7,9 +7,9 @@ const { site } = require('./site');
 
 (() => {
     // nft();
-    // poster();
+    poster();
     // site();
     // png();
-    feature();
+    // feature();
     // products();
 })();
