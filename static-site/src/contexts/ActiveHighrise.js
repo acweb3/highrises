@@ -52,6 +52,7 @@ export const ActiveHighrise = ({
     );
     const initHighrises = useRef(init);
     const [activeDescription, setActiveDescription] = useState(initDescription);
+    const [isAboutOverride, setIsAboutOverride] = useState(false);
 
     const updateHighrise = useCallback((highrise, withReplace = true) => {
         if (withReplace) {
@@ -90,7 +91,6 @@ export const ActiveHighrise = ({
         updateHighrise(undefined, false);
         updateDescription({
             header: 'About',
-            copy: `The prosperity of early 20th century America resulted in a boom of skyscrapers that still tower over cities across the country today. Focusing on the character and craftsmanship on display at the top of these landmark buildings in a way that can’t be seen from street level, the Highrises Collection reveals fascinating details and stories of these distinctly American icons.`,
         });
         setActiveSort(undefined);
     }, [updateHighrise, updateDescription, setActiveSort]);
@@ -166,6 +166,8 @@ export const ActiveHighrise = ({
                 initHighrises,
                 initHighrisesState: init,
                 reset,
+                isAboutOverride,
+                setIsAboutOverride,
             }}
         >
             {children}

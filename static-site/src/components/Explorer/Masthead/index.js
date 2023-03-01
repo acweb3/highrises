@@ -15,7 +15,8 @@ import { useEffect, useRef, useState } from 'react';
 
 const MobileMasthead = ({ buildingExplorerHeight }) => {
     const mastheadRef = useRef();
-    const { activeHighrise, activeDescription } = useActiveHighriseContext();
+    const { activeHighrise, activeDescription, isAboutOverride } =
+        useActiveHighriseContext();
     const { isMobilePopoverOpen, setIsMobilePopoverOpen } =
         useMobilePopoverContext();
     const [isCollectiblesShowing, setIsCollectiblesShowing] = useState(false);
@@ -43,7 +44,10 @@ const MobileMasthead = ({ buildingExplorerHeight }) => {
                     isMobilePopoverOpen={isMobilePopoverOpen}
                 >
                     {(() => {
-                        if (activeDescription?.header === 'About') {
+                        if (
+                            activeDescription?.header === 'About' ||
+                            isAboutOverride
+                        ) {
                             return <About />;
                         }
 

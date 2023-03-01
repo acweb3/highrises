@@ -233,18 +233,18 @@ export const FeatureImageFilterButton = ({ isFiltering, setIsFiltering }) => {
 };
 
 export const FeatureImageFilterAbout = () => {
+    const { isAboutOverride, setIsAboutOverride } = useActiveHighriseContext();
     const { isMobilePopoverOpen, setIsMobilePopoverOpen } =
         useMobilePopoverContext();
 
     return (
         <S.FeatureImageFilterButton
-            isActive={isMobilePopoverOpen}
+            isActive={isAboutOverride}
             onClick={(e) => {
                 e.stopPropagation();
 
-                setIsMobilePopoverOpen(
-                    (isMobilePopoverOpen) => !isMobilePopoverOpen
-                );
+                setIsAboutOverride(true);
+                setIsMobilePopoverOpen(true);
             }}
         >
             About
@@ -318,7 +318,7 @@ export const FeatureImage = forwardRef(({ buildingExplorerHeight }, ref) => {
                     isFiltering={isFiltering}
                     setIsFiltering={setIsFiltering}
                 />
-                {!isFiltering && <FeatureImageFilterAbout />}
+                {isMobile && !isFiltering && <FeatureImageFilterAbout />}
             </S.FeatureImageActions>
 
             {hasInteracted && activeHighrise ? (
