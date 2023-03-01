@@ -119,7 +119,7 @@ export const About = () => {
 
             <S.AboutSection>
                 <Story
-                    description={`Accompanying each Highrise is a short narrative of how it came to be, who were the major personalities involved, and what it meant to the city where it was built. Each Highrise is also identified and sortable by height, year of its opening, city, architectural style, and special attributes.`}
+                    description={`Accompanying each Highrise is a short narrative of how it came to be, who were the major personalities involved, and what it meant to the city where it was built. Highrises also are identified and sortable by city or region, year of opening, architectural style, and special attributes.`}
                 />
             </S.AboutSection>
 

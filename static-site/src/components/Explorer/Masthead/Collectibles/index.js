@@ -31,8 +31,22 @@ export const Collectibles = forwardRef(({ isHeaderShowing = true }, ref) => {
                                 key={`${activeHighrise.name}--${index}`}
                             >
                                 {product.isNft && (
-                                    <S.CollectibleNFTOverlay>
-                                        <HoverDescription title={product.name}>
+                                    <>
+                                        <S.CollectibleNFTOverlay isDesktop>
+                                            <HoverDescription
+                                                title={product.name}
+                                            >
+                                                <StaticImage
+                                                    src={
+                                                        '../../../../assets/images/nft-overlay.webp'
+                                                    }
+                                                    placeholder="blurred"
+                                                    alt=""
+                                                />
+                                            </HoverDescription>
+                                        </S.CollectibleNFTOverlay>
+
+                                        <S.CollectibleNFTOverlay>
                                             <StaticImage
                                                 src={
                                                     '../../../../assets/images/nft-overlay.webp'
@@ -40,8 +54,8 @@ export const Collectibles = forwardRef(({ isHeaderShowing = true }, ref) => {
                                                 placeholder="blurred"
                                                 alt=""
                                             />
-                                        </HoverDescription>
-                                    </S.CollectibleNFTOverlay>
+                                        </S.CollectibleNFTOverlay>
+                                    </>
                                 )}
 
                                 <S.CollectibleSquare>

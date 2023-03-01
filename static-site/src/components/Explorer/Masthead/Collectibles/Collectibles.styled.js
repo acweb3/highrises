@@ -9,6 +9,22 @@ export const CollectibleNFTOverlay = styled.div`
     width: 100%;
 
     z-index: 2;
+
+    ${(props) =>
+        props.isDesktop &&
+        css`
+            display: none;
+
+            ${props.theme.breakpoints.small`
+            display: block;
+        `}
+        `}
+
+    ${(props) =>
+        !props.isDesktop &&
+        props.theme.breakpoints.small`
+        display: none;
+    `}
 `;
 
 export const CollectibleName = styled.div`
