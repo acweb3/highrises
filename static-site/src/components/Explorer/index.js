@@ -1,4 +1,4 @@
-import { getBuildingURL } from 'common/helpers';
+import { capitalize, getBuildingURL } from 'common/helpers';
 import { BuildingsExplorer } from 'components/Explorer/BuildingsExplorer';
 import * as S from 'components/Explorer/Explorer.styled';
 import { FeatureImage } from 'components/Explorer/FeatureImage';
@@ -9,6 +9,7 @@ import { SortBar } from 'components/Explorer/SortBar';
 import { Metadata } from 'components/Metadata';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
 import { useWindowSizeContext } from 'contexts/WindowSize';
+import kebabCase from 'just-kebab-case';
 import { useEffect, useRef, useState } from 'react';
 import { use100vh } from 'react-div-100vh';
 
@@ -152,7 +153,9 @@ export const Explorer = ({ thumbnail }) => {
                         <Metadata
                             title={`${activeDescription.header} - HYTHA.CG`}
                             description={activeDescription.copy}
-                            ogUrl={'highrises.hythacg.com'}
+                            ogUrl={`highrises.hythacg.com/${kebabCase(
+                                capitalize(activeDescription.header)
+                            )}/`}
                             thumbnail={thumbnail}
                             thumbnailAlt={''}
                         />

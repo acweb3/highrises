@@ -9,3 +9,8 @@ export const getBuildingURL = (highrise) => {
         highrise.architect.split('.').join('')
     )}`;
 };
+
+export const capitalize = (str) => {
+    const [first] = str;
+    return `${first}${str.slice(1).toLowerCase()}`;
+};
