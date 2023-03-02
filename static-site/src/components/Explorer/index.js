@@ -13,7 +13,7 @@ import kebabCase from 'just-kebab-case';
 import { useEffect, useRef, useState } from 'react';
 import { use100vh } from 'react-div-100vh';
 
-const BUILDING_EXPLORER_MIN_HEIGHT = 80;
+const BUILDING_EXPLORER_MIN_HEIGHT = 120;
 
 const useBuildingExplorerHeight = () => {
     const hundo = use100vh();
