@@ -37,7 +37,8 @@ export const DesktopExplorerSection = styled.div`
     ${(props) =>
         props.isMasthead &&
         css`
-            min-width: 380px;
+            min-width: 364px;
+            max-width: 480px;
         `}
 `;
 

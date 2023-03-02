@@ -35,19 +35,13 @@ export const MapExplorerSticky = styled.div`
     overflow-x: scroll;
 
     height: 34vh;
-    max-height: 22vh;
+    max-height: 34vh;
 
     position: sticky;
     top: 0;
 
-    transition: max-height 400ms;
-
     &::-webkit-scrollbar {
         display: none;
-    }
-
-    &:hover {
-        max-height: 34vh;
     }
 `;
 

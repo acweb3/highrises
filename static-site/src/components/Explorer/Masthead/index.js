@@ -197,7 +197,9 @@ const DesktopMasthead = () => {
 
                 return (
                     <>
-                        <S.DesktopMastheadSection>
+                        <S.DesktopMastheadSection
+                            isDescription={Boolean(activeDescription)}
+                        >
                             <Header />
                             <BuildingName />
                             {activeHighrise && (

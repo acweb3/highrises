@@ -207,6 +207,15 @@ export const DesktopMastheadSection = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    ${(props) => props.theme.breakpoints.medium`
+        ${
+            props.isDescription &&
+            css`
+                margin-bottom: auto;
+            `
+        }
+    `}
 `;
 
 export const DesktopMasthead = styled.div`
@@ -224,4 +233,6 @@ export const DesktopMasthead = styled.div`
     padding: 16px 0 0;
 
     min-width: 300px;
+
+    min-height: calc(66vh - 32px);
 `;

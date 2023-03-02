@@ -80,7 +80,7 @@ export const SortBarFilters = styled.div`
 
 export const SortBar = styled.div`
     z-index: 4;
-    padding: 8px 16px 0;
+    padding: 16px 32px 8px;
     border-radius: 24px 24px 0 0;
     overflow: hidden;
 `;

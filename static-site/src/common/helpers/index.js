@@ -11,6 +11,11 @@ export const getBuildingURL = (highrise) => {
 };
 
 export const capitalize = (str) => {
-    const [first] = str;
-    return `${first}${str.slice(1).toLowerCase()}`;
+    return str
+        .split(' ')
+        .map((word) => {
+            const [first] = word;
+            return `${first}${word.slice(1).toLowerCase()}`;
+        })
+        .join(' ');
 };
