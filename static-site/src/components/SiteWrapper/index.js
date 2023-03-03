@@ -1,5 +1,6 @@
 import { useWindowListener } from 'common/hooks/useWindowListener';
 import { Nav } from 'components/Nav';
+import { MobileMenu } from 'components/SiteWrapper/MobileMenu';
 import * as S from 'components/SiteWrapper/SiteWrapper.styled';
 import { useWindowSizeContext } from 'contexts/WindowSize';
 import { useEffect, useRef, useState } from 'react';
@@ -48,6 +49,7 @@ export const SiteWrapper = ({ children }) => {
 
     return (
         <>
+            <MobileMenu />
             <S.GlobalStyle />
 
             <S.SiteWrapperNav>

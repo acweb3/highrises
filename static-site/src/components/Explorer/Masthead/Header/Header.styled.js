@@ -1,4 +1,10 @@
+import UnstyledHamburger from 'assets/icons/hamburger.svg';
 import styled, { css } from 'styled-components';
+
+export const HeaderHamburger = styled(UnstyledHamburger)`
+    width: 24px;
+    height: 24px;
+`;
 
 export const HeaderSubtitle = styled.div`
     font-size: ${(props) => props.theme.typography.fontSize.prose};
@@ -58,7 +64,7 @@ export const HeaderDouble = styled.div`
 
 export const HeaderSizeWrapper = styled.div`
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
 
