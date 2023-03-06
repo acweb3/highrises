@@ -107,7 +107,7 @@ export const About = () => {
                 />
 
                 <a
-                    href="https://www.hythacg.com/highrises-editing-tutorials"
+                    href="https://www.hythacg.com/highrises-editing-tutorial-sales-page"
                     target="_blank"
                     rel="noopener noreferrer"
                 >

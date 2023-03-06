@@ -23,13 +23,12 @@ export const Collectibles = forwardRef(({ isHeaderShowing = true }, ref) => {
                     .filter((product) => product.productLink)
                     .map((product, index) => (
                         <S.CollectibleWrapper
+                            key={`${activeHighrise.name}--${index}`}
                             href={product.productLink}
                             rel="noopener noreferrer"
                             target="_blank"
                         >
-                            <S.Collectible
-                                key={`${activeHighrise.name}--${index}`}
-                            >
+                            <S.Collectible>
                                 {product.isNft && (
                                     <>
                                         <S.CollectibleNFTOverlay isDesktop>

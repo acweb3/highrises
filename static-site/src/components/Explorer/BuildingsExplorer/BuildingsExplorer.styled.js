@@ -47,6 +47,7 @@ export const BuildingsExplorerGrid = styled.div`
     ${(props) => props.theme.breakpoints.large`
         display: grid;
         margin: 0;
+        width: 100%;
         grid-template-columns: ${() => {
             if (props.count > 16) {
                 return '1fr 1fr 1fr 1fr';

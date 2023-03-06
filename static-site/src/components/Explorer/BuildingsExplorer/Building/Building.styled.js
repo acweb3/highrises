@@ -21,6 +21,7 @@ export const BuildingImage = styled(BlurLoader)`
         & > img {
             height: initial;
             width: initial;
+            width: 100%;
         }
     `}
 `;
@@ -29,6 +30,7 @@ export const BuildingAspectRatio = styled.div`
     height: 100%;
 
     ${(props) => props.theme.breakpoints.large`
+        width: 100%;
         height: 0;
         padding-bottom: 150%;
     `}

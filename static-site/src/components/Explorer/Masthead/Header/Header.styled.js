@@ -6,6 +6,18 @@ export const HeaderHamburger = styled(UnstyledHamburger)`
     height: 24px;
 `;
 
+export const HeaderHamburgerButton = styled.div`
+    padding: 8px;
+    stroke: rgba(34, 34, 34, 0.5);
+
+    position: absolute;
+    right: 8px;
+
+    ${(props) => props.theme.breakpoints.small`
+        display: none;
+    `}
+`;
+
 export const HeaderSubtitle = styled.div`
     font-size: ${(props) => props.theme.typography.fontSize.prose};
     color: ${(props) => props.theme.colors.grey[0]};

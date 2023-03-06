@@ -39,7 +39,7 @@ export const Metadata = ({
             <meta name="twitter:creator" content="@Hythacg" />
             <meta name="twitter:site" content="@Hythacg" />
             <meta property="og:site_name" content="highrises.hythacg.com" />
-            <link rel="canonical" href="highrises.hythacg.com" />
+            <link rel="canonical" href={ogUrl} />
             <meta property="og:type" content="website" />
             <meta name="twitter:card" content="summary_large_image" />
 

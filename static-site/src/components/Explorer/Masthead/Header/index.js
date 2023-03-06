@@ -17,18 +17,11 @@ export const Header = forwardRef((_, ref) => {
                     <S.HeaderBasic>{text}</S.HeaderBasic>
                 </S.HeaderDouble>
 
-                <div
-                    css={`
-                        padding: 8px;
-                        stroke: rgba(34, 34, 34, 0.5);
-
-                        position: absolute;
-                        right: 8px;
-                    `}
+                <S.HeaderHamburgerButton
                     onClick={() => setIsMobileMenuActive(true)}
                 >
                     <S.HeaderHamburger />
-                </div>
+                </S.HeaderHamburgerButton>
             </S.HeaderSizeWrapper>
 
             <S.HeaderSubtitle>

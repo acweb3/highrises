@@ -2,10 +2,6 @@ import * as S from 'components/SiteWrapper/MobileMenu/MobileMenu.styled';
 import { useMobileMenuContext } from 'contexts/MobileMenu';
 import { useEffect } from 'react';
 
-window.globalRef = {
-    current: () => {},
-};
-
 const raw = `
 <div class="Mobile-overlay" id="yui_3_17_2_1_1677716679638_2211">
    <div class="Mobile-overlay-menu" data-controller="MobileOverlayFolders" data-controllers-bound="MobileOverlayFolders">
@@ -57,8 +53,10 @@ export const MobileMenu = () => {
         useMobileMenuContext();
 
     useEffect(() => {
-        window.globalRef.current = () => {
-            setIsMobileMenuActive(false);
+        window.globalRef = {
+            current: () => {
+                setIsMobileMenuActive(false);
+            },
         };
     }, [setIsMobileMenuActive]);
 

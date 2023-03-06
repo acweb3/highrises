@@ -5,7 +5,8 @@ import { useEffect, useRef } from 'react';
 import { useInViewport } from 'react-in-viewport';
 
 export const Building = ({ building, onInView }) => {
-    const { activeHighrise, setActiveHighrise } = useActiveHighriseContext();
+    const { activeHighrise, setActiveHighrise, setIsAboutOverride } =
+        useActiveHighriseContext();
     const ref = useRef();
     const { inViewport } = useInViewport(ref, { threshold: 0 });
 
@@ -20,6 +21,7 @@ export const Building = ({ building, onInView }) => {
             ref={ref}
             isActive={building.index === activeHighrise?.index}
             onClick={() => {
+                setIsAboutOverride(false);
                 setActiveHighrise(building);
             }}
             title={building.name}

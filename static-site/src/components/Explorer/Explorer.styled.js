@@ -34,12 +34,15 @@ export const DesktopExplorerSection = styled.div`
 
     position: relative;
 
-    ${(props) =>
-        props.isMasthead &&
-        css`
-            min-width: 364px;
-            max-width: 480px;
-        `}
+    ${(props) => props.theme.breakpoints.large`
+        ${
+            props.isMasthead &&
+            css`
+                min-width: 364px;
+                max-width: 480px;
+            `
+        }
+    `}
 `;
 
 export const DesktopExplorer = styled.div`
