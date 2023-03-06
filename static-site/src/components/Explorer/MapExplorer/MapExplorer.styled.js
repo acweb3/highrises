@@ -7,6 +7,10 @@ export const MapExplorerHeader = styled.div`
     font-weight: 600;
     font-family: ${(props) => props.theme.typography.fontFamily.rc.basicFull};
     font-size: ${(props) => props.theme.typography.fontSize.h3};
+
+    ${(props) => props.theme.breakpoints.XL`
+        font-size: ${(props) => props.theme.typography.fontSize.h2};
+    `}
 `;
 
 export const MapExplorerOnboarding = styled.div`
@@ -49,4 +53,8 @@ export const MapExplorer = styled.div`
     flex: 1;
     padding: 16px;
     border-radius: 4px;
+
+    ${(props) => props.theme.breakpoints.XL`
+        padding: 32px;
+    `}
 `;

@@ -7,6 +7,11 @@ export const AboutButton = styled(BaseButton)`
     max-width: 220px;
     width: 220px;
     margin: 16px auto;
+
+    ${(props) => props.theme.breakpoints.XL`
+        max-width: initial;
+        width: min-content;
+    `}
 `;
 
 export const AboutHeader = styled(Header)`
@@ -26,6 +31,10 @@ export const AboutSection = styled.div`
         props.theme.breakpoints.small`
             padding: 0 32px;
         `}
+
+    ${(props) => props.theme.breakpoints.XL`
+        padding: 0 64px;
+    `}
 `;
 
 export const AboutGridWrapper = styled.div`
@@ -44,11 +53,20 @@ export const AboutPlanCityButton = styled(BaseButton)`
             width: 180px;
             margin: 32px auto 0;
         `}
+
+    ${(props) => props.theme.breakpoints.XL`
+        max-width: initial;
+        width: min-content;
+    `}
 `;
 
 export const AboutPlanCityCheck = styled.div`
     width: 20px;
     opacity: ${(props) => (props.isActive ? 1 : 0)};
+
+    ${(props) => props.theme.breakpoints.XL`
+        width: 32px;
+    `}
 `;
 
 export const AboutPlanCity = styled.div`

@@ -32,6 +32,14 @@ export const ProfileImageWrapper = styled.div`
     flex: 0 0 88px;
 
     margin-right: 16px;
+
+    ${(props) => props.theme.breakpoints.XL`
+        width: 120px;
+        height: 120px;
+        flex: 0 0 120px;
+
+        margin-right: 32px;
+    `}
 `;
 
 export const Profile = styled.div`

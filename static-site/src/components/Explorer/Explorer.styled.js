@@ -43,6 +43,26 @@ export const DesktopExplorerSection = styled.div`
             `
         }
     `}
+
+    ${(props) => props.theme.breakpoints.XL`
+        ${
+            props.isMasthead &&
+            css`
+                min-width: 648px;
+                max-width: 880px;
+            `
+        }
+    `}
+
+    ${(props) => props.theme.breakpoints.XXL`
+        ${
+            props.isMasthead &&
+            css`
+                min-width: 648px;
+                max-width: 880px;
+            `
+        }
+    `}
 `;
 
 export const DesktopExplorer = styled.div`

@@ -19,7 +19,6 @@ export const HeaderHamburgerButton = styled.div`
 `;
 
 export const HeaderSubtitle = styled.div`
-    font-size: ${(props) => props.theme.typography.fontSize.prose};
     color: ${(props) => props.theme.colors.grey[0]};
 `;
 
@@ -72,6 +71,20 @@ export const HeaderDouble = styled.div`
             `
         }}
     `}
+
+    ${(props) => props.theme.breakpoints.large`
+        font-size: ${props.theme.typography.fontSize.h1};
+        margin-bottom: 24px;
+        height: initial;
+
+        ${
+            props.isLarge &&
+            css`
+                font-size: ${(props) => props.theme.typography.fontSize.h2};
+                line-height: ${(props) => props.theme.typography.fontSize.h2};
+            `
+        }}
+    `}
 `;
 
 export const HeaderSizeWrapper = styled.div`
@@ -98,6 +111,12 @@ export const Header = styled.div`
 
     ${(props) => props.theme.breakpoints.small`
         padding: 32px 0 32px;
+        max-width: 380px;
+        margin: 0 auto;
+    `}
+
+    ${(props) => props.theme.breakpoints.XL`
+        padding: 32px 0 48px;
         max-width: 380px;
         margin: 0 auto;
     `}

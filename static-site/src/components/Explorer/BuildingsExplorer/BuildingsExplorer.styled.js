@@ -8,6 +8,10 @@ export const BuildingsExplorerHeader = styled.div`
     font-weight: 600;
     font-family: ${(props) => props.theme.typography.fontFamily.rc.basicFull};
     font-size: ${(props) => props.theme.typography.fontSize.h3};
+
+    ${(props) => props.theme.breakpoints.XL`
+        font-size: ${(props) => props.theme.typography.fontSize.h2};
+    `}
 `;
 
 export const BuildingsExplorerOnboarding = styled.div`

@@ -12,7 +12,7 @@ export const BuildingBadge = styled.div`
     height: 24px;
     width: 24px;
 
-    font-size: small;
+    font-size: 12px;
 
     display: flex;
     justify-content: center;
@@ -20,5 +20,11 @@ export const BuildingBadge = styled.div`
 
     ${(props) => props.theme.breakpoints.small`
         display: flex;
+    `}
+
+    ${(props) => props.theme.breakpoints.XL`
+        font-size: 1rem;
+        height: 32px;
+        width: 32px;
     `}
 `;

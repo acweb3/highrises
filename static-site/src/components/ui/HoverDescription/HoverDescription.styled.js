@@ -57,7 +57,6 @@ export const HoverDescriptionIndex = styled.div`
 `;
 
 export const HoverDescriptionName = styled.div`
-    font-size: 1rem;
     text-align: center;
     text-align: center;
     margin-top: 8px;
@@ -106,5 +105,9 @@ export const HoverDescription = styled.div`
                 }
             `
         }}
+    `}
+
+    ${(props) => props.theme.breakpoints.XL`
+        font-size: 2rem;
     `}
 `;

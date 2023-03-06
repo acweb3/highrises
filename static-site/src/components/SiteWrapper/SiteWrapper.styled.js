@@ -37,6 +37,11 @@ export const SiteWrapper = styled.div`
         props.theme.breakpoints.small`
         overflow: initial;
     `}
+
+    ${(props) =>
+        props.theme.breakpoints.XL`
+        font-size: 2rem;
+    `}
 `;
 
 export const GlobalStyle = createGlobalStyle`

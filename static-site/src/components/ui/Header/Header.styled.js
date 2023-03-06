@@ -23,4 +23,8 @@ export const Header = styled.div`
         margin-bottom: 8px;
         padding: 0;
     `}
+
+    ${(props) => props.theme.breakpoints.XL`
+        font-size: ${(props) => props.theme.typography.fontSize.h2};
+    `}
 `;

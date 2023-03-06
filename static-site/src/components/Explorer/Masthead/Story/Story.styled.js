@@ -7,7 +7,16 @@ export const StoryCopy = styled.div`
     overflow: hidden;
     word-break: break-word;
     text-align: left;
-    text-indent: 16px;
+    text-indent: 1rem;
+
+    ${(props) => props.theme.breakpoints.XL`
+        font-size: 2rem;
+        line-height: 1.2;
+        font-weight: 100;
+        text-indent: 2rem;
+
+        margin-bottom: 32px;
+    `}
 `;
 
 export const StoryTransparencyWrapper = styled.div`

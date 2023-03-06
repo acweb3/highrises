@@ -151,6 +151,11 @@ export const MobileMasthead = styled.div`
 export const DesktopMastheadClose = styled(UnstyledClose)`
     width: 24px;
     height: 24px;
+
+    ${(props) => props.theme.breakpoints.XL`
+        width: 48px;
+        height: 48px;
+    `}
 `;
 
 export const DesktopMastheadCloseButton = styled.div`
@@ -160,6 +165,11 @@ export const DesktopMastheadCloseButton = styled.div`
 
     cursor: pointer;
     padding: 8px;
+
+    ${(props) => props.theme.breakpoints.XL`
+        top: 16px;
+        right: 32px;
+    `}
 `;
 
 export const DesktopMastheadEmailCollectionWrapper = styled.div`
@@ -170,6 +180,10 @@ export const DesktopMastheadNav = styled.div`
     display: flex;
     justify-content: center;
     padding: 16px 0 32px;
+
+    ${(props) => props.theme.breakpoints.XL`
+        margin: 32px 0;
+    `}
 `;
 
 export const DesktopMastheadScrollMore = styled.div`
@@ -216,6 +230,10 @@ export const DesktopMastheadSection = styled.div`
             `
         }
     `}
+
+    ${(props) => props.theme.breakpoints.XL`
+        padding: 0 64px;
+    `}
 `;
 
 export const DesktopMasthead = styled.div`
@@ -235,4 +253,9 @@ export const DesktopMasthead = styled.div`
     min-width: 300px;
 
     min-height: calc(66vh - 32px);
+
+    ${(props) => props.theme.breakpoints.XL`
+        font-size: 2rem;
+        line-height: 1.1;
+    `}
 `;

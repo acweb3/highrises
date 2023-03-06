@@ -1,7 +1,15 @@
 import { BlurLoader } from 'components/ui/BlurLoader';
 import styled, { css } from 'styled-components';
 
-export const CollectibleImage = styled(BlurLoader)``;
+export const CollectibleImage = styled(BlurLoader)`
+    ${(props) => props.theme.breakpoints.large`
+        & > img {
+            height: initial;
+            width: initial;
+            width: 100%;
+        }
+    `}
+`;
 
 export const CollectibleNFTOverlay = styled.div`
     position: absolute;
@@ -73,6 +81,10 @@ export const CollectiblesGrid = styled.div`
     ${(props) => props.theme.breakpoints.small`
         grid-column-gap: 0;
     `}
+
+    ${(props) => props.theme.breakpoints.XL`
+        margin-top: 48px;
+    `}
 `;
 
 export const CollectiblesCopy = styled.div`
@@ -87,6 +99,16 @@ export const CollectiblesCopy = styled.div`
 
     ${(props) => props.theme.breakpoints.small`
         margin-top: 32px;
+    `}
+
+    ${(props) => props.theme.breakpoints.XL`
+        padding: 0 64px;
+
+        ${(props) =>
+            props.isHeaderShowing &&
+            css`
+                text-indent: 2rem;
+            `}
     `}
 `;
 
@@ -104,6 +126,10 @@ export const CollectiblesHeader = styled.div`
         css`
             display: block;
         `}
+
+    ${(props) => props.theme.breakpoints.XL`
+        font-size: ${(props) => props.theme.typography.fontSize.h2};
+    `}
 `;
 
 export const Collectibles = styled.div`

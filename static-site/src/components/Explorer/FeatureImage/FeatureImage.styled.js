@@ -68,6 +68,10 @@ export const FeatureImageInstructions = styled.div`
         css`
             top: ${props.zoomWrapperHeight - 136}px;
         `}
+
+    ${(props) => props.theme.breakpoints.XL`
+        display: none;
+    `}
 `;
 
 export const FeatureImageFilterClose = styled(UnstyledClose)`

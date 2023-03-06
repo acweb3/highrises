@@ -1,4 +1,3 @@
-import UnstyledABoltC from 'assets/icons/aboltc.svg';
 import UnstyledEmail from 'assets/icons/email.svg';
 import gridSrc from 'assets/images/blue-graph-paper.jpg';
 import styled from 'styled-components';
@@ -6,22 +5,11 @@ import styled from 'styled-components';
 export const EmailIcon = styled(UnstyledEmail)`
     width: 16px;
     margin-right: 8px;
-`;
 
-export const ABoltCIcon = styled(UnstyledABoltC)`
-    width: 40px;
-
-    & > path,
-    polygon {
-        fill: rgba(155, 180, 192, 0.6);
-    }
-
-    &:hover {
-        & > path,
-        polygon {
-            fill: rgba(155, 180, 192, 0.6);
-        }
-    }
+    ${(props) => props.theme.breakpoints.XL`
+        width: 32px;
+        margin-right: 16px;
+    `}
 `;
 
 export const LogoLink = styled.a`
@@ -41,6 +29,10 @@ export const EmailOutreach = styled.a`
     display: flex;
     align-items: center;
     justify-content: center;
+
+    ${(props) => props.theme.breakpoints.XL`
+        margin-top: 32px;
+    `}
 `;
 
 export const EmailCollectionHeader = styled.div`
@@ -48,6 +40,10 @@ export const EmailCollectionHeader = styled.div`
     font-size: ${(props) => props.theme.typography.fontSize.h3};
 
     text-align: center;
+
+    ${(props) => props.theme.breakpoints.XL`
+        font-size: ${(props) => props.theme.typography.fontSize.h2};
+    `}
 `;
 
 export const EmailCollectionInput = styled.input`
@@ -70,6 +66,10 @@ export const EmailCollectionInput = styled.input`
     ${(props) => props.theme.breakpoints.small`
         width: calc(100% - 64px);
     `}
+
+    ${(props) => props.theme.breakpoints.XL`
+        margin-top: 48px;
+    `}
 `;
 
 export const Paragraph = styled.div`
@@ -78,6 +78,10 @@ export const Paragraph = styled.div`
 
     ${(props) => props.theme.breakpoints.small`
         margin-top: 32px;
+    `}
+
+    ${(props) => props.theme.breakpoints.XL`
+        text-indent: 1rem;
     `}
 `;
 
@@ -88,6 +92,10 @@ export const EmailCollectionContent = styled.div`
 
     & > ${Paragraph} {
         margin-top: 16px;
+
+        ${(props) => props.theme.breakpoints.XL`
+            margin-top: 32px;
+        `}
     }
 `;
 
@@ -100,5 +108,9 @@ export const EmailCollection = styled.div`
 
     ${(props) => props.theme.breakpoints.small`
         padding: 48px 32px;
+    `}
+
+    ${(props) => props.theme.breakpoints.XL`
+        padding: 64px;
     `}
 `;

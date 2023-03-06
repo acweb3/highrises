@@ -38,4 +38,12 @@ export const BaseButton = styled.div`
         white-space: nowrap;
         text-align: center;
     `}
+
+    ${(props) => props.theme.breakpoints.XL`
+        font-size: 1.5rem;
+        width: min-content;
+        padding: 8px 36px;
+        white-space: nowrap;
+        text-align: center;
+    `}
 `;

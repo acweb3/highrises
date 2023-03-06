@@ -51,10 +51,19 @@ export const SortBarPill = styled.div`
         css`
             opacity: 0.4;
         `}
+
+    ${(props) => props.theme.breakpoints.XL`
+        padding: 16px 32px;
+
+        margin-right: 16px;
+        margin-bottom: 16px;
+
+        border-radius: 32px;
+    `}
 `;
 
 export const SortBarFilters = styled.div`
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 500;
     color: ${(props) => props.theme.colors.white[0]};
     white-space: nowrap;
@@ -74,8 +83,9 @@ export const SortBarFilters = styled.div`
         display: none;
     }
 
-    &:last-of-type {
-    }
+    ${(props) => props.theme.breakpoints.XL`
+        font-size: 2rem;
+    `}
 `;
 
 export const SortBar = styled.div`
@@ -83,4 +93,8 @@ export const SortBar = styled.div`
     padding: 16px 32px 8px;
     border-radius: 24px 24px 0 0;
     overflow: hidden;
+
+    ${(props) => props.theme.breakpoints.XL`
+        padding: 32px 48px 16px;
+    `}
 `;
