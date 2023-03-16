@@ -66,7 +66,7 @@ const FeatureImageZoom = ({
     setDidShowInstructions,
 }) => {
     const { activeHighrise } = useActiveHighriseContext();
-    const { isMobile } = useWindowSizeContext();
+    const { isMobile, isXL } = useWindowSizeContext();
     const openseaDragonRef = useRef();
     const [zoomWrapperHeight, setZoomWrapperHeight] = useState(undefined);
 
@@ -87,6 +87,8 @@ const FeatureImageZoom = ({
                     defaultZoomLevel: 1,
                     minZoomLevel: 1,
                     visibilityRatio: 1,
+
+                    maxZoomPixelRatio: isXL ? 6 : 2,
                 });
             })();
         } else {
@@ -95,7 +97,7 @@ const FeatureImageZoom = ({
                 url: activeHighrise.featureSrc,
             });
         }
-    }, [activeHighrise]);
+    }, [activeHighrise, isXL]);
 
     useEffect(() => {
         setIsShowInstructions(true);

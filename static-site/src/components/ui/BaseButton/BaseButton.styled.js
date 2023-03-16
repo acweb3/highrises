@@ -46,4 +46,13 @@ export const BaseButton = styled.div`
         white-space: nowrap;
         text-align: center;
     `}
+
+    ${(props) =>
+        props.disabled &&
+        `
+        pointer-events: none;
+        cursor: default;
+        opacity: 0.8;
+        background: ${props.theme.colors.grey[1]};
+    `}
 `;

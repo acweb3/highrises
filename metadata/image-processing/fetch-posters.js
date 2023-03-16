@@ -4,10 +4,10 @@ const { join } = require('path');
 const rawImagesDir = join(__dirname, 'poster', 'product');
 
 (async () => {
-    [...Array(85)].forEach(async (_, index) => {
+    [...Array(10)].forEach(async (_, index) => {
         try {
             const url = `https://www.hythacg.com/prints/highrise${`${
-                index + 1
+                index + 86
             }`.padStart(2, '0')}`;
 
             const res = await fetch(url);
@@ -29,7 +29,10 @@ const rawImagesDir = join(__dirname, 'poster', 'product');
             const blob = await image.blob();
             const buffer = Buffer.from(await blob.arrayBuffer());
 
-            fs.promises.writeFile(join(rawImagesDir, `${index}.jpg`), buffer);
+            fs.promises.writeFile(
+                join(rawImagesDir, `${index + 85}.jpg`),
+                buffer
+            );
         } catch (e) {
             console.log(e);
         }

@@ -257,5 +257,7 @@ export const DesktopMasthead = styled.div`
     ${(props) => props.theme.breakpoints.XL`
         font-size: 2rem;
         line-height: 1.1;
+
+        padding: 48px 0 0;
     `}
 `;

@@ -20,6 +20,10 @@ export const SortBarLink = styled.div`
             color: ${(props) => props.theme.colors.grey[0]};
             border: 1px solid ${(props) => props.theme.colors.grey[0]};
         `}
+
+    ${(props) => props.theme.breakpoints.XL`
+        margin: 0 24px 16px 0;
+    `}
 `;
 
 export const SortBarPill = styled.div`
@@ -53,7 +57,7 @@ export const SortBarPill = styled.div`
         `}
 
     ${(props) => props.theme.breakpoints.XL`
-        padding: 16px 32px;
+        padding: 12px 32px;
 
         margin-right: 16px;
         margin-bottom: 16px;

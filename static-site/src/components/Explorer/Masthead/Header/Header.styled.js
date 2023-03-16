@@ -72,9 +72,9 @@ export const HeaderDouble = styled.div`
         }}
     `}
 
-    ${(props) => props.theme.breakpoints.large`
+    ${(props) => props.theme.breakpoints.XL`
         font-size: ${props.theme.typography.fontSize.h1};
-        margin-bottom: 24px;
+        margin-bottom: 48px;
         height: initial;
 
         ${

@@ -194,4 +194,13 @@ exports.createPages = async function ({ actions, graphql }) {
             thumbnail: `${fullyAccessibleURL}${featureURL}`,
         },
     });
+
+    actions.createPage({
+        component: require.resolve(`./src/templates/Mint.js`),
+        path: '/mint',
+        context: {
+            highrises: highrisesWithImages,
+            thumbnail: `${fullyAccessibleURL}${featureURL}`,
+        },
+    });
 };

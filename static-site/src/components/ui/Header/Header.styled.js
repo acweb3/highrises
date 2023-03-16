@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Header = styled.div`
     text-align: center;
@@ -26,5 +26,17 @@ export const Header = styled.div`
 
     ${(props) => props.theme.breakpoints.XL`
         font-size: ${(props) => props.theme.typography.fontSize.h2};
+        line-height: 1.4;
+        margin-bottom: 32px;
     `}
+
+    ${(props) =>
+        props.smaller &&
+        css`
+            font-size: ${(props) => props.theme.typography.fontSize.h4};
+
+            ${(props) => props.theme.breakpoints.XL`
+            font-size: ${(props) => props.theme.typography.fontSize.h3};
+        `}
+        `}
 `;

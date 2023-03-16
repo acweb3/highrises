@@ -60,7 +60,7 @@ export const MapExplorer = () => {
                                         activeHighrise &&
                                         getIndex(activeHighrise) ===
                                             getIndex(highrise)
-                                            ? highrise.mapSrc
+                                            ? highrise.featureSrc
                                             : undefined
                                     }
                                     position={highrise.ltlng}

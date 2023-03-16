@@ -52,6 +52,7 @@ export const WindowSize = ({ children }) => {
 
     const isMobile = debouncedWindowSize && breakpoint <= breakpointsMap.small;
     const isTablet = debouncedWindowSize && breakpoint <= breakpointsMap.medium;
+    const isXL = debouncedWindowSize && breakpoint > breakpointsMap.XL;
 
     const zoomWidth = useZoomWidth(isMobile);
 
@@ -72,6 +73,7 @@ export const WindowSize = ({ children }) => {
             value={{
                 isMobile,
                 isTablet,
+                isXL,
 
                 zoomWidth,
             }}

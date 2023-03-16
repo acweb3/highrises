@@ -1564,12 +1564,14 @@ const highrises = [
             {
                 name: 'Pittsburgh Collage',
                 productName: 'pittsburgh-collage',
-                productLink: '',
+                productLink:
+                    'https://www.hythacg.com/prints/pittsburgh-collage',
             },
             {
                 name: 'Pittsburgh Wallpapers',
                 productName: 'pittsburgh-wallpapers',
-                productLink: '',
+                productLink:
+                    'https://www.hythacg.com/prints/pittsburgh-wallpaper',
             },
         ],
     },
@@ -1664,12 +1666,14 @@ const highrises = [
             {
                 name: 'Pittsburgh Collage',
                 productName: 'pittsburgh-collage',
-                productLink: '',
+                productLink:
+                    'https://www.hythacg.com/prints/pittsburgh-collage',
             },
             {
                 name: 'Pittsburgh Wallpapers',
                 productName: 'pittsburgh-wallpapers',
-                productLink: '',
+                productLink:
+                    'https://www.hythacg.com/prints/pittsburgh-wallpaper',
             },
         ],
     },
@@ -1768,12 +1772,14 @@ const highrises = [
             {
                 name: 'Pittsburgh Collage',
                 productName: 'pittsburgh-collage',
-                productLink: '',
+                productLink:
+                    'https://www.hythacg.com/prints/pittsburgh-collage',
             },
             {
                 name: 'Pittsburgh Wallpapers',
                 productName: 'pittsburgh-wallpapers',
-                productLink: '',
+                productLink:
+                    'https://www.hythacg.com/prints/pittsburgh-wallpaper',
             },
         ],
     },
@@ -3045,8 +3051,8 @@ const highrises = [
         city: 'Albany',
         opened: '1915',
         ltlng: {
-            lat: 42.6407006,
-            lng: -73.745206,
+            lat: 42.6480051,
+            lng: -73.74948650000002,
         },
         attributes: [
             {
@@ -4345,8 +4351,8 @@ const highrises = [
         city: 'Springfield',
         opened: '1913',
         ltlng: {
-            lat: 42.1011956,
-            lng: -72.5893152,
+            lat: 42.1008539,
+            lng: -72.5904451,
         },
         attributes: [
             {
@@ -6591,9 +6597,14 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Seattle Collage',
+                productName: 'seattle-collage',
+                productLink: 'https://www.hythacg.com/prints/seattle-collage',
+            },
+            {
                 name: 'Seattle Wallpaper',
                 productName: 'seattle-wallpaper',
-                productLink: '',
+                productLink: 'https://www.hythacg.com/prints/seattle-wallpaper',
             },
         ],
     },
@@ -6673,9 +6684,14 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Seattle Collage',
+                productName: 'seattle-collage',
+                productLink: 'https://www.hythacg.com/prints/seattle-collage',
+            },
+            {
                 name: 'Seattle Wallpaper',
                 productName: 'seattle-wallpaper',
-                productLink: '',
+                productLink: 'https://www.hythacg.com/prints/seattle-wallpaper',
             },
         ],
     },
@@ -6751,9 +6767,14 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Seattle Collage',
+                productName: 'seattle-collage',
+                productLink: 'https://www.hythacg.com/prints/seattle-collage',
+            },
+            {
                 name: 'Seattle Wallpaper',
                 productName: 'seattle-wallpaper',
-                productLink: '',
+                productLink: 'https://www.hythacg.com/prints/seattle-wallpaper',
             },
         ],
     },
@@ -6841,9 +6862,14 @@ const highrises = [
         ],
         products: [
             {
+                name: 'Seattle Collage',
+                productName: 'seattle-collage',
+                productLink: 'https://www.hythacg.com/prints/seattle-collage',
+            },
+            {
                 name: 'Seattle Wallpaper',
                 productName: 'seattle-wallpaper',
-                productLink: '',
+                productLink: 'https://www.hythacg.com/prints/seattle-wallpaper',
             },
         ],
     },
@@ -6923,6 +6949,18 @@ const highrises = [
             {
                 trait_type: 'Attributes',
                 value: 'Signage',
+            },
+        ],
+        products: [
+            {
+                name: 'Seattle Collage',
+                productName: 'seattle-collage',
+                productLink: 'https://www.hythacg.com/prints/seattle-collage',
+            },
+            {
+                name: 'Seattle Wallpaper',
+                productName: 'seattle-wallpaper',
+                productLink: 'https://www.hythacg.com/prints/seattle-wallpaper',
             },
         ],
     },
@@ -7832,6 +7870,944 @@ const highrises = [
                 name: 'Oakland Wallpapers',
                 productName: 'oakland-wallpapers',
                 productLink: 'https://www.hythacg.com/prints/oakland-wallpaper',
+            },
+        ],
+    },
+    {
+        description:
+            "Money was no object for the Fisher brothers, the auto tycoons who ordered this opulent edifice enveloped inside and out with marble. It is Albert Kahn's most spectacular creation, if not his most consequential — his no-nonsense car factories inspired the next movement in architecture, the International style.\nKahn, who came to Detroit as a boy with his German family, showed early promise with his house designs before landing a 1902 commission for a Packard plant. The reinforced concrete structure, well lit by floor-to-ceiling windows, led to a Model T factory job from Henry Ford, and Kahn quickly became known as a master of industrial design.\nThe Fisher brothers manufactured wooden car bodies for some of the first automobiles, and got their big break in 1910 when Cadillac ordered 150. In 1926 their factories — including one by Kahn — rolled out a million, and General Motors bought the business. When oldest brother Fred Fisher broke ground on this highrise the next year, it was meant to be the first of three towers on the block, but the Great Depression intervened.\nTour groups still goggle in awe at the frescoes, chandeliers, marble, and mosaics in the breathtaking three-story arcade. Traveling Broadway shows perform at the theater, which was originally decorated as a Mayan temple.",
+        highriseNumber: 'Highrise #86',
+        image: 'ipfs://QmZDkXtK9iVd5DCLMRrA71jignmi98KVuLhy4Rigmic4q9/85.jpg',
+        name: 'Fisher Building',
+        height: 441,
+        heightBracket: "400' - 499'",
+        decade: 1920,
+        address: '3011 W. Grand Blvd.',
+        architect: 'Albert Kahn',
+        stories: '28',
+        state: 'MI',
+        style: 'Art Deco',
+        city: 'Detroit',
+        opened: '1928',
+        ltlng: {
+            lat: 42.3693184,
+            lng: -83.0775183,
+        },
+        attributes: [
+            {
+                trait_type: 'Address',
+                value: '3011 W. Grand Blvd.',
+            },
+            {
+                trait_type: 'Opened',
+                value: '1928',
+            },
+            {
+                trait_type: 'Height',
+                value: "441'",
+            },
+            {
+                trait_type: 'Architect',
+                value: 'Albert Kahn',
+            },
+            {
+                trait_type: 'Style',
+                value: 'Art Deco',
+            },
+            {
+                trait_type: 'Stories',
+                value: '28',
+            },
+            {
+                trait_type: 'City',
+                value: 'Detroit',
+            },
+            {
+                trait_type: 'State',
+                value: 'MI',
+            },
+            {
+                trait_type: 'Region',
+                value: 'Midwest',
+            },
+            {
+                trait_type: 'Map address',
+                value: '3011 W Grand Blvd, Detroit, MI 48202',
+            },
+            {
+                trait_type: 'Decade',
+                value: '1920s',
+            },
+            {
+                trait_type: 'Height Bracket',
+                value: "400' - 499'",
+            },
+            {
+                trait_type: 'Attributes',
+                value: 'Spire',
+            },
+            {
+                trait_type: 'Attributes',
+                value: 'Sloped Roof',
+            },
+            {
+                trait_type: 'Attributes',
+                value: 'Statue',
+            },
+            {
+                trait_type: 'Attributes',
+                value: 'Figures',
+            },
+            {
+                trait_type: 'Attributes',
+                value: 'Antenna',
+            },
+            {
+                trait_type: 'Attributes',
+                value: 'Lights on',
+            },
+        ],
+        products: [
+            {
+                name: 'Detroit Collage',
+                productName: 'detroit-collage',
+                productLink: 'https://www.hythacg.com/prints/detroit-collage',
+            },
+            {
+                name: 'Detroit Wallpapers',
+                productName: 'detroit-wallpapers',
+                productLink: 'https://www.hythacg.com/prints/detroit-wallpaper',
+            },
+        ],
+    },
+    {
+        description:
+            "Vivid tile patterns play across the orange brick of this highrise, a technicolor tower hailed at its dedication as a \"vertical rainbow\" for the bold use of color inside and out. The inspiration came to architect Wirt Rowland on a trip to Barcelona, where he admired the Sagrada Familia and other polychromatically iconoclastic edifices by Antoni Gaudí.\nRowland lived a block from Detroit's Pewabic Pottery, and asked its founder, Mary Chase Stratton, to decorate this building's concave half-dome entryway. Her design of an aviator appears to spring from a Navajo blanket, flanked by figures resembling 8-bit space Aztecs. The dazzling elevator lobby and banking hall they guard are a scarcely controlled riot for the optic nerve, a throne room for the Queen of Legos.\nThat Rowland persuaded a trust company to let him try out his ideas on their new building testifies to his lofty reputation among the city's corporate elite. The skyscraper opened as the Union Trust Building, but its name changed within a year after merger with the Guardian Group, and the institution went into receivership soon after. The army put a production command center here during World War II, and today the Guardian is America's most fantastic county office building.",
+        highriseNumber: 'Highrise #87',
+        image: 'ipfs://QmZDkXtK9iVd5DCLMRrA71jignmi98KVuLhy4Rigmic4q9/86.jpg',
+        name: 'Guardian Building',
+        height: 496,
+        heightBracket: "400' - 499'",
+        decade: 1920,
+        address: '500 Griswold St.',
+        architect: 'Wirt Rowland',
+        stories: '40',
+        state: 'MI',
+        style: 'Art Deco',
+        city: 'Detroit',
+        opened: '1929',
+        ltlng: {
+            lat: 42.3295267,
+            lng: -83.0460804,
+        },
+        attributes: [
+            {
+                trait_type: 'Address',
+                value: '500 Griswold St.',
+            },
+            {
+                trait_type: 'Opened',
+                value: '1929',
+            },
+            {
+                trait_type: 'Height',
+                value: "496'",
+            },
+            {
+                trait_type: 'Architect',
+                value: 'Wirt Rowland',
+            },
+            {
+                trait_type: 'Style',
+                value: 'Art Deco',
+            },
+            {
+                trait_type: 'Stories',
+                value: '40',
+            },
+            {
+                trait_type: 'City',
+                value: 'Detroit',
+            },
+            {
+                trait_type: 'State',
+                value: 'MI',
+            },
+            {
+                trait_type: 'Region',
+                value: 'Midwest',
+            },
+            {
+                trait_type: 'Map address',
+                value: '500 Griswold St, Detroit, MI 48226',
+            },
+            {
+                trait_type: 'AKA now',
+                value: 'Union Trust Building',
+            },
+            {
+                trait_type: 'Decade',
+                value: '1920s',
+            },
+            {
+                trait_type: 'Height Bracket',
+                value: "400' - 499'",
+            },
+            {
+                trait_type: 'Attributes',
+                value: 'Spire',
+            },
+        ],
+        products: [
+            {
+                name: 'Detroit Collage',
+                productName: 'detroit-collage',
+                productLink: 'https://www.hythacg.com/prints/detroit-collage',
+            },
+            {
+                name: 'Detroit Wallpapers',
+                productName: 'detroit-wallpapers',
+                productLink: 'https://www.hythacg.com/prints/detroit-wallpaper',
+            },
+        ],
+    },
+    {
+        description:
+            "This peculiar highrise tacks ornament on ornament the farther it gets from the sidewalk until it verges on top-heavy. It was built for James Book and his brothers, Frank and Herbert, who came into a sizable inheritance from their family's vast holdings of Michigan land.\nThe boys grew up in the Cadillac Hotel on Washington Boulevard, and when their father died in 1916, they decided to turn the three-block thoroughfare into Detroit's version of Fifth Avenue. They asked architect Louis Kamper, who had designed James a mansion modeled on Marie Antoinette's in Versailles, to give skyscrapers a try.\nWhen the first Book Building opened the following year, the 13-story office block included plans for this 38-story attachment in matching Italian Renaissance style. First, the brothers bought their old hotel and replaced it with the lavish Book-Cadillac. When their Book Tower opened, they unveiled an even bolder project: an 81-story behemoth on the other end of the block that would be the world's tallest skyscraper. The Great Depression put an end to those plans.\nDetroit billionaire Dan Gilbert bought Book Tower, which stood vacant following years of neglect. Both it and the original Book Building have been restored and converted into a hotel.",
+        highriseNumber: 'Highrise #88',
+        image: 'ipfs://QmZDkXtK9iVd5DCLMRrA71jignmi98KVuLhy4Rigmic4q9/87.jpg',
+        name: 'Book Tower',
+        height: 475,
+        heightBracket: "400' - 499'",
+        decade: 1920,
+        address: '1265 Washington Blvd.',
+        architect: 'Louis Kamper',
+        stories: '38',
+        state: 'MI',
+        style: 'Renaissance',
+        city: 'Detroit',
+        opened: '1926',
+        ltlng: {
+            lat: 42.3329919,
+            lng: -83.0514498,
+        },
+        attributes: [
+            {
+                trait_type: 'Address',
+                value: '1265 Washington Blvd.',
+            },
+            {
+                trait_type: 'Opened',
+                value: '1926',
+            },
+            {
+                trait_type: 'Height',
+                value: "475'",
+            },
+            {
+                trait_type: 'Architect',
+                value: 'Louis Kamper',
+            },
+            {
+                trait_type: 'Style',
+                value: 'Renaissance',
+            },
+            {
+                trait_type: 'Stories',
+                value: '38',
+            },
+            {
+                trait_type: 'City',
+                value: 'Detroit',
+            },
+            {
+                trait_type: 'State',
+                value: 'MI',
+            },
+            {
+                trait_type: 'Region',
+                value: 'Midwest',
+            },
+            {
+                trait_type: 'Map address',
+                value: '1265 Washington Blvd, Detroit, MI 48226',
+            },
+            {
+                trait_type: 'Decade',
+                value: '1920s',
+            },
+            {
+                trait_type: 'Height Bracket',
+                value: "400' - 499'",
+            },
+            {
+                trait_type: 'Attributes',
+                value: 'Sloped Roof',
+            },
+            {
+                trait_type: 'Attributes',
+                value: 'Graffiti',
+            },
+            {
+                trait_type: 'Attributes',
+                value: 'Lights on',
+            },
+        ],
+        products: [
+            {
+                name: 'Detroit Collage',
+                productName: 'detroit-collage',
+                productLink: 'https://www.hythacg.com/prints/detroit-collage',
+            },
+            {
+                name: 'Detroit Wallpapers',
+                productName: 'detroit-wallpapers',
+                productLink: 'https://www.hythacg.com/prints/detroit-wallpaper',
+            },
+        ],
+    },
+    {
+        description:
+            "Opened two months after the unveiling of the stunning Guardian Building three blocks down the street, this highrise did not get the same publicity for its orange bricks and brightly colored tile accents. But it is a handsome specimen of Art Deco nonetheless.\nThe building's namesake was 13 when he sailed from England to work on his uncle's farm near Detroit. After Stott had his own farm, he built a small milling operation. Over the years, that expanded into a sprawling complex four miles outside the city center that was the state's largest flour mill. Stott left his seven children a fortune, and they built this skyscraper in tribute to him, though that quickly soured into an inheritance squabble and lawsuit.\nArchitect John Donaldson also immigrated to Detroit as a child, albeit under less trying circumstances than Stott. His Scottish parents could afford to send their son to study in Munich and Paris. His career had a rocky start — his first business partner killed himself — but Donaldson married the young man's widow and enjoyed a long and successful career designing numerous houses and churches as well as the first two versions of the Penobscot Building.",
+        highriseNumber: 'Highrise #89',
+        image: 'ipfs://QmZDkXtK9iVd5DCLMRrA71jignmi98KVuLhy4Rigmic4q9/88.jpg',
+        name: 'David Stott Building',
+        height: 437,
+        heightBracket: "400' - 499'",
+        decade: 1920,
+        address: '1150 Griswold St.',
+        architect: 'John Donaldson',
+        stories: '35',
+        state: 'MI',
+        style: 'Art Deco',
+        city: 'Detroit',
+        opened: '1929',
+        ltlng: {
+            lat: 42.3324235,
+            lng: -83.0485556,
+        },
+        attributes: [
+            {
+                trait_type: 'Address',
+                value: '1150 Griswold St.',
+            },
+            {
+                trait_type: 'Opened',
+                value: '1929',
+            },
+            {
+                trait_type: 'Height',
+                value: "437'",
+            },
+            {
+                trait_type: 'Architect',
+                value: 'John Donaldson',
+            },
+            {
+                trait_type: 'Style',
+                value: 'Art Deco',
+            },
+            {
+                trait_type: 'Stories',
+                value: '35',
+            },
+            {
+                trait_type: 'City',
+                value: 'Detroit',
+            },
+            {
+                trait_type: 'State',
+                value: 'MI',
+            },
+            {
+                trait_type: 'Region',
+                value: 'Midwest',
+            },
+            {
+                trait_type: 'Map address',
+                value: 'David Stott Building, 1150 Griswold St, Detroit, MI 48226',
+            },
+            {
+                trait_type: 'Decade',
+                value: '1920s',
+            },
+            {
+                trait_type: 'Height Bracket',
+                value: "400' - 499'",
+            },
+        ],
+        products: [
+            {
+                name: 'Detroit Collage',
+                productName: 'detroit-collage',
+                productLink: 'https://www.hythacg.com/prints/detroit-collage',
+            },
+            {
+                name: 'Detroit Wallpapers',
+                productName: 'detroit-wallpapers',
+                productLink: 'https://www.hythacg.com/prints/detroit-wallpaper',
+            },
+        ],
+    },
+    {
+        description:
+            'Handsomely preserved although empty and unused, this pink granite and sandstone civic palace is the sole survivor of an architectural pair that once bookended Cadillac Square. Like the old city hall, which was demolished in 1961, the courthouse is topped with a tower ringed by four allegorical sculptural maidens, a copper quartet representing law, agriculture, commerce, and technology.\nCrowning the entrance below are two horse-drawn chariots and a frieze depicting county namesake General Anthony Wayne. The Revolutionary War leader was sent by President George Washington to fight the new nation\'s next war, a campaign against a Native American confederation that opposed U.S. expansion into the Northwest Territory.\nClassical columns and intricate mosaics adorn the interior. At the courthouse dedication, U.S. Supreme Court Justice Henry Brown, who practiced law in Detroit for 30 years, praised local architect John Scott for finding "the happy medium between parsimony and extravagance." Brown also penned the infamous Plessy v. Ferguson decision, which declared racial segregation to be constitutional under the doctrine of separate but equal.\nThe judges got new courtrooms elsewhere long ago, and the last county employees departed in 2009 for the Guardian Building. Privately owned for four decades, the mothballed jewel box awaits a new purpose.',
+        highriseNumber: 'Highrise #90',
+        image: 'ipfs://QmZDkXtK9iVd5DCLMRrA71jignmi98KVuLhy4Rigmic4q9/89.jpg',
+        name: 'Wayne County Courthouse',
+        height: 247,
+        heightBracket: "200' - 299'",
+        decade: 1900,
+        address: '600 Randolph St.',
+        architect: 'John Scott',
+        stories: '9',
+        state: 'MI',
+        style: 'Beaux-Arts',
+        city: 'Detroit',
+        opened: '1902',
+        ltlng: {
+            lat: 42.3321968,
+            lng: -83.0427663,
+        },
+        attributes: [
+            {
+                trait_type: 'Address',
+                value: '600 Randolph St.',
+            },
+            {
+                trait_type: 'Opened',
+                value: '1902',
+            },
+            {
+                trait_type: 'Height',
+                value: "247'",
+            },
+            {
+                trait_type: 'Architect',
+                value: 'John Scott',
+            },
+            {
+                trait_type: 'Style',
+                value: 'Beaux-Arts',
+            },
+            {
+                trait_type: 'Stories',
+                value: '9',
+            },
+            {
+                trait_type: 'City',
+                value: 'Detroit',
+            },
+            {
+                trait_type: 'State',
+                value: 'MI',
+            },
+            {
+                trait_type: 'Region',
+                value: 'Midwest',
+            },
+            {
+                trait_type: 'Map address',
+                value: '600 Randolph Street, Detroit, MI 48226',
+            },
+            {
+                trait_type: 'Decade',
+                value: '1900s',
+            },
+            {
+                trait_type: 'Height Bracket',
+                value: "200' - 299'",
+            },
+            {
+                trait_type: 'Attributes',
+                value: 'Dome',
+            },
+            {
+                trait_type: 'Attributes',
+                value: 'Spire',
+            },
+        ],
+        products: [
+            {
+                name: 'Detroit Collage',
+                productName: 'detroit-collage',
+                productLink: 'https://www.hythacg.com/prints/detroit-collage',
+            },
+            {
+                name: 'Detroit Wallpapers',
+                productName: 'detroit-wallpapers',
+                productLink: 'https://www.hythacg.com/prints/detroit-wallpaper',
+            },
+        ],
+    },
+    {
+        description:
+            "Brothers Frederick and Christian Buhl got their start making and selling hats and furs from the prized beaver pelts that first lured French trappers and explorers to the Great Lakes. As they prospered, both took a turn as Detroit mayor, and Christian built the first Buhl Building, which his grandsons eventually tore down and replaced with this highrise.\nWirt Rowland, who designed the General Motors building while working for Albert Kahn, jumped ship to another architectural firm that promised him more money and creative leeway for this project. It employs an unusual cross-shaped footprint, thereby doubling the number of corner offices on every floor. Terracotta tiles of varying size and rough surface augment its resemblance to a stone cathedral.\nRowland also hired Corrado Parducci to provide the ornamentation, and the Italian immigrant sculptor's Native American figures above the entrance emphasize that the structure is a New World creation that is reinventing classic architectural tropes. The duo would collaborate on skyscrapers twice more before the decade was out, and their Buhl, Penobscot, and Guardian buildings along Griswold Street reveal the dramatic evolution of their artistic vision.",
+        highriseNumber: 'Highrise #91',
+        image: 'ipfs://QmZDkXtK9iVd5DCLMRrA71jignmi98KVuLhy4Rigmic4q9/90.jpg',
+        name: 'Buhl Building',
+        height: 366,
+        heightBracket: "300' - 399'",
+        decade: 1920,
+        address: '535 Griswold St.',
+        architect: 'Wirt Rowland',
+        stories: '28',
+        state: 'MI',
+        style: 'Gothic',
+        city: 'Detroit',
+        secondaryStyle: 'Renaissance',
+        opened: '1925',
+        ltlng: {
+            lat: 42.3293531,
+            lng: -83.0470033,
+        },
+        attributes: [
+            {
+                trait_type: 'Address',
+                value: '535 Griswold St.',
+            },
+            {
+                trait_type: 'Opened',
+                value: '1925',
+            },
+            {
+                trait_type: 'Height',
+                value: "366'",
+            },
+            {
+                trait_type: 'Architect',
+                value: 'Wirt Rowland',
+            },
+            {
+                trait_type: 'Style',
+                value: 'Gothic',
+            },
+            {
+                trait_type: 'Stories',
+                value: '28',
+            },
+            {
+                trait_type: 'Secondary Style',
+                value: 'Renaissance',
+            },
+            {
+                trait_type: 'City',
+                value: 'Detroit',
+            },
+            {
+                trait_type: 'State',
+                value: 'MI',
+            },
+            {
+                trait_type: 'Region',
+                value: 'Midwest',
+            },
+            {
+                trait_type: 'Map address',
+                value: '535 Griswold St, Detroit, MI 48226',
+            },
+            {
+                trait_type: 'Decade',
+                value: '1920s',
+            },
+            {
+                trait_type: 'Height Bracket',
+                value: "300' - 399'",
+            },
+            {
+                trait_type: 'Attributes',
+                value: 'Sloped Roof',
+            },
+            {
+                trait_type: 'Attributes',
+                value: 'Statue',
+            },
+        ],
+        products: [
+            {
+                name: 'Detroit Collage',
+                productName: 'detroit-collage',
+                productLink: 'https://www.hythacg.com/prints/detroit-collage',
+            },
+            {
+                name: 'Detroit Wallpapers',
+                productName: 'detroit-wallpapers',
+                productLink: 'https://www.hythacg.com/prints/detroit-wallpaper',
+            },
+        ],
+    },
+    {
+        description:
+            "Designed by Louis Kamper for developers James, Frank, and Herbert Book, this was the architect's fifth and final building for the brothers, who tried to turn Washington Boulevard into a major shopping destination. While its ornamentation is old-fashioned in keeping with Kamper's other Book commissions, the tapered setback top is a step towards a more modern silhouette.\nIndustrial Bank specialized in smaller loans for factory employees and other workers whom established banks overlooked. It was founded in 1917 by Eugene Lewis, who was a salesman for an Ohio manufacturer of roller bearings, the friction-reducing assemblies that allow axles to spin. That job put him face to face with the first car makers, and he went on to become an executive at a Detroit axle plant.\nHis bank for the masses was a success, making more than 400,000 loans in its first decade, and soon required several floors in this new skyscraper to accommodate the growing demand. Lewis headed it for more than three decades before retiring, after which it was acquired in a merger. Eventually the highrise was converted into housing for senior citizens and renamed in honor of its designer.",
+        highriseNumber: 'Highrise #92',
+        image: 'ipfs://QmZDkXtK9iVd5DCLMRrA71jignmi98KVuLhy4Rigmic4q9/91.jpg',
+        name: 'Industrial Bank Building',
+        height: 240,
+        heightBracket: "200' - 299'",
+        decade: 1920,
+        address: '1410 Washington Blvd.',
+        architect: 'Louis Kamper',
+        stories: '22',
+        state: 'MI',
+        style: 'Renaissance',
+        city: 'Detroit',
+        secondaryStyle: 'Art Deco',
+        opened: '1926',
+        ltlng: {
+            lat: 42.33384789999999,
+            lng: -83.0504337,
+        },
+        attributes: [
+            {
+                trait_type: 'Address',
+                value: '1410 Washington Blvd.',
+            },
+            {
+                trait_type: 'Opened',
+                value: '1926',
+            },
+            {
+                trait_type: 'Height',
+                value: "240'",
+            },
+            {
+                trait_type: 'Architect',
+                value: 'Louis Kamper',
+            },
+            {
+                trait_type: 'Style',
+                value: 'Renaissance',
+            },
+            {
+                trait_type: 'Stories',
+                value: '22',
+            },
+            {
+                trait_type: 'Secondary Style',
+                value: 'Art Deco',
+            },
+            {
+                trait_type: 'City',
+                value: 'Detroit',
+            },
+            {
+                trait_type: 'State',
+                value: 'MI',
+            },
+            {
+                trait_type: 'Region',
+                value: 'Midwest',
+            },
+            {
+                trait_type: 'Map address',
+                value: '1410 Washington Blvd, Detroit, MI 48226',
+            },
+            {
+                trait_type: 'AKA now',
+                value: 'Louis Kamper Building',
+            },
+            {
+                trait_type: 'AKA 2',
+                value: 'Park Place Apartments',
+            },
+            {
+                trait_type: 'Decade',
+                value: '1920s',
+            },
+            {
+                trait_type: 'Height Bracket',
+                value: "200' - 299'",
+            },
+            {
+                trait_type: 'Attributes',
+                value: 'Statue',
+            },
+        ],
+        products: [
+            {
+                name: 'Detroit Collage',
+                productName: 'detroit-collage',
+                productLink: 'https://www.hythacg.com/prints/detroit-collage',
+            },
+            {
+                name: 'Detroit Wallpapers',
+                productName: 'detroit-wallpapers',
+                productLink: 'https://www.hythacg.com/prints/detroit-wallpaper',
+            },
+        ],
+    },
+    {
+        description:
+            "This highrise is the last and tallest of three interconnected Penobscot Buildings that demonstrate the rapid advance of early skyscraper technology, as well as a ballooning family fortune. All are named for the Maine river where Simon Murphy first learned the lumber trade before moving to Detroit in 1866 to harvest the vast Michigan pine forests.\nMurphy's timberlands would stretch to Wisconsin and eventually the West Coast, his assets multiplying with iron ore mineral rights under the trees and and oil beneath a southern California ranch. His son, William, became the lead investor and financial manager of Henry Ford's first and second car companies in 1899 and 1901, and when that contentious partnership dissolved, the younger Murphy founded Cadillac. Both men wound up rich enough for hard feelings to dissipate, and the first tenant to move into the new Penobscot was Ford's consumer finance division.\nThe building's main banking hall initially housed the Guardian Group, a local bank and trust company that merged in 1929 with a competitor opening its own Wirt Rowland-designed Art Deco skyscraper a block away. The illuminated orb at the Penobscot's pinnacle — the knob on the 'Nob — was the highest point in Detroit for nearly 50 years.",
+        highriseNumber: 'Highrise #93',
+        image: 'ipfs://QmZDkXtK9iVd5DCLMRrA71jignmi98KVuLhy4Rigmic4q9/92.jpg',
+        name: 'Penobscot Building',
+        height: 654,
+        heightBracket: "600' - 699'",
+        decade: 1920,
+        address: '645 Griswold St.',
+        architect: 'Wirt Rowland',
+        stories: '47',
+        state: 'MI',
+        style: 'Art Deco',
+        city: 'Detroit',
+        opened: '1928',
+        ltlng: {
+            lat: 42.3302055,
+            lng: -83.0474857,
+        },
+        attributes: [
+            {
+                trait_type: 'Address',
+                value: '645 Griswold St.',
+            },
+            {
+                trait_type: 'Opened',
+                value: '1928',
+            },
+            {
+                trait_type: 'Height',
+                value: "654'",
+            },
+            {
+                trait_type: 'Architect',
+                value: 'Wirt Rowland',
+            },
+            {
+                trait_type: 'Style',
+                value: 'Art Deco',
+            },
+            {
+                trait_type: 'Stories',
+                value: '47',
+            },
+            {
+                trait_type: 'City',
+                value: 'Detroit',
+            },
+            {
+                trait_type: 'State',
+                value: 'MI',
+            },
+            {
+                trait_type: 'Region',
+                value: 'Midwest',
+            },
+            {
+                trait_type: 'Map address',
+                value: '645 Griswold St, Detroit, MI 48226',
+            },
+            {
+                trait_type: 'AKA 2',
+                value: 'Greater Penobscot Building',
+            },
+            {
+                trait_type: 'Decade',
+                value: '1920s',
+            },
+            {
+                trait_type: 'Height Bracket',
+                value: "600' - 699'",
+            },
+            {
+                trait_type: 'Attributes',
+                value: 'Spire',
+            },
+        ],
+        products: [
+            {
+                name: 'Detroit Collage',
+                productName: 'detroit-collage',
+                productLink: 'https://www.hythacg.com/prints/detroit-collage',
+            },
+            {
+                name: 'Detroit Wallpapers',
+                productName: 'detroit-wallpapers',
+                productLink: 'https://www.hythacg.com/prints/detroit-wallpaper',
+            },
+        ],
+    },
+    {
+        description:
+            "This is the tallest of three highrises erected in a row along Cadillac Square for John Barlum, who got his start selling meat in his father's market stalls in the square. The building's name was changed long ago, leaving its original owner as forgotten as an old wooden coal freighter bearing his name that rests at the bottom of Lake Erie.\nThe ambitious Barlum went from selling ham and bacon for his dad to managing, and eventually acquiring, a line of steamships transporting iron ore and coal to steel mills around the Great Lakes. He had two boats christened in his name, including one that sprang a leak near Sandusky and sank in 1922. Barlum then went into real estate development, opening first an office block for lawyers, then a 23-story hotel next door, and finally this imposing tower.\nIt shoots straight up from the sidewalk to the roofline 40 stories above, where spotlights picked out the gold terracotta highlights in the early years. After Barlum died, new owners in 1949 redubbed this Cadillac Tower. It recently joined the growing portfolio of Detroit antique skyscrapers owned by Rocket Mortgage founder Dan Gilbert.",
+        highriseNumber: 'Highrise #94',
+        image: 'ipfs://QmZDkXtK9iVd5DCLMRrA71jignmi98KVuLhy4Rigmic4q9/93.jpg',
+        name: 'Barlum Tower',
+        height: 437,
+        heightBracket: "400' - 499'",
+        decade: 1920,
+        address: '65 Cadillac Sq.',
+        architect: 'Bonnah & Chaffee',
+        stories: '40',
+        state: 'MI',
+        style: 'Gothic',
+        city: 'Detroit',
+        opened: '1927',
+        ltlng: {
+            lat: 42.3319818,
+            lng: -83.04490729999999,
+        },
+        attributes: [
+            {
+                trait_type: 'Address',
+                value: '65 Cadillac Sq.',
+            },
+            {
+                trait_type: 'Opened',
+                value: '1927',
+            },
+            {
+                trait_type: 'Height',
+                value: "437'",
+            },
+            {
+                trait_type: 'Architect',
+                value: 'Bonnah & Chaffee',
+            },
+            {
+                trait_type: 'Style',
+                value: 'Gothic',
+            },
+            {
+                trait_type: 'Stories',
+                value: '40',
+            },
+            {
+                trait_type: 'City',
+                value: 'Detroit',
+            },
+            {
+                trait_type: 'State',
+                value: 'MI',
+            },
+            {
+                trait_type: 'Region',
+                value: 'Midwest',
+            },
+            {
+                trait_type: 'Map address',
+                value: '65 Cadillac Square, Detroit, MI 48226',
+            },
+            {
+                trait_type: 'AKA now',
+                value: 'Cadillac Tower',
+            },
+            {
+                trait_type: 'Decade',
+                value: '1920s',
+            },
+            {
+                trait_type: 'Height Bracket',
+                value: "400' - 499'",
+            },
+            {
+                trait_type: 'Attributes',
+                value: 'Antenna',
+            },
+        ],
+        products: [
+            {
+                name: 'Detroit Collage',
+                productName: 'detroit-collage',
+                productLink: 'https://www.hythacg.com/prints/detroit-collage',
+            },
+            {
+                name: 'Detroit Wallpapers',
+                productName: 'detroit-wallpapers',
+                productLink: 'https://www.hythacg.com/prints/detroit-wallpaper',
+            },
+        ],
+    },
+    {
+        description:
+            'As this headquarters for Gulf Oil was rising up to dominate the city skyline, the stature of the local banking magnate behind it was plunging just as dramatically. Andrew Mellon, who formed Gulf from his investments in the Spindletop oilfield in Texas, served three Republican presidents as Secretary of the Treasury. But the Great Depression cost him his cabinet post and reputation, turning him into a pariah.\nForced to resign amid accusations of enriching his personal portfolio while steering the economy into meltdown, the cashiered financier faced embarrassing public investigations and trial for tax fraud in the final years of his life. Still the old tycoon donated his priceless collection of paintings to the country and paid to build the National Gallery of Art to hold them.\nThe stepped pyramid capping this highrise is a blockier version of a roof design the architects used for a Wall Street bank tower. The weather beacon on top originally shone with an orange or blue light to indicate fair or foul weather ahead. That signal was later supplanted by neon lights on the roof and is now achieved with multicolor LED displays, although the value is surely more aesthetic than meteorological.',
+        highriseNumber: 'Highrise #95',
+        image: 'ipfs://QmZDkXtK9iVd5DCLMRrA71jignmi98KVuLhy4Rigmic4q9/94.jpg',
+        name: 'Gulf Tower',
+        height: 582,
+        heightBracket: "500' - 599'",
+        decade: 1930,
+        address: '707 Grant St.',
+        architect: 'Trowbridge & Livingston',
+        stories: '38',
+        state: 'PA',
+        style: 'Art Deco',
+        city: 'Pittsburgh',
+        opened: '1932',
+        ltlng: {
+            lat: 40.4424701,
+            lng: -79.99529799999999,
+        },
+        attributes: [
+            {
+                trait_type: 'Address',
+                value: '707 Grant St.',
+            },
+            {
+                trait_type: 'Opened',
+                value: '1932',
+            },
+            {
+                trait_type: 'Height',
+                value: "582'",
+            },
+            {
+                trait_type: 'Architect',
+                value: 'Trowbridge & Livingston',
+            },
+            {
+                trait_type: 'Style',
+                value: 'Art Deco',
+            },
+            {
+                trait_type: 'Stories',
+                value: '38',
+            },
+            {
+                trait_type: 'City',
+                value: 'Pittsburgh',
+            },
+            {
+                trait_type: 'State',
+                value: 'PA',
+            },
+            {
+                trait_type: 'Region',
+                value: 'Northeast',
+            },
+            {
+                trait_type: 'Map address',
+                value: '707 Grant St, Pittsburgh, PA 15219',
+            },
+            {
+                trait_type: 'Decade',
+                value: '1930s',
+            },
+            {
+                trait_type: 'Height Bracket',
+                value: "500' - 599'",
+            },
+            {
+                trait_type: 'Attributes',
+                value: 'Spire',
+            },
+            {
+                trait_type: 'Attributes',
+                value: 'Sloped Roof',
+            },
+        ],
+        products: [
+            {
+                name: 'Pittsburgh Collage',
+                productName: 'pittsburgh-collage',
+                productLink:
+                    'https://www.hythacg.com/prints/pittsburgh-collage',
+            },
+            {
+                name: 'Pittsburgh Wallpapers',
+                productName: 'pittsburgh-wallpapers',
+                productLink:
+                    'https://www.hythacg.com/prints/pittsburgh-wallpaper',
             },
         ],
     },
