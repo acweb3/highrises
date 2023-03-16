@@ -121,6 +121,14 @@ exports.createPages = async function ({ actions, graphql }) {
                     productLink: `https://opensea.io/assets/ethereum/0x516d85f0c80d2c4809736aca3f3f95ce8545b5d2/${`${index}`}`,
                 },
 
+                index >= 85 && {
+                    isNft: true,
+                    name: `${highrise.name} NFT`,
+                    productSrc: urlMap[index]?.['nft-highrises'],
+                    blurSrc: urlMap[index]?.['blur-nft-highrises'],
+                    productLink: `https://highrises.hythacg.com/mint`,
+                },
+
                 // Northeast collage
                 index < 50 && {
                     isNft: true,

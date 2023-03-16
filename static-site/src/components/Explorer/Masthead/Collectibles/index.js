@@ -34,6 +34,9 @@ export const Collectibles = forwardRef(({ isHeaderShowing = true }, ref) => {
                                         <S.CollectibleNFTOverlay isDesktop>
                                             <HoverDescription
                                                 title={product.name}
+                                                css={`
+                                                    width: 100%;
+                                                `}
                                             >
                                                 <StaticImage
                                                     src={
@@ -52,6 +55,9 @@ export const Collectibles = forwardRef(({ isHeaderShowing = true }, ref) => {
                                                 }
                                                 placeholder="blurred"
                                                 alt=""
+                                                css={`
+                                                    width: 100%;
+                                                `}
                                             />
                                         </S.CollectibleNFTOverlay>
                                     </>

@@ -4,6 +4,46 @@ import { Paragraph } from 'components/Explorer/Masthead/EmailCollection/EmailCol
 import * as S from 'components/Mint/Mint.styled';
 import { BaseButton } from 'components/ui/BaseButton';
 import { Header } from 'components/ui/Header';
+import { useEffect, useState } from 'react';
+
+export const Countdown = ({ countDownStart, startedText }) => {
+    const [countdown, setCountdown] = useState('');
+    const [isStarted, setIsStarted] = useState(false);
+
+    useEffect(() => {
+        const sti = setInterval(() => {
+            const now = new Date();
+            const diff = countDownStart.valueOf() - now.valueOf();
+
+            const days = Math.max(Math.floor(diff / 1000 / 60 / 60 / 24), 0);
+            const hours = Math.max(Math.floor(diff / 1000 / 60 / 60) % 24, 0);
+            const minutes = Math.max(Math.floor(diff / 1000 / 60) % 60, 0);
+            const seconds = Math.max(Math.floor(diff / 1000) % 60, 0);
+
+            if (days === 0 && hours === 0 && minutes === 0 && seconds === 0) {
+                setIsStarted(true);
+            }
+
+            setCountdown(`${days}d ${hours}h ${minutes}m ${seconds}s`);
+        }, 1000);
+
+        return () => {
+            clearInterval(sti);
+        };
+    }, [countDownStart]);
+
+    return (
+        <S.Countdown isActive={Boolean(countdown)}>
+            {(() => {
+                if (isStarted) {
+                    return startedText;
+                }
+
+                return countdown;
+            })()}
+        </S.Countdown>
+    );
+};
 
 export const Mint = () => {
     return (
@@ -41,7 +81,11 @@ export const Mint = () => {
                         margin-top: 0;
                     `}
                 >
-                    XXX
+                    <Countdown
+                        countDownStart={
+                            new Date('2023-03-21T12:00:00.000-04:00')
+                        }
+                    />
                 </Paragraph>
 
                 <BaseButton

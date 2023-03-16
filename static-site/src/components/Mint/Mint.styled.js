@@ -1,5 +1,12 @@
 import styled from 'styled-components';
 
+export const Countdown = styled.div`
+    min-height: 32px;
+
+    display: flex;
+    align-items: center;
+`;
+
 export const MintBackgroundMobile = styled.img`
     display: block;
     object-fit: cover;
@@ -25,6 +32,8 @@ export const MintBackgroundDesktop = styled.img`
 `;
 
 export const MintBlurb = styled.div`
+    box-sizing: border-box;
+
     z-index: 2;
     position: absolute;
     top: 0;
