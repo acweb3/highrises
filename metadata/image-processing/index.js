@@ -6,10 +6,10 @@ const { products } = require('./products');
 const { site } = require('./site');
 
 (() => {
-    nft();
+    // nft();
     // poster();
     // site();
-    // png();
+    png();
     // feature();
     // products();
 })();
