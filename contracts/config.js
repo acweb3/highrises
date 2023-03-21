@@ -6,8 +6,8 @@ const config = {
 	collageIpfsURL: process.env.COLLAGE_IPFS_URL,
 	mainnetAlchemyURL: process.env.MAINNET_ALCHEMY_URL,
 	mainnetPrivateKey: process.env.MAINNET_PRIVATE_KEY,
-	rinkebyAlchemyURL: process.env.RINKEBY_ALCHEMY_URL,
-	rinkebyPrivateKey: process.env.RINKEBY_PRIVATE_KEY,
+	sepoliaAlchemyURL: process.env.SEPOLIA_ALCHEMY_URL,
+	sepoliaPrivateKey: process.env.SEPOLIA_PRIVATE_KEY,
 };
 
 module.exports = {

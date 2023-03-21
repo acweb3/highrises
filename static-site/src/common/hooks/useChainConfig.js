@@ -1,5 +1,6 @@
 import { useEthers } from '@usedapp/core';
 import collageAbi from 'common/hooks/collage-abi.json';
+import mintAbi from 'common/hooks/mint-abi.json';
 import nftAbi from 'common/hooks/nft-abi.json';
 import reserveAbi from 'common/hooks/reserve-abi.json';
 import { config } from 'config';
@@ -23,6 +24,13 @@ export const useChainConfig = () => {
             ? config.rinkebyCollageContractAddress
             : config.mainnetCollageContractAddress;
 
+    console.log({ x: ethers.library?.network?.chainId });
+
+    const mintContractAddress =
+        ethers.library?.network?.chainId === 4
+            ? config.sepoliaMintContractAddress
+            : config.mainnetMintContractAddress;
+
     // put this right here?
     const openseaURL =
         ethers.library?.network?.chainId === 4 ? 'testnets.opensea' : 'opensea';
@@ -44,5 +52,7 @@ export const useChainConfig = () => {
         collageContractAddress,
         collageContract: new Contract(collageContractAddress, collageAbi),
         collageAbi,
+        mintContract: new Contract(mintContractAddress, mintAbi),
+        mintAbi,
     };
 };

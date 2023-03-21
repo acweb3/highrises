@@ -5,6 +5,7 @@ pragma solidity ^0.8.6;
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "erc721a/contracts/ERC721A.sol";
 import "erc721a/contracts/extensions/ERC721AQueryable.sol";
+import "hardhat/console.sol";
 
 /*
 @Hythacg
@@ -87,24 +88,5 @@ contract Highrises is ERC721A, ERC721AQueryable, Ownable {
 		onlyOwner
 	{
 		proxyRegistryAddress = _proxyRegistryAddress;
-	}
-
-	/**
-	 * @dev preapprove for opensea
-	 */
-	function isApprovedForAll(address _owner, address operator)
-		public
-		view
-		override
-		returns (bool)
-	{
-		OpenseaProxyRegistry proxyRegistry = OpenseaProxyRegistry(
-			proxyRegistryAddress
-		);
-		if (address(proxyRegistry.proxies(_owner)) == operator) {
-			return true;
-		}
-
-		return super.isApprovedForAll(_owner, operator);
 	}
 }

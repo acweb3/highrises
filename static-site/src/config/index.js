@@ -33,6 +33,14 @@ export const config = {
         'mainnetReserveContractAddress',
         process.env.REACT_APP_MAINNET_RESERVE_CONTRACT_ADDRESS
     ),
+    sepoliaMintContractAddress: requiredEnvVar(
+        'sepoliaMintContractAddress',
+        process.env.REACT_APP_SEPOLIA_MINT_CONTRACT_ADDRESS
+    ),
+    mainnetMintContractAddress: requiredEnvVar(
+        'mainnetMintContractAddress',
+        process.env.REACT_APP_MAINNET_MINT_CONTRACT_ADDRESS
+    ),
     rinkebyAlchemyUrl: requiredEnvVar(
         'rinkebyAlchemyUrl',
         process.env.REACT_APP_RINKEBY_ALCHEMY_URL

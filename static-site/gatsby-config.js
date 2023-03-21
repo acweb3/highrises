@@ -88,6 +88,8 @@ module.exports = {
                     'REACT_APP_MAINNET_RESERVE_CONTRACT_ADDRESS',
                     'REACT_APP_RINKEBY_COLLAGE_CONTRACT_ADDRESS',
                     'REACT_APP_MAINNET_COLLAGE_CONTRACT_ADDRESS',
+                    'REACT_APP_SEPOLIA_MINT_CONTRACT_ADDRESS',
+                    'REACT_APP_MAINNET_MINT_CONTRACT_ADDRESS',
                 ],
             },
         },

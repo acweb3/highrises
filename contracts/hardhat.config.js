@@ -24,9 +24,9 @@ module.exports = {
 			accounts: [config.mainnetPrivateKey],
 		},
 
-		rinkeby: {
-			url: config.rinkebyAlchemyURL,
-			accounts: [config.rinkebyPrivateKey],
+		sepolia: {
+			url: config.sepoliaAlchemyURL,
+			accounts: [config.sepoliaPrivateKey],
 		},
 	},
 

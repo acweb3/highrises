@@ -113,7 +113,7 @@ exports.createPages = async function ({ actions, graphql }) {
 
             const metaverseProducts = [
                 // Opensea NFT
-                index < 75 && {
+                index < 85 && {
                     isNft: true,
                     name: `${highrise.name} NFT`,
                     productSrc: urlMap[index]?.['nft-highrises'],
