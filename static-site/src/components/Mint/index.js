@@ -1,5 +1,7 @@
+import { useCall } from '@usedapp/core';
 import detroitBannerMobileSrc from 'assets/images/detroit-banner-mobile.jpg';
 import detroitBannerSrc from 'assets/images/detroit-banner.jpg';
+import { useChainConfig } from 'common/hooks/useChainConfig';
 import { Paragraph } from 'components/Explorer/Masthead/EmailCollection/EmailCollection.styled';
 import * as S from 'components/Mint/Mint.styled';
 import { useMint } from 'components/Mint/hooks/useMint';
@@ -47,7 +49,30 @@ export const Countdown = ({ countDownStart, startedText }) => {
 };
 
 export const Mint = () => {
-    const mint = useMint();
+    const { isMinting, mint } = useMint();
+    const [isLive, setIsLive] = useState(false);
+
+    const { contract } = useChainConfig();
+    const ownerOf = useCall({
+        contract,
+        method: 'ownerOf',
+        args: [3],
+    });
+
+    useEffect(() => {
+        const sti = setInterval(() => {
+            setIsLive(
+                new Date('2023-03-21T12:00:00.000-04:00').valueOf() >
+                    new Date().valueOf()
+            );
+        }, 1000);
+
+        return () => {
+            clearInterval(sti);
+        };
+    }, []);
+
+    console.log({ isLive });
 
     return (
         <S.Mint>
@@ -95,9 +120,15 @@ export const Mint = () => {
                     css={`
                         margin-top: 32px;
                     `}
-                    disabled
+                    isActive={isMinting}
+                    disabled={!isLive}
+                    onClick={() => {
+                        if (isLive) {
+                            mint();
+                        }
+                    }}
                 >
-                    Mint
+                    {isMinting ? 'Minting' : 'Mint'}
                 </BaseButton>
             </S.MintBlurb>
         </S.Mint>

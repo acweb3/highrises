@@ -32,6 +32,12 @@ export const BaseButton = styled.div`
         opacity: 0.8;
     }
 
+    ${(props) =>
+        props.isActive &&
+        css`
+            opacity: 0.8;
+        `}
+
     ${(props) => props.theme.breakpoints.small`
         width: 200px;
         padding: 8px 36px;
