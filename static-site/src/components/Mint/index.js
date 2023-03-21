@@ -2,6 +2,7 @@ import detroitBannerMobileSrc from 'assets/images/detroit-banner-mobile.jpg';
 import detroitBannerSrc from 'assets/images/detroit-banner.jpg';
 import { Paragraph } from 'components/Explorer/Masthead/EmailCollection/EmailCollection.styled';
 import * as S from 'components/Mint/Mint.styled';
+import { useMint } from 'components/Mint/hooks/useMint';
 import { BaseButton } from 'components/ui/BaseButton';
 import { Header } from 'components/ui/Header';
 import { useEffect, useState } from 'react';
@@ -46,6 +47,8 @@ export const Countdown = ({ countDownStart, startedText }) => {
 };
 
 export const Mint = () => {
+    const mint = useMint();
+
     return (
         <S.Mint>
             <S.MintBackgroundMobile src={detroitBannerMobileSrc} />

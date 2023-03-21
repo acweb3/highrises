@@ -24,8 +24,6 @@ export const useChainConfig = () => {
             ? config.rinkebyCollageContractAddress
             : config.mainnetCollageContractAddress;
 
-    console.log({ x: ethers.library?.network?.chainId });
-
     const mintContractAddress =
         ethers.library?.network?.chainId === 4
             ? config.sepoliaMintContractAddress
