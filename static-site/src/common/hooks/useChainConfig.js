@@ -10,7 +10,7 @@ export const useChainConfig = () => {
     const ethers = useEthers();
 
     const contractAddress =
-        ethers.library?.network?.chainId === 4
+        ethers.library?.network?.chainId === 11155111
             ? config.rinkebyContractAddress
             : config.mainnetContractAddress;
 
@@ -25,7 +25,7 @@ export const useChainConfig = () => {
             : config.mainnetCollageContractAddress;
 
     const mintContractAddress =
-        ethers.library?.network?.chainId === 4
+        ethers.library?.network?.chainId === 11155111
             ? config.sepoliaMintContractAddress
             : config.mainnetMintContractAddress;
 

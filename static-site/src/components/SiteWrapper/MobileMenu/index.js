@@ -7,26 +7,14 @@ const raw = `
    <div class="Mobile-overlay-menu" data-controller="MobileOverlayFolders" data-controllers-bound="MobileOverlayFolders">
       <div class="Mobile-overlay-menu-main">
          <nav class="Mobile-overlay-nav Mobile-overlay-nav--primary" data-content-field="navigation">
-            <a href="https://www.hythacg.com/aboutme" class="Mobile-overlay-nav-item">
-            About Me
+            <a href="https://www.hythacg.com/highrises-shop" class="Mobile-overlay-nav-item">
+            Highrises shop
             </a>
             <a href="https://www.hythacg.com/rowhomes" class="Mobile-overlay-nav-item">
             Rowhomes
             </a>
-            <a href="https://www.hythacg.comhttps://highrises.hythacg.com" class="Mobile-overlay-nav-item">
-            Highrises
-            </a>
-            <a href="https://www.hythacg.com/highrisesblog" class="Mobile-overlay-nav-item">
-            Highrises Blog
-            </a>
-            <a href="https://www.hythacg.com/print-shop" class="Mobile-overlay-nav-item">
-            Prints
-            </a>
-            <a href="https://www.hythacg.com/center-square-station-2" class="Mobile-overlay-nav-item">
-            Architecture
-            </a>
-            <a href="https://www.hythacg.com/bike-the-usa" class="Mobile-overlay-nav-item">
-            Bike Blog
+            <a href="https://www.hythacg.com/aboutme" class="Mobile-overlay-nav-item">
+            About Me
             </a>
          </nav>
          <nav class="Mobile-overlay-nav Mobile-overlay-nav--secondary" data-content-field="navigation">

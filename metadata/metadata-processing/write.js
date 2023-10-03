@@ -83,7 +83,7 @@ const write = (traits) => {
                     {
                         image,
                         name: highriseNumber,
-                        description: `**${name}**\n\n**Art by:** Chris Hytha\n\n**Story by: ** Mark Houser\n\n${description.replaceAll(
+                        description: `**${name}**\n\n**Art by:** Chris Hytha\n\n**Story by:** Mark Houser\n\n${description.replaceAll(
                             '\n',
                             '\n\n'
                         )}`,

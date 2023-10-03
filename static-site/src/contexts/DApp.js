@@ -3,9 +3,9 @@ import { config } from 'config';
 
 // This is now deprecated
 const devDappConfig = {
-    readOnlyChainId: ChainId.Rinkeby,
+    readOnlyChainId: '11155111',
     readOnlyUrls: {
-        [ChainId.Rinkeby]: config.rinkebyAlchemyUrl,
+        ['11155111']: config.rinkebyAlchemyUrl,
     },
 };
 

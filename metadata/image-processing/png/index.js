@@ -10,9 +10,16 @@ const png = async () => {
     const outputDir = join(__dirname, 'dist');
 
     const files = await asyncReaddir(rawImagesDir);
+    files.sort((a, b) => {
+        const numberA = parseInt(a.split(' ')[0]);
+        const numberB = parseInt(b.split(' ')[0]);
+        return numberA - numberB;
+    });
 
     files.forEach(async (file, i) => {
         const fileName = join(__dirname, 'raw', file);
+
+        console.log({ file, fileName });
 
         await sharp(fileName)
             .resize({

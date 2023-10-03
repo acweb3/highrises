@@ -6,6 +6,7 @@ import { useState } from 'react';
 export const useMint = () => {
     const [isMinting, setIsMinting] = useState(false);
     const [error, setError] = useState(undefined);
+    const [token, setToken] = useState(undefined);
     const { mintContract } = useChainConfig();
     const { library } = useEthers();
 
@@ -25,14 +26,23 @@ export const useMint = () => {
                 value: utils.parseEther('0.5'),
             });
 
-            return token;
+            setToken(token);
         } catch (e) {
-            console.log({ e });
-            setError(JSON.stringify(e));
+            if (
+                e.message.includes(
+                    'insufficient funds for intrinsic transaction'
+                )
+            ) {
+                setError('Low funds, requires 0.5 eth');
+                return;
+            }
+
+            setError(JSON.stringify(e?.message || e));
         }
     };
 
     return {
+        token,
         isMinting,
         mint,
         error,

@@ -15,10 +15,16 @@ const nft = async () => {
         const [tokenIDRaw] = file.split(' ');
         const tokenID = parseInt(tokenIDRaw) - 1;
 
-        fs.copyFileSync(
-            join(rawImagesDir, file),
-            join(outputDir, 'chain', `${tokenID}.jpg`)
-        );
+        // fs.copyFileSync(
+        //     join(rawImagesDir, file),
+        //     join(outputDir, 'chain', `${tokenID}.jpg`)
+        // );
+
+        await sharp(join(rawImagesDir, file))
+            .resize({
+                width: 1440,
+            })
+            .toFile(join(outputDir, 'chain', `${tokenID}.jpg`));
 
         await sharp(join(rawImagesDir, file))
             .resize({

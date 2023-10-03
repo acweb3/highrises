@@ -17,6 +17,12 @@ const featureCity = {
         ' Sunny skies and scenic vistas that lured the motion picture industry to Hollywood a century ago also attracted throngs of new residents and businesses. Building height restrictions meant City Hall towered over everything else until the late 1960s, but architects found creative ways to bend the rules and build highrises that dominated their blocks downtown or on car-crazy Wilshire Boulevard.',
     ALBANY: "Inspired in part by the much larger metropolis at the other end of the Hudson River, New York's state capital has several excellent historic highrises clustered on its gently sloping city grid. Taken together, they make fitting accessories to the magnificent architectural ensemble housing the government of the Empire State.",
     NEWARK: "As if Manhattan were unable to contain the contagious spread of skyscrapers, several fine examples sprang up across the Hudson a century ago in New Jersey's biggest city. Most of the historic highrises of Newark stand on the edge of Military Park or within a few minutes' walk of the former parade ground.",
+
+    HOUSTON:
+        "The city named for Texas's founding father, Houston rapidly grew into a major port and the state's largest city once its bayou was dredged deep enough to admit ocean vessels. Many of its historic skyscrapers were the work of developer Jesse Jones, including the Gulf Tower, an Art Deco masterpiece.",
+    DALLAS: "Its signature shimmering glass towers were built when Dallas was not just a city but America's most popular TV show. But the financial and trading center has a tradition of daring architectural statements going much further back, when oil riches began to shift an economy long dominated by cotton.",
+    PITTSBURGH:
+        'The city whose mills produced much of the steel used in highrises across America has a fine collection of landmark skyscrapers from its industrial heyday. Rivers and the steep ridge of Mt. Washington squeeze downtown Pittsburgh, crowding the buildings in a way that enhances their collective impact.',
 };
 
 const featureStyle = {
@@ -99,34 +105,44 @@ exports.createPages = async function ({ actions, graphql }) {
     const highrisesWithImages = highrises
         .sort((a, b) => getIndex(a) - getIndex(b))
         .map(({ products, ...highrise }, index) => {
+            const highriseIndex = getIndex(highrise) + 1;
+
             const irlProducts = [
+                {
+                    name: `Art Deco Book`,
+                    productSrc: productMap['book']['productSrc'],
+                    blurSrc: productMap['book']['blurSrc'],
+
+                    product2Src: productMap['book-2']['productSrc'],
+                    blur2Src: productMap['book-2']['blurSrc'],
+
+                    productLink: `https://www.hythacg.com/highrises-store-2/highrisesbook`,
+                },
+
                 // Poster
                 {
                     name: `${highrise.name} Print`,
                     productSrc: urlMap[index]?.['poster-highrises'],
                     blurSrc: urlMap[index]?.['blur-poster-highrises'],
-                    productLink: `https://www.hythacg.com/prints/highrise${`${
-                        getIndex(highrise) + 1
-                    }`.padStart(2, '0')}`,
+
+                    productLink:
+                        highriseIndex >= 144
+                            ? `https://www.hythacg.com/highrises-store-2/highrise${highriseIndex}`
+                            : `https://www.hythacg.com/prints/highrise${`${highriseIndex}`.padStart(
+                                  2,
+                                  '0'
+                              )}`,
                 },
             ];
 
             const metaverseProducts = [
                 // Opensea NFT
-                index < 85 && {
+                index < 144 && {
                     isNft: true,
                     name: `${highrise.name} NFT`,
                     productSrc: urlMap[index]?.['nft-highrises'],
                     blurSrc: urlMap[index]?.['blur-nft-highrises'],
                     productLink: `https://opensea.io/assets/ethereum/0x516d85f0c80d2c4809736aca3f3f95ce8545b5d2/${`${index}`}`,
-                },
-
-                index >= 85 && {
-                    isNft: true,
-                    name: `${highrise.name} NFT`,
-                    productSrc: urlMap[index]?.['nft-highrises'],
-                    blurSrc: urlMap[index]?.['blur-nft-highrises'],
-                    productLink: `https://highrises.hythacg.com/mint`,
                 },
 
                 // Northeast collage
@@ -197,15 +213,6 @@ exports.createPages = async function ({ actions, graphql }) {
     actions.createPage({
         component: require.resolve(`./src/templates/Index.js`),
         path: '/',
-        context: {
-            highrises: highrisesWithImages,
-            thumbnail: `${fullyAccessibleURL}${featureURL}`,
-        },
-    });
-
-    actions.createPage({
-        component: require.resolve(`./src/templates/Mint.js`),
-        path: '/mint',
         context: {
             highrises: highrisesWithImages,
             thumbnail: `${fullyAccessibleURL}${featureURL}`,

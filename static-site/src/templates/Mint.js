@@ -14,13 +14,13 @@ const App = ({ pageContext: { highrises, thumbnail } }) => {
                 <ThemeProvider theme={theme}>
                     <SiteWrapper>
                         <Metadata
-                            title={'Detroit NFT Release - HYTHA.CG'}
+                            title={'NFT Release - HYTHA.CG'}
                             description={
-                                '8 Detroit Highrises will be available for a ½ price (.5 ETH) blind mint.'
+                                '16 Highrises will be available for a ½ price (.5 ETH) blind mint.'
                             }
                             ogUrl={'highrises.hythacg.com'}
                             thumbnail={thumbnail}
-                            thumbnailAlt={'Detroit Highrises release'}
+                            thumbnailAlt={'Highrises release'}
                         />
 
                         <Mint />

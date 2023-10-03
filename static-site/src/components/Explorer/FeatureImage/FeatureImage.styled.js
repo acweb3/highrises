@@ -189,7 +189,7 @@ export const FeatureImage = styled(BlurLoader)`
 `;
 
 export const FeatureImageRandom = styled(FeatureImage)`
-    transition: opacity 1000ms;
+    transition: opacity 2000ms;
 
     opacity: 0;
     z-index: 2;

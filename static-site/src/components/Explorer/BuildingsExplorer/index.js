@@ -20,6 +20,14 @@ export const BuildingsExplorer = ({ buildingExplorerHeight }) => {
 
     return (
         <S.BuildingsExplorer buildingExplorerHeight={buildingExplorerHeight}>
+            <a
+                href="https://www.hythacg.com/highrises-shop"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <S.BuildingsExplorerShop>Store</S.BuildingsExplorerShop>
+            </a>
+
             <S.BuildingsExplorerGrid
                 buildingExplorerHeight={buildingExplorerHeight}
                 count={highrises.length}

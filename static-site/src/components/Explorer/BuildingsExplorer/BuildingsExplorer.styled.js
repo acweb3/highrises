@@ -1,5 +1,34 @@
 import gridSrc from 'assets/images/blue-graph-paper.jpg';
+import { BaseButton } from 'components/ui/BaseButton';
 import styled, { css } from 'styled-components';
+
+export const BuildingsExplorerShop = styled(BaseButton)`
+    display: none;
+
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 2;
+    padding: 8px 24px;
+    width: min-content;
+    border: 1px solid ${(props) => props.theme.colors.white[0]};
+
+    opacity: 0.7;
+
+    letter-spacing: initial;
+    text-transform: none;
+    border-radius: 24px;
+    padding: 8px 24px;
+    font-size: 1rem;
+
+    &:hover {
+        opacity: 1;
+    }
+
+    ${(props) => props.theme.breakpoints.large`
+        display: block;
+    `}
+`;
 
 export const BuildingsExplorerHeader = styled.div`
     text-align: center;

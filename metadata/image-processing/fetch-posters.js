@@ -3,13 +3,15 @@ const { join } = require('path');
 
 const rawImagesDir = join(__dirname, 'poster', 'product');
 
-(async () => {
-    [...Array(10)].forEach(async (_, index) => {
-        try {
-            const url = `https://www.hythacg.com/prints/highrise${`${
-                index + 86
-            }`.padStart(2, '0')}`;
+const OFFSET = 194;
 
+(async () => {
+    [...Array(2)].forEach(async (_, index) => {
+        const url = `https://www.hythacg.com/highrises-store-2/highrise${`${
+            index + OFFSET + 1
+        }`.padStart(2, '0')}`;
+
+        try {
             const res = await fetch(url);
             const text = await res.text();
 
@@ -30,11 +32,12 @@ const rawImagesDir = join(__dirname, 'poster', 'product');
             const buffer = Buffer.from(await blob.arrayBuffer());
 
             fs.promises.writeFile(
-                join(rawImagesDir, `${index + 85}.jpg`),
+                join(rawImagesDir, `${index + OFFSET}.jpg`),
                 buffer
             );
         } catch (e) {
-            console.log(e);
+            console.log(url);
+            // console.log(e);
         }
     });
 })();

@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle, css } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 
 export const SiteWrapperOffset = styled.div`
     ${(props) => props.theme.breakpoints.small`
@@ -16,17 +16,6 @@ export const SiteWrapperScroll = styled.div`
     position: fixed;
     top: 0;
     z-index: 2;
-
-    transition: transform 400ms;
-    transform: translate3D(0px, 0, 0px);
-    box-shadow: ${(props) => props.theme.shadows.inset.medium};
-    will-change: transform;
-
-    ${(props) =>
-        props.transform &&
-        css`
-            transform: translate3D(0px, ${props.transform}px, 0px);
-        `}
 `;
 
 export const SiteWrapper = styled.div`

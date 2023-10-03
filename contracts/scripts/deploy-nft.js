@@ -10,6 +10,7 @@ async function main() {
 	const highrises = await Highrises.deploy(config.ipfsURL);
 
 	await highrises.deployed();
+	console.log({ address: highrises.address });
 }
 
 main()
