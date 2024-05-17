@@ -2,93 +2,71 @@ import * as S from 'components/Explorer/Masthead/About/About.styled';
 import { EmailCollection } from 'components/Explorer/Masthead/EmailCollection';
 import { Story } from 'components/Explorer/Masthead/Story';
 import { Team } from 'components/Explorer/Masthead/Team';
-import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
-import { useRef, useState } from 'react';
 
-const rawCities = [
-    'Albany',
-    'Allentown',
-    'Asheville',
-    'Atlanta',
-    'Austin',
-    'Baltimore',
-    'Baton Rouge',
-    'Beaumont, TX',
-    'Beverly Hills',
-    'Birmingham',
-    'Boston',
-    'Buffalo',
-    'Camden',
-    'Chicago',
-    'Cincinnati',
-    'Cleveland',
-    'Columbus',
-    'Dallas',
-    'Denver',
-    'Detroit',
-    'El Paso',
-    'Fort Wayne',
-    'Fort Worth',
-    'Harrisburg',
-    'Hartford',
-    'Houston',
-    'Jackson, MI',
-    'Jackson, MS',
-    'Kansas City',
-    'Lansing',
-    'Lincoln',
-    'Los Angeles',
-    'Memphis',
-    'Miami',
-    'Milwaukee',
-    'Minneapolis',
-    'New Orleans',
-    'Newark',
-    'Niagara Falls',
-    'Oakland',
-    'Oklahoma City',
-    'Philadelphia',
-    'Phoenix',
-    'Pittsburgh',
-    'Pontiac',
-    'Portland',
-    'Providence',
-    'Reading',
-    'Richmond',
-    'Rochester, MN',
-    'Rochester, NY',
-    'Sacramento',
-    'San Antonio',
-    'San Francisco',
-    'Santa Monica',
-    'Scranton',
-    'Seattle',
-    'Springfield, MA',
-    'St. Louis',
-    'St. Paul',
-    'Syracuse',
-    'Toledo',
-    'Tulsa',
-    'Waco',
-    'Winston-Salem',
+const PUBLICATIONS = [
+    {
+        title: 'Chicago Sun-Times',
+        url: 'https://chicago.suntimes.com/columnists/2022/11/13/23451597/chicago-old-skyscrapers-drone-photography-chris-hytha-architecture-steinberg',
+    },
+    {
+        title: 'Philadelphia Inquirer',
+        url: 'https://www.inquirer.com/news/philadelphia-skyscrapers-highrises-photo-gallery-chris-hytha-20230717.html',
+    },
+    {
+        title: 'MyModernMet',
+        url: 'https://mymodernmet.com/chris-hytha-drone-architecture-photos/',
+    },
+    {
+        title: 'Texas Architect',
+        url: 'https://magazine.texasarchitects.org/2024/05/02/in-the-realm-of-gods-and-mountains/',
+    },
+    {
+        title: 'Hour Detroit',
+        url: 'https://www.hourdetroit.com/books-literature/six-michigan-art-deco-high-rises-featured-in-new-book/',
+    },
+    {
+        title: 'Providence Monthly',
+        url: 'https://providenceonline.com/stories/providences-superman-building-shines-in-coffee-table-book,102412?',
+    },
+    {
+        title: 'Chicago Magazine',
+        url: 'https://www.chicagomag.com/chicago-magazine/the-view-from-the-clouds/',
+    },
+    {
+        title: 'Buffalo News',
+        url: 'https://buffalonews.com/news/sean-kirst-young-photographer-captures-irreplaceable-art-deco-peaks-of-buffalo-and-beyond/article_3d7be886-e107-11ed-8767-b702fa03bfe9.html#tracking-source=home-top-story',
+    },
+    {
+        title: 'Time Out',
+        url: 'https://www.timeout.com/usa/news/get-a-birds-eye-view-of-americas-most-famous-skyscrapers-011923',
+    },
+    {
+        title: 'DeMilked',
+        url: 'https://www.demilked.com/american-skyscrapers-chris-hytha/',
+    },
+    {
+        title: 'Moss and Fog',
+        url: 'https://mossandfog.com/highrises-series-celebrates-classic-skyscrapers-from-a-beautifully-unique-vantage-point/',
+    },
+    {
+        title: 'FOX 23 Chicago',
+        url: 'https://www.google.com/amp/s/www.fox32chicago.com/news/new-photo-book-will-show-off-chicagos-skyscrapers.amp',
+    },
+    {
+        title: 'PetaPixel',
+        url: 'https://petapixel.com/2022/12/07/photographers-stunning-images-of-us-buildings-are-captured-on-a-drone/',
+    },
+    {
+        title: 'Allships',
+        url: 'https://allships.co/article/highrises-chris-hytha',
+    },
+    {
+        title: 'The Newarker',
+        url: 'https://newarkermag.com/2023/01/01/interview-with-chris-hytha/',
+    },
 ];
 
-const div = Math.ceil(rawCities.length / 2);
-const first = rawCities.slice(0, div);
-const second = rawCities.slice(div);
-
-const CITIES = first.flatMap((city, i) => [city, second[i]]).filter(Boolean);
-
 export const About = () => {
-    const { initHighrisesState } = useActiveHighriseContext();
-    const [isShowAll, setIsShowAll] = useState(false);
-    const initHighrisesCities = useRef(
-        initHighrisesState.reduce((acc, highrise) => {
-            return { ...acc, [highrise.city]: true };
-        }, {})
-    );
-    const cities = isShowAll ? CITIES : CITIES.slice(0, 6);
-
     return (
         <>
             <S.AboutHeader isFirst>About the Project</S.AboutHeader>
@@ -125,32 +103,21 @@ export const About = () => {
 
             <S.AboutGridWrapper>
                 <S.AboutPlan>
-                    <S.AboutHeader>The Plan</S.AboutHeader>
-
-                    <Story
-                        description={`The project is ongoing, and will eventually include 200 Highrises from the cities listed below.`}
-                    />
+                    <S.AboutHeader>Media and Press</S.AboutHeader>
 
                     <S.AboutPlanCities>
-                        {cities.map((city) => (
-                            <S.AboutPlanCity key={city}>
-                                <S.AboutPlanCityCheck
-                                    isActive={initHighrisesCities.current[city]}
+                        {PUBLICATIONS.map(({ title, url }) => (
+                            <S.AboutPlanCity>
+                                <a
+                                    href={url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                 >
-                                    ✓
-                                </S.AboutPlanCityCheck>
-                                <span>{city}</span>
+                                    {title}
+                                </a>
                             </S.AboutPlanCity>
                         ))}
                     </S.AboutPlanCities>
-
-                    {!isShowAll && (
-                        <S.AboutPlanCityButton
-                            onClick={() => setIsShowAll(true)}
-                        >
-                            Show All
-                        </S.AboutPlanCityButton>
-                    )}
                 </S.AboutPlan>
             </S.AboutGridWrapper>
 
