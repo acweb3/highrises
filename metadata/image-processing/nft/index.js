@@ -15,42 +15,20 @@ const nft = async () => {
         const [tokenIDRaw] = file.split(' ');
         const tokenID = parseInt(tokenIDRaw) - 1;
 
-        // fs.copyFileSync(
-        //     join(rawImagesDir, file),
-        //     join(outputDir, 'chain', `${tokenID}.jpg`)
-        // );
+        let fileName = tokenID;
+        if ([194, 195].includes(tokenID)) {
+            fileName = fileName - 23;
+        }
+
+        if (tokenID > 195) {
+            fileName = fileName + 2;
+        }
 
         await sharp(join(rawImagesDir, file))
             .resize({
                 width: 1440,
             })
-            .toFile(join(outputDir, 'chain', `${tokenID}.jpg`));
-
-        await sharp(join(rawImagesDir, file))
-            .resize({
-                width: 1440,
-                height: 2100,
-            })
-            .toFile(join(outputDir, 'detail', `${tokenID}.webp`));
-
-        await sharp(join(rawImagesDir, file))
-            .resize({
-                width: 480,
-                height: 700,
-            })
-            .toFile(join(outputDir, 'site', `${tokenID}.webp`));
-
-        await sharp(join(rawImagesDir, file))
-            .resize({
-                width: 80,
-            })
-            .toFile(join(outputDir, 'icon', `${tokenID}.webp`));
-
-        await sharp(join(rawImagesDir, file))
-            .resize({
-                width: 120,
-            })
-            .toFile(join(outputDir, 'map', `${tokenID}.webp`));
+            .toFile(join(outputDir, 'chain', `${fileName}.jpg`));
     });
 };
 

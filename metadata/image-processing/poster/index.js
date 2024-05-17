@@ -7,7 +7,16 @@ const asyncReaddir = promisify(fs.readdir);
 
 const poster = async () => {
     const rawImagesDir = join(__dirname, 'product');
-    const outputDir = join(__dirname, 'dist');
+    const outputDir = join(
+        __dirname,
+        '..',
+        '..',
+        '..',
+        'static-site',
+        'src',
+        'assets',
+        'images'
+    );
 
     const files = await asyncReaddir(rawImagesDir);
 
@@ -46,14 +55,16 @@ const poster = async () => {
                 .resize({
                     width: 400,
                 })
-                .toFile(join(outputDir, 'regular', `${index}.webp`));
+                .toFile(join(outputDir, 'poster-highrises', `${index}.webp`));
 
             await sharp(join(rawImagesDir, file))
                 .resize({
                     width: 400,
                 })
                 .blur(10)
-                .toFile(join(outputDir, 'blur', `${index}.webp`));
+                .toFile(
+                    join(outputDir, 'blur-poster-highrises', `${index}.webp`)
+                );
         } catch (e) {
             console.error(e);
             console.log(file);

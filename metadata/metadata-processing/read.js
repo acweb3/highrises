@@ -7,7 +7,7 @@ const { camelCase } = require('change-case');
 const DELIMITER = '\t';
 const DESCRIPTION_PLACEHOLDER =
     'Highrises are among the most iconic and defining elements of American Cities, and the technological advancement of the twentieth century fostered new heights.';
-const IPFS_DIR = 'ipfs://Qmcm3u7Z7gdKL1xRXJH1Qy3Bi9BA91ZwVHxtuqixB5fg1g';
+const IPFS_DIR = 'ipfs://QmaThbgh69zfxuUCjTADPtEP34yCeTrpxBfDqsFZXbBNze';
 const NULL_TOKEN_NAME = 'Null Token';
 
 const getIndex = (highriseNumber) => {

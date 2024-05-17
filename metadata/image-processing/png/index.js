@@ -7,7 +7,16 @@ const asyncReaddir = promisify(fs.readdir);
 
 const png = async () => {
     const rawImagesDir = join(__dirname, 'raw');
-    const outputDir = join(__dirname, 'dist');
+    const outputDir = join(
+        __dirname,
+        '..',
+        '..',
+        '..',
+        'static-site',
+        'src',
+        'assets',
+        'images'
+    );
 
     const files = await asyncReaddir(rawImagesDir);
     files.sort((a, b) => {
@@ -17,22 +26,24 @@ const png = async () => {
     });
 
     files.forEach(async (file, i) => {
-        const fileName = join(__dirname, 'raw', file);
-
-        console.log({ file, fileName });
+        const fileName = join(rawImagesDir, file);
+        const [index] = file.split(' ');
+        const parsedIndex = parseInt(index) - 1;
 
         await sharp(fileName)
             .resize({
                 width: 400,
             })
-            .toFile(join(outputDir, 'big', `${i}.webp`));
+            .toFile(join(outputDir, 'nft-highrises', `${parsedIndex}.webp`));
 
         await sharp(join(rawImagesDir, file))
             .resize({
                 width: 400,
             })
             .blur(10)
-            .toFile(join(outputDir, 'blur', `${i}.webp`));
+            .toFile(
+                join(outputDir, 'blur-nft-highrises', `${parsedIndex}.webp`)
+            );
     });
 };
 

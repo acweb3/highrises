@@ -5,10 +5,10 @@ const { png } = require('./png');
 const { products } = require('./products');
 const { site } = require('./site');
 
-(() => {
-    // nft();
-    // poster();
-    // png();
-    // feature();
+(async () => {
+    nft();
+    poster();
+    png();
+    feature();
     products();
 })();

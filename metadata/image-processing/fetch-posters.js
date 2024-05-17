@@ -3,11 +3,11 @@ const { join } = require('path');
 
 const rawImagesDir = join(__dirname, 'poster', 'product');
 
-const OFFSET = 194;
+const OFFSET = 170;
 
 (async () => {
-    [...Array(2)].forEach(async (_, index) => {
-        const url = `https://www.hythacg.com/highrises-store-2/highrise${`${
+    [...Array(30)].forEach(async (_, index) => {
+        const url = `https://www.hythacg.com/shop/p/highrise${`${
             index + OFFSET + 1
         }`.padStart(2, '0')}`;
 

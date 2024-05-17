@@ -136,7 +136,7 @@ const FeatureImageZoom = ({
                 zoomWrapperHeight={zoomWrapperHeight}
                 isShowing={(!isMobile || zoomWrapperHeight) && isShowNumber}
             >
-                {activeHighrise.index + 1}
+                {activeHighrise.accessIndex + 1}
             </S.FeatureImageBadge>
 
             <S.FeatureImageInstructions

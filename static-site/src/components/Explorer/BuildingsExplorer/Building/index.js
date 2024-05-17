@@ -34,7 +34,7 @@ export const Building = ({ building, onInView }) => {
         >
             <S.BuildingAspectRatio>
                 <S.BuildingBuildingBadge>
-                    {building.index + 1}
+                    {building.accessIndex + 1}
                 </S.BuildingBuildingBadge>
                 <S.BuildingImage
                     alt={`building ${building.index + 1}`}

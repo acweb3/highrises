@@ -46,6 +46,7 @@ const MobileMasthead = ({ buildingExplorerHeight }) => {
                     {(() => {
                         if (
                             activeDescription?.header === 'About' ||
+                            activeDescription?.copy === true ||
                             isAboutOverride
                         ) {
                             return <About />;
@@ -88,7 +89,11 @@ const MobileMasthead = ({ buildingExplorerHeight }) => {
                                 )}
 
                                 {(() => {
-                                    if (activeDescription) {
+                                    if (
+                                        activeDescription &&
+                                        typeof activeDescription.copy ===
+                                            'string'
+                                    ) {
                                         return (
                                             <>
                                                 <S.MobileMastheadSection>
@@ -184,7 +189,10 @@ const DesktopMasthead = () => {
             )}
 
             {(() => {
-                if (activeDescription?.header === 'About') {
+                if (
+                    activeDescription?.header === 'About' ||
+                    activeDescription?.copy === true
+                ) {
                     return (
                         <>
                             <S.DesktopMastheadSection>

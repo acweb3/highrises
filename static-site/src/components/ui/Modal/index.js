@@ -64,7 +64,7 @@ export const Modal = () => {
                         margin-top: 4px;
                     `}
                 >
-                    <p>Publishing in November!</p>
+                    <p>Available now!</p>
                     <p>Highrises Art Deco</p>
                     <p>Oversize 10"x15" coffee table book</p>
                 </StoryCopy>
@@ -93,7 +93,7 @@ export const Modal = () => {
                             margin-top: 8px;
                         `}
                     >
-                        <S.ModalButton>Pre-order now</S.ModalButton>
+                        <S.ModalButton>Order now</S.ModalButton>
                     </a>
                 </div>
             </S.Modal>

@@ -23,6 +23,14 @@ const featureCity = {
     DALLAS: "Its signature shimmering glass towers were built when Dallas was not just a city but America's most popular TV show. But the financial and trading center has a tradition of daring architectural statements going much further back, when oil riches began to shift an economy long dominated by cotton.",
     PITTSBURGH:
         'The city whose mills produced much of the steel used in highrises across America has a fine collection of landmark skyscrapers from its industrial heyday. Rivers and the steep ridge of Mt. Washington squeeze downtown Pittsburgh, crowding the buildings in a way that enhances their collective impact.',
+
+    'NEW YORK':
+        "In the late 19th century, Manhattan was already famous for its towering highrises. A frenzy of construction during the Roaring Twenties saw the Chrysler Building become the first skyscraper to surpass the Eiffel Tower as the world's tallest structure, until a Midtown neighbor snatched the honor away a year later.",
+    'KANSAS CITY':
+        'The city on the verge of the Great Plains started out as the trailhead and supply depot for travelers heading west. Its growth into a sizable metropolis, powerful financial center and famous jazz hot spot occurred just in time for Art Deco, and the city boasts an admirable collection of skyscrapers in the style.',
+    TULSA: 'A little-noticed railroad stop in the former Indian Territory, Tulsa had fewer than 1,400 residents in 1900. A year later, drillers struck oil, and things changed in a hurry. By 1930 the thriving city was an important stop on the new U.S. Route 66, with attractive highrises including a spirited Art Deco church.',
+    DETROIT:
+        "As the hub of automobile manufacturing, one of America's fastest growing industries in the early 20th century, the Motor City grew like gangbusters. Skyscrapers crowded the downtown district, prompting the establishment of New Center three miles to the north, where lots were cheaper and closer to the sprawling car factories.",
 };
 
 const featureStyle = {
@@ -106,6 +114,7 @@ exports.createPages = async function ({ actions, graphql }) {
         .sort((a, b) => getIndex(a) - getIndex(b))
         .map(({ products, ...highrise }, index) => {
             const highriseIndex = getIndex(highrise) + 1;
+            const accessIndex = getIndex(highrise);
 
             const irlProducts = [
                 {
@@ -122,8 +131,8 @@ exports.createPages = async function ({ actions, graphql }) {
                 // Poster
                 {
                     name: `${highrise.name} Print`,
-                    productSrc: urlMap[index]?.['poster-highrises'],
-                    blurSrc: urlMap[index]?.['blur-poster-highrises'],
+                    productSrc: urlMap[accessIndex]?.['poster-highrises'],
+                    blurSrc: urlMap[accessIndex]?.['blur-poster-highrises'],
 
                     productLink:
                         highriseIndex >= 144
@@ -137,11 +146,11 @@ exports.createPages = async function ({ actions, graphql }) {
 
             const metaverseProducts = [
                 // Opensea NFT
-                index < 144 && {
+                index < 171 && {
                     isNft: true,
                     name: `${highrise.name} NFT`,
-                    productSrc: urlMap[index]?.['nft-highrises'],
-                    blurSrc: urlMap[index]?.['blur-nft-highrises'],
+                    productSrc: urlMap[accessIndex]?.['nft-highrises'],
+                    blurSrc: urlMap[accessIndex]?.['blur-nft-highrises'],
                     productLink: `https://opensea.io/assets/ethereum/0x516d85f0c80d2c4809736aca3f3f95ce8545b5d2/${`${index}`}`,
                 },
 
@@ -165,12 +174,13 @@ exports.createPages = async function ({ actions, graphql }) {
                 ...highrise,
                 index: index,
 
-                blurFeatureSrc: urlMap[index]?.['blur-feature-highrises'],
-                featureSrc: urlMap[index]?.['feature-highrises'],
-                posterSrc: urlMap[index]?.['poster-highrises'],
-                blurNftSrc: urlMap[index]?.['blur-nft-highrises'],
-                nftSrc: urlMap[index]?.['nft-highrises'],
-                mapSrc: urlMap[index]?.['map-highrises'],
+                accessIndex,
+
+                blurFeatureSrc: urlMap[accessIndex]?.['blur-feature-highrises'],
+                featureSrc: urlMap[accessIndex]?.['feature-highrises'],
+                posterSrc: urlMap[accessIndex]?.['poster-highrises'],
+                blurNftSrc: urlMap[accessIndex]?.['blur-nft-highrises'],
+                nftSrc: urlMap[accessIndex]?.['nft-highrises'],
 
                 products:
                     totalProducts.map((product) => ({

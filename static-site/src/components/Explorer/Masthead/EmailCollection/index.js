@@ -12,11 +12,14 @@ export const EmailCollection = () => {
                 <S.EmailCollectionHeader>
                     Stay up to date
                 </S.EmailCollectionHeader>
-                <S.Paragraph>
-                    At the conclusion of the Highrises project, a graphic coffee
-                    table book will be released featuring the most beautiful
-                    historic skyscrapers across the United States. Enter your
-                    email below to get updates on new releases.
+                <S.Paragraph
+                    style={{
+                        textAlign: 'center',
+                    }}
+                >
+                    Enter your email for updates on the Highrises Collection,
+                    including exhibitions, events, and new releases and
+                    products.
                 </S.Paragraph>
 
                 <S.EmailCollectionInput

@@ -7,7 +7,16 @@ const asyncReaddir = promisify(fs.readdir);
 
 const feature = async () => {
     const rawImagesDir = join(__dirname, 'raw');
-    const outputDir = join(__dirname, 'dist');
+    const outputDir = join(
+        __dirname,
+        '..',
+        '..',
+        '..',
+        'static-site',
+        'src',
+        'assets',
+        'images'
+    );
 
     const files = await asyncReaddir(rawImagesDir);
 
@@ -22,14 +31,22 @@ const feature = async () => {
             .resize({
                 width: 1222,
             })
-            .toFile(join(outputDir, 'regular', `${parsedIndex - 1}.webp`));
+            .toFile(
+                join(outputDir, 'feature-highrises', `${parsedIndex - 1}.webp`)
+            );
 
         await sharp(fileName)
             .resize({
                 width: 1222,
             })
             .blur(100)
-            .toFile(join(outputDir, 'blur', `${parsedIndex - 1}.webp`));
+            .toFile(
+                join(
+                    outputDir,
+                    'blur-feature-highrises',
+                    `${parsedIndex - 1}.webp`
+                )
+            );
     });
 };
 

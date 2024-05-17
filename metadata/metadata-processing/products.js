@@ -2,7 +2,11 @@ const fs = require('fs');
 const kebabCase = require('just-kebab-case');
 const { highrises } = require('./dist/site/highrises');
 
-(async () => {
+const getIndex = (highrise) => {
+    return parseInt(highrise.highriseNumber.replace('Highrise #', '')) - 1;
+};
+
+const products = async () => {
     const products = fs.readFileSync('./data.products.tsv', 'utf-8');
 
     const [header, ...lines] = products.split('\n');
@@ -11,7 +15,9 @@ const { highrises } = require('./dist/site/highrises');
     lines.forEach((line) => {
         const [productName, productLink, ...data] = line.split('\t');
 
-        highrises.forEach((highrise, highriseIndex) => {
+        highrises.forEach((highrise) => {
+            const highriseIndex = getIndex(highrise);
+
             data.forEach((datapoint, dataIndex) => {
                 if (datapoint === 'x' && highriseIndex === dataIndex) {
                     highrise.products = highrise.products?.length
@@ -44,4 +50,8 @@ const { highrises } = require('./dist/site/highrises');
         };
         `
     );
-})();
+};
+
+module.exports = {
+    products,
+};

@@ -25,7 +25,7 @@ export const BuildingsExplorer = ({ buildingExplorerHeight }) => {
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                <S.BuildingsExplorerShop>Store</S.BuildingsExplorerShop>
+                <S.BuildingsExplorerShop>Shop</S.BuildingsExplorerShop>
             </a>
 
             <S.BuildingsExplorerGrid
