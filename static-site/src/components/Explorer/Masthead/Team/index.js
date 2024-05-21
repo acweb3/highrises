@@ -48,7 +48,7 @@ const PROFILES = [
         copy: 'Andrew is a Philadelphia software engineer interested in creating beautiful interactions for the web and crypto. He is the technical co-founder of the web3 studio a⚡️c and a front-end developer for 1build, a startup backed by Y Combinator.',
         src: 'andy',
         socials: [
-            <Twitter key={1} href="https://mobile.twitter.com/0x_reefer" />,
+            <Twitter key={1} href="https://mobile.twitter.com/aboltc_" />,
         ],
     },
     {
