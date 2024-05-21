@@ -16,13 +16,6 @@ const nft = async () => {
         const tokenID = parseInt(tokenIDRaw) - 1;
 
         let fileName = tokenID;
-        if ([194, 195].includes(tokenID)) {
-            fileName = fileName - 23;
-        }
-
-        if (tokenID > 195) {
-            fileName = fileName + 2;
-        }
 
         await sharp(join(rawImagesDir, file))
             .resize({
