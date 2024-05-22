@@ -20,6 +20,10 @@ export const HeaderButton = styled(BaseButton)`
 
     padding: 4px 16px;
 
+    background: #fff;
+    color: ${(props) => props.theme.colors.grey[0]};
+    border: 1px solid ${(props) => props.theme.colors.grey[0]};
+
     ${(props) => props.theme.breakpoints.small`
         display: none;
     `}
@@ -61,8 +65,21 @@ export const HeaderDouble = styled.div`
 
     text-transform: uppercase;
 
-    font-size: ${(props) => props.theme.typography.fontSize.h3};
-    line-height: ${(props) => props.theme.typography.fontSize.h3};
+    font-size: ${(props) => props.theme.typography.fontSize.h2};
+    line-height: ${(props) => props.theme.typography.fontSize.h2};
+
+    ${(props) =>
+        props.isLarge &&
+        css`
+            font-size: ${(props) => props.theme.typography.fontSize.h3};
+            line-height: ${(props) => props.theme.typography.fontSize.h3};
+        `}}
+
+    margin-left: 16px;
+
+    ${(props) => props.theme.breakpoints.small`
+        margin-left: 16px;
+    `}
 
     ${(props) => props.theme.breakpoints.large`
         font-size: ${props.theme.typography.fontSize.h2};

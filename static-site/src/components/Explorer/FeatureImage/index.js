@@ -174,7 +174,7 @@ export const FeatureImageFilterButton = ({ className }) => {
                     setIsFiltering((isFiltering) => !isFiltering);
                 }}
             >
-                {activeSort?.sortValue ?? 'Filter'}
+                {activeSort?.sortValue ?? 'Search'}
             </S.FeatureImageFilterButton>
 
             {activeSort && !isFiltering && (

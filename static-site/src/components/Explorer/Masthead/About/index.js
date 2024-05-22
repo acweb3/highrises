@@ -107,7 +107,7 @@ export const About = () => {
 
                     <S.AboutPlanCities>
                         {PUBLICATIONS.map(({ title, url }) => (
-                            <S.AboutPlanCity>
+                            <S.AboutPlanCity key={title}>
                                 <a
                                     href={url}
                                     target="_blank"

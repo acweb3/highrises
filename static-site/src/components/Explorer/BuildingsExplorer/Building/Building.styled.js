@@ -13,14 +13,18 @@ export const BuildingBuildingBadge = styled(BuildingBadge)`
 
 export const BuildingImage = styled(BlurLoader)`
     & > img {
-        height: 100%;
         width: auto;
     }
+
+    ${(props) => props.theme.breakpoints.small`
+        & > img {
+            height: 100%;
+        }
+    `}
 
     ${(props) => props.theme.breakpoints.large`
         & > img {
             height: initial;
-            width: initial;
             width: 100%;
         }
     `}

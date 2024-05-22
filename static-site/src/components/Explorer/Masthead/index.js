@@ -21,7 +21,6 @@ const MobileMasthead = () => {
         activeDescription,
         isAboutOverride,
         setIsAboutOverride,
-        reset,
     } = useActiveHighriseContext();
     const { isMobilePopoverOpen, setIsMobilePopoverOpen } =
         useMobilePopoverContext();
@@ -34,16 +33,13 @@ const MobileMasthead = () => {
         return null;
     }
 
-    return (
-        <S.MobileMasthead
-            onClick={() => {
-                setIsMobilePopoverOpen(false);
+    const close = () => {
+        setIsMobilePopoverOpen(false);
+        setIsAboutOverride(false);
+    };
 
-                setTimeout(() => {
-                    reset();
-                }, 400);
-            }}
-        >
+    return (
+        <S.MobileMasthead onClick={close}>
             <S.MobileMastheadContent
                 onClick={(e) => {
                     e.stopPropagation();
@@ -67,8 +63,7 @@ const MobileMasthead = () => {
 
                                     <S.MastheadCloseButton
                                         onClick={() => {
-                                            setIsAboutOverride(false);
-                                            setIsMobilePopoverOpen(false);
+                                            close();
                                         }}
                                     >
                                         <S.MastheadClose />

@@ -17,6 +17,12 @@ export const AboutButton = styled(BaseButton)`
 export const AboutHeader = styled(Header)`
     padding: 32px 0 8px;
 
+    color: ${(props) => props.theme.colors.blue[0]};
+
+    ${(props) => props.theme.breakpoints.small`
+        color: initial;
+    `}
+
     ${(props) =>
         props.isFirst &&
         props.theme.breakpoints.small`

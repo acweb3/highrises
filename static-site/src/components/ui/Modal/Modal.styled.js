@@ -22,20 +22,6 @@ export const ModalImageWrapper = styled.div`
 
     max-height: 220px;
     overflow: hidden;
-
-    ${(props) =>
-        props.noShowMobile &&
-        `
-        display: none;
-
-        
-    `}
-
-    ${(props) =>
-        props.noShowMobile &&
-        props.theme.breakpoints.small`
-            display: flex;
-        `}
 `;
 
 export const Modal = styled.div`

@@ -11,6 +11,7 @@ import { About } from 'components/Explorer/Masthead/About';
 import { Header } from 'components/Explorer/Masthead/Header';
 import { SortBar } from 'components/Explorer/SortBar';
 import { Metadata } from 'components/Metadata';
+import { ModalContent } from 'components/ui/Modal';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
 import { useWindowSizeContext } from 'contexts/WindowSize';
 import kebabCase from 'just-kebab-case';
@@ -79,6 +80,17 @@ const MobileExplorer = () => {
                 <BuildingsExplorer />
 
                 <Masthead />
+            </div>
+
+            <div
+                style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    margin: '32px 0 16px',
+                }}
+            >
+                <ModalContent isModal={false} />
             </div>
 
             <About />

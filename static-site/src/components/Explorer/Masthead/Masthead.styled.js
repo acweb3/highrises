@@ -61,8 +61,6 @@ export const MobileMastheadContent = styled.div`
 
     background: ${(props) => props.theme.colors.white[0]};
     color: ${(props) => props.theme.colors.blue[0]};
-
-    transition: max-height 400ms;
 `;
 
 export const MobileMasthead = styled.div`
@@ -105,6 +103,8 @@ export const MastheadCloseButton = styled.div`
 
     cursor: pointer;
     padding: 8px;
+
+    z-index: 999999;
 
     ${(props) => props.theme.breakpoints.XL`
         top: 8px;

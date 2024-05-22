@@ -7,8 +7,7 @@ import { forwardRef } from 'react';
 export const Header = forwardRef((_, ref) => {
     const { activeSort } = useActiveSortContext();
     const { isAboutOverride, setIsAboutOverride } = useActiveHighriseContext();
-    const { isMobilePopoverOpen, setIsMobilePopoverOpen } =
-        useMobilePopoverContext();
+    const { setIsMobilePopoverOpen } = useMobilePopoverContext();
 
     const text = activeSort?.sortValue ?? 'Highrises';
 
@@ -18,25 +17,6 @@ export const Header = forwardRef((_, ref) => {
 
             <S.Header ref={ref}>
                 <S.HeaderSizeWrapper>
-                    <S.HeaderButtonWrapper
-                        style={{
-                            marginRight: 'auto',
-                            marginLeft: '8px',
-                        }}
-                        onClick={() => {
-                            if (isAboutOverride) {
-                                return;
-                            }
-
-                            setIsAboutOverride(true);
-                            setIsMobilePopoverOpen(true);
-                        }}
-                    >
-                        <S.HeaderButton disabled={isAboutOverride}>
-                            About
-                        </S.HeaderButton>
-                    </S.HeaderButtonWrapper>
-
                     <S.HeaderDouble isLarge={text.length >= 10}>
                         <S.HeaderFilled>{text}</S.HeaderFilled>
                         <S.HeaderBasic>{text}</S.HeaderBasic>
