@@ -1,32 +1,70 @@
 import * as S from 'components/Explorer/Masthead/Header/Header.styled';
+import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
 import { useActiveSortContext } from 'contexts/ActiveSort';
-import { useMobileMenuContext } from 'contexts/MobileMenu';
+import { useMobilePopoverContext } from 'contexts/MobilePopover';
 import { forwardRef } from 'react';
 
 export const Header = forwardRef((_, ref) => {
     const { activeSort } = useActiveSortContext();
-    const { setIsMobileMenuActive } = useMobileMenuContext();
+    const { isAboutOverride, setIsAboutOverride } = useActiveHighriseContext();
+    const { isMobilePopoverOpen, setIsMobilePopoverOpen } =
+        useMobilePopoverContext();
 
     const text = activeSort?.sortValue ?? 'Highrises';
 
     return (
-        <S.Header ref={ref}>
-            <S.HeaderSizeWrapper>
-                <S.HeaderDouble isLarge={text.length >= 10}>
-                    <S.HeaderFilled>{text}</S.HeaderFilled>
-                    <S.HeaderBasic>{text}</S.HeaderBasic>
-                </S.HeaderDouble>
+        <>
+            <S.HeaderMobileMargin />
 
-                <S.HeaderHamburgerButton
-                    onClick={() => setIsMobileMenuActive(true)}
-                >
-                    <S.HeaderHamburger />
-                </S.HeaderHamburgerButton>
-            </S.HeaderSizeWrapper>
+            <S.Header ref={ref}>
+                <S.HeaderSizeWrapper>
+                    <S.HeaderButtonWrapper
+                        style={{
+                            marginRight: 'auto',
+                            marginLeft: '8px',
+                        }}
+                        onClick={() => {
+                            if (isAboutOverride) {
+                                return;
+                            }
 
-            <S.HeaderSubtitle>
-                {activeSort?.sortName ?? 'Collection'}
-            </S.HeaderSubtitle>
-        </S.Header>
+                            setIsAboutOverride(true);
+                            setIsMobilePopoverOpen(true);
+                        }}
+                    >
+                        <S.HeaderButton disabled={isAboutOverride}>
+                            About
+                        </S.HeaderButton>
+                    </S.HeaderButtonWrapper>
+
+                    <S.HeaderDouble isLarge={text.length >= 10}>
+                        <S.HeaderFilled>{text}</S.HeaderFilled>
+                        <S.HeaderBasic>{text}</S.HeaderBasic>
+                    </S.HeaderDouble>
+
+                    <S.HeaderButtonWrapper
+                        href="https://www.hythacg.com/highrises-shop"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{
+                            marginRight: '8px',
+                            marginLeft: 'auto',
+                        }}
+                    >
+                        <a
+                            href="https://www.hythacg.com/highrises-shop"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <S.HeaderButton>Shop</S.HeaderButton>
+                        </a>
+                    </S.HeaderButtonWrapper>
+                </S.HeaderSizeWrapper>
+
+                <S.HeaderSubtitle>
+                    {activeSort?.sortName ?? 'Collection'}
+                </S.HeaderSubtitle>
+            </S.Header>
+        </>
     );
 });

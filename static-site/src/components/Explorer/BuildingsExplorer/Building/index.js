@@ -1,12 +1,14 @@
 import * as S from 'components/Explorer/BuildingsExplorer/Building/Building.styled';
 import { HoverDescription } from 'components/ui/HoverDescription';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
+import { useMobilePopoverContext } from 'contexts/MobilePopover';
 import { useEffect, useRef } from 'react';
 import { useInViewport } from 'react-in-viewport';
 
 export const Building = ({ building, onInView }) => {
     const { activeHighrise, setActiveHighrise, setIsAboutOverride } =
         useActiveHighriseContext();
+    const { setIsMobilePopoverOpen } = useMobilePopoverContext();
     const ref = useRef();
     const { inViewport } = useInViewport(ref, { threshold: 0 });
 
@@ -15,6 +17,12 @@ export const Building = ({ building, onInView }) => {
             onInView?.(building.index);
         }
     }, [inViewport, onInView, building.index]);
+
+    useEffect(() => {
+        if (activeHighrise) {
+            setIsMobilePopoverOpen(true);
+        }
+    }, [activeHighrise, setIsMobilePopoverOpen]);
 
     return (
         <HoverDescription

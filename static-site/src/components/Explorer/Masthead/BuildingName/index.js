@@ -2,7 +2,7 @@ import { getIndex } from 'common/helpers';
 import * as S from 'components/Explorer/Masthead/BuildingName/BuildingName.styled';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
 
-export const BuildingName = () => {
+export const BuildingName = ({ smaller }) => {
     const { activeHighrise, activeDescription } = useActiveHighriseContext();
     const aka = activeHighrise?.attributes.find(
         ({ trait_type }) => trait_type === 'AKA now'
@@ -10,7 +10,7 @@ export const BuildingName = () => {
 
     return (
         <S.BuildingName isActiveDescription={Boolean(activeDescription)}>
-            <S.BuildingNameHeader>
+            <S.BuildingNameHeader smaller={smaller}>
                 {activeDescription?.header ?? activeHighrise.name}
             </S.BuildingNameHeader>
 

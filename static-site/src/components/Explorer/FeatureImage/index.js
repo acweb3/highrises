@@ -31,14 +31,13 @@ const useLastFeatureImage = (highrise) => {
     };
 };
 
-const FeatureImageRandomizer = ({ resetFiltering }) => {
+const FeatureImageRandomizer = ({}) => {
     const { randomHighrise, setActiveHighrise } = useActiveHighriseContext();
     const { a, b, activeLayer } = useLastFeatureImage(randomHighrise);
 
     return (
         <S.FeatureImageRandomContainer
             onClick={() => {
-                resetFiltering();
                 setActiveHighrise(activeLayer === 1 ? b : a);
             }}
         >
@@ -59,8 +58,7 @@ const FeatureImageRandomizer = ({ resetFiltering }) => {
     );
 };
 
-const FeatureImageZoom = ({
-    resetFiltering,
+export const FeatureImageZoom = ({
     buildingExplorerHeight,
     didShowInstructions,
     setDidShowInstructions,
@@ -131,7 +129,7 @@ const FeatureImageZoom = ({
     }, [buildingExplorerHeight]);
 
     return (
-        <S.FeatureImageZoomWrapper onClick={resetFiltering}>
+        <S.FeatureImageZoomWrapper>
             <S.FeatureImageBadge
                 zoomWrapperHeight={zoomWrapperHeight}
                 isShowing={(!isMobile || zoomWrapperHeight) && isShowNumber}
@@ -156,7 +154,8 @@ const FeatureImageZoom = ({
     );
 };
 
-export const FeatureImageFilterButton = ({ isFiltering, setIsFiltering }) => {
+export const FeatureImageFilterButton = ({ className }) => {
+    const [isFiltering, setIsFiltering] = useState(false);
     const {
         activeSort,
         activeDropdown,
@@ -168,7 +167,7 @@ export const FeatureImageFilterButton = ({ isFiltering, setIsFiltering }) => {
     } = useSorts();
 
     return (
-        <S.FeatureImageFilters>
+        <S.FeatureImageFilters className={className}>
             <S.FeatureImageFilterButton
                 isActive={isFiltering || activeSort}
                 onClick={() => {
@@ -236,8 +235,7 @@ export const FeatureImageFilterButton = ({ isFiltering, setIsFiltering }) => {
 
 export const FeatureImageFilterAbout = () => {
     const { isAboutOverride, setIsAboutOverride } = useActiveHighriseContext();
-    const { isMobilePopoverOpen, setIsMobilePopoverOpen } =
-        useMobilePopoverContext();
+    const { setIsMobilePopoverOpen } = useMobilePopoverContext();
 
     return (
         <S.FeatureImageFilterButton
@@ -256,70 +254,13 @@ export const FeatureImageFilterAbout = () => {
 
 export const FeatureImage = forwardRef(({ buildingExplorerHeight }, ref) => {
     const { isMobile, zoomWidth } = useWindowSizeContext();
-    const { isMobilePopoverOpen, setIsMobilePopoverOpen } =
-        useMobilePopoverContext();
-    const { activeHighrise, activeDescription, hasInteracted } =
-        useActiveHighriseContext();
-
-    const [toast, setToast] = useState(undefined);
-    const [isShowingToast, setIsShowingToast] = useState(false);
-    const [zoomWrapperHeight, setZoomWrapperHeight] = useState(undefined);
-    const [isFiltering, setIsFiltering] = useState(false);
+    const { activeHighrise, hasInteracted } = useActiveHighriseContext();
     const [didShowInstructions, setDidShowInstructions] = useState(false);
 
-    useEffect(() => {
-        if (isMobilePopoverOpen) {
-            setIsFiltering(false);
-        }
-    }, [isMobilePopoverOpen]);
-
-    useEffect(() => {
-        let sto1;
-        let sto2;
-        let sto3;
-
-        if (activeDescription && activeDescription.header !== 'About') {
-            setToast(`Click to see more about ${activeDescription.header}`);
-
-            sto1 = setTimeout(() => {
-                setIsShowingToast(true);
-            }, 1000);
-
-            sto2 = setTimeout(() => {
-                setToast(undefined);
-            }, 10000);
-
-            sto3 = setTimeout(() => {
-                setIsShowingToast(false);
-            }, 8000);
-        }
-
-        return () => {
-            clearTimeout(sto1);
-            clearTimeout(sto2);
-            clearTimeout(sto3);
-            setIsShowingToast(false);
-            setToast(undefined);
-        };
-    }, [activeDescription]);
-
-    useEffect(() => {
-        if (buildingExplorerHeight) {
-            setZoomWrapperHeight(window.innerHeight - buildingExplorerHeight);
-        }
-    }, [buildingExplorerHeight]);
-
     return (
-        <S.FeatureImageWrapper
-            ref={ref}
-            style={{ width: zoomWidth }}
-            onClick={() => setIsMobilePopoverOpen(false)}
-        >
+        <S.FeatureImageWrapper ref={ref} style={{ width: zoomWidth }}>
             <S.FeatureImageActions>
-                <FeatureImageFilterButton
-                    isFiltering={isFiltering}
-                    setIsFiltering={setIsFiltering}
-                />
+                <FeatureImageFilterButton />
                 {isMobile && !isFiltering && <FeatureImageFilterAbout />}
             </S.FeatureImageActions>
 
@@ -328,26 +269,9 @@ export const FeatureImage = forwardRef(({ buildingExplorerHeight }, ref) => {
                     didShowInstructions={didShowInstructions}
                     setDidShowInstructions={setDidShowInstructions}
                     buildingExplorerHeight={buildingExplorerHeight}
-                    resetFiltering={() => setIsFiltering(false)}
                 />
             ) : (
-                <FeatureImageRandomizer
-                    resetFiltering={() => setIsFiltering(false)}
-                />
-            )}
-
-            {isMobile && toast && (
-                <S.FeatureImageToast
-                    isShowing={isShowingToast}
-                    zoomWrapperHeight={zoomWrapperHeight}
-                    onClick={(e) => {
-                        e.stopPropagation();
-
-                        setIsMobilePopoverOpen(true);
-                    }}
-                >
-                    {toast}
-                </S.FeatureImageToast>
+                <FeatureImageRandomizer />
             )}
         </S.FeatureImageWrapper>
     );

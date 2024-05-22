@@ -1,9 +1,13 @@
 import { capitalize, getBuildingURL } from 'common/helpers';
 import { BuildingsExplorer } from 'components/Explorer/BuildingsExplorer';
 import * as S from 'components/Explorer/Explorer.styled';
-import { FeatureImage } from 'components/Explorer/FeatureImage';
+import {
+    FeatureImage,
+    FeatureImageFilterButton,
+} from 'components/Explorer/FeatureImage';
 import { MapExplorer } from 'components/Explorer/MapExplorer';
 import { Masthead } from 'components/Explorer/Masthead';
+import { About } from 'components/Explorer/Masthead/About';
 import { Header } from 'components/Explorer/Masthead/Header';
 import { SortBar } from 'components/Explorer/SortBar';
 import { Metadata } from 'components/Metadata';
@@ -46,23 +50,38 @@ const useBuildingExplorerHeight = () => {
 };
 
 const MobileExplorer = () => {
-    const { headerRef, hundo, featureImageRef, buildingExplorerHeight } =
-        useBuildingExplorerHeight();
-
     return (
-        <S.MobileExplorer style={{ height: hundo }}>
-            <S.MobileExplorerPopover>
-                <Header ref={headerRef} />
-                <FeatureImage
-                    ref={featureImageRef}
-                    buildingExplorerHeight={buildingExplorerHeight}
-                />
-                <Masthead buildingExplorerHeight={buildingExplorerHeight} />
-            </S.MobileExplorerPopover>
+        <S.MobileExplorer>
+            <Header />
+            <div
+                style={{
+                    position: 'relative',
+                }}
+            >
+                <div
+                    style={{
+                        position: 'sticky',
+                        top: '72px',
+                        zIndex: 3,
+                        marginBottom: '88px',
+                        marginLeft: '8px',
+                    }}
+                >
+                    <div
+                        style={{
+                            position: 'absolute',
+                            top: 0,
+                        }}
+                    >
+                        <FeatureImageFilterButton />
+                    </div>
+                </div>
+                <BuildingsExplorer />
 
-            <BuildingsExplorer
-                buildingExplorerHeight={buildingExplorerHeight}
-            />
+                <Masthead />
+            </div>
+
+            <About />
         </S.MobileExplorer>
     );
 };

@@ -1,4 +1,4 @@
-import { DesktopMastheadClose } from 'components/Explorer/Masthead/Masthead.styled';
+import { MastheadClose } from 'components/Explorer/Masthead/Masthead.styled';
 import { StoryCopy } from 'components/Explorer/Masthead/Story/Story.styled';
 import { BlurLoader } from 'components/ui/BlurLoader';
 import * as S from 'components/ui/Modal/Modal.styled';
@@ -36,7 +36,7 @@ export const Modal = () => {
                         localStorage.setItem(LOCAL_STORAGE_KEY, true);
                     }}
                 >
-                    <DesktopMastheadClose
+                    <MastheadClose
                         css={`
                             & {
                                 fill: #3b5d78 !important;

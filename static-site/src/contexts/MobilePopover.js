@@ -8,7 +8,7 @@ export const useMobilePopoverContext = () => useContext(MobilePopoverContext);
 
 export const MobilePopover = ({ children }) => {
     const [isMobilePopoverOpen, setIsMobilePopoverOpen] = useState(false);
-    const { setIsAboutOverride } = useActiveHighriseContext();
+    const { setIsAboutOverride, activeHighrise } = useActiveHighriseContext();
 
     useEffect(() => {
         if (!isMobilePopoverOpen) {

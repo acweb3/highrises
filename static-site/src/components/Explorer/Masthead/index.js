@@ -1,4 +1,5 @@
 import { useDelayed } from 'common/hooks/useDelayed';
+import { FeatureImageZoom } from 'components/Explorer/FeatureImage';
 import { About } from 'components/Explorer/Masthead/About';
 import { BuildingName } from 'components/Explorer/Masthead/BuildingName';
 import { Collectibles } from 'components/Explorer/Masthead/Collectibles';
@@ -13,146 +14,124 @@ import { useMobilePopoverContext } from 'contexts/MobilePopover';
 import { useWindowSizeContext } from 'contexts/WindowSize';
 import { useEffect, useRef, useState } from 'react';
 
-const MobileMasthead = ({ buildingExplorerHeight }) => {
+const MobileMasthead = () => {
     const mastheadRef = useRef();
-    const { activeHighrise, activeDescription, isAboutOverride } =
-        useActiveHighriseContext();
+    const {
+        activeHighrise,
+        activeDescription,
+        isAboutOverride,
+        setIsAboutOverride,
+        reset,
+    } = useActiveHighriseContext();
     const { isMobilePopoverOpen, setIsMobilePopoverOpen } =
         useMobilePopoverContext();
-    const [isCollectiblesShowing, setIsCollectiblesShowing] = useState(false);
 
     useEffect(() => {
         mastheadRef.current?.scrollTo(0, 0);
     }, [activeHighrise]);
 
+    if (!isMobilePopoverOpen) {
+        return null;
+    }
+
     return (
-        <S.MobileMasthead buildingExplorerHeight={buildingExplorerHeight}>
-            <S.MobileReadMore
-                onClick={() =>
-                    setIsMobilePopoverOpen(
-                        (isMobilePopoverOpen) => !isMobilePopoverOpen
-                    )
-                }
+        <S.MobileMasthead
+            onClick={() => {
+                setIsMobilePopoverOpen(false);
+
+                setTimeout(() => {
+                    reset();
+                }, 400);
+            }}
+        >
+            <S.MobileMastheadContent
+                onClick={(e) => {
+                    e.stopPropagation();
+                    e.preventDefault();
+                }}
             >
-                {isMobilePopoverOpen ? 'Show Less' : 'Read More'}
-            </S.MobileReadMore>
+                {(() => {
+                    if (
+                        activeDescription?.header === 'About' ||
+                        activeDescription?.copy === true ||
+                        isAboutOverride
+                    ) {
+                        return <About />;
+                    }
 
-            <S.MobileMastheadShadowWrapper ref={mastheadRef}>
-                {/** # TODO => Fix this so there is white shadow around the words here */}
-                {/* <S.MobileMastheadShadow /> */}
-                <S.MobileMastheadContent
-                    isMobilePopoverOpen={isMobilePopoverOpen}
-                >
-                    {(() => {
-                        if (
-                            activeDescription?.header === 'About' ||
-                            activeDescription?.copy === true ||
-                            isAboutOverride
-                        ) {
-                            return <About />;
-                        }
-
-                        return (
-                            <>
+                    return (
+                        <>
+                            <S.MobileMastheadSticky>
                                 <S.MobileMastheadSection>
-                                    <BuildingName />
+                                    <BuildingName smaller />
+
+                                    <S.MastheadCloseButton
+                                        onClick={() => {
+                                            setIsAboutOverride(false);
+                                            setIsMobilePopoverOpen(false);
+                                        }}
+                                    >
+                                        <S.MastheadClose />
+                                    </S.MastheadCloseButton>
                                 </S.MobileMastheadSection>
+                            </S.MobileMastheadSticky>
 
-                                {activeHighrise && (
-                                    <S.MobileMastheadSection>
-                                        <S.MobileMastheadNav>
-                                            <S.MobileMastheadButton
-                                                isActive={
-                                                    !isCollectiblesShowing
-                                                }
-                                                onClick={() => {
-                                                    setIsCollectiblesShowing(
-                                                        false
-                                                    );
-                                                }}
-                                            >
-                                                About
-                                            </S.MobileMastheadButton>
-
-                                            <S.MobileMastheadButton
-                                                isActive={isCollectiblesShowing}
-                                                onClick={() => {
-                                                    setIsCollectiblesShowing(
-                                                        true
-                                                    );
-                                                }}
-                                            >
-                                                Collectibles
-                                            </S.MobileMastheadButton>
-                                        </S.MobileMastheadNav>
-                                    </S.MobileMastheadSection>
-                                )}
-
-                                {(() => {
-                                    if (
-                                        activeDescription &&
-                                        typeof activeDescription.copy ===
-                                            'string'
-                                    ) {
-                                        return (
-                                            <>
-                                                <S.MobileMastheadSection>
-                                                    <Story
-                                                        description={
-                                                            activeDescription.copy
-                                                        }
-                                                    />
-                                                </S.MobileMastheadSection>
-
-                                                <S.MobileEmailCollectionWrapper>
-                                                    <EmailCollection />
-                                                </S.MobileEmailCollectionWrapper>
-                                            </>
-                                        );
-                                    }
-
-                                    if (isCollectiblesShowing) {
-                                        return (
-                                            <div
-                                                css={`
-                                                    padding-bottom: 32px;
-                                                `}
-                                            >
-                                                <Collectibles
-                                                    isHeaderShowing={false}
-                                                />
-                                            </div>
-                                        );
-                                    }
-
+                            {(() => {
+                                if (
+                                    activeDescription &&
+                                    typeof activeDescription.copy === 'string'
+                                ) {
                                     return (
                                         <>
                                             <S.MobileMastheadSection>
                                                 <Story
                                                     description={
-                                                        activeHighrise.description
-                                                    }
-                                                />
-                                                <Traits
-                                                    activeHighrise={
-                                                        activeHighrise
+                                                        activeDescription.copy
                                                     }
                                                 />
                                             </S.MobileMastheadSection>
-
-                                            <Collectibles />
 
                                             <S.MobileEmailCollectionWrapper>
                                                 <EmailCollection />
                                             </S.MobileEmailCollectionWrapper>
                                         </>
                                     );
-                                })()}
-                            </>
-                        );
-                    })()}
-                </S.MobileMastheadContent>
-            </S.MobileMastheadShadowWrapper>
+                                }
+
+                                return (
+                                    <>
+                                        <S.MobileMastheadSection>
+                                            <FeatureImageZoom
+                                                buildingExplorerHeight={0}
+                                                didShowInstructions={true}
+                                                setDidShowInstructions={() => {}}
+                                            />
+
+                                            <Traits
+                                                activeHighrise={activeHighrise}
+                                            />
+
+                                            <Story
+                                                description={
+                                                    activeHighrise.description
+                                                }
+                                            />
+                                        </S.MobileMastheadSection>
+
+                                        <div style={{ marginTop: 32 }}>
+                                            <Collectibles />
+                                        </div>
+
+                                        <S.MobileEmailCollectionWrapper>
+                                            <EmailCollection />
+                                        </S.MobileEmailCollectionWrapper>
+                                    </>
+                                );
+                            })()}
+                        </>
+                    );
+                })()}
+            </S.MobileMastheadContent>
         </S.MobileMasthead>
     );
 };
@@ -179,13 +158,13 @@ const DesktopMasthead = () => {
             onScroll={() => setDidScroll(true)}
         >
             {activeDescription?.header !== 'About' && (
-                <S.DesktopMastheadCloseButton
+                <S.MastheadCloseButton
                     onClick={() => {
                         reset();
                     }}
                 >
-                    <S.DesktopMastheadClose />
-                </S.DesktopMastheadCloseButton>
+                    <S.MastheadClose />
+                </S.MastheadCloseButton>
             )}
 
             {(() => {
@@ -258,18 +237,8 @@ const DesktopMasthead = () => {
     );
 };
 
-export const Masthead = ({ buildingExplorerHeight }) => {
+export const Masthead = () => {
     const { isMobile } = useWindowSizeContext();
 
-    return (
-        <>
-            {isMobile ? (
-                <MobileMasthead
-                    buildingExplorerHeight={buildingExplorerHeight}
-                />
-            ) : (
-                <DesktopMasthead />
-            )}
-        </>
-    );
+    return <>{isMobile ? <MobileMasthead /> : <DesktopMasthead />}</>;
 };
