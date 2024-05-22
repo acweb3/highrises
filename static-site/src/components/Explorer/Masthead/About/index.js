@@ -103,7 +103,13 @@ export const About = () => {
 
             <S.AboutGridWrapper>
                 <S.AboutPlan>
-                    <S.AboutHeader>Media and Press</S.AboutHeader>
+                    <S.AboutHeader
+                        css={`
+                            color: #fff;
+                        `}
+                    >
+                        Media and Press
+                    </S.AboutHeader>
 
                     <S.AboutPlanCities>
                         {PUBLICATIONS.map(({ title, url }) => (

@@ -154,7 +154,7 @@ export const FeatureImageZoom = ({
     );
 };
 
-export const FeatureImageFilterButton = ({ className }) => {
+export const FeatureImageFilterButton = ({ className, onSort }) => {
     const [isFiltering, setIsFiltering] = useState(false);
     const {
         activeSort,
@@ -164,7 +164,7 @@ export const FeatureImageFilterButton = ({ className }) => {
         optionActiveSelectLevel,
         selectOption,
         reset,
-    } = useSorts();
+    } = useSorts({ onSort });
 
     return (
         <S.FeatureImageFilters className={className}>

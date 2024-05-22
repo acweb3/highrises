@@ -127,16 +127,10 @@ export const SORTS = {
     },
 };
 
-export const useSorts = () => {
+export const useSorts = ({ onSort }) => {
     const { activeSort, setActiveSort } = useActiveSortContext();
     const [activeDropdown, setActiveDropdown] = useState(undefined);
     const [activeOption, setActiveOption] = useState(undefined);
-
-    const [isAnimated, setIsAnimated] = useState(false);
-
-    useEffect(() => {
-        setIsAnimated(Boolean(activeDropdown));
-    }, [activeDropdown]);
 
     useEffect(() => {
         setActiveOption(undefined);
@@ -182,6 +176,8 @@ export const useSorts = () => {
                 sortName: activeDropdown.name,
                 sortValue: value,
             });
+
+            onSort();
         },
 
         reset: (isHard = true) => {

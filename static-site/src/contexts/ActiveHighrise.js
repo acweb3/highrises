@@ -1,6 +1,7 @@
 import { featureCity, featureStyle } from 'assets/data/features';
 import { getBuildingURL } from 'common/helpers';
 import { useActiveSortContext } from 'contexts/ActiveSort';
+import { useWindowSizeContext } from 'contexts/WindowSize';
 import kebabCase from 'just-kebab-case';
 import {
     createContext,
@@ -37,6 +38,8 @@ export const ActiveHighrise = ({
     initDescription,
     highrises: init,
 }) => {
+    const { isMobile } = useWindowSizeContext();
+
     const { activeSort, setActiveSort } = useActiveSortContext();
     const [highrises, setHighrises] = useState(init);
     const [activeHighrise, setActiveHighrise] = useState(
@@ -124,10 +127,12 @@ export const ActiveHighrise = ({
 
             const copy = features[activeSort.sortValue.toUpperCase()];
 
-            if (copy) {
+            if (isMobile) {
+                updateHighrise(undefined, false);
+            } else if (copy) {
                 updateDescription({
                     header: activeSort.sortValue,
-                    copy,
+                    copy: copy,
                 });
                 updateHighrise(undefined, false);
             } else {
@@ -151,6 +156,7 @@ export const ActiveHighrise = ({
         initHighrise,
         updateDescription,
         reset,
+        isMobile,
     ]);
 
     return (

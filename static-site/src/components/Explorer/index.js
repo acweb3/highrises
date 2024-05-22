@@ -51,8 +51,10 @@ const useBuildingExplorerHeight = () => {
 };
 
 const MobileExplorer = () => {
+    const mobileExplorerRef = useRef();
+
     return (
-        <S.MobileExplorer>
+        <S.MobileExplorer ref={mobileExplorerRef}>
             <Header />
             <div
                 style={{
@@ -74,7 +76,13 @@ const MobileExplorer = () => {
                             top: 0,
                         }}
                     >
-                        <FeatureImageFilterButton />
+                        <FeatureImageFilterButton
+                            onSort={() => {
+                                mobileExplorerRef.current?.scrollTo({
+                                    top: 0,
+                                });
+                            }}
+                        />
                     </div>
                 </div>
                 <BuildingsExplorer />

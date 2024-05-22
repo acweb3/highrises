@@ -16,23 +16,26 @@ export const Contexts = ({
 }) => {
     return (
         <DApp>
-            <MobileMenu>
-                <ActiveSort sortName={sortName} initDescription={description}>
-                    <ActiveHighrise
-                        initHighrise={highrise}
+            <WindowSize>
+                <MobileMenu>
+                    <ActiveSort
+                        sortName={sortName}
                         initDescription={description}
-                        highrises={highrises}
                     >
-                        <WindowSize>
+                        <ActiveHighrise
+                            initHighrise={highrise}
+                            initDescription={description}
+                            highrises={highrises}
+                        >
                             <MobilePopover>
                                 <ThemeProvider theme={theme}>
                                     {children}
                                 </ThemeProvider>
                             </MobilePopover>
-                        </WindowSize>
-                    </ActiveHighrise>
-                </ActiveSort>
-            </MobileMenu>
+                        </ActiveHighrise>
+                    </ActiveSort>
+                </MobileMenu>
+            </WindowSize>
         </DApp>
     );
 };
