@@ -7,7 +7,17 @@ export const BuildingNameLocation = styled.div`
     color: ${(props) => props.theme.colors.grey[0]};
 `;
 
-export const BuildingNameHeader = styled(Header)``;
+export const BuildingNameHeader = styled(Header)`
+    margin-bottom: 4px;
+
+    ${(props) => props.theme.breakpoints.small`
+        margin-bottom: 8px;
+    `}
+
+    ${(props) => props.theme.breakpoints.XL`
+        margin-bottom: 32px;
+    `}
+`;
 
 export const BuildingName = styled.div`
     display: flex;
