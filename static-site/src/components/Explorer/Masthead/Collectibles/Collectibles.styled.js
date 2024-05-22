@@ -89,7 +89,7 @@ export const CollectiblesGrid = styled.div`
 
 export const CollectiblesCopy = styled.div`
     margin-top: 16px;
-    padding: 0 32px 32px;
+    padding: 0 16px 32px;
 
     ${(props) =>
         props.isHeaderShowing &&
