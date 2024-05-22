@@ -1,3 +1,4 @@
+import { breakpointsMap } from 'common/styles/theme/breakpoints';
 import styled, { css } from 'styled-components';
 
 export const HoverDescriptionCaption = styled.div`
@@ -77,6 +78,28 @@ export const HoverDescription = styled.div`
 
     position: relative;
 
+    flex: 1;
+
+    // Sketchy... but unfortunately completely necessary
+    @media (max-width: ${breakpointsMap.small}px) {
+        height: initial;
+        width: initial;
+    }
+
+    ${(props) => props.theme.breakpoints.small`
+        flex: 1;
+    `}
+
+    ${(props) => props.theme.breakpoints.large`
+        flex: 1;
+        height: initial;
+        width: initial;
+    `}
+
+    ${(props) => props.theme.breakpoints.XL`
+        font-size: 2rem;
+    `}
+
     ${(props) =>
         props.isActive &&
         css`
@@ -87,27 +110,6 @@ export const HoverDescription = styled.div`
                 height: 100%;
 
                 border: 2px solid ${(props) => props.theme.colors.white[0]};
-                border-top: none;
             }
         `}
-
-    ${(props) => props.theme.breakpoints.large`
-        flex: 1;
-        height: initial;
-        width: initial;
-
-        ${
-            props.isActive &&
-            css`
-                &::after {
-                    border-top: 2px solid
-                        ${(props) => props.theme.colors.white[0]};
-                }
-            `
-        }}
-    `}
-
-    ${(props) => props.theme.breakpoints.XL`
-        font-size: 2rem;
-    `}
 `;
