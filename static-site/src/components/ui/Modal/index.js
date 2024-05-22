@@ -1,18 +1,13 @@
 import { MastheadClose } from 'components/Explorer/Masthead/Masthead.styled';
 import { StoryCopy } from 'components/Explorer/Masthead/Story/Story.styled';
-import { BlurLoader } from 'components/ui/BlurLoader';
 import { Header } from 'components/ui/Header';
 import * as S from 'components/ui/Modal/Modal.styled';
-import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
+import { StaticImage } from 'gatsby-plugin-image';
 import { useEffect, useState } from 'react';
 
 const LOCAL_STORAGE_KEY = 'modal';
 
 export const ModalContent = ({ isModal = true }) => {
-    const { highrises } = useActiveHighriseContext();
-    const exampleHighrise = highrises[0];
-    const book = exampleHighrise.products[0];
-
     return (
         <div>
             <a
@@ -21,11 +16,15 @@ export const ModalContent = ({ isModal = true }) => {
                 rel="noopener noreferrer"
                 css={`
                     margin-top: 8px;
+                    padding: 0 16px;
+                    display: block;
                 `}
             >
-                <S.ModalImageWrapper>
-                    <BlurLoader blurSrc={book.blurSrc} src={book.productSrc} />
-                </S.ModalImageWrapper>
+                <StaticImage
+                    src={'../../../assets/images/book.webp'}
+                    placeholder="blurred"
+                    alt=""
+                />
             </a>
 
             <StoryCopy
@@ -72,6 +71,9 @@ export const ModalContent = ({ isModal = true }) => {
                         href="https://heyzine.com/flip-book/f867a7dd46.html"
                         target="_blank"
                         rel="noopener noreferrer"
+                        css={`
+                            margin-bottom: 8px;
+                        `}
                     >
                         <S.ModalButton>Preview the book</S.ModalButton>
                     </a>
@@ -81,9 +83,6 @@ export const ModalContent = ({ isModal = true }) => {
                     href="https://www.hythacg.com/highrises-store-2/highrisesbook"
                     target="_blank"
                     rel="noopener noreferrer"
-                    css={`
-                        margin-top: 8px;
-                    `}
                 >
                     <S.ModalButton>Order now</S.ModalButton>
                 </a>
