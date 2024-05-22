@@ -1,13 +1,26 @@
 import gridSrc from 'assets/images/blue-graph-paper.jpg';
+import { FeatureImageFilterButton as UnstyledFeatureImageFilterButton } from 'components/Explorer/FeatureImage';
 import styled, { css } from 'styled-components';
 
-export const MobileExplorerPopover = styled.div``;
+export const FeatureImageFilterButton = styled(
+    UnstyledFeatureImageFilterButton
+)`
+    position: absolute;
+    top: 8px;
+    left: 8px;
+
+    z-index: 3;
+`;
 
 export const MobileExplorer = styled.div`
     display: flex;
     flex-direction: column;
 
+    height: 100vh;
     width: 100vw;
+
+    overflow-x: hidden;
+    overflow-y: scroll;
 `;
 
 export const DesktopExplorerSideBar = styled.div`
