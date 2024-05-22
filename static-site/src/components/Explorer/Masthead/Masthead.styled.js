@@ -42,102 +42,32 @@ export const MobileMastheadSection = styled.div`
     padding: 0 16px;
 `;
 
-export const MobileReadMore = styled.div`
-    position: relative;
+export const MobileMastheadSticky = styled.div`
+    position: sticky;
+    top: -1px; // some razzle dazzle to prevent 1px spillover
+    background: #fff;
+    z-index: 3;
+    padding: 8px 0;
 
-    color: ${(props) => props.theme.colors.grey[0]};
-    background: ${(props) => props.theme.colors.white[0]};
-    padding: 0 12px;
-    border-radius: 8px 8px 0 0;
-    width: min-content;
-    white-space: nowrap;
-
-    margin: 0 auto;
-
-    &::after {
-        content: ' ';
-        position: absolute;
-        bottom: -2px;
-        left: 0;
-        width: 100%;
-        height: 2px;
-        background: ${(props) => props.theme.colors.white[0]};
-    }
+    border-bottom: 1px solid ${(props) => props.theme.colors.grey[1]};
+    margin-bottom: 16px;
 `;
 
 export const MobileMastheadContent = styled.div`
-    max-height: 0;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border-radius: 16px 16px 0 0;
 
     background: ${(props) => props.theme.colors.white[0]};
     color: ${(props) => props.theme.colors.blue[0]};
 
     transition: max-height 400ms;
-
-    ${(props) =>
-        props.isMobilePopoverOpen &&
-        css`
-            height: 75%;
-            max-height: 2999px;
-            padding: 16px 0 0;
-            overflow-x: hidden;
-        `}
-`;
-
-export const MobileMastheadShadowWrapper = styled.div`
-    position: relative;
-    overflow: scroll;
-
-    border-radius: 16px 16px 0 0;
-
-    position: relative;
-`;
-
-export const MobileMastheadShadow = styled.div`
-    height: 100%;
-    width: 100%;
-
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    &::before {
-        z-index: 2;
-        content: ' ';
-        position: absolute;
-        top: -2px;
-        left: 0;
-        width: 100%;
-        height: 16px;
-        background: linear-gradient(
-            180deg,
-            rgba(255, 255, 255, 0.8) 0%,
-            rgba(255, 255, 255, 0.8) 20%,
-            rgba(255, 255, 255, 0.6) 40%,
-            rgba(255, 255, 255, 0) 100%
-        );
-    }
-
-    &::after {
-        z-index: 2;
-        content: ' ';
-        position: absolute;
-        bottom: 0px;
-        left: 0;
-        width: 100%;
-        height: 16px;
-        background: linear-gradient(
-            0deg,
-            rgba(255, 255, 255, 0.8) 0%,
-            rgba(255, 255, 255, 0.8) 20%,
-            rgba(255, 255, 255, 0.6) 40%,
-            rgba(255, 255, 255, 0) 100%
-        );
-    }
 `;
 
 export const MobileMasthead = styled.div`
-    position: absolute;
-    bottom: ${(props) => props.buildingExplorerHeight}px;
+    position: fixed;
+    top: 60px;
 
     z-index: 4;
 
@@ -145,12 +75,22 @@ export const MobileMasthead = styled.div`
     flex-direction: column;
     justify-content: center;
 
-    max-height: 60%;
+    height: calc(100vh - 60px);
+    background: rgba(255, 255, 255, 0.8);
+
+    padding-top: 48px;
 `;
 
-export const DesktopMastheadClose = styled(UnstyledClose)`
-    width: 24px;
-    height: 24px;
+export const MastheadClose = styled(UnstyledClose)`
+    width: 32px;
+    height: 32px;
+
+    color: ${(props) => props.theme.colors.grey[1]};
+
+    ${(props) => props.theme.breakpoints.small`
+        width: 48px;
+        height: 48px;
+    `}
 
     ${(props) => props.theme.breakpoints.XL`
         width: 48px;
@@ -158,13 +98,18 @@ export const DesktopMastheadClose = styled(UnstyledClose)`
     `}
 `;
 
-export const DesktopMastheadCloseButton = styled.div`
+export const MastheadCloseButton = styled.div`
     position: absolute;
-    top: 8px;
-    right: 16px;
+    top: 0px;
+    right: 8px;
 
     cursor: pointer;
     padding: 8px;
+
+    ${(props) => props.theme.breakpoints.XL`
+        top: 8px;
+        right: 16px;
+    `}
 
     ${(props) => props.theme.breakpoints.XL`
         top: 16px;
