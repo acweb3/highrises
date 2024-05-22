@@ -99,15 +99,13 @@ export const BuildingsExplorerGrid = styled.div`
 export const BuildingsExplorer = styled.div`
     flex: 1;
 
-    overflow-x: scroll;
-    overflow-y: hidden;
     position: relative;
 
     display: flex;
 
-    border-top: 2px solid ${(props) => props.theme.colors.white[0]};
-
     background-image: url(${gridSrc});
+
+    margin-top: -88px;
 
     &::-webkit-scrollbar {
         display: none;
