@@ -68,8 +68,29 @@ export const BuildingsExplorerOnboarding = styled.div`
 `;
 
 export const BuildingsExplorerGrid = styled.div`
-    display: flex;
-    margin: 0 auto;
+    ${(props) => css`
+        display: grid;
+        margin: 0;
+        width: 100%;
+        grid-template-columns: ${() => {
+            if (props.count > 16) {
+                return '1fr 1fr 1fr 1fr';
+            }
+
+            if (props.count > 8) {
+                return '1fr 1fr 1fr';
+            }
+
+            return '1fr 1fr';
+        }};
+        height: min-content;
+    `}
+
+    ${(props) => props.theme.breakpoints.small`
+        display: flex;
+        margin: 0 auto;
+        width: initial;
+    `}
 
     ${(props) =>
         props.buildingExplorerHeight &&
