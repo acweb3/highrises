@@ -122,10 +122,13 @@ export const BuildingsExplorer = styled.div`
             width: 100%;
         `}
 
-    ${(props) => props.theme.breakpoints.medium`
-        position: absolute;
-        bottom: 0;
-        left: 0;
+    ${(props) => props.theme.breakpoints.small`
+        margin-top: 0;
+
+        overflow-x: scroll;
+        overflow-y: hidden;
+
+        border-top: 2px solid ${(props) => props.theme.colors.white[0]};
     `}
 
     ${(props) => props.theme.breakpoints.large`
