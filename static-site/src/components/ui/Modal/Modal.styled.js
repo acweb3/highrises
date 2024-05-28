@@ -56,11 +56,6 @@ export const ModalButton = styled(BaseButton)`
 
     opacity: 0.9;
 
-    letter-spacing: initial;
-    text-transform: none;
-
-    font-size: 1rem;
-
     &:focus,
     &:hover {
         opacity: 1;
