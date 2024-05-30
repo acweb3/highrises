@@ -4,9 +4,9 @@ import { Header } from 'components/ui/Header';
 import styled from 'styled-components';
 
 export const AboutButton = styled(BaseButton)`
-    max-width: 220px;
-    width: 220px;
+    padding: 4px 16px;
     margin: 16px auto;
+    width: min-content;
 
     ${(props) => props.theme.breakpoints.XL`
         max-width: initial;
@@ -18,10 +18,6 @@ export const AboutHeader = styled(Header)`
     padding: 32px 0 8px;
 
     color: ${(props) => props.theme.colors.blue[0]};
-
-    ${(props) => props.theme.breakpoints.small`
-        color: initial;
-    `}
 
     ${(props) =>
         props.isFirst &&

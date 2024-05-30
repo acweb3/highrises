@@ -1,5 +1,5 @@
 import * as S from 'components/Explorer/FeatureImage/FeatureImage.styled';
-import { SORTS, useSorts } from 'components/Explorer/SortBar';
+import { SORTS, getSublabel, useSorts } from 'components/Explorer/SortBar';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
 import { useMobilePopoverContext } from 'contexts/MobilePopover';
 import { useWindowSizeContext } from 'contexts/WindowSize';
@@ -165,6 +165,9 @@ export const FeatureImageFilterButton = ({ className, onSort }) => {
         selectOption,
         reset,
     } = useSorts({ onSort });
+    const [isShowMore, setIsShowMore] = useState(false);
+    const shouldActiveDropdownShowMore =
+        activeDropdown?.dropdown.shouldShowForMobile;
 
     return (
         <S.FeatureImageFilters className={className}>
@@ -203,10 +206,19 @@ export const FeatureImageFilterButton = ({ className, onSort }) => {
 
             {isFiltering && activeDropdown && (
                 <S.FeatureImageSubFilters>
-                    {Object.values(activeDropdown.dropdown.options)
+                    {Object.values(activeDropdown.dropdown.options(true))
                         .filter((options) => options.value)
                         .sort((a, b) => a.value.localeCompare(b.value))
                         .map(({ value, sort }) => {
+                            if (
+                                shouldActiveDropdownShowMore &&
+                                !activeDropdown.dropdown.shouldShowForMobile(
+                                    value
+                                )
+                            ) {
+                                return null;
+                            }
+
                             return (
                                 <S.FeatureImageFilterButton
                                     key={value}
@@ -227,7 +239,122 @@ export const FeatureImageFilterButton = ({ className, onSort }) => {
                                 </S.FeatureImageFilterButton>
                             );
                         })}
+
+                    {shouldActiveDropdownShowMore && (
+                        <S.FeatureImageFilterButton
+                            isActive={false}
+                            isSelecting={false}
+                            onClick={() => {
+                                setIsShowMore(true);
+                            }}
+                        >
+                            Show more
+                        </S.FeatureImageFilterButton>
+                    )}
                 </S.FeatureImageSubFilters>
+            )}
+
+            {isShowMore && (
+                <>
+                    <div
+                        className="Mobile-overlay"
+                        id="yui_3_17_2_1_1677716679638_2211"
+                        style={{
+                            left: 0,
+                            top: 0,
+                            height: '100%',
+                            background: '#fff',
+                            marginTop: '63px',
+                        }}
+                    >
+                        <div
+                            className="Mobile-overlay-menu"
+                            data-controller="MobileOverlayFolders"
+                            data-controllers-bound="MobileOverlayFolders"
+                            style={{
+                                marginBottom: '80px',
+                            }}
+                        >
+                            <div className="Mobile-overlay-menu-main">
+                                <nav
+                                    className="Mobile-overlay-nav Mobile-overlay-nav--primary"
+                                    data-content-field="navigation"
+                                >
+                                    {Object.values(
+                                        activeDropdown.dropdown.options(true)
+                                    )
+                                        .filter((options) => options.value)
+                                        .sort((a, b) =>
+                                            a.value.localeCompare(b.value)
+                                        )
+                                        .map(({ value, sort }) => {
+                                            if (
+                                                shouldActiveDropdownShowMore &&
+                                                activeDropdown.dropdown.shouldShowForMobile(
+                                                    value
+                                                )
+                                            ) {
+                                                return null;
+                                            }
+
+                                            return (
+                                                <S.FeatureImageShowMoreLink
+                                                    key={value}
+                                                    className="Mobile-overlay-nav-item"
+                                                    isActive={
+                                                        optionActiveSelectLevel(
+                                                            value
+                                                        ) === 'Active'
+                                                    }
+                                                    isSelecting={
+                                                        optionActiveSelectLevel(
+                                                            value
+                                                        ) === 'Inactive'
+                                                    }
+                                                    onClick={() => {
+                                                        selectOption(
+                                                            value,
+                                                            sort
+                                                        );
+                                                        setIsFiltering(false);
+                                                        setIsShowMore(false);
+                                                    }}
+                                                >
+                                                    {getSublabel(value) ??
+                                                        'FFF'}
+                                                </S.FeatureImageShowMoreLink>
+                                            );
+                                        })}
+                                </nav>
+                                <nav
+                                    className="Mobile-overlay-nav Mobile-overlay-nav--secondary"
+                                    data-content-field="navigation"
+                                ></nav>
+                            </div>
+                            <div
+                                className="Mobile-overlay-folders"
+                                data-content-field="navigation"
+                            ></div>
+                        </div>
+                        <button
+                            onClick={() => setIsShowMore(false)}
+                            className="Mobile-overlay-close"
+                            data-controller="MobileOverlayToggle"
+                            data-controllers-bound="MobileOverlayToggle"
+                            id="yui_3_17_2_1_1677716679638_2210"
+                            dangerouslySetInnerHTML={{
+                                __html: `
+                            <svg style="width:32px;" id="icon" viewBox="0 0 32 32"><defs><style>.cls-555{fill:currentColor;}.cls-2{fill:none;}</style></defs><title>close</title><polygon class="cls-555" points="24 9.4 22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4"></polygon><rect class="cls-2" width="32" height="32"></rect></svg>
+                            `,
+                            }}
+                        ></button>
+                        <div
+                            className="Mobile-overlay-back"
+                            data-controller="MobileOverlayToggle"
+                            data-controllers-bound="MobileOverlayToggle"
+                        ></div>
+                    </div>
+                </>
             )}
         </S.FeatureImageFilters>
     );

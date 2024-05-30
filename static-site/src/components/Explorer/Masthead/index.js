@@ -47,12 +47,13 @@ const MobileMasthead = () => {
                 }}
             >
                 {(() => {
+                    // # FIXME: This is a hack to prevent the about section from showing up on mobile
                     if (
                         activeDescription?.header === 'About' ||
                         activeDescription?.copy === true ||
                         isAboutOverride
                     ) {
-                        return <About />;
+                        return null;
                     }
 
                     return (

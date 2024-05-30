@@ -89,6 +89,10 @@ export const FeatureImageFilterCloseWrapper = styled.div`
     border: 1px solid white;
 `;
 
+export const FeatureImageShowMoreLink = styled.span`
+    pointer: cursor;
+`;
+
 export const FeatureImageFilterButton = styled(BaseButton)`
     width: min-content;
     padding: 4px 16px;

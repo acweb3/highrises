@@ -1,14 +1,9 @@
 import * as S from 'components/Explorer/Masthead/Header/Header.styled';
-import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
 import { useActiveSortContext } from 'contexts/ActiveSort';
-import { useMobilePopoverContext } from 'contexts/MobilePopover';
 import { forwardRef } from 'react';
 
 export const Header = forwardRef((_, ref) => {
     const { activeSort } = useActiveSortContext();
-    const { isAboutOverride, setIsAboutOverride } = useActiveHighriseContext();
-    const { setIsMobilePopoverOpen } = useMobilePopoverContext();
-
     const text = activeSort?.sortValue ?? 'Highrises';
 
     return (

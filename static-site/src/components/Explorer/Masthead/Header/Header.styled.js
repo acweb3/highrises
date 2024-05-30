@@ -131,6 +131,9 @@ export const HeaderSizeWrapper = styled.div`
 
     ${(props) => props.theme.breakpoints.small`
         width: initial;
+
+        display: block;
+        margin: 0 auto;
     `}
 `;
 
