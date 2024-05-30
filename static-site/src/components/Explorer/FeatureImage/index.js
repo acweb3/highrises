@@ -154,6 +154,51 @@ export const FeatureImageZoom = ({
     );
 };
 
+export const FeatureImageFilterAbout = () => {
+    const { isAboutOverride, setIsAboutOverride } = useActiveHighriseContext();
+    const { setIsMobilePopoverOpen } = useMobilePopoverContext();
+
+    return (
+        <S.FeatureImageFilterButton
+            isActive={isAboutOverride}
+            onClick={(e) => {
+                e.stopPropagation();
+
+                setIsAboutOverride(true);
+                setIsMobilePopoverOpen(true);
+            }}
+        >
+            About
+        </S.FeatureImageFilterButton>
+    );
+};
+
+export const FeatureImage = forwardRef(({ buildingExplorerHeight }, ref) => {
+    const { isMobile, zoomWidth } = useWindowSizeContext();
+    const { activeHighrise, hasInteracted } = useActiveHighriseContext();
+    const [didShowInstructions, setDidShowInstructions] = useState(false);
+
+    return (
+        <S.FeatureImageWrapper ref={ref} style={{ width: zoomWidth }}>
+            <S.FeatureImageActions>
+                <FeatureImageFilterButton />
+                {isMobile && !isFiltering && <FeatureImageFilterAbout />}
+            </S.FeatureImageActions>
+
+            {hasInteracted && activeHighrise ? (
+                <FeatureImageZoom
+                    didShowInstructions={didShowInstructions}
+                    setDidShowInstructions={setDidShowInstructions}
+                    buildingExplorerHeight={buildingExplorerHeight}
+                />
+            ) : (
+                <FeatureImageRandomizer />
+            )}
+        </S.FeatureImageWrapper>
+    );
+});
+
+// # TODO => move this
 export const FeatureImageFilterButton = ({ className, onSort }) => {
     const [isFiltering, setIsFiltering] = useState(false);
     const {
@@ -359,47 +404,3 @@ export const FeatureImageFilterButton = ({ className, onSort }) => {
         </S.FeatureImageFilters>
     );
 };
-
-export const FeatureImageFilterAbout = () => {
-    const { isAboutOverride, setIsAboutOverride } = useActiveHighriseContext();
-    const { setIsMobilePopoverOpen } = useMobilePopoverContext();
-
-    return (
-        <S.FeatureImageFilterButton
-            isActive={isAboutOverride}
-            onClick={(e) => {
-                e.stopPropagation();
-
-                setIsAboutOverride(true);
-                setIsMobilePopoverOpen(true);
-            }}
-        >
-            About
-        </S.FeatureImageFilterButton>
-    );
-};
-
-export const FeatureImage = forwardRef(({ buildingExplorerHeight }, ref) => {
-    const { isMobile, zoomWidth } = useWindowSizeContext();
-    const { activeHighrise, hasInteracted } = useActiveHighriseContext();
-    const [didShowInstructions, setDidShowInstructions] = useState(false);
-
-    return (
-        <S.FeatureImageWrapper ref={ref} style={{ width: zoomWidth }}>
-            <S.FeatureImageActions>
-                <FeatureImageFilterButton />
-                {isMobile && !isFiltering && <FeatureImageFilterAbout />}
-            </S.FeatureImageActions>
-
-            {hasInteracted && activeHighrise ? (
-                <FeatureImageZoom
-                    didShowInstructions={didShowInstructions}
-                    setDidShowInstructions={setDidShowInstructions}
-                    buildingExplorerHeight={buildingExplorerHeight}
-                />
-            ) : (
-                <FeatureImageRandomizer />
-            )}
-        </S.FeatureImageWrapper>
-    );
-});
