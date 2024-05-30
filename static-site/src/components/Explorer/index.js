@@ -51,10 +51,16 @@ const useBuildingExplorerHeight = () => {
 };
 
 const MobileExplorer = () => {
+    const hundo = use100vh();
     const mobileExplorerRef = useRef();
 
     return (
-        <S.MobileExplorer ref={mobileExplorerRef}>
+        <S.MobileExplorer
+            ref={mobileExplorerRef}
+            style={{
+                height: hundo,
+            }}
+        >
             <Header />
             <div
                 style={{
