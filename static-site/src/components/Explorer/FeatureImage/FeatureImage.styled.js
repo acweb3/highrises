@@ -11,7 +11,7 @@ const pulse = keyframes`{
     100% { transform: scale(1)}
   }`;
 
-export const FeatureImageInstructionsPinch = styled(UnstyledPinch)`
+export const FeatureImageDesktopInstructionsPinch = styled(UnstyledPinch)`
     width: 32px;
     height: 32px;
 `;
@@ -27,7 +27,7 @@ export const isShowingCss = css`
         `}
 `;
 
-export const FeatureImageInstructions = styled.div`
+export const FeatureImageDesktopInstructions = styled.div`
     position: fixed;
     left: 32px;
 
@@ -234,11 +234,12 @@ export const FeatureImageZoom = styled.div`
 
 export const FeatureImageZoomWrapper = styled.div`
     position: relative;
-
-    padding-bottom: 150%;
+    margin: 0 16px;
+    padding-bottom: calc(150% - 32px);
 
     ${(props) => props.theme.breakpoints.small`
         padding-bottom: initial;
+        margin: 0;
     `}
 `;
 
@@ -280,4 +281,30 @@ export const FeatureImageWrapper = styled.div`
     ${(props) => props.theme.breakpoints.small`
         padding-bottom: initial;
     `}
+`;
+
+export const FeatureImageMobileInstructionsCopy = styled.div`
+    border: 1px solid ${(props) => props.theme.colors.blue[0]};
+    padding: 8px;
+    cursor: pointer;
+
+    ${(props) => props.theme.breakpoints.small`
+        display: none;
+    `}
+`;
+
+export const FeatureImageMobileInstructions = styled.div`
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(255, 255, 255, 0.8);
+
+    z-index: 3;
 `;

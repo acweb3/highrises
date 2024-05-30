@@ -67,6 +67,8 @@ export const FeatureImageZoom = ({
     const { isMobile, isXL } = useWindowSizeContext();
     const openseaDragonRef = useRef();
     const [zoomWrapperHeight, setZoomWrapperHeight] = useState(undefined);
+    const [isMobileInstructionsShowing, setIsMobileInstructionsShowing] =
+        useState(true);
 
     const [isShowInstructions, setIsShowInstructions] = useState(true);
     const [isShowNumber, setIsShowNumber] = useState(true);
@@ -98,8 +100,6 @@ export const FeatureImageZoom = ({
     }, [activeHighrise, isXL]);
 
     useEffect(() => {
-        setIsShowInstructions(true);
-
         const sto = setTimeout(() => {
             setIsShowInstructions(false);
             setDidShowInstructions(true);
@@ -137,17 +137,30 @@ export const FeatureImageZoom = ({
                 {activeHighrise.accessIndex + 1}
             </S.FeatureImageBadge>
 
-            <S.FeatureImageInstructions
+            {isMobile && isMobileInstructionsShowing && (
+                <S.FeatureImageMobileInstructions
+                    onClick={() => {
+                        setIsMobileInstructionsShowing(false);
+                        openseaDragonRef.current.viewport.zoomTo(3);
+                    }}
+                >
+                    <S.FeatureImageMobileInstructionsCopy>
+                        Click to pan and zoom
+                    </S.FeatureImageMobileInstructionsCopy>
+                </S.FeatureImageMobileInstructions>
+            )}
+
+            <S.FeatureImageDesktopInstructions
                 zoomWrapperHeight={zoomWrapperHeight}
                 isShowing={
-                    (!isMobile || zoomWrapperHeight) &&
+                    zoomWrapperHeight &&
                     isShowInstructions &&
                     !didShowInstructions
                 }
             >
-                <S.FeatureImageInstructionsPinch />
+                <S.FeatureImageDesktopInstructionsPinch />
                 {isMobile ? 'Pinch to zoom' : 'Scroll to zoom'}
-            </S.FeatureImageInstructions>
+            </S.FeatureImageDesktopInstructions>
 
             <S.FeatureImageZoom id="openseaDragon" />
         </S.FeatureImageZoomWrapper>
@@ -182,7 +195,7 @@ export const FeatureImage = forwardRef(({ buildingExplorerHeight }, ref) => {
         <S.FeatureImageWrapper ref={ref} style={{ width: zoomWidth }}>
             <S.FeatureImageActions>
                 <FeatureImageFilterButton />
-                {isMobile && !isFiltering && <FeatureImageFilterAbout />}
+                {isMobile && <FeatureImageFilterAbout />}
             </S.FeatureImageActions>
 
             {hasInteracted && activeHighrise ? (
