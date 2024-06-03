@@ -67,8 +67,6 @@ export const FeatureImageZoom = ({
     const { isMobile, isXL } = useWindowSizeContext();
     const openseaDragonRef = useRef();
     const [zoomWrapperHeight, setZoomWrapperHeight] = useState(undefined);
-    const [isMobileInstructionsShowing, setIsMobileInstructionsShowing] =
-        useState(true);
 
     const [isShowInstructions, setIsShowInstructions] = useState(true);
     const [isShowNumber, setIsShowNumber] = useState(true);
@@ -98,6 +96,14 @@ export const FeatureImageZoom = ({
             });
         }
     }, [activeHighrise, isXL]);
+
+    useEffect(() => {
+        if (activeHighrise && isMobile) {
+            setTimeout(() => {
+                openseaDragonRef.current?.viewport?.zoomTo?.(2);
+            }, 40);
+        }
+    }, [activeHighrise, isMobile]);
 
     useEffect(() => {
         const sto = setTimeout(() => {
@@ -136,19 +142,6 @@ export const FeatureImageZoom = ({
             >
                 {activeHighrise.accessIndex + 1}
             </S.FeatureImageBadge>
-
-            {isMobile && isMobileInstructionsShowing && (
-                <S.FeatureImageMobileInstructions
-                    onClick={() => {
-                        setIsMobileInstructionsShowing(false);
-                        openseaDragonRef.current.viewport.zoomTo(3);
-                    }}
-                >
-                    <S.FeatureImageMobileInstructionsCopy>
-                        Click to pan and zoom
-                    </S.FeatureImageMobileInstructionsCopy>
-                </S.FeatureImageMobileInstructions>
-            )}
 
             <S.FeatureImageDesktopInstructions
                 zoomWrapperHeight={zoomWrapperHeight}

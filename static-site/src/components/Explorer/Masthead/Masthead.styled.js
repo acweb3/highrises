@@ -83,7 +83,15 @@ export const MastheadClose = styled(UnstyledClose)`
     width: 32px;
     height: 32px;
 
-    color: ${(props) => props.theme.colors.grey[1]};
+    color: ${(props) =>
+        props.blue ? props.theme.colors.blue[0] : props.theme.colors.grey[1]};
+
+    ${(props) =>
+        props.isBig &&
+        css`
+            width: 48px;
+            height: 48px;
+        `}
 
     ${(props) => props.theme.breakpoints.small`
         width: 48px;

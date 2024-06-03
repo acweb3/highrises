@@ -234,12 +234,16 @@ export const FeatureImageZoom = styled.div`
 
 export const FeatureImageZoomWrapper = styled.div`
     position: relative;
-    margin: 0 16px;
-    padding-bottom: calc(150% - 32px);
+
+    width: 100%;
+    height: 100%;
 
     ${(props) => props.theme.breakpoints.small`
-        padding-bottom: initial;
+        padding: initial;
         margin: 0;
+
+        width: initial;
+        height: initial;
     `}
 `;
 
@@ -306,5 +310,5 @@ export const FeatureImageMobileInstructions = styled.div`
 
     background: rgba(255, 255, 255, 0.8);
 
-    z-index: 3;
+    z-index: 2;
 `;

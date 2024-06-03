@@ -5,13 +5,14 @@ import { createContext, useContext, useState } from 'react';
 export const ActiveSortContext = createContext({});
 export const useActiveSortContext = () => useContext(ActiveSortContext);
 
+// # TODO => this is probably busted for mobile
 const getInitialActiveSort = (sortName) => {
     if (!sortName) {
         return undefined;
     }
 
     const [sortKey, activeSort] = Object.entries(SORTS).find(([key, value]) => {
-        const keys = Object.entries(value.options).find(
+        const keys = Object.entries(value.options()).find(
             ([option]) => kebabCase(option) === kebabCase(sortName)
         );
         return keys;
@@ -21,7 +22,7 @@ const getInitialActiveSort = (sortName) => {
         return undefined;
     }
 
-    const [activeOption] = Object.values(activeSort.options).filter(
+    const [activeOption] = Object.values(activeSort.options()).filter(
         (option) => kebabCase(option.value) === kebabCase(sortName)
     );
 

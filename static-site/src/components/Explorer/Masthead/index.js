@@ -9,10 +9,74 @@ import * as S from 'components/Explorer/Masthead/Masthead.styled';
 import { Story } from 'components/Explorer/Masthead/Story';
 import { Traits } from 'components/Explorer/Masthead/Traits';
 import { BaseButton } from 'components/ui/BaseButton';
+import { BlurLoader } from 'components/ui/BlurLoader';
 import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
 import { useMobilePopoverContext } from 'contexts/MobilePopover';
 import { useWindowSizeContext } from 'contexts/WindowSize';
 import { useEffect, useRef, useState } from 'react';
+
+const MobileMastheadZoom = ({ activeHighrise }) => {
+    const [isZoom, setIsZoom] = useState(false);
+
+    useEffect(() => {
+        if (!activeHighrise) {
+            setIsZoom(false);
+        }
+    }, [activeHighrise]);
+
+    if (isZoom) {
+        return (
+            <div
+                style={{
+                    position: 'fixed',
+                    zIndex: 777,
+                    background: '#fff',
+                    top: 0,
+                    left: 0,
+                    height: '100%',
+                    width: '100%',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    padding: '0 16px 16px',
+                }}
+            >
+                <S.MastheadCloseButton
+                    style={{
+                        top: '64px',
+                        right: '16px',
+                    }}
+                    onClick={() => {
+                        setIsZoom(false);
+                    }}
+                >
+                    <S.MastheadClose isBig blue />
+                </S.MastheadCloseButton>
+
+                <FeatureImageZoom
+                    buildingExplorerHeight={0}
+                    didShowInstructions={true}
+                    setDidShowInstructions={() => {}}
+                />
+            </div>
+        );
+    }
+
+    return (
+        <div
+            onClick={() => setIsZoom(true)}
+            style={{
+                cursor: 'pointer',
+            }}
+        >
+            <BlurLoader
+                src={activeHighrise.featureSrc}
+                blurSrc={activeHighrise.blurFeatureSrc}
+                alt={`${activeHighrise.name} feature image`}
+            />
+        </div>
+    );
+};
 
 const MobileMasthead = () => {
     const mastheadRef = useRef();
@@ -97,10 +161,8 @@ const MobileMasthead = () => {
                                 return (
                                     <>
                                         <S.MobileMastheadSection>
-                                            <FeatureImageZoom
-                                                buildingExplorerHeight={0}
-                                                didShowInstructions={true}
-                                                setDidShowInstructions={() => {}}
+                                            <MobileMastheadZoom
+                                                activeHighrise={activeHighrise}
                                             />
 
                                             <Traits
