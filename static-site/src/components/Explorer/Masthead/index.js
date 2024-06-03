@@ -42,15 +42,16 @@ const MobileMastheadZoom = ({ activeHighrise }) => {
                 }}
             >
                 <S.MastheadCloseButton
+                    fill
                     style={{
-                        top: '64px',
-                        right: '16px',
+                        top: '72px',
+                        right: '24px',
                     }}
                     onClick={() => {
                         setIsZoom(false);
                     }}
                 >
-                    <S.MastheadClose isBig blue />
+                    <S.MastheadClose white />
                 </S.MastheadCloseButton>
 
                 <FeatureImageZoom

@@ -84,7 +84,7 @@ export const MastheadClose = styled(UnstyledClose)`
     height: 32px;
 
     color: ${(props) =>
-        props.blue ? props.theme.colors.blue[0] : props.theme.colors.grey[1]};
+        props.white ? props.theme.colors.white[0] : props.theme.colors.grey[1]};
 
     ${(props) =>
         props.isBig &&
@@ -113,6 +113,13 @@ export const MastheadCloseButton = styled.div`
     padding: 8px;
 
     z-index: 999999;
+
+    ${(props) =>
+        props.fill &&
+        css`
+            background: ${props.theme.colors.blue[0]};
+            border-radius: 50%;
+        `}
 
     ${(props) => props.theme.breakpoints.XL`
         top: 8px;
