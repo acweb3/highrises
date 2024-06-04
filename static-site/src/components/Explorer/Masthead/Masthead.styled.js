@@ -73,7 +73,6 @@ export const MobileMasthead = styled.div`
     flex-direction: column;
     justify-content: center;
 
-    height: calc(100vh - 60px);
     background: rgba(255, 255, 255, 0.8);
 
     padding-top: 48px;

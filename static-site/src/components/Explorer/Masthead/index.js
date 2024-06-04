@@ -14,6 +14,7 @@ import { useActiveHighriseContext } from 'contexts/ActiveHighrise';
 import { useMobilePopoverContext } from 'contexts/MobilePopover';
 import { useWindowSizeContext } from 'contexts/WindowSize';
 import { useEffect, useRef, useState } from 'react';
+import { use100vh } from 'react-div-100vh';
 
 const MobileMastheadZoom = ({ activeHighrise }) => {
     const [isZoom, setIsZoom] = useState(false);
@@ -68,6 +69,7 @@ const MobileMastheadZoom = ({ activeHighrise }) => {
             onClick={() => setIsZoom(true)}
             style={{
                 cursor: 'pointer',
+                padding: '16px 16px 8px',
             }}
         >
             <BlurLoader
@@ -80,6 +82,7 @@ const MobileMastheadZoom = ({ activeHighrise }) => {
 };
 
 const MobileMasthead = () => {
+    const hundo = use100vh();
     const mastheadRef = useRef();
     const { activeHighrise, activeDescription, isAboutOverride, reset } =
         useActiveHighriseContext();
@@ -100,7 +103,12 @@ const MobileMasthead = () => {
     };
 
     return (
-        <S.MobileMasthead onClick={close}>
+        <S.MobileMasthead
+            style={{
+                height: `${hundo - 60}px`,
+            }}
+            onClick={close}
+        >
             <S.MobileMastheadContent
                 onClick={(e) => {
                     e.stopPropagation();

@@ -1,7 +1,12 @@
 import { featureCity, featureStyle } from 'assets/data/features';
 import { getBuildingURL } from 'common/helpers';
+import { breakpointsMap } from 'common/styles/theme/breakpoints';
 import { useActiveSortContext } from 'contexts/ActiveSort';
-import { useWindowSizeContext } from 'contexts/WindowSize';
+import {
+    getWindowDimensions,
+    getWindowSize,
+    useWindowSizeContext,
+} from 'contexts/WindowSize';
 import kebabCase from 'just-kebab-case';
 import {
     createContext,
@@ -121,9 +126,6 @@ export const ActiveHighrise = ({
         };
     }, [highrises]);
 
-    // # TODO => FIXME bad, bad, bad.  Super sketchy!
-    const isMobileRef = useRef(isMobile);
-
     useEffect(() => {
         if (activeSort) {
             const sortedHighrises = activeSort.sort([...initHighrises.current]);
@@ -132,7 +134,10 @@ export const ActiveHighrise = ({
             const copy = features[activeSort.sortValue.toUpperCase()];
 
             // # TODO => FIXME bad, bad, bad.  Super sketchy!
-            if (isMobileRef.current) {
+            if (
+                getWindowSize(getWindowDimensions().width) <=
+                breakpointsMap.small
+            ) {
                 return;
             }
 

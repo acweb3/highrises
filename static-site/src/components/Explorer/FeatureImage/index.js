@@ -101,7 +101,7 @@ export const FeatureImageZoom = ({
         if (activeHighrise && isMobile) {
             setTimeout(() => {
                 openseaDragonRef.current?.viewport?.zoomTo?.(2);
-            }, 40);
+            }, 100);
         }
     }, [activeHighrise, isMobile]);
 

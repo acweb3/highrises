@@ -3,7 +3,7 @@ import { breakpointsMap } from 'common/styles/theme/breakpoints';
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { useDebounce } from 'use-debounce';
 
-const getWindowSize = (size) => {
+export const getWindowSize = (size) => {
     if (size >= breakpointsMap.large) {
         return breakpointsMap.large;
     }
@@ -32,7 +32,7 @@ const useZoomWidth = (isMobile) => {
     return isMobile ? undefined : width;
 };
 
-const getWindowDimensions = () => ({
+export const getWindowDimensions = () => ({
     width: window.visualViewport.width,
     height: window.visualViewport.height,
     scrollHeight: document.documentElement.scrollHeight,
