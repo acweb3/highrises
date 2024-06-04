@@ -81,12 +81,8 @@ const MobileMastheadZoom = ({ activeHighrise }) => {
 
 const MobileMasthead = () => {
     const mastheadRef = useRef();
-    const {
-        activeHighrise,
-        activeDescription,
-        isAboutOverride,
-        setIsAboutOverride,
-    } = useActiveHighriseContext();
+    const { activeHighrise, activeDescription, isAboutOverride, reset } =
+        useActiveHighriseContext();
     const { isMobilePopoverOpen, setIsMobilePopoverOpen } =
         useMobilePopoverContext();
 
@@ -100,7 +96,7 @@ const MobileMasthead = () => {
 
     const close = () => {
         setIsMobilePopoverOpen(false);
-        setIsAboutOverride(false);
+        reset();
     };
 
     return (
