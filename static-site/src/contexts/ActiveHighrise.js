@@ -53,6 +53,7 @@ export const ActiveHighrise = ({
         activeHighrise,
         Boolean(initHighrise)
     );
+
     const initHighrises = useRef(init);
     const [activeDescription, setActiveDescription] = useState(initDescription);
     const [isAboutOverride, setIsAboutOverride] = useState(false);
@@ -120,6 +121,9 @@ export const ActiveHighrise = ({
         };
     }, [highrises]);
 
+    // # TODO => FIXME bad, bad, bad.  Super sketchy!
+    const isMobileRef = useRef(isMobile);
+
     useEffect(() => {
         if (activeSort) {
             const sortedHighrises = activeSort.sort([...initHighrises.current]);
@@ -127,12 +131,15 @@ export const ActiveHighrise = ({
 
             const copy = features[activeSort.sortValue.toUpperCase()];
 
-            if (isMobile) {
-                updateHighrise(undefined, false);
-            } else if (copy) {
+            // # TODO => FIXME bad, bad, bad.  Super sketchy!
+            if (isMobileRef.current) {
+                return;
+            }
+
+            if (copy) {
                 updateDescription({
                     header: activeSort.sortValue,
-                    copy: copy,
+                    copy,
                 });
                 updateHighrise(undefined, false);
             } else {
