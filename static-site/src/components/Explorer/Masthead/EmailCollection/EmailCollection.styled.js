@@ -52,6 +52,9 @@ export const EmailCollectionButton = styled(BaseButton)`
     border: 1px solid ${(props) => props.theme.colors.white[0]};
     flex: 0;
     padding: 8px 16px;
+
+    display: flex;
+    align-items: center;
 `;
 
 export const EmailCollectionForm = styled.div`

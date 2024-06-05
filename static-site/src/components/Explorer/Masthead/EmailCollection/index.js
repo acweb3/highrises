@@ -35,30 +35,37 @@ export const EmailCollection = () => {
                     products.
                 </S.Paragraph>
 
-                <S.EmailCollectionForm>
-                    <S.EmailCollectionInput
-                        type="text"
-                        placeholder="Enter Email"
-                        value={email}
-                        onChange={(e) => {
-                            setEmail(e.target.value);
-                        }}
-                        onKeyDown={(e) => {
-                            if (e.key === 'Enter') {
-                                submit();
-                            }
-                        }}
-                    />
+                {!hasSubmitted && (
+                    <S.EmailCollectionForm>
+                        <S.EmailCollectionInput
+                            type="text"
+                            placeholder="Enter Email"
+                            value={email}
+                            onChange={(e) => {
+                                setEmail(e.target.value);
+                            }}
+                            onKeyDown={(e) => {
+                                if (e.key === 'Enter') {
+                                    submit();
+                                }
+                            }}
+                        />
 
-                    <S.EmailCollectionButton onClick={submit}>
-                        Submit
-                    </S.EmailCollectionButton>
-                </S.EmailCollectionForm>
+                        <S.EmailCollectionButton onClick={submit}>
+                            Submit
+                        </S.EmailCollectionButton>
+                    </S.EmailCollectionForm>
+                )}
             </S.EmailCollectionContent>
 
             {hasSubmitted && (
                 <S.EmailCollectionContent>
-                    <S.Paragraph>
+                    <S.Paragraph
+                        style={{
+                            border: '1px dashed #fff',
+                            padding: '16px',
+                        }}
+                    >
                         Got it! We'll keep you up to date.
                     </S.Paragraph>
                 </S.EmailCollectionContent>
