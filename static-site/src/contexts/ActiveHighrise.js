@@ -2,11 +2,7 @@ import { featureCity, featureStyle } from 'assets/data/features';
 import { getBuildingURL } from 'common/helpers';
 import { breakpointsMap } from 'common/styles/theme/breakpoints';
 import { useActiveSortContext } from 'contexts/ActiveSort';
-import {
-    getWindowDimensions,
-    getWindowSize,
-    useWindowSizeContext,
-} from 'contexts/WindowSize';
+import { getWindowDimensions, getWindowSize } from 'contexts/WindowSize';
 import kebabCase from 'just-kebab-case';
 import {
     createContext,
@@ -43,8 +39,6 @@ export const ActiveHighrise = ({
     initDescription,
     highrises: init,
 }) => {
-    const { isMobile } = useWindowSizeContext();
-
     const { activeSort, setActiveSort } = useActiveSortContext();
     const [highrises, setHighrises] = useState(init);
     const [activeHighrise, setActiveHighrise] = useState(
@@ -168,7 +162,6 @@ export const ActiveHighrise = ({
         initHighrise,
         updateDescription,
         reset,
-        isMobile,
     ]);
 
     return (
