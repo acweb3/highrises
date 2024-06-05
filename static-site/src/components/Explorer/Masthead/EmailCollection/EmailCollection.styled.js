@@ -1,5 +1,6 @@
 import UnstyledEmail from 'assets/icons/email.svg';
 import gridSrc from 'assets/images/blue-graph-paper.jpg';
+import { BaseButton } from 'components/ui/BaseButton';
 import styled from 'styled-components';
 
 export const EmailIcon = styled(UnstyledEmail)`
@@ -46,22 +47,18 @@ export const EmailCollectionHeader = styled.div`
     `}
 `;
 
-export const EmailCollectionInput = styled.input`
-    margin-top: 24px;
+export const EmailCollectionButton = styled(BaseButton)`
     border-radius: 2px;
-    padding: 8px;
+    border: 1px solid ${(props) => props.theme.colors.white[0]};
+    flex: 0;
+    padding: 8px 16px;
+`;
 
-    border: 1px solid ${(props) => props.theme.colors.grey[1]};
-    text-align: center;
+export const EmailCollectionForm = styled.div`
+    display: flex;
 
+    margin-top: 24px;
     width: calc(100% - 32px);
-
-    color: ${(props) => props.theme.colors.grey[0]};
-    background: ${(props) => props.theme.colors.grey[2]};
-
-    &::placeholder {
-        color: ${(props) => props.theme.colors.grey[0]};
-    }
 
     ${(props) => props.theme.breakpoints.small`
         width: calc(100% - 64px);
@@ -70,6 +67,27 @@ export const EmailCollectionInput = styled.input`
     ${(props) => props.theme.breakpoints.XL`
         margin-top: 48px;
     `}
+
+    & > ${EmailCollectionButton} {
+        margin-left: 8px;
+    }
+`;
+
+export const EmailCollectionInput = styled.input`
+    flex: 1;
+
+    border-radius: 2px;
+    padding: 8px;
+
+    border: 1px solid ${(props) => props.theme.colors.grey[1]};
+    text-align: center;
+
+    color: ${(props) => props.theme.colors.grey[0]};
+    background: ${(props) => props.theme.colors.grey[2]};
+
+    &::placeholder {
+        color: ${(props) => props.theme.colors.grey[0]};
+    }
 `;
 
 export const Paragraph = styled.div`

@@ -6,6 +6,19 @@ export const EmailCollection = () => {
     const [email, setEmail] = useState('');
     const [hasSubmitted, setHasSubmitted] = useState(false);
 
+    const submit = () => {
+        const formData = new FormData();
+        formData.append('Email', email);
+        setEmail('');
+
+        fetch(config.googleFormUrl, {
+            method: 'POST',
+            body: formData,
+        });
+
+        setHasSubmitted(true);
+    };
+
     return (
         <S.EmailCollection>
             <S.EmailCollectionContent>
@@ -22,28 +35,25 @@ export const EmailCollection = () => {
                     products.
                 </S.Paragraph>
 
-                <S.EmailCollectionInput
-                    type="text"
-                    placeholder="Enter Email"
-                    value={email}
-                    onChange={(e) => {
-                        setEmail(e.target.value);
-                    }}
-                    onKeyDown={(e) => {
-                        if (e.key === 'Enter') {
-                            const formData = new FormData();
-                            formData.append('Email', email);
-                            setEmail('');
+                <S.EmailCollectionForm>
+                    <S.EmailCollectionInput
+                        type="text"
+                        placeholder="Enter Email"
+                        value={email}
+                        onChange={(e) => {
+                            setEmail(e.target.value);
+                        }}
+                        onKeyDown={(e) => {
+                            if (e.key === 'Enter') {
+                                submit();
+                            }
+                        }}
+                    />
 
-                            fetch(config.googleFormUrl, {
-                                method: 'POST',
-                                body: formData,
-                            });
-
-                            setHasSubmitted(true);
-                        }
-                    }}
-                />
+                    <S.EmailCollectionButton onClick={submit}>
+                        Submit
+                    </S.EmailCollectionButton>
+                </S.EmailCollectionForm>
             </S.EmailCollectionContent>
 
             {hasSubmitted && (
